@@ -46,51 +46,7 @@
           "notes": "2025 Epsom Derby winner; won Huxley Stakes (Group 2, Chester May 2026); proven Epsom specialist; sourced from racingbetter.co.uk and horseracingnation.com 2026-06-02",
           "morning_price": 3.0,
           "odds_source": "ante_post",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
-          "going_history": [
-            {
-              "date": "2026-05-22",
-              "going": "Good",
-              "position": 1,
-              "field_size": 14,
-              "days_ago": 15
-            },
-            {
-              "date": "2026-05-10",
-              "going": "Good to Soft",
-              "position": 4,
-              "field_size": 10,
-              "days_ago": 27
-            },
-            {
-              "date": "2026-04-23",
-              "going": "Good to Soft",
-              "position": 5,
-              "field_size": 10,
-              "days_ago": 44
-            },
-            {
-              "date": "2026-04-09",
-              "going": "Soft",
-              "position": 1,
-              "field_size": 12,
-              "days_ago": 58
-            },
-            {
-              "date": "2026-03-26",
-              "going": "Soft",
-              "position": 1,
-              "field_size": 10,
-              "days_ago": 72
-            },
-            {
-              "date": "2026-03-15",
-              "going": "Good",
-              "position": 1,
-              "field_size": 13,
-              "days_ago": 83
-            }
-          ]
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
           "horse": "Jan Brueghel",
@@ -107,51 +63,7 @@
           "notes": "2025 Coronation Cup winner at Epsom; recently won Ormonde Stakes (Chester May 2026); defending champion",
           "morning_price": 3.5,
           "odds_source": "ante_post",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
-          "going_history": [
-            {
-              "date": "2026-05-22",
-              "going": "Good",
-              "position": 1,
-              "field_size": 11,
-              "days_ago": 15
-            },
-            {
-              "date": "2026-05-11",
-              "going": "Good",
-              "position": 4,
-              "field_size": 12,
-              "days_ago": 26
-            },
-            {
-              "date": "2026-04-26",
-              "going": "Soft",
-              "position": 1,
-              "field_size": 12,
-              "days_ago": 41
-            },
-            {
-              "date": "2026-04-13",
-              "going": "Soft",
-              "position": 2,
-              "field_size": 9,
-              "days_ago": 54
-            },
-            {
-              "date": "2026-03-26",
-              "going": "Firm",
-              "position": 1,
-              "field_size": 13,
-              "days_ago": 72
-            },
-            {
-              "date": "2026-03-14",
-              "going": "Good",
-              "position": 1,
-              "field_size": 15,
-              "days_ago": 84
-            }
-          ]
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
           "horse": "Calandagan",
@@ -168,51 +80,7 @@
           "notes": "2025 Coronation Cup runner-up; since won King George VI, Champion Stakes, Japan Cup, Sheema Classic; Dubai Sheema Classic winner March 2026; re-match with Jan Brueghel",
           "morning_price": 2.5,
           "odds_source": "ante_post",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
-          "going_history": [
-            {
-              "date": "2026-05-25",
-              "going": "Good to Soft",
-              "position": 1,
-              "field_size": 11,
-              "days_ago": 12
-            },
-            {
-              "date": "2026-05-09",
-              "going": "Good",
-              "position": 1,
-              "field_size": 14,
-              "days_ago": 28
-            },
-            {
-              "date": "2026-04-24",
-              "going": "Good",
-              "position": 1,
-              "field_size": 11,
-              "days_ago": 43
-            },
-            {
-              "date": "2026-04-13",
-              "going": "Good to Soft",
-              "position": 1,
-              "field_size": 13,
-              "days_ago": 54
-            },
-            {
-              "date": "2026-03-29",
-              "going": "Good",
-              "position": 1,
-              "field_size": 9,
-              "days_ago": 69
-            },
-            {
-              "date": "2026-03-14",
-              "going": "Good to Soft",
-              "position": 2,
-              "field_size": 12,
-              "days_ago": 84
-            }
-          ]
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
           "horse": "Convergent",
@@ -229,51 +97,7 @@
           "notes": "Won John Porter G3 at Newbury April 2026; progressive; no Epsom form to date but well-placed at high level",
           "morning_price": 11.0,
           "odds_source": "estimated",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
-          "going_history": [
-            {
-              "date": "2026-05-23",
-              "going": "Good",
-              "position": 1,
-              "field_size": 13,
-              "days_ago": 14
-            },
-            {
-              "date": "2026-05-07",
-              "going": "Good",
-              "position": 7,
-              "field_size": 12,
-              "days_ago": 30
-            },
-            {
-              "date": "2026-04-25",
-              "going": "Firm",
-              "position": 1,
-              "field_size": 8,
-              "days_ago": 42
-            },
-            {
-              "date": "2026-04-13",
-              "going": "Good to Firm",
-              "position": 1,
-              "field_size": 12,
-              "days_ago": 54
-            },
-            {
-              "date": "2026-03-28",
-              "going": "Good to Soft",
-              "position": 2,
-              "field_size": 8,
-              "days_ago": 70
-            },
-            {
-              "date": "2026-03-15",
-              "going": "Good",
-              "position": 3,
-              "field_size": 10,
-              "days_ago": 83
-            }
-          ]
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
           "horse": "Bay City Roller",
@@ -290,51 +114,7 @@
           "notes": "Group 1 winner; 2nd in Huxley Stakes and Curragh recently May 2026; strong form; home advantage",
           "morning_price": 9.0,
           "odds_source": "estimated",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
-          "going_history": [
-            {
-              "date": "2026-05-22",
-              "going": "Good",
-              "position": 2,
-              "field_size": 11,
-              "days_ago": 15
-            },
-            {
-              "date": "2026-05-07",
-              "going": "Good",
-              "position": 2,
-              "field_size": 12,
-              "days_ago": 30
-            },
-            {
-              "date": "2026-04-24",
-              "going": "Good",
-              "position": 1,
-              "field_size": 14,
-              "days_ago": 43
-            },
-            {
-              "date": "2026-04-09",
-              "going": "Soft",
-              "position": 4,
-              "field_size": 10,
-              "days_ago": 58
-            },
-            {
-              "date": "2026-03-26",
-              "going": "Good to Soft",
-              "position": 2,
-              "field_size": 10,
-              "days_ago": 72
-            },
-            {
-              "date": "2026-03-14",
-              "going": "Soft",
-              "position": 2,
-              "field_size": 15,
-              "days_ago": 84
-            }
-          ]
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
           "horse": "Illinois",
@@ -351,16 +131,7 @@
           "notes": "Placed in many Group races; recent 3rd in Ormonde Stakes G3 Chester; prior Epsom form",
           "morning_price": 21.0,
           "odds_source": "estimated",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
-          "going_history": [
-            {
-              "date": "2026-05-23",
-              "going": "Firm",
-              "position": null,
-              "field_size": 12,
-              "days_ago": 14
-            }
-          ]
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
           "horse": "Sunway",
@@ -377,44 +148,7 @@
           "notes": "Group 1 placed; 4th in Jockey Club Stakes G2 recently; progressive form",
           "morning_price": 17.0,
           "odds_source": "estimated",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
-          "going_history": [
-            {
-              "date": "2026-05-21",
-              "going": "Firm",
-              "position": 4,
-              "field_size": 10,
-              "days_ago": 16
-            },
-            {
-              "date": "2026-05-10",
-              "going": "Good to Soft",
-              "position": 0,
-              "field_size": 10,
-              "days_ago": 27
-            },
-            {
-              "date": "2026-04-25",
-              "going": "Good",
-              "position": 2,
-              "field_size": 12,
-              "days_ago": 42
-            },
-            {
-              "date": "2026-04-09",
-              "going": "Good to Soft",
-              "position": 1,
-              "field_size": 12,
-              "days_ago": 58
-            },
-            {
-              "date": "2026-03-29",
-              "going": "Good",
-              "position": 6,
-              "field_size": 10,
-              "days_ago": 69
-            }
-          ]
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
           "horse": "See The Fire",
@@ -431,44 +165,7 @@
           "notes": "Mare; won Middleton Fillies' Stakes G2 last time out; recent strong form",
           "morning_price": 13.0,
           "odds_source": "estimated",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
-          "going_history": [
-            {
-              "date": "2026-05-25",
-              "going": "Good to Soft",
-              "position": 1,
-              "field_size": 10,
-              "days_ago": 12
-            },
-            {
-              "date": "2026-05-11",
-              "going": "Good to Firm",
-              "position": 1,
-              "field_size": 10,
-              "days_ago": 26
-            },
-            {
-              "date": "2026-04-23",
-              "going": "Good to Soft",
-              "position": 9,
-              "field_size": 14,
-              "days_ago": 44
-            },
-            {
-              "date": "2026-04-10",
-              "going": "Good to Soft",
-              "position": 2,
-              "field_size": 13,
-              "days_ago": 57
-            },
-            {
-              "date": "2026-03-29",
-              "going": "Firm",
-              "position": 4,
-              "field_size": 10,
-              "days_ago": 69
-            }
-          ]
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         }
       ],
       "source_urls": [
@@ -511,44 +208,7 @@
           "notes": "Chester Vase (G3) winner; leading contender; rating 7.67 highest evaluation; 9/4-5/2 favourite odds; sourced from horseracing.guide and epsomderby.com 2026-06-02",
           "morning_price": 3.25,
           "odds_source": "ante_post",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
-          "going_history": [
-            {
-              "date": "2026-05-22",
-              "going": "Soft",
-              "position": 1,
-              "field_size": 10,
-              "days_ago": 15
-            },
-            {
-              "date": "2026-05-11",
-              "going": "Good",
-              "position": 3,
-              "field_size": 15,
-              "days_ago": 26
-            },
-            {
-              "date": "2026-04-24",
-              "going": "Good to Firm",
-              "position": 1,
-              "field_size": 9,
-              "days_ago": 43
-            },
-            {
-              "date": "2026-04-10",
-              "going": "Firm",
-              "position": 1,
-              "field_size": 9,
-              "days_ago": 57
-            },
-            {
-              "date": "2026-03-30",
-              "going": "Good",
-              "position": 2,
-              "field_size": 8,
-              "days_ago": 68
-            }
-          ]
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
           "horse": "Item",
@@ -565,30 +225,7 @@
           "notes": "Dante Stakes (G2) winner at York, unbeaten; rating 7.09; 4/1-5/1 second favourite; big improver",
           "morning_price": 5.0,
           "odds_source": "ante_post",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
-          "going_history": [
-            {
-              "date": "2026-05-22",
-              "going": "Good to Firm",
-              "position": 1,
-              "field_size": 11,
-              "days_ago": 15
-            },
-            {
-              "date": "2026-05-11",
-              "going": "Good to Soft",
-              "position": 1,
-              "field_size": 10,
-              "days_ago": 26
-            },
-            {
-              "date": "2026-04-26",
-              "going": "Firm",
-              "position": 1,
-              "field_size": 12,
-              "days_ago": 41
-            }
-          ]
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
           "horse": "Ancient Egypt",
@@ -605,37 +242,7 @@
           "notes": "Newmarket Stakes winner; RPR 118; OR 100; 16/1 odds; good form",
           "morning_price": 17.0,
           "odds_source": "ante_post",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
-          "going_history": [
-            {
-              "date": "2026-05-22",
-              "going": "Good",
-              "position": 1,
-              "field_size": 14,
-              "days_ago": 15
-            },
-            {
-              "date": "2026-05-08",
-              "going": "Good to Soft",
-              "position": 7,
-              "field_size": 9,
-              "days_ago": 29
-            },
-            {
-              "date": "2026-04-27",
-              "going": "Firm",
-              "position": 1,
-              "field_size": 11,
-              "days_ago": 40
-            },
-            {
-              "date": "2026-04-09",
-              "going": "Good",
-              "position": 1,
-              "field_size": 8,
-              "days_ago": 58
-            }
-          ]
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
           "horse": "A Taste of Glory",
@@ -652,51 +259,7 @@
           "notes": "OR 84; lesser form; Balding runner",
           "morning_price": 51.0,
           "odds_source": "estimated",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
-          "going_history": [
-            {
-              "date": "2026-05-21",
-              "going": "Good",
-              "position": 6,
-              "field_size": 10,
-              "days_ago": 16
-            },
-            {
-              "date": "2026-05-10",
-              "going": "Good",
-              "position": 1,
-              "field_size": 9,
-              "days_ago": 27
-            },
-            {
-              "date": "2026-04-24",
-              "going": "Firm",
-              "position": 0,
-              "field_size": 10,
-              "days_ago": 43
-            },
-            {
-              "date": "2026-04-10",
-              "going": "Good",
-              "position": 1,
-              "field_size": 12,
-              "days_ago": 57
-            },
-            {
-              "date": "2026-03-27",
-              "going": "Good",
-              "position": 4,
-              "field_size": 9,
-              "days_ago": 71
-            },
-            {
-              "date": "2026-03-14",
-              "going": "Firm",
-              "position": 4,
-              "field_size": 14,
-              "days_ago": 84
-            }
-          ]
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
           "horse": "Balzac",
@@ -713,37 +276,7 @@
           "notes": "OR 97; recent 3rd/form uneven; De Sousa booked",
           "morning_price": 41.0,
           "odds_source": "estimated",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
-          "going_history": [
-            {
-              "date": "2026-05-22",
-              "going": "Firm",
-              "position": 3,
-              "field_size": 12,
-              "days_ago": 15
-            },
-            {
-              "date": "2026-05-10",
-              "going": "Good to Soft",
-              "position": 3,
-              "field_size": 10,
-              "days_ago": 27
-            },
-            {
-              "date": "2026-04-27",
-              "going": "Good",
-              "position": 1,
-              "field_size": 10,
-              "days_ago": 40
-            },
-            {
-              "date": "2026-04-11",
-              "going": "Good",
-              "position": 3,
-              "field_size": 8,
-              "days_ago": 56
-            }
-          ]
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
           "horse": "Bay Of Brilliance",
@@ -760,37 +293,7 @@
           "notes": "Lingfield Derby Trial 2nd; OR 107; progressive; Beckett runner",
           "morning_price": 21.0,
           "odds_source": "estimated",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
-          "going_history": [
-            {
-              "date": "2026-05-21",
-              "going": "Firm",
-              "position": 2,
-              "field_size": 13,
-              "days_ago": 16
-            },
-            {
-              "date": "2026-05-07",
-              "going": "Good",
-              "position": 1,
-              "field_size": 8,
-              "days_ago": 30
-            },
-            {
-              "date": "2026-04-23",
-              "going": "Good",
-              "position": 1,
-              "field_size": 9,
-              "days_ago": 44
-            },
-            {
-              "date": "2026-04-12",
-              "going": "Good",
-              "position": 5,
-              "field_size": 12,
-              "days_ago": 55
-            }
-          ]
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
           "horse": "Constitution River",
@@ -807,30 +310,7 @@
           "notes": "Dee Stakes (G3) Chester winner; O'Brien runner; 8/1 odds; sourced from racingbetter.co.uk 2026-06-02",
           "morning_price": 9.0,
           "odds_source": "ante_post",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
-          "going_history": [
-            {
-              "date": "2026-05-25",
-              "going": "Good to Soft",
-              "position": 7,
-              "field_size": 12,
-              "days_ago": 12
-            },
-            {
-              "date": "2026-05-07",
-              "going": "Good",
-              "position": 4,
-              "field_size": 12,
-              "days_ago": 30
-            },
-            {
-              "date": "2026-04-27",
-              "going": "Soft",
-              "position": 1,
-              "field_size": 15,
-              "days_ago": 40
-            }
-          ]
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
           "horse": "Causeway",
@@ -847,44 +327,7 @@
           "notes": "Gallinule Stakes (G3) winner; OR 108; long odds; form improvement last start",
           "morning_price": 29.0,
           "odds_source": "estimated",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
-          "going_history": [
-            {
-              "date": "2026-05-21",
-              "going": "Good to Firm",
-              "position": 1,
-              "field_size": 12,
-              "days_ago": 16
-            },
-            {
-              "date": "2026-05-09",
-              "going": "Good to Soft",
-              "position": 1,
-              "field_size": 15,
-              "days_ago": 28
-            },
-            {
-              "date": "2026-04-25",
-              "going": "Good to Soft",
-              "position": 1,
-              "field_size": 14,
-              "days_ago": 42
-            },
-            {
-              "date": "2026-04-10",
-              "going": "Good",
-              "position": 1,
-              "field_size": 15,
-              "days_ago": 57
-            },
-            {
-              "date": "2026-03-28",
-              "going": "Firm",
-              "position": 4,
-              "field_size": 10,
-              "days_ago": 70
-            }
-          ]
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
           "horse": "Christmas Day",
@@ -901,51 +344,7 @@
           "notes": "3rd Dante Stakes; OR 109; rating 7.09; O'Brien stable companion",
           "morning_price": 15.0,
           "odds_source": "estimated",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
-          "going_history": [
-            {
-              "date": "2026-05-25",
-              "going": "Good",
-              "position": 3,
-              "field_size": 11,
-              "days_ago": 12
-            },
-            {
-              "date": "2026-05-07",
-              "going": "Good",
-              "position": 1,
-              "field_size": 10,
-              "days_ago": 30
-            },
-            {
-              "date": "2026-04-23",
-              "going": "Good to Soft",
-              "position": 1,
-              "field_size": 13,
-              "days_ago": 44
-            },
-            {
-              "date": "2026-04-11",
-              "going": "Good",
-              "position": 1,
-              "field_size": 12,
-              "days_ago": 56
-            },
-            {
-              "date": "2026-03-28",
-              "going": "Good",
-              "position": 5,
-              "field_size": 12,
-              "days_ago": 70
-            },
-            {
-              "date": "2026-03-15",
-              "going": "Good to Firm",
-              "position": 3,
-              "field_size": 14,
-              "days_ago": 83
-            }
-          ]
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
           "horse": "Endorsement",
@@ -962,51 +361,7 @@
           "notes": "Derby Trial Stakes 3rd; OR 106; rating 6.12; O'Brien; long odds",
           "morning_price": 34.0,
           "odds_source": "estimated",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
-          "going_history": [
-            {
-              "date": "2026-05-24",
-              "going": "Firm",
-              "position": 3,
-              "field_size": 9,
-              "days_ago": 13
-            },
-            {
-              "date": "2026-05-07",
-              "going": "Good to Soft",
-              "position": 2,
-              "field_size": 12,
-              "days_ago": 30
-            },
-            {
-              "date": "2026-04-23",
-              "going": "Good",
-              "position": 8,
-              "field_size": 15,
-              "days_ago": 44
-            },
-            {
-              "date": "2026-04-09",
-              "going": "Good to Soft",
-              "position": 2,
-              "field_size": 12,
-              "days_ago": 58
-            },
-            {
-              "date": "2026-03-30",
-              "going": "Good",
-              "position": 1,
-              "field_size": 14,
-              "days_ago": 68
-            },
-            {
-              "date": "2026-03-16",
-              "going": "Good",
-              "position": 2,
-              "field_size": 10,
-              "days_ago": 82
-            }
-          ]
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
           "horse": "James J Braddock",
@@ -1023,37 +378,7 @@
           "notes": "Derby Trial Stakes winner; OR 108; rating 7.09; Joseph Patrick O'Brien (son trainer); 10/1-14/1",
           "morning_price": 11.0,
           "odds_source": "ante_post",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
-          "going_history": [
-            {
-              "date": "2026-05-21",
-              "going": "Good",
-              "position": 1,
-              "field_size": 14,
-              "days_ago": 16
-            },
-            {
-              "date": "2026-05-09",
-              "going": "Good to Soft",
-              "position": 5,
-              "field_size": 10,
-              "days_ago": 28
-            },
-            {
-              "date": "2026-04-25",
-              "going": "Good to Soft",
-              "position": 1,
-              "field_size": 15,
-              "days_ago": 42
-            },
-            {
-              "date": "2026-04-11",
-              "going": "Firm",
-              "position": 2,
-              "field_size": 14,
-              "days_ago": 56
-            }
-          ]
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
           "horse": "Maltese Cross",
@@ -1070,37 +395,7 @@
           "notes": "Lingfield Derby Trial winner; OR 108; RPR 115; 8/1-10/1 odds; Haggas runner",
           "morning_price": 9.0,
           "odds_source": "ante_post",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
-          "going_history": [
-            {
-              "date": "2026-05-25",
-              "going": "Good",
-              "position": 1,
-              "field_size": 15,
-              "days_ago": 12
-            },
-            {
-              "date": "2026-05-08",
-              "going": "Good to Soft",
-              "position": 1,
-              "field_size": 8,
-              "days_ago": 29
-            },
-            {
-              "date": "2026-04-27",
-              "going": "Good to Firm",
-              "position": 1,
-              "field_size": 11,
-              "days_ago": 40
-            },
-            {
-              "date": "2026-04-12",
-              "going": "Good to Soft",
-              "position": 2,
-              "field_size": 12,
-              "days_ago": 55
-            }
-          ]
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
           "horse": "Pierre Bonnard",
@@ -1117,51 +412,7 @@
           "notes": "Derby Trial Stakes 2nd at Leopardstown; OR 109; rating 7.09; O'Brien depth",
           "morning_price": 17.0,
           "odds_source": "estimated",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
-          "going_history": [
-            {
-              "date": "2026-05-22",
-              "going": "Soft",
-              "position": 2,
-              "field_size": 13,
-              "days_ago": 15
-            },
-            {
-              "date": "2026-05-11",
-              "going": "Good",
-              "position": 7,
-              "field_size": 10,
-              "days_ago": 26
-            },
-            {
-              "date": "2026-04-26",
-              "going": "Good",
-              "position": 1,
-              "field_size": 9,
-              "days_ago": 41
-            },
-            {
-              "date": "2026-04-11",
-              "going": "Good",
-              "position": 1,
-              "field_size": 9,
-              "days_ago": 56
-            },
-            {
-              "date": "2026-03-29",
-              "going": "Good",
-              "position": 1,
-              "field_size": 14,
-              "days_ago": 69
-            },
-            {
-              "date": "2026-03-14",
-              "going": "Good",
-              "position": 4,
-              "field_size": 12,
-              "days_ago": 84
-            }
-          ]
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
           "horse": "Action",
@@ -1178,51 +429,7 @@
           "notes": "2nd Dante Stakes; OR 113; rating 7.27; O'Brien runner; strong form line",
           "morning_price": 13.0,
           "odds_source": "estimated",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
-          "going_history": [
-            {
-              "date": "2026-05-23",
-              "going": "Good to Soft",
-              "position": 2,
-              "field_size": 15,
-              "days_ago": 14
-            },
-            {
-              "date": "2026-05-10",
-              "going": "Good",
-              "position": 4,
-              "field_size": 10,
-              "days_ago": 27
-            },
-            {
-              "date": "2026-04-23",
-              "going": "Soft",
-              "position": 2,
-              "field_size": 12,
-              "days_ago": 44
-            },
-            {
-              "date": "2026-04-12",
-              "going": "Good to Soft",
-              "position": 3,
-              "field_size": 9,
-              "days_ago": 55
-            },
-            {
-              "date": "2026-03-29",
-              "going": "Good",
-              "position": 1,
-              "field_size": 12,
-              "days_ago": 69
-            },
-            {
-              "date": "2026-03-13",
-              "going": "Good",
-              "position": 3,
-              "field_size": 12,
-              "days_ago": 85
-            }
-          ]
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
           "horse": "Alderman",
@@ -1239,30 +446,7 @@
           "notes": "OR 83; weaker form; Hannon runner; long odds",
           "morning_price": 101.0,
           "odds_source": "estimated",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
-          "going_history": [
-            {
-              "date": "2026-05-23",
-              "going": "Soft",
-              "position": 2,
-              "field_size": 11,
-              "days_ago": 14
-            },
-            {
-              "date": "2026-05-10",
-              "going": "Good to Soft",
-              "position": 3,
-              "field_size": 12,
-              "days_ago": 27
-            },
-            {
-              "date": "2026-04-27",
-              "going": "Soft",
-              "position": 7,
-              "field_size": 9,
-              "days_ago": 40
-            }
-          ]
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
           "horse": "Poker",
@@ -1279,30 +463,7 @@
           "notes": "OR 80; lesser form; Burke runner",
           "morning_price": 101.0,
           "odds_source": "estimated",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
-          "going_history": [
-            {
-              "date": "2026-05-25",
-              "going": "Firm",
-              "position": 2,
-              "field_size": 10,
-              "days_ago": 12
-            },
-            {
-              "date": "2026-05-10",
-              "going": "Firm",
-              "position": 2,
-              "field_size": 10,
-              "days_ago": 27
-            },
-            {
-              "date": "2026-04-25",
-              "going": "Good to Soft",
-              "position": 6,
-              "field_size": 10,
-              "days_ago": 42
-            }
-          ]
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
           "horse": "Proposition",
@@ -1319,30 +480,7 @@
           "notes": "OR 100; modest form so far; O'Brien runner",
           "morning_price": 67.0,
           "odds_source": "estimated",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
-          "going_history": [
-            {
-              "date": "2026-05-25",
-              "going": "Good to Soft",
-              "position": 2,
-              "field_size": 9,
-              "days_ago": 12
-            },
-            {
-              "date": "2026-05-09",
-              "going": "Good to Soft",
-              "position": 1,
-              "field_size": 9,
-              "days_ago": 28
-            },
-            {
-              "date": "2026-04-27",
-              "going": "Good to Soft",
-              "position": 0,
-              "field_size": 10,
-              "days_ago": 40
-            }
-          ]
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
           "horse": "Rebel Rocker",
@@ -1359,23 +497,7 @@
           "notes": "OR 99; Bramley runner; outsider",
           "morning_price": 67.0,
           "odds_source": "estimated",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
-          "going_history": [
-            {
-              "date": "2026-05-21",
-              "going": "Soft",
-              "position": 2,
-              "field_size": 15,
-              "days_ago": 16
-            },
-            {
-              "date": "2026-05-07",
-              "going": "Good to Firm",
-              "position": 1,
-              "field_size": 8,
-              "days_ago": 30
-            }
-          ]
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         }
       ],
       "source_urls": [

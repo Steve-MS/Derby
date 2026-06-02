@@ -26,44 +26,7 @@
           "notes": "Rated 92 OR; RPR 85 TS 72; sourced from Racing Post racecard 2026-06-05",
           "morning_price": 6.0,
           "odds_source": "synthetic",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
-          "going_history": [
-            {
-              "date": "2026-05-24",
-              "going": "Good",
-              "position": 8,
-              "field_size": 10,
-              "days_ago": 12
-            },
-            {
-              "date": "2026-05-08",
-              "going": "Good to Soft",
-              "position": 1,
-              "field_size": 10,
-              "days_ago": 28
-            },
-            {
-              "date": "2026-04-25",
-              "going": "Good",
-              "position": 2,
-              "field_size": 15,
-              "days_ago": 41
-            },
-            {
-              "date": "2026-04-08",
-              "going": "Good",
-              "position": 2,
-              "field_size": 12,
-              "days_ago": 58
-            },
-            {
-              "date": "2026-03-26",
-              "going": "Good",
-              "position": 7,
-              "field_size": 8,
-              "days_ago": 71
-            }
-          ]
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         }
       ],
       "source_urls": [
@@ -93,8 +56,7 @@
           "notes": "2yo EBF eligible race; Racing Post source shows TS and RPR available but horses listed pending jockey confirmation at 2026-06-02 data retrieval",
           "morning_price": 4.0,
           "odds_source": "synthetic",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
-          "going_history": []
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         }
       ],
       "source_urls": [
@@ -124,44 +86,7 @@
           "notes": "High-rated performer, RPR 122 top of this race group; OR 113; TS 110; from Racing Post 2026-06-02",
           "morning_price": 3.5,
           "odds_source": "estimated",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
-          "going_history": [
-            {
-              "date": "2026-05-24",
-              "going": "Good to Soft",
-              "position": 4,
-              "field_size": 10,
-              "days_ago": 12
-            },
-            {
-              "date": "2026-05-06",
-              "going": "Good",
-              "position": 6,
-              "field_size": 13,
-              "days_ago": 30
-            },
-            {
-              "date": "2026-04-25",
-              "going": "Soft",
-              "position": 4,
-              "field_size": 10,
-              "days_ago": 41
-            },
-            {
-              "date": "2026-04-09",
-              "going": "Good to Soft",
-              "position": 4,
-              "field_size": 11,
-              "days_ago": 57
-            },
-            {
-              "date": "2026-03-29",
-              "going": "Good",
-              "position": 4,
-              "field_size": 10,
-              "days_ago": 68
-            }
-          ]
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
           "horse": "Runner-up",
@@ -178,44 +103,7 @@
           "notes": "RPR 113; strong recent form; OR 102 TS 98",
           "morning_price": 4.5,
           "odds_source": "estimated",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
-          "going_history": [
-            {
-              "date": "2026-05-21",
-              "going": "Good to Firm",
-              "position": 9,
-              "field_size": 14,
-              "days_ago": 15
-            },
-            {
-              "date": "2026-05-09",
-              "going": "Good to Soft",
-              "position": 0,
-              "field_size": 11,
-              "days_ago": 27
-            },
-            {
-              "date": "2026-04-24",
-              "going": "Good",
-              "position": 0,
-              "field_size": 10,
-              "days_ago": 42
-            },
-            {
-              "date": "2026-04-09",
-              "going": "Good",
-              "position": 0,
-              "field_size": 10,
-              "days_ago": 57
-            },
-            {
-              "date": "2026-03-27",
-              "going": "Good to Soft",
-              "position": 3,
-              "field_size": 11,
-              "days_ago": 70
-            }
-          ]
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         }
       ],
       "source_urls": [
@@ -257,16 +145,7 @@
           "notes": "Winner of Cheshire Oaks (Group 2) at Chester, leading favourite for Epsom Oaks 2026; strong class and stamina; Aidan O'Brien, Ryan Moore; sourced from web search 2026-06-02",
           "morning_price": 3.5,
           "odds_source": "ante_post",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
-          "going_history": [
-            {
-              "date": "2026-05-24",
-              "going": "Firm",
-              "position": 2,
-              "field_size": 13,
-              "days_ago": 12
-            }
-          ]
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
           "horse": "Precise",
@@ -283,44 +162,7 @@
           "notes": "Winner of Irish 1,000 Guineas; reversing previous Newmarket form; well-regarded for class and stamina improvement",
           "morning_price": 5.0,
           "odds_source": "ante_post",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
-          "going_history": [
-            {
-              "date": "2026-05-24",
-              "going": "Soft",
-              "position": 0,
-              "field_size": 10,
-              "days_ago": 12
-            },
-            {
-              "date": "2026-05-06",
-              "going": "Good to Soft",
-              "position": 0,
-              "field_size": 9,
-              "days_ago": 30
-            },
-            {
-              "date": "2026-04-22",
-              "going": "Good to Firm",
-              "position": 0,
-              "field_size": 12,
-              "days_ago": 44
-            },
-            {
-              "date": "2026-04-11",
-              "going": "Good",
-              "position": 1,
-              "field_size": 8,
-              "days_ago": 55
-            },
-            {
-              "date": "2026-03-28",
-              "going": "Good to Soft",
-              "position": 1,
-              "field_size": 10,
-              "days_ago": 69
-            }
-          ]
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
           "horse": "Legacy Link",
@@ -337,16 +179,7 @@
           "notes": "Winner of Musidora Stakes at York (Group 2 equivalent); very strong progression this spring; 4th in Fillies' Mile last year",
           "morning_price": 6.0,
           "odds_source": "ante_post",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
-          "going_history": [
-            {
-              "date": "2026-05-23",
-              "going": "Good",
-              "position": 1,
-              "field_size": 9,
-              "days_ago": 13
-            }
-          ]
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
           "horse": "Venetian Lace",
@@ -363,44 +196,7 @@
           "notes": "3rd in 1000 Guineas; mix of class and potential for extended trip",
           "morning_price": 11.0,
           "odds_source": "ante_post",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
-          "going_history": [
-            {
-              "date": "2026-05-22",
-              "going": "Firm",
-              "position": 0,
-              "field_size": 15,
-              "days_ago": 14
-            },
-            {
-              "date": "2026-05-08",
-              "going": "Good",
-              "position": 0,
-              "field_size": 10,
-              "days_ago": 28
-            },
-            {
-              "date": "2026-04-24",
-              "going": "Good to Soft",
-              "position": 0,
-              "field_size": 15,
-              "days_ago": 42
-            },
-            {
-              "date": "2026-04-10",
-              "going": "Good",
-              "position": 1,
-              "field_size": 12,
-              "days_ago": 56
-            },
-            {
-              "date": "2026-03-28",
-              "going": "Good to Soft",
-              "position": 3,
-              "field_size": 12,
-              "days_ago": 69
-            }
-          ]
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
           "horse": "Thundering On",
@@ -417,16 +213,7 @@
           "notes": "Progressive profile with recent win; potential threat at bigger price",
           "morning_price": 21.0,
           "odds_source": "estimated",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
-          "going_history": [
-            {
-              "date": "2026-05-21",
-              "going": "Soft",
-              "position": null,
-              "field_size": 14,
-              "days_ago": 15
-            }
-          ]
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
           "horse": "Cameo",
@@ -443,16 +230,7 @@
           "notes": "Impressive in Lingfield Oaks Trial; strong Ballydoyle support",
           "morning_price": 15.0,
           "odds_source": "ante_post",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
-          "going_history": [
-            {
-              "date": "2026-05-20",
-              "going": "Good to Soft",
-              "position": 1,
-              "field_size": 15,
-              "days_ago": 16
-            }
-          ]
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
           "horse": "A La Prochaine",
@@ -469,16 +247,7 @@
           "notes": "3rd in Cheshire Oaks trial behind Amelia Earhart; clear promise shown",
           "morning_price": 17.0,
           "odds_source": "estimated",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
-          "going_history": [
-            {
-              "date": "2026-05-22",
-              "going": "Good",
-              "position": 3,
-              "field_size": 10,
-              "days_ago": 14
-            }
-          ]
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
           "horse": "K Sarra",
@@ -495,16 +264,7 @@
           "notes": "Progressive filly, lightly raced; winner at 2",
           "morning_price": 26.0,
           "odds_source": "estimated",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
-          "going_history": [
-            {
-              "date": "2026-05-24",
-              "going": "Good to Firm",
-              "position": null,
-              "field_size": 9,
-              "days_ago": 12
-            }
-          ]
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
           "horse": "Prizeland",
@@ -521,16 +281,7 @@
           "notes": "Has shown flashes of quality; Balding trainer",
           "morning_price": 34.0,
           "odds_source": "estimated",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
-          "going_history": [
-            {
-              "date": "2026-05-22",
-              "going": "Good",
-              "position": null,
-              "field_size": 10,
-              "days_ago": 14
-            }
-          ]
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
           "horse": "Sugar Island",
@@ -547,16 +298,7 @@
           "notes": "Ballydoyle support; depth of O'Brien team very strong",
           "morning_price": 34.0,
           "odds_source": "estimated",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
-          "going_history": [
-            {
-              "date": "2026-05-20",
-              "going": "Good to Firm",
-              "position": null,
-              "field_size": 10,
-              "days_ago": 16
-            }
-          ]
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
           "horse": "Beautify",
@@ -573,16 +315,7 @@
           "notes": "Last in Curragh race; outsider; more O'Brien depth",
           "morning_price": 101.0,
           "odds_source": "estimated",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
-          "going_history": [
-            {
-              "date": "2026-05-21",
-              "going": "Soft",
-              "position": 6,
-              "field_size": 12,
-              "days_ago": 15
-            }
-          ]
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         }
       ],
       "source_urls": [
