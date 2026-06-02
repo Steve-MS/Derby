@@ -1,0 +1,24 @@
+{
+  "fetched_at": "2026-06-02T17:32:08+01:00",
+  "friday_2026_06_05": {
+    "going": "Good",
+    "confidence": "medium",
+    "rainfall_mm_48h": 0.2,
+    "rationale": "Settled weather with no rain forecast; light winds; ground will benefit from Friday dry conditions.",
+    "source": "The Weather Outlook / AccuWeather / Weather25.com"
+  },
+  "saturday_2026_06_06": {
+    "going": "Good to Soft",
+    "confidence": "medium",
+    "rainfall_mm_48h": 0.9,
+    "rationale": "Patchy rain/occasional showers forecast (0.9mm); cooler at 18°C; some moisture expected but unlikely to soften further unless Friday overnight rain is significant.",
+    "source": "The Weather Outlook / AccuWeather / Weather25.com"
+  },
+  "history_source": {
+    "available_in_racecards": false,
+    "field_path": "N/A",
+    "fallback_source": "Racing Post form",
+    "enrichment_cost": "Manual review of each horse's Racing Post form history page to extract per-run going; estimated 10-15 mins per horse at full complexity. Automated scrape via Racing Post API (if available) would reduce to ~2 mins per card. Alternative: Sporting Life form tool or At The Races replays (video-based, higher effort)."
+  },
+  "notes": "Epsom Downs official going updates page returns 404; relying on weather data. Racecards JSON includes meeting-level going forecast but not per-run historical going for each horse's form string. Kaylee's going-fit scoring will require enrichment step before implementation."
+}
