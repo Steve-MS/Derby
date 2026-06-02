@@ -1,0 +1,447 @@
+{# ============================================================
+   report.html.j2  — Race Analysis HTML Report
+   Rendered by src/report.py via Jinja2.
+   Single self-contained file: CSS inlined, no external deps.
+   ============================================================ #}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Race Analysis — {{ venue }} {{ date_display }}</title>
+  <style>
+{{ css }}
+  </style>
+</head>
+<body>
+
+{# ── HERO ─────────────────────────────────────────────────── #}
+<header class="hero">
+  <h1>🏇 {{ venue }} — {{ date_display }}</h1>
+  <p class="subtitle">{{ day_name }}</p>
+
+  <div class="hero-meta">
+    {% if going_label %}
+    <span class="meta-pill">⛅ Going: {{ going_label }}</span>
+    {% endif %}
+    <span class="meta-pill">📅 {{ date }}</span>
+    <span class="meta-pill">⚙️ Model {{ model_version }}</span>
+    {% if race_count %}
+    <span class="meta-pill">🏁 {{ race_count }} race{{ 's' if race_count != 1 else '' }}</span>
+    {% endif %}
+
+    {# Verdict badge #}
+    {% if backtest_verdict %}
+    <span class="verdict-badge verdict-{{ backtest_verdict }}">
+      {% if backtest_verdict == 'GREEN' %}✅ Backtest: Trusted
+      {% elif backtest_verdict == 'AMBER' %}⚠️ Backtest: Partial
+      {% else %}🔴 Backtest: Distrust
+      {% endif %}
+    </span>
+    {% else %}
+    <span class="verdict-badge verdict-NONE">🔬 Not yet validated</span>
+    {% endif %}
+  </div>
+
+  <p class="disclaimer">
+    For entertainment only · 18+ · Please gamble responsibly · GambleAware.org ·
+    Generated {{ generated_at }} · Race-Analysis Plugin v0.1
+  </p>
+</header>
+
+{# ── RACE-DAY CONTEXT ─────────────────────────────────────── #}
+{% if narrative or going_detail %}
+<div class="context-card">
+  <h3>📋 Race Day Context</h3>
+  {% if narrative %}
+  <p>{{ narrative }}</p>
+  {% endif %}
+  {% if going_detail %}
+  <div class="context-meta">
+    <span><b>Going:</b> {{ going_detail }}</span>
+    {% if wind %}<span><b>Wind:</b> {{ wind }}</span>{% endif %}
+    {% if temp %}<span><b>Temp:</b> {{ temp }}</span>{% endif %}
+  </div>
+  {% endif %}
+</div>
+{% endif %}
+
+{# ── RACES ────────────────────────────────────────────────── #}
+{% if scores %}
+  {% for race in scores %}
+  {%- set meta = race.get('race_meta', {}) -%}
+  {%- set runners = race.get('ranked_runners', []) -%}
+  {%- set conf = race.get('confidence', 'LOW') -%}
+  {%- set rec = race.get('bet_recommendation', 'PASS') -%}
+  {%- set comp = race.get('race_competitiveness', '') -%}
+  {%- set top = runners[0] if runners else none -%}
+
+  <section class="race-block">
+
+    {# ── Race header #}
+    <div class="race-header">
+      <span class="race-time">{{ meta.get('time', '?') }}</span>
+      <span class="race-name">{{ meta.get('name', 'Unknown Race') }}</span>
+      <div class="race-attrs">
+        {% if meta.get('distance_f') %}
+        <span>📏 {{ meta['distance_f'] }}f ({{ (meta['distance_f'] / 8) | round(2) }}m)</span>
+        {% endif %}
+        {% if meta.get('going') %}
+        <span>⛅ {{ meta['going'] }}</span>
+        {% endif %}
+        {% if meta.get('class') %}
+        <span>🏅 {{ meta['class'] }}</span>
+        {% endif %}
+        {% if meta.get('prize_winner_gbp') %}
+        <span>💰 £{{ "{:,}".format(meta['prize_winner_gbp']) }}</span>
+        {% endif %}
+        {% if meta.get('runner_count') %}
+        <span>🐎 {{ meta['runner_count'] }} runners</span>
+        {% elif runners %}
+        <span>🐎 {{ runners | length }} runners</span>
+        {% endif %}
+        {% if comp %}
+        <span>📊 {{ comp }}</span>
+        {% endif %}
+        <span class="chip conf-{{ conf }}">{{ conf }}</span>
+        <span class="chip rec-{{ rec }}">{{ rec }}</span>
+      </div>
+    </div>
+
+    {# ── Runners table #}
+    <div class="runners-section">
+      <h4>Runners — Ranked by Model Score</h4>
+      {% if runners %}
+      <table class="runners-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Horse</th>
+            <th class="hide-xs">Trainer / Jockey</th>
+            <th>Score</th>
+            <th>Conf</th>
+            <th>Rec</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for runner in runners %}
+          <tr class="{{ 'rank-1' if runner.rank == 1 else '' }}">
+            <td class="rank-num">{{ runner.rank }}</td>
+            <td>
+              <div class="horse-name">{{ runner.horse }}</div>
+              {% set t = runner.get('trainer', '') %}
+              {% set j = runner.get('jockey', '') %}
+              {% if t or j %}
+              <div class="trainer-jockey hide-xs">
+                {{ t or '—' }} / {{ j or '—' }}
+              </div>
+              {% endif %}
+            </td>
+            <td class="trainer-jockey">
+              {{ runner.get('trainer', '—') }} / {{ runner.get('jockey', '—') }}
+            </td>
+            <td class="score-cell">
+              <div class="score-bar-wrap">
+                <div class="score-bar-track">
+                  <div class="score-bar-fill" style="width:{{ runner.score | round(0) | int }}%"></div>
+                </div>
+                <span class="score-val">{{ runner.score | round(1) }}</span>
+              </div>
+            </td>
+            <td>
+              {# Confidence is race-level; only show on rank-1 for clarity #}
+              {% if runner.rank == 1 %}
+              <span class="chip conf-{{ conf }}">{{ conf }}</span>
+              {% endif %}
+            </td>
+            <td>
+              {# Rec from race level for top runner; others show PASS #}
+              {% if runner.rank == 1 %}
+              <span class="chip rec-{{ rec }}">{{ rec }}</span>
+              {% else %}
+              <span class="chip rec-PASS">PASS</span>
+              {% endif %}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+      <p class="empty-state">No runner data available.</p>
+      {% endif %}
+    </div>
+
+    {# ── Signal breakdown (top 3 runners) #}
+    {% if runners %}
+    <div class="signals-section">
+      <h4>Signal Breakdown — Top {{ [runners|length, 3]|min }} Runner{{ 's' if [runners|length, 3]|min > 1 else '' }}</h4>
+      {% for runner in runners[:3] %}
+      {%- set sigs = runner.get('raw_signal_values', {}) -%}
+      {% if sigs %}
+      <div style="margin-bottom:10px;">
+        <div style="font-size:.78rem;font-weight:600;color:var(--green);margin-bottom:5px;">
+          {{ runner.rank }}. {{ runner.horse }}
+        </div>
+        <div class="signals-grid">
+          {% for sig_key, sig_label in signal_labels.items() %}
+          {%- set sig_val = sigs.get(sig_key) -%}
+          {% if sig_val is not none %}
+          <div class="signal-row">
+            <span class="signal-label">{{ sig_label }}</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:{{ sig_val | round(0) | int }}%"></div>
+            </div>
+            <span class="signal-val">{{ sig_val | round(0) | int }}</span>
+          </div>
+          {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {# ── Top-pick highlight #}
+    {% if top %}
+    {%- set rationale = top_pick_rationale(top, race) -%}
+    <div class="top-pick">
+      <div class="top-pick-header">
+        <span class="trophy">🏆</span>
+        <h4>Top Pick: {{ top.horse }}
+          {% if top.get('trainer') %} — {{ top['trainer'] }}{% endif %}
+        </h4>
+      </div>
+      <p>{{ rationale }}</p>
+    </div>
+    {% endif %}
+
+    {# ── Race-level bet recommendations #}
+    {%- set race_singles = race_bets_for(race.get('race_id',''), bets) -%}
+    {% if race_singles %}
+    <div class="race-bets">
+      <h4>💷 Recommended Bets — This Race</h4>
+      <ul class="bet-list">
+        {% for b in race_singles %}
+        <li>
+          <span>
+            <span class="chip rec-{{ b.get('bet_type','PASS') }}">{{ b.get('bet_type','BET') }}</span>
+            {{ b.horse }}
+            {% if b.get('price') %} @ {{ b['price'] }}{% endif %}
+          </span>
+          <span class="bet-amount">
+            £{{ "%.2f"|format(b.get('stake_gbp', 0)) }}
+            {% if b.get('est_return_gbp') %}→ £{{ "%.2f"|format(b['est_return_gbp']) }}{% endif %}
+          </span>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+    {# ── Outsider pick #}
+    {%- set outsider = race_outsider_for(race.get('race_id',''), bets) -%}
+    {% if outsider %}
+    <div class="outsider-pick">
+      <div class="outsider-pick-header">
+        <span>🎲</span>
+        <h4>Recommended Outsider: {{ outsider.horse }}
+          {% if outsider.get('trainer') %}<span class="muted"> ({{ outsider.trainer }})</span>{% endif %}
+        </h4>
+      </div>
+      <div class="outsider-meta">
+        <span>
+          <b>Morning Price:</b> {{ outsider.morning_price }}
+          {% if outsider.get('odds_source') %}
+          <span class="odds-source-badge">{{ outsider.odds_source }}</span>
+          {% endif %}
+        </span>
+        <span>
+          <b>Stake:</b> £{{ "%.2f"|format(outsider.get('stake_gbp', 0)) }} EW{% if outsider.get('ew_terms') %} @ {{ outsider.ew_terms }}{% endif %}
+        </span>
+        <span><b>Return Win:</b> £{{ "%.2f"|format(outsider.get('potential_return_gbp_win', 0)) }}</span>
+        <span><b>Return Place:</b> £{{ "%.2f"|format(outsider.get('potential_return_gbp_place', 0)) }}</span>
+      </div>
+      <div class="outsider-rank">
+        Model: {{ outsider.get('model_rank', '—') }} / Market: {{ outsider.get('market_rank', '—') }}
+        {% if outsider.get('rank_delta') %}(Δ +{{ outsider.rank_delta }}){% endif %}
+      </div>
+      {% if outsider.get('rationale') %}
+      <p class="outsider-rationale">{{ outsider.rationale }}</p>
+      {% endif %}
+    </div>
+    {% endif %}
+
+  </section>
+  {% endfor %}
+
+{% else %}
+<div class="context-card">
+  <p class="empty-state">No race scores available for this card yet.</p>
+</div>
+{% endif %}
+
+{# ── DAY PORTFOLIO ─────────────────────────────────────────── #}
+{% set summary = bets.get('portfolio_summary', {}) if bets else {} %}
+{% set has_portfolio = bets and (bets.get('singles') or bets.get('doubles') or bets.get('trebles') or bets.get('accas') or bets.get('lucky15')) %}
+{% if has_portfolio %}
+<hr class="section-divider">
+<section class="portfolio">
+  <h2>📊 Day Portfolio — Full Card</h2>
+
+  {# Summary cards #}
+  {% if summary %}
+  <div class="portfolio-grid">
+    {% if summary.get('total_stake_gbp') is not none %}
+    <div class="portfolio-card">
+      <h4>Total Stake</h4>
+      <div class="p-val">£{{ "%.2f"|format(summary['total_stake_gbp']) }}</div>
+      {% if summary.get('bankroll_pct') %}
+      <div class="p-sub">{{ "%.1f"|format(summary['bankroll_pct']) }}% of £{{ summary.get('bankroll_default_gbp', 100) | int }} bankroll</div>
+      {% endif %}
+    </div>
+    {% endif %}
+    {% if summary.get('est_total_return_gbp') is not none %}
+    <div class="portfolio-card">
+      <h4>Est. Return</h4>
+      <div class="p-val">£{{ "%.2f"|format(summary['est_total_return_gbp']) }}</div>
+      {% if summary.get('total_stake_gbp') %}
+      <div class="p-sub">{{ "%.1f"|format((summary['est_total_return_gbp'] / summary['total_stake_gbp'] - 1) * 100) }}% ROI if all land</div>
+      {% endif %}
+    </div>
+    {% endif %}
+    {% if summary.get('edge_pct') is not none %}
+    <div class="portfolio-card">
+      <h4>Model Edge</h4>
+      <div class="p-val">{{ "%.1f"|format(summary['edge_pct']) }}%</div>
+      <div class="p-sub">vs. implied market probability</div>
+    </div>
+    {% endif %}
+    {% if summary.get('bankroll_default_gbp') is not none %}
+    <div class="portfolio-card">
+      <h4>Bankroll Basis</h4>
+      <div class="p-val">£{{ summary['bankroll_default_gbp'] | int }}</div>
+      <div class="p-sub">Scale stakes proportionally</div>
+    </div>
+    {% endif %}
+    {%- set out_sum = summary.get('outsider_summary') -%}
+    {% if out_sum and out_sum.get('count') %}
+    <div class="portfolio-card outsider-portfolio-card">
+      <h4>Outsiders <span style="font-weight:400;font-size:.7rem;color:var(--muted)">(separate bankroll)</span></h4>
+      <div class="p-val">{{ out_sum.count }} pick{{ 's' if out_sum.count != 1 else '' }}</div>
+      <div class="p-sub">
+        £{{ "%.2f"|format(out_sum.total_stake_gbp) }} stake ·
+        Win: £{{ "%.2f"|format(out_sum.total_potential_return_gbp_win) }} ·
+        Place: £{{ "%.2f"|format(out_sum.total_potential_return_gbp_place) }}
+      </div>
+    </div>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  <div class="portfolio-bets">
+
+    {# Singles #}
+    {% if bets.get('singles') %}
+    <h3>Singles</h3>
+    <table class="portfolio-table">
+      <thead><tr><th>Type</th><th>Horse</th><th>Race</th><th>Price</th><th>Stake</th><th>Est. Return</th></tr></thead>
+      <tbody>
+        {% for b in bets['singles'] %}
+        <tr>
+          <td><span class="chip rec-{{ b.get('bet_type','PASS') }}">{{ b.get('bet_type','BET') }}</span></td>
+          <td>{{ b.horse }}</td>
+          <td>{{ b.get('race_id','') }}</td>
+          <td>{{ b.get('price','—') }}</td>
+          <td class="amt">£{{ "%.2f"|format(b.get('stake_gbp',0)) }}</td>
+          <td>{% if b.get('est_return_gbp') %}£{{ "%.2f"|format(b['est_return_gbp']) }}{% else %}—{% endif %}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+
+    {# Doubles #}
+    {% if bets.get('doubles') %}
+    <h3>Doubles</h3>
+    <table class="portfolio-table">
+      <thead><tr><th>Bet</th><th>Stake</th><th>Est. Return</th></tr></thead>
+      <tbody>
+        {% for b in bets['doubles'] %}
+        <tr>
+          <td>{{ b.get('label', b.get('legs', []) | join(' / ')) }}</td>
+          <td class="amt">£{{ "%.2f"|format(b.get('stake_gbp',0)) }}</td>
+          <td>{% if b.get('est_return_gbp') %}£{{ "%.2f"|format(b['est_return_gbp']) }}{% else %}—{% endif %}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+
+    {# Trebles #}
+    {% if bets.get('trebles') %}
+    <h3>Trebles</h3>
+    <table class="portfolio-table">
+      <thead><tr><th>Bet</th><th>Stake</th><th>Est. Return</th></tr></thead>
+      <tbody>
+        {% for b in bets['trebles'] %}
+        <tr>
+          <td>{{ b.get('label', b.get('legs', []) | join(' / ')) }}</td>
+          <td class="amt">£{{ "%.2f"|format(b.get('stake_gbp',0)) }}</td>
+          <td>{% if b.get('est_return_gbp') %}£{{ "%.2f"|format(b['est_return_gbp']) }}{% else %}—{% endif %}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+
+    {# Accas #}
+    {% if bets.get('accas') %}
+    <h3>Accumulators</h3>
+    <table class="portfolio-table">
+      <thead><tr><th>Bet</th><th>Legs</th><th>Stake</th><th>Est. Return</th></tr></thead>
+      <tbody>
+        {% for b in bets['accas'] %}
+        <tr>
+          <td>{{ b.get('label', 'Acca') }}</td>
+          <td>{{ b.get('legs', []) | length }}</td>
+          <td class="amt">£{{ "%.2f"|format(b.get('stake_gbp',0)) }}</td>
+          <td>{% if b.get('est_return_gbp') %}£{{ "%.2f"|format(b['est_return_gbp']) }}{% else %}—{% endif %}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+
+    {# Lucky 15 #}
+    {% if bets.get('lucky15') %}
+    {%- set l15 = bets['lucky15'] -%}
+    <h3>Lucky 15</h3>
+    <table class="portfolio-table">
+      <thead><tr><th>Selections</th><th>Total Stake</th><th>Est. Return</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>{{ l15.get('selections', []) | join(', ') }}</td>
+          <td class="amt">£{{ "%.2f"|format(l15.get('total_stake_gbp', 0)) }}</td>
+          <td>{% if l15.get('est_return_gbp') %}£{{ "%.2f"|format(l15['est_return_gbp']) }}{% else %}—{% endif %}</td>
+        </tr>
+      </tbody>
+    </table>
+    {% endif %}
+
+  </div>{# /portfolio-bets #}
+</section>
+{% endif %}
+
+{# ── FOOTER ───────────────────────────────────────────────── #}
+<footer class="report-footer">
+  <p>
+    Race Analysis Plugin {{ model_version }} · Generated {{ generated_at }}<br>
+    For entertainment only · 18+ · Please gamble responsibly ·
+    <a href="https://www.gambleaware.org" target="_blank">GambleAware.org</a>
+    · <a href="https://www.begambleaware.org" target="_blank">BeGambleAware.org</a>
+  </p>
+</footer>
+
+</body>
+</html>

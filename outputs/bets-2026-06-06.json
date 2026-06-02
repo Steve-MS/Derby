@@ -1,0 +1,95 @@
+{
+  "bankroll": 100.0,
+  "singles": [
+    {
+      "race_id": "epsom-2026-06-06-1440",
+      "horse": "Jan Brueghel",
+      "bet_type": "PASS",
+      "stake_pts": 0.0,
+      "stake_gbp": 0.0,
+      "model_prob": 0.193,
+      "implied_prob": 0.2857,
+      "edge_pct": -32.44,
+      "expected_return_gbp": 0.0,
+      "rationale": "Confidence LOW, win edge -32.4%, combined EW edge -45.6% \u2014 below thresholds (15% WIN / 20% EW combined)."
+    },
+    {
+      "race_id": "epsom-2026-06-06-1600",
+      "horse": "Maltese Cross",
+      "bet_type": "PASS",
+      "stake_pts": 0.0,
+      "stake_gbp": 0.0,
+      "model_prob": 0.0846,
+      "implied_prob": 0.1111,
+      "edge_pct": -23.83,
+      "expected_return_gbp": 0.0,
+      "rationale": "Confidence LOW, win edge -23.8%, combined EW edge -57.8% \u2014 below thresholds (15% WIN / 20% EW combined)."
+    }
+  ],
+  "doubles": [],
+  "trebles": [],
+  "accumulators": [],
+  "lucky_15": null,
+  "outsiders": [
+    {
+      "race_id": "epsom-2026-06-06-1440",
+      "race_name": "Coolmore Coronation Cup (Group 1)",
+      "race_time": "14:40",
+      "horse": "See The Fire",
+      "trainer": "Andrew Balding",
+      "jockey": "TBC",
+      "morning_price": 13.0,
+      "odds_source": "estimated",
+      "model_rank": 2,
+      "market_rank": 6,
+      "rank_delta": 4,
+      "bet_type": "EW",
+      "stake_pts": 0.25,
+      "stake_gbp": 0.25,
+      "ew_terms": "1/4 odds, 1-1-2-3",
+      "potential_return_gbp_win": 3.25,
+      "potential_return_gbp_place": 1.0,
+      "rationale": "Model rates 2; market rates 6. Disagreement of 4 ranks \u2014 value play.",
+      "outsider_pick": "See The Fire"
+    },
+    {
+      "race_id": "epsom-2026-06-06-1600",
+      "race_name": "Betfred Derby (Group 1, Colts & Fillies Classic)",
+      "race_time": "16:00",
+      "horse": "Causeway",
+      "trainer": "Aidan O'Brien",
+      "jockey": "TBC",
+      "morning_price": 29.0,
+      "odds_source": "estimated",
+      "model_rank": 3,
+      "market_rank": 11,
+      "rank_delta": 8,
+      "bet_type": "EW",
+      "stake_pts": 0.25,
+      "stake_gbp": 0.25,
+      "ew_terms": "1/4 odds, 1-1-2-3",
+      "potential_return_gbp_win": 7.25,
+      "potential_return_gbp_place": 2.0,
+      "rationale": "Model rates 3; market rates 11. Disagreement of 8 ranks \u2014 value play.",
+      "outsider_pick": "Causeway"
+    }
+  ],
+  "portfolio_summary": {
+    "total_stake_gbp": 1.0,
+    "max_potential_return_gbp": 0,
+    "expected_value_gbp": 0,
+    "rec_count": 2,
+    "active_singles": 0,
+    "passed_singles": 2,
+    "doubles_count": 0,
+    "trebles_count": 0,
+    "accumulators_count": 0,
+    "outsider_summary": {
+      "count": 2,
+      "total_stake_gbp": 1.0,
+      "total_potential_return_gbp_win": 10.5,
+      "total_potential_return_gbp_place": 3.0
+    }
+  },
+  "disclaimer": "For entertainment only. 18+. Gamble responsibly. BeGambleAware.org."
+}

@@ -1,0 +1,860 @@
+{
+  "card_date": "2026-06-06",
+  "venue": "Epsom",
+  "frozen_by": "wash-cli",
+  "frozen_at": "2026-06-02T13:20:29.798672+00:00",
+  "races": [
+    {
+      "race_id": "epsom-2026-06-06-1440",
+      "ranked_runners": [
+        {
+          "rank": 1,
+          "horse": "Jan Brueghel",
+          "trainer": "Aidan O'Brien",
+          "jockey": "TBC",
+          "score": 95.0,
+          "score_breakdown": {
+            "class_rating": 17.5,
+            "recent_form": 14.667,
+            "trainer_form": 10.0,
+            "jockey": 0.0,
+            "course_distance": 5.0,
+            "going": 2.5,
+            "draw_bias": 2.5,
+            "class_move": 2.5
+          },
+          "raw_signal_values": {
+            "class_rating": 50.0,
+            "recent_form": 73.33333333333334,
+            "trainer_form": 100.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "no_ratings"
+          ],
+          "morning_price": 3.5,
+          "odds_source": "ante_post",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 2,
+          "horse": "See The Fire",
+          "trainer": "Andrew Balding",
+          "jockey": "TBC",
+          "score": 84.68,
+          "score_breakdown": {
+            "class_rating": 17.5,
+            "recent_form": 14.519,
+            "trainer_form": 8.0,
+            "jockey": 0.0,
+            "course_distance": 5.0,
+            "going": 2.5,
+            "draw_bias": 2.5,
+            "class_move": 2.5
+          },
+          "raw_signal_values": {
+            "class_rating": 50.0,
+            "recent_form": 72.5925925925926,
+            "trainer_form": 80.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "no_ratings"
+          ],
+          "morning_price": 13.0,
+          "odds_source": "estimated",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 3,
+          "horse": "Lambourn",
+          "trainer": "Aidan O'Brien",
+          "jockey": "TBC",
+          "score": 81.48,
+          "score_breakdown": {
+            "class_rating": 17.5,
+            "recent_form": 11.852,
+            "trainer_form": 10.0,
+            "jockey": 0.0,
+            "course_distance": 5.0,
+            "going": 2.5,
+            "draw_bias": 2.5,
+            "class_move": 2.5
+          },
+          "raw_signal_values": {
+            "class_rating": 50.0,
+            "recent_form": 59.25925925925925,
+            "trainer_form": 100.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "no_ratings"
+          ],
+          "morning_price": 3.0,
+          "odds_source": "ante_post",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 4,
+          "horse": "Calandagan",
+          "trainer": "Francis-Henri Graffard (France)",
+          "jockey": "TBC",
+          "score": 72.59,
+          "score_breakdown": {
+            "class_rating": 17.5,
+            "recent_form": 20.0,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 5.0,
+            "going": 2.5,
+            "draw_bias": 2.5,
+            "class_move": 2.5
+          },
+          "raw_signal_values": {
+            "class_rating": 50.0,
+            "recent_form": 100.0,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "no_ratings"
+          ],
+          "morning_price": 2.5,
+          "odds_source": "ante_post",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 5,
+          "horse": "Illinois",
+          "trainer": "Aidan O'Brien",
+          "jockey": "TBC",
+          "score": 72.59,
+          "score_breakdown": {
+            "class_rating": 17.5,
+            "recent_form": 10.0,
+            "trainer_form": 10.0,
+            "jockey": 0.0,
+            "course_distance": 5.0,
+            "going": 2.5,
+            "draw_bias": 2.5,
+            "class_move": 2.5
+          },
+          "raw_signal_values": {
+            "class_rating": 50.0,
+            "recent_form": 50.0,
+            "trainer_form": 100.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "no_ratings"
+          ],
+          "morning_price": 21.0,
+          "odds_source": "estimated",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 6,
+          "horse": "Convergent",
+          "trainer": "K R Burke",
+          "jockey": "TBC",
+          "score": 43.77,
+          "score_breakdown": {
+            "class_rating": 17.5,
+            "recent_form": 14.0,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 5.0,
+            "going": 2.5,
+            "draw_bias": 2.5,
+            "class_move": 2.5
+          },
+          "raw_signal_values": {
+            "class_rating": 50.0,
+            "recent_form": 70.0,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "no_ratings"
+          ],
+          "morning_price": 11.0,
+          "odds_source": "estimated",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 7,
+          "horse": "Bay City Roller",
+          "trainer": "George Scott",
+          "jockey": "TBC",
+          "score": 37.02,
+          "score_breakdown": {
+            "class_rating": 17.5,
+            "recent_form": 12.593,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 5.0,
+            "going": 2.5,
+            "draw_bias": 2.5,
+            "class_move": 2.5
+          },
+          "raw_signal_values": {
+            "class_rating": 50.0,
+            "recent_form": 62.96296296296296,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "no_ratings"
+          ],
+          "morning_price": 9.0,
+          "odds_source": "estimated",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 8,
+          "horse": "Sunway",
+          "trainer": "David Menuisier",
+          "jockey": "TBC",
+          "score": 5.0,
+          "score_breakdown": {
+            "class_rating": 17.5,
+            "recent_form": 5.926,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 5.0,
+            "going": 2.5,
+            "draw_bias": 2.5,
+            "class_move": 2.5
+          },
+          "raw_signal_values": {
+            "class_rating": 50.0,
+            "recent_form": 29.629629629629626,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "no_ratings"
+          ],
+          "morning_price": 17.0,
+          "odds_source": "estimated",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        }
+      ],
+      "confidence": "LOW",
+      "bet_recommendation": "PASS",
+      "race_stdev": 28.31,
+      "race_competitiveness": "CLEAR FAVOURITE",
+      "missing_data_flags": [
+        "no_ratings"
+      ],
+      "race_name": "Coolmore Coronation Cup (Group 1)",
+      "race_time": "14:40"
+    },
+    {
+      "race_id": "epsom-2026-06-06-1600",
+      "ranked_runners": [
+        {
+          "rank": 1,
+          "horse": "Maltese Cross",
+          "trainer": "William Haggas",
+          "jockey": "TBC",
+          "score": 95.0,
+          "score_breakdown": {
+            "class_rating": 23.189,
+            "recent_form": 18.0,
+            "trainer_form": 8.0,
+            "jockey": 0.0,
+            "course_distance": 5.0,
+            "going": 2.5,
+            "draw_bias": 2.5,
+            "class_move": 2.5
+          },
+          "raw_signal_values": {
+            "class_rating": 66.25492675490672,
+            "recent_form": 90.0,
+            "trainer_form": 80.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "morning_price": 9.0,
+          "odds_source": "ante_post",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 2,
+          "horse": "Item",
+          "trainer": "Andrew Balding",
+          "jockey": "TBC",
+          "score": 94.21,
+          "score_breakdown": {
+            "class_rating": 24.207,
+            "recent_form": 16.667,
+            "trainer_form": 8.0,
+            "jockey": 0.0,
+            "course_distance": 5.0,
+            "going": 2.5,
+            "draw_bias": 2.5,
+            "class_move": 2.5
+          },
+          "raw_signal_values": {
+            "class_rating": 69.16370312157424,
+            "recent_form": 83.33333333333334,
+            "trainer_form": 80.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "morning_price": 5.0,
+          "odds_source": "ante_post",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 3,
+          "horse": "Causeway",
+          "trainer": "Aidan O'Brien",
+          "jockey": "TBC",
+          "score": 93.87,
+          "score_breakdown": {
+            "class_rating": 19.626,
+            "recent_form": 19.111,
+            "trainer_form": 10.0,
+            "jockey": 0.0,
+            "course_distance": 5.0,
+            "going": 2.5,
+            "draw_bias": 2.5,
+            "class_move": 2.5
+          },
+          "raw_signal_values": {
+            "class_rating": 56.0742094715704,
+            "recent_form": 95.55555555555556,
+            "trainer_form": 100.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "morning_price": 29.0,
+          "odds_source": "estimated",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 4,
+          "horse": "Benvenuto Cellini",
+          "trainer": "Aidan O'Brien",
+          "jockey": "TBC",
+          "score": 91.74,
+          "score_breakdown": {
+            "class_rating": 21.662,
+            "recent_form": 16.222,
+            "trainer_form": 10.0,
+            "jockey": 0.0,
+            "course_distance": 5.0,
+            "going": 2.5,
+            "draw_bias": 2.5,
+            "class_move": 2.5
+          },
+          "raw_signal_values": {
+            "class_rating": 61.89176220490543,
+            "recent_form": 81.1111111111111,
+            "trainer_form": 100.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "morning_price": 3.25,
+          "odds_source": "ante_post",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 5,
+          "horse": "Christmas Day",
+          "trainer": "Aidan O'Brien",
+          "jockey": "TBC",
+          "score": 83.49,
+          "score_breakdown": {
+            "class_rating": 20.135,
+            "recent_form": 14.444,
+            "trainer_form": 10.0,
+            "jockey": 0.0,
+            "course_distance": 5.0,
+            "going": 2.5,
+            "draw_bias": 2.5,
+            "class_move": 2.5
+          },
+          "raw_signal_values": {
+            "class_rating": 57.528597654904154,
+            "recent_form": 72.22222222222221,
+            "trainer_form": 100.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "morning_price": 15.0,
+          "odds_source": "estimated",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 6,
+          "horse": "Action",
+          "trainer": "Aidan O'Brien",
+          "jockey": "TBC",
+          "score": 76.92,
+          "score_breakdown": {
+            "class_rating": 22.171,
+            "recent_form": 9.778,
+            "trainer_form": 10.0,
+            "jockey": 0.0,
+            "course_distance": 5.0,
+            "going": 2.5,
+            "draw_bias": 2.5,
+            "class_move": 2.5
+          },
+          "raw_signal_values": {
+            "class_rating": 63.346150388239195,
+            "recent_form": 48.888888888888886,
+            "trainer_form": 100.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "morning_price": 13.0,
+          "odds_source": "estimated",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 7,
+          "horse": "Pierre Bonnard",
+          "trainer": "Aidan O'Brien",
+          "jockey": "TBC",
+          "score": 76.09,
+          "score_breakdown": {
+            "class_rating": 20.135,
+            "recent_form": 11.481,
+            "trainer_form": 10.0,
+            "jockey": 0.0,
+            "course_distance": 5.0,
+            "going": 2.5,
+            "draw_bias": 2.5,
+            "class_move": 2.5
+          },
+          "raw_signal_values": {
+            "class_rating": 57.528597654904154,
+            "recent_form": 57.407407407407405,
+            "trainer_form": 100.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "morning_price": 17.0,
+          "odds_source": "estimated",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 8,
+          "horse": "Bay Of Brilliance",
+          "trainer": "Ralph Beckett",
+          "jockey": "Hector Crouch (expected)",
+          "score": 71.6,
+          "score_breakdown": {
+            "class_rating": 19.117,
+            "recent_form": 13.704,
+            "trainer_form": 7.0,
+            "jockey": 0.0,
+            "course_distance": 5.0,
+            "going": 2.5,
+            "draw_bias": 2.5,
+            "class_move": 2.5
+          },
+          "raw_signal_values": {
+            "class_rating": 54.61982128823665,
+            "recent_form": 68.51851851851852,
+            "trainer_form": 70.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "morning_price": 21.0,
+          "odds_source": "estimated",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 9,
+          "horse": "Ancient Egypt",
+          "trainer": "Charlie Johnston",
+          "jockey": "David Egan (expected)",
+          "score": 67.18,
+          "score_breakdown": {
+            "class_rating": 24.716,
+            "recent_form": 13.333,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 5.0,
+            "going": 2.5,
+            "draw_bias": 2.5,
+            "class_move": 2.5
+          },
+          "raw_signal_values": {
+            "class_rating": 70.618091304908,
+            "recent_form": 66.66666666666666,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "morning_price": 17.0,
+          "odds_source": "ante_post",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 10,
+          "horse": "Constitution River",
+          "trainer": "Aidan O'Brien",
+          "jockey": "TBC",
+          "score": 65.81,
+          "score_breakdown": {
+            "class_rating": 17.5,
+            "recent_form": 10.0,
+            "trainer_form": 10.0,
+            "jockey": 0.0,
+            "course_distance": 5.0,
+            "going": 2.5,
+            "draw_bias": 2.5,
+            "class_move": 2.5
+          },
+          "raw_signal_values": {
+            "class_rating": 50.0,
+            "recent_form": 50.0,
+            "trainer_form": 100.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "no_ratings"
+          ],
+          "morning_price": 9.0,
+          "odds_source": "ante_post",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 11,
+          "horse": "Endorsement",
+          "trainer": "Aidan O'Brien",
+          "jockey": "TBC",
+          "score": 65.43,
+          "score_breakdown": {
+            "class_rating": 18.608,
+            "recent_form": 8.741,
+            "trainer_form": 10.0,
+            "jockey": 0.0,
+            "course_distance": 5.0,
+            "going": 2.5,
+            "draw_bias": 2.5,
+            "class_move": 2.5
+          },
+          "raw_signal_values": {
+            "class_rating": 53.16543310490288,
+            "recent_form": 43.7037037037037,
+            "trainer_form": 100.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "morning_price": 34.0,
+          "odds_source": "estimated",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 12,
+          "horse": "Proposition",
+          "trainer": "Aidan O'Brien",
+          "jockey": "TBC",
+          "score": 60.95,
+          "score_breakdown": {
+            "class_rating": 15.554,
+            "recent_form": 10.0,
+            "trainer_form": 10.0,
+            "jockey": 0.0,
+            "course_distance": 5.0,
+            "going": 2.5,
+            "draw_bias": 2.5,
+            "class_move": 2.5
+          },
+          "raw_signal_values": {
+            "class_rating": 44.43910400490033,
+            "recent_form": 50.0,
+            "trainer_form": 100.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "morning_price": 67.0,
+          "odds_source": "estimated",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 13,
+          "horse": "James J Braddock",
+          "trainer": "Joseph Patrick O'Brien",
+          "jockey": "TBC",
+          "score": 52.25,
+          "score_breakdown": {
+            "class_rating": 19.626,
+            "recent_form": 12.444,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 5.0,
+            "going": 2.5,
+            "draw_bias": 2.5,
+            "class_move": 2.5
+          },
+          "raw_signal_values": {
+            "class_rating": 56.0742094715704,
+            "recent_form": 62.22222222222222,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "morning_price": 11.0,
+          "odds_source": "ante_post",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 14,
+          "horse": "Rebel Rocker",
+          "trainer": "Faye Bramley",
+          "jockey": "TBC",
+          "score": 34.7,
+          "score_breakdown": {
+            "class_rating": 15.045,
+            "recent_form": 10.0,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 5.0,
+            "going": 2.5,
+            "draw_bias": 2.5,
+            "class_move": 2.5
+          },
+          "raw_signal_values": {
+            "class_rating": 42.984715821566574,
+            "recent_form": 50.0,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "morning_price": 67.0,
+          "odds_source": "estimated",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 15,
+          "horse": "Balzac",
+          "trainer": "Jane Chapple-Hyam",
+          "jockey": "Silvestre De Sousa (expected)",
+          "score": 31.61,
+          "score_breakdown": {
+            "class_rating": 14.027,
+            "recent_form": 9.778,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 5.0,
+            "going": 2.5,
+            "draw_bias": 2.5,
+            "class_move": 2.5
+          },
+          "raw_signal_values": {
+            "class_rating": 40.07593945489904,
+            "recent_form": 48.888888888888886,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "morning_price": 41.0,
+          "odds_source": "estimated",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 16,
+          "horse": "A Taste of Glory",
+          "trainer": "Andrew Balding",
+          "jockey": "Jamie Spencer (expected)",
+          "score": 30.62,
+          "score_breakdown": {
+            "class_rating": 7.409,
+            "recent_form": 8.0,
+            "trainer_form": 8.0,
+            "jockey": 0.0,
+            "course_distance": 5.0,
+            "going": 2.5,
+            "draw_bias": 2.5,
+            "class_move": 2.5
+          },
+          "raw_signal_values": {
+            "class_rating": 21.16889307156017,
+            "recent_form": 40.0,
+            "trainer_form": 80.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "morning_price": 51.0,
+          "odds_source": "estimated",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 17,
+          "horse": "Alderman",
+          "trainer": "Richard Hannon",
+          "jockey": "TBC",
+          "score": 26.02,
+          "score_breakdown": {
+            "class_rating": 6.9,
+            "recent_form": 6.667,
+            "trainer_form": 8.0,
+            "jockey": 0.0,
+            "course_distance": 5.0,
+            "going": 2.5,
+            "draw_bias": 2.5,
+            "class_move": 2.5
+          },
+          "raw_signal_values": {
+            "class_rating": 19.714504888226415,
+            "recent_form": 33.33333333333333,
+            "trainer_form": 80.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "morning_price": 101.0,
+          "odds_source": "estimated",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 18,
+          "horse": "Poker",
+          "trainer": "K R Burke",
+          "jockey": "TBC",
+          "score": 5.0,
+          "score_breakdown": {
+            "class_rating": 5.373,
+            "recent_form": 7.778,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 5.0,
+            "going": 2.5,
+            "draw_bias": 2.5,
+            "class_move": 2.5
+          },
+          "raw_signal_values": {
+            "class_rating": 15.351340338225139,
+            "recent_form": 38.88888888888889,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "morning_price": 101.0,
+          "odds_source": "estimated",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        }
+      ],
+      "confidence": "LOW",
+      "bet_recommendation": "PASS",
+      "race_stdev": 26.19,
+      "race_competitiveness": "CLEAR FAVOURITE",
+      "missing_data_flags": [
+        "no_ratings"
+      ],
+      "race_name": "Betfred Derby (Group 1, Colts & Fillies Classic)",
+      "race_time": "16:00"
+    }
+  ]
+}

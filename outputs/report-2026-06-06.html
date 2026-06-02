@@ -1,0 +1,1810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Race Analysis — Epsom 6 June 2026</title>
+  <style>
+/* ============================================================
+   race-analysis — report stylesheet
+   Inline-embedded at render time; no external dependencies.
+   Design: newspaper/racing-card aesthetic.
+   ============================================================ */
+
+/* ---------- Reset &amp; base ---------------------------------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --green:        #1a4a2e;
+  --green-light:  #2d6a45;
+  --green-pale:   #e8f5ec;
+  --gold:         #c9a227;
+  --gold-light:   #e8c04a;
+  --gold-pale:    #fef9e7;
+  --red:          #c0392b;
+  --amber:        #d68910;
+  --amber-pale:   #fef3e2;
+  --grey:         #6c757d;
+  --grey-light:   #e9ecef;
+  --text:         #212529;
+  --muted:        #6c757d;
+  --border:       #dee2e6;
+  --bg:           #fafaf8;
+  --white:        #ffffff;
+  --radius:       6px;
+  --shadow:       0 1px 4px rgba(0,0,0,.08);
+}
+
+html { font-size: 14px; }
+
+body {
+  font-family: system-ui, -apple-system, &#34;Segoe UI&#34;, Helvetica, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.55;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 20px 16px 48px;
+}
+
+h1, h2, h3, h4 {
+  font-family: Georgia, &#34;Times New Roman&#34;, serif;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+a { color: var(--green); }
+
+/* ---------- Hero ------------------------------------------ */
+.hero {
+  background: var(--green);
+  color: var(--white);
+  border-radius: var(--radius);
+  padding: 28px 32px 24px;
+  margin-bottom: 20px;
+  position: relative;
+}
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 4px;
+  color: var(--white);
+}
+.hero .subtitle {
+  font-size: 1.05rem;
+  opacity: .85;
+  margin-bottom: 16px;
+  font-family: Georgia, serif;
+  font-style: italic;
+}
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.meta-pill {
+  background: rgba(255,255,255,.15);
+  border-radius: 20px;
+  padding: 3px 12px;
+  font-size: .8rem;
+  letter-spacing: .03em;
+}
+.disclaimer {
+  font-size: .73rem;
+  opacity: .7;
+  margin-top: 14px;
+  border-top: 1px solid rgba(255,255,255,.2);
+  padding-top: 10px;
+  font-style: italic;
+}
+
+/* ---------- Verdict badge --------------------------------- */
+.verdict-badge {
+  display: inline-block;
+  padding: 5px 16px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: .82rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.verdict-GREEN  { background: #27ae60; color: #fff; }
+.verdict-AMBER  { background: var(--amber); color: #fff; }
+.verdict-RED    { background: var(--red); color: #fff; }
+.verdict-NONE   { background: rgba(255,255,255,.2); color: rgba(255,255,255,.85); border: 1px solid rgba(255,255,255,.3); }
+
+/* ---------- Context card ---------------------------------- */
+.context-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--green);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+}
+.context-card h3 {
+  font-size: .9rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--green);
+  margin-bottom: 8px;
+}
+.context-card p {
+  font-size: .88rem;
+  color: var(--text);
+  line-height: 1.6;
+}
+.context-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 12px;
+  font-size: .8rem;
+  color: var(--muted);
+}
+.context-meta span b { color: var(--text); }
+
+/* ---------- Race block ------------------------------------ */
+.race-block {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.race-header {
+  background: var(--green);
+  color: var(--white);
+  padding: 12px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px 20px;
+}
+.race-time {
+  font-family: Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  min-width: 56px;
+}
+.race-name {
+  font-family: Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  flex: 1;
+}
+.race-attrs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  font-size: .78rem;
+  opacity: .85;
+  width: 100%;
+  margin-top: 4px;
+}
+.race-attrs span { white-space: nowrap; }
+
+/* ---------- Runners table --------------------------------- */
+.runners-section { padding: 16px 20px 8px; }
+.runners-section h4 {
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.runners-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .84rem;
+}
+.runners-table th {
+  background: var(--grey-light);
+  text-align: left;
+  padding: 6px 10px;
+  font-size: .73rem;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--muted);
+  border-bottom: 2px solid var(--border);
+  white-space: nowrap;
+}
+.runners-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+.runners-table tr:last-child td { border-bottom: none; }
+.runners-table tr:nth-child(even) td { background: var(--grey-light); }
+.runners-table tr.rank-1 td { background: var(--gold-pale) !important; }
+
+.rank-num {
+  font-weight: 700;
+  color: var(--muted);
+  text-align: center;
+  min-width: 24px;
+}
+.rank-1 .rank-num { color: var(--gold); font-size: 1rem; }
+
+.horse-name { font-weight: 600; }
+.trainer-jockey { color: var(--muted); font-size: .78rem; }
+
+/* Score bar */
+.score-cell { min-width: 120px; }
+.score-bar-wrap { display: flex; align-items: center; gap: 8px; }
+.score-bar-track {
+  flex: 1;
+  height: 8px;
+  background: var(--grey-light);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.score-bar-fill {
+  height: 100%;
+  background: var(--green);
+  border-radius: 4px;
+  transition: width .3s;
+}
+.rank-1 .score-bar-fill { background: var(--gold); }
+.score-val { font-weight: 700; min-width: 32px; text-align: right; font-size: .83rem; }
+
+/* ---------- Confidence &amp; recommendation chips ------------- */
+.chip {
+  display: inline-block;
+  border-radius: 12px;
+  padding: 2px 10px;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.conf-HIGH { background: #198754; color: #fff; }
+.conf-MED  { background: #ffc107; color: #212529; }
+.conf-LOW  { background: var(--grey); color: #fff; }
+
+.rec-WIN  { background: var(--gold); color: #212529; }
+.rec-EW   { background: transparent; border: 2px solid var(--gold); color: var(--gold); }
+.rec-PASS { background: var(--grey-light); color: var(--grey); }
+
+/* ---------- Signal breakdown ------------------------------ */
+.signals-section { padding: 0 20px 16px; }
+.signals-section h4 {
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.signals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 8px 20px;
+}
+.signal-row { display: flex; align-items: center; gap: 8px; }
+.signal-label { font-size: .74rem; color: var(--muted); min-width: 110px; }
+.signal-bar-track {
+  flex: 1;
+  height: 5px;
+  background: var(--grey-light);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.signal-bar-fill {
+  height: 100%;
+  background: var(--green-light);
+  border-radius: 3px;
+}
+.signal-val { font-size: .72rem; color: var(--muted); min-width: 28px; text-align: right; }
+
+/* ---------- Top-pick highlight ---------------------------- */
+.top-pick {
+  margin: 0 20px 16px;
+  background: var(--gold-pale);
+  border: 1px solid var(--gold);
+  border-left: 4px solid var(--gold);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+}
+.top-pick-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.top-pick-header .trophy { font-size: 1.1rem; }
+.top-pick-header h4 {
+  font-size: .88rem;
+  color: var(--green);
+}
+.top-pick p {
+  font-size: .82rem;
+  color: var(--text);
+  line-height: 1.55;
+}
+
+/* ---------- Race bets ------------------------------------- */
+.race-bets {
+  margin: 0 20px 16px;
+  background: var(--green-pale);
+  border: 1px solid #b2d8bf;
+  border-radius: var(--radius);
+  padding: 12px 16px;
+}
+.race-bets h4 {
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--green);
+  margin-bottom: 8px;
+}
+.bet-list { list-style: none; font-size: .82rem; }
+.bet-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 0;
+  border-bottom: 1px dotted #b2d8bf;
+}
+.bet-list li:last-child { border-bottom: none; }
+.bet-amount { font-weight: 700; color: var(--green); }
+
+/* ---------- Portfolio section ----------------------------- */
+.portfolio {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--green);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow);
+}
+.portfolio h2 {
+  font-size: 1.1rem;
+  color: var(--green);
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px 20px;
+  margin-bottom: 16px;
+}
+.portfolio-card {
+  background: var(--grey-light);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+}
+.portfolio-card h4 {
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.portfolio-card .p-val {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--green);
+}
+.portfolio-card .p-sub { font-size: .75rem; color: var(--muted); margin-top: 2px; }
+
+.portfolio-bets h3 {
+  font-size: .88rem;
+  color: var(--green);
+  margin: 16px 0 8px;
+  font-family: Georgia, serif;
+}
+.portfolio-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .82rem;
+}
+.portfolio-table th {
+  background: var(--grey-light);
+  padding: 5px 10px;
+  text-align: left;
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--muted);
+  border-bottom: 2px solid var(--border);
+}
+.portfolio-table td {
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--border);
+}
+.portfolio-table tr:last-child td { border-bottom: none; }
+.portfolio-table .amt { font-weight: 700; color: var(--green); }
+
+/* ---------- Outsider pick --------------------------------- */
+.outsider-pick {
+  margin: 0 20px 16px;
+  background: var(--amber-pale);
+  border: 1px solid var(--amber);
+  border-left: 4px solid var(--amber);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+}
+.outsider-pick-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.outsider-pick-header h4 {
+  font-size: .88rem;
+  color: var(--amber);
+}
+.outsider-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+  font-size: .80rem;
+  margin-bottom: 8px;
+}
+.outsider-rank {
+  font-size: .80rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.outsider-rationale {
+  font-size: .79rem;
+  color: var(--muted);
+  font-style: italic;
+  margin-top: 4px;
+}
+.odds-source-badge {
+  display: inline-block;
+  border: 1px solid var(--amber);
+  color: var(--amber);
+  border-radius: 10px;
+  padding: 0 7px;
+  font-size: .69rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  margin-left: 4px;
+}
+.outsider-portfolio-card {
+  border: 1px solid var(--amber) !important;
+  background: var(--amber-pale) !important;
+}
+.outsider-portfolio-card .p-val { color: var(--amber) !important; }
+
+/* ---------- Footer ---------------------------------------- */
+.report-footer {
+  text-align: center;
+  font-size: .73rem;
+  color: var(--muted);
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  margin-top: 24px;
+  line-height: 1.7;
+}
+
+/* ---------- Utility --------------------------------------- */
+.muted { color: var(--muted); }
+.empty-state {
+  text-align: center;
+  padding: 32px;
+  color: var(--muted);
+  font-style: italic;
+}
+.section-divider {
+  border: none;
+  border-top: 2px solid var(--green);
+  margin: 28px 0 20px;
+  opacity: .15;
+}
+
+/* ---------- Print ----------------------------------------- */
+@media print {
+  body { background: white; padding: 0; font-size: 11px; }
+  .race-block, .portfolio, .context-card { box-shadow: none; break-inside: avoid; }
+  .hero { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .race-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .runners-table tr.rank-1 td { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+/* ---------- Responsive ------------------------------------ */
+@media (max-width: 600px) {
+  body { padding: 10px; font-size: 13px; }
+  .hero { padding: 18px 16px 14px; }
+  .hero h1 { font-size: 1.4rem; }
+  .race-header { padding: 10px 14px; }
+  .runners-section, .signals-section, .top-pick, .race-bets { padding-left: 14px; padding-right: 14px; }
+  .signals-grid { grid-template-columns: 1fr; }
+  .portfolio-grid { grid-template-columns: 1fr 1fr; }
+  .runners-table .trainer-jockey { display: none; }
+}
+
+  </style>
+</head>
+<body>
+
+<header class="hero">
+  <h1>🏇 Epsom — 6 June 2026</h1>
+  <p class="subtitle">Derby Day</p>
+
+  <div class="hero-meta">
+    <span class="meta-pill">📅 2026-06-06</span>
+    <span class="meta-pill">⚙️ Model v0.1</span>
+    <span class="meta-pill">🏁 2 races</span>
+
+    <span class="verdict-badge verdict-NONE">🔬 Not yet validated</span>
+  </div>
+
+  <p class="disclaimer">
+    For entertainment only · 18+ · Please gamble responsibly · GambleAware.org ·
+    Generated 2026-06-02T14:41 · Race-Analysis Plugin v0.1
+  </p>
+</header>
+
+
+<section class="race-block">
+
+    <div class="race-header">
+      <span class="race-time">14:40</span>
+      <span class="race-name">Coolmore Coronation Cup (Group 1)</span>
+      <div class="race-attrs">
+        <span>🐎 8 runners</span>
+        <span>📊 CLEAR FAVOURITE</span>
+        <span class="chip conf-LOW">LOW</span>
+        <span class="chip rec-PASS">PASS</span>
+      </div>
+    </div>
+
+    <div class="runners-section">
+      <h4>Runners — Ranked by Model Score</h4>
+      <table class="runners-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Horse</th>
+            <th class="hide-xs">Trainer / Jockey</th>
+            <th>Score</th>
+            <th>Conf</th>
+            <th>Rec</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="rank-1">
+            <td class="rank-num">1</td>
+            <td>
+              <div class="horse-name">Jan Brueghel</div>
+              <div class="trainer-jockey hide-xs">
+                Aidan O&#39;Brien / TBC
+              </div>
+            </td>
+            <td class="trainer-jockey">
+              Aidan O&#39;Brien / TBC
+            </td>
+            <td class="score-cell">
+              <div class="score-bar-wrap">
+                <div class="score-bar-track">
+                  <div class="score-bar-fill" style="width:95%"></div>
+                </div>
+                <span class="score-val">95.0</span>
+              </div>
+            </td>
+            <td>
+              <span class="chip conf-LOW">LOW</span>
+            </td>
+            <td>
+              <span class="chip rec-PASS">PASS</span>
+            </td>
+          </tr>
+          <tr class="">
+            <td class="rank-num">2</td>
+            <td>
+              <div class="horse-name">See The Fire</div>
+              <div class="trainer-jockey hide-xs">
+                Andrew Balding / TBC
+              </div>
+            </td>
+            <td class="trainer-jockey">
+              Andrew Balding / TBC
+            </td>
+            <td class="score-cell">
+              <div class="score-bar-wrap">
+                <div class="score-bar-track">
+                  <div class="score-bar-fill" style="width:85%"></div>
+                </div>
+                <span class="score-val">84.7</span>
+              </div>
+            </td>
+            <td>
+            </td>
+            <td>
+              <span class="chip rec-PASS">PASS</span>
+            </td>
+          </tr>
+          <tr class="">
+            <td class="rank-num">3</td>
+            <td>
+              <div class="horse-name">Lambourn</div>
+              <div class="trainer-jockey hide-xs">
+                Aidan O&#39;Brien / TBC
+              </div>
+            </td>
+            <td class="trainer-jockey">
+              Aidan O&#39;Brien / TBC
+            </td>
+            <td class="score-cell">
+              <div class="score-bar-wrap">
+                <div class="score-bar-track">
+                  <div class="score-bar-fill" style="width:81%"></div>
+                </div>
+                <span class="score-val">81.5</span>
+              </div>
+            </td>
+            <td>
+            </td>
+            <td>
+              <span class="chip rec-PASS">PASS</span>
+            </td>
+          </tr>
+          <tr class="">
+            <td class="rank-num">4</td>
+            <td>
+              <div class="horse-name">Calandagan</div>
+              <div class="trainer-jockey hide-xs">
+                Francis-Henri Graffard (France) / TBC
+              </div>
+            </td>
+            <td class="trainer-jockey">
+              Francis-Henri Graffard (France) / TBC
+            </td>
+            <td class="score-cell">
+              <div class="score-bar-wrap">
+                <div class="score-bar-track">
+                  <div class="score-bar-fill" style="width:73%"></div>
+                </div>
+                <span class="score-val">72.6</span>
+              </div>
+            </td>
+            <td>
+            </td>
+            <td>
+              <span class="chip rec-PASS">PASS</span>
+            </td>
+          </tr>
+          <tr class="">
+            <td class="rank-num">5</td>
+            <td>
+              <div class="horse-name">Illinois</div>
+              <div class="trainer-jockey hide-xs">
+                Aidan O&#39;Brien / TBC
+              </div>
+            </td>
+            <td class="trainer-jockey">
+              Aidan O&#39;Brien / TBC
+            </td>
+            <td class="score-cell">
+              <div class="score-bar-wrap">
+                <div class="score-bar-track">
+                  <div class="score-bar-fill" style="width:73%"></div>
+                </div>
+                <span class="score-val">72.6</span>
+              </div>
+            </td>
+            <td>
+            </td>
+            <td>
+              <span class="chip rec-PASS">PASS</span>
+            </td>
+          </tr>
+          <tr class="">
+            <td class="rank-num">6</td>
+            <td>
+              <div class="horse-name">Convergent</div>
+              <div class="trainer-jockey hide-xs">
+                K R Burke / TBC
+              </div>
+            </td>
+            <td class="trainer-jockey">
+              K R Burke / TBC
+            </td>
+            <td class="score-cell">
+              <div class="score-bar-wrap">
+                <div class="score-bar-track">
+                  <div class="score-bar-fill" style="width:44%"></div>
+                </div>
+                <span class="score-val">43.8</span>
+              </div>
+            </td>
+            <td>
+            </td>
+            <td>
+              <span class="chip rec-PASS">PASS</span>
+            </td>
+          </tr>
+          <tr class="">
+            <td class="rank-num">7</td>
+            <td>
+              <div class="horse-name">Bay City Roller</div>
+              <div class="trainer-jockey hide-xs">
+                George Scott / TBC
+              </div>
+            </td>
+            <td class="trainer-jockey">
+              George Scott / TBC
+            </td>
+            <td class="score-cell">
+              <div class="score-bar-wrap">
+                <div class="score-bar-track">
+                  <div class="score-bar-fill" style="width:37%"></div>
+                </div>
+                <span class="score-val">37.0</span>
+              </div>
+            </td>
+            <td>
+            </td>
+            <td>
+              <span class="chip rec-PASS">PASS</span>
+            </td>
+          </tr>
+          <tr class="">
+            <td class="rank-num">8</td>
+            <td>
+              <div class="horse-name">Sunway</div>
+              <div class="trainer-jockey hide-xs">
+                David Menuisier / TBC
+              </div>
+            </td>
+            <td class="trainer-jockey">
+              David Menuisier / TBC
+            </td>
+            <td class="score-cell">
+              <div class="score-bar-wrap">
+                <div class="score-bar-track">
+                  <div class="score-bar-fill" style="width:5%"></div>
+                </div>
+                <span class="score-val">5.0</span>
+              </div>
+            </td>
+            <td>
+            </td>
+            <td>
+              <span class="chip rec-PASS">PASS</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="signals-section">
+      <h4>Signal Breakdown — Top 3 Runners</h4>
+      <div style="margin-bottom:10px;">
+        <div style="font-size:.78rem;font-weight:600;color:var(--green);margin-bottom:5px;">
+          1. Jan Brueghel
+        </div>
+        <div class="signals-grid">
+          <div class="signal-row">
+            <span class="signal-label">Class / Rating</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:50%"></div>
+            </div>
+            <span class="signal-val">50</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Recent Form</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:73%"></div>
+            </div>
+            <span class="signal-val">73</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Trainer</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:100%"></div>
+            </div>
+            <span class="signal-val">100</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Jockey</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:0%"></div>
+            </div>
+            <span class="signal-val">0</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Course &amp; Distance</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:50%"></div>
+            </div>
+            <span class="signal-val">50</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Going</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:50%"></div>
+            </div>
+            <span class="signal-val">50</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Draw</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:50%"></div>
+            </div>
+            <span class="signal-val">50</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Class Move</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:50%"></div>
+            </div>
+            <span class="signal-val">50</span>
+          </div>
+        </div>
+      </div>
+      <div style="margin-bottom:10px;">
+        <div style="font-size:.78rem;font-weight:600;color:var(--green);margin-bottom:5px;">
+          2. See The Fire
+        </div>
+        <div class="signals-grid">
+          <div class="signal-row">
+            <span class="signal-label">Class / Rating</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:50%"></div>
+            </div>
+            <span class="signal-val">50</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Recent Form</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:73%"></div>
+            </div>
+            <span class="signal-val">73</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Trainer</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:80%"></div>
+            </div>
+            <span class="signal-val">80</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Jockey</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:0%"></div>
+            </div>
+            <span class="signal-val">0</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Course &amp; Distance</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:50%"></div>
+            </div>
+            <span class="signal-val">50</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Going</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:50%"></div>
+            </div>
+            <span class="signal-val">50</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Draw</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:50%"></div>
+            </div>
+            <span class="signal-val">50</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Class Move</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:50%"></div>
+            </div>
+            <span class="signal-val">50</span>
+          </div>
+        </div>
+      </div>
+      <div style="margin-bottom:10px;">
+        <div style="font-size:.78rem;font-weight:600;color:var(--green);margin-bottom:5px;">
+          3. Lambourn
+        </div>
+        <div class="signals-grid">
+          <div class="signal-row">
+            <span class="signal-label">Class / Rating</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:50%"></div>
+            </div>
+            <span class="signal-val">50</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Recent Form</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:59%"></div>
+            </div>
+            <span class="signal-val">59</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Trainer</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:100%"></div>
+            </div>
+            <span class="signal-val">100</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Jockey</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:0%"></div>
+            </div>
+            <span class="signal-val">0</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Course &amp; Distance</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:50%"></div>
+            </div>
+            <span class="signal-val">50</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Going</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:50%"></div>
+            </div>
+            <span class="signal-val">50</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Draw</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:50%"></div>
+            </div>
+            <span class="signal-val">50</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Class Move</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:50%"></div>
+            </div>
+            <span class="signal-val">50</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<div class="top-pick">
+      <div class="top-pick-header">
+        <span class="trophy">🏆</span>
+        <h4>Top Pick: Jan Brueghel
+ — Aidan O&#39;Brien        </h4>
+      </div>
+      <p>Jan Brueghel leads the field with a model score of 95.0/100, driven by strong Trainer and Recent Form. Low confidence — model recommends passing this race.</p>
+    </div>
+
+    <div class="race-bets">
+      <h4>💷 Recommended Bets — This Race</h4>
+      <ul class="bet-list">
+        <li>
+          <span>
+            <span class="chip rec-PASS">PASS</span>
+            Jan Brueghel
+          </span>
+          <span class="bet-amount">
+            £0.00
+          </span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="outsider-pick">
+      <div class="outsider-pick-header">
+        <span>🎲</span>
+        <h4>Recommended Outsider: See The Fire
+<span class="muted"> (Andrew Balding)</span>        </h4>
+      </div>
+      <div class="outsider-meta">
+        <span>
+          <b>Morning Price:</b> 13.0
+          <span class="odds-source-badge">estimated</span>
+        </span>
+        <span>
+          <b>Stake:</b> £0.25 EW @ 1/4 odds, 1-1-2-3        </span>
+        <span><b>Return Win:</b> £3.25</span>
+        <span><b>Return Place:</b> £1.00</span>
+      </div>
+      <div class="outsider-rank">
+        Model: 2 / Market: 6
+(Δ +4)      </div>
+      <p class="outsider-rationale">Model rates 2; market rates 6. Disagreement of 4 ranks — value play.</p>
+    </div>
+
+  </section>
+<section class="race-block">
+
+    <div class="race-header">
+      <span class="race-time">16:00</span>
+      <span class="race-name">Betfred Derby (Group 1, Colts &amp; Fillies Classic)</span>
+      <div class="race-attrs">
+        <span>🐎 18 runners</span>
+        <span>📊 CLEAR FAVOURITE</span>
+        <span class="chip conf-LOW">LOW</span>
+        <span class="chip rec-PASS">PASS</span>
+      </div>
+    </div>
+
+    <div class="runners-section">
+      <h4>Runners — Ranked by Model Score</h4>
+      <table class="runners-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Horse</th>
+            <th class="hide-xs">Trainer / Jockey</th>
+            <th>Score</th>
+            <th>Conf</th>
+            <th>Rec</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="rank-1">
+            <td class="rank-num">1</td>
+            <td>
+              <div class="horse-name">Maltese Cross</div>
+              <div class="trainer-jockey hide-xs">
+                William Haggas / TBC
+              </div>
+            </td>
+            <td class="trainer-jockey">
+              William Haggas / TBC
+            </td>
+            <td class="score-cell">
+              <div class="score-bar-wrap">
+                <div class="score-bar-track">
+                  <div class="score-bar-fill" style="width:95%"></div>
+                </div>
+                <span class="score-val">95.0</span>
+              </div>
+            </td>
+            <td>
+              <span class="chip conf-LOW">LOW</span>
+            </td>
+            <td>
+              <span class="chip rec-PASS">PASS</span>
+            </td>
+          </tr>
+          <tr class="">
+            <td class="rank-num">2</td>
+            <td>
+              <div class="horse-name">Item</div>
+              <div class="trainer-jockey hide-xs">
+                Andrew Balding / TBC
+              </div>
+            </td>
+            <td class="trainer-jockey">
+              Andrew Balding / TBC
+            </td>
+            <td class="score-cell">
+              <div class="score-bar-wrap">
+                <div class="score-bar-track">
+                  <div class="score-bar-fill" style="width:94%"></div>
+                </div>
+                <span class="score-val">94.2</span>
+              </div>
+            </td>
+            <td>
+            </td>
+            <td>
+              <span class="chip rec-PASS">PASS</span>
+            </td>
+          </tr>
+          <tr class="">
+            <td class="rank-num">3</td>
+            <td>
+              <div class="horse-name">Causeway</div>
+              <div class="trainer-jockey hide-xs">
+                Aidan O&#39;Brien / TBC
+              </div>
+            </td>
+            <td class="trainer-jockey">
+              Aidan O&#39;Brien / TBC
+            </td>
+            <td class="score-cell">
+              <div class="score-bar-wrap">
+                <div class="score-bar-track">
+                  <div class="score-bar-fill" style="width:94%"></div>
+                </div>
+                <span class="score-val">93.9</span>
+              </div>
+            </td>
+            <td>
+            </td>
+            <td>
+              <span class="chip rec-PASS">PASS</span>
+            </td>
+          </tr>
+          <tr class="">
+            <td class="rank-num">4</td>
+            <td>
+              <div class="horse-name">Benvenuto Cellini</div>
+              <div class="trainer-jockey hide-xs">
+                Aidan O&#39;Brien / TBC
+              </div>
+            </td>
+            <td class="trainer-jockey">
+              Aidan O&#39;Brien / TBC
+            </td>
+            <td class="score-cell">
+              <div class="score-bar-wrap">
+                <div class="score-bar-track">
+                  <div class="score-bar-fill" style="width:92%"></div>
+                </div>
+                <span class="score-val">91.7</span>
+              </div>
+            </td>
+            <td>
+            </td>
+            <td>
+              <span class="chip rec-PASS">PASS</span>
+            </td>
+          </tr>
+          <tr class="">
+            <td class="rank-num">5</td>
+            <td>
+              <div class="horse-name">Christmas Day</div>
+              <div class="trainer-jockey hide-xs">
+                Aidan O&#39;Brien / TBC
+              </div>
+            </td>
+            <td class="trainer-jockey">
+              Aidan O&#39;Brien / TBC
+            </td>
+            <td class="score-cell">
+              <div class="score-bar-wrap">
+                <div class="score-bar-track">
+                  <div class="score-bar-fill" style="width:83%"></div>
+                </div>
+                <span class="score-val">83.5</span>
+              </div>
+            </td>
+            <td>
+            </td>
+            <td>
+              <span class="chip rec-PASS">PASS</span>
+            </td>
+          </tr>
+          <tr class="">
+            <td class="rank-num">6</td>
+            <td>
+              <div class="horse-name">Action</div>
+              <div class="trainer-jockey hide-xs">
+                Aidan O&#39;Brien / TBC
+              </div>
+            </td>
+            <td class="trainer-jockey">
+              Aidan O&#39;Brien / TBC
+            </td>
+            <td class="score-cell">
+              <div class="score-bar-wrap">
+                <div class="score-bar-track">
+                  <div class="score-bar-fill" style="width:77%"></div>
+                </div>
+                <span class="score-val">76.9</span>
+              </div>
+            </td>
+            <td>
+            </td>
+            <td>
+              <span class="chip rec-PASS">PASS</span>
+            </td>
+          </tr>
+          <tr class="">
+            <td class="rank-num">7</td>
+            <td>
+              <div class="horse-name">Pierre Bonnard</div>
+              <div class="trainer-jockey hide-xs">
+                Aidan O&#39;Brien / TBC
+              </div>
+            </td>
+            <td class="trainer-jockey">
+              Aidan O&#39;Brien / TBC
+            </td>
+            <td class="score-cell">
+              <div class="score-bar-wrap">
+                <div class="score-bar-track">
+                  <div class="score-bar-fill" style="width:76%"></div>
+                </div>
+                <span class="score-val">76.1</span>
+              </div>
+            </td>
+            <td>
+            </td>
+            <td>
+              <span class="chip rec-PASS">PASS</span>
+            </td>
+          </tr>
+          <tr class="">
+            <td class="rank-num">8</td>
+            <td>
+              <div class="horse-name">Bay Of Brilliance</div>
+              <div class="trainer-jockey hide-xs">
+                Ralph Beckett / Hector Crouch (expected)
+              </div>
+            </td>
+            <td class="trainer-jockey">
+              Ralph Beckett / Hector Crouch (expected)
+            </td>
+            <td class="score-cell">
+              <div class="score-bar-wrap">
+                <div class="score-bar-track">
+                  <div class="score-bar-fill" style="width:72%"></div>
+                </div>
+                <span class="score-val">71.6</span>
+              </div>
+            </td>
+            <td>
+            </td>
+            <td>
+              <span class="chip rec-PASS">PASS</span>
+            </td>
+          </tr>
+          <tr class="">
+            <td class="rank-num">9</td>
+            <td>
+              <div class="horse-name">Ancient Egypt</div>
+              <div class="trainer-jockey hide-xs">
+                Charlie Johnston / David Egan (expected)
+              </div>
+            </td>
+            <td class="trainer-jockey">
+              Charlie Johnston / David Egan (expected)
+            </td>
+            <td class="score-cell">
+              <div class="score-bar-wrap">
+                <div class="score-bar-track">
+                  <div class="score-bar-fill" style="width:67%"></div>
+                </div>
+                <span class="score-val">67.2</span>
+              </div>
+            </td>
+            <td>
+            </td>
+            <td>
+              <span class="chip rec-PASS">PASS</span>
+            </td>
+          </tr>
+          <tr class="">
+            <td class="rank-num">10</td>
+            <td>
+              <div class="horse-name">Constitution River</div>
+              <div class="trainer-jockey hide-xs">
+                Aidan O&#39;Brien / TBC
+              </div>
+            </td>
+            <td class="trainer-jockey">
+              Aidan O&#39;Brien / TBC
+            </td>
+            <td class="score-cell">
+              <div class="score-bar-wrap">
+                <div class="score-bar-track">
+                  <div class="score-bar-fill" style="width:66%"></div>
+                </div>
+                <span class="score-val">65.8</span>
+              </div>
+            </td>
+            <td>
+            </td>
+            <td>
+              <span class="chip rec-PASS">PASS</span>
+            </td>
+          </tr>
+          <tr class="">
+            <td class="rank-num">11</td>
+            <td>
+              <div class="horse-name">Endorsement</div>
+              <div class="trainer-jockey hide-xs">
+                Aidan O&#39;Brien / TBC
+              </div>
+            </td>
+            <td class="trainer-jockey">
+              Aidan O&#39;Brien / TBC
+            </td>
+            <td class="score-cell">
+              <div class="score-bar-wrap">
+                <div class="score-bar-track">
+                  <div class="score-bar-fill" style="width:65%"></div>
+                </div>
+                <span class="score-val">65.4</span>
+              </div>
+            </td>
+            <td>
+            </td>
+            <td>
+              <span class="chip rec-PASS">PASS</span>
+            </td>
+          </tr>
+          <tr class="">
+            <td class="rank-num">12</td>
+            <td>
+              <div class="horse-name">Proposition</div>
+              <div class="trainer-jockey hide-xs">
+                Aidan O&#39;Brien / TBC
+              </div>
+            </td>
+            <td class="trainer-jockey">
+              Aidan O&#39;Brien / TBC
+            </td>
+            <td class="score-cell">
+              <div class="score-bar-wrap">
+                <div class="score-bar-track">
+                  <div class="score-bar-fill" style="width:61%"></div>
+                </div>
+                <span class="score-val">61.0</span>
+              </div>
+            </td>
+            <td>
+            </td>
+            <td>
+              <span class="chip rec-PASS">PASS</span>
+            </td>
+          </tr>
+          <tr class="">
+            <td class="rank-num">13</td>
+            <td>
+              <div class="horse-name">James J Braddock</div>
+              <div class="trainer-jockey hide-xs">
+                Joseph Patrick O&#39;Brien / TBC
+              </div>
+            </td>
+            <td class="trainer-jockey">
+              Joseph Patrick O&#39;Brien / TBC
+            </td>
+            <td class="score-cell">
+              <div class="score-bar-wrap">
+                <div class="score-bar-track">
+                  <div class="score-bar-fill" style="width:52%"></div>
+                </div>
+                <span class="score-val">52.2</span>
+              </div>
+            </td>
+            <td>
+            </td>
+            <td>
+              <span class="chip rec-PASS">PASS</span>
+            </td>
+          </tr>
+          <tr class="">
+            <td class="rank-num">14</td>
+            <td>
+              <div class="horse-name">Rebel Rocker</div>
+              <div class="trainer-jockey hide-xs">
+                Faye Bramley / TBC
+              </div>
+            </td>
+            <td class="trainer-jockey">
+              Faye Bramley / TBC
+            </td>
+            <td class="score-cell">
+              <div class="score-bar-wrap">
+                <div class="score-bar-track">
+                  <div class="score-bar-fill" style="width:35%"></div>
+                </div>
+                <span class="score-val">34.7</span>
+              </div>
+            </td>
+            <td>
+            </td>
+            <td>
+              <span class="chip rec-PASS">PASS</span>
+            </td>
+          </tr>
+          <tr class="">
+            <td class="rank-num">15</td>
+            <td>
+              <div class="horse-name">Balzac</div>
+              <div class="trainer-jockey hide-xs">
+                Jane Chapple-Hyam / Silvestre De Sousa (expected)
+              </div>
+            </td>
+            <td class="trainer-jockey">
+              Jane Chapple-Hyam / Silvestre De Sousa (expected)
+            </td>
+            <td class="score-cell">
+              <div class="score-bar-wrap">
+                <div class="score-bar-track">
+                  <div class="score-bar-fill" style="width:32%"></div>
+                </div>
+                <span class="score-val">31.6</span>
+              </div>
+            </td>
+            <td>
+            </td>
+            <td>
+              <span class="chip rec-PASS">PASS</span>
+            </td>
+          </tr>
+          <tr class="">
+            <td class="rank-num">16</td>
+            <td>
+              <div class="horse-name">A Taste of Glory</div>
+              <div class="trainer-jockey hide-xs">
+                Andrew Balding / Jamie Spencer (expected)
+              </div>
+            </td>
+            <td class="trainer-jockey">
+              Andrew Balding / Jamie Spencer (expected)
+            </td>
+            <td class="score-cell">
+              <div class="score-bar-wrap">
+                <div class="score-bar-track">
+                  <div class="score-bar-fill" style="width:31%"></div>
+                </div>
+                <span class="score-val">30.6</span>
+              </div>
+            </td>
+            <td>
+            </td>
+            <td>
+              <span class="chip rec-PASS">PASS</span>
+            </td>
+          </tr>
+          <tr class="">
+            <td class="rank-num">17</td>
+            <td>
+              <div class="horse-name">Alderman</div>
+              <div class="trainer-jockey hide-xs">
+                Richard Hannon / TBC
+              </div>
+            </td>
+            <td class="trainer-jockey">
+              Richard Hannon / TBC
+            </td>
+            <td class="score-cell">
+              <div class="score-bar-wrap">
+                <div class="score-bar-track">
+                  <div class="score-bar-fill" style="width:26%"></div>
+                </div>
+                <span class="score-val">26.0</span>
+              </div>
+            </td>
+            <td>
+            </td>
+            <td>
+              <span class="chip rec-PASS">PASS</span>
+            </td>
+          </tr>
+          <tr class="">
+            <td class="rank-num">18</td>
+            <td>
+              <div class="horse-name">Poker</div>
+              <div class="trainer-jockey hide-xs">
+                K R Burke / TBC
+              </div>
+            </td>
+            <td class="trainer-jockey">
+              K R Burke / TBC
+            </td>
+            <td class="score-cell">
+              <div class="score-bar-wrap">
+                <div class="score-bar-track">
+                  <div class="score-bar-fill" style="width:5%"></div>
+                </div>
+                <span class="score-val">5.0</span>
+              </div>
+            </td>
+            <td>
+            </td>
+            <td>
+              <span class="chip rec-PASS">PASS</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="signals-section">
+      <h4>Signal Breakdown — Top 3 Runners</h4>
+      <div style="margin-bottom:10px;">
+        <div style="font-size:.78rem;font-weight:600;color:var(--green);margin-bottom:5px;">
+          1. Maltese Cross
+        </div>
+        <div class="signals-grid">
+          <div class="signal-row">
+            <span class="signal-label">Class / Rating</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:66%"></div>
+            </div>
+            <span class="signal-val">66</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Recent Form</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:90%"></div>
+            </div>
+            <span class="signal-val">90</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Trainer</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:80%"></div>
+            </div>
+            <span class="signal-val">80</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Jockey</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:0%"></div>
+            </div>
+            <span class="signal-val">0</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Course &amp; Distance</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:50%"></div>
+            </div>
+            <span class="signal-val">50</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Going</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:50%"></div>
+            </div>
+            <span class="signal-val">50</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Draw</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:50%"></div>
+            </div>
+            <span class="signal-val">50</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Class Move</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:50%"></div>
+            </div>
+            <span class="signal-val">50</span>
+          </div>
+        </div>
+      </div>
+      <div style="margin-bottom:10px;">
+        <div style="font-size:.78rem;font-weight:600;color:var(--green);margin-bottom:5px;">
+          2. Item
+        </div>
+        <div class="signals-grid">
+          <div class="signal-row">
+            <span class="signal-label">Class / Rating</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:69%"></div>
+            </div>
+            <span class="signal-val">69</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Recent Form</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:83%"></div>
+            </div>
+            <span class="signal-val">83</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Trainer</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:80%"></div>
+            </div>
+            <span class="signal-val">80</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Jockey</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:0%"></div>
+            </div>
+            <span class="signal-val">0</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Course &amp; Distance</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:50%"></div>
+            </div>
+            <span class="signal-val">50</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Going</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:50%"></div>
+            </div>
+            <span class="signal-val">50</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Draw</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:50%"></div>
+            </div>
+            <span class="signal-val">50</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Class Move</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:50%"></div>
+            </div>
+            <span class="signal-val">50</span>
+          </div>
+        </div>
+      </div>
+      <div style="margin-bottom:10px;">
+        <div style="font-size:.78rem;font-weight:600;color:var(--green);margin-bottom:5px;">
+          3. Causeway
+        </div>
+        <div class="signals-grid">
+          <div class="signal-row">
+            <span class="signal-label">Class / Rating</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:56%"></div>
+            </div>
+            <span class="signal-val">56</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Recent Form</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:96%"></div>
+            </div>
+            <span class="signal-val">96</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Trainer</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:100%"></div>
+            </div>
+            <span class="signal-val">100</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Jockey</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:0%"></div>
+            </div>
+            <span class="signal-val">0</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Course &amp; Distance</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:50%"></div>
+            </div>
+            <span class="signal-val">50</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Going</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:50%"></div>
+            </div>
+            <span class="signal-val">50</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Draw</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:50%"></div>
+            </div>
+            <span class="signal-val">50</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Class Move</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:50%"></div>
+            </div>
+            <span class="signal-val">50</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<div class="top-pick">
+      <div class="top-pick-header">
+        <span class="trophy">🏆</span>
+        <h4>Top Pick: Maltese Cross
+ — William Haggas        </h4>
+      </div>
+      <p>Maltese Cross leads the field with a model score of 95.0/100, driven by strong Recent Form and Trainer. Low confidence — model recommends passing this race.</p>
+    </div>
+
+    <div class="race-bets">
+      <h4>💷 Recommended Bets — This Race</h4>
+      <ul class="bet-list">
+        <li>
+          <span>
+            <span class="chip rec-PASS">PASS</span>
+            Maltese Cross
+          </span>
+          <span class="bet-amount">
+            £0.00
+          </span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="outsider-pick">
+      <div class="outsider-pick-header">
+        <span>🎲</span>
+        <h4>Recommended Outsider: Causeway
+<span class="muted"> (Aidan O&#39;Brien)</span>        </h4>
+      </div>
+      <div class="outsider-meta">
+        <span>
+          <b>Morning Price:</b> 29.0
+          <span class="odds-source-badge">estimated</span>
+        </span>
+        <span>
+          <b>Stake:</b> £0.25 EW @ 1/4 odds, 1-1-2-3        </span>
+        <span><b>Return Win:</b> £7.25</span>
+        <span><b>Return Place:</b> £2.00</span>
+      </div>
+      <div class="outsider-rank">
+        Model: 3 / Market: 11
+(Δ +8)      </div>
+      <p class="outsider-rationale">Model rates 3; market rates 11. Disagreement of 8 ranks — value play.</p>
+    </div>
+
+  </section>
+
+
+<hr class="section-divider">
+<section class="portfolio">
+  <h2>📊 Day Portfolio — Full Card</h2>
+
+  <div class="portfolio-grid">
+    <div class="portfolio-card">
+      <h4>Total Stake</h4>
+      <div class="p-val">£1.00</div>
+    </div>
+    <div class="portfolio-card outsider-portfolio-card">
+      <h4>Outsiders <span style="font-weight:400;font-size:.7rem;color:var(--muted)">(separate bankroll)</span></h4>
+      <div class="p-val">2 picks</div>
+      <div class="p-sub">
+        £1.00 stake ·
+        Win: £10.50 ·
+        Place: £3.00
+      </div>
+    </div>
+  </div>
+
+  <div class="portfolio-bets">
+
+    <h3>Singles</h3>
+    <table class="portfolio-table">
+      <thead><tr><th>Type</th><th>Horse</th><th>Race</th><th>Price</th><th>Stake</th><th>Est. Return</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="chip rec-PASS">PASS</span></td>
+          <td>Jan Brueghel</td>
+          <td>epsom-2026-06-06-1440</td>
+          <td>—</td>
+          <td class="amt">£0.00</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td><span class="chip rec-PASS">PASS</span></td>
+          <td>Maltese Cross</td>
+          <td>epsom-2026-06-06-1600</td>
+          <td>—</td>
+          <td class="amt">£0.00</td>
+          <td>—</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+
+
+
+  </div></section>
+
+<footer class="report-footer">
+  <p>
+    Race Analysis Plugin v0.1 · Generated 2026-06-02T14:41<br>
+    For entertainment only · 18+ · Please gamble responsibly ·
+    <a href="https://www.gambleaware.org" target="_blank">GambleAware.org</a>
+    · <a href="https://www.begambleaware.org" target="_blank">BeGambleAware.org</a>
+  </p>
+</footer>
+
+</body>
+</html>

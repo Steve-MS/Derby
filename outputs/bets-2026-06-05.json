@@ -1,0 +1,115 @@
+{
+  "bankroll": 100.0,
+  "singles": [
+    {
+      "race_id": "epsom-2026-06-05-1330",
+      "horse": "Cato (IRE)",
+      "bet_type": "PASS",
+      "stake_pts": 0.0,
+      "stake_gbp": 0.0,
+      "model_prob": 1.0,
+      "implied_prob": 0.1667,
+      "edge_pct": 500.0,
+      "expected_return_gbp": 0.0,
+      "rationale": "Confidence LOW, win edge 500.0%, combined EW edge 590.0% \u2014 below thresholds (15% WIN / 20% EW combined)."
+    },
+    {
+      "race_id": "epsom-2026-06-05-1405",
+      "horse": "Unnamed 2yo colts",
+      "bet_type": "PASS",
+      "stake_pts": 0.0,
+      "stake_gbp": 0.0,
+      "model_prob": 1.0,
+      "implied_prob": 0.25,
+      "edge_pct": 300.0,
+      "expected_return_gbp": 0.0,
+      "rationale": "Confidence LOW, win edge 300.0%, combined EW edge 352.0% \u2014 below thresholds (15% WIN / 20% EW combined)."
+    },
+    {
+      "race_id": "epsom-2026-06-05-1440",
+      "horse": "Belinus",
+      "bet_type": "WIN",
+      "stake_pts": 5.0,
+      "stake_gbp": 5.0,
+      "model_prob": 0.95,
+      "implied_prob": 0.2857,
+      "edge_pct": 232.5,
+      "odds_decimal": 3.5,
+      "odds_raw": "3.5",
+      "expected_return_gbp": 16.62,
+      "rationale": "Rank #1 (score 95.0), confidence HIGH, model_prob 0.9500 vs implied 0.2857 \u2192 edge 232.5% \u2265 15% threshold. Quarter-Kelly stake: 5.00pts (\u00a35.00) @ 3.5."
+    },
+    {
+      "race_id": "epsom-2026-06-05-1600",
+      "horse": "Sugar Island",
+      "bet_type": "PASS",
+      "stake_pts": 0.0,
+      "stake_gbp": 0.0,
+      "model_prob": 0.1506,
+      "implied_prob": 0.0294,
+      "edge_pct": 412.07,
+      "expected_return_gbp": 0.0,
+      "rationale": "Confidence LOW, win edge 412.1%, combined EW edge 655.5% \u2014 below thresholds (15% WIN / 20% EW combined)."
+    }
+  ],
+  "doubles": [],
+  "trebles": [],
+  "accumulators": [],
+  "lucky_15": null,
+  "outsiders": [
+    {
+      "race_id": "epsom-2026-06-05-1330",
+      "outsider_pick": null,
+      "outsider_rationale": "Insufficient market signal"
+    },
+    {
+      "race_id": "epsom-2026-06-05-1405",
+      "outsider_pick": null,
+      "outsider_rationale": "Insufficient market signal"
+    },
+    {
+      "race_id": "epsom-2026-06-05-1440",
+      "outsider_pick": null,
+      "outsider_rationale": "Insufficient market signal"
+    },
+    {
+      "race_id": "epsom-2026-06-05-1600",
+      "race_name": "Betfred Oaks (Investec Oaks, Group 1, Fillies' Classic)",
+      "race_time": "16:00",
+      "horse": "Sugar Island",
+      "trainer": "Aidan O'Brien",
+      "jockey": "TBC",
+      "morning_price": 34.0,
+      "odds_source": "estimated",
+      "model_rank": 1,
+      "market_rank": 9,
+      "rank_delta": 8,
+      "bet_type": "EW",
+      "stake_pts": 0.25,
+      "stake_gbp": 0.25,
+      "ew_terms": "1/4 odds, 1-1-2-3",
+      "potential_return_gbp_win": 8.5,
+      "potential_return_gbp_place": 2.31,
+      "rationale": "Model rates 1; market rates 9. Disagreement of 8 ranks \u2014 value play.",
+      "outsider_pick": "Sugar Island"
+    }
+  ],
+  "portfolio_summary": {
+    "total_stake_gbp": 5.5,
+    "max_potential_return_gbp": 16.62,
+    "expected_value_gbp": 11.62,
+    "rec_count": 2,
+    "active_singles": 1,
+    "passed_singles": 3,
+    "doubles_count": 0,
+    "trebles_count": 0,
+    "accumulators_count": 0,
+    "outsider_summary": {
+      "count": 1,
+      "total_stake_gbp": 0.5,
+      "total_potential_return_gbp_win": 8.5,
+      "total_potential_return_gbp_place": 2.31
+    }
+  },
+  "disclaimer": "For entertainment only. 18+. Gamble responsibly. BeGambleAware.org."
+}

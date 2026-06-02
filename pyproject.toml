@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "race-analysis"
+version = "0.1.0"
+description = "Race prediction CLI for Steve — Epsom Classics 2026"
+requires-python = ">=3.10"
+dependencies = [
+    # CLI uses stdlib only (argparse, json, subprocess, pathlib) — no extra runtime deps.
+    # report.py (Mr. Universe) will add jinja2 when it ships.
+    # betting.py (Badger) will add any staking deps when it ships.
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+[project.scripts]
+race-analysis = "src.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
