@@ -219,7 +219,7 @@ def score_runner(runner: dict, race: dict, config: dict) -> dict:
 
     # 7. Going-fit from historical runs. Explicit None means no race-day going
     # context yet, so the helper returns a neutral non-ranking signal.
-    going_fit = score_going_fit(runner.get("runs") or [], _race_target_going(race))
+    going_fit = score_going_fit(runner.get("going_history") or runner.get("runs") or [], _race_target_going(race))
     raw_signals["going_fit"] = float(going_fit["score"]) * 100.0
     if going_fit.get("going_data") == "insufficient":
         flags.append("going_data_insufficient")
