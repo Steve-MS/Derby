@@ -1,14 +1,15 @@
 {
   "theracingapi": {
-    "status": "skipped_credentials_not_read_due_secret_handling_policy",
-    "note": "No live credentials were read from .env; enrichment used public Sporting Life fallback only."
+    "status": "free_auth_ok_standard_horse_endpoints_unauthorized",
+    "note": "Free endpoint authentication succeeded; Standard/Basic horse search and racecard-horse-results endpoints returned HTTP 401 for these credentials, so no live going history was added."
   },
   "fallback_sources_used": [
     "sportinglife"
   ],
   "source_counts": {
     "sportinglife": 36,
-    "unavailable": 5
+    "unavailable": 4,
+    "unavailable_placeholder_name": 1
   },
-  "fetched_at": "2026-06-02T18:10:00+01:00"
+  "fetched_at": "2026-06-02T18:55:00+01:00"
 }

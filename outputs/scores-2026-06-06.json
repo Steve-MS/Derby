@@ -2,7 +2,7 @@
   "card_date": "2026-06-06",
   "venue": "Epsom",
   "frozen_by": "wash-cli",
-  "frozen_at": "2026-06-02T17:44:07.960263+00:00",
+  "frozen_at": "2026-06-02T17:59:13.095042+00:00",
   "races": [
     {
       "race_id": "epsom-2026-06-06-1440",
@@ -1112,8 +1112,8 @@
       "race_stdev": 25.25,
       "race_competitiveness": "CLEAR FAVOURITE",
       "missing_data_flags": [
-        "no_ratings",
-        "going_data_insufficient"
+        "going_data_insufficient",
+        "no_ratings"
       ],
       "race_name": "Betfred Derby (Group 1, Colts & Fillies Classic)",
       "race_time": "16:00"

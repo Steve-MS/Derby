@@ -2,7 +2,7 @@
   "card_date": "2026-06-05",
   "venue": "Epsom",
   "frozen_by": "wash-cli",
-  "frozen_at": "2026-06-02T17:44:06.985147+00:00",
+  "frozen_at": "2026-06-02T17:59:12.114055+00:00",
   "races": [
     {
       "race_id": "epsom-2026-06-05-1330",
@@ -112,8 +112,8 @@
       "race_stdev": 0.0,
       "race_competitiveness": "WIDE OPEN",
       "missing_data_flags": [
-        "going_data_insufficient",
-        "no_ratings"
+        "no_ratings",
+        "going_data_insufficient"
       ],
       "race_name": "Oddschecker British EBF Woodcote Stakes",
       "race_time": "14:05"
