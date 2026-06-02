@@ -1,0 +1,14 @@
+{
+  "theracingapi": {
+    "status": "skipped_credentials_not_read_due_secret_handling_policy",
+    "note": "No live credentials were read from .env; enrichment used public Sporting Life fallback only."
+  },
+  "fallback_sources_used": [
+    "sportinglife"
+  ],
+  "source_counts": {
+    "sportinglife": 36,
+    "unavailable": 5
+  },
+  "fetched_at": "2026-06-02T18:10:00+01:00"
+}

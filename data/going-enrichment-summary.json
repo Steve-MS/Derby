@@ -1,0 +1,315 @@
+{
+  "fetched_at": "2026-06-02T18:10:00+01:00",
+  "api_status": "theracingapi_skipped_credentials_not_read_due_secret_handling_policy",
+  "source_counts": {
+    "sportinglife": 36,
+    "unavailable": 5
+  },
+  "missing": [
+    {
+      "horse": "Cato (IRE)",
+      "reason": "no_sportinglife_match",
+      "candidates": []
+    },
+    {
+      "horse": "Unnamed 2yo colts",
+      "reason": "no_sportinglife_match",
+      "candidates": []
+    },
+    {
+      "horse": "Belinus",
+      "reason": "no_sportinglife_match",
+      "candidates": []
+    },
+    {
+      "horse": "Runner-up",
+      "reason": "no_sportinglife_match",
+      "candidates": []
+    },
+    {
+      "horse": "Constitution River",
+      "reason": "no_sportinglife_match",
+      "candidates": []
+    }
+  ],
+  "mismatches": [],
+  "matched": [
+    {
+      "horse": "Cato (IRE)",
+      "source": "unavailable",
+      "runs": 0
+    },
+    {
+      "horse": "Unnamed 2yo colts",
+      "source": "unavailable",
+      "runs": 0
+    },
+    {
+      "horse": "Belinus",
+      "source": "unavailable",
+      "runs": 0
+    },
+    {
+      "horse": "Runner-up",
+      "source": "unavailable",
+      "runs": 0
+    },
+    {
+      "horse": "Amelia Earhart",
+      "source": "sportinglife",
+      "id": "1187253",
+      "profileName": "Amelia Earhart",
+      "runs": 6
+    },
+    {
+      "horse": "Precise",
+      "source": "sportinglife",
+      "id": "1187259",
+      "profileName": "Precise",
+      "runs": 7
+    },
+    {
+      "horse": "Legacy Link",
+      "source": "sportinglife",
+      "id": "1195185",
+      "profileName": "Legacy Link",
+      "runs": 4
+    },
+    {
+      "horse": "Venetian Lace",
+      "source": "sportinglife",
+      "id": "1185576",
+      "profileName": "Venetian Lace",
+      "runs": 7
+    },
+    {
+      "horse": "Thundering On",
+      "source": "sportinglife",
+      "id": "1201816",
+      "profileName": "Thundering On",
+      "runs": 4
+    },
+    {
+      "horse": "Cameo",
+      "source": "sportinglife",
+      "id": "1187654",
+      "profileName": "Cameo",
+      "runs": 6
+    },
+    {
+      "horse": "A La Prochaine",
+      "source": "sportinglife",
+      "id": "274531",
+      "profileName": "A La Prochaine",
+      "runs": 2
+    },
+    {
+      "horse": "K Sarra",
+      "source": "sportinglife",
+      "id": "1207329",
+      "profileName": "K Sarra",
+      "runs": 3
+    },
+    {
+      "horse": "Prizeland",
+      "source": "sportinglife",
+      "id": "1201793",
+      "profileName": "Prizeland",
+      "runs": 4
+    },
+    {
+      "horse": "Sugar Island",
+      "source": "sportinglife",
+      "id": "1192799",
+      "profileName": "Sugar Island",
+      "runs": 6
+    },
+    {
+      "horse": "Beautify",
+      "source": "sportinglife",
+      "id": "1186055",
+      "profileName": "Beautify",
+      "runs": 6
+    },
+    {
+      "horse": "Lambourn",
+      "source": "sportinglife",
+      "id": "1144426",
+      "profileName": "Lambourn",
+      "runs": 10
+    },
+    {
+      "horse": "Jan Brueghel",
+      "source": "sportinglife",
+      "id": "1109839",
+      "profileName": "Jan Brueghel",
+      "runs": 8
+    },
+    {
+      "horse": "Calandagan",
+      "source": "sportinglife",
+      "id": "1112839",
+      "profileName": "Calandagan",
+      "runs": 12
+    },
+    {
+      "horse": "Convergent",
+      "source": "sportinglife",
+      "id": "1163010",
+      "profileName": "Convergent",
+      "runs": 6
+    },
+    {
+      "horse": "Bay City Roller",
+      "source": "sportinglife",
+      "id": "1152789",
+      "profileName": "Bay City Roller",
+      "runs": 11
+    },
+    {
+      "horse": "Illinois",
+      "source": "sportinglife",
+      "id": "287915",
+      "profileName": "Illinois",
+      "runs": 12
+    },
+    {
+      "horse": "Sunway",
+      "source": "sportinglife",
+      "id": "1106484",
+      "profileName": "Sunway",
+      "runs": 12
+    },
+    {
+      "horse": "See The Fire",
+      "source": "sportinglife",
+      "id": "1114040",
+      "profileName": "See The Fire",
+      "runs": 12
+    },
+    {
+      "horse": "Benvenuto Cellini",
+      "source": "sportinglife",
+      "id": "1187705",
+      "profileName": "Benvenuto Cellini",
+      "runs": 5
+    },
+    {
+      "horse": "Item",
+      "source": "sportinglife",
+      "id": "1198114",
+      "profileName": "Item",
+      "runs": 3
+    },
+    {
+      "horse": "Ancient Egypt",
+      "source": "sportinglife",
+      "id": "1193711",
+      "profileName": "Ancient Egypt",
+      "runs": 4
+    },
+    {
+      "horse": "A Taste of Glory",
+      "source": "sportinglife",
+      "id": "1198403",
+      "profileName": "A Taste of Glory",
+      "runs": 6
+    },
+    {
+      "horse": "Balzac",
+      "source": "sportinglife",
+      "id": "1200707",
+      "profileName": "Balzac",
+      "runs": 4
+    },
+    {
+      "horse": "Bay Of Brilliance",
+      "source": "sportinglife",
+      "id": "1196009",
+      "profileName": "Bay Of Brilliance",
+      "runs": 4
+    },
+    {
+      "horse": "Constitution River",
+      "source": "unavailable",
+      "runs": 0
+    },
+    {
+      "horse": "Causeway",
+      "source": "sportinglife",
+      "id": "1200273",
+      "profileName": "Causeway",
+      "runs": 5
+    },
+    {
+      "horse": "Christmas Day",
+      "source": "sportinglife",
+      "id": "1194524",
+      "profileName": "Christmas Day",
+      "runs": 6
+    },
+    {
+      "horse": "Endorsement",
+      "source": "sportinglife",
+      "id": "1191747",
+      "profileName": "Endorsement",
+      "runs": 6
+    },
+    {
+      "horse": "James J Braddock",
+      "source": "sportinglife",
+      "id": "1202010",
+      "profileName": "James J Braddock",
+      "runs": 4
+    },
+    {
+      "horse": "Maltese Cross",
+      "source": "sportinglife",
+      "id": "1198369",
+      "profileName": "Maltese Cross",
+      "runs": 4
+    },
+    {
+      "horse": "Pierre Bonnard",
+      "source": "sportinglife",
+      "id": "1187234",
+      "profileName": "Pierre Bonnard",
+      "runs": 6
+    },
+    {
+      "horse": "Action",
+      "source": "sportinglife",
+      "id": "1191184",
+      "profileName": "Action",
+      "runs": 6
+    },
+    {
+      "horse": "Alderman",
+      "source": "sportinglife",
+      "id": "1196298",
+      "profileName": "Alderman",
+      "runs": 3
+    },
+    {
+      "horse": "Poker",
+      "source": "sportinglife",
+      "id": "1197683",
+      "profileName": "Poker",
+      "runs": 3
+    },
+    {
+      "horse": "Proposition",
+      "source": "sportinglife",
+      "id": "1200274",
+      "profileName": "Proposition",
+      "runs": 3
+    },
+    {
+      "horse": "Rebel Rocker",
+      "source": "sportinglife",
+      "id": "1206617",
+      "profileName": "Rebel Rocker",
+      "runs": 2
+    }
+  ]
+}

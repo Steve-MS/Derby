@@ -7,23 +7,23 @@
       "bet_type": "PASS",
       "stake_pts": 0.0,
       "stake_gbp": 0.0,
-      "model_prob": 0.193,
+      "model_prob": 0.1885,
       "implied_prob": 0.2857,
-      "edge_pct": -32.44,
+      "edge_pct": -34.03,
       "expected_return_gbp": 0.0,
-      "rationale": "Confidence LOW, win edge -32.4%, combined EW edge -45.6% \u2014 below thresholds (15% WIN / 20% EW combined)."
+      "rationale": "Confidence LOW, win edge -34.0%, combined EW edge -49.2% \u2014 below thresholds (15% WIN / 20% EW combined)."
     },
     {
       "race_id": "epsom-2026-06-06-1600",
-      "horse": "Maltese Cross",
+      "horse": "Item",
       "bet_type": "PASS",
       "stake_pts": 0.0,
       "stake_gbp": 0.0,
-      "model_prob": 0.0846,
-      "implied_prob": 0.1111,
-      "edge_pct": -23.83,
+      "model_prob": 0.0902,
+      "implied_prob": 0.2,
+      "edge_pct": -54.89,
       "expected_return_gbp": 0.0,
-      "rationale": "Confidence LOW, win edge -23.8%, combined EW edge -57.8% \u2014 below thresholds (15% WIN / 20% EW combined)."
+      "rationale": "Confidence LOW, win edge -54.9%, combined EW edge -106.2% \u2014 below thresholds (15% WIN / 20% EW combined)."
     }
   ],
   "doubles": [],

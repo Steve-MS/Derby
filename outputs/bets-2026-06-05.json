@@ -41,15 +41,15 @@
     },
     {
       "race_id": "epsom-2026-06-05-1600",
-      "horse": "Sugar Island",
+      "horse": "Prizeland",
       "bet_type": "PASS",
       "stake_pts": 0.0,
       "stake_gbp": 0.0,
-      "model_prob": 0.1506,
+      "model_prob": 0.1341,
       "implied_prob": 0.0294,
-      "edge_pct": 412.07,
+      "edge_pct": 356.05,
       "expected_return_gbp": 0.0,
-      "rationale": "Confidence LOW, win edge 412.1%, combined EW edge 655.5% \u2014 below thresholds (15% WIN / 20% EW combined)."
+      "rationale": "Confidence LOW, win edge 356.1%, combined EW edge 561.9% \u2014 below thresholds (15% WIN / 20% EW combined)."
     }
   ],
   "doubles": [],
@@ -76,8 +76,8 @@
       "race_id": "epsom-2026-06-05-1600",
       "race_name": "Betfred Oaks (Investec Oaks, Group 1, Fillies' Classic)",
       "race_time": "16:00",
-      "horse": "Sugar Island",
-      "trainer": "Aidan O'Brien",
+      "horse": "Prizeland",
+      "trainer": "Andrew Balding",
       "jockey": "TBC",
       "morning_price": 34.0,
       "odds_source": "estimated",
@@ -91,7 +91,7 @@
       "potential_return_gbp_win": 8.5,
       "potential_return_gbp_place": 2.31,
       "rationale": "Model rates 1; market rates 9. Disagreement of 8 ranks \u2014 value play.",
-      "outsider_pick": "Sugar Island"
+      "outsider_pick": "Prizeland"
     }
   ],
   "portfolio_summary": {
