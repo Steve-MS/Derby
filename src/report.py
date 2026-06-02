@@ -48,6 +48,7 @@ SIGNAL_LABELS: dict[str, str] = {
     "jockey":          "Jockey",
     "course_distance": "Course & Distance",
     "going":           "Going",
+    "going_fit":       "Going Fit",
     "draw_bias":       "Draw",
     "class_move":      "Class Move",
 }

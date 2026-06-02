@@ -110,7 +110,7 @@ def cmd_score(args: argparse.Namespace) -> int:
 
     config: dict = load_default_config()
     meeting: str = racecard.get("meeting", "Epsom")
-    card_going: str = racecard.get("going", "")
+    card_going: str = racecard.get("going") or "Good"
 
     scored_races: list[dict] = []
     for raw_race in racecard.get("races", []):

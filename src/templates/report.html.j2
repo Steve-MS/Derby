@@ -187,7 +187,7 @@
           {%- set sig_val = sigs.get(sig_key) -%}
           {% if sig_val is not none %}
           <div class="signal-row">
-            <span class="signal-label">{{ sig_label }}</span>
+            <span class="signal-label">{{ sig_label }}{% if sig_key == 'going_fit' and runner.get('going_data') == 'insufficient' %} <small>(insufficient)</small>{% endif %}</span>
             <div class="signal-bar-track">
               <div class="signal-bar-fill" style="width:{{ sig_val | round(0) | int }}%"></div>
             </div>

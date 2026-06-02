@@ -42,13 +42,14 @@ SAMPLE_RUNNER_1 = {
         "jockey":          100.0,
         "course_distance": 70.0,
         "going":           80.0,
+        "going_fit":       72.0,
         "draw_bias":       50.0,
         "class_move":      50.0,
     },
     "score_breakdown": {
         "class_rating": 30.8, "recent_form": 15.0, "trainer_form": 10.0,
         "jockey": 10.0, "course_distance": 7.0, "going": 4.0,
-        "draw_bias": 2.5, "class_move": 2.5,
+        "going_fit": 10.8, "draw_bias": 2.5, "class_move": 2.5,
     },
     "missing_data_flags": [],
 }
@@ -66,6 +67,7 @@ SAMPLE_RUNNER_2 = {
         "jockey":          0.0,
         "course_distance": 50.0,
         "going":           55.0,
+        "going_fit":       35.0,
         "draw_bias":       50.0,
         "class_move":      50.0,
     },

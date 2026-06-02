@@ -33,6 +33,11 @@ import math
 import sys
 from typing import Any
 
+try:  # supports both `python -m src...` and direct `sys.path` test imports
+    from going import normalise_going, score_going_fit
+except ImportError:  # pragma: no cover
+    from .going import normalise_going, score_going_fit
+
 
 # ---------------------------------------------------------------------------
 # Public API
@@ -49,27 +54,30 @@ def load_default_config() -> dict:
     dict
         Nested configuration dict with keys:
         ``weights``, ``form``, ``cd``, ``draw``, ``class_move``,
-        ``confidence``, ``competitiveness``, ``trainer_bumps``,
-        ``jockey_bumps``.
+        ``going_fit``, ``confidence``, ``competitiveness``,
+        ``trainer_bumps``, ``jockey_bumps``.
 
     Example
     -------
     >>> cfg = load_default_config()
     >>> round(sum(cfg["weights"].values()), 10)
     1.0
-    >>> cfg["weights"]["class_rating"]
-    0.35
+    >>> cfg["weights"]["going_fit"]
+    0.15
     """
     return {
         "weights": {
-            "class_rating":    0.35,
-            "recent_form":     0.20,
-            "trainer_form":    0.10,
-            "jockey":          0.10,
-            "course_distance": 0.10,
-            "going":           0.05,
-            "draw_bias":       0.05,
-            "class_move":      0.05,
+            # Existing factors are proportionally scaled to reserve 0.15
+            # of the total model weight for historical going-fit evidence.
+            "class_rating":    0.2975,
+            "recent_form":     0.1700,
+            "trainer_form":    0.0850,
+            "jockey":          0.0850,
+            "course_distance": 0.0850,
+            "going":           0.0425,
+            "draw_bias":       0.0425,
+            "class_move":      0.0425,
+            "going_fit":       0.1500,
         },
         "form": {
             "position_points":        {1: 10, 2: 6, 3: 4, 4: 2},
@@ -209,10 +217,17 @@ def score_runner(runner: dict, race: dict, config: dict) -> dict:
     # 6. Going suitability
     raw_signals["going"] = _going_signal(runner, race, config["going"])
 
-    # 7. Draw bias
+    # 7. Going-fit from historical runs. Explicit None means no race-day going
+    # context yet, so the helper returns a neutral non-ranking signal.
+    going_fit = score_going_fit(runner.get("runs") or [], _race_target_going(race))
+    raw_signals["going_fit"] = float(going_fit["score"]) * 100.0
+    if going_fit.get("going_data") == "insufficient":
+        flags.append("going_data_insufficient")
+
+    # 8. Draw bias
     raw_signals["draw_bias"] = _draw_signal(runner, race, config["draw"])
 
-    # 8. Class move
+    # 9. Class move
     raw_signals["class_move"] = _class_move_signal(runner, config["class_move"])
 
     # Raw score (class_rating placeholder is 50 until z-score in score_race)
@@ -225,6 +240,8 @@ def score_runner(runner: dict, race: dict, config: dict) -> dict:
         "raw_signals":       raw_signals,
         "raw_score":         raw_score,
         "missing_data_flags": flags,
+        "going_data":         going_fit.get("going_data", "not_applicable"),
+        "going_fit":          going_fit,
     }
 
 
@@ -391,6 +408,8 @@ def score_race(race: dict, config: dict) -> dict:
             "score_breakdown":   rr["score_breakdown"],
             "raw_signal_values": rr["raw_signals"],
             "missing_data_flags": rr["missing_data_flags"],
+            "going_data":        rr.get("going_data", "not_applicable"),
+            "going_fit":         rr.get("going_fit", {}),
             "morning_price":     odds.get("morning_price"),
             "odds_source":       odds.get("odds_source"),
             "odds_fetched_at":   odds.get("odds_fetched_at"),
@@ -398,6 +417,7 @@ def score_race(race: dict, config: dict) -> dict:
 
     return {
         "race_id":            race.get("race_id", "unknown"),
+        "going":              _race_target_going(race),
         "ranked_runners":     ranked,
         "confidence":         confidence,
         "bet_recommendation": bet,
@@ -546,15 +566,25 @@ def _cd_signal(runner: dict, race: dict, cd_cfg: dict) -> float:
 def _going_signal(runner: dict, race: dict, going_cfg: dict) -> float:
     """Going suitability signal (0–100)."""
     pref = (runner.get("going_preference") or "").lower().strip()
-    forecast = (race.get("going") or "").lower().strip()
+    forecast = (normalise_going(_race_target_going(race)) or "").lower().strip()
 
     if not pref:
         return float(going_cfg["neutral_signal"])
     if pref == "any":
         return float(going_cfg["any_signal"])
-    if pref == forecast:
+    if forecast and pref == forecast:
         return float(going_cfg["match_signal"])
     return float(going_cfg["mismatch_signal"])
+
+
+def _race_target_going(race: dict) -> str | None:
+    """Return target going; missing metadata defaults to Good, explicit None does not."""
+    if "going" in race:
+        return race.get("going")
+    race_meta = race.get("race_meta")
+    if isinstance(race_meta, dict) and "going" in race_meta:
+        return race_meta.get("going")
+    return "Good"
 
 
 def _draw_signal(runner: dict, race: dict, draw_cfg: dict) -> float:
@@ -674,6 +704,7 @@ def _validate_weights(weights: dict) -> None:
 def _empty_race_result(race: dict) -> dict:
     return {
         "race_id":              race.get("race_id", "unknown"),
+        "going":                _race_target_going(race),
         "ranked_runners":       [],
         "confidence":           "LOW",
         "bet_recommendation":   "PASS",

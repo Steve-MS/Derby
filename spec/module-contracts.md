@@ -55,6 +55,7 @@ Writes a single self-contained HTML file to `output_path`. Raises no exceptions 
         "jockey": 0.0,
         "course_distance": 50.0,
         "going": 55.0,
+        "going_fit": 35.0,
         "draw_bias": 80.0,
         "class_move": 50.0
       },
@@ -65,10 +66,12 @@ Writes a single self-contained HTML file to `output_path`. Raises no exceptions 
         "jockey": 0.0,
         "course_distance": 5.0,
         "going": 2.75,
+        "going_fit": 5.25,
         "draw_bias": 4.0,
         "class_move": 2.5
       },
-      "missing_data_flags": []
+      "missing_data_flags": [],
+      "going_data": "insufficient"
     }
   ],
   "confidence": "MED",
@@ -81,7 +84,9 @@ Writes a single self-contained HTML file to `output_path`. Raises no exceptions 
 **Notes:**
 - `ranked_runners` items are sorted rank=1 first (best to worst).
 - `trainer` and `jockey` fields on each runner are optional — render shows "—" if absent.
-- `raw_signal_values` signals: `class_rating`, `recent_form`, `trainer_form`, `jockey`, `course_distance`, `going`, `draw_bias`, `class_move`.  Each is 0–100.
+- `raw_signal_values` signals: `class_rating`, `recent_form`, `trainer_form`, `jockey`, `course_distance`, `going`, `going_fit`, `draw_bias`, `class_move`.  Each is 0–100.
+- `race_meta.going` / racecard `going` supplies the target race-day going. If omitted, scoring defaults to `"Good"`; if explicitly `null`, `going_fit` is neutral/non-ranking.
+- `going_fit` is Kaylee's historical ground-fit factor (15% model weight): weighted win rate on matching/adjacent going families, effective sample confidence, and recency. When no usable historical going evidence exists, per-runner `going_data` is `"insufficient"` and `going_fit` is emitted as a low-confidence 35/100 signal.
 - `confidence`: `"HIGH"` | `"MED"` | `"LOW"` — one value per race (from `score_race()`).
 - `bet_recommendation`: `"WIN"` | `"EW"` | `"PASS"` — one value per race.
 

@@ -3,7 +3,7 @@ test_scoring.py — Unit tests for Kaylee's scoring.py module.
 
 API (v0.1, per Kaylee's implementation):
   - score_runner(runner: dict, race: dict, config: dict) -> dict
-        Returns {"horse", "raw_signals", "raw_score", "missing_data_flags"}
+        Returns {"horse", "raw_signals", "raw_score", "missing_data_flags", "going_data"}
   - score_race(race: dict, config: dict) -> dict
         Returns {"race_id", "ranked_runners", "confidence",
                  "bet_recommendation", "race_stdev", "race_competitiveness",
@@ -313,6 +313,66 @@ class TestMissingDataRace:
 
 
 # ---------------------------------------------------------------------------
+# Scenario 4: Going-fit
+# ---------------------------------------------------------------------------
+
+class TestGoingFit:
+    """Historical going evidence is surfaced as a weighted model factor."""
+
+    def test_going_fit_signal_and_breakdown_present(self, config):
+        race = {
+            "race_id": "test-going-fit",
+            "course": "Epsom",
+            "distance_furlongs": 8,
+            "going": "Soft",
+            "runners": [
+                {
+                    "horse": "Mud Lover",
+                    "or_rating": 90,
+                    "form_string": "1",
+                    "runs": [
+                        {"position": 1, "days_ago": 21, "going": "Good to Soft"},
+                        {"position": 2, "days_ago": 75, "going": "Soft"},
+                    ],
+                },
+                {
+                    "horse": "Fast Ground Fan",
+                    "or_rating": 90,
+                    "form_string": "1",
+                    "runs": [
+                        {"position": 5, "days_ago": 21, "going": "Firm"},
+                    ],
+                },
+            ],
+        }
+        ranked = score_race(race, config)["ranked_runners"]
+        mud_lover = next(r for r in ranked if r["horse"] == "Mud Lover")
+        assert mud_lover["raw_signal_values"]["going_fit"] > 50
+        assert "going_fit" in mud_lover["score_breakdown"]
+        assert mud_lover["going_data"] == "sufficient"
+
+    def test_insufficient_going_history_is_flagged(self, config):
+        result = score_runner(
+            {"horse": "Unknown Ground", "or_rating": 80, "runs": []},
+            {"race_id": "r1", "course": "Epsom", "distance_furlongs": 8, "going": "Good"},
+            config,
+        )
+        assert result["going_data"] == "insufficient"
+        assert result["raw_signals"]["going_fit"] == 35.0
+        assert "going_data_insufficient" in result["missing_data_flags"]
+
+    def test_explicit_none_going_is_neutral_not_flagged(self, config):
+        result = score_runner(
+            {"horse": "No Forecast", "or_rating": 80, "runs": []},
+            {"race_id": "r1", "course": "Epsom", "distance_furlongs": 8, "going": None},
+            config,
+        )
+        assert result["going_data"] == "not_applicable"
+        assert result["raw_signals"]["going_fit"] == 50.0
+        assert "going_data_insufficient" not in result["missing_data_flags"]
+
+
+# ---------------------------------------------------------------------------
 # Config sanity tests
 # ---------------------------------------------------------------------------
 
@@ -332,3 +392,8 @@ class TestLoadDefaultConfig:
         for key, value in config.get("weights", {}).items():
             assert isinstance(value, (int, float)), f"Weight {key} must be numeric"
             assert value >= 0, f"Weight {key} must be non-negative"
+
+    def test_going_fit_weight_present(self):
+        config = load_default_config()
+        assert config["weights"]["going_fit"] == 0.15
+        assert abs(sum(config["weights"].values()) - 1.0) < 0.001
