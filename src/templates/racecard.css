@@ -85,6 +85,9 @@ table.slip tr.row-divider td {
 .bet-win  { background: #2a7a2a; color: #fff; }
 .bet-ew   { background: #b88200; color: #fff; }
 .bet-pass { background: #ccc;    color: #555; }
+.bet-acca { background: #4b3a99; color: #fff; }
+.row-acca { background: #f1eefb; }
+.acca-leg { line-height: 1.25; margin: 1px 0; }
 
 /* ---------- Footer ---------- */
 .slip-footer {

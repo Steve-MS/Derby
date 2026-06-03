@@ -36,6 +36,8 @@ _DATE_DAY_NAMES = {
     "2026-06-06": "Derby Day",
 }
 
+ACCA_STAKE_GBP = 5.0
+
 
 def _short_race_name(name: str) -> str:
     """Trim 'Group X', sponsor noise, and parentheticals for slip display."""
@@ -136,6 +138,60 @@ def _trainer_for(race: dict, horse: str) -> str:
     return ""
 
 
+def _pick_best_acca(bets: dict, races: list[dict], stake_gbp: float) -> dict | None:
+    """Pick the day's recommended accumulator.
+
+    Preference order: largest accumulator (4+ legs) → treble → best double.
+    Within each tier the highest-EV entry wins. Returns a slip-ready dict
+    with the supplied flat stake applied, or ``None`` if no multi-leg bet
+    was generated.
+    """
+    candidates: list[dict] = []
+    for key in ("accumulators", "trebles", "doubles"):
+        bucket = bets.get(key) or []
+        if bucket:
+            candidates = bucket
+            break
+    if not candidates:
+        return None
+
+    pick = max(candidates, key=lambda a: a.get("expected_value_gbp", 0) or 0)
+    legs = pick.get("legs", []) or []
+    if not legs:
+        return None
+
+    combined_dec = 1.0
+    for leg in legs:
+        combined_dec *= float(leg.get("odds_decimal") or 1.0)
+    combined_prob = pick.get("combined_prob") or 0.0
+    potential = round(stake_gbp * combined_dec, 2)
+
+    race_by_id = {r.get("race_id"): r for r in races}
+    leg_lines = []
+    for leg in legs:
+        race = race_by_id.get(leg.get("race_id")) or {}
+        time = race.get("race_time", "?")
+        leg_lines.append({
+            "time": time,
+            "horse": leg.get("horse", "—"),
+            "odds": leg.get("odds_decimal"),
+        })
+
+    n = len(legs)
+    label = {1: "Single", 2: "Double", 3: "Treble"}.get(n, f"{n}-fold acca")
+
+    return {
+        "label": label,
+        "leg_count": n,
+        "legs": leg_lines,
+        "combined_dec": round(combined_dec, 2),
+        "combined_prob": combined_prob,
+        "stake": round(stake_gbp, 2),
+        "potential": potential,
+        "expected_value_gbp": pick.get("expected_value_gbp", 0) or 0,
+    }
+
+
 def render_card(
     date: str,
     scores_path: str,
@@ -160,9 +216,14 @@ def render_card(
     races = scores_data.get("races", [])
     slip_rows, pass_rows = _build_rows(races, bets)
 
+    acca = _pick_best_acca(bets, races, ACCA_STAKE_GBP)
+    singles_budget = daily_outlay_gbp
+    if acca:
+        singles_budget = max(daily_outlay_gbp - acca["stake"], 0.0)
+
     raw_total_stakes = sum(r.get("stake", 0) for r in slip_rows)
-    if raw_total_stakes > 0 and daily_outlay_gbp > 0:
-        scale = daily_outlay_gbp / raw_total_stakes
+    if raw_total_stakes > 0 and singles_budget > 0:
+        scale = singles_budget / raw_total_stakes
         for r in slip_rows:
             r["stake"] = round(r["stake"] * scale, 2)
             r["potential"] = round(r["potential"] * scale, 2)
@@ -177,6 +238,9 @@ def render_card(
 
     total_stakes = sum(r.get("stake", 0) for r in slip_rows)
     total_potential = sum(r.get("potential", 0) for r in slip_rows)
+    if acca:
+        total_stakes += acca["stake"]
+        total_potential += acca["potential"]
 
     ctx = {
         "venue": scores_data.get("venue", VENUE),
@@ -189,7 +253,8 @@ def render_card(
         "model_version": MODEL_VERSION,
         "slip_rows": slip_rows,
         "pass_rows": pass_rows,
-        "active_bet_count": len(slip_rows),
+        "acca": acca,
+        "active_bet_count": len(slip_rows) + (1 if acca else 0),
         "total_stakes_gbp": total_stakes,
         "total_potential_gbp": total_potential,
         "daily_outlay_target_gbp": daily_outlay_gbp,

@@ -65,6 +65,23 @@
     </tr>
     {% endfor %}
     {% endif %}
+    {% if acca %}
+    <tr class="row-divider"><td colspan="8">— Accumulator pick (£{{ "%.2f"|format(acca.stake) }} carved out of daily outlay) —</td></tr>
+    <tr class="row-acca">
+      <td class="col-time">All-day</td>
+      <td class="col-race">{{ acca.label }} ({{ acca.leg_count }} legs)</td>
+      <td class="col-bet"><span class="bet-tag bet-acca">ACCA</span></td>
+      <td class="col-horse">
+        {% for leg in acca.legs %}
+        <div class="acca-leg"><strong>{{ leg.horse }}</strong> <span class="trainer">{{ leg.time }} @ {{ "%.1f"|format(leg.odds) if leg.odds else "—" }}</span></div>
+        {% endfor %}
+      </td>
+      <td class="col-num">{{ "%.1f"|format(acca.combined_dec) }}</td>
+      <td class="col-num">£{{ "%.2f"|format(acca.stake) }}</td>
+      <td class="col-num">£{{ "%.2f"|format(acca.potential) }}</td>
+      <td class="col-note">combined prob {{ "%.2f"|format(acca.combined_prob * 100) }}% · EV £{{ "%.2f"|format(acca.expected_value_gbp) }}</td>
+    </tr>
+    {% endif %}
   </tbody>
 </table>
 
@@ -74,7 +91,8 @@
        <span class="bet-tag bet-win">WIN</span> back to win &nbsp;·&nbsp;
        <span class="bet-tag bet-ew">EW</span> each-way (1/4 odds, places 1-1-2-3) &nbsp;·&nbsp;
        ⚡ outsider value play &nbsp;·&nbsp;
-       <span class="bet-tag bet-pass">PASS</span> no edge
+       <span class="bet-tag bet-pass">PASS</span> no edge &nbsp;·&nbsp;
+       <span class="bet-tag bet-acca">ACCA</span> accumulator (multi-race)
     </p>
     <p class="disclaimer">Generated {{ generated_at }} · Model {{ model_version }} · For personal use. Please gamble responsibly.</p>
   </div>

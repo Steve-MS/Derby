@@ -1,0 +1,109 @@
+{
+  "fetched_at": "2026-06-03T14:30:00+01:00",
+  "races": {
+    "2026-06-05 13:30 Win With Zyn 3yo Dash Handicap": {
+      "sources_used": [
+        "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+      ],
+      "runners_added": 17,
+      "evidence_snippet": "13:30 Win With Zyn 3yo \"Dash\" Handicap - 18 runners: Riley Rocks (J: Ray Dawson) (T: Dylan Cunha); Ambishio (J: Robert Havlin) (T: Michael Appleby); Temple Of Athena (J: Ben Robinson) (T: Brian Ellison); Artista (T: Ollie Sangster); Coyy (T: Eve Johnson Houghton); Henrythenate (J: Paddy Bradley) (T:",
+      "notes": "Runners verified from Racing Post course-id-17 meeting page. Independent cross-check unavailable: Sporting Life meeting URL returned 404 via web_fetch; Racing Post course id 3 URL returned 404 via web_fetch; course id 17 succeeded; At The Races returned site-load error/no field via web_fetch; RacingBetter horse-racing-tips returned 404 via web_fetch File race name differs from Racing Post title: 'Win With Zyn 3yo \"Dash\" Handicap'. Filled by off_time per instruction."
+    },
+    "2026-06-05 14:05 Oddschecker British EBF Woodcote Stakes": {
+      "sources_used": [
+        "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+      ],
+      "runners_added": 17,
+      "evidence_snippet": "14:05 Oddschecker British EBF Woodcote Stakes (Conditions Race) (GBB Race) - 18 runners: The Bookkeeper (J: Hector Crouch) (T: Richard Hughes); King Of Montenegro (T: Brian Meehan); Star Prospect (T: Joseph Patrick O'Brien); Benefacta (J: David Probert) (T: Richard Hughes); Alpe d'Huez (J: Luke Morr",
+      "notes": "Runners verified from Racing Post course-id-17 meeting page. Independent cross-check unavailable: Sporting Life meeting URL returned 404 via web_fetch; Racing Post course id 3 URL returned 404 via web_fetch; course id 17 succeeded; At The Races returned site-load error/no field via web_fetch; RacingBetter horse-racing-tips returned 404 via web_fetch File race name differs from Racing Post title: 'Oddschecker British EBF Woodcote Stakes (Conditions Race) (GBB Race)'. Filled by off_time per instruction."
+    },
+    "2026-06-05 14:40 Betfred Diomed Stakes (Group 3)": {
+      "sources_used": [
+        "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+      ],
+      "runners_added": 12,
+      "evidence_snippet": "14:40 Betfred Diomed Stakes (Group 3) - 14 runners: Point Lynas (T: Edward Bethell); Audience (J: Rossa Ryan) (T: David O'Meara); Persica (J: Sean Levey) (T: Richard Hannon); Boiling Point (J: Clifford Lee) (T: K R Burke); Ice Max (J: Sam James) (T: K R Burke); Alcantor (T: Joseph Patrick O'Brien); ",
+      "notes": "Runners verified from Racing Post course-id-17 meeting page. Independent cross-check unavailable: Sporting Life meeting URL returned 404 via web_fetch; Racing Post course id 3 URL returned 404 via web_fetch; course id 17 succeeded; At The Races returned site-load error/no field via web_fetch; RacingBetter horse-racing-tips returned 404 via web_fetch"
+    },
+    "2026-06-05 15:15 Betfred Nifty 50 Handicap": {
+      "sources_used": [
+        "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+      ],
+      "runners_added": 23,
+      "evidence_snippet": "15:15 Betfred \"Nifty 50\" Handicap (GBBplus Race) - 23 runners: Dhahabi (T: Ian Williams); Liberty Lane (J: Jack Nicholls) (T: K R Burke); Have Secret (T: Richard & Peter Fahey); Tribal Wisdom (T: Michael Attwater); King's Code (J: Saffie Osborne) (T: David Evans); Beylerbeyi (J: Billy Loughnane) (T:",
+      "notes": "Runners verified from Racing Post course-id-17 meeting page. Independent cross-check unavailable: Sporting Life meeting URL returned 404 via web_fetch; Racing Post course id 3 URL returned 404 via web_fetch; course id 17 succeeded; At The Races returned site-load error/no field via web_fetch; RacingBetter horse-racing-tips returned 404 via web_fetch File race name differs from Racing Post title: 'Betfred \"Nifty 50\" Handicap (GBBplus Race)'. Filled by off_time per instruction."
+    },
+    "2026-06-05 16:40 HKJC World Pool Handicap": {
+      "sources_used": [
+        "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+      ],
+      "runners_added": 29,
+      "evidence_snippet": "16:40 HKJC World Pool Handicap - 29 runners: Popmaster (J: Kieran Shoemark) (T: Ed Walker); Sterling Knight (J: Ryan Moore) (T: Ed Dunlop); Ancient Rome (J: Jamie Spencer) (T: Charles Hills); Thunder Roar (J: Colin Keane) (T: Tony Coyle & Kaine Wood); Mirsky (J: Hector Crouch) (T: David O'Meara); Wa",
+      "notes": "Runners verified from Racing Post course-id-17 meeting page. Independent cross-check unavailable: Sporting Life meeting URL returned 404 via web_fetch; Racing Post course id 3 URL returned 404 via web_fetch; course id 17 succeeded; At The Races returned site-load error/no field via web_fetch; RacingBetter horse-racing-tips returned 404 via web_fetch"
+    },
+    "2026-06-05 17:15 Cygames Surrey Stakes (Listed)": {
+      "sources_used": [
+        "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+      ],
+      "runners_added": 12,
+      "evidence_snippet": "17:15 Cygames Surrey Stakes (Listed Race) - 12 runners: Ardisia (J: David Probert) (T: Hugo Palmer); Green Sense (T: Joseph Patrick O'Brien); Andab (T: Joseph Patrick O'Brien); Ellusive Butterfly (J: Clifford Lee) (T: K R Burke); Awaken (J: Billy Loughnane) (T: George Boughey); Stellar Sunrise (J: O",
+      "notes": "Runners verified from Racing Post course-id-17 meeting page. Independent cross-check unavailable: Sporting Life meeting URL returned 404 via web_fetch; Racing Post course id 3 URL returned 404 via web_fetch; course id 17 succeeded; At The Races returned site-load error/no field via web_fetch; RacingBetter horse-racing-tips returned 404 via web_fetch File race name differs from Racing Post title: 'Cygames Surrey Stakes (Listed Race)'. Filled by off_time per instruction."
+    },
+    "2026-06-05 17:50 Debenhams Handicap": {
+      "sources_used": [
+        "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+      ],
+      "runners_added": 26,
+      "evidence_snippet": "17:50 Debenhams Handicap - 26 runners: Rhoscolyn (J: Jason Watson) (T: David O'Meara); Mister Bluebird (J: Colin Keane) (T: Heather Main); Sterling Knight (T: Ed Dunlop); Talis Evolvere (J: Sean Levey) (T: Richard Hannon); Son (J: David Allan) (T: Tim Easterby); Crimson Spirit (J: Ray Dawson) (T: Da",
+      "notes": "Runners verified from Racing Post course-id-17 meeting page. Independent cross-check unavailable: Sporting Life meeting URL returned 404 via web_fetch; Racing Post course id 3 URL returned 404 via web_fetch; course id 17 succeeded; At The Races returned site-load error/no field via web_fetch; RacingBetter horse-racing-tips returned 404 via web_fetch"
+    },
+    "2026-06-06 13:30 Betfred Tattenham Corner Stakes (Group 3)": {
+      "sources_used": [
+        "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+      ],
+      "runners_added": 14,
+      "evidence_snippet": "13:30 Betfred Tattenham Corner Stakes (Group 3) (Formerly The John Of Gaunt Stakes) - 15 runners: Audience (T: David O'Meara); Witness Stand (J: Billy Loughnane) (T: Dr Richard Newland & Jamie Insole); Golden Mind (T: Richard & Peter Fahey); Alcantor (T: Joseph Patrick O'Brien); Never So Brave (J: O",
+      "notes": "Runners verified from Racing Post course-id-17 meeting page. Independent cross-check unavailable: Sporting Life meeting URL returned 404 via web_fetch; Racing Post course id 3 URL returned 404 via web_fetch; course id 17 succeeded; At The Races returned site-load error/no field via web_fetch; RacingBetter horse-racing-tips returned 404 via web_fetch File race name differs from Racing Post title: 'Betfred Tattenham Corner Stakes (Group 3) (Formerly The John Of Gaunt Stakes)'. Filled by off_time per instruction."
+    },
+    "2026-06-06 14:05 Princess Elizabeth Stakes (Group 3)": {
+      "sources_used": [
+        "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+      ],
+      "runners_added": 13,
+      "evidence_snippet": "14:05 Princess Elizabeth Stakes (Group 3) (Fillies & Mares) (Sponsored By Chapel Down) - 13 runners: Sparks Fly (J: Laura Pearson) (T: David Loughnane); Princess Child (T: Joseph Patrick O'Brien); Arisaig (J: Jamie Spencer) (T: Charlie Johnston); Love Dynasty (J: Billy Loughnane) (T: Kevin Ryan); Be",
+      "notes": "Runners verified from Racing Post course-id-17 meeting page. Independent cross-check unavailable: Sporting Life meeting URL returned 404 via web_fetch; Racing Post course id 3 URL returned 404 via web_fetch; course id 17 succeeded; At The Races returned site-load error/no field via web_fetch; RacingBetter horse-racing-tips returned 404 via web_fetch File race name differs from Racing Post title: 'Princess Elizabeth Stakes (Group 3) (Fillies & Mares) (Sponsored By Chapel Down)'. Filled by off_time per instruction."
+    },
+    "2026-06-06 15:15 Nifty 50 Handicap": {
+      "sources_used": [
+        "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+      ],
+      "runners_added": 34,
+      "evidence_snippet": "15:15 Betfred \"Dash\" Handicap (Heritage Handicap) - 34 runners: The Bell Conductor (J: Silvestre De Sousa) (T: Ivan Furtado); Brazen Bolt (J: Warren Fentiman) (T: Ruth Carr); Dream Composer (J: Dougie Costello) (T: Tony Carroll); Emperor Spirit (J: Ray Dawson) (T: Michael Keady); Counsel (T: Michael",
+      "notes": "Runners verified from Racing Post course-id-17 meeting page. Independent cross-check unavailable: Sporting Life meeting URL returned 404 via web_fetch; Racing Post course id 3 URL returned 404 via web_fetch; course id 17 succeeded; At The Races returned site-load error/no field via web_fetch; RacingBetter horse-racing-tips returned 404 via web_fetch File race name differs from Racing Post title: 'Betfred \"Dash\" Handicap (Heritage Handicap)'. Filled by off_time per instruction."
+    },
+    "2026-06-06 16:40 HKJC World Pool Handicap": {
+      "sources_used": [
+        "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+      ],
+      "runners_added": 13,
+      "evidence_snippet": "16:40 Cherryfield (Croydon) Lester Piggott Handicap (GBBPlus Race) - 13 runners: Starlight Time (J: Ray Dawson) (T: Roger Varian); Silver State (T: Jack Channon); Lake Como (J: Billy Loughnane) (T: George Boughey); Tailgunner Joe (J: David Egan) (T: Dylan Cunha); Folk Pageant (J: Rowan Scott) (T: Ch",
+      "notes": "Runners verified from Racing Post course-id-17 meeting page. Independent cross-check unavailable: Sporting Life meeting URL returned 404 via web_fetch; Racing Post course id 3 URL returned 404 via web_fetch; course id 17 succeeded; At The Races returned site-load error/no field via web_fetch; RacingBetter horse-racing-tips returned 404 via web_fetch File race name differs from Racing Post title: 'Cherryfield (Croydon) Lester Piggott Handicap (GBBPlus Race)'. Filled by off_time per instruction."
+    },
+    "2026-06-06 17:20 Surrey Stakes (Listed, 3yo)": {
+      "sources_used": [
+        "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+      ],
+      "runners_added": 21,
+      "evidence_snippet": "17:20 HKJC World Pool Northern Dancer Handicap (GBBPlus Race) - 21 runners: Prydwen (T: George Scott); Max Mayhem (J: Charles Bishop) (T: George Baker); Oneforthegutter (T: Ian Williams); Asgard's Captain (J: Kieran Shoemark) (T: Dylan Cunha); Dancing In Paris (T: Ian Williams); Gordon Grey (J: Silv",
+      "notes": "Runners verified from Racing Post course-id-17 meeting page. Independent cross-check unavailable: Sporting Life meeting URL returned 404 via web_fetch; Racing Post course id 3 URL returned 404 via web_fetch; course id 17 succeeded; At The Races returned site-load error/no field via web_fetch; RacingBetter horse-racing-tips returned 404 via web_fetch File race name differs from Racing Post title: 'HKJC World Pool Northern Dancer Handicap (GBBPlus Race)'. Filled by off_time per instruction."
+    },
+    "2026-06-06 17:55 Debenhams Handicap": {
+      "sources_used": [
+        "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+      ],
+      "runners_added": 28,
+      "evidence_snippet": "17:55 JRA Tokyo Trophy Handicap - 28 runners: Badri (J: Dylan Hogan) (T: Michael Herrington); Strike Red (T: Richard & Peter Fahey); Saint Lawrence (T: Kevin Ryan); Apollo One (T: P Charalambous & J Clutterbuck); Roman Dragon (T: Hugo Palmer); Twilight Jet (T: Jim & Suzi Best); Spangled Mac (J: Bill",
+      "notes": "Runners verified from Racing Post course-id-17 meeting page. Independent cross-check unavailable: Sporting Life meeting URL returned 404 via web_fetch; Racing Post course id 3 URL returned 404 via web_fetch; course id 17 succeeded; At The Races returned site-load error/no field via web_fetch; RacingBetter horse-racing-tips returned 404 via web_fetch File race name differs from Racing Post title: 'JRA Tokyo Trophy Handicap'. Filled by off_time per instruction."
+    }
+  }
+}

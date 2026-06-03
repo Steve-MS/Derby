@@ -1,0 +1,13 @@
+date,horse,decimal_price,source
+# Fill this in Friday 5 June 2026 AM once bookies post morning prices.
+# Source can be sportinglife, skysports, racingpost, oddschecker, paddypower, etc.
+# Decimal price: 5/2 = 3.5, 4/1 = 5.0, 11/4 = 3.75, evens = 2.0, 6/4 = 2.5
+# Any horse NOT listed here will keep the hardcoded value from enrich_odds.py
+# Examples (delete + replace with real Friday morning prices):
+2026-06-05,Amelia Earhart,3.0,sportinglife
+2026-06-05,Precise,4.5,sportinglife
+2026-06-05,Prizeland,26.0,sportinglife
+2026-06-06,Calandagan,2.25,skysports
+2026-06-06,Jan Brueghel,4.0,skysports
+2026-06-06,Item,5.5,skysports
+2026-06-06,Benvenuto Cellini,3.0,skysports

@@ -1,0 +1,32 @@
+[
+  {
+    "horse": "Cato (IRE)",
+    "race": "Epsom Fri 5 Jun Race 1",
+    "going_history": [],
+    "going_history_source": "unavailable",
+    "going_history_fetched_at": "2026-06-02T19:25:01Z",
+    "source_url": "https://www.attheraces.com/form/horse/Cato/IRE/<id-unknown>",
+    "raw_evidence": "Horse not present in ATR Epsom 5 Jun 2026 full-day racecard HTML (https://www.attheraces.com/racecards/epsom-downs/2026-06-05, 2.5MB page, 152 distinct horse entries extracted, zero matched 'Cato'). ATR horse search API (https://www.attheraces.com/atr-http-api/form/horse/search?name=cato&country=ire) blocked by Fastly Client Challenge JavaScript bot protection — returns 3035-byte challenge page, not JSON data. No ATR horse ID found for Cato (IRE), so a direct form/horse profile URL could not be constructed. Google site-search for attheraces.com form/horse Cato returned no matching profile. Cannot provide going history without ATR access.",
+    "unavailable_reason": "Horse not found in the accessible ATR Epsom 5 Jun 2026 racecard HTML (152 runners checked); ATR search and API endpoints blocked by Fastly Client Challenge JavaScript bot protection."
+  },
+  {
+    "horse": "Belinus",
+    "race": "Epsom Fri 5 Jun Race 3",
+    "going_history": [],
+    "going_history_source": "unavailable",
+    "going_history_fetched_at": "2026-06-02T19:25:01Z",
+    "source_url": "https://www.attheraces.com/form/horse/Belinus/<country>/<id-unknown>",
+    "raw_evidence": "Horse not present in ATR Epsom 5 Jun 2026 full-day racecard HTML (https://www.attheraces.com/racecards/epsom-downs/2026-06-05, 2.5MB page, 152 distinct horse entries extracted, zero matched 'Belinus'). ATR horse search API (https://www.attheraces.com/atr-http-api/form/horse/search?name=belinus) blocked by Fastly Client Challenge JavaScript bot protection — returns 3035-byte challenge page, not JSON data. No ATR horse ID found for Belinus, so a direct form/horse profile URL could not be constructed. Google site-search for attheraces.com form/horse Belinus returned no matching profile. Cannot provide going history without ATR access.",
+    "unavailable_reason": "Horse not found in the accessible ATR Epsom 5 Jun 2026 racecard HTML (152 runners checked); ATR search and API endpoints blocked by Fastly Client Challenge JavaScript bot protection."
+  },
+  {
+    "horse": "Constitution River",
+    "race": "Epsom Sat 6 Jun Race 5",
+    "going_history": [],
+    "going_history_source": "unavailable",
+    "going_history_fetched_at": "2026-06-02T19:25:01Z",
+    "source_url": "https://www.attheraces.com/racecards/epsom-downs/2026-06-06",
+    "raw_evidence": "ATR Epsom 6 Jun 2026 racecard (https://www.attheraces.com/racecards/epsom-downs/2026-06-06) blocked by Fastly Client Challenge JavaScript bot protection — returned 3035-byte challenge page instead of real HTML. Alternate URL formats also blocked: /racecards/epsom-downs/06-06-2026 (2948 chars), /racecards/Epsom-Downs/2026-06-06 (2948 chars). ATR horse search API (https://www.attheraces.com/atr-http-api/form/horse/search?name=constitution+river) similarly blocked — 3035-byte challenge page. No ATR horse ID found for Constitution River, so a direct form/horse profile URL could not be constructed. Cannot provide going history without ATR access.",
+    "unavailable_reason": "ATR Epsom 6 Jun 2026 racecard and all ATR search/API endpoints blocked by Fastly Client Challenge JavaScript bot protection. No ATR horse ID was obtainable via any accessible route."
+  }
+]

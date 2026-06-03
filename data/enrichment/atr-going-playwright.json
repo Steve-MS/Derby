@@ -1,0 +1,27 @@
+{
+  "fetched_at": "2026-06-02T20:01:00+01:00",
+  "source": "attheraces (playwright)",
+  "horses": {
+    "Cato (IRE)": {
+      "status": "unavailable",
+      "profile_url": null,
+      "evidence_html_snippet": null,
+      "going_history": [],
+      "failure_reason": "Profile URL not found via search or direct slug"
+    },
+    "Belinus": {
+      "status": "unavailable",
+      "profile_url": null,
+      "evidence_html_snippet": null,
+      "going_history": [],
+      "failure_reason": "Profile URL not found via search or direct slug"
+    },
+    "Constitution River": {
+      "status": "unavailable",
+      "profile_url": null,
+      "evidence_html_snippet": null,
+      "going_history": [],
+      "failure_reason": "Profile URL not found via search or direct slug"
+    }
+  }
+}

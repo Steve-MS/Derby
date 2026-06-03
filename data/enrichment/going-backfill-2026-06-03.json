@@ -1,0 +1,381 @@
+{
+  "fetched_at": "2026-06-03T08:47:43.722880+00:00",
+  "horses": {
+    "Naana's Shadow": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1180835",
+      "runs_found": 7,
+      "evidence_snippet": "2026-05-15 York Irish Thoroughbred Marketing Handicap going=Good pos=3/17 | 2026-04-22 Catterick Bet At racingtv.com Handicap going=Good (Good to Firm to places) pos=1/8 | 2026-04-09 Southwell Country"
+    },
+    "Alfa Duplicate": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1181989",
+      "runs_found": 9,
+      "evidence_snippet": "2026-05-04 Beverley We Love A Bank Holiday Handicap going=Good to Soft (Good in places) pos=1/14 | 2026-04-09 Southwell Country & Western Night 25th April Fillies' Handicap going=Standard pos=3/8 | 20"
+    },
+    "Straight Ahead": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1185921",
+      "runs_found": 9,
+      "evidence_snippet": "2026-05-31 Thirsk Flutter Proud To Support Young Lives Vs Cancer Handicap going=Good (Good to Firm in places) pos=4/12 | 2025-12-20 Newcastle Best Odds Guaranteed At BetMGM Nursery going=Standard pos="
+    },
+    "Chairmanfourtimes": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1186905",
+      "runs_found": 10,
+      "evidence_snippet": "2026-05-15 York Irish Thoroughbred Marketing Handicap going=Good pos=12/17 | 2026-04-10 Wolverhampton Free Bets On attheraces.com Conditions Stakes (GBB Race) going=Standard pos=7/7 | 2025-10-10 Newma"
+    },
+    "One And Gone": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1197105",
+      "runs_found": 10,
+      "evidence_snippet": "2026-05-23 Goodwood Track Radio Handicap going=Good (Good to Firm in places) pos=4/9 | 2026-05-08 Chester Irish Thoroughbred Marketing Handicap going=Good (Good to Soft in places) pos=3/12 | 2026-04-2"
+    },
+    "Ambishio": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1181643",
+      "runs_found": 10,
+      "evidence_snippet": "2026-05-31 Thirsk Flutter Proud To Support Young Lives Vs Cancer Handicap going=Good (Good to Firm in places) pos=10/12 | 2026-05-08 Chester Irish Thoroughbred Marketing Handicap going=Good (Good to S"
+    },
+    "Hickory Lad": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1219763",
+      "runs_found": 3,
+      "evidence_snippet": "2026-05-06 Chester CAA Stellar Lily Agnes EBF Conditions Stakes (GBB Race) going=Good pos=2/7 | 2026-04-29 Musselburgh EBF Restricted Novice Stakes (GBB Race) going=Good pos=1/3 | 2026-04-10 Thirsk Jo"
+    },
+    "Wild Terrain": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1223488",
+      "runs_found": 1,
+      "evidence_snippet": "2026-05-15 Hamilton British EBF Supporting Racing Welfare MentalHealthAwarenessWeek Restricted Maiden Stakes (GBB Race) going=Good pos=1/6"
+    },
+    "Star Prospect": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1216526",
+      "runs_found": 2,
+      "evidence_snippet": "2026-05-17 Naas Coolmore Stud Blackbeard Race going=Good pos=3/5 | 2026-04-19 Curragh Arizona Blaze Standing At The Irish National Stud Irish European Breeders Fund Race going=Soft pos=1/6"
+    },
+    "Possessive": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1224956",
+      "runs_found": 1,
+      "evidence_snippet": "2026-05-23 York Tomahawk EBF Restricted Novice Stakes (GBB Race) going=Good (Good to Firm in places) pos=1/8"
+    },
+    "Rlasthope": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1219075",
+      "runs_found": 3,
+      "evidence_snippet": "2026-05-14 York Sky Bet ebfstallions.com Novice Stakes (GBB Race) going=Good pos=4/15 | 2026-04-12 Musselburgh Sky Bet Club British EBF Novice Stakes (GBB Race) going=Good to Soft (Good in places) pos"
+    },
+    "Havana Flash": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1224741",
+      "runs_found": 0,
+      "evidence_snippet": ""
+    },
+    "Linwood": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1143573",
+      "runs_found": 9,
+      "evidence_snippet": "2026-04-18 Newbury Win Unique Experiences At OLBG Prizes Spring Cup Handicap (Str) going=Good (Good to Firm in places) pos=1/24 | 2025-11-01 Newmarket Dusseldorf's Henkel 168 German Oaks Handicap goin"
+    },
+    "Seagulls Eleven": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1145719",
+      "runs_found": 10,
+      "evidence_snippet": "2026-05-24 ParisLongchamp Prix de Montretout Listed Stakes going=Soft pos=1/8 | 2026-05-01 Saint-Cloud Du Muguet Stakes - Group 2 going=Good to Soft pos=2/7 | 2025-08-23 York Sky Bet City Of York Stak"
+    },
+    "Boiling Point": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1207448",
+      "runs_found": 5,
+      "evidence_snippet": "2026-03-01 Aqueduct Race 8 - Maiden Claiming going=Good pos=5/10 | 2026-02-05 Aqueduct Race 5 - Maiden Claiming going= pos=4/9 | 2026-01-10 Aqueduct Race 9 - Maiden Special Weight going= pos=8/10"
+    },
+    "Chancellor": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1151652",
+      "runs_found": 10,
+      "evidence_snippet": "2026-04-03 Newcastle BetMGM All-Weather Championships Mile Handicap going=Standard pos=5/14 | 2026-02-21 Lingfield Midnite Winter Derby Stakes (Group 3) going=Standard pos=2/5 | 2026-02-07 Southwell B"
+    },
+    "Persica": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1101419",
+      "runs_found": 10,
+      "evidence_snippet": "2026-04-15 Newmarket Betway Earl Of Sefton Stakes (Group 3) going=Good pos=4/6 | 2025-11-14 Bahrain Bahrain International Trophy (Group 2) going=Good pos=8/8 | 2025-09-07 ParisLongchamp Qatar Prix du "
+    },
+    "Skukuza": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1110297",
+      "runs_found": 10,
+      "evidence_snippet": "2026-04-15 Newmarket Betway Earl Of Sefton Stakes (Group 3) going=Good pos=6/6 | 2026-03-29 Saint-Cloud Prix Edmond Blanc (Group 3) going=Soft pos=5/10 | 2025-10-04 ParisLongchamp Qatar Prix Daniel Wi"
+    },
+    "Respond": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1182883",
+      "runs_found": 10,
+      "evidence_snippet": "2026-05-08 Chester CAA Stellar Great Cheshire Handicap (GBBPlus Race) going=Good (Good to Soft in places) pos=1/11 | 2026-03-28 Kempton Virgin Bet A Good Bet Rosebery Handicap (GBBPlus Race) going=Sta"
+    },
+    "Quai De Bethune": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1158506",
+      "runs_found": 6,
+      "evidence_snippet": "2025-06-21 Royal Ascot Golden Gates Stakes (Handicap) going=Good to Firm pos=1/15 | 2025-05-17 Newbury Trade Nation London Gold Cup Handicap (Heritage Handicap) (GBBPlus Race) going=Good to Firm pos=3"
+    },
+    "Let's Dream": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1109737",
+      "runs_found": 10,
+      "evidence_snippet": "2026-05-07 Chester Halliwell Jones Handicap (GBBPlus Race) going=Good pos=1/9 | 2025-10-11 York Coral 'Committed To Safer Gambling' Finale Handicap (GBBPlus Race) going=Good pos=1/19 | 2025-09-13 Ches"
+    },
+    "Rastnet": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1201799",
+      "runs_found": 8,
+      "evidence_snippet": "2026-05-07 Chester Halliwell Jones Handicap (GBBPlus Race) going=Good pos=3/9 | 2026-04-08 Kempton Virgin Bet Daily Extra Places Fillies' Handicap (GBBPlus Race) going=Standard / Slow pos=2/7 | 2026-0"
+    },
+    "Sallaal": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1161983",
+      "runs_found": 7,
+      "evidence_snippet": "2026-04-28 Epsom Downs Lilley Plummer Risks City & Suburban Handicap (GBBPlus Race) going=Good pos=2/6 | 2025-10-19 Leopardstown Bahrain Turf Club Knockaire Stakes (Listed) going=Heavy pos=5/8 | 2025-"
+    },
+    "Spoken Truth": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1121489",
+      "runs_found": 10,
+      "evidence_snippet": "2026-05-25 Redcar Racing TV Zetland Gold Cup Handicap (GBBPlus Race) going=Good to Firm (Good in places) pos=2/10 | 2026-04-16 Ripon Ripon 'Cock O' The North' Handicap going=Good to Soft pos=2/10 | 20"
+    },
+    "Mister Winston": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1158372",
+      "runs_found": 10,
+      "evidence_snippet": "2026-05-02 Newmarket Betfred Suffolk Stakes (Heritage Handicap) going=Good to Firm pos=6/12 | 2026-04-14 Newmarket Betway Bet The Responsible Way Handicap going=Good pos=1/10 | 2025-09-27 Newmarket be"
+    },
+    "Sterling Knight": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1021107",
+      "runs_found": 10,
+      "evidence_snippet": "2026-05-16 Newmarket Daily Profit Boosts At BetMGM Handicap going=Good (Good to Firm in places) pos=1/12 | 2026-05-02 Newmarket National Stud Handicap going=Good to Firm pos=3/13 | 2026-04-14 Newmarke"
+    },
+    "Asmen Warrior": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1160269",
+      "runs_found": 10,
+      "evidence_snippet": "2026-05-25 Windsor Barbara And Kens Diamond Wedding Anniversary Handicap going=Good to Firm pos=2/10 | 2026-04-28 Epsom Downs Lilley Plummer Risks City & Suburban Handicap (GBBPlus Race) going=Good po"
+    },
+    "Zarathos": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1164505",
+      "runs_found": 10,
+      "evidence_snippet": "2026-05-15 York Yorkshire Equine Practice Handicap going=Good pos=1/22 | 2026-05-07 Windsor Padel Maidenhead Anniversary Cup Handicap going=Good to Firm (Good in places) pos=1/11 | 2026-04-26 Wetherby"
+    },
+    "First Principle": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1167669",
+      "runs_found": 10,
+      "evidence_snippet": "2026-05-25 Windsor Find Us At fitzdares.com Handicap (GBBPlus Race) going=Good to Firm pos=6/6 | 2026-05-14 York Oakmere Homes Hambleton Handicap going=Good pos=17/18 | 2026-04-03 Newcastle BetMGM All"
+    },
+    "Jimmy Speaking": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1103547",
+      "runs_found": 10,
+      "evidence_snippet": "2026-05-16 Newmarket Daily Profit Boosts At BetMGM Handicap going=Good (Good to Firm in places) pos=2/12 | 2026-04-30 Southwell Follow AtTheRaces On X Handicap going=Standard pos=1/7 | 2026-03-29 Donc"
+    },
+    "Stellar Sunrise": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1184972",
+      "runs_found": 7,
+      "evidence_snippet": "2026-05-01 Newmarket Pertemps Network King Charles II Stakes (Listed) going=Good to Firm pos=3/6 | 2026-04-17 Newbury Dubai Duty Free Full Of Surprises Handicap going=Good pos=1/14 | 2025-10-25 Newbur"
+    },
+    "Postmodern": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1185229",
+      "runs_found": 5,
+      "evidence_snippet": "2026-03-06 Meydan Race 4 - Emaar Momentum Handicap - Turf going=Good pos=2/14 | 2026-02-06 Meydan Race 4 - Dubai Trophy Stakes Sponsored By Azizi Developments - Turf going= pos=3/13 | 2026-01-09 Meyda"
+    },
+    "Ten Carat Harry": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1198133",
+      "runs_found": 10,
+      "evidence_snippet": "2026-05-02 Newmarket Turners Handicap going=Good to Firm pos=1/11 | 2026-04-10 Wolverhampton Free Bets On attheraces.com Conditions Stakes (GBB Race) going=Standard pos=4/7 | 2026-04-03 Newcastle BetM"
+    },
+    "Andab": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1181943",
+      "runs_found": 9,
+      "evidence_snippet": "2026-05-28 Sandown Star Sports Heron Stakes (Listed) going=Good (Good to Firm in places) pos=3/8 | 2026-05-04 Curragh Coolmore Stud Henry Longfellow Irish European Breeders Fund Tetrarch Stakes (Liste"
+    },
+    "Greek Mythology": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1208128",
+      "runs_found": 3,
+      "evidence_snippet": "2026-05-17 Naas Owenstown Stud Stakes (Listed) going=Good (Good to Yielding in places) pos=3/8 | 2026-04-08 Gowran Park Irish Stallion Farms EBF Race going=Soft pos=2/4 | 2025-12-03 Dundalk Irish Stal"
+    },
+    "Green Sense": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1181008",
+      "runs_found": 7,
+      "evidence_snippet": "2026-05-31 Chantilly Prix de Sandringham (Fillies' Group 2) going=Soft pos=6/8 | 2025-09-27 Curragh Goffs Million going=Soft pos=11/30 | 2025-08-09 Curragh Keeneland Phoenix Stakes (Group 1) going=Goo"
+    },
+    "Dance In The Storm": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1165286",
+      "runs_found": 9,
+      "evidence_snippet": "2026-05-06 Chester Roodee Handicap going=Good pos=1/13 | 2025-09-27 Newmarket Ambassador Cruise Line Handicap going=Good to Firm pos=10/13 | 2025-08-21 York British EBF Fillies' Handicap (Heritage Han"
+    },
+    "Dublin Bay": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1183168",
+      "runs_found": 10,
+      "evidence_snippet": "2026-05-29 Wolverhampton Free Race Replays On attheraces.com Handicap going=Standard pos=1/11 | 2026-05-08 Ascot Ascot Hospitality Handicap going=Good (Good to Firm in places) pos=5/19 | 2026-04-10 Wo"
+    },
+    "Pietro": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1143525",
+      "runs_found": 10,
+      "evidence_snippet": "2026-05-06 Chester Roodee Handicap going=Good pos=3/13 | 2026-03-20 Wolverhampton SBK Betting Podcast Handicap going=Standard pos=1/10 | 2025-10-21 Yarmouth Join Moulton Racing Syndicate Handicap goin"
+    },
+    "Brighton Boy": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1132632",
+      "runs_found": 10,
+      "evidence_snippet": "2026-05-30 Chester Virgin Bet Handicap going=Good pos=2/11 | 2026-05-16 Thirsk Sky Bet Price Boosts Handicap going=Good (Good to Soft in places) pos=1/12 | 2026-05-06 Chester Join Ladbrokes Bet 5 Get "
+    },
+    "Talis Evolvere": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1053198",
+      "runs_found": 10,
+      "evidence_snippet": "2026-05-25 Windsor Barbara And Kens Diamond Wedding Anniversary Handicap going=Good to Firm pos=8/10 | 2026-05-16 Newbury Boyle Sports Home Of The Early Payout Handicap (Str) going=Good (Good to Firm "
+    },
+    "Lake Forest": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1106305",
+      "runs_found": 10,
+      "evidence_snippet": "2026-05-09 Haydock Pertemps Network Spring Trophy Stakes (Listed) going=Good pos=1/11 | 2025-08-23 York Sky Bet City Of York Stakes (Group 1) going=Good to Firm (Good in places) pos=2/10 | 2025-07-29 "
+    },
+    "Never So Brave": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1104388",
+      "runs_found": 10,
+      "evidence_snippet": "2026-04-24 Sandown bet365 Mile (Group 2) going=Good pos=5/6 | 2025-10-18 Ascot Queen Elizabeth II Stakes (Sponsored By Qipco) (Group 1) (Str) going=Good pos=7/16 | 2025-08-23 York Sky Bet City Of York"
+    },
+    "Copacabana Sands": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1149333",
+      "runs_found": 10,
+      "evidence_snippet": "2026-05-09 Lingfield William Hill Chartwell Fillies' Stakes (Group 3) going=Good to Firm (Good in places) pos=5/7 | 2025-10-05 Tipperary Coolmore Sioux Nation Concorde Stakes (Listed) going=Heavy (Sof"
+    },
+    "Witness Stand": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1099289",
+      "runs_found": 10,
+      "evidence_snippet": "2026-03-06 Meydan Race 6 - Ras Al Khor Sponsored By Emaar (Group 3) - Turf going=Good pos=8/13 | 2026-01-23 Meydan Race 3 - Al Fahidi Fort Presented By Longines (Group 2) - Turf going=Good pos=15/15 |"
+    },
+    "Poet Master": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1106187",
+      "runs_found": 10,
+      "evidence_snippet": "2026-05-09 Haydock Pertemps Network Spring Trophy Stakes (Listed) going=Good pos=5/11 | 2026-04-10 Thirsk British EBF Michael Foster Conditions Stakes going=Good pos=2/8 | 2025-10-10 Newmarket Thoroug"
+    },
+    "Breckenbrough": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1141515",
+      "runs_found": 0,
+      "evidence_snippet": ""
+    },
+    "Pacific Mission": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1193318",
+      "runs_found": 5,
+      "evidence_snippet": "2026-05-15 York Sky Bet Fillies' Stakes (Registered As The Michael Seely Memorial Fillies' Stakes) (Listed) going=Good pos=5/7 | 2025-10-31 Del Mar Race 8 - John Deere Breeders' Cup Juvenile Fillies T"
+    },
+    "Shes Perfect": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1152804",
+      "runs_found": 6,
+      "evidence_snippet": "2026-05-02 Goodwood Fitzdares Conqueror Fillies' Stakes (Listed) going=Good (Good to Firm in places) pos=3/6 | 2025-06-15 Chantilly Prix de Diane Longines (Fillies Group 1) going=Soft pos=9/12 | 2025-"
+    },
+    "Sparks Fly": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1087849",
+      "runs_found": 10,
+      "evidence_snippet": "2026-05-08 Chester Deepbridge Huxley Stakes (Group 2) going=Good (Good to Soft in places) pos=4/9 | 2026-03-29 Saint-Cloud Prix Edmond Blanc (Group 3) going=Soft pos=10/10 | 2025-10-26 Saint-Cloud Pri"
+    },
+    "Arisaig": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1120869",
+      "runs_found": 10,
+      "evidence_snippet": "2026-05-02 Goodwood Fitzdares Conqueror Fillies' Stakes (Listed) going=Good (Good to Firm in places) pos=4/6 | 2026-04-14 Newmarket Betway Bet The Responsible Way Handicap going=Good pos=2/10 | 2025-1"
+    },
+    "Pina Sonata": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1161757",
+      "runs_found": 6,
+      "evidence_snippet": "2026-03-28 Kempton Virgin Bet Snowdrop Fillies' Stakes (Listed) going=Standard / Slow pos=1/11 | 2025-09-17 Sandown Sporting Times Sri Lanka Fortune Stakes (Listed) going=Soft (Good to Soft in places)"
+    },
+    "Kinswoman": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1177438",
+      "runs_found": 10,
+      "evidence_snippet": "2026-05-13 Yarmouth Bodhi Solutions Handicap going=Good pos=2/7 | 2025-10-17 Haydock Weatherbys Stallion Book Handicap going=Good (Good to Soft in places) pos=1/8 | 2025-10-10 York Copper Knight Winni"
+    },
+    "Almaty Star": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1076637",
+      "runs_found": 10,
+      "evidence_snippet": "2026-04-11 Yarmouth TigerBet.co.uk Price Boosts Handicap going=Good pos=1/6 | 2026-03-09 Wolverhampton Midnite, Building The Future Of Betting Handicap going=Standard pos=2/7 | 2026-02-20 Southwell SB"
+    },
+    "Rhythm N Hooves": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1060979",
+      "runs_found": 10,
+      "evidence_snippet": "2026-05-18 Windsor Fitzdares Sprint Series Handicap going=Good (Good to Firm in places) pos=3/9 | 2026-05-01 Goodwood Fitzdares Official Partner Of Season Opener Handicap going=Good pos=4/11 | 2026-04"
+    },
+    "Eclairage": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1144298",
+      "runs_found": 10,
+      "evidence_snippet": "2026-05-16 Navan Round O Handicap going=Yielding pos=2/10 | 2025-10-24 Dundalk Bar One Racing Mercury Stakes (Group 3) going=Standard pos=4/14 | 2025-10-14 Dundalk Celebrate Your Special Occasion At D"
+    },
+    "Partisan Hero": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1080046",
+      "runs_found": 10,
+      "evidence_snippet": "2026-05-23 York William Hill Epic Boost Handicap going=Good (Good to Firm in places) pos=1/16 | 2026-05-06 Chester Join Ladbrokes Bet 5 Get 30 Earl Grosvenor Handicap going=Good pos=7/13 | 2026-02-19 "
+    },
+    "Michaela's Boy": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1056506",
+      "runs_found": 10,
+      "evidence_snippet": "2026-05-13 Yarmouth Bodhi Solutions Handicap going=Good pos=7/7 | 2026-04-26 Nottingham Pertemps Network Commercial Handicap going=Good (Good to Firm in places) pos=6/10 | 2026-02-21 Chelmsford City E"
+    },
+    "Allegresse": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1193323",
+      "runs_found": 5,
+      "evidence_snippet": "2026-05-01 Goodwood British Stallion Studs John Dunlop EBF Conditions Stakes (GBB Race) going=Good pos=4/4 | 2025-10-11 Newmarket Night Of Thunder Zetland Stakes (Group 3) going=Good to Firm (Good in "
+    },
+    "Folk Pageant": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1191188",
+      "runs_found": 5,
+      "evidence_snippet": "2026-05-30 Chester General Elliot Croft Handicap (GBBPlus Race) going=Good pos=1/10 | 2026-05-16 Newmarket BetMGM Handicap (GBBPlus Race) going=Good (Good to Firm in places) pos=1/8 | 2026-04-02 South"
+    },
+    "Hell Yeah He Did": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1195759",
+      "runs_found": 4,
+      "evidence_snippet": "2025-10-29 Nottingham EBF Stallions Golden Horn Maiden Stakes going=Soft (Heavy in places) pos=1/9 | 2025-10-06 Pontefract British EBF Novice Stakes (GBB/GBBPlus Race) going=Soft (Good to Soft in plac"
+    },
+    "Pendella": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1209634",
+      "runs_found": 6,
+      "evidence_snippet": "2026-05-23 York Royal Yorkshire Regiment Handicap (GBBPlus Race) going=Good (Good to Firm in places) pos=2/10 | 2026-05-14 York Frank Whittle Partnership Handicap (GBBPlus Race) going=Good pos=5/14 | "
+    },
+    "Starlight Time": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1181688",
+      "runs_found": 3,
+      "evidence_snippet": "2025-11-06 Chelmsford City Juddmonte EBF Restricted Novice Stakes (GBB/GBBPlus Race) going=Standard pos=1/14 | 2025-10-04 Newmarket 150,000 Tattersalls October Auction Stakes (GBB Race) going=Good (Go"
+    },
+    "York Tower": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1202028",
+      "runs_found": 3,
+      "evidence_snippet": "2026-05-12 Lingfield Sky Sports Racing Virgin 512 Novice Stakes (GBB Race) going=Standard pos=3/12 | 2025-12-11 Chelmsford City Irish EBF Future Stayers' Novice Stakes (GBB Race) going=Standard pos=2/"
+    },
+    "Lord Melbourne": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1118129",
+      "runs_found": 10,
+      "evidence_snippet": "2026-05-02 Goodwood Listen To Track Radio Next Week Handicap going=Good (Good to Firm in places) pos=9/9 | 2026-02-27 Lingfield Midnite AWC Middle Distance Trial Handicap (GBBPlus Race) going=Standard"
+    },
+    "Regal Ulixes": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1158057",
+      "runs_found": 9,
+      "evidence_snippet": "2026-05-15 York Support Macmillan Charity Raceday On 13 June Handicap (GBBPlus Race) going=Good pos=7/15 | 2026-04-03 Newcastle Midnite All-Weather Easter Classic Middle Distance Handicap (GBBPlus Rac"
+    },
+    "Give It To Me Oj": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1144898",
+      "runs_found": 10,
+      "evidence_snippet": "2026-05-22 Goodwood Track Radio Handicap (GBBPlus Race) going=Good (Good to Soft in places) pos=3/5 | 2026-03-11 Cheltenham BetMGM Cup Handicap Hurdle (Premier Handicap) (GBB Race) going=Good to Soft "
+    },
+    "Prydwen": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1027539",
+      "runs_found": 10,
+      "evidence_snippet": "2026-04-25 Ripon M.C.H. Hutchinson Memorial Trophy Handicap (GBBPlus Race) going=Good (Good to Firm in places) pos=1/6 | 2026-04-03 Newcastle Midnite All-Weather Easter Plate Marathon Handicap (GBBPlu"
+    },
+    "Hengest": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1186440",
+      "runs_found": 7,
+      "evidence_snippet": "2026-05-28 Yarmouth Norwich Inns Handicap going=Good to Firm (Good in places) pos=1/4 | 2026-05-19 Lingfield Get Raceday Ready Handicap going=Good pos=1/8 | 2026-05-11 Windsor Find Us At fitzdares.com"
+    },
+    "Fierce Fortitude": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1196191",
+      "runs_found": 7,
+      "evidence_snippet": "2026-05-25 Redcar Racing TV Zetland Gold Cup Handicap (GBBPlus Race) going=Good to Firm (Good in places) pos=3/10 | 2026-04-30 Redcar Racing TV Free Trial Handicap (GBBPlus Race) going=Good to Firm po"
+    },
+    "Gold Star Hero": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1153990",
+      "runs_found": 10,
+      "evidence_snippet": "2026-04-17 Wolverhampton Get Raceday Ready Handicap going=Standard pos=1/6 | 2026-04-09 Wolverhampton Free Bets On attheraces.com Handicap going=Standard pos=1/6 | 2026-03-26 Chelmsford City All Weath"
+    },
+    "Fine Interview": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1118654",
+      "runs_found": 10,
+      "evidence_snippet": "2026-03-29 Doncaster William Hill Each Way Extra Handicap going=Good to Soft pos=1/19 | 2025-11-08 Doncaster Virgin Bet Daily Price Boosts Handicap going=Heavy pos=9/22 | 2025-10-24 Doncaster William "
+    },
+    "Topwarrior": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1176991",
+      "runs_found": 9,
+      "evidence_snippet": "2025-10-24 Newbury West Berkshire Racing Club Handicap going=Soft pos=1/18 | 2025-09-27 Haydock Hallgarten And Novum Wines Handicap going=Good to Soft (Good in places) pos=12/12 | 2025-09-02 Goodwood "
+    },
+    "Cinque Verde": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1070117",
+      "runs_found": 10,
+      "evidence_snippet": "2026-05-23 Salisbury British Stallion Studs EBF Cathedral Stakes (Listed) going=Good pos=8/10 | 2026-05-01 Newmarket Close Brothers Fillies' Handicap going=Good to Firm pos=1/11 | 2026-03-07 Wolverham"
+    },
+    "Sondad": {
+      "source_url": "https://www.sportinglife.com/racing/profiles/horse/1120009",
+      "runs_found": 10,
+      "evidence_snippet": "2026-05-13 York Churchill Tyres Handicap going=Good pos=17/22 | 2025-10-03 Ascot BetMGM Handicap going=Soft pos=3/10 | 2025-09-20 Ayr Ladbrokes Ayr Silver Cup Handicap going=Soft pos=2/25"
+    }
+  },
+  "unavailable": []
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "horse": "Cato (IRE)",
+    "going_history": [],
+    "going_history_source": "unavailable",
+    "going_history_fetched_at": "2026-06-02",
+    "reason": "Timeform horse profile pages blocked by Azure WAF JavaScript Challenge (HTTP 403). The WAF requires browser-side JS execution to solve a JS challenge before serving horse-form pages. Server-side scraping cannot complete this challenge. URL attempted: https://www.timeform.com/horse-racing/horse-form/cato/<id> — no valid numeric horse ID could be determined prior to the block."
+  },
+  {
+    "horse": "Belinus",
+    "going_history": [],
+    "going_history_source": "unavailable",
+    "going_history_fetched_at": "2026-06-02",
+    "reason": "Timeform horse profile pages blocked by Azure WAF JavaScript Challenge (HTTP 403). The WAF requires browser-side JS execution to solve a JS challenge before serving horse-form pages. Server-side scraping cannot complete this challenge. URL attempted: https://www.timeform.com/horse-racing/horse-form/belinus/<id> — no valid numeric horse ID could be determined prior to the block."
+  },
+  {
+    "horse": "Constitution River",
+    "going_history": [],
+    "going_history_source": "unavailable",
+    "going_history_fetched_at": "2026-06-02",
+    "reason": "Timeform horse profile pages blocked by Azure WAF JavaScript Challenge (HTTP 403). The WAF requires browser-side JS execution to solve a JS challenge before serving horse-form pages. Server-side scraping cannot complete this challenge. URL confirmed from Timeform homepage: https://www.timeform.com/horse-racing/horse-form/constitution-river/000000630891 — but this URL returns 403 with JS challenge on direct curl/Invoke-WebRequest."
+  }
+]

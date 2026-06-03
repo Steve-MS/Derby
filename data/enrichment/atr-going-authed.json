@@ -1,0 +1,34 @@
+[
+  {
+    "horse": "Constitution River",
+    "going_history": [
+      {
+        "date": "2026-05-31",
+        "going": "Soft",
+        "position": 1,
+        "field_size": 14,
+        "course": "Chantilly",
+        "race": "Prix du Jockey Club (Gr.1)"
+      }
+    ],
+    "going_history_source": "attheraces.com (1 of 4 rows verified vs Wikipedia/stablebet; Chester Vase row REFUTED by racingbetter.co.uk and yahoo sports — actual winner Benvenuto Cellini; Curragh + Galway rows UNVERIFIED and dropped)",
+    "going_history_fetched_at": "2026-06-02T19:31:17Z",
+    "verified_at": "2026-06-02T20:30:00Z",
+    "verified_by": "river-verifier agent",
+    "source_url": "https://stablebet.co.uk/racing-news/prix-du-jockey-club-2026-result/"
+  },
+  {
+    "horse": "Belinus",
+    "going_history": [],
+    "going_history_source": "unavailable",
+    "going_history_fetched_at": "2026-06-02T19:31:17Z",
+    "unavailable_reason": "ATR numeric horse ID not found; Playwright real-browser search and direct-slug attempts both failed."
+  },
+  {
+    "horse": "Cato (IRE)",
+    "going_history": [],
+    "going_history_source": "unavailable",
+    "going_history_fetched_at": "2026-06-02T19:31:17Z",
+    "unavailable_reason": "ATR numeric horse ID not found; Playwright real-browser search and direct-slug attempts both failed."
+  }
+]

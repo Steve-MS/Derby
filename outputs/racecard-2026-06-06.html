@@ -90,6 +90,9 @@ table.slip tr.row-divider td {
 .bet-win  { background: #2a7a2a; color: #fff; }
 .bet-ew   { background: #b88200; color: #fff; }
 .bet-pass { background: #ccc;    color: #555; }
+.bet-acca { background: #4b3a99; color: #fff; }
+.row-acca { background: #f1eefb; }
+.acca-leg { line-height: 1.25; margin: 1px 0; }
 
 /* ---------- Footer ---------- */
 .slip-footer {
@@ -115,8 +118,8 @@ table.slip tr.row-divider td {
   <div class="header-right">
     <div class="totals">
       <div class="total-line"><span>Total outlay:</span> <strong>£100.00</strong></div>
-      <div class="total-line"><span>Bets:</span> <strong>6</strong></div>
-      <div class="total-line potential"><span>Max potential:</span> <strong>£362.35</strong></div>
+      <div class="total-line"><span>Bets:</span> <strong>7</strong></div>
+      <div class="total-line potential"><span>Max potential:</span> <strong>£20324.22</strong></div>
     </div>
   </div>
 </header>
@@ -143,8 +146,8 @@ table.slip tr.row-divider td {
         <strong>See The Fire</strong>
 <br><span class="trainer">Andrew Balding</span>      </td>
       <td class="col-num">13.0</td>
-      <td class="col-num">£5.41 EW</td>
-      <td class="col-num">£70.35</td>
+      <td class="col-num">£5.14 EW</td>
+      <td class="col-num">£66.83</td>
       <td class="col-note">value: model rank 3 vs market 6</td>
     </tr>
     <tr class="row-win">
@@ -155,8 +158,8 @@ table.slip tr.row-divider td {
         <strong>Kinswoman</strong>
 <br><span class="trainer">William Haggas</span>      </td>
       <td class="col-num">24.0</td>
-      <td class="col-num">£9.96</td>
-      <td class="col-num">£14.18</td>
+      <td class="col-num">£9.46</td>
+      <td class="col-num">£13.47</td>
       <td class="col-note">edge +42.5%</td>
     </tr>
     <tr class="row-outsider">
@@ -167,8 +170,8 @@ table.slip tr.row-divider td {
         <strong>Causeway</strong>
 <br><span class="trainer">Aidan O&#39;Brien</span>      </td>
       <td class="col-num">29.0</td>
-      <td class="col-num">£5.41 EW</td>
-      <td class="col-num">£156.93</td>
+      <td class="col-num">£5.14 EW</td>
+      <td class="col-num">£149.08</td>
       <td class="col-note">value: model rank 2 vs market 11</td>
     </tr>
     <tr class="row-win">
@@ -179,8 +182,8 @@ table.slip tr.row-divider td {
         <strong>Allegresse</strong>
 <br><span class="trainer">Andrew Balding</span>      </td>
       <td class="col-num">9.0</td>
-      <td class="col-num">£21.21</td>
-      <td class="col-num">£27.81</td>
+      <td class="col-num">£20.15</td>
+      <td class="col-num">£26.42</td>
       <td class="col-note">edge +31.3%</td>
     </tr>
     <tr class="row-ew">
@@ -191,8 +194,8 @@ table.slip tr.row-divider td {
         <strong>Lord Melbourne</strong>
 <br><span class="trainer">Ralph Beckett</span>      </td>
       <td class="col-num">13.5</td>
-      <td class="col-num">£27.27 EW</td>
-      <td class="col-num">£31.82</td>
+      <td class="col-num">£25.91 EW</td>
+      <td class="col-num">£30.23</td>
       <td class="col-note">edge +31.3%</td>
     </tr>
     <tr class="row-win">
@@ -203,8 +206,8 @@ table.slip tr.row-divider td {
         <strong>Dance In The Storm</strong>
 <br><span class="trainer">Andrew Balding</span>      </td>
       <td class="col-num">18.5</td>
-      <td class="col-num">£30.74</td>
-      <td class="col-num">£61.26</td>
+      <td class="col-num">£29.20</td>
+      <td class="col-num">£58.19</td>
       <td class="col-note">edge +99.2%</td>
     </tr>
     <tr class="row-divider"><td colspan="8">— No-bet races (model passes at current prices) —</td></tr>
@@ -248,6 +251,21 @@ table.slip tr.row-divider td {
       <td class="col-num">—</td>
       <td class="col-note">edge -52.4% — below threshold</td>
     </tr>
+    <tr class="row-divider"><td colspan="8">— Accumulator pick (£5.00 carved out of daily outlay) —</td></tr>
+    <tr class="row-acca">
+      <td class="col-time">All-day</td>
+      <td class="col-race">Treble (3 legs)</td>
+      <td class="col-bet"><span class="bet-tag bet-acca">ACCA</span></td>
+      <td class="col-horse">
+        <div class="acca-leg"><strong>Kinswoman</strong> <span class="trainer">15:15 @ 24.0</span></div>
+        <div class="acca-leg"><strong>Allegresse</strong> <span class="trainer">16:40 @ 9.0</span></div>
+        <div class="acca-leg"><strong>Dance In The Storm</strong> <span class="trainer">17:55 @ 18.5</span></div>
+      </td>
+      <td class="col-num">3996.0</td>
+      <td class="col-num">£5.00</td>
+      <td class="col-num">£19980.00</td>
+      <td class="col-note">combined prob 0.09% · EV £2.73</td>
+    </tr>
   </tbody>
 </table>
 
@@ -257,9 +275,10 @@ table.slip tr.row-divider td {
        <span class="bet-tag bet-win">WIN</span> back to win &nbsp;·&nbsp;
        <span class="bet-tag bet-ew">EW</span> each-way (1/4 odds, places 1-1-2-3) &nbsp;·&nbsp;
        ⚡ outsider value play &nbsp;·&nbsp;
-       <span class="bet-tag bet-pass">PASS</span> no edge
+       <span class="bet-tag bet-pass">PASS</span> no edge &nbsp;·&nbsp;
+       <span class="bet-tag bet-acca">ACCA</span> accumulator (multi-race)
     </p>
-    <p class="disclaimer">Generated 2026-06-03 10:40 · Model v0.1 · For personal use. Please gamble responsibly.</p>
+    <p class="disclaimer">Generated 2026-06-03 10:43 · Model v0.1 · For personal use. Please gamble responsibly.</p>
   </div>
 </footer>
 
