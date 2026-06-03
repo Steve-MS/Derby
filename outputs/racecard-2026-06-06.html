@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Epsom Derby Day — Betting Slip — 6 June 2026</title>
+<style>/* race-analysis printable betting slip — one A4 per race day. */
+
+@page { size: A4 portrait; margin: 10mm 12mm; }
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 10pt;
+  color: #111;
+  line-height: 1.3;
+  margin: 0;
+}
+
+h1 { margin: 0; font-size: 18pt; letter-spacing: -0.4pt; }
+p  { margin: 0; }
+
+.slip-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 2pt solid #111;
+  padding-bottom: 3mm;
+  margin-bottom: 4mm;
+}
+.subtitle { font-size: 10pt; color: #555; margin-top: 1mm; }
+
+.totals { text-align: right; font-size: 9.5pt; }
+.totals .total-line { margin-bottom: 0.6mm; }
+.totals .total-line span { color: #555; }
+.totals .total-line strong { font-size: 11pt; }
+.totals .total-line.potential strong { color: #2a7a2a; }
+
+/* ---------- Bet slip table ---------- */
+table.slip {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 9.5pt;
+}
+table.slip th, table.slip td {
+  padding: 1.8mm 2mm;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 0.5pt solid #ddd;
+}
+table.slip thead th {
+  border-bottom: 1pt solid #111;
+  text-transform: uppercase;
+  font-size: 8.5pt;
+  letter-spacing: 0.5pt;
+  color: #555;
+}
+table.slip .col-time   { width: 12mm; font-weight: 600; font-variant-numeric: tabular-nums; }
+table.slip .col-race   { width: 42mm; font-size: 9pt; }
+table.slip .col-bet    { width: 14mm; text-align: center; }
+table.slip .col-horse  { width: 40mm; }
+table.slip .col-horse .trainer { font-size: 8.5pt; color: #666; }
+table.slip .col-num    { width: 16mm; text-align: right; font-variant-numeric: tabular-nums; }
+table.slip .col-note   { font-size: 8.5pt; color: #555; }
+
+table.slip tr.row-win     { background: #e8f5e8; }
+table.slip tr.row-ew      { background: #fff5e0; }
+table.slip tr.row-outsider { background: #fff5e0; }
+table.slip tr.row-win td, table.slip tr.row-ew td, table.slip tr.row-outsider td { font-weight: 500; }
+table.slip tr.row-pass    { color: #888; }
+table.slip tr.row-divider td {
+  text-align: center;
+  font-size: 8.5pt;
+  color: #888;
+  font-style: italic;
+  padding: 4mm 0 1mm 0;
+  border-bottom: none;
+  background: transparent;
+}
+
+/* ---------- Bet tags ---------- */
+.bet-tag {
+  display: inline-block;
+  padding: 0.5mm 2mm;
+  font-size: 8.5pt;
+  font-weight: 700;
+  border-radius: 1mm;
+  letter-spacing: 0.5pt;
+}
+.bet-win  { background: #2a7a2a; color: #fff; }
+.bet-ew   { background: #b88200; color: #fff; }
+.bet-pass { background: #ccc;    color: #555; }
+
+/* ---------- Footer ---------- */
+.slip-footer {
+  margin-top: 6mm;
+  padding-top: 3mm;
+  border-top: 1pt solid #ccc;
+  font-size: 8.5pt;
+  color: #555;
+}
+.slip-footer .disclaimer { margin-top: 1.5mm; font-style: italic; color: #888; }
+
+@media print { body { font-size: 9.5pt; } }
+
+</style>
+</head>
+<body>
+
+<header class="slip-header">
+  <div class="header-left">
+    <h1>Epsom — Derby Day</h1>
+    <p class="subtitle">6 June 2026 · 8 races · Going: TBC</p>
+  </div>
+  <div class="header-right">
+    <div class="totals">
+      <div class="total-line"><span>Total outlay:</span> <strong>£100.00</strong></div>
+      <div class="total-line"><span>Bets:</span> <strong>6</strong></div>
+      <div class="total-line potential"><span>Max potential:</span> <strong>£362.35</strong></div>
+    </div>
+  </div>
+</header>
+
+<table class="slip">
+  <thead>
+    <tr>
+      <th class="col-time">Time</th>
+      <th class="col-race">Race</th>
+      <th class="col-bet">Bet</th>
+      <th class="col-horse">Horse</th>
+      <th class="col-num">Odds</th>
+      <th class="col-num">Stake</th>
+      <th class="col-num">Potential</th>
+      <th class="col-note">Note</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="row-outsider">
+      <td class="col-time">14:40</td>
+      <td class="col-race">Coolmore Coronation Cup ⚡</td>
+      <td class="col-bet"><span class="bet-tag bet-ew">EW</span></td>
+      <td class="col-horse">
+        <strong>See The Fire</strong>
+<br><span class="trainer">Andrew Balding</span>      </td>
+      <td class="col-num">13.0</td>
+      <td class="col-num">£5.41 EW</td>
+      <td class="col-num">£70.35</td>
+      <td class="col-note">value: model rank 3 vs market 6</td>
+    </tr>
+    <tr class="row-win">
+      <td class="col-time">15:15</td>
+      <td class="col-race">Betfred Dash Handicap (Heritage Handicap)</td>
+      <td class="col-bet"><span class="bet-tag bet-win">WIN</span></td>
+      <td class="col-horse">
+        <strong>Kinswoman</strong>
+<br><span class="trainer">William Haggas</span>      </td>
+      <td class="col-num">24.0</td>
+      <td class="col-num">£9.96</td>
+      <td class="col-num">£14.18</td>
+      <td class="col-note">edge +42.5%</td>
+    </tr>
+    <tr class="row-outsider">
+      <td class="col-time">16:00</td>
+      <td class="col-race">Betfred Derby ⚡</td>
+      <td class="col-bet"><span class="bet-tag bet-ew">EW</span></td>
+      <td class="col-horse">
+        <strong>Causeway</strong>
+<br><span class="trainer">Aidan O&#39;Brien</span>      </td>
+      <td class="col-num">29.0</td>
+      <td class="col-num">£5.41 EW</td>
+      <td class="col-num">£156.93</td>
+      <td class="col-note">value: model rank 2 vs market 11</td>
+    </tr>
+    <tr class="row-win">
+      <td class="col-time">16:40</td>
+      <td class="col-race">Cherryfield (Croydon) Lester Piggott Handicap</td>
+      <td class="col-bet"><span class="bet-tag bet-win">WIN</span></td>
+      <td class="col-horse">
+        <strong>Allegresse</strong>
+<br><span class="trainer">Andrew Balding</span>      </td>
+      <td class="col-num">9.0</td>
+      <td class="col-num">£21.21</td>
+      <td class="col-num">£27.81</td>
+      <td class="col-note">edge +31.3%</td>
+    </tr>
+    <tr class="row-ew">
+      <td class="col-time">17:20</td>
+      <td class="col-race">HKJC World Pool Northern Dancer Handicap</td>
+      <td class="col-bet"><span class="bet-tag bet-ew">EW</span></td>
+      <td class="col-horse">
+        <strong>Lord Melbourne</strong>
+<br><span class="trainer">Ralph Beckett</span>      </td>
+      <td class="col-num">13.5</td>
+      <td class="col-num">£27.27 EW</td>
+      <td class="col-num">£31.82</td>
+      <td class="col-note">edge +31.3%</td>
+    </tr>
+    <tr class="row-win">
+      <td class="col-time">17:55</td>
+      <td class="col-race">JRA Tokyo Trophy Handicap</td>
+      <td class="col-bet"><span class="bet-tag bet-win">WIN</span></td>
+      <td class="col-horse">
+        <strong>Dance In The Storm</strong>
+<br><span class="trainer">Andrew Balding</span>      </td>
+      <td class="col-num">18.5</td>
+      <td class="col-num">£30.74</td>
+      <td class="col-num">£61.26</td>
+      <td class="col-note">edge +99.2%</td>
+    </tr>
+    <tr class="row-divider"><td colspan="8">— No-bet races (model passes at current prices) —</td></tr>
+    <tr class="row-pass">
+      <td class="col-time">13:30</td>
+      <td class="col-race">Betfred Tattenham Corner Stakes</td>
+      <td class="col-bet"><span class="bet-tag bet-pass">PASS</span></td>
+      <td class="col-horse">Lake Forest <span class="trainer">(model fancied, no value)</span></td>
+      <td class="col-num">7.0</td>
+      <td class="col-num">—</td>
+      <td class="col-num">—</td>
+      <td class="col-note">edge +4.5% — below threshold</td>
+    </tr>
+    <tr class="row-pass">
+      <td class="col-time">14:05</td>
+      <td class="col-race">Princess Elizabeth Stakes</td>
+      <td class="col-bet"><span class="bet-tag bet-pass">PASS</span></td>
+      <td class="col-horse">Pacific Mission <span class="trainer">(model fancied, no value)</span></td>
+      <td class="col-num">7.5</td>
+      <td class="col-num">—</td>
+      <td class="col-num">—</td>
+      <td class="col-note">edge -2.3% — below threshold</td>
+    </tr>
+    <tr class="row-pass">
+      <td class="col-time">14:40</td>
+      <td class="col-race">Coolmore Coronation Cup</td>
+      <td class="col-bet"><span class="bet-tag bet-pass">PASS</span></td>
+      <td class="col-horse">Jan Brueghel <span class="trainer">(model fancied, no value)</span></td>
+      <td class="col-num">4.0</td>
+      <td class="col-num">—</td>
+      <td class="col-num">—</td>
+      <td class="col-note">edge -21.2% — below threshold</td>
+    </tr>
+    <tr class="row-pass">
+      <td class="col-time">16:00</td>
+      <td class="col-race">Betfred Derby</td>
+      <td class="col-bet"><span class="bet-tag bet-pass">PASS</span></td>
+      <td class="col-horse">Item <span class="trainer">(model fancied, no value)</span></td>
+      <td class="col-num">5.5</td>
+      <td class="col-num">—</td>
+      <td class="col-num">—</td>
+      <td class="col-note">edge -52.4% — below threshold</td>
+    </tr>
+  </tbody>
+</table>
+
+<footer class="slip-footer">
+  <div class="footer-left">
+    <p><strong>Legend:</strong>
+       <span class="bet-tag bet-win">WIN</span> back to win &nbsp;·&nbsp;
+       <span class="bet-tag bet-ew">EW</span> each-way (1/4 odds, places 1-1-2-3) &nbsp;·&nbsp;
+       ⚡ outsider value play &nbsp;·&nbsp;
+       <span class="bet-tag bet-pass">PASS</span> no edge
+    </p>
+    <p class="disclaimer">Generated 2026-06-03 10:40 · Model v0.1 · For personal use. Please gamble responsibly.</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -362,6 +362,7 @@ def cmd_card(args: argparse.Namespace) -> int:
         scores_path=str(scores_path),
         bets_path=str(bets_path) if bets_path.exists() else None,
         output_path=str(output_path),
+        daily_outlay_gbp=args.outlay,
     )
 
     print(f"✓  Race card written → {output_path}")
@@ -433,6 +434,12 @@ def build_parser() -> argparse.ArgumentParser:
         help="Generate printable race card → outputs/racecard-{date}.html (A4, one race per page)",
     )
     p.add_argument("--date", required=True, metavar="YYYY-MM-DD")
+    p.add_argument(
+        "--outlay",
+        type=float,
+        default=100.0,
+        help="Total daily outlay cap in GBP (stakes scaled proportionally). Default: 100",
+    )
     p.set_defaults(func=cmd_card)
 
     return parser

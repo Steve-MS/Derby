@@ -142,8 +142,15 @@ def render_card(
     bets_path: str | None,
     output_path: str,
     race_context: dict | None = None,
+    daily_outlay_gbp: float = 100.0,
 ) -> None:
-    """Render the printable one-page betting slip."""
+    """Render the printable one-page betting slip.
+
+    Stakes from bets.json are scaled proportionally so the day's total
+    outlay equals ``daily_outlay_gbp`` (default £100). The shape of the
+    portfolio (relative sizing across WIN / EW / outsider bets) is
+    preserved — only the scale changes.
+    """
     scores_data = json.loads(Path(scores_path).read_text(encoding="utf-8"))
 
     bets = {}
@@ -152,6 +159,13 @@ def render_card(
 
     races = scores_data.get("races", [])
     slip_rows, pass_rows = _build_rows(races, bets)
+
+    raw_total_stakes = sum(r.get("stake", 0) for r in slip_rows)
+    if raw_total_stakes > 0 and daily_outlay_gbp > 0:
+        scale = daily_outlay_gbp / raw_total_stakes
+        for r in slip_rows:
+            r["stake"] = round(r["stake"] * scale, 2)
+            r["potential"] = round(r["potential"] * scale, 2)
 
     try:
         dt = datetime.strptime(date, "%Y-%m-%d")
@@ -178,6 +192,7 @@ def render_card(
         "active_bet_count": len(slip_rows),
         "total_stakes_gbp": total_stakes,
         "total_potential_gbp": total_potential,
+        "daily_outlay_target_gbp": daily_outlay_gbp,
     }
 
     env = Environment(

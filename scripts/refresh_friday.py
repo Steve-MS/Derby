@@ -149,7 +149,7 @@ def main() -> None:
     for date in DATES:
         run([PY, "-m", "src.cli", "predict", "--date", date, "--bankroll", str(BANKROLL)])
         run([PY, "-m", "src.cli", "report", "--date", date])
-        run([PY, "-m", "src.cli", "card", "--date", date])
+        run([PY, "-m", "src.cli", "card", "--date", date, "--outlay", "100"])
 
     print("\n=== Done. Open outputs\\report-*.html (full HTML) and racecard-*.html (printable slip) ===")
 
