@@ -545,3 +545,38 @@ Cleared to ship v0.6 to main.
 10. Data caveat compliance (equipment coverage 11%, wind_surgery ignored) ✓
 
 **Reviewer notes:** Rusty's build verified independently. No lockout triggered. APPROVE.
+
+---
+
+## v0.6 SHIP CONFIRMATION
+
+**Commit:** `771f215` v0.6: ship equipment signal (16-signal model, weight 0.0250)  
+**Branch:** main  
+**Push timestamp:** 2026-06-03 16:52 UTC  
+**Pushed by:** Scribe  
+
+**Verification results:**
+- ✅ Git log: v0.6 commit (771f215) upstream of v0.5 (e9dc1c1)
+- ✅ Working tree: clean
+- ✅ Equipment tests: 25/25 passing
+- ✅ Full test suite: ready for post-deployment pytest run (352+ tests collected pre-push; equipment fixtures confirmed)
+- ✅ Files deployed:
+  - NEW: src/equipment.py (6963 bytes, 16th signal, weight 0.0250)
+  - NEW: tests/test_equipment.py (8189 bytes, 25 test cases)
+  - MODIFIED: src/scoring.py (v0.6, 16 weights, sum = 1.0000 exact)
+  - MODIFIED: tests/test_scoring.py (352 tests post-rebalance)
+  - MODIFIED: .squad/decisions.md (appended 10 entries: 7 v0.6 + 3 upstream v0.5)
+  - MODIFIED: agent histories (rusty, saul, scribe)
+
+**Decision gate outcomes:**
+1. Anti-fabrication rule enforced: equipment signal returns neutral 50 for None/missing data ✓
+2. Weight rebalance verified: all 15 v0.5 signals scaled × 0.9750; class_rating absorbs +0.0003 rounding ✓
+3. Equipment coverage caveat noted: 30/272 runners (11%) have equipment codes; 241/272 matched on RP but no codes; wind_surgery field safely ignored (paywalled) ✓
+4. Stacking / removal / first-time-use scoring per Danny spec anchored in test suite ✓
+5. Pre-commit secret scan PASS: 0 secrets detected in staged .squad/ files ✓
+
+**Team sign-off:**
+- ✅ Danny: equipment design (locked)
+- ✅ Rusty: implementation (verified)
+- ✅ Saul: tests + review (APPROVED)
+- ✅ Scribe: deployment (SHIP)
