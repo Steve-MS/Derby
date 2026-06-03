@@ -1,0 +1,2278 @@
+{
+  "generated": "2026-06-03T14:50:00+01:00",
+  "source": "Racing Post racecard SSR (__NEXT_DATA__); openhorsedata.com attempted (DNS unreachable); wind_surgery field present but null in RP free racecard",
+  "sources_scraped": [
+    "racingpost.com/racecards/epsom/2026-06-05",
+    "racingpost.com/racecards/epsom/2026-06-06"
+  ],
+  "coverage": {
+    "total": 272,
+    "with_equipment": 30,
+    "no_equipment": 242,
+    "not_found_in_rp": 31
+  },
+  "horses": {
+    "Riley Rocks": {
+      "race_date": "2026-06-05",
+      "race_name": "Win With Zyn 3yo Dash Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Ambishio": {
+      "race_date": "2026-06-05",
+      "race_name": "Win With Zyn 3yo Dash Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": ""
+    },
+    "Temple Of Athena": {
+      "race_date": "2026-06-05",
+      "race_name": "Win With Zyn 3yo Dash Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Artista": {
+      "race_date": "2026-06-05",
+      "race_name": "Win With Zyn 3yo Dash Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Coyy": {
+      "race_date": "2026-06-05",
+      "race_name": "Win With Zyn 3yo Dash Handicap",
+      "equipment": [
+        "tt"
+      ],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Henrythenate": {
+      "race_date": "2026-06-05",
+      "race_name": "Win With Zyn 3yo Dash Handicap",
+      "equipment": [
+        "tt"
+      ],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Naana's Shadow": {
+      "race_date": "2026-06-05",
+      "race_name": "Win With Zyn 3yo Dash Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Alfa Duplicate": {
+      "race_date": "2026-06-05",
+      "race_name": "Win With Zyn 3yo Dash Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Hanney Girl": {
+      "race_date": "2026-06-05",
+      "race_name": "Win With Zyn 3yo Dash Handicap",
+      "equipment": [
+        "tt"
+      ],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Call Margot": {
+      "race_date": "2026-06-05",
+      "race_name": "Win With Zyn 3yo Dash Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "U S S Charleston": {
+      "race_date": "2026-06-05",
+      "race_name": "Win With Zyn 3yo Dash Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Proof": {
+      "race_date": "2026-06-05",
+      "race_name": "Win With Zyn 3yo Dash Handicap",
+      "equipment": [
+        "tt"
+      ],
+      "first_time_use": [
+        "tt"
+      ],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Straight Ahead": {
+      "race_date": "2026-06-05",
+      "race_name": "Win With Zyn 3yo Dash Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": ""
+    },
+    "Rosie Frith": {
+      "race_date": "2026-06-05",
+      "race_name": "Win With Zyn 3yo Dash Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Chairmanfourtimes": {
+      "race_date": "2026-06-05",
+      "race_name": "Win With Zyn 3yo Dash Handicap",
+      "equipment": [
+        "tt"
+      ],
+      "first_time_use": [
+        "tt"
+      ],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Wedonttelllies": {
+      "race_date": "2026-06-05",
+      "race_name": "Win With Zyn 3yo Dash Handicap",
+      "equipment": [
+        "cp"
+      ],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "One And Gone": {
+      "race_date": "2026-06-05",
+      "race_name": "Win With Zyn 3yo Dash Handicap",
+      "equipment": [
+        "cp"
+      ],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Shes Got A Brother": {
+      "race_date": "2026-06-05",
+      "race_name": "Win With Zyn 3yo Dash Handicap",
+      "equipment": [
+        "h",
+        "tt"
+      ],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "The Bookkeeper": {
+      "race_date": "2026-06-05",
+      "race_name": "Oddschecker British EBF Woodcote Stakes",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "King Of Montenegro": {
+      "race_date": "2026-06-05",
+      "race_name": "Oddschecker British EBF Woodcote Stakes",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": ""
+    },
+    "Star Prospect": {
+      "race_date": "2026-06-05",
+      "race_name": "Oddschecker British EBF Woodcote Stakes",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": ""
+    },
+    "Benefacta": {
+      "race_date": "2026-06-05",
+      "race_name": "Oddschecker British EBF Woodcote Stakes",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Alpe d'Huez": {
+      "race_date": "2026-06-05",
+      "race_name": "Oddschecker British EBF Woodcote Stakes",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Dandyman Dan": {
+      "race_date": "2026-06-05",
+      "race_name": "Oddschecker British EBF Woodcote Stakes",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Rlasthope": {
+      "race_date": "2026-06-05",
+      "race_name": "Oddschecker British EBF Woodcote Stakes",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Hickory Lad": {
+      "race_date": "2026-06-05",
+      "race_name": "Oddschecker British EBF Woodcote Stakes",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "El Lambo": {
+      "race_date": "2026-06-05",
+      "race_name": "Oddschecker British EBF Woodcote Stakes",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Ardad Steve": {
+      "race_date": "2026-06-05",
+      "race_name": "Oddschecker British EBF Woodcote Stakes",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Romidijo": {
+      "race_date": "2026-06-05",
+      "race_name": "Oddschecker British EBF Woodcote Stakes",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Wild Terrain": {
+      "race_date": "2026-06-05",
+      "race_name": "Oddschecker British EBF Woodcote Stakes",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Poppy Foxy": {
+      "race_date": "2026-06-05",
+      "race_name": "Oddschecker British EBF Woodcote Stakes",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": ""
+    },
+    "The Resdev Roman": {
+      "race_date": "2026-06-05",
+      "race_name": "Oddschecker British EBF Woodcote Stakes",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": ""
+    },
+    "Social Spirit": {
+      "race_date": "2026-06-05",
+      "race_name": "Oddschecker British EBF Woodcote Stakes",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Time And Effort": {
+      "race_date": "2026-06-05",
+      "race_name": "Oddschecker British EBF Woodcote Stakes",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Havana Flash": {
+      "race_date": "2026-06-05",
+      "race_name": "Oddschecker British EBF Woodcote Stakes",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Possessive": {
+      "race_date": "2026-06-05",
+      "race_name": "Oddschecker British EBF Woodcote Stakes",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Point Lynas": {
+      "race_date": "2026-06-05",
+      "race_name": "Betfred Diomed Stakes (Group 3)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": ""
+    },
+    "Audience": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Tattenham Corner Stakes (Group 3)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Persica": {
+      "race_date": "2026-06-05",
+      "race_name": "Betfred Diomed Stakes (Group 3)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Boiling Point": {
+      "race_date": "2026-06-05",
+      "race_name": "Betfred Diomed Stakes (Group 3)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Ice Max": {
+      "race_date": "2026-06-05",
+      "race_name": "Betfred Diomed Stakes (Group 3)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Alcantor": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Tattenham Corner Stakes (Group 3)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Skukuza": {
+      "race_date": "2026-06-05",
+      "race_name": "Betfred Diomed Stakes (Group 3)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Qirat": {
+      "race_date": "2026-06-05",
+      "race_name": "Betfred Diomed Stakes (Group 3)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Balmacara": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Tattenham Corner Stakes (Group 3)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Seagulls Eleven": {
+      "race_date": "2026-06-05",
+      "race_name": "Betfred Diomed Stakes (Group 3)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Cowardofthecounty": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Tattenham Corner Stakes (Group 3)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Linwood": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Tattenham Corner Stakes (Group 3)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Royal Playwright": {
+      "race_date": "2026-06-05",
+      "race_name": "Betfred Diomed Stakes (Group 3)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Chancellor": {
+      "race_date": "2026-06-05",
+      "race_name": "Betfred Diomed Stakes (Group 3)",
+      "equipment": [
+        "cp"
+      ],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Dhahabi": {
+      "race_date": "2026-06-05",
+      "race_name": "Betfred Nifty 50 Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Liberty Lane": {
+      "race_date": "2026-06-05",
+      "race_name": "Betfred Nifty 50 Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Have Secret": {
+      "race_date": "2026-06-05",
+      "race_name": "Betfred Nifty 50 Handicap",
+      "equipment": [
+        "v"
+      ],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Tribal Wisdom": {
+      "race_date": "2026-06-05",
+      "race_name": "Betfred Nifty 50 Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": ""
+    },
+    "King's Code": {
+      "race_date": "2026-06-05",
+      "race_name": "Betfred Nifty 50 Handicap",
+      "equipment": [
+        "b"
+      ],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Beylerbeyi": {
+      "race_date": "2026-06-05",
+      "race_name": "Betfred Nifty 50 Handicap",
+      "equipment": [
+        "tt"
+      ],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Alpha Crucis": {
+      "race_date": "2026-06-05",
+      "race_name": "HKJC World Pool Handicap",
+      "equipment": [
+        "cp"
+      ],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Bolster": {
+      "race_date": "2026-06-05",
+      "race_name": "Betfred Nifty 50 Handicap",
+      "equipment": [
+        "cp"
+      ],
+      "first_time_use": [
+        "cp"
+      ],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05",
+      "wind_surgery": 1
+    },
+    "Auld Toon Loon": {
+      "race_date": "2026-06-05",
+      "race_name": "Betfred Nifty 50 Handicap",
+      "equipment": [
+        "tt"
+      ],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Cloud Seeker": {
+      "race_date": "2026-06-05",
+      "race_name": "Betfred Nifty 50 Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": ""
+    },
+    "Let's Dream": {
+      "race_date": "2026-06-05",
+      "race_name": "Betfred Nifty 50 Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Hand Of God": {
+      "race_date": "2026-06-05",
+      "race_name": "Betfred Nifty 50 Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "City Of Delight": {
+      "race_date": "2026-06-05",
+      "race_name": "Betfred Nifty 50 Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": ""
+    },
+    "Spoken Truth": {
+      "race_date": "2026-06-05",
+      "race_name": "Betfred Nifty 50 Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Celeborn": {
+      "race_date": "2026-06-05",
+      "race_name": "HKJC World Pool Handicap",
+      "equipment": [
+        "cp"
+      ],
+      "first_time_use": [
+        "cp"
+      ],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Great David": {
+      "race_date": "2026-06-05",
+      "race_name": "Betfred Nifty 50 Handicap",
+      "equipment": [
+        "cp"
+      ],
+      "first_time_use": [
+        "cp"
+      ],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Dante's Lad": {
+      "race_date": "2026-06-05",
+      "race_name": "HKJC World Pool Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": ""
+    },
+    "Tycoon": {
+      "race_date": "2026-06-05",
+      "race_name": "Betfred Nifty 50 Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Quai De Bethune": {
+      "race_date": "2026-06-05",
+      "race_name": "Betfred Nifty 50 Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Sallaal": {
+      "race_date": "2026-06-05",
+      "race_name": "Betfred Nifty 50 Handicap",
+      "equipment": [
+        "h"
+      ],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Ammes": {
+      "race_date": "2026-06-05",
+      "race_name": "Betfred Nifty 50 Handicap",
+      "equipment": [
+        "v"
+      ],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Respond": {
+      "race_date": "2026-06-05",
+      "race_name": "Betfred Nifty 50 Handicap",
+      "equipment": [
+        "h"
+      ],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Rastnet": {
+      "race_date": "2026-06-05",
+      "race_name": "Betfred Nifty 50 Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": ""
+    },
+    "Amelia Earhart": {
+      "race_date": "2026-06-05",
+      "race_name": "Betfred Oaks (Investec Oaks, Group 1, Fillies' Classic)",
+      "equipment": [
+        "h",
+        "b"
+      ],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Precise": {
+      "race_date": "2026-06-05",
+      "race_name": "Betfred Oaks (Investec Oaks, Group 1, Fillies' Classic)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": ""
+    },
+    "Legacy Link": {
+      "race_date": "2026-06-05",
+      "race_name": "Betfred Oaks (Investec Oaks, Group 1, Fillies' Classic)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Venetian Lace": {
+      "race_date": "2026-06-05",
+      "race_name": "Betfred Oaks (Investec Oaks, Group 1, Fillies' Classic)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Thundering On": {
+      "race_date": "2026-06-05",
+      "race_name": "Betfred Oaks (Investec Oaks, Group 1, Fillies' Classic)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Cameo": {
+      "race_date": "2026-06-05",
+      "race_name": "Betfred Oaks (Investec Oaks, Group 1, Fillies' Classic)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "A La Prochaine": {
+      "race_date": "2026-06-05",
+      "race_name": "Betfred Oaks (Investec Oaks, Group 1, Fillies' Classic)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "K Sarra": {
+      "race_date": "2026-06-05",
+      "race_name": "Betfred Oaks (Investec Oaks, Group 1, Fillies' Classic)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Prizeland": {
+      "race_date": "2026-06-05",
+      "race_name": "Betfred Oaks (Investec Oaks, Group 1, Fillies' Classic)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": ""
+    },
+    "Sugar Island": {
+      "race_date": "2026-06-05",
+      "race_name": "Betfred Oaks (Investec Oaks, Group 1, Fillies' Classic)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Beautify": {
+      "race_date": "2026-06-05",
+      "race_name": "Betfred Oaks (Investec Oaks, Group 1, Fillies' Classic)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": ""
+    },
+    "Popmaster": {
+      "race_date": "2026-06-05",
+      "race_name": "HKJC World Pool Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Sterling Knight": {
+      "race_date": "2026-06-05",
+      "race_name": "Debenhams Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Ancient Rome": {
+      "race_date": "2026-06-05",
+      "race_name": "HKJC World Pool Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": ""
+    },
+    "Thunder Roar": {
+      "race_date": "2026-06-05",
+      "race_name": "HKJC World Pool Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Mirsky": {
+      "race_date": "2026-06-05",
+      "race_name": "HKJC World Pool Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Walsingham": {
+      "race_date": "2026-06-05",
+      "race_name": "HKJC World Pool Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Mr Swivell": {
+      "race_date": "2026-06-05",
+      "race_name": "HKJC World Pool Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Jimmy Speaking": {
+      "race_date": "2026-06-05",
+      "race_name": "HKJC World Pool Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Blue Brother": {
+      "race_date": "2026-06-05",
+      "race_name": "Debenhams Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": ""
+    },
+    "Ozat": {
+      "race_date": "2026-06-05",
+      "race_name": "HKJC World Pool Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Port Road": {
+      "race_date": "2026-06-05",
+      "race_name": "HKJC World Pool Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": ""
+    },
+    "Footwork": {
+      "race_date": "2026-06-05",
+      "race_name": "HKJC World Pool Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": ""
+    },
+    "Hot Cash": {
+      "race_date": "2026-06-05",
+      "race_name": "HKJC World Pool Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "A War Eagle": {
+      "race_date": "2026-06-05",
+      "race_name": "Debenhams Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Mister Winston": {
+      "race_date": "2026-06-05",
+      "race_name": "HKJC World Pool Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Stem": {
+      "race_date": "2026-06-05",
+      "race_name": "HKJC World Pool Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Asmen Warrior": {
+      "race_date": "2026-06-05",
+      "race_name": "HKJC World Pool Handicap",
+      "equipment": [
+        "b"
+      ],
+      "first_time_use": [
+        "b"
+      ],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Nizam": {
+      "race_date": "2026-06-05",
+      "race_name": "HKJC World Pool Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Shafdar": {
+      "race_date": "2026-06-05",
+      "race_name": "HKJC World Pool Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": ""
+    },
+    "Zarathos": {
+      "race_date": "2026-06-05",
+      "race_name": "Debenhams Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Triple Double A": {
+      "race_date": "2026-06-05",
+      "race_name": "HKJC World Pool Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": ""
+    },
+    "Man Of La Mancha": {
+      "race_date": "2026-06-05",
+      "race_name": "HKJC World Pool Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "First Principle": {
+      "race_date": "2026-06-05",
+      "race_name": "HKJC World Pool Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": ""
+    },
+    "Final Night": {
+      "race_date": "2026-06-05",
+      "race_name": "HKJC World Pool Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Bragbor": {
+      "race_date": "2026-06-05",
+      "race_name": "HKJC World Pool Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Principality": {
+      "race_date": "2026-06-05",
+      "race_name": "HKJC World Pool Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Ardisia": {
+      "race_date": "2026-06-05",
+      "race_name": "Cygames Surrey Stakes (Listed)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Green Sense": {
+      "race_date": "2026-06-05",
+      "race_name": "Cygames Surrey Stakes (Listed)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": ""
+    },
+    "Andab": {
+      "race_date": "2026-06-05",
+      "race_name": "Cygames Surrey Stakes (Listed)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": ""
+    },
+    "Ellusive Butterfly": {
+      "race_date": "2026-06-05",
+      "race_name": "Cygames Surrey Stakes (Listed)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Awaken": {
+      "race_date": "2026-06-05",
+      "race_name": "Cygames Surrey Stakes (Listed)",
+      "equipment": [
+        "h"
+      ],
+      "first_time_use": [
+        "h"
+      ],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Stellar Sunrise": {
+      "race_date": "2026-06-05",
+      "race_name": "Cygames Surrey Stakes (Listed)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Postmodern": {
+      "race_date": "2026-06-05",
+      "race_name": "Cygames Surrey Stakes (Listed)",
+      "equipment": [
+        "h"
+      ],
+      "first_time_use": [
+        "h"
+      ],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Assaranca": {
+      "race_date": "2026-06-05",
+      "race_name": "Cygames Surrey Stakes (Listed)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Northern Champion": {
+      "race_date": "2026-06-05",
+      "race_name": "Cygames Surrey Stakes (Listed)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Ten Carat Harry": {
+      "race_date": "2026-06-05",
+      "race_name": "Cygames Surrey Stakes (Listed)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Serenetta": {
+      "race_date": "2026-06-05",
+      "race_name": "Cygames Surrey Stakes (Listed)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": ""
+    },
+    "Greek Mythology": {
+      "race_date": "2026-06-05",
+      "race_name": "Cygames Surrey Stakes (Listed)",
+      "equipment": [
+        "tt"
+      ],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Rhoscolyn": {
+      "race_date": "2026-06-05",
+      "race_name": "Debenhams Handicap",
+      "equipment": [
+        "tt"
+      ],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Mister Bluebird": {
+      "race_date": "2026-06-05",
+      "race_name": "Debenhams Handicap",
+      "equipment": [
+        "cp"
+      ],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Talis Evolvere": {
+      "race_date": "2026-06-05",
+      "race_name": "Debenhams Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": ""
+    },
+    "Son": {
+      "race_date": "2026-06-05",
+      "race_name": "Debenhams Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Crimson Spirit": {
+      "race_date": "2026-06-05",
+      "race_name": "Debenhams Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Colombier": {
+      "race_date": "2026-06-05",
+      "race_name": "Debenhams Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Solar Aclaim": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Sondad": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Arctic Thunder": {
+      "race_date": "2026-06-05",
+      "race_name": "Debenhams Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Brighton Boy": {
+      "race_date": "2026-06-05",
+      "race_name": "Debenhams Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": ""
+    },
+    "Rare Change": {
+      "race_date": "2026-06-05",
+      "race_name": "Debenhams Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": ""
+    },
+    "Pietro": {
+      "race_date": "2026-06-05",
+      "race_name": "Debenhams Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Supido": {
+      "race_date": "2026-06-05",
+      "race_name": "Debenhams Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": ""
+    },
+    "Musical Angel": {
+      "race_date": "2026-06-05",
+      "race_name": "Debenhams Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Veblen Good": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Dance In The Storm": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Aurora Majesty": {
+      "race_date": "2026-06-05",
+      "race_name": "Debenhams Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "The Angel King": {
+      "race_date": "2026-06-05",
+      "race_name": "Debenhams Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Sunny Smile": {
+      "race_date": "2026-06-05",
+      "race_name": "Debenhams Handicap",
+      "equipment": [
+        "tt",
+        "cp"
+      ],
+      "first_time_use": [
+        "tt",
+        "cp"
+      ],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Dublin Bay": {
+      "race_date": "2026-06-05",
+      "race_name": "Debenhams Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": ""
+    },
+    "Tailgunner Joe": {
+      "race_date": "2026-06-06",
+      "race_name": "Cherryfield (Croydon) Lester Piggott Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Monarch's Gold": {
+      "race_date": "2026-06-05",
+      "race_name": "Debenhams Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
+    },
+    "Witness Stand": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Tattenham Corner Stakes (Group 3)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Golden Mind": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Tattenham Corner Stakes (Group 3)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Never So Brave": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Tattenham Corner Stakes (Group 3)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Poet Master": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Tattenham Corner Stakes (Group 3)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Lake Forest": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Tattenham Corner Stakes (Group 3)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Ten Bob Tony": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Tattenham Corner Stakes (Group 3)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Chicago Critic": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Tattenham Corner Stakes (Group 3)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Copacabana Sands": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Tattenham Corner Stakes (Group 3)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Humam": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Tattenham Corner Stakes (Group 3)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Sparks Fly": {
+      "race_date": "2026-06-06",
+      "race_name": "Princess Elizabeth Stakes (Group 3)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Princess Child": {
+      "race_date": "2026-06-06",
+      "race_name": "Princess Elizabeth Stakes (Group 3)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Arisaig": {
+      "race_date": "2026-06-06",
+      "race_name": "Princess Elizabeth Stakes (Group 3)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Love Dynasty": {
+      "race_date": "2026-06-06",
+      "race_name": "Princess Elizabeth Stakes (Group 3)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Betty Clover": {
+      "race_date": "2026-06-06",
+      "race_name": "Princess Elizabeth Stakes (Group 3)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Celestial Orbit": {
+      "race_date": "2026-06-06",
+      "race_name": "Princess Elizabeth Stakes (Group 3)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Shes Perfect": {
+      "race_date": "2026-06-06",
+      "race_name": "Princess Elizabeth Stakes (Group 3)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Sindria": {
+      "race_date": "2026-06-06",
+      "race_name": "Princess Elizabeth Stakes (Group 3)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Pina Sonata": {
+      "race_date": "2026-06-06",
+      "race_name": "Princess Elizabeth Stakes (Group 3)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Alobayyah": {
+      "race_date": "2026-06-06",
+      "race_name": "Princess Elizabeth Stakes (Group 3)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Sunlit Uplands": {
+      "race_date": "2026-06-06",
+      "race_name": "Princess Elizabeth Stakes (Group 3)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Breckenbrough": {
+      "race_date": "2026-06-06",
+      "race_name": "Princess Elizabeth Stakes (Group 3)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Pacific Mission": {
+      "race_date": "2026-06-06",
+      "race_name": "Princess Elizabeth Stakes (Group 3)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Lambourn": {
+      "race_date": "2026-06-06",
+      "race_name": "Coolmore Coronation Cup (Group 1)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Jan Brueghel": {
+      "race_date": "2026-06-06",
+      "race_name": "Coolmore Coronation Cup (Group 1)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Calandagan": {
+      "race_date": "2026-06-06",
+      "race_name": "Coolmore Coronation Cup (Group 1)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Convergent": {
+      "race_date": "2026-06-06",
+      "race_name": "Coolmore Coronation Cup (Group 1)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Bay City Roller": {
+      "race_date": "2026-06-06",
+      "race_name": "Coolmore Coronation Cup (Group 1)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Illinois": {
+      "race_date": "2026-06-06",
+      "race_name": "Coolmore Coronation Cup (Group 1)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Sunway": {
+      "race_date": "2026-06-06",
+      "race_name": "Coolmore Coronation Cup (Group 1)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "See The Fire": {
+      "race_date": "2026-06-06",
+      "race_name": "Coolmore Coronation Cup (Group 1)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "The Bell Conductor": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Brazen Bolt": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Dream Composer": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Emperor Spirit": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Counsel": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Vintage Clarets": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Nogo's Dream": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Tatterstall": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Michaela's Boy": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Democracy Dilemma": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Rhythm N Hooves": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Another Baar": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Almaty Star": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Partisan Hero": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Desert Cop": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Sturlasson": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Betsen": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Seven Questions": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Law Of Average": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Rogue Enforcer": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Golden Long": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Marching Mac": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "King Of Light": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Francisco's Piece": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Cindy Lou Who": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Dyonisos": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Ziggy's Triton": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Stormy Impact": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Lexington Blitz": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Star Chorus": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Kinswoman": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Arklow Lad": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Eclairage": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Forager": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Benvenuto Cellini": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Derby (Group 1, Colts & Fillies Classic)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Item": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Derby (Group 1, Colts & Fillies Classic)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Ancient Egypt": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Derby (Group 1, Colts & Fillies Classic)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "A Taste of Glory": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Derby (Group 1, Colts & Fillies Classic)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": ""
+    },
+    "Balzac": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Derby (Group 1, Colts & Fillies Classic)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Bay Of Brilliance": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Derby (Group 1, Colts & Fillies Classic)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Christmas Day": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Derby (Group 1, Colts & Fillies Classic)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "James J Braddock": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Derby (Group 1, Colts & Fillies Classic)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Maltese Cross": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Derby (Group 1, Colts & Fillies Classic)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Pierre Bonnard": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Derby (Group 1, Colts & Fillies Classic)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Action": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Derby (Group 1, Colts & Fillies Classic)",
+      "equipment": [
+        "cp"
+      ],
+      "first_time_use": [
+        "cp"
+      ],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Alderman": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Derby (Group 1, Colts & Fillies Classic)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Poker": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Derby (Group 1, Colts & Fillies Classic)",
+      "equipment": [
+        "cp"
+      ],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Rebel Rocker": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Derby (Group 1, Colts & Fillies Classic)",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Starlight Time": {
+      "race_date": "2026-06-06",
+      "race_name": "Cherryfield (Croydon) Lester Piggott Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Silver State": {
+      "race_date": "2026-06-06",
+      "race_name": "Cherryfield (Croydon) Lester Piggott Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Lake Como": {
+      "race_date": "2026-06-06",
+      "race_name": "Cherryfield (Croydon) Lester Piggott Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Folk Pageant": {
+      "race_date": "2026-06-06",
+      "race_name": "Cherryfield (Croydon) Lester Piggott Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Be The Standard": {
+      "race_date": "2026-06-06",
+      "race_name": "Cherryfield (Croydon) Lester Piggott Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Allegresse": {
+      "race_date": "2026-06-06",
+      "race_name": "Cherryfield (Croydon) Lester Piggott Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Hell Yeah He Did": {
+      "race_date": "2026-06-06",
+      "race_name": "Cherryfield (Croydon) Lester Piggott Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Tai Hang Pegasus": {
+      "race_date": "2026-06-06",
+      "race_name": "Cherryfield (Croydon) Lester Piggott Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Savvy Disko": {
+      "race_date": "2026-06-06",
+      "race_name": "Cherryfield (Croydon) Lester Piggott Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "York Tower": {
+      "race_date": "2026-06-06",
+      "race_name": "Cherryfield (Croydon) Lester Piggott Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "My Mate Roger": {
+      "race_date": "2026-06-06",
+      "race_name": "Cherryfield (Croydon) Lester Piggott Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Pendella": {
+      "race_date": "2026-06-06",
+      "race_name": "Cherryfield (Croydon) Lester Piggott Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Prydwen": {
+      "race_date": "2026-06-06",
+      "race_name": "HKJC World Pool Northern Dancer Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Max Mayhem": {
+      "race_date": "2026-06-06",
+      "race_name": "HKJC World Pool Northern Dancer Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Oneforthegutter": {
+      "race_date": "2026-06-06",
+      "race_name": "HKJC World Pool Northern Dancer Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Asgard's Captain": {
+      "race_date": "2026-06-06",
+      "race_name": "HKJC World Pool Northern Dancer Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Dancing In Paris": {
+      "race_date": "2026-06-06",
+      "race_name": "HKJC World Pool Northern Dancer Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Gordon Grey": {
+      "race_date": "2026-06-06",
+      "race_name": "HKJC World Pool Northern Dancer Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Will Scarlet": {
+      "race_date": "2026-06-06",
+      "race_name": "HKJC World Pool Northern Dancer Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Night Breeze": {
+      "race_date": "2026-06-06",
+      "race_name": "HKJC World Pool Northern Dancer Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Lord Melbourne": {
+      "race_date": "2026-06-06",
+      "race_name": "HKJC World Pool Northern Dancer Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Military Academy": {
+      "race_date": "2026-06-06",
+      "race_name": "HKJC World Pool Northern Dancer Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Give It To Me Oj": {
+      "race_date": "2026-06-06",
+      "race_name": "HKJC World Pool Northern Dancer Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Too Soon": {
+      "race_date": "2026-06-06",
+      "race_name": "HKJC World Pool Northern Dancer Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Regal Ulixes": {
+      "race_date": "2026-06-06",
+      "race_name": "HKJC World Pool Northern Dancer Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Elsass": {
+      "race_date": "2026-06-06",
+      "race_name": "HKJC World Pool Northern Dancer Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Patagonia Girl": {
+      "race_date": "2026-06-06",
+      "race_name": "HKJC World Pool Northern Dancer Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Northwest Passage": {
+      "race_date": "2026-06-06",
+      "race_name": "HKJC World Pool Northern Dancer Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Antrim": {
+      "race_date": "2026-06-06",
+      "race_name": "HKJC World Pool Northern Dancer Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Spinning Wheel": {
+      "race_date": "2026-06-06",
+      "race_name": "HKJC World Pool Northern Dancer Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Hengest": {
+      "race_date": "2026-06-06",
+      "race_name": "HKJC World Pool Northern Dancer Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Fierce Fortitude": {
+      "race_date": "2026-06-06",
+      "race_name": "HKJC World Pool Northern Dancer Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Bulletin": {
+      "race_date": "2026-06-06",
+      "race_name": "HKJC World Pool Northern Dancer Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Badri": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Strike Red": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Saint Lawrence": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+      "wind_surgery": 2
+    },
+    "Apollo One": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Roman Dragon": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Twilight Jet": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Spangled Mac": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Cinque Verde": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Purest Time": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Eye Of Dubai": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Kylian": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Winged Messenger": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Fine Interview": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Toyotomi": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Invictus Gold": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Gold Star Hero": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    },
+    "Topwarrior": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "equipment": [],
+      "first_time_use": [],
+      "changed_vs_last_run": [],
+      "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+    }
+  }
+}

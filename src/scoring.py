@@ -1,12 +1,12 @@
 """
-scoring.py — Race analysis scoring model v0.4
+scoring.py — Race analysis scoring model v0.5
 =============================================
 
 Turns a Runner dict into a score (0-100) and score_breakdown.
 
 Author:  Kaylee (Data Engineer)
 Date:    2026-06-02
-Version: 0.4  (trial_form signal added; all v0.3 weights × 0.92)
+Version: 0.5  (market_move, trainer_14d, jt_combo signals added; all v0.4 weights × 0.86)
 
 Usage (CLI):
     python -m scoring path/to/racecard.json
@@ -39,12 +39,18 @@ try:  # supports both `python -m src...` and direct `sys.path` test imports
     from cd_form import cd_form_signal
     from sires import sire_stamina_signal
     from trial_form import trial_form_signal
+    from market_move import market_move_signal
+    from trainer_14d import trainer_14d_signal
+    from jt_combo import jt_combo_signal
 except ImportError:  # pragma: no cover
     from .going import normalise_going, score_going_fit
     from .pace import extended_draw_signal, infer_run_style, pace_signal, project_race_pace
     from .cd_form import cd_form_signal
     from .sires import sire_stamina_signal
     from .trial_form import trial_form_signal
+    from .market_move import market_move_signal
+    from .trainer_14d import trainer_14d_signal
+    from .jt_combo import jt_combo_signal
 
 
 # ---------------------------------------------------------------------------
@@ -75,22 +81,25 @@ def load_default_config() -> dict:
     """
     return {
         "weights": {
-            # v0.4 weights — adds `trial_form` (0.0800) as highest-leverage
-            # Derby/Oaks signal.  All v0.3 weights scaled × 0.9200 to make
-            # room.  Total sums to exactly 1.0000.
-            # `course_distance` powered by RP badge extraction (cd_form.py).
-            "class_rating":    0.2363,
-            "recent_form":     0.1351,
-            "trainer_form":    0.0674,
-            "jockey":          0.0674,
-            "course_distance": 0.0674,
-            "going":           0.0338,
-            "draw_bias":       0.0525,
-            "class_move":      0.0338,
-            "going_fit":       0.1191,
-            "pace":            0.0612,
-            "sire_stamina":    0.0460,
-            "trial_form":      0.0800,
+            # v0.5 weights — adds market_move (0.0700), trainer_14d (0.0400),
+            # jt_combo (0.0300).  All v0.4 weights scaled × 0.8600 to make room.
+            # class_rating absorbs the −0.0001 rounding residual (largest weight).
+            # Total sums to exactly 1.0000.
+            "class_rating":    0.2031,
+            "recent_form":     0.1162,
+            "going_fit":       0.1024,
+            "market_move":     0.0700,
+            "trial_form":      0.0688,
+            "trainer_form":    0.0580,
+            "jockey":          0.0580,
+            "course_distance": 0.0580,
+            "pace":            0.0526,
+            "draw_bias":       0.0451,
+            "trainer_14d":     0.0400,
+            "sire_stamina":    0.0396,
+            "jt_combo":        0.0300,
+            "going":           0.0291,
+            "class_move":      0.0291,
         },
         "form": {
             "position_points":        {1: 10, 2: 6, 3: 4, 4: 2},
@@ -257,6 +266,15 @@ def score_runner(runner: dict, race: dict, config: dict) -> dict:
 
     # 12. Trial form (gated to 10f+; neutral 50 when no trial data)
     raw_signals["trial_form"] = trial_form_signal(runner, race)
+
+    # 13. Market move (implied-probability shift; neutral 50 when no latest price)
+    raw_signals["market_move"] = market_move_signal(runner, race)
+
+    # 14. Trainer 14-day form (hot/cold yard; neutral 50 when <5 runners or not found)
+    raw_signals["trainer_14d"] = trainer_14d_signal(runner, race)
+
+    # 15. Jockey/trainer combo (interaction term; neutral 50 when <10 combos or not found)
+    raw_signals["jt_combo"] = jt_combo_signal(runner, race)
 
     # Raw score (class_rating placeholder is 50 until z-score in score_race)
     class_val = raw_signals["class_rating"] if raw_signals["class_rating"] is not None else 50.0

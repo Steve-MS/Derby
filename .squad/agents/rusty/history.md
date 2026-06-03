@@ -24,3 +24,18 @@ Implemented `src/trial_form.py` and updated `src/scoring.py` to v0.4.
 - All v0.3 weights × 0.92; trial_form = 0.0800; sum = 1.0000.
 
 **Decision note:** `.squad/decisions/inbox/rusty-trial-form-implementation.md`
+
+## 2026-06-03 — v0.5: market_move, trainer_14d, jt_combo signals
+
+Implemented three new signal modules and updated `src/scoring.py` to v0.5.
+
+**Outcome:** 246/246 tests passing. Saul's new test suites not yet present (in parallel).
+
+**Key calls made:**
+- `market_move`: read Livingston's 2-file schema (`market-baseline.json` + `market-latest.json`, each with `decimal_odds`) and combined in-memory — Danny's single-file spec was aspirational. Used Danny's Δip formula (not Livingston's `(b-l)/b` strawman). Empty latest stub → neutral 50 for all runners.
+- `trainer_14d`: always recompute `wins_14d/runners_14d` — stored `strike_rate` is display-only.
+- `jt_combo`: horse-keyed lookup avoids trainer/jockey name normalisation mismatches.
+- All 15 v0.5 weights verified to sum to exactly 1.0000.
+- Danny's score-curve anchors verified for all three pure scoring functions.
+
+**Decision note:** `.squad/decisions/inbox/rusty-v05-implementation.md`

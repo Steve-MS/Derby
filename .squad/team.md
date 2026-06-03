@@ -18,5 +18,6 @@
 | Rusty | Signal Engineer — builds new signal modules (trial form, market moves, trainer strike rate, equipment, J/T combos) | claude-sonnet-4.6 | 🔧 Signals |
 | Linus | Reports — HTML report, printable A4 betting slip, race cards, narrative copy | claude-sonnet-4.6 | ⚛️ Reports |
 | Saul | Tester — pytest suite, signal validation, Ladies Day backtest against Derby Day | claude-sonnet-4.6 | 🧪 Tester (Reviewer) |
+| River | Race Day Ops — scheduled jobs, end-to-end pipeline runs, drift checks vs standing stakes, race-morning runbook execution | claude-haiku-4.5 | 🔄 Ops |
 | Scribe | Memory & decision ledger | claude-haiku-4.5 | 📋 Scribe |
 | Ralph | Work Monitor | — | 🔄 Monitor |
