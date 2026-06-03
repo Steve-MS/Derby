@@ -13,3 +13,5 @@ Thumbs.db
 .env.*
 .vscode/
 .idea/
+.cookies/
+cookies.txt

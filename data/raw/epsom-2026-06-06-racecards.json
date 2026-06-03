@@ -1,7 +1,7 @@
 {
   "meeting": "Epsom",
   "date": "2026-06-06",
-  "going": "Good; Good to firm in places",
+  "going": "Good to Soft (Good in places); 5f course Good (Light rain) (Source: Racing Post 2026-06-03)",
   "races": [
     {
       "race_number": 1,
@@ -10,8 +10,652 @@
       "class": "Group 3",
       "distance_f": 5,
       "prize_winner_gbp": null,
-      "runners": [],
-      "source_urls": []
+      "runners": [
+        {
+          "horse": "Audience",
+          "age": 7,
+          "trainer": "David O'Meara",
+          "jockey": "TBC",
+          "draw": null,
+          "weight_st_lb": "9-2",
+          "or": 102,
+          "rpr": 119,
+          "ts": 104,
+          "form_string": "-30009",
+          "last_run_days": 28,
+          "notes": "Verified runner on Racing Post card for Betfred Tattenham Corner Stakes (Group 3) (Formerly The John Of Gaunt Stakes); OR 102; RPR 119; TS 104; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 8.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Witness Stand",
+          "age": 5,
+          "trainer": "Dr Richard Newland & Jamie Insole",
+          "jockey": "Billy Loughnane",
+          "draw": null,
+          "weight_st_lb": "9-2",
+          "or": 108,
+          "rpr": 131,
+          "ts": 112,
+          "form_string": "200-08",
+          "last_run_days": 92,
+          "notes": "Verified runner on Racing Post card for Betfred Tattenham Corner Stakes (Group 3) (Formerly The John Of Gaunt Stakes); OR 108; RPR 131; TS 112; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 8.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [
+            {
+              "date": "2026-03-06",
+              "going": "Good",
+              "position": 8,
+              "field_size": 13
+            },
+            {
+              "date": "2026-01-23",
+              "going": "Good",
+              "position": 15,
+              "field_size": 15
+            },
+            {
+              "date": "2025-10-18",
+              "going": "Good",
+              "position": 18,
+              "field_size": 19
+            },
+            {
+              "date": "2025-10-05",
+              "going": "Soft",
+              "position": 12,
+              "field_size": 16
+            },
+            {
+              "date": "2025-08-16",
+              "going": "Good to Firm",
+              "position": 2,
+              "field_size": 10
+            },
+            {
+              "date": "2025-07-29",
+              "going": "Good",
+              "position": 1,
+              "field_size": 10
+            },
+            {
+              "date": "2025-07-12",
+              "going": "Good",
+              "position": 2,
+              "field_size": 8
+            },
+            {
+              "date": "2025-03-29",
+              "going": "Good to Soft",
+              "position": 6,
+              "field_size": 9
+            },
+            {
+              "date": "2024-10-11",
+              "going": "Good to Soft",
+              "position": 6,
+              "field_size": 11
+            },
+            {
+              "date": "2024-09-20",
+              "going": "Soft",
+              "position": 1,
+              "field_size": 8
+            }
+          ],
+          "going_history_source": "https://www.sportinglife.com/racing/profiles/horse/1099289",
+          "going_history_fetched_at": "2026-06-03T08:47:43.722880+00:00"
+        },
+        {
+          "horse": "Golden Mind",
+          "age": 5,
+          "trainer": "Richard & Peter Fahey",
+          "jockey": "TBC",
+          "draw": null,
+          "weight_st_lb": "9-2",
+          "or": 103,
+          "rpr": 121,
+          "ts": 113,
+          "form_string": "01-724",
+          "last_run_days": 28,
+          "notes": "Verified runner on Racing Post card for Betfred Tattenham Corner Stakes (Group 3) (Formerly The John Of Gaunt Stakes); OR 103; RPR 121; TS 113; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 8.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Alcantor",
+          "age": 5,
+          "trainer": "Joseph Patrick O'Brien",
+          "jockey": "TBC",
+          "draw": null,
+          "weight_st_lb": "9-2",
+          "or": 113,
+          "rpr": 128,
+          "ts": 116,
+          "form_string": "4446-4",
+          "last_run_days": 27,
+          "notes": "Verified runner on Racing Post card for Betfred Tattenham Corner Stakes (Group 3) (Formerly The John Of Gaunt Stakes); OR 113; RPR 128; TS 116; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 7.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Never So Brave",
+          "age": 5,
+          "trainer": "Andrew Balding",
+          "jockey": "Oisin Murphy",
+          "draw": null,
+          "weight_st_lb": "9-2",
+          "or": 116,
+          "rpr": 132,
+          "ts": 120,
+          "form_string": "1117-5",
+          "last_run_days": 43,
+          "notes": "Verified runner on Racing Post card for Betfred Tattenham Corner Stakes (Group 3) (Formerly The John Of Gaunt Stakes); OR 116; RPR 132; TS 120; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 7.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [
+            {
+              "date": "2026-04-24",
+              "going": "Good",
+              "position": 5,
+              "field_size": 6
+            },
+            {
+              "date": "2025-10-18",
+              "going": "Good",
+              "position": 7,
+              "field_size": 16
+            },
+            {
+              "date": "2025-08-23",
+              "going": "Good to Firm",
+              "position": 1,
+              "field_size": 10
+            },
+            {
+              "date": "2025-07-12",
+              "going": "Good to Firm",
+              "position": 1,
+              "field_size": 6
+            },
+            {
+              "date": "2025-06-19",
+              "going": "Good to Firm",
+              "position": 1,
+              "field_size": 27
+            },
+            {
+              "date": "2025-05-31",
+              "going": "Good",
+              "position": 2,
+              "field_size": 13
+            },
+            {
+              "date": "2024-10-04",
+              "going": "Soft",
+              "position": 10,
+              "field_size": 10
+            },
+            {
+              "date": "2024-08-22",
+              "going": "Good",
+              "position": 2,
+              "field_size": 5
+            },
+            {
+              "date": "2024-08-04",
+              "going": "Good to Soft",
+              "position": 7,
+              "field_size": 11
+            },
+            {
+              "date": "2024-06-22",
+              "going": "Good to Firm",
+              "position": 6,
+              "field_size": 19
+            }
+          ],
+          "going_history_source": "https://www.sportinglife.com/racing/profiles/horse/1104388",
+          "going_history_fetched_at": "2026-06-03T08:47:43.722880+00:00"
+        },
+        {
+          "horse": "Poet Master",
+          "age": 6,
+          "trainer": "K R Burke",
+          "jockey": "TBC",
+          "draw": null,
+          "weight_st_lb": "9-2",
+          "or": 109,
+          "rpr": 124,
+          "ts": 94,
+          "form_string": "922-25",
+          "last_run_days": 28,
+          "notes": "Verified runner on Racing Post card for Betfred Tattenham Corner Stakes (Group 3) (Formerly The John Of Gaunt Stakes); OR 109; RPR 124; TS 94; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 8.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [
+            {
+              "date": "2026-05-09",
+              "going": "Good",
+              "position": 5,
+              "field_size": 11
+            },
+            {
+              "date": "2026-04-10",
+              "going": "Good",
+              "position": 2,
+              "field_size": 8
+            },
+            {
+              "date": "2025-10-10",
+              "going": "Good",
+              "position": 2,
+              "field_size": 5
+            },
+            {
+              "date": "2025-09-14",
+              "going": "Soft",
+              "position": 2,
+              "field_size": 8
+            },
+            {
+              "date": "2025-03-29",
+              "going": "Soft",
+              "position": 9,
+              "field_size": 9
+            },
+            {
+              "date": "2024-10-06",
+              "going": "Soft",
+              "position": 5,
+              "field_size": 16
+            },
+            {
+              "date": "2024-09-14",
+              "going": "Good",
+              "position": 5,
+              "field_size": 9
+            },
+            {
+              "date": "2024-07-21",
+              "going": "Good",
+              "position": 1,
+              "field_size": 6
+            },
+            {
+              "date": "2024-05-11",
+              "going": "Good to Firm",
+              "position": 5,
+              "field_size": 6
+            },
+            {
+              "date": "2024-04-18",
+              "going": "Good",
+              "position": 1,
+              "field_size": 15
+            }
+          ],
+          "going_history_source": "https://www.sportinglife.com/racing/profiles/horse/1106187",
+          "going_history_fetched_at": "2026-06-03T08:47:43.722880+00:00"
+        },
+        {
+          "horse": "Lake Forest",
+          "age": 5,
+          "trainer": "William Haggas",
+          "jockey": "Tom Marquand",
+          "draw": null,
+          "weight_st_lb": "9-2",
+          "or": 119,
+          "rpr": 132,
+          "ts": 116,
+          "form_string": "2207-1",
+          "last_run_days": 28,
+          "notes": "Verified runner on Racing Post card for Betfred Tattenham Corner Stakes (Group 3) (Formerly The John Of Gaunt Stakes); OR 119; RPR 132; TS 116; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 7.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [
+            {
+              "date": "2026-05-09",
+              "going": "Good",
+              "position": 1,
+              "field_size": 11
+            },
+            {
+              "date": "2025-08-23",
+              "going": "Good to Firm",
+              "position": 2,
+              "field_size": 10
+            },
+            {
+              "date": "2025-07-29",
+              "going": "Good",
+              "position": 2,
+              "field_size": 10
+            },
+            {
+              "date": "2025-06-28",
+              "going": "Good",
+              "position": 6,
+              "field_size": 8
+            },
+            {
+              "date": "2025-06-17",
+              "going": "Good to Firm",
+              "position": 5,
+              "field_size": 10
+            },
+            {
+              "date": "2025-05-25",
+              "going": "Soft",
+              "position": 4,
+              "field_size": 7
+            },
+            {
+              "date": "2024-07-20",
+              "going": "Good to Firm",
+              "position": 2,
+              "field_size": 9
+            },
+            {
+              "date": "2024-06-21",
+              "going": "Good to Firm",
+              "position": 2,
+              "field_size": 14
+            },
+            {
+              "date": "2023-09-30",
+              "going": "Good to Firm",
+              "position": 7,
+              "field_size": 9
+            },
+            {
+              "date": "2023-08-25",
+              "going": "Good to Firm",
+              "position": 1,
+              "field_size": 10
+            }
+          ],
+          "going_history_source": "https://www.sportinglife.com/racing/profiles/horse/1106305",
+          "going_history_fetched_at": "2026-06-03T08:47:43.722880+00:00"
+        },
+        {
+          "horse": "Ten Bob Tony",
+          "age": 5,
+          "trainer": "Ed Walker",
+          "jockey": "Kieran Shoemark",
+          "draw": null,
+          "weight_st_lb": "9-2",
+          "or": 110,
+          "rpr": 127,
+          "ts": 97,
+          "form_string": "830-48",
+          "last_run_days": 28,
+          "notes": "Verified runner on Racing Post card for Betfred Tattenham Corner Stakes (Group 3) (Formerly The John Of Gaunt Stakes); OR 110; RPR 127; TS 97; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 8.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Chicago Critic",
+          "age": 5,
+          "trainer": "J P Murtagh",
+          "jockey": "TBC",
+          "draw": null,
+          "weight_st_lb": "9-2",
+          "or": 106,
+          "rpr": 122,
+          "ts": 115,
+          "form_string": "-62648",
+          "last_run_days": 14,
+          "notes": "Verified runner on Racing Post card for Betfred Tattenham Corner Stakes (Group 3) (Formerly The John Of Gaunt Stakes); OR 106; RPR 122; TS 115; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 8.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Balmacara",
+          "age": 5,
+          "trainer": "Eve Johnson Houghton",
+          "jockey": "Charles Bishop",
+          "draw": null,
+          "weight_st_lb": "9-2",
+          "or": 105,
+          "rpr": 118,
+          "ts": 103,
+          "form_string": "0200-3",
+          "last_run_days": 28,
+          "notes": "Verified runner on Racing Post card for Betfred Tattenham Corner Stakes (Group 3) (Formerly The John Of Gaunt Stakes); OR 105; RPR 118; TS 103; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 8.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Cowardofthecounty",
+          "age": 4,
+          "trainer": "Joseph Patrick O'Brien",
+          "jockey": "TBC",
+          "draw": null,
+          "weight_st_lb": "9-2",
+          "or": 99,
+          "rpr": 117,
+          "ts": 68,
+          "form_string": "590-82",
+          "last_run_days": 45,
+          "notes": "Verified runner on Racing Post card for Betfred Tattenham Corner Stakes (Group 3) (Formerly The John Of Gaunt Stakes); OR 99; RPR 117; TS 68; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 9.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Linwood",
+          "age": 4,
+          "trainer": "Richard Hannon",
+          "jockey": "Jamie Spencer",
+          "draw": null,
+          "weight_st_lb": "9-2",
+          "or": 108,
+          "rpr": 128,
+          "ts": 111,
+          "form_string": "3351-1",
+          "last_run_days": 49,
+          "notes": "Verified runner on Racing Post card for Betfred Tattenham Corner Stakes (Group 3) (Formerly The John Of Gaunt Stakes); OR 108; RPR 128; TS 111; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 8.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [
+            {
+              "date": "2026-04-18",
+              "going": "Good",
+              "position": 1,
+              "field_size": 24
+            },
+            {
+              "date": "2025-11-01",
+              "going": "Good to Soft",
+              "position": 1,
+              "field_size": 11
+            },
+            {
+              "date": "2025-09-20",
+              "going": "Good to Soft",
+              "position": 5,
+              "field_size": 11
+            },
+            {
+              "date": "2025-08-24",
+              "going": "Good to Firm",
+              "position": 3,
+              "field_size": 11
+            },
+            {
+              "date": "2025-08-02",
+              "going": "Good",
+              "position": 3,
+              "field_size": 16
+            },
+            {
+              "date": "2024-09-07",
+              "going": "Good",
+              "position": 5,
+              "field_size": 8
+            },
+            {
+              "date": "2024-08-17",
+              "going": "Good",
+              "position": 1,
+              "field_size": 9
+            },
+            {
+              "date": "2024-07-19",
+              "going": "Good",
+              "position": 1,
+              "field_size": 16
+            },
+            {
+              "date": "2024-06-11",
+              "going": "Good to Firm",
+              "position": 4,
+              "field_size": 12
+            }
+          ],
+          "going_history_source": "https://www.sportinglife.com/racing/profiles/horse/1143573",
+          "going_history_fetched_at": "2026-06-03T08:47:43.722880+00:00"
+        },
+        {
+          "horse": "Copacabana Sands",
+          "age": 4,
+          "trainer": "Andrew Balding",
+          "jockey": "Oisin Murphy",
+          "draw": null,
+          "weight_st_lb": "8-13",
+          "or": 104,
+          "rpr": 124,
+          "ts": 96,
+          "form_string": "1146-5",
+          "last_run_days": 28,
+          "notes": "Verified runner on Racing Post card for Betfred Tattenham Corner Stakes (Group 3) (Formerly The John Of Gaunt Stakes); OR 104; RPR 124; TS 96; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 8.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [
+            {
+              "date": "2026-05-09",
+              "going": "Good to Firm",
+              "position": 5,
+              "field_size": 7
+            },
+            {
+              "date": "2025-10-05",
+              "going": "Heavy",
+              "position": 6,
+              "field_size": 7
+            },
+            {
+              "date": "2025-08-31",
+              "going": "Soft",
+              "position": 4,
+              "field_size": 10
+            },
+            {
+              "date": "2025-06-12",
+              "going": "Soft",
+              "position": 1,
+              "field_size": 11
+            },
+            {
+              "date": "2025-05-18",
+              "going": "Good",
+              "position": 1,
+              "field_size": 9
+            },
+            {
+              "date": "2025-03-30",
+              "going": "Good to Soft",
+              "position": 5,
+              "field_size": 13
+            },
+            {
+              "date": "2025-03-16",
+              "going": "Soft",
+              "position": 2,
+              "field_size": 20
+            },
+            {
+              "date": "2024-10-22",
+              "going": "Soft",
+              "position": 9,
+              "field_size": 11
+            },
+            {
+              "date": "2024-10-13",
+              "going": "Soft",
+              "position": 3,
+              "field_size": 16
+            },
+            {
+              "date": "2024-09-23",
+              "going": "Good",
+              "position": 8,
+              "field_size": 15
+            }
+          ],
+          "going_history_source": "https://www.sportinglife.com/racing/profiles/horse/1149333",
+          "going_history_fetched_at": "2026-06-03T08:47:43.722880+00:00"
+        },
+        {
+          "horse": "Humam",
+          "age": 4,
+          "trainer": "Stuart Williams",
+          "jockey": "Marco Ghiani",
+          "draw": null,
+          "weight_st_lb": "9-2",
+          "or": 89,
+          "rpr": 111,
+          "ts": 100,
+          "form_string": "534-00",
+          "last_run_days": 28,
+          "notes": "Verified runner on Racing Post card for Betfred Tattenham Corner Stakes (Group 3) (Formerly The John Of Gaunt Stakes); OR 89; RPR 111; TS 100; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 10.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        }
+      ],
+      "source_urls": [
+        "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+      ],
+      "going": "Good"
     },
     {
       "race_number": 2,
@@ -20,8 +664,499 @@
       "class": "Group 3",
       "distance_f": 8,
       "prize_winner_gbp": null,
-      "runners": [],
-      "source_urls": []
+      "runners": [
+        {
+          "horse": "Sparks Fly",
+          "age": 6,
+          "trainer": "David Loughnane",
+          "jockey": "Laura Pearson",
+          "draw": null,
+          "weight_st_lb": "9-11",
+          "or": 110,
+          "rpr": 116,
+          "ts": 106,
+          "form_string": "381-04",
+          "last_run_days": 29,
+          "notes": "Verified runner on Racing Post card for Princess Elizabeth Stakes (Group 3) (Fillies & Mares) (Sponsored By Chapel Down); OR 110; RPR 116; TS 106; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 7.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [
+            {
+              "date": "2026-05-08",
+              "going": "Good",
+              "position": 4,
+              "field_size": 9
+            },
+            {
+              "date": "2026-03-29",
+              "going": "Soft",
+              "position": 10,
+              "field_size": 10
+            },
+            {
+              "date": "2025-10-26",
+              "going": null,
+              "position": 1,
+              "field_size": 8
+            },
+            {
+              "date": "2025-09-13",
+              "going": "Good to Soft",
+              "position": 8,
+              "field_size": 11
+            },
+            {
+              "date": "2025-06-07",
+              "going": "Good",
+              "position": 3,
+              "field_size": 11
+            },
+            {
+              "date": "2025-03-29",
+              "going": "Soft",
+              "position": 8,
+              "field_size": 9
+            },
+            {
+              "date": "2024-11-10",
+              "going": "Heavy",
+              "position": 1,
+              "field_size": 14
+            },
+            {
+              "date": "2024-10-30",
+              "going": "Soft",
+              "position": 1,
+              "field_size": 7
+            },
+            {
+              "date": "2024-10-04",
+              "going": "Soft",
+              "position": 1,
+              "field_size": 9
+            },
+            {
+              "date": "2024-09-07",
+              "going": "Good",
+              "position": 7,
+              "field_size": 7
+            }
+          ],
+          "going_history_source": "https://www.sportinglife.com/racing/profiles/horse/1087849",
+          "going_history_fetched_at": "2026-06-03T08:47:43.722880+00:00"
+        },
+        {
+          "horse": "Princess Child",
+          "age": 5,
+          "trainer": "Joseph Patrick O'Brien",
+          "jockey": "TBC",
+          "draw": null,
+          "weight_st_lb": "9-8",
+          "or": 104,
+          "rpr": 115,
+          "ts": 103,
+          "form_string": "4-7250",
+          "last_run_days": 13,
+          "notes": "Verified runner on Racing Post card for Princess Elizabeth Stakes (Group 3) (Fillies & Mares) (Sponsored By Chapel Down); OR 104; RPR 115; TS 103; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 7.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Arisaig",
+          "age": 5,
+          "trainer": "Charlie Johnston",
+          "jockey": "Jamie Spencer",
+          "draw": null,
+          "weight_st_lb": "9-8",
+          "or": 102,
+          "rpr": 114,
+          "ts": 101,
+          "form_string": "330-24",
+          "last_run_days": 35,
+          "notes": "Verified runner on Racing Post card for Princess Elizabeth Stakes (Group 3) (Fillies & Mares) (Sponsored By Chapel Down); OR 102; RPR 114; TS 101; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 8.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [
+            {
+              "date": "2026-05-02",
+              "going": "Good",
+              "position": 4,
+              "field_size": 6
+            },
+            {
+              "date": "2026-04-14",
+              "going": "Good",
+              "position": 2,
+              "field_size": 10
+            },
+            {
+              "date": "2025-10-18",
+              "going": "Good",
+              "position": 18,
+              "field_size": 20
+            },
+            {
+              "date": "2025-09-26",
+              "going": "Good to Firm",
+              "position": 3,
+              "field_size": 12
+            },
+            {
+              "date": "2025-08-24",
+              "going": "Good to Firm",
+              "position": 3,
+              "field_size": 6
+            },
+            {
+              "date": "2025-08-09",
+              "going": "Good to Firm",
+              "position": 5,
+              "field_size": 10
+            },
+            {
+              "date": "2025-07-05",
+              "going": "Good to Firm",
+              "position": 2,
+              "field_size": 12
+            },
+            {
+              "date": "2025-06-18",
+              "going": "Good to Firm",
+              "position": 14,
+              "field_size": 23
+            },
+            {
+              "date": "2025-05-10",
+              "going": "Good to Firm",
+              "position": 2,
+              "field_size": 6
+            },
+            {
+              "date": "2025-05-03",
+              "going": "Good",
+              "position": 5,
+              "field_size": 9
+            }
+          ],
+          "going_history_source": "https://www.sportinglife.com/racing/profiles/horse/1120869",
+          "going_history_fetched_at": "2026-06-03T08:47:43.722880+00:00"
+        },
+        {
+          "horse": "Love Dynasty",
+          "age": 5,
+          "trainer": "Kevin Ryan",
+          "jockey": "Billy Loughnane",
+          "draw": null,
+          "weight_st_lb": "9-8",
+          "or": 96,
+          "rpr": 105,
+          "ts": 84,
+          "form_string": "1/43-4",
+          "last_run_days": 41,
+          "notes": "Verified runner on Racing Post card for Princess Elizabeth Stakes (Group 3) (Fillies & Mares) (Sponsored By Chapel Down); OR 96; RPR 105; TS 84; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 8.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Betty Clover",
+          "age": 4,
+          "trainer": "Eve Johnson Houghton",
+          "jockey": "Charles Bishop",
+          "draw": null,
+          "weight_st_lb": "9-8",
+          "or": 95,
+          "rpr": 105,
+          "ts": 86,
+          "form_string": "700-55",
+          "last_run_days": 35,
+          "notes": "Verified runner on Racing Post card for Princess Elizabeth Stakes (Group 3) (Fillies & Mares) (Sponsored By Chapel Down); OR 95; RPR 105; TS 86; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 8.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Celestial Orbit",
+          "age": 4,
+          "trainer": "Joseph Patrick O'Brien",
+          "jockey": "TBC",
+          "draw": null,
+          "weight_st_lb": "9-11",
+          "or": 103,
+          "rpr": 110,
+          "ts": 99,
+          "form_string": "402-17",
+          "last_run_days": 13,
+          "notes": "Verified runner on Racing Post card for Princess Elizabeth Stakes (Group 3) (Fillies & Mares) (Sponsored By Chapel Down); OR 103; RPR 110; TS 99; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 8.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Shes Perfect",
+          "age": 4,
+          "trainer": "Charlie Fellowes",
+          "jockey": "Kieran Shoemark",
+          "draw": null,
+          "weight_st_lb": "9-8",
+          "or": 110,
+          "rpr": 117,
+          "ts": 103,
+          "form_string": "/229-3",
+          "last_run_days": 35,
+          "notes": "Verified runner on Racing Post card for Princess Elizabeth Stakes (Group 3) (Fillies & Mares) (Sponsored By Chapel Down); OR 110; RPR 117; TS 103; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 7.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [
+            {
+              "date": "2026-05-02",
+              "going": "Good",
+              "position": 3,
+              "field_size": 6
+            },
+            {
+              "date": "2025-06-15",
+              "going": "Soft",
+              "position": 9,
+              "field_size": 12
+            },
+            {
+              "date": "2025-05-11",
+              "going": "Good to Soft",
+              "position": 1,
+              "field_size": 13
+            },
+            {
+              "date": "2025-04-13",
+              "going": "Good to Soft",
+              "position": 2,
+              "field_size": 7
+            },
+            {
+              "date": "2024-09-25",
+              "going": "Heavy",
+              "position": 3,
+              "field_size": 11
+            },
+            {
+              "date": "2024-08-09",
+              "going": "Good to Firm",
+              "position": 1,
+              "field_size": 10
+            }
+          ],
+          "going_history_source": "https://www.sportinglife.com/racing/profiles/horse/1152804",
+          "going_history_fetched_at": "2026-06-03T08:47:43.722880+00:00"
+        },
+        {
+          "horse": "Sindria",
+          "age": 4,
+          "trainer": "Joseph Patrick O'Brien",
+          "jockey": "TBC",
+          "draw": null,
+          "weight_st_lb": "9-8",
+          "or": 100,
+          "rpr": 106,
+          "ts": 90,
+          "form_string": "04-119",
+          "last_run_days": 13,
+          "notes": "Verified runner on Racing Post card for Princess Elizabeth Stakes (Group 3) (Fillies & Mares) (Sponsored By Chapel Down); OR 100; RPR 106; TS 90; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 8.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Pina Sonata",
+          "age": 4,
+          "trainer": "James Fanshawe",
+          "jockey": "Daniel Muscutt",
+          "draw": null,
+          "weight_st_lb": "9-8",
+          "or": 103,
+          "rpr": 110,
+          "ts": 80,
+          "form_string": "1106-1",
+          "last_run_days": 70,
+          "notes": "Verified runner on Racing Post card for Princess Elizabeth Stakes (Group 3) (Fillies & Mares) (Sponsored By Chapel Down); OR 103; RPR 110; TS 80; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 8.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [
+            {
+              "date": "2026-03-28",
+              "going": "Good",
+              "position": 1,
+              "field_size": 11
+            },
+            {
+              "date": "2025-09-17",
+              "going": "Soft",
+              "position": 6,
+              "field_size": 6
+            },
+            {
+              "date": "2025-08-03",
+              "going": "Good",
+              "position": 11,
+              "field_size": 13
+            },
+            {
+              "date": "2025-05-27",
+              "going": "Good to Soft",
+              "position": 1,
+              "field_size": 10
+            },
+            {
+              "date": "2025-04-29",
+              "going": "Good",
+              "position": 1,
+              "field_size": 9
+            },
+            {
+              "date": "2024-10-11",
+              "going": "Good to Soft",
+              "position": 4,
+              "field_size": 15
+            }
+          ],
+          "going_history_source": "https://www.sportinglife.com/racing/profiles/horse/1161757",
+          "going_history_fetched_at": "2026-06-03T08:47:43.722880+00:00"
+        },
+        {
+          "horse": "Alobayyah",
+          "age": 4,
+          "trainer": "William Haggas",
+          "jockey": "TBC",
+          "draw": null,
+          "weight_st_lb": "9-8",
+          "or": 90,
+          "rpr": 101,
+          "ts": 85,
+          "form_string": "1/85-3",
+          "last_run_days": 28,
+          "notes": "Verified runner on Racing Post card for Princess Elizabeth Stakes (Group 3) (Fillies & Mares) (Sponsored By Chapel Down); OR 90; RPR 101; TS 85; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 9.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Sunlit Uplands",
+          "age": 4,
+          "trainer": "Stuart Williams",
+          "jockey": "Hector Crouch",
+          "draw": null,
+          "weight_st_lb": "9-8",
+          "or": 93,
+          "rpr": 102,
+          "ts": 77,
+          "form_string": "1764-4",
+          "last_run_days": 28,
+          "notes": "Verified runner on Racing Post card for Princess Elizabeth Stakes (Group 3) (Fillies & Mares) (Sponsored By Chapel Down); OR 93; RPR 102; TS 77; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 9.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Breckenbrough",
+          "age": 4,
+          "trainer": "Mario Baratti",
+          "jockey": "Oisin Murphy",
+          "draw": null,
+          "weight_st_lb": "9-8",
+          "or": 99,
+          "rpr": 109,
+          "ts": 79,
+          "form_string": "211-34",
+          "last_run_days": 23,
+          "notes": "Verified runner on Racing Post card for Princess Elizabeth Stakes (Group 3) (Fillies & Mares) (Sponsored By Chapel Down); OR 99; RPR 109; TS 79; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 8.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Pacific Mission",
+          "age": 3,
+          "trainer": "Andrew Balding",
+          "jockey": "Colin Keane",
+          "draw": null,
+          "weight_st_lb": "8-10",
+          "or": 109,
+          "rpr": 111,
+          "ts": 94,
+          "form_string": "6122-5",
+          "last_run_days": 22,
+          "notes": "Verified runner on Racing Post card for Princess Elizabeth Stakes (Group 3) (Fillies & Mares) (Sponsored By Chapel Down); OR 109; RPR 111; TS 94; badges BF; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 7.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [
+            {
+              "date": "2026-05-15",
+              "going": "Good",
+              "position": 5,
+              "field_size": 7
+            },
+            {
+              "date": "2025-10-31",
+              "going": "Firm",
+              "position": 2,
+              "field_size": 12
+            },
+            {
+              "date": "2025-09-11",
+              "going": "Good to Soft",
+              "position": 2,
+              "field_size": 8
+            },
+            {
+              "date": "2025-08-13",
+              "going": "Good",
+              "position": 1,
+              "field_size": 9
+            },
+            {
+              "date": "2025-07-25",
+              "going": "Good",
+              "position": 6,
+              "field_size": 7
+            }
+          ],
+          "going_history_source": "https://www.sportinglife.com/racing/profiles/horse/1193318",
+          "going_history_fetched_at": "2026-06-03T08:47:43.722880+00:00"
+        }
+      ],
+      "source_urls": [
+        "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+      ],
+      "going": "Good to Soft"
     },
     {
       "race_number": 3,
@@ -44,7 +1179,7 @@
           "form_string": "11154-1",
           "last_run_days": null,
           "notes": "2025 Epsom Derby winner; won Huxley Stakes (Group 2, Chester May 2026); proven Epsom specialist; sourced from racingbetter.co.uk and horseracingnation.com 2026-06-02",
-          "morning_price": 3,
+          "morning_price": 3.0,
           "odds_source": "ante_post",
           "odds_fetched_at": "2026-06-02T13:55:00+01:00",
           "going_history": [
@@ -125,9 +1260,9 @@
           "form_string": "11214-1",
           "last_run_days": null,
           "notes": "2025 Coronation Cup winner at Epsom; recently won Ormonde Stakes (Chester May 2026); defending champion",
-          "morning_price": 3.5,
-          "odds_source": "ante_post",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "morning_price": 4.0,
+          "odds_source": "skysports",
+          "odds_fetched_at": "2026-06-03T09:05:09+00:00",
           "going_history": [
             {
               "date": "2026-05-07",
@@ -194,9 +1329,9 @@
           "form_string": "21111-1",
           "last_run_days": null,
           "notes": "2025 Coronation Cup runner-up; since won King George VI, Champion Stakes, Japan Cup, Sheema Classic; Dubai Sheema Classic winner March 2026; re-match with Jan Brueghel",
-          "morning_price": 2.5,
-          "odds_source": "ante_post",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "morning_price": 2.25,
+          "odds_source": "skysports",
+          "odds_fetched_at": "2026-06-03T09:05:09+00:00",
           "going_history": [
             {
               "date": "2026-03-28",
@@ -287,7 +1422,7 @@
           "form_string": "32117-1",
           "last_run_days": null,
           "notes": "Won John Porter G3 at Newbury April 2026; progressive; no Epsom form to date but well-placed at high level",
-          "morning_price": 11,
+          "morning_price": 11.0,
           "odds_source": "estimated",
           "odds_fetched_at": "2026-06-02T13:55:00+01:00",
           "going_history": [
@@ -344,7 +1479,7 @@
           "form_string": "2241-22",
           "last_run_days": null,
           "notes": "Group 1 winner; 2nd in Huxley Stakes and Curragh recently May 2026; strong form; home advantage",
-          "morning_price": 9,
+          "morning_price": 9.0,
           "odds_source": "estimated",
           "odds_fetched_at": "2026-06-02T13:55:00+01:00",
           "going_history": [
@@ -431,7 +1566,7 @@
           "form_string": "Placed in Group races",
           "last_run_days": null,
           "notes": "Placed in many Group races; recent 3rd in Ormonde Stakes G3 Chester; prior Epsom form",
-          "morning_price": 21,
+          "morning_price": 21.0,
           "odds_source": "estimated",
           "odds_fetched_at": "2026-06-02T13:55:00+01:00",
           "going_history": [
@@ -524,7 +1659,7 @@
           "form_string": "6-1204",
           "last_run_days": null,
           "notes": "Group 1 placed; 4th in Jockey Club Stakes G2 recently; progressive form",
-          "morning_price": 17,
+          "morning_price": 17.0,
           "odds_source": "estimated",
           "odds_fetched_at": "2026-06-02T13:55:00+01:00",
           "going_history": [
@@ -617,7 +1752,7 @@
           "form_string": "429-11",
           "last_run_days": null,
           "notes": "Mare; won Middleton Fillies' Stakes G2 last time out; recent strong form",
-          "morning_price": 13,
+          "morning_price": 13.0,
           "odds_source": "estimated",
           "odds_fetched_at": "2026-06-02T13:55:00+01:00",
           "going_history": [
@@ -703,17 +1838,1069 @@
         "https://www.horseracingnation.com/race/2026_Coronation_Cup",
         "https://www.racinginsider.com/racing-news/coronation-cup-2026-odds-and-entries-20260520-0005/",
         "https://www.irishracing.com/racecards/Sat-6th-Jun-2026/Epsom/1440"
-      ]
+      ],
+      "going": "Good to Soft"
     },
     {
       "race_number": 4,
       "off_time": "15:15",
-      "name": "Nifty 50 Handicap",
+      "name": "Betfred Dash Handicap (Heritage Handicap)",
       "class": "Handicap",
       "distance_f": 8,
       "prize_winner_gbp": null,
-      "runners": [],
-      "source_urls": []
+      "runners": [
+        {
+          "horse": "The Bell Conductor",
+          "age": 9,
+          "trainer": "Ivan Furtado",
+          "jockey": "Silvestre De Sousa",
+          "draw": null,
+          "weight_st_lb": "8-7",
+          "or": 80,
+          "rpr": 103,
+          "ts": 104,
+          "form_string": "0-6662",
+          "last_run_days": 16,
+          "notes": "Verified runner on Racing Post card for Betfred \"Dash\" Handicap (Heritage Handicap); OR 80; RPR 103; TS 104; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 28.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Brazen Bolt",
+          "age": 9,
+          "trainer": "Ruth Carr",
+          "jockey": "Warren Fentiman",
+          "draw": null,
+          "weight_st_lb": "8-13",
+          "or": 86,
+          "rpr": 106,
+          "ts": 97,
+          "form_string": "006-27",
+          "last_run_days": 23,
+          "notes": "Verified runner on Racing Post card for Betfred \"Dash\" Handicap (Heritage Handicap); OR 86; RPR 106; TS 97; badges C, D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 26.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Dream Composer",
+          "age": 8,
+          "trainer": "Tony Carroll",
+          "jockey": "Dougie Costello",
+          "draw": null,
+          "weight_st_lb": "8-11",
+          "or": 84,
+          "rpr": 104,
+          "ts": 95,
+          "form_string": "789-14",
+          "last_run_days": 15,
+          "notes": "Verified runner on Racing Post card for Betfred \"Dash\" Handicap (Heritage Handicap); OR 84; RPR 104; TS 95; badges CD; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 26.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Emperor Spirit",
+          "age": 8,
+          "trainer": "Michael Keady",
+          "jockey": "Ray Dawson",
+          "draw": null,
+          "weight_st_lb": "8-11",
+          "or": 84,
+          "rpr": 105,
+          "ts": 99,
+          "form_string": "3830-2",
+          "last_run_days": 36,
+          "notes": "Verified runner on Racing Post card for Betfred \"Dash\" Handicap (Heritage Handicap); OR 84; RPR 105; TS 99; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 26.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Counsel",
+          "age": 8,
+          "trainer": "Michael Appleby",
+          "jockey": "TBC",
+          "draw": null,
+          "weight_st_lb": "8-7",
+          "or": 80,
+          "rpr": 107,
+          "ts": 91,
+          "form_string": "4-7167",
+          "last_run_days": 21,
+          "notes": "Verified runner on Racing Post card for Betfred \"Dash\" Handicap (Heritage Handicap); OR 80; RPR 107; TS 91; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 28.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Vintage Clarets",
+          "age": 7,
+          "trainer": "Richard & Peter Fahey",
+          "jockey": "TBC",
+          "draw": null,
+          "weight_st_lb": "8-10",
+          "or": 83,
+          "rpr": 98,
+          "ts": 110,
+          "form_string": "8-0070",
+          "last_run_days": 14,
+          "notes": "Verified runner on Racing Post card for Betfred \"Dash\" Handicap (Heritage Handicap); OR 83; RPR 98; TS 110; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 27.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Nogo's Dream",
+          "age": 6,
+          "trainer": "Richard Hughes",
+          "jockey": "Saffie Osborne",
+          "draw": null,
+          "weight_st_lb": "8-6",
+          "or": 79,
+          "rpr": 105,
+          "ts": 90,
+          "form_string": "5-2625",
+          "last_run_days": 15,
+          "notes": "Verified runner on Racing Post card for Betfred \"Dash\" Handicap (Heritage Handicap); OR 79; RPR 105; TS 90; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 29.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Tatterstall",
+          "age": 6,
+          "trainer": "Michael Dods",
+          "jockey": "Connor Beasley",
+          "draw": null,
+          "weight_st_lb": "9-2",
+          "or": 89,
+          "rpr": 106,
+          "ts": 95,
+          "form_string": "4/00-3",
+          "last_run_days": 35,
+          "notes": "Verified runner on Racing Post card for Betfred \"Dash\" Handicap (Heritage Handicap); OR 89; RPR 106; TS 95; badges CD; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 24.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Michaela's Boy",
+          "age": 6,
+          "trainer": "Robert Cowell",
+          "jockey": "TBC",
+          "draw": null,
+          "weight_st_lb": "8-10",
+          "or": 83,
+          "rpr": 110,
+          "ts": 87,
+          "form_string": "-12567",
+          "last_run_days": 24,
+          "notes": "Verified runner on Racing Post card for Betfred \"Dash\" Handicap (Heritage Handicap); OR 83; RPR 110; TS 87; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 27.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [
+            {
+              "date": "2026-05-13",
+              "going": "Good",
+              "position": 7,
+              "field_size": 7
+            },
+            {
+              "date": "2026-04-26",
+              "going": "Good",
+              "position": 6,
+              "field_size": 10
+            },
+            {
+              "date": "2026-02-21",
+              "going": "Good",
+              "position": 5,
+              "field_size": 9
+            },
+            {
+              "date": "2026-01-31",
+              "going": "Good",
+              "position": 2,
+              "field_size": 8
+            },
+            {
+              "date": "2026-01-12",
+              "going": "Good",
+              "position": 1,
+              "field_size": 7
+            },
+            {
+              "date": "2025-12-15",
+              "going": "Good",
+              "position": 6,
+              "field_size": 7
+            },
+            {
+              "date": "2025-11-20",
+              "going": "Good",
+              "position": 7,
+              "field_size": 10
+            },
+            {
+              "date": "2025-10-31",
+              "going": "Good",
+              "position": 6,
+              "field_size": 11
+            },
+            {
+              "date": "2025-08-09",
+              "going": "Good to Firm",
+              "position": 6,
+              "field_size": 9
+            },
+            {
+              "date": "2025-07-26",
+              "going": "Good",
+              "position": 10,
+              "field_size": 14
+            }
+          ],
+          "going_history_source": "https://www.sportinglife.com/racing/profiles/horse/1056506",
+          "going_history_fetched_at": "2026-06-03T08:47:43.722880+00:00"
+        },
+        {
+          "horse": "Democracy Dilemma",
+          "age": 6,
+          "trainer": "Robert Cowell",
+          "jockey": "Jack Mitchell",
+          "draw": null,
+          "weight_st_lb": "9-12",
+          "or": 99,
+          "rpr": 108,
+          "ts": 104,
+          "form_string": "3-3096",
+          "last_run_days": 19,
+          "notes": "Verified runner on Racing Post card for Betfred \"Dash\" Handicap (Heritage Handicap); OR 99; RPR 108; TS 104; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 21.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Rhythm N Hooves",
+          "age": 6,
+          "trainer": "Robert Cowell",
+          "jockey": "TBC",
+          "draw": null,
+          "weight_st_lb": "8-11",
+          "or": 84,
+          "rpr": 110,
+          "ts": 106,
+          "form_string": "-44543",
+          "last_run_days": 19,
+          "notes": "Verified runner on Racing Post card for Betfred \"Dash\" Handicap (Heritage Handicap); OR 84; RPR 110; TS 106; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 26.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [
+            {
+              "date": "2026-05-18",
+              "going": "Good",
+              "position": 3,
+              "field_size": 9
+            },
+            {
+              "date": "2026-05-01",
+              "going": "Good",
+              "position": 4,
+              "field_size": 11
+            },
+            {
+              "date": "2026-04-04",
+              "going": "Soft",
+              "position": 5,
+              "field_size": 14
+            },
+            {
+              "date": "2026-03-21",
+              "going": "Good",
+              "position": 4,
+              "field_size": 12
+            },
+            {
+              "date": "2026-02-06",
+              "going": "Good",
+              "position": 4,
+              "field_size": 14
+            },
+            {
+              "date": "2025-12-20",
+              "going": "Good",
+              "position": 5,
+              "field_size": 6
+            },
+            {
+              "date": "2025-12-09",
+              "going": "Good",
+              "position": 3,
+              "field_size": 9
+            },
+            {
+              "date": "2025-11-21",
+              "going": "Good",
+              "position": 2,
+              "field_size": 7
+            },
+            {
+              "date": "2025-11-08",
+              "going": "Good",
+              "position": 2,
+              "field_size": 10
+            },
+            {
+              "date": "2025-10-10",
+              "going": "Good",
+              "position": 6,
+              "field_size": 18
+            }
+          ],
+          "going_history_source": "https://www.sportinglife.com/racing/profiles/horse/1060979",
+          "going_history_fetched_at": "2026-06-03T08:47:43.722880+00:00"
+        },
+        {
+          "horse": "Another Baar",
+          "age": 6,
+          "trainer": "Adrian Paul Keatley",
+          "jockey": "Mikey Sheehy",
+          "draw": null,
+          "weight_st_lb": "9-11",
+          "or": 98,
+          "rpr": 103,
+          "ts": 90,
+          "form_string": "8-0100",
+          "last_run_days": 107,
+          "notes": "Verified runner on Racing Post card for Betfred \"Dash\" Handicap (Heritage Handicap); OR 98; RPR 103; TS 90; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 22.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Almaty Star",
+          "age": 6,
+          "trainer": "Robert Cowell",
+          "jockey": "TBC",
+          "draw": null,
+          "weight_st_lb": "8-10",
+          "or": 83,
+          "rpr": 107,
+          "ts": 96,
+          "form_string": "4-2421",
+          "last_run_days": 56,
+          "notes": "Verified runner on Racing Post card for Betfred \"Dash\" Handicap (Heritage Handicap); OR 83; RPR 107; TS 96; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 27.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [
+            {
+              "date": "2026-04-11",
+              "going": "Good",
+              "position": 1,
+              "field_size": 6
+            },
+            {
+              "date": "2026-03-09",
+              "going": "Good",
+              "position": 2,
+              "field_size": 7
+            },
+            {
+              "date": "2026-02-20",
+              "going": "Good",
+              "position": 4,
+              "field_size": 11
+            },
+            {
+              "date": "2026-01-12",
+              "going": "Good",
+              "position": 2,
+              "field_size": 7
+            },
+            {
+              "date": "2025-12-31",
+              "going": "Good",
+              "position": 4,
+              "field_size": 5
+            },
+            {
+              "date": "2025-12-11",
+              "going": "Good",
+              "position": 3,
+              "field_size": 8
+            },
+            {
+              "date": "2025-12-04",
+              "going": "Good",
+              "position": 2,
+              "field_size": 10
+            },
+            {
+              "date": "2025-09-04",
+              "going": "Good",
+              "position": 8,
+              "field_size": 9
+            },
+            {
+              "date": "2025-08-16",
+              "going": "Good to Firm",
+              "position": 7,
+              "field_size": 11
+            },
+            {
+              "date": "2025-07-11",
+              "going": "Good to Firm",
+              "position": 9,
+              "field_size": 10
+            }
+          ],
+          "going_history_source": "https://www.sportinglife.com/racing/profiles/horse/1076637",
+          "going_history_fetched_at": "2026-06-03T08:47:43.722880+00:00"
+        },
+        {
+          "horse": "Partisan Hero",
+          "age": 6,
+          "trainer": "David Loughnane",
+          "jockey": "Robert Havlin",
+          "draw": null,
+          "weight_st_lb": "9-9",
+          "or": 96,
+          "rpr": 105,
+          "ts": 92,
+          "form_string": "838271",
+          "last_run_days": 14,
+          "notes": "Verified runner on Racing Post card for Betfred \"Dash\" Handicap (Heritage Handicap); OR 96; RPR 105; TS 92; badges C, D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 22.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [
+            {
+              "date": "2026-05-23",
+              "going": "Good",
+              "position": 1,
+              "field_size": 16
+            },
+            {
+              "date": "2026-05-06",
+              "going": "Good",
+              "position": 7,
+              "field_size": 13
+            },
+            {
+              "date": "2026-02-19",
+              "going": "Good",
+              "position": 2,
+              "field_size": 18
+            },
+            {
+              "date": "2026-01-29",
+              "going": "Good to Firm",
+              "position": 8,
+              "field_size": 18
+            },
+            {
+              "date": "2026-01-16",
+              "going": "Good",
+              "position": 3,
+              "field_size": 13
+            },
+            {
+              "date": "2026-01-02",
+              "going": "Good",
+              "position": 8,
+              "field_size": 11
+            },
+            {
+              "date": "2025-08-25",
+              "going": "Good",
+              "position": 1,
+              "field_size": 9
+            },
+            {
+              "date": "2025-08-03",
+              "going": "Soft",
+              "position": 6,
+              "field_size": 15
+            },
+            {
+              "date": "2025-06-22",
+              "going": "Good",
+              "position": 2,
+              "field_size": 7
+            },
+            {
+              "date": "2025-06-06",
+              "going": "Good to Soft",
+              "position": 1,
+              "field_size": 12
+            }
+          ],
+          "going_history_source": "https://www.sportinglife.com/racing/profiles/horse/1080046",
+          "going_history_fetched_at": "2026-06-03T08:47:43.722880+00:00"
+        },
+        {
+          "horse": "Desert Cop",
+          "age": 6,
+          "trainer": "George Baker",
+          "jockey": "Charles Bishop",
+          "draw": null,
+          "weight_st_lb": "8-13",
+          "or": 86,
+          "rpr": 108,
+          "ts": 98,
+          "form_string": "357305",
+          "last_run_days": 12,
+          "notes": "Verified runner on Racing Post card for Betfred \"Dash\" Handicap (Heritage Handicap); OR 86; RPR 108; TS 98; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 26.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Sturlasson",
+          "age": 5,
+          "trainer": "John Ryan",
+          "jockey": "Stevie Donohoe",
+          "draw": null,
+          "weight_st_lb": "9-0",
+          "or": 87,
+          "rpr": 107,
+          "ts": 83,
+          "form_string": "14-529",
+          "last_run_days": 23,
+          "notes": "Verified runner on Racing Post card for Betfred \"Dash\" Handicap (Heritage Handicap); OR 87; RPR 107; TS 83; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 25.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Betsen",
+          "age": 5,
+          "trainer": "Tony Carroll",
+          "jockey": "Clifford Lee",
+          "draw": null,
+          "weight_st_lb": "8-13",
+          "or": 86,
+          "rpr": 107,
+          "ts": 95,
+          "form_string": "347091",
+          "last_run_days": 16,
+          "notes": "Verified runner on Racing Post card for Betfred \"Dash\" Handicap (Heritage Handicap); OR 86; RPR 107; TS 95; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 26.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Seven Questions",
+          "age": 5,
+          "trainer": "Robert Cowell",
+          "jockey": "TBC",
+          "draw": null,
+          "weight_st_lb": "9-3",
+          "or": 90,
+          "rpr": 105,
+          "ts": 98,
+          "form_string": "0-3641",
+          "last_run_days": 15,
+          "notes": "Verified runner on Racing Post card for Betfred \"Dash\" Handicap (Heritage Handicap); OR 90; RPR 105; TS 98; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 24.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Law Of Average",
+          "age": 5,
+          "trainer": "Chelsea Banham",
+          "jockey": "Joey Haynes",
+          "draw": null,
+          "weight_st_lb": "8-9",
+          "or": 82,
+          "rpr": 104,
+          "ts": 88,
+          "form_string": "979-11",
+          "last_run_days": 10,
+          "notes": "Verified runner on Racing Post card for Betfred \"Dash\" Handicap (Heritage Handicap); OR 82; RPR 104; TS 88; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 27.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Rogue Enforcer",
+          "age": 5,
+          "trainer": "Archie Watson",
+          "jockey": "Kieran Shoemark",
+          "draw": null,
+          "weight_st_lb": "9-4",
+          "or": 91,
+          "rpr": 105,
+          "ts": 89,
+          "form_string": "921-08",
+          "last_run_days": 19,
+          "notes": "Verified runner on Racing Post card for Betfred \"Dash\" Handicap (Heritage Handicap); OR 91; RPR 105; TS 89; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 24.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Golden Long",
+          "age": 5,
+          "trainer": "Lemos De Souza",
+          "jockey": "J F Egan",
+          "draw": null,
+          "weight_st_lb": "8-7",
+          "or": 80,
+          "rpr": 105,
+          "ts": 96,
+          "form_string": "30/531",
+          "last_run_days": 33,
+          "notes": "Verified runner on Racing Post card for Betfred \"Dash\" Handicap (Heritage Handicap); OR 80; RPR 105; TS 96; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 28.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Marching Mac",
+          "age": 5,
+          "trainer": "Phil McEntee",
+          "jockey": "Grace McEntee",
+          "draw": null,
+          "weight_st_lb": "8-5",
+          "or": 78,
+          "rpr": 109,
+          "ts": 100,
+          "form_string": "49-404",
+          "last_run_days": 16,
+          "notes": "Verified runner on Racing Post card for Betfred \"Dash\" Handicap (Heritage Handicap); OR 78; RPR 109; TS 100; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 29.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "King Of Light",
+          "age": 4,
+          "trainer": "Stuart Williams",
+          "jockey": "Marco Ghiani",
+          "draw": null,
+          "weight_st_lb": "9-4",
+          "or": 91,
+          "rpr": 105,
+          "ts": 96,
+          "form_string": "9014-2",
+          "last_run_days": 36,
+          "notes": "Verified runner on Racing Post card for Betfred \"Dash\" Handicap (Heritage Handicap); OR 91; RPR 105; TS 96; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 24.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Francisco's Piece",
+          "age": 4,
+          "trainer": "Adrian Paul Keatley",
+          "jockey": "Mikey Sheehy",
+          "draw": null,
+          "weight_st_lb": "8-10",
+          "or": 83,
+          "rpr": 106,
+          "ts": 94,
+          "form_string": "0005-7",
+          "last_run_days": 59,
+          "notes": "Verified runner on Racing Post card for Betfred \"Dash\" Handicap (Heritage Handicap); OR 83; RPR 106; TS 94; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 27.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Cindy Lou Who",
+          "age": 4,
+          "trainer": "Tony Carroll",
+          "jockey": "William Carson",
+          "draw": null,
+          "weight_st_lb": "9-7",
+          "or": 94,
+          "rpr": 106,
+          "ts": 85,
+          "form_string": "113-29",
+          "last_run_days": 50,
+          "notes": "Verified runner on Racing Post card for Betfred \"Dash\" Handicap (Heritage Handicap); OR 94; RPR 106; TS 85; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 23.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Dyonisos",
+          "age": 4,
+          "trainer": "Ian Williams",
+          "jockey": "David Egan",
+          "draw": null,
+          "weight_st_lb": "8-12",
+          "or": 85,
+          "rpr": 106,
+          "ts": 95,
+          "form_string": "-83272",
+          "last_run_days": 15,
+          "notes": "Verified runner on Racing Post card for Betfred \"Dash\" Handicap (Heritage Handicap); OR 85; RPR 106; TS 95; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 26.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Ziggy's Triton",
+          "age": 4,
+          "trainer": "David O'Meara",
+          "jockey": "Jason Hart",
+          "draw": null,
+          "weight_st_lb": "9-2",
+          "or": 89,
+          "rpr": 109,
+          "ts": 98,
+          "form_string": "395107",
+          "last_run_days": 14,
+          "notes": "Verified runner on Racing Post card for Betfred \"Dash\" Handicap (Heritage Handicap); OR 89; RPR 109; TS 98; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 24.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Stormy Impact",
+          "age": 4,
+          "trainer": "Richard & Peter Fahey",
+          "jockey": "Warren Fentiman",
+          "draw": null,
+          "weight_st_lb": "9-5",
+          "or": 92,
+          "rpr": 107,
+          "ts": 95,
+          "form_string": "5826-0",
+          "last_run_days": 23,
+          "notes": "Verified runner on Racing Post card for Betfred \"Dash\" Handicap (Heritage Handicap); OR 92; RPR 107; TS 95; badges CD; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 23.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Lexington Blitz",
+          "age": 4,
+          "trainer": "Robert Cowell",
+          "jockey": "Edward Greatrex",
+          "draw": null,
+          "weight_st_lb": "9-10",
+          "or": 97,
+          "rpr": 103,
+          "ts": 85,
+          "form_string": "219-31",
+          "last_run_days": 36,
+          "notes": "Verified runner on Racing Post card for Betfred \"Dash\" Handicap (Heritage Handicap); OR 97; RPR 103; TS 85; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 22.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Star Chorus",
+          "age": 4,
+          "trainer": "Mike Murphy",
+          "jockey": "Rob Hornby",
+          "draw": null,
+          "weight_st_lb": "9-0",
+          "or": 87,
+          "rpr": 106,
+          "ts": 82,
+          "form_string": "313418",
+          "last_run_days": 15,
+          "notes": "Verified runner on Racing Post card for Betfred \"Dash\" Handicap (Heritage Handicap); OR 87; RPR 106; TS 82; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 25.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Kinswoman",
+          "age": 4,
+          "trainer": "William Haggas",
+          "jockey": "Tom Marquand",
+          "draw": null,
+          "weight_st_lb": "9-4",
+          "or": 91,
+          "rpr": 106,
+          "ts": 90,
+          "form_string": "1121-2",
+          "last_run_days": 24,
+          "notes": "Verified runner on Racing Post card for Betfred \"Dash\" Handicap (Heritage Handicap); OR 91; RPR 106; TS 90; badges D, BF; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 24.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [
+            {
+              "date": "2026-05-13",
+              "going": "Good",
+              "position": 2,
+              "field_size": 7
+            },
+            {
+              "date": "2025-10-17",
+              "going": "Good",
+              "position": 1,
+              "field_size": 8
+            },
+            {
+              "date": "2025-10-10",
+              "going": "Good",
+              "position": 2,
+              "field_size": 18
+            },
+            {
+              "date": "2025-08-30",
+              "going": "Good to Firm",
+              "position": 1,
+              "field_size": 8
+            },
+            {
+              "date": "2025-08-11",
+              "going": "Good to Firm",
+              "position": 1,
+              "field_size": 4
+            },
+            {
+              "date": "2025-06-24",
+              "going": "Good to Firm",
+              "position": 2,
+              "field_size": 5
+            },
+            {
+              "date": "2025-05-24",
+              "going": "Good",
+              "position": 2,
+              "field_size": 9
+            },
+            {
+              "date": "2025-04-26",
+              "going": "Good to Firm",
+              "position": 3,
+              "field_size": 12
+            },
+            {
+              "date": "2025-03-31",
+              "going": "Good",
+              "position": 3,
+              "field_size": 8
+            },
+            {
+              "date": "2025-03-15",
+              "going": "Good",
+              "position": 4,
+              "field_size": 7
+            }
+          ],
+          "going_history_source": "https://www.sportinglife.com/racing/profiles/horse/1177438",
+          "going_history_fetched_at": "2026-06-03T08:47:43.722880+00:00"
+        },
+        {
+          "horse": "Arklow Lad",
+          "age": 4,
+          "trainer": "Michael Appleby",
+          "jockey": "Harry Davies",
+          "draw": null,
+          "weight_st_lb": "8-13",
+          "or": 86,
+          "rpr": 106,
+          "ts": 92,
+          "form_string": "6-1315",
+          "last_run_days": 23,
+          "notes": "Verified runner on Racing Post card for Betfred \"Dash\" Handicap (Heritage Handicap); OR 86; RPR 106; TS 92; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 26.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Eclairage",
+          "age": 4,
+          "trainer": "Daniel James Murphy",
+          "jockey": "TBC",
+          "draw": null,
+          "weight_st_lb": "9-6",
+          "or": 93,
+          "rpr": 109,
+          "ts": 91,
+          "form_string": "2554-2",
+          "last_run_days": 21,
+          "notes": "Verified runner on Racing Post card for Betfred \"Dash\" Handicap (Heritage Handicap); OR 93; RPR 109; TS 91; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 23.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [
+            {
+              "date": "2026-05-16",
+              "going": "Soft",
+              "position": 2,
+              "field_size": 10
+            },
+            {
+              "date": "2025-10-24",
+              "going": "Good",
+              "position": 4,
+              "field_size": 14
+            },
+            {
+              "date": "2025-10-14",
+              "going": "Good",
+              "position": 5,
+              "field_size": 5
+            },
+            {
+              "date": "2025-08-20",
+              "going": "Good to Firm",
+              "position": 5,
+              "field_size": 19
+            },
+            {
+              "date": "2025-07-25",
+              "going": "Good to Firm",
+              "position": 2,
+              "field_size": 12
+            },
+            {
+              "date": "2025-07-12",
+              "going": "Good",
+              "position": 1,
+              "field_size": 11
+            },
+            {
+              "date": "2025-07-02",
+              "going": "Good",
+              "position": 3,
+              "field_size": 5
+            },
+            {
+              "date": "2025-06-13",
+              "going": "Good to Soft",
+              "position": 7,
+              "field_size": 8
+            },
+            {
+              "date": "2024-12-13",
+              "going": "Good",
+              "position": 1,
+              "field_size": 4
+            },
+            {
+              "date": "2024-11-22",
+              "going": "Good",
+              "position": 1,
+              "field_size": 8
+            }
+          ],
+          "going_history_source": "https://www.sportinglife.com/racing/profiles/horse/1144298",
+          "going_history_fetched_at": "2026-06-03T08:47:43.722880+00:00"
+        },
+        {
+          "horse": "Forager",
+          "age": 4,
+          "trainer": "Simon Pearce",
+          "jockey": "TBC",
+          "draw": null,
+          "weight_st_lb": "8-8",
+          "or": 81,
+          "rpr": 107,
+          "ts": 97,
+          "form_string": "0416-9",
+          "last_run_days": 15,
+          "notes": "Verified runner on Racing Post card for Betfred \"Dash\" Handicap (Heritage Handicap); OR 81; RPR 107; TS 97; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 28.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        }
+      ],
+      "source_urls": [
+        "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+      ],
+      "_name_note": "Renamed 2026-06-03: original speculative name 'Nifty 50 Handicap' replaced with verified RP-17 title.",
+      "going": "Good to Soft"
     },
     {
       "race_number": 5,
@@ -736,9 +2923,9 @@
           "form_string": "2113-1",
           "last_run_days": null,
           "notes": "Chester Vase (G3) winner; leading contender; rating 7.67 highest evaluation; 9/4-5/2 favourite odds; sourced from horseracing.guide and epsomderby.com 2026-06-02",
-          "morning_price": 3.25,
-          "odds_source": "ante_post",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "morning_price": 3.0,
+          "odds_source": "skysports",
+          "odds_fetched_at": "2026-06-03T09:05:09+00:00",
           "going_history": [
             {
               "date": "2026-05-06",
@@ -787,9 +2974,9 @@
           "form_string": "11-1",
           "last_run_days": null,
           "notes": "Dante Stakes (G2) winner at York, unbeaten; rating 7.09; 4/1-5/1 second favourite; big improver",
-          "morning_price": 5,
-          "odds_source": "ante_post",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "morning_price": 5.5,
+          "odds_source": "skysports",
+          "odds_fetched_at": "2026-06-03T09:05:09+00:00",
           "going_history": [
             {
               "date": "2026-05-14",
@@ -826,7 +3013,7 @@
           "form_string": "117-1",
           "last_run_days": null,
           "notes": "Newmarket Stakes winner; RPR 118; OR 100; 16/1 odds; good form",
-          "morning_price": 17,
+          "morning_price": 17.0,
           "odds_source": "ante_post",
           "odds_fetched_at": "2026-06-02T13:55:00+01:00",
           "going_history": [
@@ -871,7 +3058,7 @@
           "form_string": "4410-16",
           "last_run_days": null,
           "notes": "OR 84; lesser form; Balding runner",
-          "morning_price": 51,
+          "morning_price": 51.0,
           "odds_source": "estimated",
           "odds_fetched_at": "2026-06-02T13:55:00+01:00",
           "going_history": [
@@ -928,7 +3115,7 @@
           "form_string": "3-133",
           "last_run_days": null,
           "notes": "OR 97; recent 3rd/form uneven; De Sousa booked",
-          "morning_price": 41,
+          "morning_price": 41.0,
           "odds_source": "estimated",
           "odds_fetched_at": "2026-06-02T13:55:00+01:00",
           "going_history": [
@@ -973,7 +3160,7 @@
           "form_string": "511-2",
           "last_run_days": null,
           "notes": "Lingfield Derby Trial 2nd; OR 107; progressive; Beckett runner",
-          "morning_price": 21,
+          "morning_price": 21.0,
           "odds_source": "estimated",
           "odds_fetched_at": "2026-06-02T13:55:00+01:00",
           "going_history": [
@@ -1015,15 +3202,24 @@
           "or": null,
           "rpr": null,
           "ts": null,
-          "form_string": "Dee Stakes winner Chester",
-          "last_run_days": null,
-          "notes": "Dee Stakes (G3) Chester winner; O'Brien runner; 8/1 odds; sourced from racingbetter.co.uk 2026-06-02",
-          "morning_price": 9,
+          "form_string": "Dee Stakes winner Chester; Prix du Jockey Club (Gr.1) winner Chantilly 31-May",
+          "last_run_days": 2,
+          "notes": "Dee Stakes (G3) Chester winner; WON Prix du Jockey Club (French Derby, Gr.1) at Chantilly 2026-05-31 by 3/4L from Hawk Mountain — O'Brien/Moore, 15/8 fav; entry at Epsom 6 days later is unusual",
+          "morning_price": 9.0,
           "odds_source": "ante_post",
           "odds_fetched_at": "2026-06-02T13:55:00+01:00",
-          "going_history": [],
-          "going_history_source": "unavailable",
-          "going_history_fetched_at": "2026-06-02T18:55:00+01:00"
+          "going_history": [
+            {
+              "date": "2026-05-31",
+              "going": "Soft",
+              "position": 1,
+              "field_size": 14,
+              "course": "Chantilly",
+              "race": "Prix du Jockey Club (Gr.1)"
+            }
+          ],
+          "going_history_source": "attheraces.com (1 row verified vs stablebet.co.uk + Wikipedia 2026-06-02)",
+          "going_history_fetched_at": "2026-06-02T20:30:00+01:00"
         },
         {
           "horse": "Causeway",
@@ -1038,7 +3234,7 @@
           "form_string": "41-111",
           "last_run_days": null,
           "notes": "Gallinule Stakes (G3) winner; OR 108; long odds; form improvement last start",
-          "morning_price": 29,
+          "morning_price": 29.0,
           "odds_source": "estimated",
           "odds_fetched_at": "2026-06-02T13:55:00+01:00",
           "going_history": [
@@ -1089,7 +3285,7 @@
           "form_string": "3511-13",
           "last_run_days": null,
           "notes": "3rd Dante Stakes; OR 109; rating 7.09; O'Brien stable companion",
-          "morning_price": 15,
+          "morning_price": 15.0,
           "odds_source": "estimated",
           "odds_fetched_at": "2026-06-02T13:55:00+01:00",
           "going_history": [
@@ -1146,7 +3342,7 @@
           "form_string": "2128-23",
           "last_run_days": null,
           "notes": "Derby Trial Stakes 3rd; OR 106; rating 6.12; O'Brien; long odds",
-          "morning_price": 34,
+          "morning_price": 34.0,
           "odds_source": "estimated",
           "odds_fetched_at": "2026-06-02T13:55:00+01:00",
           "going_history": [
@@ -1203,7 +3399,7 @@
           "form_string": "21-51",
           "last_run_days": null,
           "notes": "Derby Trial Stakes winner; OR 108; rating 7.09; Joseph Patrick O'Brien (son trainer); 10/1-14/1",
-          "morning_price": 11,
+          "morning_price": 11.0,
           "odds_source": "ante_post",
           "odds_fetched_at": "2026-06-02T13:55:00+01:00",
           "going_history": [
@@ -1248,7 +3444,7 @@
           "form_string": "21-11",
           "last_run_days": null,
           "notes": "Lingfield Derby Trial winner; OR 108; RPR 115; 8/1-10/1 odds; Haggas runner",
-          "morning_price": 9,
+          "morning_price": 9.0,
           "odds_source": "ante_post",
           "odds_fetched_at": "2026-06-02T13:55:00+01:00",
           "going_history": [
@@ -1293,7 +3489,7 @@
           "form_string": "4111-72",
           "last_run_days": null,
           "notes": "Derby Trial Stakes 2nd at Leopardstown; OR 109; rating 7.09; O'Brien depth",
-          "morning_price": 17,
+          "morning_price": 17.0,
           "odds_source": "estimated",
           "odds_fetched_at": "2026-06-02T13:55:00+01:00",
           "going_history": [
@@ -1350,7 +3546,7 @@
           "form_string": "3132-42",
           "last_run_days": null,
           "notes": "2nd Dante Stakes; OR 113; rating 7.27; O'Brien runner; strong form line",
-          "morning_price": 13,
+          "morning_price": 13.0,
           "odds_source": "estimated",
           "odds_fetched_at": "2026-06-02T13:55:00+01:00",
           "going_history": [
@@ -1407,7 +3603,7 @@
           "form_string": "73-2",
           "last_run_days": null,
           "notes": "OR 83; weaker form; Hannon runner; long odds",
-          "morning_price": 101,
+          "morning_price": 101.0,
           "odds_source": "estimated",
           "odds_fetched_at": "2026-06-02T13:55:00+01:00",
           "going_history": [
@@ -1446,7 +3642,7 @@
           "form_string": "62-2",
           "last_run_days": null,
           "notes": "OR 80; lesser form; Burke runner",
-          "morning_price": 101,
+          "morning_price": 101.0,
           "odds_source": "estimated",
           "odds_fetched_at": "2026-06-02T13:55:00+01:00",
           "going_history": [
@@ -1485,7 +3681,7 @@
           "form_string": "01-2",
           "last_run_days": null,
           "notes": "OR 100; modest form so far; O'Brien runner",
-          "morning_price": 67,
+          "morning_price": 67.0,
           "odds_source": "estimated",
           "odds_fetched_at": "2026-06-02T13:55:00+01:00",
           "going_history": [
@@ -1524,7 +3720,7 @@
           "form_string": "1-2",
           "last_run_days": null,
           "notes": "OR 99; Bramley runner; outsider",
-          "morning_price": 67,
+          "morning_price": 67.0,
           "odds_source": "estimated",
           "odds_fetched_at": "2026-06-02T13:55:00+01:00",
           "going_history": [
@@ -1551,38 +3747,2135 @@
         "https://horseracing.guide/big-races/epsom-derby/",
         "https://epsomderby.com/runners-riders-odds/",
         "https://www.horseracingnation.com/race/2026_Epsom_Derby"
-      ]
+      ],
+      "going": "Good to Soft"
     },
     {
       "race_number": 6,
       "off_time": "16:40",
-      "name": "HKJC World Pool Handicap",
+      "name": "Cherryfield (Croydon) Lester Piggott Handicap",
       "class": "Handicap",
       "distance_f": 8,
       "prize_winner_gbp": null,
-      "runners": [],
-      "source_urls": []
+      "runners": [
+        {
+          "horse": "Starlight Time",
+          "age": 3,
+          "trainer": "Roger Varian",
+          "jockey": "Ray Dawson",
+          "draw": null,
+          "weight_st_lb": "9-2",
+          "or": 86,
+          "rpr": 98,
+          "ts": 85,
+          "form_string": "181-",
+          "last_run_days": 212,
+          "notes": "Verified runner on Racing Post card for Cherryfield (Croydon) Lester Piggott Handicap (GBBPlus Race); OR 86; RPR 98; TS 85; badges C, Hc1; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 10.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [
+            {
+              "date": "2025-11-06",
+              "going": "Good",
+              "position": 1,
+              "field_size": 14
+            },
+            {
+              "date": "2025-10-04",
+              "going": "Good",
+              "position": 8,
+              "field_size": 26
+            },
+            {
+              "date": "2025-07-02",
+              "going": "Good",
+              "position": 1,
+              "field_size": 5
+            }
+          ],
+          "going_history_source": "https://www.sportinglife.com/racing/profiles/horse/1181688",
+          "going_history_fetched_at": "2026-06-03T08:47:43.722880+00:00"
+        },
+        {
+          "horse": "Silver State",
+          "age": 3,
+          "trainer": "Jack Channon",
+          "jockey": "TBC",
+          "draw": null,
+          "weight_st_lb": "9-1",
+          "or": 85,
+          "rpr": 100,
+          "ts": 89,
+          "form_string": "133115",
+          "last_run_days": 28,
+          "notes": "Verified runner on Racing Post card for Cherryfield (Croydon) Lester Piggott Handicap (GBBPlus Race); OR 85; RPR 100; TS 89; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 10.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Lake Como",
+          "age": 3,
+          "trainer": "George Boughey",
+          "jockey": "Billy Loughnane",
+          "draw": null,
+          "weight_st_lb": "9-4",
+          "or": 88,
+          "rpr": 100,
+          "ts": 82,
+          "form_string": "11-347",
+          "last_run_days": 21,
+          "notes": "Verified runner on Racing Post card for Cherryfield (Croydon) Lester Piggott Handicap (GBBPlus Race); OR 88; RPR 100; TS 82; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 9.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Tailgunner Joe",
+          "age": 3,
+          "trainer": "Dylan Cunha",
+          "jockey": "David Egan",
+          "draw": null,
+          "weight_st_lb": "9-4",
+          "or": 88,
+          "rpr": 99,
+          "ts": 94,
+          "form_string": "561666",
+          "last_run_days": 52,
+          "notes": "Verified runner on Racing Post card for Cherryfield (Croydon) Lester Piggott Handicap (GBBPlus Race); OR 88; RPR 99; TS 94; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 9.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Folk Pageant",
+          "age": 3,
+          "trainer": "Charlie Johnston",
+          "jockey": "Rowan Scott",
+          "draw": null,
+          "weight_st_lb": "8-10",
+          "or": 80,
+          "rpr": 101,
+          "ts": 92,
+          "form_string": "2-1911",
+          "last_run_days": 7,
+          "notes": "Verified runner on Racing Post card for Cherryfield (Croydon) Lester Piggott Handicap (GBBPlus Race); OR 80; RPR 101; TS 92; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 11.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [
+            {
+              "date": "2026-05-30",
+              "going": "Good",
+              "position": 1,
+              "field_size": 10
+            },
+            {
+              "date": "2026-05-16",
+              "going": "Good",
+              "position": 1,
+              "field_size": 8
+            },
+            {
+              "date": "2026-04-02",
+              "going": "Good",
+              "position": 9,
+              "field_size": 9
+            },
+            {
+              "date": "2026-03-05",
+              "going": "Good",
+              "position": 1,
+              "field_size": 7
+            },
+            {
+              "date": "2025-07-07",
+              "going": "Good to Soft",
+              "position": 2,
+              "field_size": 10
+            }
+          ],
+          "going_history_source": "https://www.sportinglife.com/racing/profiles/horse/1191188",
+          "going_history_fetched_at": "2026-06-03T08:47:43.722880+00:00"
+        },
+        {
+          "horse": "Be The Standard",
+          "age": 3,
+          "trainer": "Hugo Palmer",
+          "jockey": "TBC",
+          "draw": null,
+          "weight_st_lb": "8-11",
+          "or": 81,
+          "rpr": 96,
+          "ts": 82,
+          "form_string": "3214-5",
+          "last_run_days": 30,
+          "notes": "Verified runner on Racing Post card for Cherryfield (Croydon) Lester Piggott Handicap (GBBPlus Race); OR 81; RPR 96; TS 82; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 10.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Allegresse",
+          "age": 3,
+          "trainer": "Andrew Balding",
+          "jockey": "Oisin Murphy",
+          "draw": null,
+          "weight_st_lb": "9-9",
+          "or": 93,
+          "rpr": 102,
+          "ts": 83,
+          "form_string": "2117-4",
+          "last_run_days": 36,
+          "notes": "Verified runner on Racing Post card for Cherryfield (Croydon) Lester Piggott Handicap (GBBPlus Race); OR 93; RPR 102; TS 83; badges Hc1; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 9.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [
+            {
+              "date": "2026-05-01",
+              "going": "Good",
+              "position": 4,
+              "field_size": 4
+            },
+            {
+              "date": "2025-10-11",
+              "going": "Good to Firm",
+              "position": 7,
+              "field_size": 8
+            },
+            {
+              "date": "2025-09-18",
+              "going": "Good",
+              "position": 1,
+              "field_size": 4
+            },
+            {
+              "date": "2025-08-19",
+              "going": "Good",
+              "position": 1,
+              "field_size": 8
+            },
+            {
+              "date": "2025-07-24",
+              "going": "Good",
+              "position": 2,
+              "field_size": 11
+            }
+          ],
+          "going_history_source": "https://www.sportinglife.com/racing/profiles/horse/1193323",
+          "going_history_fetched_at": "2026-06-03T08:47:43.722880+00:00"
+        },
+        {
+          "horse": "Hell Yeah He Did",
+          "age": 3,
+          "trainer": "Ralph Beckett",
+          "jockey": "Hector Crouch",
+          "draw": null,
+          "weight_st_lb": "9-1",
+          "or": 85,
+          "rpr": 100,
+          "ts": 97,
+          "form_string": "6231-",
+          "last_run_days": 220,
+          "notes": "Verified runner on Racing Post card for Cherryfield (Croydon) Lester Piggott Handicap (GBBPlus Race); OR 85; RPR 100; TS 97; badges Hc1; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 10.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [
+            {
+              "date": "2025-10-29",
+              "going": "Soft",
+              "position": 1,
+              "field_size": 9
+            },
+            {
+              "date": "2025-10-06",
+              "going": "Soft",
+              "position": 3,
+              "field_size": 5
+            },
+            {
+              "date": "2025-09-12",
+              "going": "Soft",
+              "position": 2,
+              "field_size": 10
+            },
+            {
+              "date": "2025-08-20",
+              "going": "Good",
+              "position": 6,
+              "field_size": 9
+            }
+          ],
+          "going_history_source": "https://www.sportinglife.com/racing/profiles/horse/1195759",
+          "going_history_fetched_at": "2026-06-03T08:47:43.722880+00:00"
+        },
+        {
+          "horse": "Tai Hang Pegasus",
+          "age": 3,
+          "trainer": "Charlie Fellowes",
+          "jockey": "Silvestre De Sousa",
+          "draw": null,
+          "weight_st_lb": "8-5",
+          "or": 75,
+          "rpr": 94,
+          "ts": 94,
+          "form_string": "336-47",
+          "last_run_days": 120,
+          "notes": "Verified runner on Racing Post card for Cherryfield (Croydon) Lester Piggott Handicap (GBBPlus Race); OR 75; RPR 94; TS 94; badges Hc1; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 12.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Savvy Disko",
+          "age": 3,
+          "trainer": "S Woods",
+          "jockey": "Robert Havlin",
+          "draw": null,
+          "weight_st_lb": "9-1",
+          "or": 85,
+          "rpr": 96,
+          "ts": 84,
+          "form_string": "34-1",
+          "last_run_days": 25,
+          "notes": "Verified runner on Racing Post card for Cherryfield (Croydon) Lester Piggott Handicap (GBBPlus Race); OR 85; RPR 96; TS 84; badges Hc1; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 10.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "York Tower",
+          "age": 3,
+          "trainer": "William Haggas",
+          "jockey": "Harry Davies",
+          "draw": null,
+          "weight_st_lb": "8-8",
+          "or": 78,
+          "rpr": 98,
+          "ts": 87,
+          "form_string": "22-3",
+          "last_run_days": 25,
+          "notes": "Verified runner on Racing Post card for Cherryfield (Croydon) Lester Piggott Handicap (GBBPlus Race); OR 78; RPR 98; TS 87; badges Hc1; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 11.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [
+            {
+              "date": "2026-05-12",
+              "going": "Good",
+              "position": 3,
+              "field_size": 12
+            },
+            {
+              "date": "2025-12-11",
+              "going": "Good",
+              "position": 2,
+              "field_size": 4
+            },
+            {
+              "date": "2025-10-13",
+              "going": "Good",
+              "position": 2,
+              "field_size": 6
+            }
+          ],
+          "going_history_source": "https://www.sportinglife.com/racing/profiles/horse/1202028",
+          "going_history_fetched_at": "2026-06-03T08:47:43.722880+00:00"
+        },
+        {
+          "horse": "My Mate Roger",
+          "age": 3,
+          "trainer": "Tom Clover",
+          "jockey": "TBC",
+          "draw": null,
+          "weight_st_lb": "9-2",
+          "or": 86,
+          "rpr": 99,
+          "ts": 77,
+          "form_string": "2-22",
+          "last_run_days": 26,
+          "notes": "Verified runner on Racing Post card for Cherryfield (Croydon) Lester Piggott Handicap (GBBPlus Race); OR 86; RPR 99; TS 77; badges Hc1; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 10.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Pendella",
+          "age": 3,
+          "trainer": "K R Burke",
+          "jockey": "TBC",
+          "draw": null,
+          "weight_st_lb": "8-9",
+          "or": 79,
+          "rpr": 102,
+          "ts": 95,
+          "form_string": "-41352",
+          "last_run_days": 14,
+          "notes": "Verified runner on Racing Post card for Cherryfield (Croydon) Lester Piggott Handicap (GBBPlus Race); OR 79; RPR 102; TS 95; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 11.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [
+            {
+              "date": "2026-05-23",
+              "going": "Good",
+              "position": 2,
+              "field_size": 10
+            },
+            {
+              "date": "2026-05-14",
+              "going": "Good",
+              "position": 5,
+              "field_size": 14
+            },
+            {
+              "date": "2026-04-05",
+              "going": "Good",
+              "position": 3,
+              "field_size": 6
+            },
+            {
+              "date": "2026-02-23",
+              "going": "Good",
+              "position": 1,
+              "field_size": 9
+            },
+            {
+              "date": "2026-02-04",
+              "going": "Good",
+              "position": 4,
+              "field_size": 10
+            },
+            {
+              "date": "2025-12-19",
+              "going": "Good",
+              "position": 2,
+              "field_size": 14
+            }
+          ],
+          "going_history_source": "https://www.sportinglife.com/racing/profiles/horse/1209634",
+          "going_history_fetched_at": "2026-06-03T08:47:43.722880+00:00"
+        }
+      ],
+      "source_urls": [
+        "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+      ],
+      "_name_note": "Renamed 2026-06-03: original speculative name 'HKJC World Pool Handicap' replaced with verified RP-17 title.",
+      "going": "Good to Soft"
     },
     {
       "race_number": 7,
       "off_time": "17:20",
-      "name": "Surrey Stakes (Listed, 3yo)",
+      "name": "HKJC World Pool Northern Dancer Handicap",
       "class": "Listed",
       "distance_f": 7,
       "prize_winner_gbp": null,
-      "runners": [],
-      "source_urls": []
+      "runners": [
+        {
+          "horse": "Prydwen",
+          "age": 8,
+          "trainer": "George Scott",
+          "jockey": "TBC",
+          "draw": null,
+          "weight_st_lb": "9-9",
+          "or": 103,
+          "rpr": 115,
+          "ts": 100,
+          "form_string": "-68215",
+          "last_run_days": 27,
+          "notes": "Verified runner on Racing Post card for HKJC World Pool Northern Dancer Handicap (GBBPlus Race); OR 103; RPR 115; TS 100; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 12.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [
+            {
+              "date": "2026-04-25",
+              "going": "Good",
+              "position": 1,
+              "field_size": 6
+            },
+            {
+              "date": "2026-04-03",
+              "going": "Good",
+              "position": 2,
+              "field_size": 12
+            },
+            {
+              "date": "2026-02-27",
+              "going": "Good",
+              "position": 8,
+              "field_size": 8
+            },
+            {
+              "date": "2026-02-06",
+              "going": "Good",
+              "position": 6,
+              "field_size": 6
+            },
+            {
+              "date": "2025-12-12",
+              "going": "Good",
+              "position": 9,
+              "field_size": 9
+            },
+            {
+              "date": "2025-10-22",
+              "going": "Good",
+              "position": 8,
+              "field_size": 9
+            },
+            {
+              "date": "2025-09-13",
+              "going": "Good to Soft",
+              "position": 2,
+              "field_size": 11
+            },
+            {
+              "date": "2025-08-30",
+              "going": "Good",
+              "position": 5,
+              "field_size": 6
+            },
+            {
+              "date": "2025-06-17",
+              "going": "Good to Firm",
+              "position": 12,
+              "field_size": 16
+            },
+            {
+              "date": "2025-05-31",
+              "going": "Good",
+              "position": 10,
+              "field_size": 14
+            }
+          ],
+          "going_history_source": "https://www.sportinglife.com/racing/profiles/horse/1027539",
+          "going_history_fetched_at": "2026-06-03T08:47:43.722880+00:00"
+        },
+        {
+          "horse": "Max Mayhem",
+          "age": 8,
+          "trainer": "George Baker",
+          "jockey": "Charles Bishop",
+          "draw": null,
+          "weight_st_lb": "8-9",
+          "or": 89,
+          "rpr": 112,
+          "ts": 91,
+          "form_string": "69-007",
+          "last_run_days": 10,
+          "notes": "Verified runner on Racing Post card for HKJC World Pool Northern Dancer Handicap (GBBPlus Race); OR 89; RPR 112; TS 91; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 15.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Oneforthegutter",
+          "age": 7,
+          "trainer": "Ian Williams",
+          "jockey": "TBC",
+          "draw": null,
+          "weight_st_lb": "8-10",
+          "or": 90,
+          "rpr": 111,
+          "ts": 113,
+          "form_string": "0008-7",
+          "last_run_days": 35,
+          "notes": "Verified runner on Racing Post card for HKJC World Pool Northern Dancer Handicap (GBBPlus Race); OR 90; RPR 111; TS 113; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 15.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Asgard's Captain",
+          "age": 6,
+          "trainer": "Dylan Cunha",
+          "jockey": "Kieran Shoemark",
+          "draw": null,
+          "weight_st_lb": "8-12",
+          "or": 92,
+          "rpr": 112,
+          "ts": 97,
+          "form_string": "2-5341",
+          "last_run_days": 22,
+          "notes": "Verified runner on Racing Post card for HKJC World Pool Northern Dancer Handicap (GBBPlus Race); OR 92; RPR 112; TS 97; badges CD; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 14.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Dancing In Paris",
+          "age": 6,
+          "trainer": "Ian Williams",
+          "jockey": "TBC",
+          "draw": null,
+          "weight_st_lb": "8-13",
+          "or": 93,
+          "rpr": 114,
+          "ts": 108,
+          "form_string": "28240-",
+          "last_run_days": 273,
+          "notes": "Verified runner on Racing Post card for HKJC World Pool Northern Dancer Handicap (GBBPlus Race); OR 93; RPR 114; TS 108; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 14.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Gordon Grey",
+          "age": 6,
+          "trainer": "George Baker",
+          "jockey": "Silvestre De Sousa",
+          "draw": null,
+          "weight_st_lb": "8-7",
+          "or": 87,
+          "rpr": 110,
+          "ts": 104,
+          "form_string": "11-939",
+          "last_run_days": 28,
+          "notes": "Verified runner on Racing Post card for HKJC World Pool Northern Dancer Handicap (GBBPlus Race); OR 87; RPR 110; TS 104; badges CD; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 15.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Will Scarlet",
+          "age": 5,
+          "trainer": "Simon & Ed Crisford",
+          "jockey": "TBC",
+          "draw": null,
+          "weight_st_lb": "9-3",
+          "or": 97,
+          "rpr": 112,
+          "ts": 88,
+          "form_string": "042519",
+          "last_run_days": 24,
+          "notes": "Verified runner on Racing Post card for HKJC World Pool Northern Dancer Handicap (GBBPlus Race); OR 97; RPR 112; TS 88; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 13.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Night Breeze",
+          "age": 6,
+          "trainer": "Ian Williams",
+          "jockey": "Billy Loughnane",
+          "draw": null,
+          "weight_st_lb": "8-11",
+          "or": 91,
+          "rpr": 112,
+          "ts": 99,
+          "form_string": "540341",
+          "last_run_days": 39,
+          "notes": "Verified runner on Racing Post card for HKJC World Pool Northern Dancer Handicap (GBBPlus Race); OR 91; RPR 112; TS 99; badges CD; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 15.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Lord Melbourne",
+          "age": 6,
+          "trainer": "Ralph Beckett",
+          "jockey": "Jack Dace",
+          "draw": null,
+          "weight_st_lb": "9-3",
+          "or": 97,
+          "rpr": 118,
+          "ts": 93,
+          "form_string": "16-509",
+          "last_run_days": 35,
+          "notes": "Verified runner on Racing Post card for HKJC World Pool Northern Dancer Handicap (GBBPlus Race); OR 97; RPR 118; TS 93; badges CD; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 13.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [
+            {
+              "date": "2026-05-02",
+              "going": "Good",
+              "position": 9,
+              "field_size": 9
+            },
+            {
+              "date": "2026-02-27",
+              "going": "Good",
+              "position": 11,
+              "field_size": 11
+            },
+            {
+              "date": "2025-11-08",
+              "going": "Heavy",
+              "position": 6,
+              "field_size": 22
+            },
+            {
+              "date": "2025-09-28",
+              "going": "Good to Soft",
+              "position": 1,
+              "field_size": 10
+            },
+            {
+              "date": "2024-11-09",
+              "going": "Soft",
+              "position": 1,
+              "field_size": 23
+            },
+            {
+              "date": "2024-10-08",
+              "going": "Heavy",
+              "position": 3,
+              "field_size": 7
+            },
+            {
+              "date": "2024-08-26",
+              "going": "Good",
+              "position": 1,
+              "field_size": 10
+            },
+            {
+              "date": "2024-07-13",
+              "going": "Good",
+              "position": 4,
+              "field_size": 13
+            },
+            {
+              "date": "2024-06-15",
+              "going": "Good to Soft",
+              "position": 1,
+              "field_size": 18
+            },
+            {
+              "date": "2024-05-31",
+              "going": "Good to Soft",
+              "position": 5,
+              "field_size": 13
+            }
+          ],
+          "going_history_source": "https://www.sportinglife.com/racing/profiles/horse/1118129",
+          "going_history_fetched_at": "2026-06-03T08:47:43.722880+00:00"
+        },
+        {
+          "horse": "Military Academy",
+          "age": 5,
+          "trainer": "Jane Chapple-Hyam",
+          "jockey": "Paddy Bradley",
+          "draw": null,
+          "weight_st_lb": "9-8",
+          "or": 102,
+          "rpr": 114,
+          "ts": 89,
+          "form_string": "723055",
+          "last_run_days": 35,
+          "notes": "Verified runner on Racing Post card for HKJC World Pool Northern Dancer Handicap (GBBPlus Race); OR 102; RPR 114; TS 89; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 13.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Give It To Me Oj",
+          "age": 5,
+          "trainer": "Gary & Josh Moore",
+          "jockey": "TBC",
+          "draw": null,
+          "weight_st_lb": "8-9",
+          "or": 89,
+          "rpr": 114,
+          "ts": 97,
+          "form_string": "7/11-3",
+          "last_run_days": 15,
+          "notes": "Verified runner on Racing Post card for HKJC World Pool Northern Dancer Handicap (GBBPlus Race); OR 89; RPR 114; TS 97; badges CD; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 15.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [
+            {
+              "date": "2026-05-22",
+              "going": "Good",
+              "position": 3,
+              "field_size": 5
+            },
+            {
+              "date": "2026-03-11",
+              "going": "Good to Soft",
+              "position": 18,
+              "field_size": 24
+            },
+            {
+              "date": "2025-12-26",
+              "going": "Good",
+              "position": 6,
+              "field_size": 6
+            },
+            {
+              "date": "2025-11-29",
+              "going": "Soft",
+              "position": 5,
+              "field_size": 8
+            },
+            {
+              "date": "2025-10-25",
+              "going": "Good",
+              "position": 1,
+              "field_size": 5
+            },
+            {
+              "date": "2025-09-28",
+              "going": "Good",
+              "position": 1,
+              "field_size": 9
+            },
+            {
+              "date": "2025-09-11",
+              "going": "Soft",
+              "position": 1,
+              "field_size": 10
+            },
+            {
+              "date": "2025-04-26",
+              "going": "Good",
+              "position": 1,
+              "field_size": 14
+            },
+            {
+              "date": "2025-04-19",
+              "going": "Good",
+              "position": 1,
+              "field_size": 3
+            },
+            {
+              "date": "2025-04-03",
+              "going": "Good to Soft",
+              "position": 4,
+              "field_size": 13
+            }
+          ],
+          "going_history_source": "https://www.sportinglife.com/racing/profiles/horse/1144898",
+          "going_history_fetched_at": "2026-06-03T08:47:43.722880+00:00"
+        },
+        {
+          "horse": "Too Soon",
+          "age": 4,
+          "trainer": "Gary & Josh Moore",
+          "jockey": "TBC",
+          "draw": null,
+          "weight_st_lb": "8-8",
+          "or": 88,
+          "rpr": 115,
+          "ts": 108,
+          "form_string": "38-045",
+          "last_run_days": 14,
+          "notes": "Verified runner on Racing Post card for HKJC World Pool Northern Dancer Handicap (GBBPlus Race); OR 88; RPR 115; TS 108; badges C; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 15.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Regal Ulixes",
+          "age": 4,
+          "trainer": "Andrew Balding",
+          "jockey": "Oisin Murphy",
+          "draw": null,
+          "weight_st_lb": "9-4",
+          "or": 98,
+          "rpr": 113,
+          "ts": 91,
+          "form_string": "-61647",
+          "last_run_days": 22,
+          "notes": "Verified runner on Racing Post card for HKJC World Pool Northern Dancer Handicap (GBBPlus Race); OR 98; RPR 113; TS 91; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 13.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [
+            {
+              "date": "2026-05-15",
+              "going": "Good",
+              "position": 7,
+              "field_size": 15
+            },
+            {
+              "date": "2026-04-03",
+              "going": "Good",
+              "position": 4,
+              "field_size": 14
+            },
+            {
+              "date": "2026-03-07",
+              "going": "Good",
+              "position": 6,
+              "field_size": 12
+            },
+            {
+              "date": "2026-02-27",
+              "going": "Good",
+              "position": 1,
+              "field_size": 11
+            },
+            {
+              "date": "2026-01-16",
+              "going": "Good",
+              "position": 6,
+              "field_size": 13
+            },
+            {
+              "date": "2025-06-20",
+              "going": "Good to Firm",
+              "position": 7,
+              "field_size": 9
+            },
+            {
+              "date": "2025-06-06",
+              "going": "Good",
+              "position": 1,
+              "field_size": 6
+            },
+            {
+              "date": "2024-09-20",
+              "going": "Soft",
+              "position": 1,
+              "field_size": 4
+            },
+            {
+              "date": "2024-09-03",
+              "going": "Good",
+              "position": 3,
+              "field_size": 10
+            }
+          ],
+          "going_history_source": "https://www.sportinglife.com/racing/profiles/horse/1158057",
+          "going_history_fetched_at": "2026-06-03T08:47:43.722880+00:00"
+        },
+        {
+          "horse": "Elsass",
+          "age": 4,
+          "trainer": "Charlie Johnston",
+          "jockey": "Connor Beasley",
+          "draw": null,
+          "weight_st_lb": "8-8",
+          "or": 88,
+          "rpr": 111,
+          "ts": 93,
+          "form_string": "120-11",
+          "last_run_days": 22,
+          "notes": "Verified runner on Racing Post card for HKJC World Pool Northern Dancer Handicap (GBBPlus Race); OR 88; RPR 111; TS 93; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 15.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Patagonia Girl",
+          "age": 4,
+          "trainer": "Hugo Palmer",
+          "jockey": "TBC",
+          "draw": null,
+          "weight_st_lb": "8-4",
+          "or": 84,
+          "rpr": 112,
+          "ts": 94,
+          "form_string": "30-217",
+          "last_run_days": 7,
+          "notes": "Verified runner on Racing Post card for HKJC World Pool Northern Dancer Handicap (GBBPlus Race); OR 84; RPR 112; TS 94; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 16.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Northwest Passage",
+          "age": 4,
+          "trainer": "Ivan Furtado",
+          "jockey": "TBC",
+          "draw": null,
+          "weight_st_lb": "7-13",
+          "or": 79,
+          "rpr": 115,
+          "ts": 97,
+          "form_string": "412-05",
+          "last_run_days": 17,
+          "notes": "Verified runner on Racing Post card for HKJC World Pool Northern Dancer Handicap (GBBPlus Race); OR 79; RPR 115; TS 97; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 18.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Antrim",
+          "age": 4,
+          "trainer": "K R Burke",
+          "jockey": "Sam James",
+          "draw": null,
+          "weight_st_lb": "8-12",
+          "or": 92,
+          "rpr": 114,
+          "ts": 70,
+          "form_string": "414983",
+          "last_run_days": 22,
+          "notes": "Verified runner on Racing Post card for HKJC World Pool Northern Dancer Handicap (GBBPlus Race); OR 92; RPR 114; TS 70; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 14.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Spinning Wheel",
+          "age": 4,
+          "trainer": "Simon & Ed Crisford",
+          "jockey": "TBC",
+          "draw": null,
+          "weight_st_lb": "9-8",
+          "or": 102,
+          "rpr": 113,
+          "ts": 98,
+          "form_string": "1021-2",
+          "last_run_days": 14,
+          "notes": "Verified runner on Racing Post card for HKJC World Pool Northern Dancer Handicap (GBBPlus Race); OR 102; RPR 113; TS 98; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 13.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Hengest",
+          "age": 4,
+          "trainer": "Dylan Cunha",
+          "jockey": "Saffie Osborne",
+          "draw": null,
+          "weight_st_lb": "8-2",
+          "or": 82,
+          "rpr": 112,
+          "ts": 93,
+          "form_string": "-64111",
+          "last_run_days": 9,
+          "notes": "Verified runner on Racing Post card for HKJC World Pool Northern Dancer Handicap (GBBPlus Race); OR 82; RPR 112; TS 93; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 17.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [
+            {
+              "date": "2026-05-28",
+              "going": "Good to Firm",
+              "position": 1,
+              "field_size": 4
+            },
+            {
+              "date": "2026-05-19",
+              "going": "Good",
+              "position": 1,
+              "field_size": 8
+            },
+            {
+              "date": "2026-05-11",
+              "going": "Good to Firm",
+              "position": 1,
+              "field_size": 13
+            },
+            {
+              "date": "2026-04-28",
+              "going": "Good",
+              "position": 4,
+              "field_size": 9
+            },
+            {
+              "date": "2026-04-11",
+              "going": "Good",
+              "position": 6,
+              "field_size": 6
+            },
+            {
+              "date": "2026-03-11",
+              "going": "Good",
+              "position": 9,
+              "field_size": 15
+            },
+            {
+              "date": "2025-05-24",
+              "going": "Heavy",
+              "position": 7,
+              "field_size": 13
+            }
+          ],
+          "going_history_source": "https://www.sportinglife.com/racing/profiles/horse/1186440",
+          "going_history_fetched_at": "2026-06-03T08:47:43.722880+00:00"
+        },
+        {
+          "horse": "Fierce Fortitude",
+          "age": 4,
+          "trainer": "Kevin Philippart De Foy",
+          "jockey": "David Egan",
+          "draw": null,
+          "weight_st_lb": "8-10",
+          "or": 90,
+          "rpr": 113,
+          "ts": 99,
+          "form_string": "21-213",
+          "last_run_days": 12,
+          "notes": "Verified runner on Racing Post card for HKJC World Pool Northern Dancer Handicap (GBBPlus Race); OR 90; RPR 113; TS 99; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 15.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [
+            {
+              "date": "2026-05-25",
+              "going": "Good to Firm",
+              "position": 3,
+              "field_size": 10
+            },
+            {
+              "date": "2026-04-30",
+              "going": "Good to Firm",
+              "position": 1,
+              "field_size": 7
+            },
+            {
+              "date": "2026-03-20",
+              "going": "Good",
+              "position": 2,
+              "field_size": 12
+            },
+            {
+              "date": "2025-09-29",
+              "going": "Good to Firm",
+              "position": 1,
+              "field_size": 4
+            },
+            {
+              "date": "2025-09-19",
+              "going": "Good",
+              "position": 2,
+              "field_size": 6
+            },
+            {
+              "date": "2025-08-27",
+              "going": "Good",
+              "position": 3,
+              "field_size": 9
+            },
+            {
+              "date": "2025-08-17",
+              "going": "Good",
+              "position": 4,
+              "field_size": 8
+            }
+          ],
+          "going_history_source": "https://www.sportinglife.com/racing/profiles/horse/1196191",
+          "going_history_fetched_at": "2026-06-03T08:47:43.722880+00:00"
+        },
+        {
+          "horse": "Bulletin",
+          "age": 4,
+          "trainer": "Jonathan Portman",
+          "jockey": "TBC",
+          "draw": null,
+          "weight_st_lb": "8-7",
+          "or": 87,
+          "rpr": 114,
+          "ts": 105,
+          "form_string": "43-324",
+          "last_run_days": 10,
+          "notes": "Verified runner on Racing Post card for HKJC World Pool Northern Dancer Handicap (GBBPlus Race); OR 87; RPR 114; TS 105; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 15.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        }
+      ],
+      "source_urls": [
+        "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+      ],
+      "_name_note": "Renamed 2026-06-03: original speculative name 'Surrey Stakes (Listed, 3yo)' replaced with verified RP-17 title.",
+      "going": "Good to Soft"
     },
     {
       "race_number": 8,
       "off_time": "17:55",
-      "name": "Debenhams Handicap",
+      "name": "JRA Tokyo Trophy Handicap",
       "class": "Handicap",
       "distance_f": 7,
       "prize_winner_gbp": null,
-      "runners": [],
-      "source_urls": []
+      "runners": [
+        {
+          "horse": "Badri",
+          "age": 9,
+          "trainer": "Michael Herrington",
+          "jockey": "Dylan Hogan",
+          "draw": null,
+          "weight_st_lb": "8-13",
+          "or": 90,
+          "rpr": 111,
+          "ts": 104,
+          "form_string": "274061",
+          "last_run_days": 12,
+          "notes": "Verified runner on Racing Post card for JRA Tokyo Trophy Handicap; OR 90; RPR 111; TS 104; badges CD; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 20.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Strike Red",
+          "age": 8,
+          "trainer": "Richard & Peter Fahey",
+          "jockey": "TBC",
+          "draw": null,
+          "weight_st_lb": "8-11",
+          "or": 88,
+          "rpr": 111,
+          "ts": 109,
+          "form_string": "0-3107",
+          "last_run_days": 6,
+          "notes": "Verified runner on Racing Post card for JRA Tokyo Trophy Handicap; OR 88; RPR 111; TS 109; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 20.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Saint Lawrence",
+          "age": 8,
+          "trainer": "Kevin Ryan",
+          "jockey": "TBC",
+          "draw": null,
+          "weight_st_lb": "8-9",
+          "or": 86,
+          "rpr": 109,
+          "ts": 100,
+          "form_string": "0709-2",
+          "last_run_days": 29,
+          "notes": "Verified runner on Racing Post card for JRA Tokyo Trophy Handicap; OR 86; RPR 109; TS 100; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 21.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Apollo One",
+          "age": 8,
+          "trainer": "P Charalambous & J Clutterbuck",
+          "jockey": "TBC",
+          "draw": null,
+          "weight_st_lb": "9-6",
+          "or": 97,
+          "rpr": 107,
+          "ts": 111,
+          "form_string": "408293",
+          "last_run_days": 35,
+          "notes": "Verified runner on Racing Post card for JRA Tokyo Trophy Handicap; OR 97; RPR 107; TS 111; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 18.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Roman Dragon",
+          "age": 7,
+          "trainer": "Hugo Palmer",
+          "jockey": "TBC",
+          "draw": null,
+          "weight_st_lb": "9-9",
+          "or": 100,
+          "rpr": 109,
+          "ts": 87,
+          "form_string": "587018",
+          "last_run_days": 7,
+          "notes": "Verified runner on Racing Post card for JRA Tokyo Trophy Handicap; OR 100; RPR 109; TS 87; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 17.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Twilight Jet",
+          "age": 7,
+          "trainer": "Jim & Suzi Best",
+          "jockey": "TBC",
+          "draw": null,
+          "weight_st_lb": "8-12",
+          "or": 89,
+          "rpr": 108,
+          "ts": 98,
+          "form_string": "585811",
+          "last_run_days": 7,
+          "notes": "Verified runner on Racing Post card for JRA Tokyo Trophy Handicap; OR 89; RPR 108; TS 98; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 20.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Spangled Mac",
+          "age": 7,
+          "trainer": "George Boughey",
+          "jockey": "Billy Loughnane",
+          "draw": null,
+          "weight_st_lb": "8-11",
+          "or": 88,
+          "rpr": 109,
+          "ts": 83,
+          "form_string": "-02300",
+          "last_run_days": 31,
+          "notes": "Verified runner on Racing Post card for JRA Tokyo Trophy Handicap; OR 88; RPR 109; TS 83; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 20.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Cinque Verde",
+          "age": 6,
+          "trainer": "Tony Carroll",
+          "jockey": "William Carson",
+          "draw": null,
+          "weight_st_lb": "9-4",
+          "or": 95,
+          "rpr": 113,
+          "ts": 98,
+          "form_string": "44-818",
+          "last_run_days": 14,
+          "notes": "Verified runner on Racing Post card for JRA Tokyo Trophy Handicap; OR 95; RPR 113; TS 98; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 18.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [
+            {
+              "date": "2026-05-23",
+              "going": "Good",
+              "position": 8,
+              "field_size": 10
+            },
+            {
+              "date": "2026-05-01",
+              "going": "Good to Firm",
+              "position": 1,
+              "field_size": 11
+            },
+            {
+              "date": "2026-03-07",
+              "going": "Good",
+              "position": 8,
+              "field_size": 9
+            },
+            {
+              "date": "2025-09-25",
+              "going": "Good",
+              "position": 4,
+              "field_size": 11
+            },
+            {
+              "date": "2025-09-16",
+              "going": "Good to Soft",
+              "position": 4,
+              "field_size": 9
+            },
+            {
+              "date": "2025-08-22",
+              "going": "Good to Firm",
+              "position": 1,
+              "field_size": 7
+            },
+            {
+              "date": "2025-07-29",
+              "going": "Good",
+              "position": 13,
+              "field_size": 13
+            },
+            {
+              "date": "2025-06-28",
+              "going": "Good",
+              "position": 2,
+              "field_size": 9
+            },
+            {
+              "date": "2025-05-23",
+              "going": "Good",
+              "position": 2,
+              "field_size": 13
+            },
+            {
+              "date": "2025-04-18",
+              "going": "Good",
+              "position": 2,
+              "field_size": 10
+            }
+          ],
+          "going_history_source": "https://www.sportinglife.com/racing/profiles/horse/1070117",
+          "going_history_fetched_at": "2026-06-03T08:47:43.722880+00:00"
+        },
+        {
+          "horse": "Purest Time",
+          "age": 6,
+          "trainer": "Ian Williams",
+          "jockey": "Edward Greatrex",
+          "draw": null,
+          "weight_st_lb": "8-9",
+          "or": 86,
+          "rpr": 110,
+          "ts": 97,
+          "form_string": "0-5071",
+          "last_run_days": 26,
+          "notes": "Verified runner on Racing Post card for JRA Tokyo Trophy Handicap; OR 86; RPR 110; TS 97; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 21.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Partisan Hero",
+          "age": 6,
+          "trainer": "David Loughnane",
+          "jockey": "Robert Havlin",
+          "draw": null,
+          "weight_st_lb": "9-5",
+          "or": 96,
+          "rpr": 109,
+          "ts": 96,
+          "form_string": "838271",
+          "last_run_days": 14,
+          "notes": "Verified runner on Racing Post card for JRA Tokyo Trophy Handicap; OR 96; RPR 109; TS 96; badges C; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 18.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Desert Cop",
+          "age": 6,
+          "trainer": "George Baker",
+          "jockey": "Charles Bishop",
+          "draw": null,
+          "weight_st_lb": "8-9",
+          "or": 86,
+          "rpr": 112,
+          "ts": 102,
+          "form_string": "357305",
+          "last_run_days": 12,
+          "notes": "Verified runner on Racing Post card for JRA Tokyo Trophy Handicap; OR 86; RPR 112; TS 102; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 21.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Eye Of Dubai",
+          "age": 5,
+          "trainer": "John & Sean Quinn",
+          "jockey": "Jason Hart",
+          "draw": null,
+          "weight_st_lb": "8-13",
+          "or": 90,
+          "rpr": 111,
+          "ts": 101,
+          "form_string": "1527-0",
+          "last_run_days": 52,
+          "notes": "Verified runner on Racing Post card for JRA Tokyo Trophy Handicap; OR 90; RPR 111; TS 101; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 20.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Kylian",
+          "age": 5,
+          "trainer": "Robert Cowell",
+          "jockey": "Jack Mitchell",
+          "draw": null,
+          "weight_st_lb": "9-7",
+          "or": 98,
+          "rpr": 112,
+          "ts": 81,
+          "form_string": "-55307",
+          "last_run_days": 12,
+          "notes": "Verified runner on Racing Post card for JRA Tokyo Trophy Handicap; OR 98; RPR 112; TS 81; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 18.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Seven Questions",
+          "age": 5,
+          "trainer": "Robert Cowell",
+          "jockey": "Jamie Spencer",
+          "draw": null,
+          "weight_st_lb": "8-13",
+          "or": 90,
+          "rpr": 109,
+          "ts": 102,
+          "form_string": "0-3641",
+          "last_run_days": 15,
+          "notes": "Verified runner on Racing Post card for JRA Tokyo Trophy Handicap; OR 90; RPR 109; TS 102; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 20.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Winged Messenger",
+          "age": 5,
+          "trainer": "Julie Camacho",
+          "jockey": "Saffie Osborne",
+          "draw": null,
+          "weight_st_lb": "8-7",
+          "or": 84,
+          "rpr": 108,
+          "ts": 95,
+          "form_string": "2131-4",
+          "last_run_days": 12,
+          "notes": "Verified runner on Racing Post card for JRA Tokyo Trophy Handicap; OR 84; RPR 108; TS 95; badges CD; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 22.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Solar Aclaim",
+          "age": 5,
+          "trainer": "Julie Camacho",
+          "jockey": "TBC",
+          "draw": null,
+          "weight_st_lb": "8-9",
+          "or": 86,
+          "rpr": 108,
+          "ts": 101,
+          "form_string": "930-00",
+          "last_run_days": 15,
+          "notes": "Verified runner on Racing Post card for JRA Tokyo Trophy Handicap; OR 86; RPR 108; TS 101; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 21.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Fine Interview",
+          "age": 5,
+          "trainer": "Hamad Al Jehani",
+          "jockey": "James Doyle",
+          "draw": null,
+          "weight_st_lb": "9-8",
+          "or": 99,
+          "rpr": 110,
+          "ts": 92,
+          "form_string": "3119-1",
+          "last_run_days": 69,
+          "notes": "Verified runner on Racing Post card for JRA Tokyo Trophy Handicap; OR 99; RPR 110; TS 92; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 17.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [
+            {
+              "date": "2026-03-29",
+              "going": "Good to Soft",
+              "position": 1,
+              "field_size": 19
+            },
+            {
+              "date": "2025-11-08",
+              "going": "Heavy",
+              "position": 9,
+              "field_size": 22
+            },
+            {
+              "date": "2025-10-24",
+              "going": "Soft",
+              "position": 1,
+              "field_size": 12
+            },
+            {
+              "date": "2025-10-06",
+              "going": "Soft",
+              "position": 1,
+              "field_size": 10
+            },
+            {
+              "date": "2025-09-05",
+              "going": "Soft",
+              "position": 3,
+              "field_size": 11
+            },
+            {
+              "date": "2025-07-30",
+              "going": "Good",
+              "position": 5,
+              "field_size": 20
+            },
+            {
+              "date": "2025-06-08",
+              "going": "Soft",
+              "position": 3,
+              "field_size": 6
+            },
+            {
+              "date": "2025-05-31",
+              "going": "Good",
+              "position": 8,
+              "field_size": 16
+            },
+            {
+              "date": "2025-03-30",
+              "going": "Good",
+              "position": 3,
+              "field_size": 19
+            },
+            {
+              "date": "2024-10-25",
+              "going": "Soft",
+              "position": 1,
+              "field_size": 8
+            }
+          ],
+          "going_history_source": "https://www.sportinglife.com/racing/profiles/horse/1118654",
+          "going_history_fetched_at": "2026-06-03T08:47:43.722880+00:00"
+        },
+        {
+          "horse": "Sondad",
+          "age": 5,
+          "trainer": "Michael & David Easterby",
+          "jockey": "Joanna Mason",
+          "draw": null,
+          "weight_st_lb": "9-1",
+          "or": 92,
+          "rpr": 112,
+          "ts": 106,
+          "form_string": "2723-0",
+          "last_run_days": 24,
+          "notes": "Verified runner on Racing Post card for JRA Tokyo Trophy Handicap; OR 92; RPR 112; TS 106; badges CD; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 19.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [
+            {
+              "date": "2026-05-13",
+              "going": "Good",
+              "position": 17,
+              "field_size": 22
+            },
+            {
+              "date": "2025-10-03",
+              "going": "Soft",
+              "position": 3,
+              "field_size": 10
+            },
+            {
+              "date": "2025-09-20",
+              "going": "Soft",
+              "position": 2,
+              "field_size": 25
+            },
+            {
+              "date": "2025-08-07",
+              "going": "Good to Soft",
+              "position": 7,
+              "field_size": 9
+            },
+            {
+              "date": "2025-07-11",
+              "going": "Good to Firm",
+              "position": 2,
+              "field_size": 13
+            },
+            {
+              "date": "2025-06-07",
+              "going": "Soft",
+              "position": 1,
+              "field_size": 11
+            },
+            {
+              "date": "2025-05-10",
+              "going": "Good to Firm",
+              "position": 1,
+              "field_size": 10
+            },
+            {
+              "date": "2025-04-26",
+              "going": "Good",
+              "position": 2,
+              "field_size": 10
+            },
+            {
+              "date": "2025-04-13",
+              "going": "Good",
+              "position": 8,
+              "field_size": 12
+            },
+            {
+              "date": "2024-08-29",
+              "going": "Good",
+              "position": 10,
+              "field_size": 12
+            }
+          ],
+          "going_history_source": "https://www.sportinglife.com/racing/profiles/horse/1120009",
+          "going_history_fetched_at": "2026-06-03T08:47:43.722880+00:00"
+        },
+        {
+          "horse": "Toyotomi",
+          "age": 5,
+          "trainer": "David O'Meara",
+          "jockey": "TBC",
+          "draw": null,
+          "weight_st_lb": "9-1",
+          "or": 92,
+          "rpr": 110,
+          "ts": 101,
+          "form_string": "05-563",
+          "last_run_days": 6,
+          "notes": "Verified runner on Racing Post card for JRA Tokyo Trophy Handicap; OR 92; RPR 110; TS 101; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 19.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Golden Long",
+          "age": 5,
+          "trainer": "Lemos De Souza",
+          "jockey": "J F Egan",
+          "draw": null,
+          "weight_st_lb": "8-3",
+          "or": 80,
+          "rpr": 109,
+          "ts": 100,
+          "form_string": "30/531",
+          "last_run_days": 33,
+          "notes": "Verified runner on Racing Post card for JRA Tokyo Trophy Handicap; OR 80; RPR 109; TS 100; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 23.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Invictus Gold",
+          "age": 4,
+          "trainer": "Tom Clover",
+          "jockey": "David Egan",
+          "draw": null,
+          "weight_st_lb": "9-8",
+          "or": 99,
+          "rpr": 109,
+          "ts": 99,
+          "form_string": "055-39",
+          "last_run_days": 35,
+          "notes": "Verified runner on Racing Post card for JRA Tokyo Trophy Handicap; OR 99; RPR 109; TS 99; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 17.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Francisco's Piece",
+          "age": 4,
+          "trainer": "Adrian Paul Keatley",
+          "jockey": "Mikey Sheehy",
+          "draw": null,
+          "weight_st_lb": "8-6",
+          "or": 83,
+          "rpr": 110,
+          "ts": 98,
+          "form_string": "0005-7",
+          "last_run_days": 59,
+          "notes": "Verified runner on Racing Post card for JRA Tokyo Trophy Handicap; OR 83; RPR 110; TS 98; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 22.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Stormy Impact",
+          "age": 4,
+          "trainer": "Richard & Peter Fahey",
+          "jockey": "Warren Fentiman",
+          "draw": null,
+          "weight_st_lb": "9-1",
+          "or": 92,
+          "rpr": 111,
+          "ts": 99,
+          "form_string": "5826-0",
+          "last_run_days": 23,
+          "notes": "Verified runner on Racing Post card for JRA Tokyo Trophy Handicap; OR 92; RPR 111; TS 99; badges C, D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 19.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Gold Star Hero",
+          "age": 4,
+          "trainer": "Michael Bell",
+          "jockey": "Tom Marquand",
+          "draw": null,
+          "weight_st_lb": "9-5",
+          "or": 96,
+          "rpr": 110,
+          "ts": 81,
+          "form_string": "27-111",
+          "last_run_days": 50,
+          "notes": "Verified runner on Racing Post card for JRA Tokyo Trophy Handicap; OR 96; RPR 110; TS 81; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 18.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [
+            {
+              "date": "2026-04-17",
+              "going": "Good",
+              "position": 1,
+              "field_size": 6
+            },
+            {
+              "date": "2026-04-09",
+              "going": "Good",
+              "position": 1,
+              "field_size": 6
+            },
+            {
+              "date": "2026-03-26",
+              "going": "Good",
+              "position": 1,
+              "field_size": 9
+            },
+            {
+              "date": "2025-10-31",
+              "going": "Good",
+              "position": 7,
+              "field_size": 11
+            },
+            {
+              "date": "2025-10-14",
+              "going": "Good",
+              "position": 2,
+              "field_size": 8
+            },
+            {
+              "date": "2025-09-27",
+              "going": "Good",
+              "position": 5,
+              "field_size": 13
+            },
+            {
+              "date": "2025-09-16",
+              "going": "Good to Soft",
+              "position": 1,
+              "field_size": 7
+            },
+            {
+              "date": "2025-08-23",
+              "going": "Good",
+              "position": 5,
+              "field_size": 9
+            },
+            {
+              "date": "2025-08-08",
+              "going": "Good",
+              "position": 5,
+              "field_size": 13
+            },
+            {
+              "date": "2025-07-18",
+              "going": "Good to Firm",
+              "position": 6,
+              "field_size": 8
+            }
+          ],
+          "going_history_source": "https://www.sportinglife.com/racing/profiles/horse/1153990",
+          "going_history_fetched_at": "2026-06-03T08:47:43.722880+00:00"
+        },
+        {
+          "horse": "Veblen Good",
+          "age": 4,
+          "trainer": "David O'Meara",
+          "jockey": "TBC",
+          "draw": null,
+          "weight_st_lb": "8-13",
+          "or": 90,
+          "rpr": 110,
+          "ts": 87,
+          "form_string": "2467-1",
+          "last_run_days": 38,
+          "notes": "Verified runner on Racing Post card for JRA Tokyo Trophy Handicap; OR 90; RPR 110; TS 87; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 20.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Star Chorus",
+          "age": 4,
+          "trainer": "Mike Murphy",
+          "jockey": "Rob Hornby",
+          "draw": null,
+          "weight_st_lb": "8-10",
+          "or": 87,
+          "rpr": 110,
+          "ts": 86,
+          "form_string": "313418",
+          "last_run_days": 15,
+          "notes": "Verified runner on Racing Post card for JRA Tokyo Trophy Handicap; OR 87; RPR 110; TS 86; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 21.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [],
+          "going_history_source": "racingpost",
+          "going_history_fetched_at": "2026-06-03T14:30:00+01:00"
+        },
+        {
+          "horse": "Dance In The Storm",
+          "age": 4,
+          "trainer": "Andrew Balding",
+          "jockey": "Oisin Murphy",
+          "draw": null,
+          "weight_st_lb": "9-5",
+          "or": 96,
+          "rpr": 114,
+          "ts": 93,
+          "form_string": "4230-1",
+          "last_run_days": 31,
+          "notes": "Verified runner on Racing Post card for JRA Tokyo Trophy Handicap; OR 96; RPR 114; TS 93; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 18.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [
+            {
+              "date": "2026-05-06",
+              "going": "Good",
+              "position": 1,
+              "field_size": 13
+            },
+            {
+              "date": "2025-09-27",
+              "going": "Good to Firm",
+              "position": 10,
+              "field_size": 13
+            },
+            {
+              "date": "2025-08-21",
+              "going": "Good to Firm",
+              "position": 3,
+              "field_size": 18
+            },
+            {
+              "date": "2025-08-02",
+              "going": "Good to Soft",
+              "position": 2,
+              "field_size": 16
+            },
+            {
+              "date": "2025-07-05",
+              "going": "Good to Firm",
+              "position": 4,
+              "field_size": 9
+            },
+            {
+              "date": "2025-06-14",
+              "going": "Good to Firm",
+              "position": 1,
+              "field_size": 5
+            },
+            {
+              "date": "2025-03-05",
+              "going": "Good",
+              "position": 7,
+              "field_size": 7
+            },
+            {
+              "date": "2025-01-27",
+              "going": "Good",
+              "position": 1,
+              "field_size": 8
+            },
+            {
+              "date": "2024-11-09",
+              "going": "Good",
+              "position": 5,
+              "field_size": 12
+            }
+          ],
+          "going_history_source": "https://www.sportinglife.com/racing/profiles/horse/1165286",
+          "going_history_fetched_at": "2026-06-03T08:47:43.722880+00:00"
+        },
+        {
+          "horse": "Topwarrior",
+          "age": 4,
+          "trainer": "Ralph Beckett",
+          "jockey": "Hector Crouch",
+          "draw": null,
+          "weight_st_lb": "9-1",
+          "or": 92,
+          "rpr": 111,
+          "ts": 98,
+          "form_string": "0P201-",
+          "last_run_days": 225,
+          "notes": "Verified runner on Racing Post card for JRA Tokyo Trophy Handicap; OR 92; RPR 111; TS 98; badges D; source https://www.racingpost.com/racecards/17/epsom/2026-06-06",
+          "morning_price": 19.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
+          "going_history": [
+            {
+              "date": "2025-10-24",
+              "going": "Soft",
+              "position": 1,
+              "field_size": 18
+            },
+            {
+              "date": "2025-09-27",
+              "going": "Good to Soft",
+              "position": 12,
+              "field_size": 12
+            },
+            {
+              "date": "2025-09-02",
+              "going": "Heavy",
+              "position": 2,
+              "field_size": 6
+            },
+            {
+              "date": "2025-08-16",
+              "going": "Good to Firm",
+              "position": null,
+              "field_size": 5
+            },
+            {
+              "date": "2025-06-28",
+              "going": "Good",
+              "position": 13,
+              "field_size": 18
+            },
+            {
+              "date": "2025-06-07",
+              "going": "Good",
+              "position": 2,
+              "field_size": 10
+            },
+            {
+              "date": "2025-05-12",
+              "going": "Good to Firm",
+              "position": 2,
+              "field_size": 12
+            },
+            {
+              "date": "2025-04-21",
+              "going": "Good",
+              "position": 1,
+              "field_size": 12
+            },
+            {
+              "date": "2025-03-14",
+              "going": "Good",
+              "position": 3,
+              "field_size": 6
+            }
+          ],
+          "going_history_source": "https://www.sportinglife.com/racing/profiles/horse/1176991",
+          "going_history_fetched_at": "2026-06-03T08:47:43.722880+00:00"
+        }
+      ],
+      "source_urls": [
+        "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
+      ],
+      "_name_note": "Renamed 2026-06-03: original speculative name 'Debenhams Handicap' replaced with verified RP-17 title.",
+      "going": "Good to Soft"
     }
   ],
-  "retrieved_at": "2026-06-02T11:49:20+01:00"
+  "retrieved_at": "2026-06-02T11:49:20+01:00",
+  "going_source": "racingpost.com course-id 17 fetched 2026-06-03"
 }

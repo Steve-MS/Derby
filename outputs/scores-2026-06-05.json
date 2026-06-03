@@ -2,20 +2,717 @@
   "card_date": "2026-06-05",
   "venue": "Epsom",
   "frozen_by": "wash-cli",
-  "frozen_at": "2026-06-02T17:59:12.114055+00:00",
+  "frozen_at": "2026-06-03T09:05:09.334667+00:00",
   "races": [
     {
       "race_id": "epsom-2026-06-05-1330",
-      "going": "Good to soft in places (Light rain)",
+      "going": "Good",
       "ranked_runners": [
         {
           "rank": 1,
-          "horse": "Cato (IRE)",
-          "trainer": "Unknown",
-          "jockey": "TBC",
-          "score": 50.0,
+          "horse": "Naana's Shadow",
+          "trainer": "Katie Scott",
+          "jockey": "Oisin Murphy",
+          "score": 95.0,
           "score_breakdown": {
-            "class_rating": 14.875,
+            "class_rating": 15.37,
+            "recent_form": 9.696,
+            "trainer_form": 0.0,
+            "jockey": 7.65,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 10.187
+          },
+          "raw_signal_values": {
+            "class_rating": 51.66235016043162,
+            "recent_form": 57.03703703703704,
+            "trainer_form": 0.0,
+            "jockey": 90.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 67.91044776119404,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "going_data": "sufficient",
+          "going_fit": {
+            "score": 0.6791044776119404,
+            "going_data": "sufficient",
+            "target_going": "Good",
+            "effective_runs": 3.35,
+            "weighted_win_rate": 0.358
+          },
+          "morning_price": 15.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 2,
+          "horse": "Alfa Duplicate",
+          "trainer": "Ivan Furtado",
+          "jockey": "Silvestre De Sousa",
+          "score": 92.23,
+          "score_breakdown": {
+            "class_rating": 17.15,
+            "recent_form": 13.222,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 11.61
+          },
+          "raw_signal_values": {
+            "class_rating": 57.6468107379856,
+            "recent_form": 77.77777777777779,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 77.3972602739726,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "going_data": "sufficient",
+          "going_fit": {
+            "score": 0.7739726027397261,
+            "going_data": "sufficient",
+            "target_going": "Good",
+            "effective_runs": 3.65,
+            "weighted_win_rate": 0.548
+          },
+          "morning_price": 16.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 3,
+          "horse": "Straight Ahead",
+          "trainer": "Craig Lidster",
+          "jockey": "TBC",
+          "score": 72.55,
+          "score_breakdown": {
+            "class_rating": 15.37,
+            "recent_form": 9.696,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 10.377
+          },
+          "raw_signal_values": {
+            "class_rating": 51.66235016043162,
+            "recent_form": 57.03703703703704,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 69.17808219178082,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "going_data": "sufficient",
+          "going_fit": {
+            "score": 0.6917808219178082,
+            "going_data": "sufficient",
+            "target_going": "Good",
+            "effective_runs": 3.65,
+            "weighted_win_rate": 0.384
+          },
+          "morning_price": 16.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 4,
+          "horse": "Chairmanfourtimes",
+          "trainer": "Adrian Paul Keatley",
+          "jockey": "Mikey Sheehy",
+          "score": 65.73,
+          "score_breakdown": {
+            "class_rating": 22.491,
+            "recent_form": 2.456,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 8.229
+          },
+          "raw_signal_values": {
+            "class_rating": 75.60019247064751,
+            "recent_form": 14.444444444444443,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 54.86111111111111,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "going_data": "sufficient",
+          "going_fit": {
+            "score": 0.548611111111111,
+            "going_data": "sufficient",
+            "target_going": "Good",
+            "effective_runs": 3.6,
+            "weighted_win_rate": 0.097
+          },
+          "morning_price": 13.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 5,
+          "horse": "One And Gone",
+          "trainer": "Ian Williams",
+          "jockey": "Edward Greatrex",
+          "score": 60.15,
+          "score_breakdown": {
+            "class_rating": 18.93,
+            "recent_form": 4.596,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 7.796
+          },
+          "raw_signal_values": {
+            "class_rating": 63.63127131553957,
+            "recent_form": 27.037037037037038,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 51.973684210526315,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "going_data": "sufficient",
+          "going_fit": {
+            "score": 0.5197368421052632,
+            "going_data": "sufficient",
+            "target_going": "Good",
+            "effective_runs": 3.8,
+            "weighted_win_rate": 0.039
+          },
+          "morning_price": 15.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 6,
+          "horse": "Ambishio",
+          "trainer": "Michael Appleby",
+          "jockey": "Robert Havlin",
+          "score": 59.7,
+          "score_breakdown": {
+            "class_rating": 15.37,
+            "recent_form": 2.707,
+            "trainer_form": 0.0,
+            "jockey": 5.1,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 7.993
+          },
+          "raw_signal_values": {
+            "class_rating": 51.66235016043162,
+            "recent_form": 15.925925925925924,
+            "trainer_form": 0.0,
+            "jockey": 60.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 53.28947368421052,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "going_data": "sufficient",
+          "going_fit": {
+            "score": 0.5328947368421052,
+            "going_data": "sufficient",
+            "target_going": "Good",
+            "effective_runs": 3.8,
+            "weighted_win_rate": 0.066
+          },
+          "morning_price": 15.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 7,
+          "horse": "Coyy",
+          "trainer": "Eve Johnson Houghton",
+          "jockey": "TBC",
+          "score": 49.73,
+          "score_breakdown": {
+            "class_rating": 15.37,
+            "recent_form": 7.241,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 51.66235016043162,
+            "recent_form": 42.592592592592595,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good"
+          },
+          "morning_price": 17.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 8,
+          "horse": "Call Margot",
+          "trainer": "Gemma Tutty",
+          "jockey": "TBC",
+          "score": 47.84,
+          "score_breakdown": {
+            "class_rating": 15.37,
+            "recent_form": 6.611,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 51.66235016043162,
+            "recent_form": 38.88888888888889,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good"
+          },
+          "morning_price": 16.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 9,
+          "horse": "Riley Rocks",
+          "trainer": "Dylan Cunha",
+          "jockey": "Ray Dawson",
+          "score": 47.41,
+          "score_breakdown": {
+            "class_rating": 13.589,
+            "recent_form": 8.248,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 45.67788958287765,
+            "recent_form": 48.51851851851852,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good"
+          },
+          "morning_price": 16.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 10,
+          "horse": "Proof",
+          "trainer": "Charles Hills",
+          "jockey": "Kieran Shoemark",
+          "score": 45.62,
+          "score_breakdown": {
+            "class_rating": 17.15,
+            "recent_form": 4.093,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 57.6468107379856,
+            "recent_form": 24.074074074074073,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good"
+          },
+          "morning_price": 16.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 11,
+          "horse": "Temple Of Athena",
+          "trainer": "Brian Ellison",
+          "jockey": "Ben Robinson",
+          "score": 45.48,
+          "score_breakdown": {
+            "class_rating": 18.93,
+            "recent_form": 2.267,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 63.63127131553957,
+            "recent_form": 13.333333333333334,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good"
+          },
+          "morning_price": 13.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 12,
+          "horse": "Henrythenate",
+          "trainer": "Patrick Morris",
+          "jockey": "Paddy Bradley",
+          "score": 41.5,
+          "score_breakdown": {
+            "class_rating": 18.93,
+            "recent_form": 0.944,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 63.63127131553957,
+            "recent_form": 5.555555555555555,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good"
+          },
+          "morning_price": 15.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 13,
+          "horse": "Artista",
+          "trainer": "Ollie Sangster",
+          "jockey": "TBC",
+          "score": 40.88,
+          "score_breakdown": {
+            "class_rating": 17.15,
+            "recent_form": 2.519,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 57.6468107379856,
+            "recent_form": 14.814814814814813,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good"
+          },
+          "morning_price": 17.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 14,
+          "horse": "Hanney Girl",
+          "trainer": "Tim Easterby",
+          "jockey": "David Allan",
+          "score": 40.88,
+          "score_breakdown": {
+            "class_rating": 17.15,
+            "recent_form": 2.519,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 57.6468107379856,
+            "recent_form": 14.814814814814813,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good"
+          },
+          "morning_price": 16.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 15,
+          "horse": "Shes Got A Brother",
+          "trainer": "Michael & David Easterby",
+          "jockey": "Billy Garritty",
+          "score": 39.35,
+          "score_breakdown": {
+            "class_rating": 10.028,
+            "recent_form": 9.13,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 33.7089684277697,
+            "recent_form": 53.70370370370371,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good"
+          },
+          "morning_price": 14.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 16,
+          "horse": "Wedonttelllies",
+          "trainer": "Richard Hughes",
+          "jockey": "Billy Loughnane",
+          "score": 36.5,
+          "score_breakdown": {
+            "class_rating": 10.028,
+            "recent_form": 8.185,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 33.7089684277697,
+            "recent_form": 48.148148148148145,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good"
+          },
+          "morning_price": 14.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 17,
+          "horse": "U S S Charleston",
+          "trainer": "Lemos De Souza",
+          "jockey": "Tom Kiely-Marshall",
+          "score": 35.75,
+          "score_breakdown": {
+            "class_rating": 10.028,
+            "recent_form": 7.933,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 33.7089684277697,
+            "recent_form": 46.666666666666664,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good"
+          },
+          "morning_price": 15.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 18,
+          "horse": "Rosie Frith",
+          "trainer": "Patrick Magee",
+          "jockey": "TBC",
+          "score": 5.0,
+          "score_breakdown": {
+            "class_rating": 0.0,
             "recent_form": 7.744,
             "trainer_form": 0.0,
             "jockey": 0.0,
@@ -26,7 +723,7 @@
             "going_fit": 5.25
           },
           "raw_signal_values": {
-            "class_rating": 50.0,
+            "class_rating": 0.0,
             "recent_form": 45.55555555555556,
             "trainer_form": 0.0,
             "jockey": 0.0,
@@ -43,17 +740,17 @@
           "going_fit": {
             "score": 0.35,
             "going_data": "insufficient",
-            "target_going": "Good to Soft"
+            "target_going": "Good"
           },
-          "morning_price": 6,
+          "morning_price": 12.5,
           "odds_source": "synthetic",
           "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         }
       ],
       "confidence": "LOW",
       "bet_recommendation": "PASS",
-      "race_stdev": 0.0,
-      "race_competitiveness": "WIDE OPEN",
+      "race_stdev": 20.48,
+      "race_competitiveness": "CLEAR FAVOURITE",
       "missing_data_flags": [
         "going_data_insufficient"
       ],
@@ -62,14 +759,219 @@
     },
     {
       "race_id": "epsom-2026-06-05-1405",
-      "going": "Good to soft in places (Light rain)",
+      "going": "Good to Soft",
       "ranked_runners": [
         {
           "rank": 1,
-          "horse": "Unnamed 2yo colts",
-          "trainer": "Various",
+          "horse": "Wild Terrain",
+          "trainer": "Hugo Palmer",
+          "jockey": "Oisin Murphy",
+          "score": 95.0,
+          "score_breakdown": {
+            "class_rating": 15.637,
+            "recent_form": 6.296,
+            "trainer_form": 0.0,
+            "jockey": 7.65,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 13.5
+          },
+          "raw_signal_values": {
+            "class_rating": 52.56054914095253,
+            "recent_form": 37.03703703703704,
+            "trainer_form": 0.0,
+            "jockey": 90.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 90.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "going_data": "sufficient",
+          "going_fit": {
+            "score": 0.9,
+            "going_data": "sufficient",
+            "target_going": "Good to Soft",
+            "effective_runs": 1.0,
+            "weighted_win_rate": 1.0
+          },
+          "morning_price": 15.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 2,
+          "horse": "Hickory Lad",
+          "trainer": "Phillip Makin",
           "jockey": "TBC",
-          "score": 50.0,
+          "score": 93.04,
+          "score_breakdown": {
+            "class_rating": 22.42,
+            "recent_form": 10.389,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 9.55
+          },
+          "raw_signal_values": {
+            "class_rating": 75.36162958657738,
+            "recent_form": 61.111111111111114,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 63.66666666666666,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "going_data": "sufficient",
+          "going_fit": {
+            "score": 0.6366666666666666,
+            "going_data": "sufficient",
+            "target_going": "Good to Soft",
+            "effective_runs": 2.4,
+            "weighted_win_rate": 0.333
+          },
+          "morning_price": 12.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 3,
+          "horse": "Possessive",
+          "trainer": "K R Burke",
+          "jockey": "Shane Foley",
+          "score": 87.66,
+          "score_breakdown": {
+            "class_rating": 20.57,
+            "recent_form": 6.296,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 13.5
+          },
+          "raw_signal_values": {
+            "class_rating": 69.14315310140697,
+            "recent_form": 37.03703703703704,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 90.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "going_data": "sufficient",
+          "going_fit": {
+            "score": 0.9,
+            "going_data": "sufficient",
+            "target_going": "Good to Soft",
+            "effective_runs": 1.0,
+            "weighted_win_rate": 1.0
+          },
+          "morning_price": 13.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 4,
+          "horse": "Star Prospect",
+          "trainer": "Joseph Patrick O'Brien",
+          "jockey": "TBC",
+          "score": 82.24,
+          "score_breakdown": {
+            "class_rating": 21.187,
+            "recent_form": 7.241,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 9.933
+          },
+          "raw_signal_values": {
+            "class_rating": 71.21597859646377,
+            "recent_form": 42.592592592592595,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 66.22222222222221,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "going_data": "sufficient",
+          "going_fit": {
+            "score": 0.6622222222222222,
+            "going_data": "sufficient",
+            "target_going": "Good to Soft",
+            "effective_runs": 1.8,
+            "weighted_win_rate": 0.444
+          },
+          "morning_price": 13.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 5,
+          "horse": "Rlasthope",
+          "trainer": "Tony Coyle & Kaine Wood",
+          "jockey": "Colin Keane",
+          "score": 67.67,
+          "score_breakdown": {
+            "class_rating": 20.57,
+            "recent_form": 5.352,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 7.05
+          },
+          "raw_signal_values": {
+            "class_rating": 69.14315310140697,
+            "recent_form": 31.48148148148148,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 47.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "going_data": "sufficient",
+          "going_fit": {
+            "score": 0.47,
+            "going_data": "sufficient",
+            "target_going": "Good to Soft",
+            "effective_runs": 2.4,
+            "weighted_win_rate": 0.0
+          },
+          "morning_price": 13.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 6,
+          "horse": "Havana Flash",
+          "trainer": "George Boughey",
+          "jockey": "Billy Loughnane",
+          "score": 55.92,
           "score_breakdown": {
             "class_rating": 14.875,
             "recent_form": 8.5,
@@ -102,15 +1004,507 @@
             "going_data": "insufficient",
             "target_going": "Good to Soft"
           },
-          "morning_price": 4,
+          "morning_price": 18.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 7,
+          "horse": "The Bookkeeper",
+          "trainer": "Richard Hughes",
+          "jockey": "Hector Crouch",
+          "score": 54.58,
+          "score_breakdown": {
+            "class_rating": 15.637,
+            "recent_form": 7.241,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 52.56054914095253,
+            "recent_form": 42.592592592592595,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 15.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 8,
+          "horse": "Dandyman Dan",
+          "trainer": "David Evans",
+          "jockey": "Saffie Osborne",
+          "score": 52.77,
+          "score_breakdown": {
+            "class_rating": 17.487,
+            "recent_form": 4.722,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 58.77902562612294,
+            "recent_form": 27.77777777777778,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 14.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 9,
+          "horse": "King Of Montenegro",
+          "trainer": "Brian Meehan",
+          "jockey": "TBC",
+          "score": 46.88,
+          "score_breakdown": {
+            "class_rating": 16.253,
+            "recent_form": 3.778,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 54.633374636009336,
+            "recent_form": 22.22222222222222,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 14.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 10,
+          "horse": "Alpe d'Huez",
+          "trainer": "Archie Watson",
+          "jockey": "Luke Morris",
+          "score": 45.35,
+          "score_breakdown": {
+            "class_rating": 13.17,
+            "recent_form": 6.296,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 44.26924716072531,
+            "recent_form": 37.03703703703704,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 16.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 11,
+          "horse": "Social Spirit",
+          "trainer": "Michael & David Easterby",
+          "jockey": "Billy Garritty",
+          "score": 43.48,
+          "score_breakdown": {
+            "class_rating": 16.253,
+            "recent_form": 2.519,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 54.633374636009336,
+            "recent_form": 14.814814814814813,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 14.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 12,
+          "horse": "El Lambo",
+          "trainer": "Charles Hills",
+          "jockey": "Jason Watson",
+          "score": 40.35,
+          "score_breakdown": {
+            "class_rating": 11.32,
+            "recent_form": 6.296,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 38.05077067555489,
+            "recent_form": 37.03703703703704,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 16.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 13,
+          "horse": "Ardad Steve",
+          "trainer": "Eve Johnson Houghton",
+          "jockey": "Charles Bishop",
+          "score": 40.07,
+          "score_breakdown": {
+            "class_rating": 16.253,
+            "recent_form": 1.259,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 54.633374636009336,
+            "recent_form": 7.4074074074074066,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 14.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 14,
+          "horse": "Romidijo",
+          "trainer": "Charlie Clover",
+          "jockey": "Pierre-Louis Jamin",
+          "score": 36.81,
+          "score_breakdown": {
+            "class_rating": 13.787,
+            "recent_form": 2.519,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 46.342072655782104,
+            "recent_form": 14.814814814814813,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 15.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 15,
+          "horse": "The Resdev Roman",
+          "trainer": "Michael & David Easterby",
+          "jockey": "TBC",
+          "score": 28.34,
+          "score_breakdown": {
+            "class_rating": 13.17,
+            "recent_form": 0.0,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 44.26924716072531,
+            "recent_form": 0.0,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 16.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 16,
+          "horse": "Benefacta",
+          "trainer": "Richard Hughes",
+          "jockey": "David Probert",
+          "score": 15.0,
+          "score_breakdown": {
+            "class_rating": 8.237,
+            "recent_form": 0.0,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 27.686643200270854,
+            "recent_form": 0.0,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 18.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 17,
+          "horse": "Time And Effort",
+          "trainer": "Ivan Furtado",
+          "jockey": "Silvestre De Sousa",
+          "score": 13.4,
+          "score_breakdown": {
+            "class_rating": 6.387,
+            "recent_form": 1.259,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 21.468166715100438,
+            "recent_form": 7.4074074074074066,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 18.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 18,
+          "horse": "Poppy Foxy",
+          "trainer": "Charlie Clover",
+          "jockey": "TBC",
+          "score": 5.0,
+          "score_breakdown": {
+            "class_rating": 4.537,
+            "recent_form": 0.0,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 15.249690229930021,
+            "recent_form": 0.0,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 18.0,
           "odds_source": "synthetic",
           "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         }
       ],
       "confidence": "LOW",
       "bet_recommendation": "PASS",
-      "race_stdev": 0.0,
-      "race_competitiveness": "WIDE OPEN",
+      "race_stdev": 26.04,
+      "race_competitiveness": "CLEAR FAVOURITE",
       "missing_data_flags": [
         "no_ratings",
         "going_data_insufficient"
@@ -120,16 +1514,385 @@
     },
     {
       "race_id": "epsom-2026-06-05-1440",
-      "going": "Good to soft in places (Light rain)",
+      "going": "Good to Soft",
       "ranked_runners": [
         {
           "rank": 1,
-          "horse": "Belinus",
-          "trainer": "Unknown",
-          "jockey": "TBC",
+          "horse": "Linwood",
+          "trainer": "Richard Hannon",
+          "jockey": "Jamie Spencer",
           "score": 95.0,
           "score_breakdown": {
-            "class_rating": 19.833,
+            "class_rating": 18.203,
+            "recent_form": 12.152,
+            "trainer_form": 6.8,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 12.167
+          },
+          "raw_signal_values": {
+            "class_rating": 61.18593425356708,
+            "recent_form": 71.48148148148148,
+            "trainer_form": 80.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 81.11111111111111,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "going_data": "sufficient",
+          "going_fit": {
+            "score": 0.8111111111111111,
+            "going_data": "sufficient",
+            "target_going": "Good to Soft",
+            "effective_runs": 3.375,
+            "weighted_win_rate": 0.622
+          },
+          "morning_price": 8.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 2,
+          "horse": "Seagulls Eleven",
+          "trainer": "Hugo Palmer",
+          "jockey": "Oisin Murphy",
+          "score": 85.58,
+          "score_breakdown": {
+            "class_rating": 17.038,
+            "recent_form": 10.074,
+            "trainer_form": 0.0,
+            "jockey": 7.65,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 10.794
+          },
+          "raw_signal_values": {
+            "class_rating": 57.27085726481861,
+            "recent_form": 59.25925925925925,
+            "trainer_form": 0.0,
+            "jockey": 90.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 71.96078431372548,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "going_data": "sufficient",
+          "going_fit": {
+            "score": 0.7196078431372549,
+            "going_data": "sufficient",
+            "target_going": "Good to Soft",
+            "effective_runs": 3.188,
+            "weighted_win_rate": 0.439
+          },
+          "morning_price": 7.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 3,
+          "horse": "Chancellor",
+          "trainer": "John & Thady Gosden",
+          "jockey": "Robert Havlin",
+          "score": 77.27,
+          "score_breakdown": {
+            "class_rating": 19.368,
+            "recent_form": 8.059,
+            "trainer_form": 0.0,
+            "jockey": 5.1,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 9.709
+          },
+          "raw_signal_values": {
+            "class_rating": 65.10101124231556,
+            "recent_form": 47.40740740740741,
+            "trainer_form": 0.0,
+            "jockey": 60.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 64.72602739726028,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "going_data": "sufficient",
+          "going_fit": {
+            "score": 0.6472602739726028,
+            "going_data": "sufficient",
+            "target_going": "Good to Soft",
+            "effective_runs": 3.65,
+            "weighted_win_rate": 0.295
+          },
+          "morning_price": 8.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 4,
+          "horse": "Boiling Point",
+          "trainer": "K R Burke",
+          "jockey": "Clifford Lee",
+          "score": 69.1,
+          "score_breakdown": {
+            "class_rating": 21.697,
+            "recent_form": 11.27,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 6.0
+          },
+          "raw_signal_values": {
+            "class_rating": 72.93116521981253,
+            "recent_form": 66.29629629629629,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 40.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "going_data": "sufficient",
+          "going_fit": {
+            "score": 0.39999999999999997,
+            "going_data": "sufficient",
+            "target_going": "Good to Soft",
+            "effective_runs": 1.0,
+            "weighted_win_rate": 0.0
+          },
+          "morning_price": 7.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 5,
+          "horse": "Persica",
+          "trainer": "Richard Hannon",
+          "jockey": "Sean Levey",
+          "score": 61.91,
+          "score_breakdown": {
+            "class_rating": 19.368,
+            "recent_form": 1.259,
+            "trainer_form": 6.8,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 8.67
+          },
+          "raw_signal_values": {
+            "class_rating": 65.10101124231556,
+            "recent_form": 7.4074074074074066,
+            "trainer_form": 80.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 57.801418439716315,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "going_data": "sufficient",
+          "going_fit": {
+            "score": 0.5780141843971631,
+            "going_data": "sufficient",
+            "target_going": "Good to Soft",
+            "effective_runs": 3.525,
+            "weighted_win_rate": 0.156
+          },
+          "morning_price": 7.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 6,
+          "horse": "Skukuza",
+          "trainer": "Ed Dunlop",
+          "jockey": "Ryan Moore",
+          "score": 53.9,
+          "score_breakdown": {
+            "class_rating": 14.709,
+            "recent_form": 1.574,
+            "trainer_form": 0.0,
+            "jockey": 8.5,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 8.112
+          },
+          "raw_signal_values": {
+            "class_rating": 49.44070328732166,
+            "recent_form": 9.25925925925926,
+            "trainer_form": 0.0,
+            "jockey": 100.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 54.08163265306122,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "going_data": "sufficient",
+          "going_fit": {
+            "score": 0.5408163265306122,
+            "going_data": "sufficient",
+            "target_going": "Good to Soft",
+            "effective_runs": 3.675,
+            "weighted_win_rate": 0.082
+          },
+          "morning_price": 8.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 7,
+          "horse": "Qirat",
+          "trainer": "Ralph Beckett",
+          "jockey": "TBC",
+          "score": 44.85,
+          "score_breakdown": {
+            "class_rating": 15.873,
+            "recent_form": 2.204,
+            "trainer_form": 5.95,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 53.35578027607014,
+            "recent_form": 12.962962962962962,
+            "trainer_form": 70.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 7.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 8,
+          "horse": "Royal Playwright",
+          "trainer": "Andrew Balding",
+          "jockey": "Silvestre De Sousa",
+          "score": 43.75,
+          "score_breakdown": {
+            "class_rating": 11.214,
+            "recent_form": 5.572,
+            "trainer_form": 6.8,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 37.69547232107623,
+            "recent_form": 32.77777777777778,
+            "trainer_form": 80.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 8.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 9,
+          "horse": "Ice Max",
+          "trainer": "K R Burke",
+          "jockey": "Sam James",
+          "score": 39.18,
+          "score_breakdown": {
+            "class_rating": 17.038,
+            "recent_form": 4.722,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 57.27085726481861,
+            "recent_form": 27.77777777777778,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 8.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 10,
+          "horse": "Alcantor",
+          "trainer": "Joseph Patrick O'Brien",
+          "jockey": "TBC",
+          "score": 36.42,
+          "score_breakdown": {
+            "class_rating": 18.203,
             "recent_form": 2.456,
             "trainer_form": 0.0,
             "jockey": 0.0,
@@ -140,7 +1903,7 @@
             "going_fit": 5.25
           },
           "raw_signal_values": {
-            "class_rating": 66.66666666666666,
+            "class_rating": 61.18593425356708,
             "recent_form": 14.444444444444443,
             "trainer_form": 0.0,
             "jockey": 0.0,
@@ -159,18 +1922,141 @@
             "going_data": "insufficient",
             "target_going": "Good to Soft"
           },
-          "morning_price": 3.5,
-          "odds_source": "estimated",
+          "morning_price": 7.5,
+          "odds_source": "synthetic",
           "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
-          "rank": 2,
-          "horse": "Runner-up",
-          "trainer": "Unknown",
+          "rank": 11,
+          "horse": "Point Lynas",
+          "trainer": "Edward Bethell",
           "jockey": "TBC",
+          "score": 29.02,
+          "score_breakdown": {
+            "class_rating": 15.873,
+            "recent_form": 1.826,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 53.35578027607014,
+            "recent_form": 10.74074074074074,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 8.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 12,
+          "horse": "Balmacara",
+          "trainer": "Eve Johnson Houghton",
+          "jockey": "Charles Bishop",
+          "score": 10.28,
+          "score_breakdown": {
+            "class_rating": 6.555,
+            "recent_form": 3.652,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 22.03516436608233,
+            "recent_form": 21.48148148148148,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 8.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 13,
+          "horse": "Cowardofthecounty",
+          "trainer": "Joseph Patrick O'Brien",
+          "jockey": "TBC",
+          "score": 7.68,
+          "score_breakdown": {
+            "class_rating": 5.391,
+            "recent_form": 3.778,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 18.120087377333856,
+            "recent_form": 22.22222222222222,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 9.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 14,
+          "horse": "Audience",
+          "trainer": "David O'Meara",
+          "jockey": "Rossa Ryan",
           "score": 5.0,
           "score_breakdown": {
-            "class_rating": 9.917,
+            "class_rating": 7.72,
             "recent_form": 0.378,
             "trainer_form": 0.0,
             "jockey": 0.0,
@@ -181,7 +2067,7 @@
             "going_fit": 5.25
           },
           "raw_signal_values": {
-            "class_rating": 33.33333333333333,
+            "class_rating": 25.950241354830812,
             "recent_form": 2.2222222222222223,
             "trainer_form": 0.0,
             "jockey": 0.0,
@@ -200,14 +2086,14 @@
             "going_data": "insufficient",
             "target_going": "Good to Soft"
           },
-          "morning_price": 4.5,
-          "odds_source": "estimated",
+          "morning_price": 8.5,
+          "odds_source": "synthetic",
           "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         }
       ],
-      "confidence": "HIGH",
-      "bet_recommendation": "WIN",
-      "race_stdev": 45.0,
+      "confidence": "MED",
+      "bet_recommendation": "EW",
+      "race_stdev": 27.56,
       "race_competitiveness": "CLEAR FAVOURITE",
       "missing_data_flags": [
         "going_data_insufficient"
@@ -216,8 +2102,966 @@
       "race_time": "14:40"
     },
     {
+      "race_id": "epsom-2026-06-05-1515",
+      "going": "Good to Soft",
+      "ranked_runners": [
+        {
+          "rank": 1,
+          "horse": "Respond",
+          "trainer": "Andrew Balding",
+          "jockey": "Oisin Murphy",
+          "score": 95.0,
+          "score_breakdown": {
+            "class_rating": 15.042,
+            "recent_form": 12.467,
+            "trainer_form": 6.8,
+            "jockey": 7.65,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 11.023
+          },
+          "raw_signal_values": {
+            "class_rating": 50.559997849612415,
+            "recent_form": 73.33333333333334,
+            "trainer_form": 80.0,
+            "jockey": 90.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 73.48993288590604,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "going_data": "sufficient",
+          "going_fit": {
+            "score": 0.7348993288590604,
+            "going_data": "sufficient",
+            "target_going": "Good to Soft",
+            "effective_runs": 3.725,
+            "weighted_win_rate": 0.47
+          },
+          "morning_price": 13.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 2,
+          "horse": "Quai De Bethune",
+          "trainer": "Hamad Al Jehani",
+          "jockey": "James Doyle",
+          "score": 73.51,
+          "score_breakdown": {
+            "class_rating": 17.596,
+            "recent_form": 8.657,
+            "trainer_form": 0.0,
+            "jockey": 5.95,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 9.421
+          },
+          "raw_signal_values": {
+            "class_rating": 59.146631543669,
+            "recent_form": 50.925925925925924,
+            "trainer_form": 0.0,
+            "jockey": 70.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 62.804347826086946,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "going_data": "sufficient",
+          "going_fit": {
+            "score": 0.6280434782608695,
+            "going_data": "sufficient",
+            "target_going": "Good to Soft",
+            "effective_runs": 2.3,
+            "weighted_win_rate": 0.326
+          },
+          "morning_price": 14.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 3,
+          "horse": "Let's Dream",
+          "trainer": "Michael Bell",
+          "jockey": "David Probert",
+          "score": 67.9,
+          "score_breakdown": {
+            "class_rating": 15.042,
+            "recent_form": 12.341,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 11.275
+          },
+          "raw_signal_values": {
+            "class_rating": 50.559997849612415,
+            "recent_form": 72.59259259259258,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 75.16778523489933,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "going_data": "sufficient",
+          "going_fit": {
+            "score": 0.7516778523489933,
+            "going_data": "sufficient",
+            "target_going": "Good to Soft",
+            "effective_runs": 3.725,
+            "weighted_win_rate": 0.503
+          },
+          "morning_price": 16.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 4,
+          "horse": "Sallaal",
+          "trainer": "Roger Varian",
+          "jockey": "Ray Dawson",
+          "score": 59.45,
+          "score_breakdown": {
+            "class_rating": 11.21,
+            "recent_form": 7.87,
+            "trainer_form": 5.95,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 9.161
+          },
+          "raw_signal_values": {
+            "class_rating": 37.680047308527534,
+            "recent_form": 46.2962962962963,
+            "trainer_form": 70.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 61.07190265486726,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "going_data": "sufficient",
+          "going_fit": {
+            "score": 0.6107190265486726,
+            "going_data": "sufficient",
+            "target_going": "Good to Soft",
+            "effective_runs": 2.825,
+            "weighted_win_rate": 0.239
+          },
+          "morning_price": 13.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 5,
+          "horse": "Rastnet",
+          "trainer": "John Butler",
+          "jockey": "Silvestre De Sousa",
+          "score": 58.47,
+          "score_breakdown": {
+            "class_rating": 16.319,
+            "recent_form": 9.319,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 8.036
+          },
+          "raw_signal_values": {
+            "class_rating": 54.85331469664071,
+            "recent_form": 54.81481481481482,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 53.57142857142857,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "going_data": "sufficient",
+          "going_fit": {
+            "score": 0.5357142857142857,
+            "going_data": "sufficient",
+            "target_going": "Good to Soft",
+            "effective_runs": 3.5,
+            "weighted_win_rate": 0.071
+          },
+          "morning_price": 17.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 6,
+          "horse": "Spoken Truth",
+          "trainer": "David O'Meara",
+          "jockey": "Luke Morris",
+          "score": 55.94,
+          "score_breakdown": {
+            "class_rating": 17.596,
+            "recent_form": 7.241,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 7.5
+          },
+          "raw_signal_values": {
+            "class_rating": 59.146631543669,
+            "recent_form": 42.592592592592595,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 50.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "going_data": "sufficient",
+          "going_fit": {
+            "score": 0.5,
+            "going_data": "sufficient",
+            "target_going": "Good to Soft",
+            "effective_runs": 3.225,
+            "weighted_win_rate": 0.0
+          },
+          "morning_price": 17.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 7,
+          "horse": "Beylerbeyi",
+          "trainer": "Ian Williams",
+          "jockey": "Billy Loughnane",
+          "score": 48.0,
+          "score_breakdown": {
+            "class_rating": 17.596,
+            "recent_form": 5.289,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 59.146631543669,
+            "recent_form": 31.11111111111111,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 14.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 8,
+          "horse": "Hand Of God",
+          "trainer": "Harry Charlton",
+          "jockey": "Lewis Edmunds",
+          "score": 47.49,
+          "score_breakdown": {
+            "class_rating": 16.319,
+            "recent_form": 6.296,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 54.85331469664071,
+            "recent_form": 37.03703703703704,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 14.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 9,
+          "horse": "Have Secret",
+          "trainer": "Richard & Peter Fahey",
+          "jockey": "TBC",
+          "score": 47.01,
+          "score_breakdown": {
+            "class_rating": 16.319,
+            "recent_form": 6.044,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 54.85331469664071,
+            "recent_form": 35.55555555555556,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 15.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 10,
+          "horse": "Auld Toon Loon",
+          "trainer": "Tom Dascombe",
+          "jockey": "Kieran Shoemark",
+          "score": 46.29,
+          "score_breakdown": {
+            "class_rating": 16.319,
+            "recent_form": 5.667,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 54.85331469664071,
+            "recent_form": 33.33333333333333,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 15.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 11,
+          "horse": "Ammes",
+          "trainer": "James Owen",
+          "jockey": "TBC",
+          "score": 44.83,
+          "score_breakdown": {
+            "class_rating": 15.042,
+            "recent_form": 6.17,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 50.559997849612415,
+            "recent_form": 36.2962962962963,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 16.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 12,
+          "horse": "Tycoon",
+          "trainer": "Kevin Philippart De Foy",
+          "jockey": "David Egan",
+          "score": 42.75,
+          "score_breakdown": {
+            "class_rating": 17.596,
+            "recent_form": 2.519,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 59.146631543669,
+            "recent_form": 14.814814814814813,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 15.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 13,
+          "horse": "Tribal Wisdom",
+          "trainer": "Michael Attwater",
+          "jockey": "TBC",
+          "score": 42.55,
+          "score_breakdown": {
+            "class_rating": 18.873,
+            "recent_form": 1.133,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 63.439948390697296,
+            "recent_form": 6.666666666666667,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 20.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 14,
+          "horse": "Celeborn",
+          "trainer": "George Boughey",
+          "jockey": "TBC",
+          "score": 42.26,
+          "score_breakdown": {
+            "class_rating": 12.487,
+            "recent_form": 7.367,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 41.97336415555583,
+            "recent_form": 43.33333333333333,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 16.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 15,
+          "horse": "City Of Delight",
+          "trainer": "David Menuisier",
+          "jockey": "Jason Watson",
+          "score": 41.46,
+          "score_breakdown": {
+            "class_rating": 13.764,
+            "recent_form": 5.667,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 46.26668100258413,
+            "recent_form": 33.33333333333333,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 16.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 16,
+          "horse": "Alpha Crucis",
+          "trainer": "Gary & Josh Moore",
+          "jockey": "TBC",
+          "score": 41.29,
+          "score_breakdown": {
+            "class_rating": 16.319,
+            "recent_form": 3.022,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 54.85331469664071,
+            "recent_form": 17.77777777777778,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 16.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 17,
+          "horse": "Liberty Lane",
+          "trainer": "K R Burke",
+          "jockey": "Jack Nicholls",
+          "score": 40.51,
+          "score_breakdown": {
+            "class_rating": 13.764,
+            "recent_form": 5.163,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 46.26668100258413,
+            "recent_form": 30.37037037037037,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 12.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 18,
+          "horse": "King's Code",
+          "trainer": "David Evans",
+          "jockey": "Saffie Osborne",
+          "score": 40.41,
+          "score_breakdown": {
+            "class_rating": 18.873,
+            "recent_form": 0.0,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 63.439948390697296,
+            "recent_form": 0.0,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 15.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 19,
+          "horse": "Dante's Lad",
+          "trainer": "Ian Williams",
+          "jockey": "TBC",
+          "score": 39.42,
+          "score_breakdown": {
+            "class_rating": 17.596,
+            "recent_form": 0.756,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 59.146631543669,
+            "recent_form": 4.444444444444445,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 16.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 20,
+          "horse": "Cloud Seeker",
+          "trainer": "Andrew Slattery",
+          "jockey": "TBC",
+          "score": 37.45,
+          "score_breakdown": {
+            "class_rating": 15.042,
+            "recent_form": 2.267,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 50.559997849612415,
+            "recent_form": 13.333333333333334,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 16.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 21,
+          "horse": "Great David",
+          "trainer": "James Tate",
+          "jockey": "Rossa Ryan",
+          "score": 33.87,
+          "score_breakdown": {
+            "class_rating": 15.042,
+            "recent_form": 0.378,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 50.559997849612415,
+            "recent_form": 2.2222222222222223,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 14.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 22,
+          "horse": "Bolster",
+          "trainer": "K R Burke",
+          "jockey": "Pierre-Louis Jamin",
+          "score": 33.16,
+          "score_breakdown": {
+            "class_rating": 15.042,
+            "recent_form": 0.0,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 50.559997849612415,
+            "recent_form": 0.0,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 13.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 23,
+          "horse": "Dhahabi",
+          "trainer": "Ian Williams",
+          "jockey": "TBC",
+          "score": 5.0,
+          "score_breakdown": {
+            "class_rating": 0.0,
+            "recent_form": 0.157,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 0.0,
+            "recent_form": 0.9259259259259265,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 14.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        }
+      ],
+      "confidence": "HIGH",
+      "bet_recommendation": "WIN",
+      "race_stdev": 16.55,
+      "race_competitiveness": "CLEAR FAVOURITE",
+      "missing_data_flags": [
+        "going_data_insufficient"
+      ],
+      "race_name": "Betfred Nifty 50 Handicap",
+      "race_time": "15:15"
+    },
+    {
       "race_id": "epsom-2026-06-05-1600",
-      "going": "Good to soft in places (Light rain)",
+      "going": "Good to Soft",
       "ranked_runners": [
         {
           "rank": 1,
@@ -258,9 +3102,9 @@
             "effective_runs": 2.3,
             "weighted_win_rate": 0.609
           },
-          "morning_price": 34,
-          "odds_source": "estimated",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+          "morning_price": 26.0,
+          "odds_source": "sportinglife",
+          "odds_fetched_at": "2026-06-03T09:05:09+00:00"
         },
         {
           "rank": 2,
@@ -301,7 +3145,7 @@
             "effective_runs": 2.5,
             "weighted_win_rate": 0.22
           },
-          "morning_price": 34,
+          "morning_price": 34.0,
           "odds_source": "estimated",
           "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
@@ -344,7 +3188,7 @@
             "effective_runs": 1.725,
             "weighted_win_rate": 0.406
           },
-          "morning_price": 15,
+          "morning_price": 15.0,
           "odds_source": "ante_post",
           "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
@@ -387,9 +3231,9 @@
             "effective_runs": 2.45,
             "weighted_win_rate": 0.776
           },
-          "morning_price": 5,
-          "odds_source": "ante_post",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+          "morning_price": 4.5,
+          "odds_source": "sportinglife",
+          "odds_fetched_at": "2026-06-03T09:05:09+00:00"
         },
         {
           "rank": 5,
@@ -430,9 +3274,9 @@
             "effective_runs": 3.125,
             "weighted_win_rate": 0.576
           },
-          "morning_price": 3.5,
-          "odds_source": "ante_post",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+          "morning_price": 3.0,
+          "odds_source": "sportinglife",
+          "odds_fetched_at": "2026-06-03T09:05:09+00:00"
         },
         {
           "rank": 6,
@@ -473,7 +3317,7 @@
             "effective_runs": 2.0,
             "weighted_win_rate": 0.3
           },
-          "morning_price": 26,
+          "morning_price": 26.0,
           "odds_source": "estimated",
           "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
@@ -516,7 +3360,7 @@
             "effective_runs": 2.3,
             "weighted_win_rate": 0.435
           },
-          "morning_price": 21,
+          "morning_price": 21.0,
           "odds_source": "estimated",
           "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
@@ -559,7 +3403,7 @@
             "effective_runs": 2.2,
             "weighted_win_rate": 0.727
           },
-          "morning_price": 6,
+          "morning_price": 6.0,
           "odds_source": "ante_post",
           "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
@@ -602,7 +3446,7 @@
             "effective_runs": 1.8,
             "weighted_win_rate": 0.444
           },
-          "morning_price": 17,
+          "morning_price": 17.0,
           "odds_source": "estimated",
           "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
@@ -645,7 +3489,7 @@
             "effective_runs": 2.9,
             "weighted_win_rate": 0.086
           },
-          "morning_price": 101,
+          "morning_price": 101.0,
           "odds_source": "estimated",
           "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
@@ -688,7 +3532,7 @@
             "effective_runs": 2.05,
             "weighted_win_rate": 0.073
           },
-          "morning_price": 11,
+          "morning_price": 11.0,
           "odds_source": "ante_post",
           "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         }
@@ -702,6 +3546,2798 @@
       ],
       "race_name": "Betfred Oaks (Investec Oaks, Group 1, Fillies' Classic)",
       "race_time": "16:00"
+    },
+    {
+      "race_id": "epsom-2026-06-05-1640",
+      "going": "Good to Soft",
+      "ranked_runners": [
+        {
+          "rank": 1,
+          "horse": "Mister Winston",
+          "trainer": "Andrew Balding",
+          "jockey": "Oisin Murphy",
+          "score": 95.0,
+          "score_breakdown": {
+            "class_rating": 15.391,
+            "recent_form": 6.044,
+            "trainer_form": 6.8,
+            "jockey": 7.65,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 10.301
+          },
+          "raw_signal_values": {
+            "class_rating": 51.73543893797715,
+            "recent_form": 35.55555555555556,
+            "trainer_form": 80.0,
+            "jockey": 90.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 68.67307692307692,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "going_data": "sufficient",
+          "going_fit": {
+            "score": 0.6867307692307693,
+            "going_data": "sufficient",
+            "target_going": "Good to Soft",
+            "effective_runs": 2.6,
+            "weighted_win_rate": 0.413
+          },
+          "morning_price": 19.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 2,
+          "horse": "Sterling Knight",
+          "trainer": "Ed Dunlop",
+          "jockey": "Ryan Moore",
+          "score": 83.23,
+          "score_breakdown": {
+            "class_rating": 14.03,
+            "recent_form": 8.185,
+            "trainer_form": 0.0,
+            "jockey": 8.5,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 10.154
+          },
+          "raw_signal_values": {
+            "class_rating": 47.160190828764684,
+            "recent_form": 48.148148148148145,
+            "trainer_form": 0.0,
+            "jockey": 100.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 67.69230769230768,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "going_data": "sufficient",
+          "going_fit": {
+            "score": 0.6769230769230768,
+            "going_data": "sufficient",
+            "target_going": "Good to Soft",
+            "effective_runs": 3.25,
+            "weighted_win_rate": 0.354
+          },
+          "morning_price": 20.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 3,
+          "horse": "Zarathos",
+          "trainer": "Dylan Cunha",
+          "jockey": "TBC",
+          "score": 78.27,
+          "score_breakdown": {
+            "class_rating": 15.391,
+            "recent_form": 12.215,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 11.022
+          },
+          "raw_signal_values": {
+            "class_rating": 51.73543893797715,
+            "recent_form": 71.85185185185185,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 73.47881355932202,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "going_data": "sufficient",
+          "going_fit": {
+            "score": 0.7347881355932202,
+            "going_data": "sufficient",
+            "target_going": "Good to Soft",
+            "effective_runs": 2.95,
+            "weighted_win_rate": 0.475
+          },
+          "morning_price": 22.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 4,
+          "horse": "Asmen Warrior",
+          "trainer": "James Owen",
+          "jockey": "Silvestre De Sousa",
+          "score": 75.13,
+          "score_breakdown": {
+            "class_rating": 20.836,
+            "recent_form": 8.689,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 7.687
+          },
+          "raw_signal_values": {
+            "class_rating": 70.03643137482702,
+            "recent_form": 51.11111111111112,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 51.24999999999999,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "going_data": "sufficient",
+          "going_fit": {
+            "score": 0.5125,
+            "going_data": "sufficient",
+            "target_going": "Good to Soft",
+            "effective_runs": 3.0,
+            "weighted_win_rate": 0.025
+          },
+          "morning_price": 21.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 5,
+          "horse": "Jimmy Speaking",
+          "trainer": "Chris Dwyer",
+          "jockey": "TBC",
+          "score": 73.5,
+          "score_breakdown": {
+            "class_rating": 14.03,
+            "recent_form": 11.648,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 10.798
+          },
+          "raw_signal_values": {
+            "class_rating": 47.160190828764684,
+            "recent_form": 68.51851851851852,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 71.98581560283688,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "going_data": "sufficient",
+          "going_fit": {
+            "score": 0.7198581560283688,
+            "going_data": "sufficient",
+            "target_going": "Good to Soft",
+            "effective_runs": 3.525,
+            "weighted_win_rate": 0.44
+          },
+          "morning_price": 22.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 6,
+          "horse": "First Principle",
+          "trainer": "William Haggas",
+          "jockey": "Cieren Fallon",
+          "score": 70.45,
+          "score_breakdown": {
+            "class_rating": 16.752,
+            "recent_form": 2.456,
+            "trainer_form": 6.8,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 9.091
+          },
+          "raw_signal_values": {
+            "class_rating": 56.31068704718961,
+            "recent_form": 14.444444444444443,
+            "trainer_form": 80.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 60.60606060606061,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "going_data": "sufficient",
+          "going_fit": {
+            "score": 0.6060606060606061,
+            "going_data": "sufficient",
+            "target_going": "Good to Soft",
+            "effective_runs": 3.3,
+            "weighted_win_rate": 0.212
+          },
+          "morning_price": 19.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 7,
+          "horse": "Footwork",
+          "trainer": "Charlie Johnston",
+          "jockey": "TBC",
+          "score": 61.11,
+          "score_breakdown": {
+            "class_rating": 16.752,
+            "recent_form": 8.878,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 56.31068704718961,
+            "recent_form": 52.22222222222223,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 22.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 8,
+          "horse": "Man Of La Mancha",
+          "trainer": "Ralph Beckett",
+          "jockey": "Rossa Ryan",
+          "score": 59.25,
+          "score_breakdown": {
+            "class_rating": 12.669,
+            "recent_form": 6.17,
+            "trainer_form": 5.95,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 42.58494271955222,
+            "recent_form": 36.2962962962963,
+            "trainer_form": 70.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 21.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 9,
+          "horse": "Principality",
+          "trainer": "Harry Eustace",
+          "jockey": "George Wood",
+          "score": 57.07,
+          "score_breakdown": {
+            "class_rating": 16.752,
+            "recent_form": 7.052,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 56.31068704718961,
+            "recent_form": 41.48148148148148,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 21.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 10,
+          "horse": "Walsingham",
+          "trainer": "David O'Meara",
+          "jockey": "Jason Watson",
+          "score": 56.79,
+          "score_breakdown": {
+            "class_rating": 16.752,
+            "recent_form": 6.926,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 56.31068704718961,
+            "recent_form": 40.74074074074074,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 21.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 11,
+          "horse": "Mirsky",
+          "trainer": "David O'Meara",
+          "jockey": "Hector Crouch",
+          "score": 54.7,
+          "score_breakdown": {
+            "class_rating": 16.752,
+            "recent_form": 5.981,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 56.31068704718961,
+            "recent_form": 35.18518518518518,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 19.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 12,
+          "horse": "Ozat",
+          "trainer": "Ian Williams",
+          "jockey": "Charles Bishop",
+          "score": 54.4,
+          "score_breakdown": {
+            "class_rating": 20.836,
+            "recent_form": 1.763,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 70.03643137482702,
+            "recent_form": 10.37037037037037,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 18.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 13,
+          "horse": "Shafdar",
+          "trainer": "Ian Williams",
+          "jockey": "Edward Greatrex",
+          "score": 53.5,
+          "score_breakdown": {
+            "class_rating": 15.391,
+            "recent_form": 6.8,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 51.73543893797715,
+            "recent_form": 40.0,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 21.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 14,
+          "horse": "Final Night",
+          "trainer": "John Butler",
+          "jockey": "TBC",
+          "score": 52.3,
+          "score_breakdown": {
+            "class_rating": 14.03,
+            "recent_form": 7.619,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 47.160190828764684,
+            "recent_form": 44.81481481481481,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 24.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 15,
+          "horse": "Mr Swivell",
+          "trainer": "Kevin Philippart De Foy",
+          "jockey": "Ray Dawson",
+          "score": 50.75,
+          "score_breakdown": {
+            "class_rating": 18.114,
+            "recent_form": 2.833,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 60.885935156402084,
+            "recent_form": 16.666666666666664,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 20.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 16,
+          "horse": "Popmaster",
+          "trainer": "Ed Walker",
+          "jockey": "Kieran Shoemark",
+          "score": 50.24,
+          "score_breakdown": {
+            "class_rating": 16.752,
+            "recent_form": 3.967,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 56.31068704718961,
+            "recent_form": 23.333333333333332,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 19.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 17,
+          "horse": "Port Road",
+          "trainer": "Simon Dow",
+          "jockey": "TBC",
+          "score": 50.07,
+          "score_breakdown": {
+            "class_rating": 14.03,
+            "recent_form": 6.611,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 47.160190828764684,
+            "recent_form": 38.88888888888889,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 24.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 18,
+          "horse": "Stem",
+          "trainer": "Richard Hannon",
+          "jockey": "Pat Dobbs",
+          "score": 49.72,
+          "score_breakdown": {
+            "class_rating": 8.586,
+            "recent_form": 5.1,
+            "trainer_form": 6.8,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 28.859198391914813,
+            "recent_form": 30.0,
+            "trainer_form": 80.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 21.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 19,
+          "horse": "Bragbor",
+          "trainer": "Richard & Peter Fahey",
+          "jockey": "TBC",
+          "score": 49.63,
+          "score_breakdown": {
+            "class_rating": 18.114,
+            "recent_form": 2.33,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 60.885935156402084,
+            "recent_form": 13.703703703703704,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 21.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 20,
+          "horse": "Thunder Roar",
+          "trainer": "Tony Coyle & Kaine Wood",
+          "jockey": "Colin Keane",
+          "score": 46.98,
+          "score_breakdown": {
+            "class_rating": 18.114,
+            "recent_form": 1.133,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 60.885935156402084,
+            "recent_form": 6.666666666666667,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 19.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 21,
+          "horse": "Triple Double A",
+          "trainer": "Hugo Palmer",
+          "jockey": "Saffie Osborne",
+          "score": 46.06,
+          "score_breakdown": {
+            "class_rating": 16.752,
+            "recent_form": 2.078,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 56.31068704718961,
+            "recent_form": 12.222222222222221,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 24.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 22,
+          "horse": "Celeborn",
+          "trainer": "George Boughey",
+          "jockey": "Billy Loughnane",
+          "score": 45.72,
+          "score_breakdown": {
+            "class_rating": 11.308,
+            "recent_form": 7.367,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 38.00969461033974,
+            "recent_form": 43.33333333333333,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 21.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 23,
+          "horse": "A War Eagle",
+          "trainer": "Michael & David Easterby",
+          "jockey": "Billy Garritty",
+          "score": 45.42,
+          "score_breakdown": {
+            "class_rating": 15.391,
+            "recent_form": 3.148,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 51.73543893797715,
+            "recent_form": 18.51851851851852,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 22.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 24,
+          "horse": "Hot Cash",
+          "trainer": "Jack Channon",
+          "jockey": "TBC",
+          "score": 45.19,
+          "score_breakdown": {
+            "class_rating": 14.03,
+            "recent_form": 4.407,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 47.160190828764684,
+            "recent_form": 25.925925925925924,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 22.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 25,
+          "horse": "Alpha Crucis",
+          "trainer": "Gary & Josh Moore",
+          "jockey": "David Egan",
+          "score": 45.14,
+          "score_breakdown": {
+            "class_rating": 15.391,
+            "recent_form": 3.022,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 51.73543893797715,
+            "recent_form": 17.77777777777778,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 20.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 26,
+          "horse": "Dante's Lad",
+          "trainer": "Ian Williams",
+          "jockey": "TBC",
+          "score": 43.13,
+          "score_breakdown": {
+            "class_rating": 16.752,
+            "recent_form": 0.756,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 56.31068704718961,
+            "recent_form": 4.444444444444445,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 21.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 27,
+          "horse": "Ancient Rome",
+          "trainer": "Charles Hills",
+          "jockey": "Jamie Spencer",
+          "score": 42.3,
+          "score_breakdown": {
+            "class_rating": 16.752,
+            "recent_form": 0.378,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 56.31068704718961,
+            "recent_form": 2.2222222222222223,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 19.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 28,
+          "horse": "Nizam",
+          "trainer": "Ian Williams",
+          "jockey": "TBC",
+          "score": 37.86,
+          "score_breakdown": {
+            "class_rating": 12.669,
+            "recent_form": 2.456,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 42.58494271955222,
+            "recent_form": 14.444444444444443,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 19.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 29,
+          "horse": "Blue Brother",
+          "trainer": "Hamad Al Jehani",
+          "jockey": "TBC",
+          "score": 5.0,
+          "score_breakdown": {
+            "class_rating": 0.0,
+            "recent_form": 0.283,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 0.0,
+            "recent_form": 1.666666666666667,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 18.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        }
+      ],
+      "confidence": "MED",
+      "bet_recommendation": "EW",
+      "race_stdev": 16.32,
+      "race_competitiveness": "CLEAR FAVOURITE",
+      "missing_data_flags": [
+        "going_data_insufficient"
+      ],
+      "race_name": "HKJC World Pool Handicap",
+      "race_time": "16:40"
+    },
+    {
+      "race_id": "epsom-2026-06-05-1715",
+      "going": "Good to Soft",
+      "ranked_runners": [
+        {
+          "rank": 1,
+          "horse": "Stellar Sunrise",
+          "trainer": "Andrew Balding",
+          "jockey": "Oisin Murphy",
+          "score": 95.0,
+          "score_breakdown": {
+            "class_rating": 19.242,
+            "recent_form": 10.074,
+            "trainer_form": 6.8,
+            "jockey": 7.65,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 10.822
+          },
+          "raw_signal_values": {
+            "class_rating": 64.67949314393728,
+            "recent_form": 59.25925925925925,
+            "trainer_form": 80.0,
+            "jockey": 90.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 72.14684466019418,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "going_data": "sufficient",
+          "going_fit": {
+            "score": 0.7214684466019418,
+            "going_data": "sufficient",
+            "target_going": "Good to Soft",
+            "effective_runs": 2.575,
+            "weighted_win_rate": 0.485
+          },
+          "morning_price": 7.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 2,
+          "horse": "Ten Carat Harry",
+          "trainer": "Jamie Osborne",
+          "jockey": "Saffie Osborne",
+          "score": 46.42,
+          "score_breakdown": {
+            "class_rating": 16.447,
+            "recent_form": 10.2,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 10.568
+          },
+          "raw_signal_values": {
+            "class_rating": 55.284617531817425,
+            "recent_form": 60.0,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 70.45454545454545,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "going_data": "sufficient",
+          "going_fit": {
+            "score": 0.7045454545454546,
+            "going_data": "sufficient",
+            "target_going": "Good to Soft",
+            "effective_runs": 3.3,
+            "weighted_win_rate": 0.409
+          },
+          "morning_price": 7.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 3,
+          "horse": "Postmodern",
+          "trainer": "Hamad Al Jehani",
+          "jockey": "James Doyle",
+          "score": 41.59,
+          "score_breakdown": {
+            "class_rating": 15.748,
+            "recent_form": 6.611,
+            "trainer_form": 0.0,
+            "jockey": 5.95,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 7.181
+          },
+          "raw_signal_values": {
+            "class_rating": 52.935898628787456,
+            "recent_form": 38.88888888888889,
+            "trainer_form": 0.0,
+            "jockey": 70.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 47.871753246753244,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "going_data": "sufficient",
+          "going_fit": {
+            "score": 0.47871753246753246,
+            "going_data": "sufficient",
+            "target_going": "Good to Soft",
+            "effective_runs": 1.925,
+            "weighted_win_rate": 0.065
+          },
+          "morning_price": 7.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 4,
+          "horse": "Andab",
+          "trainer": "Joseph Patrick O'Brien",
+          "jockey": "TBC",
+          "score": 38.79,
+          "score_breakdown": {
+            "class_rating": 17.146,
+            "recent_form": 8.689,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 8.654
+          },
+          "raw_signal_values": {
+            "class_rating": 57.63333643484739,
+            "recent_form": 51.11111111111112,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 57.692307692307686,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "going_data": "sufficient",
+          "going_fit": {
+            "score": 0.5769230769230769,
+            "going_data": "sufficient",
+            "target_going": "Good to Soft",
+            "effective_runs": 3.575,
+            "weighted_win_rate": 0.154
+          },
+          "morning_price": 7.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 5,
+          "horse": "Greek Mythology",
+          "trainer": "Joseph Patrick O'Brien",
+          "jockey": "TBC",
+          "score": 35.11,
+          "score_breakdown": {
+            "class_rating": 15.748,
+            "recent_form": 8.5,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 8.925
+          },
+          "raw_signal_values": {
+            "class_rating": 52.935898628787456,
+            "recent_form": 50.0,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 59.5,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "going_data": "sufficient",
+          "going_fit": {
+            "score": 0.595,
+            "going_data": "sufficient",
+            "target_going": "Good to Soft",
+            "effective_runs": 2.4,
+            "weighted_win_rate": 0.25
+          },
+          "morning_price": 7.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 6,
+          "horse": "Green Sense",
+          "trainer": "Joseph Patrick O'Brien",
+          "jockey": "TBC",
+          "score": 29.51,
+          "score_breakdown": {
+            "class_rating": 19.242,
+            "recent_form": 3.148,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 8.779
+          },
+          "raw_signal_values": {
+            "class_rating": 64.67949314393728,
+            "recent_form": 18.51851851851852,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 58.52713178294574,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "going_data": "sufficient",
+          "going_fit": {
+            "score": 0.5852713178294574,
+            "going_data": "sufficient",
+            "target_going": "Good to Soft",
+            "effective_runs": 3.225,
+            "weighted_win_rate": 0.171
+          },
+          "morning_price": 7.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 7,
+          "horse": "Northern Champion",
+          "trainer": "Ed Walker",
+          "jockey": "Kieran Shoemark",
+          "score": 19.17,
+          "score_breakdown": {
+            "class_rating": 14.351,
+            "recent_form": 7.87,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 48.23846082272753,
+            "recent_form": 46.2962962962963,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 7.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 8,
+          "horse": "Awaken",
+          "trainer": "George Boughey",
+          "jockey": "Billy Loughnane",
+          "score": 16.44,
+          "score_breakdown": {
+            "class_rating": 17.845,
+            "recent_form": 3.4,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 59.98205533787736,
+            "recent_form": 20.0,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 7.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 9,
+          "horse": "Assaranca",
+          "trainer": "Richard Hannon",
+          "jockey": "Sean Levey",
+          "score": 14.35,
+          "score_breakdown": {
+            "class_rating": 4.569,
+            "recent_form": 9.13,
+            "trainer_form": 6.8,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 15.35639618030801,
+            "recent_form": 53.70370370370371,
+            "trainer_form": 80.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 10.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 10,
+          "horse": "Ellusive Butterfly",
+          "trainer": "K R Burke",
+          "jockey": "Clifford Lee",
+          "score": 13.23,
+          "score_breakdown": {
+            "class_rating": 16.447,
+            "recent_form": 3.652,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 55.284617531817425,
+            "recent_form": 21.48148148148148,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 8.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 11,
+          "horse": "Ardisia",
+          "trainer": "Hugo Palmer",
+          "jockey": "David Probert",
+          "score": 11.15,
+          "score_breakdown": {
+            "class_rating": 17.845,
+            "recent_form": 1.511,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 59.98205533787736,
+            "recent_form": 8.88888888888889,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 7.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 12,
+          "horse": "Serenetta",
+          "trainer": "Ralph Beckett",
+          "jockey": "TBC",
+          "score": 5.0,
+          "score_breakdown": {
+            "class_rating": 3.87,
+            "recent_form": 7.335,
+            "trainer_form": 5.95,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 13.007677277278043,
+            "recent_form": 43.148148148148145,
+            "trainer_form": 70.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 8.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        }
+      ],
+      "confidence": "HIGH",
+      "bet_recommendation": "WIN",
+      "race_stdev": 23.34,
+      "race_competitiveness": "CLEAR FAVOURITE",
+      "missing_data_flags": [
+        "going_data_insufficient"
+      ],
+      "race_name": "Cygames Surrey Stakes (Listed)",
+      "race_time": "17:15"
+    },
+    {
+      "race_id": "epsom-2026-06-05-1750",
+      "going": "Good to Soft",
+      "ranked_runners": [
+        {
+          "rank": 1,
+          "horse": "Dance In The Storm",
+          "trainer": "Andrew Balding",
+          "jockey": "Oisin Murphy",
+          "score": 95.0,
+          "score_breakdown": {
+            "class_rating": 18.747,
+            "recent_form": 8.878,
+            "trainer_form": 6.8,
+            "jockey": 7.65,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 10.653
+          },
+          "raw_signal_values": {
+            "class_rating": 63.01448015738384,
+            "recent_form": 52.22222222222223,
+            "trainer_form": 80.0,
+            "jockey": 90.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 71.02272727272727,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "going_data": "sufficient",
+          "going_fit": {
+            "score": 0.7102272727272726,
+            "going_data": "sufficient",
+            "target_going": "Good to Soft",
+            "effective_runs": 2.75,
+            "weighted_win_rate": 0.445
+          },
+          "morning_price": 17.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 2,
+          "horse": "Dublin Bay",
+          "trainer": "Ollie Sangster",
+          "jockey": "TBC",
+          "score": 70.92,
+          "score_breakdown": {
+            "class_rating": 19.521,
+            "recent_form": 10.2,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 11.25
+          },
+          "raw_signal_values": {
+            "class_rating": 65.6173761888606,
+            "recent_form": 60.0,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 75.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "going_data": "sufficient",
+          "going_fit": {
+            "score": 0.75,
+            "going_data": "sufficient",
+            "target_going": "Good to Soft",
+            "effective_runs": 3.65,
+            "weighted_win_rate": 0.5
+          },
+          "morning_price": 21.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 3,
+          "horse": "Zarathos",
+          "trainer": "Dylan Cunha",
+          "jockey": "George Wood",
+          "score": 68.23,
+          "score_breakdown": {
+            "class_rating": 16.424,
+            "recent_form": 12.215,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 11.022
+          },
+          "raw_signal_values": {
+            "class_rating": 55.20579206295354,
+            "recent_form": 71.85185185185185,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 73.47881355932202,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "going_data": "sufficient",
+          "going_fit": {
+            "score": 0.7347881355932202,
+            "going_data": "sufficient",
+            "target_going": "Good to Soft",
+            "effective_runs": 2.95,
+            "weighted_win_rate": 0.475
+          },
+          "morning_price": 20.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 4,
+          "horse": "Pietro",
+          "trainer": "James Fanshawe",
+          "jockey": "George Wood",
+          "score": 61.27,
+          "score_breakdown": {
+            "class_rating": 16.424,
+            "recent_form": 10.074,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 9.765
+          },
+          "raw_signal_values": {
+            "class_rating": 55.20579206295354,
+            "recent_form": 59.25925925925925,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 65.1006711409396,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "going_data": "sufficient",
+          "going_fit": {
+            "score": 0.6510067114093959,
+            "going_data": "sufficient",
+            "target_going": "Good to Soft",
+            "effective_runs": 3.725,
+            "weighted_win_rate": 0.302
+          },
+          "morning_price": 20.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 5,
+          "horse": "Brighton Boy",
+          "trainer": "Tim Easterby",
+          "jockey": "TBC",
+          "score": 58.91,
+          "score_breakdown": {
+            "class_rating": 17.198,
+            "recent_form": 8.5,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 9.413
+          },
+          "raw_signal_values": {
+            "class_rating": 57.8086880944303,
+            "recent_form": 50.0,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 62.751677852349,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "going_data": "sufficient",
+          "going_fit": {
+            "score": 0.62751677852349,
+            "going_data": "sufficient",
+            "target_going": "Good to Soft",
+            "effective_runs": 3.725,
+            "weighted_win_rate": 0.255
+          },
+          "morning_price": 20.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 6,
+          "horse": "Talis Evolvere",
+          "trainer": "Richard Hannon",
+          "jockey": "Sean Levey",
+          "score": 54.55,
+          "score_breakdown": {
+            "class_rating": 17.198,
+            "recent_form": 1.133,
+            "trainer_form": 6.8,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 7.849
+          },
+          "raw_signal_values": {
+            "class_rating": 57.8086880944303,
+            "recent_form": 6.666666666666667,
+            "trainer_form": 80.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 52.32558139534883,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [],
+          "going_data": "sufficient",
+          "going_fit": {
+            "score": 0.5232558139534883,
+            "going_data": "sufficient",
+            "target_going": "Good to Soft",
+            "effective_runs": 3.225,
+            "weighted_win_rate": 0.047
+          },
+          "morning_price": 19.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 7,
+          "horse": "Sterling Knight",
+          "trainer": "Ed Dunlop",
+          "jockey": "TBC",
+          "score": 46.57,
+          "score_breakdown": {
+            "class_rating": 15.649,
+            "recent_form": 8.185,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 52.60289603147677,
+            "recent_form": 48.148148148148145,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 18.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 8,
+          "horse": "Son",
+          "trainer": "Tim Easterby",
+          "jockey": "David Allan",
+          "score": 45.82,
+          "score_breakdown": {
+            "class_rating": 18.747,
+            "recent_form": 4.722,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 63.01448015738384,
+            "recent_form": 27.77777777777778,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 21.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 9,
+          "horse": "Crimson Spirit",
+          "trainer": "Daniel & Claire Kubler",
+          "jockey": "Ray Dawson",
+          "score": 45.66,
+          "score_breakdown": {
+            "class_rating": 15.649,
+            "recent_form": 7.744,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 52.60289603147677,
+            "recent_form": 45.55555555555556,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 18.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 10,
+          "horse": "Musical Angel",
+          "trainer": "Simon Dow",
+          "jockey": "David Probert",
+          "score": 44.89,
+          "score_breakdown": {
+            "class_rating": 15.649,
+            "recent_form": 7.367,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 52.60289603147677,
+            "recent_form": 43.33333333333333,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 21.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 11,
+          "horse": "Supido",
+          "trainer": "Ian Williams",
+          "jockey": "Billy Loughnane",
+          "score": 44.63,
+          "score_breakdown": {
+            "class_rating": 15.649,
+            "recent_form": 7.241,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 52.60289603147677,
+            "recent_form": 42.592592592592595,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 17.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 12,
+          "horse": "Veblen Good",
+          "trainer": "David O'Meara",
+          "jockey": "Rossa Ryan",
+          "score": 44.63,
+          "score_breakdown": {
+            "class_rating": 15.649,
+            "recent_form": 7.241,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 52.60289603147677,
+            "recent_form": 42.592592592592595,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 18.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 13,
+          "horse": "Mister Bluebird",
+          "trainer": "Heather Main",
+          "jockey": "Colin Keane",
+          "score": 44.12,
+          "score_breakdown": {
+            "class_rating": 15.649,
+            "recent_form": 6.989,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 52.60289603147677,
+            "recent_form": 41.11111111111111,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 19.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 14,
+          "horse": "Sondad",
+          "trainer": "Michael & David Easterby",
+          "jockey": "TBC",
+          "score": 41.87,
+          "score_breakdown": {
+            "class_rating": 17.198,
+            "recent_form": 4.344,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 57.8086880944303,
+            "recent_form": 25.55555555555556,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 18.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 15,
+          "horse": "Arctic Thunder",
+          "trainer": "Ed Walker",
+          "jockey": "Kieran Shoemark",
+          "score": 40.96,
+          "score_breakdown": {
+            "class_rating": 19.521,
+            "recent_form": 1.574,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 65.6173761888606,
+            "recent_form": 9.25925925925926,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 20.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 16,
+          "horse": "Aurora Majesty",
+          "trainer": "Archie Watson",
+          "jockey": "Luke Morris",
+          "score": 40.31,
+          "score_breakdown": {
+            "class_rating": 15.649,
+            "recent_form": 5.131,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 52.60289603147677,
+            "recent_form": 30.185185185185183,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 18.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 17,
+          "horse": "Monarch's Gold",
+          "trainer": "Kevin Philippart De Foy",
+          "jockey": "David Egan",
+          "score": 38.58,
+          "score_breakdown": {
+            "class_rating": 13.326,
+            "recent_form": 6.611,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 44.794207937046465,
+            "recent_form": 38.88888888888889,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 18.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 18,
+          "horse": "A War Eagle",
+          "trainer": "Michael & David Easterby",
+          "jockey": "Billy Garritty",
+          "score": 37.83,
+          "score_breakdown": {
+            "class_rating": 16.424,
+            "recent_form": 3.148,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 55.20579206295354,
+            "recent_form": 18.51851851851852,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 20.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 19,
+          "horse": "Rhoscolyn",
+          "trainer": "David O'Meara",
+          "jockey": "Jason Watson",
+          "score": 37.43,
+          "score_breakdown": {
+            "class_rating": 18.747,
+            "recent_form": 0.63,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 63.01448015738384,
+            "recent_form": 3.7037037037037033,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 18.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 20,
+          "horse": "The Angel King",
+          "trainer": "Ian Williams",
+          "jockey": "Billy Loughnane",
+          "score": 36.84,
+          "score_breakdown": {
+            "class_rating": 17.198,
+            "recent_form": 1.889,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 57.8086880944303,
+            "recent_form": 11.11111111111111,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 18.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 21,
+          "horse": "Sunny Smile",
+          "trainer": "Hugo Palmer",
+          "jockey": "TBC",
+          "score": 32.26,
+          "score_breakdown": {
+            "class_rating": 9.454,
+            "recent_form": 7.398,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 31.779727779662625,
+            "recent_form": 43.51851851851852,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 21.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 22,
+          "horse": "Rare Change",
+          "trainer": "Richard Hughes",
+          "jockey": "Saffie Osborne",
+          "score": 32.08,
+          "score_breakdown": {
+            "class_rating": 14.875,
+            "recent_form": 1.889,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 50.0,
+            "recent_form": 11.11111111111111,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 21.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 23,
+          "horse": "Solar Aclaim",
+          "trainer": "Julie Camacho",
+          "jockey": "TBC",
+          "score": 28.17,
+          "score_breakdown": {
+            "class_rating": 14.101,
+            "recent_form": 0.756,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 47.39710396852323,
+            "recent_form": 4.444444444444445,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 19.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 24,
+          "horse": "Tailgunner Joe",
+          "trainer": "Dylan Cunha",
+          "jockey": "TBC",
+          "score": 27.32,
+          "score_breakdown": {
+            "class_rating": 12.552,
+            "recent_form": 1.889,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 42.1913119055697,
+            "recent_form": 11.11111111111111,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 19.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 25,
+          "horse": "Colombier",
+          "trainer": "Hamad Al Jehani",
+          "jockey": "James Doyle",
+          "score": 15.09,
+          "score_breakdown": {
+            "class_rating": 0.0,
+            "recent_form": 2.519,
+            "trainer_form": 0.0,
+            "jockey": 5.95,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 0.0,
+            "recent_form": 14.814814814814813,
+            "trainer_form": 0.0,
+            "jockey": 70.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 18.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 26,
+          "horse": "Blue Brother",
+          "trainer": "Hamad Al Jehani",
+          "jockey": "TBC",
+          "score": 5.0,
+          "score_breakdown": {
+            "class_rating": 3.26,
+            "recent_form": 0.283,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 4.25,
+            "going": 2.125,
+            "draw_bias": 2.125,
+            "class_move": 2.125,
+            "going_fit": 5.25
+          },
+          "raw_signal_values": {
+            "class_rating": 10.956559527848487,
+            "recent_form": 1.666666666666667,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 16.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        }
+      ],
+      "confidence": "HIGH",
+      "bet_recommendation": "WIN",
+      "race_stdev": 17.45,
+      "race_competitiveness": "CLEAR FAVOURITE",
+      "missing_data_flags": [
+        "going_data_insufficient"
+      ],
+      "race_name": "Debenhams Handicap",
+      "race_time": "17:50"
     }
   ]
 }

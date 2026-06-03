@@ -1,17 +1,55 @@
 {
-  "bankroll": 100.0,
+  "bankroll": 200.0,
   "singles": [
+    {
+      "race_id": "epsom-2026-06-06-1330",
+      "horse": "Lake Forest",
+      "bet_type": "PASS",
+      "stake_pts": 0.0,
+      "stake_gbp": 0.0,
+      "model_prob": 0.1493,
+      "implied_prob": 0.1429,
+      "edge_pct": 4.51,
+      "expected_return_gbp": 0.0,
+      "rationale": "Confidence LOW, win edge 4.5%, combined EW edge 3.0% \u2014 below thresholds (15% WIN / 20% EW combined)."
+    },
+    {
+      "race_id": "epsom-2026-06-06-1405",
+      "horse": "Pacific Mission",
+      "bet_type": "PASS",
+      "stake_pts": 0.0,
+      "stake_gbp": 0.0,
+      "model_prob": 0.1302,
+      "implied_prob": 0.1333,
+      "edge_pct": -2.33,
+      "expected_return_gbp": 0.0,
+      "rationale": "Confidence LOW, win edge -2.3%, combined EW edge -12.5% \u2014 below thresholds (15% WIN / 20% EW combined)."
+    },
     {
       "race_id": "epsom-2026-06-06-1440",
       "horse": "Jan Brueghel",
       "bet_type": "PASS",
       "stake_pts": 0.0,
       "stake_gbp": 0.0,
-      "model_prob": 0.1885,
-      "implied_prob": 0.2857,
-      "edge_pct": -34.03,
+      "model_prob": 0.197,
+      "implied_prob": 0.25,
+      "edge_pct": -21.22,
       "expected_return_gbp": 0.0,
-      "rationale": "Confidence LOW, win edge -34.0%, combined EW edge -49.2% \u2014 below thresholds (15% WIN / 20% EW combined)."
+      "rationale": "Confidence LOW, win edge -21.2%, combined EW edge -26.7% \u2014 below thresholds (15% WIN / 20% EW combined)."
+    },
+    {
+      "race_id": "epsom-2026-06-06-1515",
+      "horse": "Kinswoman",
+      "bet_type": "WIN",
+      "stake_pts": 0.46,
+      "stake_gbp": 0.92,
+      "model_prob": 0.0594,
+      "implied_prob": 0.0417,
+      "edge_pct": 42.49,
+      "odds_decimal": 24.0,
+      "odds_raw": "24.0",
+      "expected_return_gbp": 1.31,
+      "rationale": "Rank #1 (score 95.0), confidence HIGH, model_prob 0.0594 vs implied 0.0417 \u2192 edge 42.5% \u2265 15% threshold. Quarter-Kelly stake: 0.46pts (\u00a30.92) @ 24.0."
     },
     {
       "race_id": "epsom-2026-06-06-1600",
@@ -19,18 +57,167 @@
       "bet_type": "PASS",
       "stake_pts": 0.0,
       "stake_gbp": 0.0,
-      "model_prob": 0.0902,
-      "implied_prob": 0.2,
-      "edge_pct": -54.89,
+      "model_prob": 0.0865,
+      "implied_prob": 0.1818,
+      "edge_pct": -52.42,
       "expected_return_gbp": 0.0,
-      "rationale": "Confidence LOW, win edge -54.9%, combined EW edge -106.2% \u2014 below thresholds (15% WIN / 20% EW combined)."
+      "rationale": "Confidence LOW, win edge -52.4%, combined EW edge -103.1% \u2014 below thresholds (15% WIN / 20% EW combined)."
+    },
+    {
+      "race_id": "epsom-2026-06-06-1640",
+      "horse": "Allegresse",
+      "bet_type": "WIN",
+      "stake_pts": 0.98,
+      "stake_gbp": 1.96,
+      "model_prob": 0.1459,
+      "implied_prob": 0.1111,
+      "edge_pct": 31.27,
+      "odds_decimal": 9.0,
+      "odds_raw": "9.0",
+      "expected_return_gbp": 2.57,
+      "rationale": "Rank #1 (score 95.0), confidence HIGH, model_prob 0.1459 vs implied 0.1111 \u2192 edge 31.3% \u2265 15% threshold. Quarter-Kelly stake: 0.98pts (\u00a31.96) @ 9.0."
+    },
+    {
+      "race_id": "epsom-2026-06-06-1720",
+      "horse": "Lord Melbourne",
+      "bet_type": "EW",
+      "stake_pts": 1.26,
+      "stake_gbp": 2.52,
+      "model_prob": 0.0973,
+      "implied_prob": 0.0741,
+      "edge_pct": 31.31,
+      "place_edge_pct": 2.13,
+      "combined_edge_pct": 33.44,
+      "odds_decimal": 13.5,
+      "odds_raw": "13.5",
+      "places_paid": 3,
+      "model_place_prob": 0.2918,
+      "place_odds_decimal": 3.5,
+      "expected_return_gbp": 2.94,
+      "rationale": "Rank #1 (score 95.0), confidence MED. Win edge 31.3% + place edge 2.1% = 33.4% combined \u2265 20% EW threshold. EW: 0.63pts WIN + 0.63pts PLACE = 1.26pts total (\u00a32.52) @ 13.5 (3 places, 1/5 odds)."
+    },
+    {
+      "race_id": "epsom-2026-06-06-1755",
+      "horse": "Dance In The Storm",
+      "bet_type": "WIN",
+      "stake_pts": 1.42,
+      "stake_gbp": 2.84,
+      "model_prob": 0.1076,
+      "implied_prob": 0.0541,
+      "edge_pct": 99.15,
+      "odds_decimal": 18.5,
+      "odds_raw": "18.5",
+      "expected_return_gbp": 5.66,
+      "rationale": "Rank #1 (score 95.0), confidence HIGH, model_prob 0.1076 vs implied 0.0541 \u2192 edge 99.2% \u2265 15% threshold. Quarter-Kelly stake: 1.42pts (\u00a32.84) @ 18.5."
     }
   ],
-  "doubles": [],
-  "trebles": [],
+  "doubles": [
+    {
+      "legs": [
+        {
+          "race_id": "epsom-2026-06-06-1515",
+          "horse": "Kinswoman",
+          "odds_decimal": 24.0,
+          "model_prob": 0.0594
+        },
+        {
+          "race_id": "epsom-2026-06-06-1640",
+          "horse": "Allegresse",
+          "odds_decimal": 9.0,
+          "model_prob": 0.1459
+        }
+      ],
+      "combined_stake_gbp": 1.0,
+      "potential_return_gbp": 216.0,
+      "combined_prob": 0.008666,
+      "expected_value_gbp": 0.87,
+      "rationale": "Double: Kinswoman \u00d7 Allegresse. Model probs: 0.0594 \u00d7 0.1459 = 0.00867. Dec odds product: 216.00. EV: \u00a30.87."
+    },
+    {
+      "legs": [
+        {
+          "race_id": "epsom-2026-06-06-1515",
+          "horse": "Kinswoman",
+          "odds_decimal": 24.0,
+          "model_prob": 0.0594
+        },
+        {
+          "race_id": "epsom-2026-06-06-1755",
+          "horse": "Dance In The Storm",
+          "odds_decimal": 18.5,
+          "model_prob": 0.1076
+        }
+      ],
+      "combined_stake_gbp": 1.0,
+      "potential_return_gbp": 444.0,
+      "combined_prob": 0.006391,
+      "expected_value_gbp": 1.84,
+      "rationale": "Double: Kinswoman \u00d7 Dance In The Storm. Model probs: 0.0594 \u00d7 0.1076 = 0.00639. Dec odds product: 444.00. EV: \u00a31.84."
+    },
+    {
+      "legs": [
+        {
+          "race_id": "epsom-2026-06-06-1640",
+          "horse": "Allegresse",
+          "odds_decimal": 9.0,
+          "model_prob": 0.1459
+        },
+        {
+          "race_id": "epsom-2026-06-06-1755",
+          "horse": "Dance In The Storm",
+          "odds_decimal": 18.5,
+          "model_prob": 0.1076
+        }
+      ],
+      "combined_stake_gbp": 1.0,
+      "potential_return_gbp": 166.5,
+      "combined_prob": 0.015699,
+      "expected_value_gbp": 1.61,
+      "rationale": "Double: Allegresse \u00d7 Dance In The Storm. Model probs: 0.1459 \u00d7 0.1076 = 0.01570. Dec odds product: 166.50. EV: \u00a31.61."
+    }
+  ],
+  "trebles": [
+    {
+      "legs": [
+        {
+          "race_id": "epsom-2026-06-06-1515",
+          "horse": "Kinswoman",
+          "odds_decimal": 24.0,
+          "model_prob": 0.0594
+        },
+        {
+          "race_id": "epsom-2026-06-06-1640",
+          "horse": "Allegresse",
+          "odds_decimal": 9.0,
+          "model_prob": 0.1459
+        },
+        {
+          "race_id": "epsom-2026-06-06-1755",
+          "horse": "Dance In The Storm",
+          "odds_decimal": 18.5,
+          "model_prob": 0.1076
+        }
+      ],
+      "combined_stake_gbp": 1.0,
+      "potential_return_gbp": 3996.0,
+      "combined_prob": 0.000933,
+      "expected_value_gbp": 2.73,
+      "rationale": "Treble: Kinswoman \u00d7 Allegresse \u00d7 Dance In The Storm. Combined prob 0.00093. Dec odds product: 3996.00. EV: \u00a32.73."
+    }
+  ],
   "accumulators": [],
   "lucky_15": null,
   "outsiders": [
+    {
+      "race_id": "epsom-2026-06-06-1330",
+      "outsider_pick": null,
+      "outsider_rationale": "Insufficient market signal"
+    },
+    {
+      "race_id": "epsom-2026-06-06-1405",
+      "outsider_pick": null,
+      "outsider_rationale": "Insufficient market signal"
+    },
     {
       "race_id": "epsom-2026-06-06-1440",
       "race_name": "Coolmore Coronation Cup (Group 1)",
@@ -40,17 +227,22 @@
       "jockey": "TBC",
       "morning_price": 13.0,
       "odds_source": "estimated",
-      "model_rank": 2,
+      "model_rank": 3,
       "market_rank": 6,
-      "rank_delta": 4,
+      "rank_delta": 3,
       "bet_type": "EW",
       "stake_pts": 0.25,
-      "stake_gbp": 0.25,
+      "stake_gbp": 0.5,
       "ew_terms": "1/4 odds, 1-1-2-3",
-      "potential_return_gbp_win": 3.25,
-      "potential_return_gbp_place": 1.0,
-      "rationale": "Model rates 2; market rates 6. Disagreement of 4 ranks \u2014 value play.",
+      "potential_return_gbp_win": 6.5,
+      "potential_return_gbp_place": 2.0,
+      "rationale": "Model rates 3; market rates 6. Disagreement of 3 ranks \u2014 value play.",
       "outsider_pick": "See The Fire"
+    },
+    {
+      "race_id": "epsom-2026-06-06-1515",
+      "outsider_pick": null,
+      "outsider_rationale": "Insufficient market signal"
     },
     {
       "race_id": "epsom-2026-06-06-1600",
@@ -61,34 +253,49 @@
       "jockey": "TBC",
       "morning_price": 29.0,
       "odds_source": "estimated",
-      "model_rank": 3,
+      "model_rank": 2,
       "market_rank": 11,
-      "rank_delta": 8,
+      "rank_delta": 9,
       "bet_type": "EW",
       "stake_pts": 0.25,
-      "stake_gbp": 0.25,
+      "stake_gbp": 0.5,
       "ew_terms": "1/4 odds, 1-1-2-3",
-      "potential_return_gbp_win": 7.25,
-      "potential_return_gbp_place": 2.0,
-      "rationale": "Model rates 3; market rates 11. Disagreement of 8 ranks \u2014 value play.",
+      "potential_return_gbp_win": 14.5,
+      "potential_return_gbp_place": 4.0,
+      "rationale": "Model rates 2; market rates 11. Disagreement of 9 ranks \u2014 value play.",
       "outsider_pick": "Causeway"
+    },
+    {
+      "race_id": "epsom-2026-06-06-1640",
+      "outsider_pick": null,
+      "outsider_rationale": "Insufficient market signal"
+    },
+    {
+      "race_id": "epsom-2026-06-06-1720",
+      "outsider_pick": null,
+      "outsider_rationale": "Insufficient market signal"
+    },
+    {
+      "race_id": "epsom-2026-06-06-1755",
+      "outsider_pick": null,
+      "outsider_rationale": "Insufficient market signal"
     }
   ],
   "portfolio_summary": {
-    "total_stake_gbp": 1.0,
-    "max_potential_return_gbp": 0,
-    "expected_value_gbp": 0,
-    "rec_count": 2,
-    "active_singles": 0,
-    "passed_singles": 2,
-    "doubles_count": 0,
-    "trebles_count": 0,
+    "total_stake_gbp": 14.24,
+    "max_potential_return_gbp": 4834.98,
+    "expected_value_gbp": 11.29,
+    "rec_count": 10,
+    "active_singles": 4,
+    "passed_singles": 4,
+    "doubles_count": 3,
+    "trebles_count": 1,
     "accumulators_count": 0,
     "outsider_summary": {
       "count": 2,
-      "total_stake_gbp": 1.0,
-      "total_potential_return_gbp_win": 10.5,
-      "total_potential_return_gbp_place": 3.0
+      "total_stake_gbp": 2.0,
+      "total_potential_return_gbp_win": 21.0,
+      "total_potential_return_gbp_place": 6.0
     }
   },
   "disclaimer": "For entertainment only. 18+. Gamble responsibly. BeGambleAware.org."
