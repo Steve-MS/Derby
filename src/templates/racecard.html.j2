@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>{{ venue }} {{ day_name }} — Betting Slip — {{ date_display }}</title>
+<style>{{ css|safe }}</style>
+</head>
+<body>
+
+<header class="slip-header">
+  <div class="header-left">
+    <h1>{{ venue }} — {{ day_name }}</h1>
+    <p class="subtitle">{{ date_display }} · {{ race_count }} races · Going: {{ going_label or "TBC" }}</p>
+  </div>
+  <div class="header-right">
+    <div class="totals">
+      <div class="total-line"><span>Total outlay:</span> <strong>£{{ "%.2f"|format(total_stakes_gbp) }}</strong></div>
+      <div class="total-line"><span>Bets:</span> <strong>{{ active_bet_count }}</strong></div>
+      <div class="total-line potential"><span>Max potential:</span> <strong>£{{ "%.2f"|format(total_potential_gbp) }}</strong></div>
+    </div>
+  </div>
+</header>
+
+<table class="slip">
+  <thead>
+    <tr>
+      <th class="col-time">Time</th>
+      <th class="col-race">Race</th>
+      <th class="col-bet">Bet</th>
+      <th class="col-horse">Horse</th>
+      <th class="col-num">Odds</th>
+      <th class="col-num">Stake</th>
+      <th class="col-num">Potential</th>
+      <th class="col-note">Note</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in slip_rows %}
+    <tr class="row-{{ row.kind }}">
+      <td class="col-time">{{ row.time }}</td>
+      <td class="col-race">{{ row.race_short }}</td>
+      <td class="col-bet"><span class="bet-tag bet-{{ row.bet_type|lower }}">{{ row.bet_type }}</span></td>
+      <td class="col-horse">
+        <strong>{{ row.horse }}</strong>
+        {% if row.trainer %}<br><span class="trainer">{{ row.trainer }}</span>{% endif %}
+      </td>
+      <td class="col-num">{{ "%.1f"|format(row.odds) if row.odds else "—" }}</td>
+      <td class="col-num">£{{ "%.2f"|format(row.stake) }}{% if row.bet_type == "EW" %} EW{% endif %}</td>
+      <td class="col-num">£{{ "%.2f"|format(row.potential) }}</td>
+      <td class="col-note">{{ row.note }}</td>
+    </tr>
+    {% endfor %}
+    {% if pass_rows %}
+    <tr class="row-divider"><td colspan="8">— No-bet races (model passes at current prices) —</td></tr>
+    {% for row in pass_rows %}
+    <tr class="row-pass">
+      <td class="col-time">{{ row.time }}</td>
+      <td class="col-race">{{ row.race_short }}</td>
+      <td class="col-bet"><span class="bet-tag bet-pass">PASS</span></td>
+      <td class="col-horse">{{ row.horse }} <span class="trainer">(model fancied, no value)</span></td>
+      <td class="col-num">{{ "%.1f"|format(row.odds) if row.odds else "—" }}</td>
+      <td class="col-num">—</td>
+      <td class="col-num">—</td>
+      <td class="col-note">{{ row.note }}</td>
+    </tr>
+    {% endfor %}
+    {% endif %}
+  </tbody>
+</table>
+
+<footer class="slip-footer">
+  <div class="footer-left">
+    <p><strong>Legend:</strong>
+       <span class="bet-tag bet-win">WIN</span> back to win &nbsp;·&nbsp;
+       <span class="bet-tag bet-ew">EW</span> each-way (1/4 odds, places 1-1-2-3) &nbsp;·&nbsp;
+       ⚡ outsider value play &nbsp;·&nbsp;
+       <span class="bet-tag bet-pass">PASS</span> no edge
+    </p>
+    <p class="disclaimer">Generated {{ generated_at }} · Model {{ model_version }} · For personal use. Please gamble responsibly.</p>
+  </div>
+</footer>
+
+</body>
+</html>
+

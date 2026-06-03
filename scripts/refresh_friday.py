@@ -149,8 +149,9 @@ def main() -> None:
     for date in DATES:
         run([PY, "-m", "src.cli", "predict", "--date", date, "--bankroll", str(BANKROLL)])
         run([PY, "-m", "src.cli", "report", "--date", date])
+        run([PY, "-m", "src.cli", "card", "--date", date])
 
-    print("\n=== Done. Open outputs\\report-2026-06-05.html and report-2026-06-06.html ===")
+    print("\n=== Done. Open outputs\\report-*.html (full HTML) and racecard-*.html (printable slip) ===")
 
 
 if __name__ == "__main__":

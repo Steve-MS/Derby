@@ -1,0 +1,100 @@
+/* race-analysis printable betting slip — one A4 per race day. */
+
+@page { size: A4 portrait; margin: 10mm 12mm; }
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 10pt;
+  color: #111;
+  line-height: 1.3;
+  margin: 0;
+}
+
+h1 { margin: 0; font-size: 18pt; letter-spacing: -0.4pt; }
+p  { margin: 0; }
+
+.slip-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 2pt solid #111;
+  padding-bottom: 3mm;
+  margin-bottom: 4mm;
+}
+.subtitle { font-size: 10pt; color: #555; margin-top: 1mm; }
+
+.totals { text-align: right; font-size: 9.5pt; }
+.totals .total-line { margin-bottom: 0.6mm; }
+.totals .total-line span { color: #555; }
+.totals .total-line strong { font-size: 11pt; }
+.totals .total-line.potential strong { color: #2a7a2a; }
+
+/* ---------- Bet slip table ---------- */
+table.slip {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 9.5pt;
+}
+table.slip th, table.slip td {
+  padding: 1.8mm 2mm;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 0.5pt solid #ddd;
+}
+table.slip thead th {
+  border-bottom: 1pt solid #111;
+  text-transform: uppercase;
+  font-size: 8.5pt;
+  letter-spacing: 0.5pt;
+  color: #555;
+}
+table.slip .col-time   { width: 12mm; font-weight: 600; font-variant-numeric: tabular-nums; }
+table.slip .col-race   { width: 42mm; font-size: 9pt; }
+table.slip .col-bet    { width: 14mm; text-align: center; }
+table.slip .col-horse  { width: 40mm; }
+table.slip .col-horse .trainer { font-size: 8.5pt; color: #666; }
+table.slip .col-num    { width: 16mm; text-align: right; font-variant-numeric: tabular-nums; }
+table.slip .col-note   { font-size: 8.5pt; color: #555; }
+
+table.slip tr.row-win     { background: #e8f5e8; }
+table.slip tr.row-ew      { background: #fff5e0; }
+table.slip tr.row-outsider { background: #fff5e0; }
+table.slip tr.row-win td, table.slip tr.row-ew td, table.slip tr.row-outsider td { font-weight: 500; }
+table.slip tr.row-pass    { color: #888; }
+table.slip tr.row-divider td {
+  text-align: center;
+  font-size: 8.5pt;
+  color: #888;
+  font-style: italic;
+  padding: 4mm 0 1mm 0;
+  border-bottom: none;
+  background: transparent;
+}
+
+/* ---------- Bet tags ---------- */
+.bet-tag {
+  display: inline-block;
+  padding: 0.5mm 2mm;
+  font-size: 8.5pt;
+  font-weight: 700;
+  border-radius: 1mm;
+  letter-spacing: 0.5pt;
+}
+.bet-win  { background: #2a7a2a; color: #fff; }
+.bet-ew   { background: #b88200; color: #fff; }
+.bet-pass { background: #ccc;    color: #555; }
+
+/* ---------- Footer ---------- */
+.slip-footer {
+  margin-top: 6mm;
+  padding-top: 3mm;
+  border-top: 1pt solid #ccc;
+  font-size: 8.5pt;
+  color: #555;
+}
+.slip-footer .disclaimer { margin-top: 1.5mm; font-style: italic; color: #888; }
+
+@media print { body { font-size: 9.5pt; } }
+

@@ -335,6 +335,41 @@ def cmd_report(args: argparse.Namespace) -> int:
 
 
 # ---------------------------------------------------------------------------
+# card
+# ---------------------------------------------------------------------------
+
+def cmd_card(args: argparse.Namespace) -> int:
+    """Render the printable race card (A4, one race per page)."""
+    date: str = args.date
+
+    try:
+        from racecard import render_card  # noqa: PLC0415
+    except ImportError as exc:
+        print(f"Error: cannot import racecard module: {exc}", file=sys.stderr)
+        return 1
+
+    scores_path = _ROOT / "outputs" / f"scores-{date}.json"
+    if not scores_path.exists():
+        print(f"Error: scores not found: {scores_path}", file=sys.stderr)
+        print(f"  Run `score --date {date}` first.", file=sys.stderr)
+        return 1
+
+    bets_path = _ROOT / "outputs" / f"bets-{date}.json"
+    output_path = _ROOT / "outputs" / f"racecard-{date}.html"
+
+    render_card(
+        date=date,
+        scores_path=str(scores_path),
+        bets_path=str(bets_path) if bets_path.exists() else None,
+        output_path=str(output_path),
+    )
+
+    print(f"✓  Race card written → {output_path}")
+    print(f"   Open in browser and Ctrl+P → Save as PDF for print.")
+    return 0
+
+
+# ---------------------------------------------------------------------------
 # CLI wiring
 # ---------------------------------------------------------------------------
 
@@ -350,6 +385,7 @@ def build_parser() -> argparse.ArgumentParser:
             "  python -m src.cli predict  --date 2026-06-05 --bankroll 200\n"
             "  python -m src.cli backtest --date 2026-06-05 --results data/results/results-2026-06-05.json\n"
             "  python -m src.cli report   --date 2026-06-05 --format html\n"
+            "  python -m src.cli card     --date 2026-06-06\n"
         ),
     )
     sub = parser.add_subparsers(dest="command", metavar="COMMAND")
@@ -391,6 +427,13 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--format", default="html", choices=["html"],
                    help="Output format (default: html)")
     p.set_defaults(func=cmd_report)
+
+    p = sub.add_parser(
+        "card",
+        help="Generate printable race card → outputs/racecard-{date}.html (A4, one race per page)",
+    )
+    p.add_argument("--date", required=True, metavar="YYYY-MM-DD")
+    p.set_defaults(func=cmd_card)
 
     return parser
 
