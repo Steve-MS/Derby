@@ -39,3 +39,18 @@ Implemented three new signal modules and updated `src/scoring.py` to v0.5.
 - Danny's score-curve anchors verified for all three pure scoring functions.
 
 **Decision note:** `.squad/decisions/inbox/rusty-v05-implementation.md`
+
+## 2026-06-03 — v0.6: equipment signal
+
+Implemented `src/equipment.py` and updated `src/scoring.py` to v0.6.
+
+**Outcome:** 352/352 tests passing.
+
+**Key calls made:**
+- Added mandatory top-level non-dict runner guard: `score_equipment(None, {}) -> 50.0` confirmed.
+- Loader returns equipment enrichment keyed by lower-cased horse name for safer lookup.
+- Equipment scoring follows Danny's locked spec: base 50, first-time item deltas, -3 stacking penalty per extra current item, +3 per removed item, clamp [10, 90].
+- All 15 v0.5 weights scaled ×0.9750; `class_rating` absorbed rounding residual; equipment = 0.0250; sum = 1.0000.
+- Added/updated tests for equipment scoring, None guard, loader shape, scoring integration, and weight sanity.
+
+**Decision note:** `.squad/decisions/inbox/rusty-v06-equip.md`

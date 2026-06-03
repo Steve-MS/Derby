@@ -55,3 +55,19 @@
 - Manual smoke CORRECT: all three `signal(None, {})` calls returned 50.0, no exception.
 - Validation: `pytest -x` collected 326 items, 326 passed in 8.60s.
 - Cleared to ship v0.5 to main.
+### 2026-06-03 — v0.6 equipment signal tests drafted
+- Wrote `tests/test_equipment.py` with 19 test functions / 25 pytest cases for Danny's v0.6 equipment contract.
+- Scope: real loader, first-time equipment anchors, stacking penalty, removal bonus, clamp [10,90], anti-fab neutral fallbacks, None runner/race handling, bounds/type checks, no state mutation, null wind_surgery, empty changed_vs_last_run, and scoring.py integration weight 0.0250.
+- Uses `pytest.importorskip("src.equipment")`; once Rusty's module landed, validation passed: `pytest tests/test_equipment.py -v` → 25 passed.
+- Decision note: `.squad/decisions/inbox/saul-v06-equip-tests.md`.
+
+### 2026-06-03 — v0.6 equipment source review gate (Rusty)
+- **Verdict: APPROVE** — cleared to ship v0.6 to main.
+- Weight sum PASS: 16 signals, total `1.0000000000`; equipment weight `0.0250`.
+- Anti-fab PASS: `score_equipment(None, {})`, `score_equipment({}, None)`, and `score_equipment(None, None)` all returned `50.0`.
+- Bounds PASS: equipment clamps to [10,90], no NaN in data sweep; real data min/max `47.0/60.0`.
+- Integration PASS: scoring imports/calls equipment and includes it in weighted sum.
+- Rebalance PASS: non-class v0.5 weights match ×0.9750 rounded; `class_rating` absorbs the residual.
+- Validation PASS: `pytest -x` collected 352 items, 352 passed in 7.97s; equipment tests had 25 pass / 0 skips; smoke returned `50.0`.
+- Data caveat: `changed_vs_last_run` empty across 272; wind_surgery is ignored safely. Audit found two numeric wind_surgery entries despite source note saying null, but this is non-blocking because wind ops are out of v0.6 scope.
+- Decision note: `.squad/decisions/inbox/saul-v06-equip-review.md`.

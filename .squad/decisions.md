@@ -309,3 +309,239 @@ jt_combo_signal(None, {}) → 50.0
 ```
 
 **Verdict:** Cleared to ship v0.5 to main.
+
+---
+
+## v0.5 SHIP CONFIRMATION
+
+**Date:** 2026-06-03  
+**Shipped by:** Scribe  
+**Command chain:** merge inbox → secret scan → commit → push → verify
+
+**Commit SHA:** `e9dc1c1`
+
+**Files shipped:** 18 changed
+- 3 new signal modules: `src/market_move.py`, `src/trainer_14d.py`, `src/jt_combo.py`
+- 3 new test files: `tests/test_market_move.py`, `tests/test_trainer_14d.py`, `tests/test_jt_combo.py`
+- 1 modified: `src/scoring.py` (v0.5 weight rebalance)
+- 1 renamed: `scripts/morning_odds.py` (from saturday_morning_odds.py)
+- 1 new enrichment: `data/enrichment/equipment.json` (272 runners)
+- 8 .squad/ files updated (decisions.md + agent history files)
+
+**Test count:** 326 passing
+
+**Push status:** ✅ Successful to https://github.com/Steve-MS/Derby.git (branch main)
+
+**Working tree:** Clean (untracked files: other inbox entries + enrichment data artifacts, not part of v0.5 ship)
+
+---
+
+## 2026-06-03 — Equipment/Wind Data Sourceable? Discovery Probe
+
+**Agent:** Livingston (Data Sourcer)  
+**Date:** 2026-06-03T14:50 UTC+1  
+**Status:** ✅ Shipped
+
+Equipment data IS sourceable from Open Horse Racing Data (free, public). Wind operations data is NOT sourceable from public free sources (paywalled on Racing Post, Timeform, BHA internal only).
+
+**Recommendation:** Ship Signal #4 as PARTIAL (equipment only, no wind ops).
+
+**Coverage:**
+- Equipment enrichment: Open Horse Racing Data CSV → `data/enrichment/equipment.json` (272 runners, 30 with equipment codes, 9 first-time-use flags)
+- Wind ops: Dropped for now — requires premium data partnership
+
+**Rough schema for `data/enrichment/equipment.json`:**
+- Horse keyed by name
+- `equipment` — all equipment worn today
+- `first_time_use` — items never worn before by this horse
+- `changed_vs_last_run` — items added or removed (empty in v0.6 due to paywalled form history)
+
+---
+
+## 2026-06-03 — Danny — 3-Signal Design: market_move, trainer_14d, jt_combo
+
+**Agent:** Danny (Architect & Lead)  
+**Date:** 2026-06-03  
+**Target:** v0.5 (adds 3 signals, rebalances all 15 weights to 1.0000)  
+**Status:** ✅ Design locked
+
+Three new signals for v0.5 batch delivery (pre-v0.6):
+
+**Signal 1 — `market_move`:** Implied-probability shift from baseline to race-day; weight 0.0700.  
+**Signal 2 — `trainer_14d`:** 14-day trainer strike rate; weight 0.0400.  
+**Signal 3 — `jt_combo`:** Jockey/trainer combo interaction term; weight 0.0300.
+
+v0.5 weight rebalance: all 12 v0.4 weights × 0.86 + three new signals = 1.0000 exactly.
+
+Open questions (4–8) for Steve on baseline timing, odds source, surface scope, time windows, first-time pairing score, and double-count mitigation. All answered post-design via spec addendum (see 2026-06-03 Spec Addendum entry below).
+
+---
+
+## 2026-06-03 — Livingston — Trainer 14d & JT Combo Data: Sources, Coverage and Gaps
+
+**Agent:** Livingston (Data Sourcer)  
+**Date:** 2026-06-03  
+**Status:** ✅ Shipped
+
+Two enrichment files produced for v0.5:
+
+| File | Coverage | Notes |
+|---|---|---|
+| `trainer-14d.json` | **28 / 93** racecard trainers | 65 trainers → neutral 50 at scoring |
+| `jt-combo.json` | **5 combos** with real stats (22 horses) | 153 horses → combo_runners=0 → scoring guard returns 50 |
+
+**Trainer 14-day stats — window:** Trailing 14 calendar days ending 2026-06-03 (UK flat only). Sources: Racing Post profiles, britishracecourses.org in-form table, ai-raceday.co.uk.
+
+**JT combo stats — window:** Trailing 365 days. 5 combos with verified stats from public sources (Andrew Balding|Oisin Murphy 32/120, Hugo Palmer|Oisin Murphy 7/22, Ed Walker|Kieran Shoemark 11/89, George Boughey|Billy Loughnane 55/280, Richard Hannon|Sean Levey 21/133).
+
+**Open questions for Steve/Danny:** (1) Surface scope for trainer_14d — all-surface or turf-only? (2) William Haggas figure ambiguity (43.75% vs 21.1%). (3) JT combo sample threshold — raise guard above 10? (4) First-time pairing — no entries available from free sources; all default false. (5) Market-move enrichment still required before Derby Day (Saturday).
+
+---
+
+## 2026-06-03 — Equipment Data — Epsom 2026-06-05/06
+
+**Agent:** Livingston (Data Sourcer)  
+**Date:** 2026-06-03  
+**Status:** ✅ Shipped
+
+Equipment enrichment delivered for v0.6 (not v0.5).
+
+**Coverage:**
+- Matched on RP: 241 / 272 (88.6%)
+- With at least one equipment code: 30 (11.0%)
+- First-time-use flags: 9 horses
+
+**Equipment distribution:** tongue-tie 13, cheekpieces 11, hood 6, blinkers 3, visor 2.
+
+**Data sources:**
+- openhorsedata.com CSV — ❌ DNS unreachable
+- Racing Post `__NEXT_DATA__` SSR — ✅ Primary source (245 runners matched)
+- Wind surgery — ⚠️ Present but null on free racecard (paywalled)
+
+**Note:** `changed_vs_last_run` always empty — cannot determine without prior-run history (paywalled on RP).
+
+---
+
+## 2026-06-03 — v0.6 Equipment Signal Design (locked by Danny)
+
+**Agent:** Danny (Architect & Lead)  
+**Date:** 2026-06-03T14:50:08 UTC+1  
+**Target:** v0.6 (equipment only; wind ops dropped — paywalled)  
+**Status:** ✅ Locked design
+
+Equipment changes are a low-noise proxy for trainer intent at race day.
+
+**Signal Mechanics:**
+- Base score = 50
+- First-time-use bonuses: blinkers +8, cheekpieces +7, tongue-tie +6, visor +5, hood +3, eyeshield/paddings +2
+- Stacking penalty: −3 per extra item beyond first
+- Equipment removal bonus: +3 per item removed (trainer confident)
+- Clamp [10, 90]
+
+**Schema (data/enrichment/equipment.json):**
+- `equipment` — all equipment worn today (full list)
+- `first_time_use` — items never worn before by this horse
+- `changed_vs_last_run` — items added or removed vs previous race
+
+**Weight & Rebalance — v0.5 → v0.6:**
+- Equipment weight: **0.0250** (2.5%)
+- All 15 v0.5 weights × 0.9750; residual absorbed by `class_rating`
+- Verification: sum = 1.0000 ✓
+
+---
+
+## 2026-06-03 — v0.6 Equipment Signal Tests Drafted
+
+**Agent:** Saul (Reviewer & Test Lead)  
+**Date:** 2026-06-03  
+**Status:** ✅ Tests written
+
+`tests/test_equipment.py` added for Danny's locked v0.6 equipment contract.
+
+**Test count:** 19 test functions / 25 pytest cases.
+
+**Anchor values asserted (Danny spec cross-check):**
+- blinkers FIRST TIME → 58.0
+- cheekpieces FIRST TIME → 57.0
+- tongue-tie FIRST TIME → 56.0
+- visor FIRST TIME → 55.0
+- hood FIRST TIME → 53.0
+- eyeshield/paddings FIRST TIME → 52.0
+- blinkers + cheekpieces FIRST TIME → 62.0
+- blinkers + cheekpieces + tongue-tie FIRST TIME → 65.0
+- one removal only → 53.0
+- one removal + first-time blinkers → 61.0
+- clamp upper → 90.0
+- clamp lower → 10.0
+
+**Scope covered:** Real loader against `data/enrichment/equipment.json`, neutral anti-fab fallbacks, None runner, None race, output type, score bounds, no state mutation, null `wind_surgery`, empty `changed_vs_last_run`, and scoring.py v0.6 integration with equipment weight 0.0250.
+
+**Validation:** `pytest tests/test_equipment.py -v` → 25 passed.
+
+---
+
+## 2026-06-03 — v0.6 Equipment Signal Implemented
+
+**Agent:** Rusty (Signal Engineer)  
+**Date:** 2026-06-03  
+**Status:** ✅ Implementation complete
+
+Implemented the v0.6 equipment signal and wired it into scoring as the 16th model signal.
+
+**Files created/modified:**
+- **NEW:** `src/equipment.py`
+- **MODIFIED:** `src/scoring.py`
+- **MODIFIED:** `tests/test_equipment.py`
+- **MODIFIED:** `tests/test_scoring.py`
+
+**Final v0.6 weight table (16 signals, sum = 1.0000):**
+| Signal | Weight |
+|---|---:|
+| class_rating | 0.1977 |
+| recent_form | 0.1133 |
+| going_fit | 0.0998 |
+| market_move | 0.0683 |
+| trial_form | 0.0671 |
+| trainer_form | 0.0566 |
+| jockey | 0.0566 |
+| course_distance | 0.0566 |
+| pace | 0.0513 |
+| draw_bias | 0.0440 |
+| trainer_14d | 0.0390 |
+| sire_stamina | 0.0386 |
+| jt_combo | 0.0293 |
+| going | 0.0284 |
+| class_move | 0.0284 |
+| equipment | 0.0250 |
+
+**Validation:**
+- Weight sum: 1.0000
+- Smoke test: `score_equipment(None, {})` → 50.0 confirmed
+- Pytest: 352 passed in 8.39s
+
+**Deviations from Danny's spec:** None. Livingston's `wind_surgery` field is ignored because wind ops are out of v0.6 scope and incomplete/paywalled.
+
+---
+
+## 2026-06-03 — v0.6 Equipment Source Review
+
+**Agent:** Saul (Tester / Reviewer)  
+**Date:** 2026-06-03  
+**Requested by:** Steve  
+**Verdict:** ✅ APPROVE
+
+Cleared to ship v0.6 to main.
+
+**Gate checks (all PASS):**
+1. Weights sum exactly 1.0000 across 16 signals ✓
+2. Anti-fab None guards present and tested ✓
+3. Equipment score bounds [10, 90] ✓
+4. Missing horse neutral (50) ✓
+5. scoring.py integration + weight 0.0250 ✓
+6. Rebalance fidelity (v0.5 × 0.9750 + class residual) ✓
+7. Existing 15 signals untouched ✓
+8. Tests pass / no equipment skips: 352/352 passing ✓
+9. Smoke: `score_equipment(None, {})` → 50.0 ✓
+10. Data caveat compliance (equipment coverage 11%, wind_surgery ignored) ✓
+
+**Reviewer notes:** Rusty's build verified independently. No lockout triggered. APPROVE.
