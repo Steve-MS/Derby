@@ -1,5 +1,9 @@
 # Livingston — History
 
+## Learnings
+
+- 2026-06-03: Built `data/enrichment/trial-form.json` — 276 horses across both days; 25 with verified trial data (Derby + Oaks circuits); 1 flag (Causeway withdrawal status unconfirmed); scores file may predate final declarations so Causeway entry needs pre-race sanity check against BHA/Epsom official declarations.
+
 ## Project context (seeded 2026-06-03)
 
 - Python 3.12 race-analysis toolkit for Steve. Repo Steve-MS/Derby, commit 5a1770e.

@@ -1,0 +1,1107 @@
+{
+  "fetched_at": "2026-06-03T14:14:36+01:00",
+  "schema_version": "1.0",
+  "notes": "Trial data covers the canonical Derby/Oaks trial circuit (Dante, Chester Vase, Dee Stakes, Lingfield Derby Trial, Newmarket Stakes, Leopardstown Derby Trial, Blue Riband Trial; Musidora, Cheshire Oaks, Lingfield Oaks Trial, 1000 Guineas, Irish 1000 Guineas). Horses with trials:[] were checked but no canonical trial found, OR are from non-Classic races where trials are not applicable. Causeway carries a _review_flag — see that entry.",
+  "horses": {
+    "A La Prochaine": {
+      "trials": [
+        {
+          "trial_name": "Cheshire Oaks",
+          "course": "Chester",
+          "date": "2026-05-06",
+          "finishing_position": 3,
+          "field_size": 5,
+          "beaten_lengths": 3.25,
+          "source_url": "https://www.racingpost.com/results/13/chester/2026-05-06/917603"
+        }
+      ]
+    },
+    "A Taste of Glory": {
+      "trials": [
+        {
+          "trial_name": "Lingfield Derby Trial",
+          "course": "Lingfield",
+          "date": "2026-05-09",
+          "finishing_position": 6,
+          "field_size": 6,
+          "beaten_lengths": 13.85,
+          "source_url": "https://www.sportinglife.com/racing/results/2026-05-09/lingfield/916239/william-hill-lingfield-derby-trial-stakes-listed"
+        }
+      ]
+    },
+    "A War Eagle": {
+      "trials": []
+    },
+    "Action": {
+      "trials": [
+        {
+          "trial_name": "Dante Stakes",
+          "course": "York",
+          "date": "2026-05-14",
+          "finishing_position": 2,
+          "field_size": 8,
+          "beaten_lengths": 2.75,
+          "source_url": "https://myracing.com/results/915532/2026-05-14/york/al-basti-equiworld-dubai-dante-stakes-group-2/"
+        }
+      ]
+    },
+    "Alcantor": {
+      "trials": []
+    },
+    "Alderman": {
+      "trials": []
+    },
+    "Alfa Duplicate": {
+      "trials": []
+    },
+    "Allegresse": {
+      "trials": []
+    },
+    "Almaty Star": {
+      "trials": []
+    },
+    "Alobayyah": {
+      "trials": []
+    },
+    "Alpe d'Huez": {
+      "trials": []
+    },
+    "Alpha Crucis": {
+      "trials": []
+    },
+    "Ambishio": {
+      "trials": []
+    },
+    "Amelia Earhart": {
+      "trials": [
+        {
+          "trial_name": "Cheshire Oaks",
+          "course": "Chester",
+          "date": "2026-05-06",
+          "finishing_position": 1,
+          "field_size": 5,
+          "beaten_lengths": -2.0,
+          "source_url": "https://www.racingpost.com/results/13/chester/2026-05-06/917603"
+        }
+      ]
+    },
+    "Ammes": {
+      "trials": []
+    },
+    "Ancient Egypt": {
+      "trials": [
+        {
+          "trial_name": "Newmarket Stakes",
+          "course": "Newmarket",
+          "date": "2026-05-01",
+          "finishing_position": 1,
+          "field_size": 5,
+          "beaten_lengths": -2.0,
+          "source_url": "https://www.racingpost.com/results/38/newmarket/2026-05-01/916530"
+        }
+      ]
+    },
+    "Ancient Rome": {
+      "trials": []
+    },
+    "Andab": {
+      "trials": []
+    },
+    "Another Baar": {
+      "trials": []
+    },
+    "Antrim": {
+      "trials": []
+    },
+    "Apollo One": {
+      "trials": []
+    },
+    "Arctic Thunder": {
+      "trials": []
+    },
+    "Ardad Steve": {
+      "trials": []
+    },
+    "Ardisia": {
+      "trials": []
+    },
+    "Arisaig": {
+      "trials": []
+    },
+    "Arklow Lad": {
+      "trials": []
+    },
+    "Artista": {
+      "trials": []
+    },
+    "Asgard's Captain": {
+      "trials": []
+    },
+    "Asmen Warrior": {
+      "trials": []
+    },
+    "Assaranca": {
+      "trials": []
+    },
+    "Audience": {
+      "trials": []
+    },
+    "Auld Toon Loon": {
+      "trials": []
+    },
+    "Aurora Majesty": {
+      "trials": []
+    },
+    "Awaken": {
+      "trials": []
+    },
+    "Badri": {
+      "trials": []
+    },
+    "Balmacara": {
+      "trials": []
+    },
+    "Balzac": {
+      "trials": [
+        {
+          "trial_name": "Blue Riband Trial",
+          "course": "Epsom",
+          "date": "2026-04-28",
+          "finishing_position": 3,
+          "field_size": 6,
+          "beaten_lengths": 3.75,
+          "source_url": "https://www.sportinglife.com/racing/results/2026-04-28/epsom-downs/914245/betfred-blue-riband-trial-stakes-listed"
+        },
+        {
+          "trial_name": "Lingfield Derby Trial",
+          "course": "Lingfield",
+          "date": "2026-05-09",
+          "finishing_position": 3,
+          "field_size": 6,
+          "beaten_lengths": 6.6,
+          "source_url": "https://www.sportinglife.com/racing/results/2026-05-09/lingfield/916239/william-hill-lingfield-derby-trial-stakes-listed"
+        }
+      ]
+    },
+    "Bay City Roller": {
+      "trials": []
+    },
+    "Bay Of Brilliance": {
+      "trials": [
+        {
+          "trial_name": "Lingfield Derby Trial",
+          "course": "Lingfield",
+          "date": "2026-05-09",
+          "finishing_position": 2,
+          "field_size": 6,
+          "beaten_lengths": 0.1,
+          "source_url": "https://www.sportinglife.com/racing/results/2026-05-09/lingfield/916239/william-hill-lingfield-derby-trial-stakes-listed"
+        }
+      ]
+    },
+    "Be The Standard": {
+      "trials": []
+    },
+    "Beautify": {
+      "trials": [
+        {
+          "trial_name": "Irish 1000 Guineas",
+          "course": "Curragh",
+          "date": "2026-05-24",
+          "finishing_position": 6,
+          "field_size": 6,
+          "beaten_lengths": null,
+          "note": "Beaten margin not reported in available sources",
+          "source_url": "https://www.skysports.com/racing/results/full-result/1361690/curragh/24-05-2026/tattersalls-irish-1-000-guineas-fillies-group-1"
+        }
+      ]
+    },
+    "Benefacta": {
+      "trials": []
+    },
+    "Benvenuto Cellini": {
+      "trials": [
+        {
+          "trial_name": "Chester Vase",
+          "course": "Chester",
+          "date": "2026-05-06",
+          "finishing_position": 1,
+          "field_size": 5,
+          "beaten_lengths": -4.25,
+          "source_url": "https://www.racingpost.com/results/13/chester/2026-05-06/917602"
+        }
+      ]
+    },
+    "Betsen": {
+      "trials": []
+    },
+    "Betty Clover": {
+      "trials": []
+    },
+    "Beylerbeyi": {
+      "trials": []
+    },
+    "Blue Brother": {
+      "trials": []
+    },
+    "Boiling Point": {
+      "trials": []
+    },
+    "Bolster": {
+      "trials": []
+    },
+    "Bragbor": {
+      "trials": []
+    },
+    "Brazen Bolt": {
+      "trials": []
+    },
+    "Breckenbrough": {
+      "trials": []
+    },
+    "Brighton Boy": {
+      "trials": []
+    },
+    "Bulletin": {
+      "trials": []
+    },
+    "Calandagan": {
+      "trials": []
+    },
+    "Call Margot": {
+      "trials": []
+    },
+    "Cameo": {
+      "trials": [
+        {
+          "trial_name": "Lingfield Oaks Trial",
+          "course": "Lingfield",
+          "date": "2026-05-09",
+          "finishing_position": 1,
+          "field_size": 5,
+          "beaten_lengths": -4.75,
+          "source_url": "https://www.racingpost.com/results/31/lingfield/2026-05-09/917669"
+        }
+      ]
+    },
+    "Causeway": {
+      "trials": [],
+      "_review_flag": "Withdrawal status unconfirmed. One source (racinginsider.com) states Causeway did not make final Derby entries; scores file contradicts this. No trial data found in any case."
+    },
+    "Celeborn": {
+      "trials": []
+    },
+    "Celestial Orbit": {
+      "trials": []
+    },
+    "Chairmanfourtimes": {
+      "trials": []
+    },
+    "Chancellor": {
+      "trials": []
+    },
+    "Chicago Critic": {
+      "trials": []
+    },
+    "Christmas Day": {
+      "trials": [
+        {
+          "trial_name": "Dante Stakes",
+          "course": "York",
+          "date": "2026-05-14",
+          "finishing_position": 3,
+          "field_size": 8,
+          "beaten_lengths": 4.5,
+          "source_url": "https://myracing.com/results/915532/2026-05-14/york/al-basti-equiworld-dubai-dante-stakes-group-2/"
+        }
+      ]
+    },
+    "Cindy Lou Who": {
+      "trials": []
+    },
+    "Cinque Verde": {
+      "trials": []
+    },
+    "City Of Delight": {
+      "trials": []
+    },
+    "Cloud Seeker": {
+      "trials": []
+    },
+    "Colombier": {
+      "trials": []
+    },
+    "Constitution River": {
+      "trials": [
+        {
+          "trial_name": "Dee Stakes",
+          "course": "Chester",
+          "date": "2026-05-07",
+          "finishing_position": 1,
+          "field_size": 5,
+          "beaten_lengths": -7.0,
+          "source_url": "https://www.racingbetter.co.uk/race/chester/2026/dee_stakes.html"
+        }
+      ]
+    },
+    "Convergent": {
+      "trials": []
+    },
+    "Copacabana Sands": {
+      "trials": []
+    },
+    "Counsel": {
+      "trials": []
+    },
+    "Cowardofthecounty": {
+      "trials": []
+    },
+    "Coyy": {
+      "trials": []
+    },
+    "Crimson Spirit": {
+      "trials": []
+    },
+    "Dance In The Storm": {
+      "trials": []
+    },
+    "Dancing In Paris": {
+      "trials": []
+    },
+    "Dandyman Dan": {
+      "trials": []
+    },
+    "Dante's Lad": {
+      "trials": []
+    },
+    "Democracy Dilemma": {
+      "trials": []
+    },
+    "Desert Cop": {
+      "trials": []
+    },
+    "Dhahabi": {
+      "trials": []
+    },
+    "Dream Composer": {
+      "trials": []
+    },
+    "Dublin Bay": {
+      "trials": []
+    },
+    "Dyonisos": {
+      "trials": []
+    },
+    "Eclairage": {
+      "trials": []
+    },
+    "El Lambo": {
+      "trials": []
+    },
+    "Ellusive Butterfly": {
+      "trials": []
+    },
+    "Elsass": {
+      "trials": []
+    },
+    "Emperor Spirit": {
+      "trials": []
+    },
+    "Endorsement": {
+      "trials": [
+        {
+          "trial_name": "Cashel Palace Hotel Derby Trial Stakes",
+          "course": "Leopardstown",
+          "date": "2026-05-10",
+          "finishing_position": 3,
+          "field_size": 5,
+          "beaten_lengths": 0.15,
+          "source_url": "https://www.racingpost.com/results/187/leopardstown/2026-05-10/919824"
+        }
+      ]
+    },
+    "Eye Of Dubai": {
+      "trials": []
+    },
+    "Fierce Fortitude": {
+      "trials": []
+    },
+    "Final Night": {
+      "trials": []
+    },
+    "Fine Interview": {
+      "trials": []
+    },
+    "First Principle": {
+      "trials": []
+    },
+    "Folk Pageant": {
+      "trials": []
+    },
+    "Footwork": {
+      "trials": []
+    },
+    "Forager": {
+      "trials": []
+    },
+    "Francisco's Piece": {
+      "trials": []
+    },
+    "Give It To Me Oj": {
+      "trials": []
+    },
+    "Gold Star Hero": {
+      "trials": []
+    },
+    "Golden Long": {
+      "trials": []
+    },
+    "Golden Mind": {
+      "trials": []
+    },
+    "Gordon Grey": {
+      "trials": []
+    },
+    "Great David": {
+      "trials": []
+    },
+    "Greek Mythology": {
+      "trials": []
+    },
+    "Green Sense": {
+      "trials": []
+    },
+    "Hand Of God": {
+      "trials": []
+    },
+    "Hanney Girl": {
+      "trials": []
+    },
+    "Havana Flash": {
+      "trials": []
+    },
+    "Have Secret": {
+      "trials": []
+    },
+    "Hell Yeah He Did": {
+      "trials": []
+    },
+    "Hengest": {
+      "trials": []
+    },
+    "Henrythenate": {
+      "trials": []
+    },
+    "Hickory Lad": {
+      "trials": []
+    },
+    "Hot Cash": {
+      "trials": []
+    },
+    "Humam": {
+      "trials": []
+    },
+    "Ice Max": {
+      "trials": []
+    },
+    "Illinois": {
+      "trials": []
+    },
+    "Invictus Gold": {
+      "trials": []
+    },
+    "Item": {
+      "trials": [
+        {
+          "trial_name": "Dante Stakes",
+          "course": "York",
+          "date": "2026-05-14",
+          "finishing_position": 1,
+          "field_size": 8,
+          "beaten_lengths": -2.75,
+          "source_url": "https://myracing.com/results/915532/2026-05-14/york/al-basti-equiworld-dubai-dante-stakes-group-2/"
+        }
+      ]
+    },
+    "James J Braddock": {
+      "trials": [
+        {
+          "trial_name": "Cashel Palace Hotel Derby Trial Stakes",
+          "course": "Leopardstown",
+          "date": "2026-05-10",
+          "finishing_position": 1,
+          "field_size": 5,
+          "beaten_lengths": -0.05,
+          "source_url": "https://www.racingpost.com/results/187/leopardstown/2026-05-10/919824"
+        }
+      ]
+    },
+    "Jan Brueghel": {
+      "trials": []
+    },
+    "Jimmy Speaking": {
+      "trials": []
+    },
+    "K Sarra": {
+      "trials": [
+        {
+          "trial_name": "Musidora Stakes",
+          "course": "York",
+          "date": "2026-05-13",
+          "finishing_position": 3,
+          "field_size": 5,
+          "beaten_lengths": 2.25,
+          "source_url": "https://www.racingpost.com/results/107/york/2026-05-13/917719"
+        }
+      ]
+    },
+    "King Of Light": {
+      "trials": []
+    },
+    "King Of Montenegro": {
+      "trials": []
+    },
+    "King's Code": {
+      "trials": []
+    },
+    "Kinswoman": {
+      "trials": []
+    },
+    "Kylian": {
+      "trials": []
+    },
+    "Lake Como": {
+      "trials": []
+    },
+    "Lake Forest": {
+      "trials": []
+    },
+    "Lambourn": {
+      "trials": []
+    },
+    "Law Of Average": {
+      "trials": []
+    },
+    "Legacy Link": {
+      "trials": [
+        {
+          "trial_name": "Musidora Stakes",
+          "course": "York",
+          "date": "2026-05-13",
+          "finishing_position": 1,
+          "field_size": 5,
+          "beaten_lengths": -0.75,
+          "source_url": "https://www.racingpost.com/results/107/york/2026-05-13/917719"
+        }
+      ]
+    },
+    "Let's Dream": {
+      "trials": []
+    },
+    "Lexington Blitz": {
+      "trials": []
+    },
+    "Liberty Lane": {
+      "trials": []
+    },
+    "Linwood": {
+      "trials": []
+    },
+    "Lord Melbourne": {
+      "trials": []
+    },
+    "Love Dynasty": {
+      "trials": []
+    },
+    "Maltese Cross": {
+      "trials": [
+        {
+          "trial_name": "Lingfield Derby Trial",
+          "course": "Lingfield",
+          "date": "2026-05-09",
+          "finishing_position": 1,
+          "field_size": 6,
+          "beaten_lengths": -0.1,
+          "source_url": "https://www.sportinglife.com/racing/results/2026-05-09/lingfield/916239/william-hill-lingfield-derby-trial-stakes-listed"
+        }
+      ]
+    },
+    "Man Of La Mancha": {
+      "trials": []
+    },
+    "Marching Mac": {
+      "trials": []
+    },
+    "Max Mayhem": {
+      "trials": []
+    },
+    "Michaela's Boy": {
+      "trials": []
+    },
+    "Military Academy": {
+      "trials": []
+    },
+    "Mirsky": {
+      "trials": []
+    },
+    "Mister Bluebird": {
+      "trials": []
+    },
+    "Mister Winston": {
+      "trials": []
+    },
+    "Monarch's Gold": {
+      "trials": []
+    },
+    "Mr Swivell": {
+      "trials": []
+    },
+    "Musical Angel": {
+      "trials": []
+    },
+    "My Mate Roger": {
+      "trials": []
+    },
+    "Naana's Shadow": {
+      "trials": []
+    },
+    "Never So Brave": {
+      "trials": []
+    },
+    "Night Breeze": {
+      "trials": []
+    },
+    "Nizam": {
+      "trials": []
+    },
+    "Nogo's Dream": {
+      "trials": []
+    },
+    "Northern Champion": {
+      "trials": []
+    },
+    "Northwest Passage": {
+      "trials": []
+    },
+    "One And Gone": {
+      "trials": []
+    },
+    "Oneforthegutter": {
+      "trials": []
+    },
+    "Ozat": {
+      "trials": []
+    },
+    "Pacific Mission": {
+      "trials": []
+    },
+    "Partisan Hero": {
+      "trials": []
+    },
+    "Patagonia Girl": {
+      "trials": []
+    },
+    "Pendella": {
+      "trials": []
+    },
+    "Persica": {
+      "trials": []
+    },
+    "Pierre Bonnard": {
+      "trials": [
+        {
+          "trial_name": "Cashel Palace Hotel Derby Trial Stakes",
+          "course": "Leopardstown",
+          "date": "2026-05-10",
+          "finishing_position": 2,
+          "field_size": 5,
+          "beaten_lengths": 0.05,
+          "source_url": "https://www.racingpost.com/results/187/leopardstown/2026-05-10/919824"
+        }
+      ]
+    },
+    "Pietro": {
+      "trials": []
+    },
+    "Pina Sonata": {
+      "trials": []
+    },
+    "Poet Master": {
+      "trials": []
+    },
+    "Point Lynas": {
+      "trials": []
+    },
+    "Poker": {
+      "trials": []
+    },
+    "Popmaster": {
+      "trials": []
+    },
+    "Poppy Foxy": {
+      "trials": []
+    },
+    "Port Road": {
+      "trials": []
+    },
+    "Possessive": {
+      "trials": []
+    },
+    "Postmodern": {
+      "trials": []
+    },
+    "Precise": {
+      "trials": [
+        {
+          "trial_name": "1000 Guineas",
+          "course": "Newmarket",
+          "date": "2026-05-03",
+          "finishing_position": 7,
+          "field_size": 19,
+          "beaten_lengths": null,
+          "note": "Beaten margin not reported; ran as 9/5 favourite",
+          "source_url": "https://www.skysports.com/racing/results/full-result/1360012/newmarket/03-05-2026/betfred-1000-guineas-stakes-fillies-group-1"
+        },
+        {
+          "trial_name": "Irish 1000 Guineas",
+          "course": "Curragh",
+          "date": "2026-05-24",
+          "finishing_position": 1,
+          "field_size": 6,
+          "beaten_lengths": null,
+          "note": "Won; winning margin not reported in available sources",
+          "source_url": "https://www.skysports.com/racing/results/full-result/1361690/curragh/24-05-2026/tattersalls-irish-1-000-guineas-fillies-group-1"
+        }
+      ]
+    },
+    "Princess Child": {
+      "trials": []
+    },
+    "Principality": {
+      "trials": []
+    },
+    "Prizeland": {
+      "trials": [
+        {
+          "trial_name": "Lingfield Oaks Trial",
+          "course": "Lingfield",
+          "date": "2026-05-09",
+          "finishing_position": 2,
+          "field_size": 5,
+          "beaten_lengths": 4.75,
+          "source_url": "https://www.racingpost.com/results/31/lingfield/2026-05-09/917669"
+        }
+      ]
+    },
+    "Proof": {
+      "trials": []
+    },
+    "Proposition": {
+      "trials": [
+        {
+          "trial_name": "Chester Vase",
+          "course": "Chester",
+          "date": "2026-05-06",
+          "finishing_position": 2,
+          "field_size": 5,
+          "beaten_lengths": 4.25,
+          "source_url": "https://www.racingpost.com/results/13/chester/2026-05-06/917602"
+        }
+      ]
+    },
+    "Prydwen": {
+      "trials": []
+    },
+    "Purest Time": {
+      "trials": []
+    },
+    "Qirat": {
+      "trials": []
+    },
+    "Quai De Bethune": {
+      "trials": []
+    },
+    "Rare Change": {
+      "trials": []
+    },
+    "Rastnet": {
+      "trials": []
+    },
+    "Rebel Rocker": {
+      "trials": [
+        {
+          "trial_name": "Blue Riband Trial",
+          "course": "Epsom",
+          "date": "2026-04-28",
+          "finishing_position": 2,
+          "field_size": 6,
+          "beaten_lengths": 2.5,
+          "source_url": "https://www.sportinglife.com/racing/results/2026-04-28/epsom-downs/914245/betfred-blue-riband-trial-stakes-listed"
+        }
+      ]
+    },
+    "Regal Ulixes": {
+      "trials": []
+    },
+    "Respond": {
+      "trials": []
+    },
+    "Rhoscolyn": {
+      "trials": []
+    },
+    "Rhythm N Hooves": {
+      "trials": []
+    },
+    "Riley Rocks": {
+      "trials": []
+    },
+    "Rlasthope": {
+      "trials": []
+    },
+    "Rogue Enforcer": {
+      "trials": []
+    },
+    "Roman Dragon": {
+      "trials": []
+    },
+    "Romidijo": {
+      "trials": []
+    },
+    "Rosie Frith": {
+      "trials": []
+    },
+    "Royal Playwright": {
+      "trials": []
+    },
+    "Saint Lawrence": {
+      "trials": []
+    },
+    "Sallaal": {
+      "trials": []
+    },
+    "Savvy Disko": {
+      "trials": []
+    },
+    "Seagulls Eleven": {
+      "trials": []
+    },
+    "See The Fire": {
+      "trials": []
+    },
+    "Serenetta": {
+      "trials": []
+    },
+    "Seven Questions": {
+      "trials": []
+    },
+    "Shafdar": {
+      "trials": []
+    },
+    "Shes Got A Brother": {
+      "trials": []
+    },
+    "Shes Perfect": {
+      "trials": []
+    },
+    "Silver State": {
+      "trials": []
+    },
+    "Sindria": {
+      "trials": []
+    },
+    "Skukuza": {
+      "trials": []
+    },
+    "Social Spirit": {
+      "trials": []
+    },
+    "Solar Aclaim": {
+      "trials": []
+    },
+    "Son": {
+      "trials": []
+    },
+    "Sondad": {
+      "trials": []
+    },
+    "Spangled Mac": {
+      "trials": []
+    },
+    "Sparks Fly": {
+      "trials": []
+    },
+    "Spinning Wheel": {
+      "trials": []
+    },
+    "Spoken Truth": {
+      "trials": []
+    },
+    "Star Chorus": {
+      "trials": []
+    },
+    "Star Prospect": {
+      "trials": []
+    },
+    "Starlight Time": {
+      "trials": []
+    },
+    "Stellar Sunrise": {
+      "trials": []
+    },
+    "Stem": {
+      "trials": []
+    },
+    "Sterling Knight": {
+      "trials": []
+    },
+    "Stormy Impact": {
+      "trials": []
+    },
+    "Straight Ahead": {
+      "trials": []
+    },
+    "Strike Red": {
+      "trials": []
+    },
+    "Sturlasson": {
+      "trials": []
+    },
+    "Sugar Island": {
+      "trials": [
+        {
+          "trial_name": "Cheshire Oaks",
+          "course": "Chester",
+          "date": "2026-05-06",
+          "finishing_position": 4,
+          "field_size": 5,
+          "beaten_lengths": 5.5,
+          "source_url": "https://www.racingpost.com/results/13/chester/2026-05-06/917603"
+        }
+      ]
+    },
+    "Sunlit Uplands": {
+      "trials": []
+    },
+    "Sunny Smile": {
+      "trials": []
+    },
+    "Sunway": {
+      "trials": []
+    },
+    "Supido": {
+      "trials": []
+    },
+    "Tai Hang Pegasus": {
+      "trials": []
+    },
+    "Tailgunner Joe": {
+      "trials": []
+    },
+    "Talis Evolvere": {
+      "trials": []
+    },
+    "Tatterstall": {
+      "trials": []
+    },
+    "Temple Of Athena": {
+      "trials": []
+    },
+    "Ten Bob Tony": {
+      "trials": []
+    },
+    "Ten Carat Harry": {
+      "trials": []
+    },
+    "The Angel King": {
+      "trials": []
+    },
+    "The Bell Conductor": {
+      "trials": []
+    },
+    "The Bookkeeper": {
+      "trials": []
+    },
+    "The Resdev Roman": {
+      "trials": []
+    },
+    "Thunder Roar": {
+      "trials": []
+    },
+    "Thundering On": {
+      "trials": []
+    },
+    "Time And Effort": {
+      "trials": []
+    },
+    "Too Soon": {
+      "trials": []
+    },
+    "Topwarrior": {
+      "trials": []
+    },
+    "Toyotomi": {
+      "trials": []
+    },
+    "Tribal Wisdom": {
+      "trials": []
+    },
+    "Triple Double A": {
+      "trials": []
+    },
+    "Twilight Jet": {
+      "trials": []
+    },
+    "Tycoon": {
+      "trials": []
+    },
+    "U S S Charleston": {
+      "trials": []
+    },
+    "Veblen Good": {
+      "trials": []
+    },
+    "Venetian Lace": {
+      "trials": [
+        {
+          "trial_name": "1000 Guineas",
+          "course": "Newmarket",
+          "date": "2026-05-03",
+          "finishing_position": 3,
+          "field_size": 19,
+          "beaten_lengths": 2.25,
+          "source_url": "https://www.skysports.com/racing/results/full-result/1360012/newmarket/03-05-2026/betfred-1000-guineas-stakes-fillies-group-1"
+        }
+      ]
+    },
+    "Vintage Clarets": {
+      "trials": []
+    },
+    "Walsingham": {
+      "trials": []
+    },
+    "Wedonttelllies": {
+      "trials": []
+    },
+    "Wild Terrain": {
+      "trials": []
+    },
+    "Will Scarlet": {
+      "trials": []
+    },
+    "Winged Messenger": {
+      "trials": []
+    },
+    "Witness Stand": {
+      "trials": []
+    },
+    "York Tower": {
+      "trials": []
+    },
+    "Zarathos": {
+      "trials": []
+    },
+    "Ziggy's Triton": {
+      "trials": []
+    }
+  }
+}

@@ -1,12 +1,12 @@
 """
-scoring.py — Race analysis scoring model v0.1
+scoring.py — Race analysis scoring model v0.4
 =============================================
 
 Turns a Runner dict into a score (0-100) and score_breakdown.
 
 Author:  Kaylee (Data Engineer)
 Date:    2026-06-02
-Version: 0.1
+Version: 0.4  (trial_form signal added; all v0.3 weights × 0.92)
 
 Usage (CLI):
     python -m scoring path/to/racecard.json
@@ -38,11 +38,13 @@ try:  # supports both `python -m src...` and direct `sys.path` test imports
     from pace import extended_draw_signal, infer_run_style, pace_signal, project_race_pace
     from cd_form import cd_form_signal
     from sires import sire_stamina_signal
+    from trial_form import trial_form_signal
 except ImportError:  # pragma: no cover
     from .going import normalise_going, score_going_fit
     from .pace import extended_draw_signal, infer_run_style, pace_signal, project_race_pace
     from .cd_form import cd_form_signal
     from .sires import sire_stamina_signal
+    from .trial_form import trial_form_signal
 
 
 # ---------------------------------------------------------------------------
@@ -73,23 +75,22 @@ def load_default_config() -> dict:
     """
     return {
         "weights": {
-            # v0.3 weights — introduces `sire_stamina` (0.0500) for
-            # Classic-trip pedigree influence. All v0.2 weights
-            # scaled by 0.9500 to make room while preserving the
-            # relative balance. Total sums to 1.0 (validated).
-            # `course_distance` is now powered by RP badge extraction
-            # (cd_form.py) — previously dead-code on missing fields.
-            "class_rating":    0.2568,
-            "recent_form":     0.1468,
-            "trainer_form":    0.0733,
-            "jockey":          0.0733,
-            "course_distance": 0.0733,
-            "going":           0.0367,
-            "draw_bias":       0.0571,
-            "class_move":      0.0367,
-            "going_fit":       0.1295,
-            "pace":            0.0665,
-            "sire_stamina":    0.0500,
+            # v0.4 weights — adds `trial_form` (0.0800) as highest-leverage
+            # Derby/Oaks signal.  All v0.3 weights scaled × 0.9200 to make
+            # room.  Total sums to exactly 1.0000.
+            # `course_distance` powered by RP badge extraction (cd_form.py).
+            "class_rating":    0.2363,
+            "recent_form":     0.1351,
+            "trainer_form":    0.0674,
+            "jockey":          0.0674,
+            "course_distance": 0.0674,
+            "going":           0.0338,
+            "draw_bias":       0.0525,
+            "class_move":      0.0338,
+            "going_fit":       0.1191,
+            "pace":            0.0612,
+            "sire_stamina":    0.0460,
+            "trial_form":      0.0800,
         },
         "form": {
             "position_points":        {1: 10, 2: 6, 3: 4, 4: 2},
@@ -253,6 +254,9 @@ def score_runner(runner: dict, race: dict, config: dict) -> dict:
 
     # 11. Sire stamina (gated to 10f+; neutral 50 when sire unknown)
     raw_signals["sire_stamina"] = sire_stamina_signal(runner, race)
+
+    # 12. Trial form (gated to 10f+; neutral 50 when no trial data)
+    raw_signals["trial_form"] = trial_form_signal(runner, race)
 
     # Raw score (class_rating placeholder is 50 until z-score in score_race)
     class_val = raw_signals["class_rating"] if raw_signals["class_rating"] is not None else 50.0
