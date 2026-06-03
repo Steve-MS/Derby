@@ -395,5 +395,12 @@ class TestLoadDefaultConfig:
 
     def test_going_fit_weight_present(self):
         config = load_default_config()
-        assert config["weights"]["going_fit"] == 0.15
+        # Rebalanced when `pace` was introduced (was 0.15); kept >= 0.10
+        # to preserve its role as a primary signal.
+        assert config["weights"]["going_fit"] >= 0.10
         assert abs(sum(config["weights"].values()) - 1.0) < 0.001
+
+    def test_pace_weight_present(self):
+        config = load_default_config()
+        assert "pace" in config["weights"]
+        assert config["weights"]["pace"] > 0

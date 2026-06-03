@@ -2583,9 +2583,9 @@
           "form_string": "Winner Chester (Cheshire Oaks G2)",
           "last_run_days": null,
           "notes": "Winner of Cheshire Oaks (Group 2) at Chester, leading favourite for Epsom Oaks 2026; strong class and stamina; Aidan O'Brien, Ryan Moore; sourced from web search 2026-06-02",
-          "morning_price": 3.0,
-          "odds_source": "sportinglife",
-          "odds_fetched_at": "2026-06-03T09:05:09+00:00",
+          "morning_price": 3.5,
+          "odds_source": "ante_post",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
           "going_history": [
             {
               "date": "2026-05-06",
@@ -2640,9 +2640,9 @@
           "form_string": "1 Irish 1000 Guineas",
           "last_run_days": null,
           "notes": "Winner of Irish 1,000 Guineas; reversing previous Newmarket form; well-regarded for class and stamina improvement",
-          "morning_price": 4.5,
-          "odds_source": "sportinglife",
-          "odds_fetched_at": "2026-06-03T09:05:09+00:00",
+          "morning_price": 5.0,
+          "odds_source": "ante_post",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
           "going_history": [
             {
               "date": "2026-05-24",
@@ -2985,9 +2985,9 @@
           "form_string": "Flashes of quality",
           "last_run_days": null,
           "notes": "Has shown flashes of quality; Balding trainer",
-          "morning_price": 26.0,
-          "odds_source": "sportinglife",
-          "odds_fetched_at": "2026-06-03T09:05:09+00:00",
+          "morning_price": 34.0,
+          "odds_source": "estimated",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
           "going_history": [
             {
               "date": "2026-05-09",

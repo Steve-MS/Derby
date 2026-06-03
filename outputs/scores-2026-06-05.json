@@ -2,7 +2,7 @@
   "card_date": "2026-06-05",
   "venue": "Epsom",
   "frozen_by": "wash-cli",
-  "frozen_at": "2026-06-03T09:05:09.334667+00:00",
+  "frozen_at": "2026-06-03T11:00:16.197386+00:00",
   "races": [
     {
       "race_id": "epsom-2026-06-05-1330",
@@ -15,15 +15,16 @@
           "jockey": "Oisin Murphy",
           "score": 95.0,
           "score_breakdown": {
-            "class_rating": 15.37,
-            "recent_form": 9.696,
+            "class_rating": 13.964,
+            "recent_form": 8.812,
             "trainer_form": 0.0,
-            "jockey": 7.65,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 10.187
+            "jockey": 6.948,
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 9.256,
+            "pace": 3.15
           },
           "raw_signal_values": {
             "class_rating": 51.66235016043162,
@@ -34,7 +35,8 @@
             "going": 50.0,
             "going_fit": 67.91044776119404,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 45.0
           },
           "missing_data_flags": [],
           "going_data": "sufficient",
@@ -54,17 +56,18 @@
           "horse": "Alfa Duplicate",
           "trainer": "Ivan Furtado",
           "jockey": "Silvestre De Sousa",
-          "score": 92.23,
+          "score": 92.24,
           "score_breakdown": {
-            "class_rating": 17.15,
-            "recent_form": 13.222,
+            "class_rating": 15.582,
+            "recent_form": 12.017,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 11.61
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 10.549,
+            "pace": 3.15
           },
           "raw_signal_values": {
             "class_rating": 57.6468107379856,
@@ -75,7 +78,8 @@
             "going": 50.0,
             "going_fit": 77.3972602739726,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 45.0
           },
           "missing_data_flags": [],
           "going_data": "sufficient",
@@ -95,17 +99,18 @@
           "horse": "Straight Ahead",
           "trainer": "Craig Lidster",
           "jockey": "TBC",
-          "score": 72.55,
+          "score": 72.56,
           "score_breakdown": {
-            "class_rating": 15.37,
-            "recent_form": 9.696,
+            "class_rating": 13.964,
+            "recent_form": 8.812,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 10.377
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 9.429,
+            "pace": 3.15
           },
           "raw_signal_values": {
             "class_rating": 51.66235016043162,
@@ -116,7 +121,8 @@
             "going": 50.0,
             "going_fit": 69.17808219178082,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 45.0
           },
           "missing_data_flags": [],
           "going_data": "sufficient",
@@ -138,15 +144,16 @@
           "jockey": "Mikey Sheehy",
           "score": 65.73,
           "score_breakdown": {
-            "class_rating": 22.491,
-            "recent_form": 2.456,
+            "class_rating": 20.435,
+            "recent_form": 2.232,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 8.229
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 7.478,
+            "pace": 3.15
           },
           "raw_signal_values": {
             "class_rating": 75.60019247064751,
@@ -157,7 +164,8 @@
             "going": 50.0,
             "going_fit": 54.86111111111111,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 45.0
           },
           "missing_data_flags": [],
           "going_data": "sufficient",
@@ -177,17 +185,18 @@
           "horse": "One And Gone",
           "trainer": "Ian Williams",
           "jockey": "Edward Greatrex",
-          "score": 60.15,
+          "score": 60.16,
           "score_breakdown": {
-            "class_rating": 18.93,
-            "recent_form": 4.596,
+            "class_rating": 17.2,
+            "recent_form": 4.177,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 7.796
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 7.084,
+            "pace": 3.15
           },
           "raw_signal_values": {
             "class_rating": 63.63127131553957,
@@ -198,7 +207,8 @@
             "going": 50.0,
             "going_fit": 51.973684210526315,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 45.0
           },
           "missing_data_flags": [],
           "going_data": "sufficient",
@@ -218,17 +228,18 @@
           "horse": "Ambishio",
           "trainer": "Michael Appleby",
           "jockey": "Robert Havlin",
-          "score": 59.7,
+          "score": 59.69,
           "score_breakdown": {
-            "class_rating": 15.37,
-            "recent_form": 2.707,
+            "class_rating": 13.964,
+            "recent_form": 2.461,
             "trainer_form": 0.0,
-            "jockey": 5.1,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 7.993
+            "jockey": 4.632,
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 7.263,
+            "pace": 3.15
           },
           "raw_signal_values": {
             "class_rating": 51.66235016043162,
@@ -239,7 +250,8 @@
             "going": 50.0,
             "going_fit": 53.28947368421052,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 45.0
           },
           "missing_data_flags": [],
           "going_data": "sufficient",
@@ -259,17 +271,18 @@
           "horse": "Coyy",
           "trainer": "Eve Johnson Houghton",
           "jockey": "TBC",
-          "score": 49.73,
+          "score": 49.74,
           "score_breakdown": {
-            "class_rating": 15.37,
-            "recent_form": 7.241,
+            "class_rating": 13.964,
+            "recent_form": 6.581,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.15
           },
           "raw_signal_values": {
             "class_rating": 51.66235016043162,
@@ -280,7 +293,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 45.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -302,15 +316,16 @@
           "jockey": "TBC",
           "score": 47.84,
           "score_breakdown": {
-            "class_rating": 15.37,
-            "recent_form": 6.611,
+            "class_rating": 13.964,
+            "recent_form": 6.008,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.15
           },
           "raw_signal_values": {
             "class_rating": 51.66235016043162,
@@ -321,7 +336,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 45.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -343,15 +359,16 @@
           "jockey": "Ray Dawson",
           "score": 47.41,
           "score_breakdown": {
-            "class_rating": 13.589,
-            "recent_form": 8.248,
+            "class_rating": 12.347,
+            "recent_form": 7.496,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.15
           },
           "raw_signal_values": {
             "class_rating": 45.67788958287765,
@@ -362,7 +379,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 45.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -384,15 +402,16 @@
           "jockey": "Kieran Shoemark",
           "score": 45.62,
           "score_breakdown": {
-            "class_rating": 17.15,
-            "recent_form": 4.093,
+            "class_rating": 15.582,
+            "recent_form": 3.719,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.15
           },
           "raw_signal_values": {
             "class_rating": 57.6468107379856,
@@ -403,7 +422,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 45.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -425,15 +445,16 @@
           "jockey": "Ben Robinson",
           "score": 45.48,
           "score_breakdown": {
-            "class_rating": 18.93,
-            "recent_form": 2.267,
+            "class_rating": 17.2,
+            "recent_form": 2.06,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.15
           },
           "raw_signal_values": {
             "class_rating": 63.63127131553957,
@@ -444,7 +465,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 45.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -461,143 +483,21 @@
         },
         {
           "rank": 12,
-          "horse": "Henrythenate",
-          "trainer": "Patrick Morris",
-          "jockey": "Paddy Bradley",
-          "score": 41.5,
-          "score_breakdown": {
-            "class_rating": 18.93,
-            "recent_form": 0.944,
-            "trainer_form": 0.0,
-            "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
-          },
-          "raw_signal_values": {
-            "class_rating": 63.63127131553957,
-            "recent_form": 5.555555555555555,
-            "trainer_form": 0.0,
-            "jockey": 0.0,
-            "course_distance": 50.0,
-            "going": 50.0,
-            "going_fit": 35.0,
-            "draw_bias": 50.0,
-            "class_move": 50.0
-          },
-          "missing_data_flags": [
-            "going_data_insufficient"
-          ],
-          "going_data": "insufficient",
-          "going_fit": {
-            "score": 0.35,
-            "going_data": "insufficient",
-            "target_going": "Good"
-          },
-          "morning_price": 15.5,
-          "odds_source": "synthetic",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
-        },
-        {
-          "rank": 13,
-          "horse": "Artista",
-          "trainer": "Ollie Sangster",
-          "jockey": "TBC",
-          "score": 40.88,
-          "score_breakdown": {
-            "class_rating": 17.15,
-            "recent_form": 2.519,
-            "trainer_form": 0.0,
-            "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
-          },
-          "raw_signal_values": {
-            "class_rating": 57.6468107379856,
-            "recent_form": 14.814814814814813,
-            "trainer_form": 0.0,
-            "jockey": 0.0,
-            "course_distance": 50.0,
-            "going": 50.0,
-            "going_fit": 35.0,
-            "draw_bias": 50.0,
-            "class_move": 50.0
-          },
-          "missing_data_flags": [
-            "going_data_insufficient"
-          ],
-          "going_data": "insufficient",
-          "going_fit": {
-            "score": 0.35,
-            "going_data": "insufficient",
-            "target_going": "Good"
-          },
-          "morning_price": 17.5,
-          "odds_source": "synthetic",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
-        },
-        {
-          "rank": 14,
-          "horse": "Hanney Girl",
-          "trainer": "Tim Easterby",
-          "jockey": "David Allan",
-          "score": 40.88,
-          "score_breakdown": {
-            "class_rating": 17.15,
-            "recent_form": 2.519,
-            "trainer_form": 0.0,
-            "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
-          },
-          "raw_signal_values": {
-            "class_rating": 57.6468107379856,
-            "recent_form": 14.814814814814813,
-            "trainer_form": 0.0,
-            "jockey": 0.0,
-            "course_distance": 50.0,
-            "going": 50.0,
-            "going_fit": 35.0,
-            "draw_bias": 50.0,
-            "class_move": 50.0
-          },
-          "missing_data_flags": [
-            "going_data_insufficient"
-          ],
-          "going_data": "insufficient",
-          "going_fit": {
-            "score": 0.35,
-            "going_data": "insufficient",
-            "target_going": "Good"
-          },
-          "morning_price": 16.0,
-          "odds_source": "synthetic",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
-        },
-        {
-          "rank": 15,
           "horse": "Shes Got A Brother",
           "trainer": "Michael & David Easterby",
           "jockey": "Billy Garritty",
-          "score": 39.35,
+          "score": 43.99,
           "score_breakdown": {
-            "class_rating": 10.028,
-            "recent_form": 9.13,
+            "class_rating": 9.112,
+            "recent_form": 8.297,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 4.55
           },
           "raw_signal_values": {
             "class_rating": 33.7089684277697,
@@ -608,7 +508,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 65.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -624,21 +525,151 @@
           "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
+          "rank": 13,
+          "horse": "Henrythenate",
+          "trainer": "Patrick Morris",
+          "jockey": "Paddy Bradley",
+          "score": 41.5,
+          "score_breakdown": {
+            "class_rating": 17.2,
+            "recent_form": 0.858,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.15
+          },
+          "raw_signal_values": {
+            "class_rating": 63.63127131553957,
+            "recent_form": 5.555555555555555,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0,
+            "pace": 45.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good"
+          },
+          "morning_price": 15.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 14,
+          "horse": "Artista",
+          "trainer": "Ollie Sangster",
+          "jockey": "TBC",
+          "score": 40.88,
+          "score_breakdown": {
+            "class_rating": 15.582,
+            "recent_form": 2.289,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.15
+          },
+          "raw_signal_values": {
+            "class_rating": 57.6468107379856,
+            "recent_form": 14.814814814814813,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0,
+            "pace": 45.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good"
+          },
+          "morning_price": 17.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 15,
+          "horse": "Hanney Girl",
+          "trainer": "Tim Easterby",
+          "jockey": "David Allan",
+          "score": 40.88,
+          "score_breakdown": {
+            "class_rating": 15.582,
+            "recent_form": 2.289,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.15
+          },
+          "raw_signal_values": {
+            "class_rating": 57.6468107379856,
+            "recent_form": 14.814814814814813,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0,
+            "pace": 45.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good"
+          },
+          "morning_price": 16.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
           "rank": 16,
           "horse": "Wedonttelllies",
           "trainer": "Richard Hughes",
           "jockey": "Billy Loughnane",
-          "score": 36.5,
+          "score": 36.51,
           "score_breakdown": {
-            "class_rating": 10.028,
-            "recent_form": 8.185,
+            "class_rating": 9.112,
+            "recent_form": 7.439,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.15
           },
           "raw_signal_values": {
             "class_rating": 33.7089684277697,
@@ -649,7 +680,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 45.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -671,15 +703,16 @@
           "jockey": "Tom Kiely-Marshall",
           "score": 35.75,
           "score_breakdown": {
-            "class_rating": 10.028,
-            "recent_form": 7.933,
+            "class_rating": 9.112,
+            "recent_form": 7.21,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.15
           },
           "raw_signal_values": {
             "class_rating": 33.7089684277697,
@@ -690,7 +723,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 45.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -713,14 +747,15 @@
           "score": 5.0,
           "score_breakdown": {
             "class_rating": 0.0,
-            "recent_form": 7.744,
+            "recent_form": 7.038,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.15
           },
           "raw_signal_values": {
             "class_rating": 0.0,
@@ -731,7 +766,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 45.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -749,7 +785,7 @@
       ],
       "confidence": "LOW",
       "bet_recommendation": "PASS",
-      "race_stdev": 20.48,
+      "race_stdev": 20.36,
       "race_competitiveness": "CLEAR FAVOURITE",
       "missing_data_flags": [
         "going_data_insufficient"
@@ -768,15 +804,16 @@
           "jockey": "Oisin Murphy",
           "score": 95.0,
           "score_breakdown": {
-            "class_rating": 15.637,
-            "recent_form": 6.296,
+            "class_rating": 14.207,
+            "recent_form": 5.722,
             "trainer_form": 0.0,
-            "jockey": 7.65,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 13.5
+            "jockey": 6.948,
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 12.267,
+            "pace": 2.94
           },
           "raw_signal_values": {
             "class_rating": 52.56054914095253,
@@ -787,7 +824,8 @@
             "going": 50.0,
             "going_fit": 90.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 42.0
           },
           "missing_data_flags": [],
           "going_data": "sufficient",
@@ -807,17 +845,18 @@
           "horse": "Hickory Lad",
           "trainer": "Phillip Makin",
           "jockey": "TBC",
-          "score": 93.04,
+          "score": 92.98,
           "score_breakdown": {
-            "class_rating": 22.42,
-            "recent_form": 10.389,
+            "class_rating": 20.37,
+            "recent_form": 9.442,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 9.55
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 8.678,
+            "pace": 2.94
           },
           "raw_signal_values": {
             "class_rating": 75.36162958657738,
@@ -828,7 +867,8 @@
             "going": 50.0,
             "going_fit": 63.66666666666666,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 42.0
           },
           "missing_data_flags": [],
           "going_data": "sufficient",
@@ -848,17 +888,18 @@
           "horse": "Possessive",
           "trainer": "K R Burke",
           "jockey": "Shane Foley",
-          "score": 87.66,
+          "score": 87.38,
           "score_breakdown": {
-            "class_rating": 20.57,
-            "recent_form": 6.296,
+            "class_rating": 18.689,
+            "recent_form": 5.722,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 13.5
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 12.267,
+            "pace": 2.94
           },
           "raw_signal_values": {
             "class_rating": 69.14315310140697,
@@ -869,7 +910,8 @@
             "going": 50.0,
             "going_fit": 90.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 42.0
           },
           "missing_data_flags": [],
           "going_data": "sufficient",
@@ -889,17 +931,18 @@
           "horse": "Star Prospect",
           "trainer": "Joseph Patrick O'Brien",
           "jockey": "TBC",
-          "score": 82.24,
+          "score": 81.75,
           "score_breakdown": {
-            "class_rating": 21.187,
-            "recent_form": 7.241,
+            "class_rating": 19.25,
+            "recent_form": 6.581,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 9.933
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 9.026,
+            "pace": 2.94
           },
           "raw_signal_values": {
             "class_rating": 71.21597859646377,
@@ -910,7 +953,8 @@
             "going": 50.0,
             "going_fit": 66.22222222222221,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 42.0
           },
           "missing_data_flags": [],
           "going_data": "sufficient",
@@ -930,17 +974,18 @@
           "horse": "Rlasthope",
           "trainer": "Tony Coyle & Kaine Wood",
           "jockey": "Colin Keane",
-          "score": 67.67,
+          "score": 70.08,
           "score_breakdown": {
-            "class_rating": 20.57,
-            "recent_form": 5.352,
+            "class_rating": 18.689,
+            "recent_form": 4.864,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 7.05
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 6.406,
+            "pace": 4.06
           },
           "raw_signal_values": {
             "class_rating": 69.14315310140697,
@@ -951,7 +996,8 @@
             "going": 50.0,
             "going_fit": 47.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 58.0
           },
           "missing_data_flags": [],
           "going_data": "sufficient",
@@ -971,17 +1017,18 @@
           "horse": "Havana Flash",
           "trainer": "George Boughey",
           "jockey": "Billy Loughnane",
-          "score": 55.92,
+          "score": 60.48,
           "score_breakdown": {
-            "class_rating": 14.875,
-            "recent_form": 8.5,
+            "class_rating": 13.515,
+            "recent_form": 7.725,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 4.9
           },
           "raw_signal_values": {
             "class_rating": 50.0,
@@ -992,7 +1039,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 70.0
           },
           "missing_data_flags": [
             "no_ratings",
@@ -1010,61 +1058,21 @@
         },
         {
           "rank": 7,
-          "horse": "The Bookkeeper",
-          "trainer": "Richard Hughes",
-          "jockey": "Hector Crouch",
-          "score": 54.58,
-          "score_breakdown": {
-            "class_rating": 15.637,
-            "recent_form": 7.241,
-            "trainer_form": 0.0,
-            "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
-          },
-          "raw_signal_values": {
-            "class_rating": 52.56054914095253,
-            "recent_form": 42.592592592592595,
-            "trainer_form": 0.0,
-            "jockey": 0.0,
-            "course_distance": 50.0,
-            "going": 50.0,
-            "going_fit": 35.0,
-            "draw_bias": 50.0,
-            "class_move": 50.0
-          },
-          "missing_data_flags": [
-            "going_data_insufficient"
-          ],
-          "going_data": "insufficient",
-          "going_fit": {
-            "score": 0.35,
-            "going_data": "insufficient",
-            "target_going": "Good to Soft"
-          },
-          "morning_price": 15.0,
-          "odds_source": "synthetic",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
-        },
-        {
-          "rank": 8,
           "horse": "Dandyman Dan",
           "trainer": "David Evans",
           "jockey": "Saffie Osborne",
-          "score": 52.77,
+          "score": 54.61,
           "score_breakdown": {
-            "class_rating": 17.487,
-            "recent_form": 4.722,
+            "class_rating": 15.888,
+            "recent_form": 4.292,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 4.06
           },
           "raw_signal_values": {
             "class_rating": 58.77902562612294,
@@ -1075,7 +1083,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 58.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -1091,21 +1100,65 @@
           "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
+          "rank": 8,
+          "horse": "The Bookkeeper",
+          "trainer": "Richard Hughes",
+          "jockey": "Hector Crouch",
+          "score": 53.03,
+          "score_breakdown": {
+            "class_rating": 14.207,
+            "recent_form": 6.581,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 2.94
+          },
+          "raw_signal_values": {
+            "class_rating": 52.56054914095253,
+            "recent_form": 42.592592592592595,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0,
+            "pace": 42.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 15.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
           "rank": 9,
           "horse": "King Of Montenegro",
           "trainer": "Brian Meehan",
           "jockey": "TBC",
-          "score": 46.88,
+          "score": 48.49,
           "score_breakdown": {
-            "class_rating": 16.253,
-            "recent_form": 3.778,
+            "class_rating": 14.767,
+            "recent_form": 3.433,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 4.06
           },
           "raw_signal_values": {
             "class_rating": 54.633374636009336,
@@ -1116,7 +1169,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 58.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -1133,61 +1187,21 @@
         },
         {
           "rank": 10,
-          "horse": "Alpe d'Huez",
-          "trainer": "Archie Watson",
-          "jockey": "Luke Morris",
-          "score": 45.35,
-          "score_breakdown": {
-            "class_rating": 13.17,
-            "recent_form": 6.296,
-            "trainer_form": 0.0,
-            "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
-          },
-          "raw_signal_values": {
-            "class_rating": 44.26924716072531,
-            "recent_form": 37.03703703703704,
-            "trainer_form": 0.0,
-            "jockey": 0.0,
-            "course_distance": 50.0,
-            "going": 50.0,
-            "going_fit": 35.0,
-            "draw_bias": 50.0,
-            "class_move": 50.0
-          },
-          "missing_data_flags": [
-            "going_data_insufficient"
-          ],
-          "going_data": "insufficient",
-          "going_fit": {
-            "score": 0.35,
-            "going_data": "insufficient",
-            "target_going": "Good to Soft"
-          },
-          "morning_price": 16.0,
-          "odds_source": "synthetic",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
-        },
-        {
-          "rank": 11,
           "horse": "Social Spirit",
           "trainer": "Michael & David Easterby",
           "jockey": "Billy Garritty",
-          "score": 43.48,
+          "score": 44.96,
           "score_breakdown": {
-            "class_rating": 16.253,
-            "recent_form": 2.519,
+            "class_rating": 14.767,
+            "recent_form": 2.289,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 4.06
           },
           "raw_signal_values": {
             "class_rating": 54.633374636009336,
@@ -1198,7 +1212,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 58.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -1214,21 +1229,65 @@
           "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
+          "rank": 11,
+          "horse": "Alpe d'Huez",
+          "trainer": "Archie Watson",
+          "jockey": "Luke Morris",
+          "score": 43.45,
+          "score_breakdown": {
+            "class_rating": 11.966,
+            "recent_form": 5.722,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 2.94
+          },
+          "raw_signal_values": {
+            "class_rating": 44.26924716072531,
+            "recent_form": 37.03703703703704,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0,
+            "pace": 42.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 16.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
           "rank": 12,
           "horse": "El Lambo",
           "trainer": "Charles Hills",
           "jockey": "Jason Watson",
-          "score": 40.35,
+          "score": 41.72,
           "score_breakdown": {
-            "class_rating": 11.32,
-            "recent_form": 6.296,
+            "class_rating": 10.285,
+            "recent_form": 5.722,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 4.06
           },
           "raw_signal_values": {
             "class_rating": 38.05077067555489,
@@ -1239,7 +1298,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 58.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -1259,17 +1319,18 @@
           "horse": "Ardad Steve",
           "trainer": "Eve Johnson Houghton",
           "jockey": "Charles Bishop",
-          "score": 40.07,
+          "score": 41.42,
           "score_breakdown": {
-            "class_rating": 16.253,
-            "recent_form": 1.259,
+            "class_rating": 14.767,
+            "recent_form": 1.144,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 4.06
           },
           "raw_signal_values": {
             "class_rating": 54.633374636009336,
@@ -1280,7 +1341,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 58.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -1300,17 +1362,18 @@
           "horse": "Romidijo",
           "trainer": "Charlie Clover",
           "jockey": "Pierre-Louis Jamin",
-          "score": 36.81,
+          "score": 38.04,
           "score_breakdown": {
-            "class_rating": 13.787,
-            "recent_form": 2.519,
+            "class_rating": 12.526,
+            "recent_form": 2.289,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 4.06
           },
           "raw_signal_values": {
             "class_rating": 46.342072655782104,
@@ -1321,7 +1384,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 58.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -1341,17 +1405,18 @@
           "horse": "The Resdev Roman",
           "trainer": "Michael & David Easterby",
           "jockey": "TBC",
-          "score": 28.34,
+          "score": 29.23,
           "score_breakdown": {
-            "class_rating": 13.17,
+            "class_rating": 11.966,
             "recent_form": 0.0,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 4.06
           },
           "raw_signal_values": {
             "class_rating": 44.26924716072531,
@@ -1362,7 +1427,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 58.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -1382,17 +1448,18 @@
           "horse": "Benefacta",
           "trainer": "Richard Hughes",
           "jockey": "David Probert",
-          "score": 15.0,
+          "score": 15.39,
           "score_breakdown": {
-            "class_rating": 8.237,
+            "class_rating": 7.484,
             "recent_form": 0.0,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 4.06
           },
           "raw_signal_values": {
             "class_rating": 27.686643200270854,
@@ -1403,7 +1470,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 58.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -1423,17 +1491,18 @@
           "horse": "Time And Effort",
           "trainer": "Ivan Furtado",
           "jockey": "Silvestre De Sousa",
-          "score": 13.4,
+          "score": 13.73,
           "score_breakdown": {
-            "class_rating": 6.387,
-            "recent_form": 1.259,
+            "class_rating": 5.803,
+            "recent_form": 1.144,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 4.06
           },
           "raw_signal_values": {
             "class_rating": 21.468166715100438,
@@ -1444,7 +1513,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 58.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -1466,15 +1536,16 @@
           "jockey": "TBC",
           "score": 5.0,
           "score_breakdown": {
-            "class_rating": 4.537,
+            "class_rating": 4.122,
             "recent_form": 0.0,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 4.06
           },
           "raw_signal_values": {
             "class_rating": 15.249690229930021,
@@ -1485,7 +1556,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 58.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -1503,11 +1575,11 @@
       ],
       "confidence": "LOW",
       "bet_recommendation": "PASS",
-      "race_stdev": 26.04,
+      "race_stdev": 25.96,
       "race_competitiveness": "CLEAR FAVOURITE",
       "missing_data_flags": [
-        "no_ratings",
-        "going_data_insufficient"
+        "going_data_insufficient",
+        "no_ratings"
       ],
       "race_name": "Oddschecker British EBF Woodcote Stakes",
       "race_time": "14:05"
@@ -1523,15 +1595,16 @@
           "jockey": "Jamie Spencer",
           "score": 95.0,
           "score_breakdown": {
-            "class_rating": 18.203,
-            "recent_form": 12.152,
-            "trainer_form": 6.8,
+            "class_rating": 16.539,
+            "recent_form": 11.044,
+            "trainer_form": 6.176,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 12.167
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 11.055,
+            "pace": 3.5
           },
           "raw_signal_values": {
             "class_rating": 61.18593425356708,
@@ -1542,7 +1615,8 @@
             "going": 50.0,
             "going_fit": 81.11111111111111,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 50.0
           },
           "missing_data_flags": [],
           "going_data": "sufficient",
@@ -1562,17 +1636,18 @@
           "horse": "Seagulls Eleven",
           "trainer": "Hugo Palmer",
           "jockey": "Oisin Murphy",
-          "score": 85.58,
+          "score": 85.62,
           "score_breakdown": {
-            "class_rating": 17.038,
-            "recent_form": 10.074,
+            "class_rating": 15.48,
+            "recent_form": 9.156,
             "trainer_form": 0.0,
-            "jockey": 7.65,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 10.794
+            "jockey": 6.948,
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 9.808,
+            "pace": 3.5
           },
           "raw_signal_values": {
             "class_rating": 57.27085726481861,
@@ -1583,7 +1658,8 @@
             "going": 50.0,
             "going_fit": 71.96078431372548,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 50.0
           },
           "missing_data_flags": [],
           "going_data": "sufficient",
@@ -1603,17 +1679,18 @@
           "horse": "Chancellor",
           "trainer": "John & Thady Gosden",
           "jockey": "Robert Havlin",
-          "score": 77.27,
+          "score": 78.31,
           "score_breakdown": {
-            "class_rating": 19.368,
-            "recent_form": 8.059,
+            "class_rating": 17.597,
+            "recent_form": 7.324,
             "trainer_form": 0.0,
-            "jockey": 5.1,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 9.709
+            "jockey": 4.632,
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 8.822,
+            "pace": 3.85
           },
           "raw_signal_values": {
             "class_rating": 65.10101124231556,
@@ -1624,7 +1701,8 @@
             "going": 50.0,
             "going_fit": 64.72602739726028,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 55.0
           },
           "missing_data_flags": [],
           "going_data": "sufficient",
@@ -1644,17 +1722,18 @@
           "horse": "Boiling Point",
           "trainer": "K R Burke",
           "jockey": "Clifford Lee",
-          "score": 69.1,
+          "score": 70.17,
           "score_breakdown": {
-            "class_rating": 21.697,
-            "recent_form": 11.27,
+            "class_rating": 19.713,
+            "recent_form": 10.243,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 6.0
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 5.452,
+            "pace": 3.85
           },
           "raw_signal_values": {
             "class_rating": 72.93116521981253,
@@ -1665,7 +1744,8 @@
             "going": 50.0,
             "going_fit": 40.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 55.0
           },
           "missing_data_flags": [],
           "going_data": "sufficient",
@@ -1685,17 +1765,18 @@
           "horse": "Persica",
           "trainer": "Richard Hannon",
           "jockey": "Sean Levey",
-          "score": 61.91,
+          "score": 62.05,
           "score_breakdown": {
-            "class_rating": 19.368,
-            "recent_form": 1.259,
-            "trainer_form": 6.8,
+            "class_rating": 17.597,
+            "recent_form": 1.144,
+            "trainer_form": 6.176,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 8.67
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 7.878,
+            "pace": 3.5
           },
           "raw_signal_values": {
             "class_rating": 65.10101124231556,
@@ -1706,7 +1787,8 @@
             "going": 50.0,
             "going_fit": 57.801418439716315,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 50.0
           },
           "missing_data_flags": [],
           "going_data": "sufficient",
@@ -1726,17 +1808,18 @@
           "horse": "Skukuza",
           "trainer": "Ed Dunlop",
           "jockey": "Ryan Moore",
-          "score": 53.9,
+          "score": 54.07,
           "score_breakdown": {
-            "class_rating": 14.709,
-            "recent_form": 1.574,
+            "class_rating": 13.364,
+            "recent_form": 1.431,
             "trainer_form": 0.0,
-            "jockey": 8.5,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 8.112
+            "jockey": 7.72,
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 7.371,
+            "pace": 3.5
           },
           "raw_signal_values": {
             "class_rating": 49.44070328732166,
@@ -1747,7 +1830,8 @@
             "going": 50.0,
             "going_fit": 54.08163265306122,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 50.0
           },
           "missing_data_flags": [],
           "going_data": "sufficient",
@@ -1767,17 +1851,18 @@
           "horse": "Qirat",
           "trainer": "Ralph Beckett",
           "jockey": "TBC",
-          "score": 44.85,
+          "score": 45.06,
           "score_breakdown": {
-            "class_rating": 15.873,
-            "recent_form": 2.204,
-            "trainer_form": 5.95,
+            "class_rating": 14.422,
+            "recent_form": 2.003,
+            "trainer_form": 5.404,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.5
           },
           "raw_signal_values": {
             "class_rating": 53.35578027607014,
@@ -1788,7 +1873,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 50.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -1808,17 +1894,18 @@
           "horse": "Royal Playwright",
           "trainer": "Andrew Balding",
           "jockey": "Silvestre De Sousa",
-          "score": 43.75,
+          "score": 43.96,
           "score_breakdown": {
-            "class_rating": 11.214,
-            "recent_form": 5.572,
-            "trainer_form": 6.8,
+            "class_rating": 10.189,
+            "recent_form": 5.064,
+            "trainer_form": 6.176,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.5
           },
           "raw_signal_values": {
             "class_rating": 37.69547232107623,
@@ -1829,7 +1916,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 50.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -1849,17 +1937,18 @@
           "horse": "Ice Max",
           "trainer": "K R Burke",
           "jockey": "Sam James",
-          "score": 39.18,
+          "score": 39.42,
           "score_breakdown": {
-            "class_rating": 17.038,
-            "recent_form": 4.722,
+            "class_rating": 15.48,
+            "recent_form": 4.292,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.5
           },
           "raw_signal_values": {
             "class_rating": 57.27085726481861,
@@ -1870,7 +1959,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 50.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -1890,17 +1980,18 @@
           "horse": "Alcantor",
           "trainer": "Joseph Patrick O'Brien",
           "jockey": "TBC",
-          "score": 36.42,
+          "score": 36.67,
           "score_breakdown": {
-            "class_rating": 18.203,
-            "recent_form": 2.456,
+            "class_rating": 16.539,
+            "recent_form": 2.232,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.5
           },
           "raw_signal_values": {
             "class_rating": 61.18593425356708,
@@ -1911,7 +2002,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 50.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -1931,17 +2023,18 @@
           "horse": "Point Lynas",
           "trainer": "Edward Bethell",
           "jockey": "TBC",
-          "score": 29.02,
+          "score": 29.3,
           "score_breakdown": {
-            "class_rating": 15.873,
-            "recent_form": 1.826,
+            "class_rating": 14.422,
+            "recent_form": 1.659,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.5
           },
           "raw_signal_values": {
             "class_rating": 53.35578027607014,
@@ -1952,7 +2045,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 50.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -1972,17 +2066,18 @@
           "horse": "Balmacara",
           "trainer": "Eve Johnson Houghton",
           "jockey": "Charles Bishop",
-          "score": 10.28,
+          "score": 10.64,
           "score_breakdown": {
-            "class_rating": 6.555,
-            "recent_form": 3.652,
+            "class_rating": 5.956,
+            "recent_form": 3.319,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.5
           },
           "raw_signal_values": {
             "class_rating": 22.03516436608233,
@@ -1993,7 +2088,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 50.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -2013,17 +2109,18 @@
           "horse": "Cowardofthecounty",
           "trainer": "Joseph Patrick O'Brien",
           "jockey": "TBC",
-          "score": 7.68,
+          "score": 8.05,
           "score_breakdown": {
-            "class_rating": 5.391,
-            "recent_form": 3.778,
+            "class_rating": 4.898,
+            "recent_form": 3.433,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.5
           },
           "raw_signal_values": {
             "class_rating": 18.120087377333856,
@@ -2034,7 +2131,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 50.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -2056,15 +2154,16 @@
           "jockey": "Rossa Ryan",
           "score": 5.0,
           "score_breakdown": {
-            "class_rating": 7.72,
-            "recent_form": 0.378,
+            "class_rating": 7.014,
+            "recent_form": 0.343,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.36
           },
           "raw_signal_values": {
             "class_rating": 25.950241354830812,
@@ -2075,7 +2174,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 48.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -2093,7 +2193,7 @@
       ],
       "confidence": "MED",
       "bet_recommendation": "EW",
-      "race_stdev": 27.56,
+      "race_stdev": 27.62,
       "race_competitiveness": "CLEAR FAVOURITE",
       "missing_data_flags": [
         "going_data_insufficient"
@@ -2112,15 +2212,16 @@
           "jockey": "Oisin Murphy",
           "score": 95.0,
           "score_breakdown": {
-            "class_rating": 15.042,
-            "recent_form": 12.467,
-            "trainer_form": 6.8,
-            "jockey": 7.65,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 11.023
+            "class_rating": 13.666,
+            "recent_form": 11.33,
+            "trainer_form": 6.176,
+            "jockey": 6.948,
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 10.017,
+            "pace": 3.85
           },
           "raw_signal_values": {
             "class_rating": 50.559997849612415,
@@ -2131,7 +2232,8 @@
             "going": 50.0,
             "going_fit": 73.48993288590604,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 55.0
           },
           "missing_data_flags": [],
           "going_data": "sufficient",
@@ -2151,17 +2253,18 @@
           "horse": "Quai De Bethune",
           "trainer": "Hamad Al Jehani",
           "jockey": "James Doyle",
-          "score": 73.51,
+          "score": 72.97,
           "score_breakdown": {
-            "class_rating": 17.596,
-            "recent_form": 8.657,
+            "class_rating": 15.987,
+            "recent_form": 7.868,
             "trainer_form": 0.0,
-            "jockey": 5.95,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 9.421
+            "jockey": 5.404,
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 8.56,
+            "pace": 3.5
           },
           "raw_signal_values": {
             "class_rating": 59.146631543669,
@@ -2172,7 +2275,8 @@
             "going": 50.0,
             "going_fit": 62.804347826086946,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 50.0
           },
           "missing_data_flags": [],
           "going_data": "sufficient",
@@ -2192,17 +2296,18 @@
           "horse": "Let's Dream",
           "trainer": "Michael Bell",
           "jockey": "David Probert",
-          "score": 67.9,
+          "score": 67.41,
           "score_breakdown": {
-            "class_rating": 15.042,
-            "recent_form": 12.341,
+            "class_rating": 13.666,
+            "recent_form": 11.216,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 11.275
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 10.245,
+            "pace": 3.5
           },
           "raw_signal_values": {
             "class_rating": 50.559997849612415,
@@ -2213,7 +2318,8 @@
             "going": 50.0,
             "going_fit": 75.16778523489933,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 50.0
           },
           "missing_data_flags": [],
           "going_data": "sufficient",
@@ -2233,17 +2339,18 @@
           "horse": "Sallaal",
           "trainer": "Roger Varian",
           "jockey": "Ray Dawson",
-          "score": 59.45,
+          "score": 59.74,
           "score_breakdown": {
-            "class_rating": 11.21,
-            "recent_form": 7.87,
-            "trainer_form": 5.95,
+            "class_rating": 10.185,
+            "recent_form": 7.153,
+            "trainer_form": 5.404,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 9.161
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 8.324,
+            "pace": 3.85
           },
           "raw_signal_values": {
             "class_rating": 37.680047308527534,
@@ -2254,7 +2361,8 @@
             "going": 50.0,
             "going_fit": 61.07190265486726,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 55.0
           },
           "missing_data_flags": [],
           "going_data": "sufficient",
@@ -2274,17 +2382,18 @@
           "horse": "Rastnet",
           "trainer": "John Butler",
           "jockey": "Silvestre De Sousa",
-          "score": 58.47,
+          "score": 58.77,
           "score_breakdown": {
-            "class_rating": 16.319,
-            "recent_form": 9.319,
+            "class_rating": 14.827,
+            "recent_form": 8.469,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 8.036
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 7.302,
+            "pace": 3.85
           },
           "raw_signal_values": {
             "class_rating": 54.85331469664071,
@@ -2295,7 +2404,8 @@
             "going": 50.0,
             "going_fit": 53.57142857142857,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 55.0
           },
           "missing_data_flags": [],
           "going_data": "sufficient",
@@ -2315,17 +2425,18 @@
           "horse": "Spoken Truth",
           "trainer": "David O'Meara",
           "jockey": "Luke Morris",
-          "score": 55.94,
+          "score": 55.54,
           "score_breakdown": {
-            "class_rating": 17.596,
-            "recent_form": 7.241,
+            "class_rating": 15.987,
+            "recent_form": 6.581,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 7.5
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 6.815,
+            "pace": 3.5
           },
           "raw_signal_values": {
             "class_rating": 59.146631543669,
@@ -2336,7 +2447,8 @@
             "going": 50.0,
             "going_fit": 50.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 50.0
           },
           "missing_data_flags": [],
           "going_data": "sufficient",
@@ -2356,17 +2468,18 @@
           "horse": "Beylerbeyi",
           "trainer": "Ian Williams",
           "jockey": "Billy Loughnane",
-          "score": 48.0,
+          "score": 47.65,
           "score_breakdown": {
-            "class_rating": 17.596,
-            "recent_form": 5.289,
+            "class_rating": 15.987,
+            "recent_form": 4.807,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.5
           },
           "raw_signal_values": {
             "class_rating": 59.146631543669,
@@ -2377,7 +2490,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 50.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -2397,17 +2511,18 @@
           "horse": "Hand Of God",
           "trainer": "Harry Charlton",
           "jockey": "Lewis Edmunds",
-          "score": 47.49,
+          "score": 47.15,
           "score_breakdown": {
-            "class_rating": 16.319,
-            "recent_form": 6.296,
+            "class_rating": 14.827,
+            "recent_form": 5.722,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.5
           },
           "raw_signal_values": {
             "class_rating": 54.85331469664071,
@@ -2418,7 +2533,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 50.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -2438,17 +2554,18 @@
           "horse": "Have Secret",
           "trainer": "Richard & Peter Fahey",
           "jockey": "TBC",
-          "score": 47.01,
+          "score": 46.68,
           "score_breakdown": {
-            "class_rating": 16.319,
-            "recent_form": 6.044,
+            "class_rating": 14.827,
+            "recent_form": 5.493,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.5
           },
           "raw_signal_values": {
             "class_rating": 54.85331469664071,
@@ -2459,7 +2576,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 50.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -2479,17 +2597,18 @@
           "horse": "Auld Toon Loon",
           "trainer": "Tom Dascombe",
           "jockey": "Kieran Shoemark",
-          "score": 46.29,
+          "score": 45.97,
           "score_breakdown": {
-            "class_rating": 16.319,
-            "recent_form": 5.667,
+            "class_rating": 14.827,
+            "recent_form": 5.15,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.5
           },
           "raw_signal_values": {
             "class_rating": 54.85331469664071,
@@ -2500,7 +2619,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 50.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -2520,17 +2640,18 @@
           "horse": "Ammes",
           "trainer": "James Owen",
           "jockey": "TBC",
-          "score": 44.83,
+          "score": 44.51,
           "score_breakdown": {
-            "class_rating": 15.042,
-            "recent_form": 6.17,
+            "class_rating": 13.666,
+            "recent_form": 5.608,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.5
           },
           "raw_signal_values": {
             "class_rating": 50.559997849612415,
@@ -2541,7 +2662,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 50.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -2561,17 +2683,18 @@
           "horse": "Tycoon",
           "trainer": "Kevin Philippart De Foy",
           "jockey": "David Egan",
-          "score": 42.75,
+          "score": 42.45,
           "score_breakdown": {
-            "class_rating": 17.596,
-            "recent_form": 2.519,
+            "class_rating": 15.987,
+            "recent_form": 2.289,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.5
           },
           "raw_signal_values": {
             "class_rating": 59.146631543669,
@@ -2582,7 +2705,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 50.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -2602,17 +2726,18 @@
           "horse": "Tribal Wisdom",
           "trainer": "Michael Attwater",
           "jockey": "TBC",
-          "score": 42.55,
+          "score": 42.25,
           "score_breakdown": {
-            "class_rating": 18.873,
-            "recent_form": 1.133,
+            "class_rating": 17.148,
+            "recent_form": 1.03,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.5
           },
           "raw_signal_values": {
             "class_rating": 63.439948390697296,
@@ -2623,7 +2748,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 50.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -2643,17 +2769,18 @@
           "horse": "Celeborn",
           "trainer": "George Boughey",
           "jockey": "TBC",
-          "score": 42.26,
+          "score": 41.97,
           "score_breakdown": {
-            "class_rating": 12.487,
-            "recent_form": 7.367,
+            "class_rating": 11.345,
+            "recent_form": 6.695,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.5
           },
           "raw_signal_values": {
             "class_rating": 41.97336415555583,
@@ -2664,7 +2791,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 50.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -2684,17 +2812,18 @@
           "horse": "City Of Delight",
           "trainer": "David Menuisier",
           "jockey": "Jason Watson",
-          "score": 41.46,
+          "score": 41.17,
           "score_breakdown": {
-            "class_rating": 13.764,
-            "recent_form": 5.667,
+            "class_rating": 12.506,
+            "recent_form": 5.15,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.5
           },
           "raw_signal_values": {
             "class_rating": 46.26668100258413,
@@ -2705,7 +2834,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 50.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -2725,17 +2855,18 @@
           "horse": "Alpha Crucis",
           "trainer": "Gary & Josh Moore",
           "jockey": "TBC",
-          "score": 41.29,
+          "score": 41.0,
           "score_breakdown": {
-            "class_rating": 16.319,
-            "recent_form": 3.022,
+            "class_rating": 14.827,
+            "recent_form": 2.747,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.5
           },
           "raw_signal_values": {
             "class_rating": 54.85331469664071,
@@ -2746,7 +2877,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 50.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -2766,17 +2898,18 @@
           "horse": "Liberty Lane",
           "trainer": "K R Burke",
           "jockey": "Jack Nicholls",
-          "score": 40.51,
+          "score": 40.23,
           "score_breakdown": {
-            "class_rating": 13.764,
-            "recent_form": 5.163,
+            "class_rating": 12.506,
+            "recent_form": 4.692,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.5
           },
           "raw_signal_values": {
             "class_rating": 46.26668100258413,
@@ -2787,7 +2920,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 50.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -2807,17 +2941,18 @@
           "horse": "King's Code",
           "trainer": "David Evans",
           "jockey": "Saffie Osborne",
-          "score": 40.41,
+          "score": 40.12,
           "score_breakdown": {
-            "class_rating": 18.873,
+            "class_rating": 17.148,
             "recent_form": 0.0,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.5
           },
           "raw_signal_values": {
             "class_rating": 63.439948390697296,
@@ -2828,7 +2963,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 50.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -2848,17 +2984,18 @@
           "horse": "Dante's Lad",
           "trainer": "Ian Williams",
           "jockey": "TBC",
-          "score": 39.42,
+          "score": 38.86,
           "score_breakdown": {
-            "class_rating": 17.596,
-            "recent_form": 0.756,
+            "class_rating": 15.987,
+            "recent_form": 0.687,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.36
           },
           "raw_signal_values": {
             "class_rating": 59.146631543669,
@@ -2869,7 +3006,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 48.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -2889,17 +3027,18 @@
           "horse": "Cloud Seeker",
           "trainer": "Andrew Slattery",
           "jockey": "TBC",
-          "score": 37.45,
+          "score": 37.19,
           "score_breakdown": {
-            "class_rating": 15.042,
-            "recent_form": 2.267,
+            "class_rating": 13.666,
+            "recent_form": 2.06,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.5
           },
           "raw_signal_values": {
             "class_rating": 50.559997849612415,
@@ -2910,7 +3049,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 50.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -2930,17 +3070,18 @@
           "horse": "Great David",
           "trainer": "James Tate",
           "jockey": "Rossa Ryan",
-          "score": 33.87,
+          "score": 33.64,
           "score_breakdown": {
-            "class_rating": 15.042,
-            "recent_form": 0.378,
+            "class_rating": 13.666,
+            "recent_form": 0.343,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.5
           },
           "raw_signal_values": {
             "class_rating": 50.559997849612415,
@@ -2951,7 +3092,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 50.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -2971,17 +3113,18 @@
           "horse": "Bolster",
           "trainer": "K R Burke",
           "jockey": "Pierre-Louis Jamin",
-          "score": 33.16,
+          "score": 32.93,
           "score_breakdown": {
-            "class_rating": 15.042,
+            "class_rating": 13.666,
             "recent_form": 0.0,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.5
           },
           "raw_signal_values": {
             "class_rating": 50.559997849612415,
@@ -2992,7 +3135,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 50.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -3015,14 +3159,15 @@
           "score": 5.0,
           "score_breakdown": {
             "class_rating": 0.0,
-            "recent_form": 0.157,
+            "recent_form": 0.143,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.5
           },
           "raw_signal_values": {
             "class_rating": 0.0,
@@ -3033,7 +3178,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 50.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -3051,7 +3197,7 @@
       ],
       "confidence": "HIGH",
       "bet_recommendation": "WIN",
-      "race_stdev": 16.55,
+      "race_stdev": 16.56,
       "race_competitiveness": "CLEAR FAVOURITE",
       "missing_data_flags": [
         "going_data_insufficient"
@@ -3070,15 +3216,16 @@
           "jockey": "TBC",
           "score": 95.0,
           "score_breakdown": {
-            "class_rating": 14.875,
-            "recent_form": 8.5,
-            "trainer_form": 6.8,
+            "class_rating": 13.515,
+            "recent_form": 7.725,
+            "trainer_form": 6.176,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 11.54
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 10.486,
+            "pace": 3.36
           },
           "raw_signal_values": {
             "class_rating": 50.0,
@@ -3089,7 +3236,8 @@
             "going": 50.0,
             "going_fit": 76.93478260869566,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 48.0
           },
           "missing_data_flags": [
             "no_ratings"
@@ -3102,26 +3250,27 @@
             "effective_runs": 2.3,
             "weighted_win_rate": 0.609
           },
-          "morning_price": 26.0,
-          "odds_source": "sportinglife",
-          "odds_fetched_at": "2026-06-03T09:05:09+00:00"
+          "morning_price": 34.0,
+          "odds_source": "estimated",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
           "rank": 2,
           "horse": "Sugar Island",
           "trainer": "Aidan O'Brien",
           "jockey": "TBC",
-          "score": 89.44,
+          "score": 89.38,
           "score_breakdown": {
-            "class_rating": 14.875,
-            "recent_form": 8.5,
-            "trainer_form": 8.5,
+            "class_rating": 13.515,
+            "recent_form": 7.725,
+            "trainer_form": 7.72,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 8.775
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 7.974,
+            "pace": 3.36
           },
           "raw_signal_values": {
             "class_rating": 50.0,
@@ -3132,7 +3281,8 @@
             "going": 50.0,
             "going_fit": 58.5,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 48.0
           },
           "missing_data_flags": [
             "no_ratings"
@@ -3154,17 +3304,18 @@
           "horse": "Cameo",
           "trainer": "Aidan O'Brien",
           "jockey": "TBC",
-          "score": 82.17,
+          "score": 84.89,
           "score_breakdown": {
-            "class_rating": 14.875,
-            "recent_form": 6.296,
-            "trainer_form": 8.5,
+            "class_rating": 13.515,
+            "recent_form": 5.722,
+            "trainer_form": 7.72,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 9.587
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 8.712,
+            "pace": 3.85
           },
           "raw_signal_values": {
             "class_rating": 50.0,
@@ -3175,7 +3326,8 @@
             "going": 50.0,
             "going_fit": 63.91485507246377,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 55.0
           },
           "missing_data_flags": [
             "no_ratings"
@@ -3194,63 +3346,21 @@
         },
         {
           "rank": 4,
-          "horse": "Precise",
-          "trainer": "Aidan O'Brien",
-          "jockey": "TBC",
-          "score": 81.41,
-          "score_breakdown": {
-            "class_rating": 14.875,
-            "recent_form": 2.833,
-            "trainer_form": 8.5,
-            "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 12.904
-          },
-          "raw_signal_values": {
-            "class_rating": 50.0,
-            "recent_form": 16.666666666666664,
-            "trainer_form": 100.0,
-            "jockey": 0.0,
-            "course_distance": 50.0,
-            "going": 50.0,
-            "going_fit": 86.02551020408164,
-            "draw_bias": 50.0,
-            "class_move": 50.0
-          },
-          "missing_data_flags": [
-            "no_ratings"
-          ],
-          "going_data": "sufficient",
-          "going_fit": {
-            "score": 0.8602551020408163,
-            "going_data": "sufficient",
-            "target_going": "Good to Soft",
-            "effective_runs": 2.45,
-            "weighted_win_rate": 0.776
-          },
-          "morning_price": 4.5,
-          "odds_source": "sportinglife",
-          "odds_fetched_at": "2026-06-03T09:05:09+00:00"
-        },
-        {
-          "rank": 5,
           "horse": "Amelia Earhart",
           "trainer": "Aidan O'Brien",
           "jockey": "Ryan Moore (expected)",
-          "score": 80.68,
+          "score": 83.38,
           "score_breakdown": {
-            "class_rating": 14.875,
-            "recent_form": 3.778,
-            "trainer_form": 8.5,
+            "class_rating": 13.515,
+            "recent_form": 3.433,
+            "trainer_form": 7.72,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 11.82
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 10.74,
+            "pace": 3.85
           },
           "raw_signal_values": {
             "class_rating": 50.0,
@@ -3261,7 +3371,8 @@
             "going": 50.0,
             "going_fit": 78.8,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 55.0
           },
           "missing_data_flags": [
             "no_ratings"
@@ -3274,26 +3385,72 @@
             "effective_runs": 3.125,
             "weighted_win_rate": 0.576
           },
-          "morning_price": 3.0,
-          "odds_source": "sportinglife",
-          "odds_fetched_at": "2026-06-03T09:05:09+00:00"
+          "morning_price": 3.5,
+          "odds_source": "ante_post",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 5,
+          "horse": "Precise",
+          "trainer": "Aidan O'Brien",
+          "jockey": "TBC",
+          "score": 82.09,
+          "score_breakdown": {
+            "class_rating": 13.515,
+            "recent_form": 2.575,
+            "trainer_form": 7.72,
+            "jockey": 0.0,
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 11.725,
+            "pace": 3.5
+          },
+          "raw_signal_values": {
+            "class_rating": 50.0,
+            "recent_form": 16.666666666666664,
+            "trainer_form": 100.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 86.02551020408164,
+            "draw_bias": 50.0,
+            "class_move": 50.0,
+            "pace": 50.0
+          },
+          "missing_data_flags": [
+            "no_ratings"
+          ],
+          "going_data": "sufficient",
+          "going_fit": {
+            "score": 0.8602551020408163,
+            "going_data": "sufficient",
+            "target_going": "Good to Soft",
+            "effective_runs": 2.45,
+            "weighted_win_rate": 0.776
+          },
+          "morning_price": 5.0,
+          "odds_source": "ante_post",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
           "rank": 6,
           "horse": "K Sarra",
           "trainer": "Ralph Beckett",
           "jockey": "TBC",
-          "score": 77.3,
+          "score": 77.14,
           "score_breakdown": {
-            "class_rating": 14.875,
-            "recent_form": 8.5,
-            "trainer_form": 5.95,
+            "class_rating": 13.515,
+            "recent_form": 7.725,
+            "trainer_form": 5.404,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 9.0
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 8.178,
+            "pace": 3.36
           },
           "raw_signal_values": {
             "class_rating": 50.0,
@@ -3304,7 +3461,8 @@
             "going": 50.0,
             "going_fit": 60.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 48.0
           },
           "missing_data_flags": [
             "no_ratings"
@@ -3323,63 +3481,21 @@
         },
         {
           "rank": 7,
-          "horse": "Thundering On",
-          "trainer": "Joseph Patrick O'Brien",
-          "jockey": "TBC",
-          "score": 52.69,
-          "score_breakdown": {
-            "class_rating": 14.875,
-            "recent_form": 8.5,
-            "trainer_form": 0.0,
-            "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 10.236
-          },
-          "raw_signal_values": {
-            "class_rating": 50.0,
-            "recent_form": 50.0,
-            "trainer_form": 0.0,
-            "jockey": 0.0,
-            "course_distance": 50.0,
-            "going": 50.0,
-            "going_fit": 68.2391304347826,
-            "draw_bias": 50.0,
-            "class_move": 50.0
-          },
-          "missing_data_flags": [
-            "no_ratings"
-          ],
-          "going_data": "sufficient",
-          "going_fit": {
-            "score": 0.682391304347826,
-            "going_data": "sufficient",
-            "target_going": "Good to Soft",
-            "effective_runs": 2.3,
-            "weighted_win_rate": 0.435
-          },
-          "morning_price": 21.0,
-          "odds_source": "estimated",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
-        },
-        {
-          "rank": 8,
           "horse": "Legacy Link",
           "trainer": "John & Thady Gosden",
           "jockey": "TBC",
-          "score": 52.24,
+          "score": 54.71,
           "score_breakdown": {
-            "class_rating": 14.875,
-            "recent_form": 6.296,
+            "class_rating": 13.515,
+            "recent_form": 5.722,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 12.355
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 11.226,
+            "pace": 3.85
           },
           "raw_signal_values": {
             "class_rating": 50.0,
@@ -3390,7 +3506,8 @@
             "going": 50.0,
             "going_fit": 82.36363636363636,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 55.0
           },
           "missing_data_flags": [
             "no_ratings"
@@ -3408,21 +3525,67 @@
           "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
+          "rank": 8,
+          "horse": "Thundering On",
+          "trainer": "Joseph Patrick O'Brien",
+          "jockey": "TBC",
+          "score": 52.32,
+          "score_breakdown": {
+            "class_rating": 13.515,
+            "recent_form": 7.725,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 9.301,
+            "pace": 3.36
+          },
+          "raw_signal_values": {
+            "class_rating": 50.0,
+            "recent_form": 50.0,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 68.2391304347826,
+            "draw_bias": 50.0,
+            "class_move": 50.0,
+            "pace": 48.0
+          },
+          "missing_data_flags": [
+            "no_ratings"
+          ],
+          "going_data": "sufficient",
+          "going_fit": {
+            "score": 0.682391304347826,
+            "going_data": "sufficient",
+            "target_going": "Good to Soft",
+            "effective_runs": 2.3,
+            "weighted_win_rate": 0.435
+          },
+          "morning_price": 21.0,
+          "odds_source": "estimated",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
           "rank": 9,
           "horse": "A La Prochaine",
           "trainer": "Ralph Beckett",
           "jockey": "James Doyle (expected)",
-          "score": 50.94,
+          "score": 51.35,
           "score_breakdown": {
-            "class_rating": 14.875,
-            "recent_form": 2.519,
-            "trainer_form": 5.95,
+            "class_rating": 13.515,
+            "recent_form": 2.289,
+            "trainer_form": 5.404,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 9.933
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 9.026,
+            "pace": 3.5
           },
           "raw_signal_values": {
             "class_rating": 50.0,
@@ -3433,7 +3596,8 @@
             "going": 50.0,
             "going_fit": 66.22222222222221,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 50.0
           },
           "missing_data_flags": [
             "no_ratings"
@@ -3455,17 +3619,18 @@
           "horse": "Beautify",
           "trainer": "Aidan O'Brien",
           "jockey": "TBC",
-          "score": 41.38,
+          "score": 41.69,
           "score_breakdown": {
-            "class_rating": 14.875,
+            "class_rating": 13.515,
             "recent_form": 0.0,
-            "trainer_form": 8.5,
+            "trainer_form": 7.72,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 8.072
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 7.334,
+            "pace": 3.5
           },
           "raw_signal_values": {
             "class_rating": 50.0,
@@ -3476,7 +3641,8 @@
             "going": 50.0,
             "going_fit": 53.810344827586206,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 50.0
           },
           "missing_data_flags": [
             "no_ratings"
@@ -3500,15 +3666,16 @@
           "jockey": "TBC",
           "score": 5.0,
           "score_breakdown": {
-            "class_rating": 14.875,
-            "recent_form": 2.267,
+            "class_rating": 13.515,
+            "recent_form": 2.06,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 7.336
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 6.666,
+            "pace": 3.5
           },
           "raw_signal_values": {
             "class_rating": 50.0,
@@ -3519,7 +3686,8 @@
             "going": 50.0,
             "going_fit": 48.90853658536585,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 50.0
           },
           "missing_data_flags": [
             "no_ratings"
@@ -3539,7 +3707,7 @@
       ],
       "confidence": "LOW",
       "bet_recommendation": "PASS",
-      "race_stdev": 25.45,
+      "race_stdev": 25.7,
       "race_competitiveness": "CLEAR FAVOURITE",
       "missing_data_flags": [
         "no_ratings"
@@ -3558,15 +3726,16 @@
           "jockey": "Oisin Murphy",
           "score": 95.0,
           "score_breakdown": {
-            "class_rating": 15.391,
-            "recent_form": 6.044,
-            "trainer_form": 6.8,
-            "jockey": 7.65,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 10.301
+            "class_rating": 13.984,
+            "recent_form": 5.493,
+            "trainer_form": 6.176,
+            "jockey": 6.948,
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 9.36,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 51.73543893797715,
@@ -3577,7 +3746,8 @@
             "going": 50.0,
             "going_fit": 68.67307692307692,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [],
           "going_data": "sufficient",
@@ -3599,15 +3769,16 @@
           "jockey": "Ryan Moore",
           "score": 83.23,
           "score_breakdown": {
-            "class_rating": 14.03,
-            "recent_form": 8.185,
+            "class_rating": 12.747,
+            "recent_form": 7.439,
             "trainer_form": 0.0,
-            "jockey": 8.5,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 10.154
+            "jockey": 7.72,
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 9.226,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 47.160190828764684,
@@ -3618,7 +3789,8 @@
             "going": 50.0,
             "going_fit": 67.69230769230768,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [],
           "going_data": "sufficient",
@@ -3638,17 +3810,18 @@
           "horse": "Zarathos",
           "trainer": "Dylan Cunha",
           "jockey": "TBC",
-          "score": 78.27,
+          "score": 78.28,
           "score_breakdown": {
-            "class_rating": 15.391,
-            "recent_form": 12.215,
+            "class_rating": 13.984,
+            "recent_form": 11.101,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 11.022
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 10.015,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 51.73543893797715,
@@ -3659,7 +3832,8 @@
             "going": 50.0,
             "going_fit": 73.47881355932202,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [],
           "going_data": "sufficient",
@@ -3679,17 +3853,18 @@
           "horse": "Asmen Warrior",
           "trainer": "James Owen",
           "jockey": "Silvestre De Sousa",
-          "score": 75.13,
+          "score": 75.14,
           "score_breakdown": {
-            "class_rating": 20.836,
-            "recent_form": 8.689,
+            "class_rating": 18.931,
+            "recent_form": 7.897,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 7.687
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 6.985,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 70.03643137482702,
@@ -3700,7 +3875,8 @@
             "going": 50.0,
             "going_fit": 51.24999999999999,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [],
           "going_data": "sufficient",
@@ -3720,17 +3896,18 @@
           "horse": "Jimmy Speaking",
           "trainer": "Chris Dwyer",
           "jockey": "TBC",
-          "score": 73.5,
+          "score": 73.52,
           "score_breakdown": {
-            "class_rating": 14.03,
-            "recent_form": 11.648,
+            "class_rating": 12.747,
+            "recent_form": 10.586,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 10.798
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 9.812,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 47.160190828764684,
@@ -3741,7 +3918,8 @@
             "going": 50.0,
             "going_fit": 71.98581560283688,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [],
           "going_data": "sufficient",
@@ -3761,17 +3939,18 @@
           "horse": "First Principle",
           "trainer": "William Haggas",
           "jockey": "Cieren Fallon",
-          "score": 70.45,
+          "score": 70.46,
           "score_breakdown": {
-            "class_rating": 16.752,
-            "recent_form": 2.456,
-            "trainer_form": 6.8,
+            "class_rating": 15.221,
+            "recent_form": 2.232,
+            "trainer_form": 6.176,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 9.091
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 8.261,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 56.31068704718961,
@@ -3782,7 +3961,8 @@
             "going": 50.0,
             "going_fit": 60.60606060606061,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [],
           "going_data": "sufficient",
@@ -3802,17 +3982,18 @@
           "horse": "Footwork",
           "trainer": "Charlie Johnston",
           "jockey": "TBC",
-          "score": 61.11,
+          "score": 61.12,
           "score_breakdown": {
-            "class_rating": 16.752,
-            "recent_form": 8.878,
+            "class_rating": 15.221,
+            "recent_form": 8.068,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 56.31068704718961,
@@ -3823,7 +4004,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -3843,17 +4025,18 @@
           "horse": "Man Of La Mancha",
           "trainer": "Ralph Beckett",
           "jockey": "Rossa Ryan",
-          "score": 59.25,
+          "score": 59.26,
           "score_breakdown": {
-            "class_rating": 12.669,
-            "recent_form": 6.17,
-            "trainer_form": 5.95,
+            "class_rating": 11.511,
+            "recent_form": 5.608,
+            "trainer_form": 5.404,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 42.58494271955222,
@@ -3864,7 +4047,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -3884,17 +4068,18 @@
           "horse": "Principality",
           "trainer": "Harry Eustace",
           "jockey": "George Wood",
-          "score": 57.07,
+          "score": 57.08,
           "score_breakdown": {
-            "class_rating": 16.752,
-            "recent_form": 7.052,
+            "class_rating": 15.221,
+            "recent_form": 6.409,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 56.31068704718961,
@@ -3905,7 +4090,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -3925,17 +4111,18 @@
           "horse": "Walsingham",
           "trainer": "David O'Meara",
           "jockey": "Jason Watson",
-          "score": 56.79,
+          "score": 56.8,
           "score_breakdown": {
-            "class_rating": 16.752,
-            "recent_form": 6.926,
+            "class_rating": 15.221,
+            "recent_form": 6.294,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 56.31068704718961,
@@ -3946,7 +4133,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -3966,17 +4154,18 @@
           "horse": "Mirsky",
           "trainer": "David O'Meara",
           "jockey": "Hector Crouch",
-          "score": 54.7,
+          "score": 54.71,
           "score_breakdown": {
-            "class_rating": 16.752,
-            "recent_form": 5.981,
+            "class_rating": 15.221,
+            "recent_form": 5.436,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 56.31068704718961,
@@ -3987,7 +4176,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -4007,17 +4197,18 @@
           "horse": "Ozat",
           "trainer": "Ian Williams",
           "jockey": "Charles Bishop",
-          "score": 54.4,
+          "score": 54.41,
           "score_breakdown": {
-            "class_rating": 20.836,
-            "recent_form": 1.763,
+            "class_rating": 18.931,
+            "recent_form": 1.602,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 70.03643137482702,
@@ -4028,7 +4219,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -4048,17 +4240,18 @@
           "horse": "Shafdar",
           "trainer": "Ian Williams",
           "jockey": "Edward Greatrex",
-          "score": 53.5,
+          "score": 53.51,
           "score_breakdown": {
-            "class_rating": 15.391,
-            "recent_form": 6.8,
+            "class_rating": 13.984,
+            "recent_form": 6.18,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 51.73543893797715,
@@ -4069,7 +4262,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -4089,17 +4283,18 @@
           "horse": "Final Night",
           "trainer": "John Butler",
           "jockey": "TBC",
-          "score": 52.3,
+          "score": 52.31,
           "score_breakdown": {
-            "class_rating": 14.03,
-            "recent_form": 7.619,
+            "class_rating": 12.747,
+            "recent_form": 6.924,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 47.160190828764684,
@@ -4110,7 +4305,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -4132,15 +4328,16 @@
           "jockey": "Ray Dawson",
           "score": 50.75,
           "score_breakdown": {
-            "class_rating": 18.114,
-            "recent_form": 2.833,
+            "class_rating": 16.457,
+            "recent_form": 2.575,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 60.885935156402084,
@@ -4151,7 +4348,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -4171,17 +4369,18 @@
           "horse": "Popmaster",
           "trainer": "Ed Walker",
           "jockey": "Kieran Shoemark",
-          "score": 50.24,
+          "score": 50.25,
           "score_breakdown": {
-            "class_rating": 16.752,
-            "recent_form": 3.967,
+            "class_rating": 15.221,
+            "recent_form": 3.605,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 56.31068704718961,
@@ -4192,7 +4391,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -4212,17 +4412,18 @@
           "horse": "Port Road",
           "trainer": "Simon Dow",
           "jockey": "TBC",
-          "score": 50.07,
+          "score": 50.08,
           "score_breakdown": {
-            "class_rating": 14.03,
-            "recent_form": 6.611,
+            "class_rating": 12.747,
+            "recent_form": 6.008,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 47.160190828764684,
@@ -4233,7 +4434,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -4253,17 +4455,18 @@
           "horse": "Stem",
           "trainer": "Richard Hannon",
           "jockey": "Pat Dobbs",
-          "score": 49.72,
+          "score": 49.73,
           "score_breakdown": {
-            "class_rating": 8.586,
-            "recent_form": 5.1,
-            "trainer_form": 6.8,
+            "class_rating": 7.801,
+            "recent_form": 4.635,
+            "trainer_form": 6.176,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 28.859198391914813,
@@ -4274,7 +4477,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -4294,17 +4498,18 @@
           "horse": "Bragbor",
           "trainer": "Richard & Peter Fahey",
           "jockey": "TBC",
-          "score": 49.63,
+          "score": 49.64,
           "score_breakdown": {
-            "class_rating": 18.114,
-            "recent_form": 2.33,
+            "class_rating": 16.457,
+            "recent_form": 2.117,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 60.885935156402084,
@@ -4315,7 +4520,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -4332,61 +4538,21 @@
         },
         {
           "rank": 20,
-          "horse": "Thunder Roar",
-          "trainer": "Tony Coyle & Kaine Wood",
-          "jockey": "Colin Keane",
-          "score": 46.98,
-          "score_breakdown": {
-            "class_rating": 18.114,
-            "recent_form": 1.133,
-            "trainer_form": 0.0,
-            "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
-          },
-          "raw_signal_values": {
-            "class_rating": 60.885935156402084,
-            "recent_form": 6.666666666666667,
-            "trainer_form": 0.0,
-            "jockey": 0.0,
-            "course_distance": 50.0,
-            "going": 50.0,
-            "going_fit": 35.0,
-            "draw_bias": 50.0,
-            "class_move": 50.0
-          },
-          "missing_data_flags": [
-            "going_data_insufficient"
-          ],
-          "going_data": "insufficient",
-          "going_fit": {
-            "score": 0.35,
-            "going_data": "insufficient",
-            "target_going": "Good to Soft"
-          },
-          "morning_price": 19.0,
-          "odds_source": "synthetic",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
-        },
-        {
-          "rank": 21,
           "horse": "Triple Double A",
           "trainer": "Hugo Palmer",
           "jockey": "Saffie Osborne",
           "score": 46.06,
           "score_breakdown": {
-            "class_rating": 16.752,
-            "recent_form": 2.078,
+            "class_rating": 15.221,
+            "recent_form": 1.888,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 56.31068704718961,
@@ -4397,7 +4563,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -4413,21 +4580,22 @@
           "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
-          "rank": 22,
+          "rank": 21,
           "horse": "Celeborn",
           "trainer": "George Boughey",
           "jockey": "Billy Loughnane",
           "score": 45.72,
           "score_breakdown": {
-            "class_rating": 11.308,
-            "recent_form": 7.367,
+            "class_rating": 10.274,
+            "recent_form": 6.695,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 38.00969461033974,
@@ -4438,7 +4606,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -4454,21 +4623,22 @@
           "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
-          "rank": 23,
+          "rank": 22,
           "horse": "A War Eagle",
           "trainer": "Michael & David Easterby",
           "jockey": "Billy Garritty",
           "score": 45.42,
           "score_breakdown": {
-            "class_rating": 15.391,
-            "recent_form": 3.148,
+            "class_rating": 13.984,
+            "recent_form": 2.861,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 51.73543893797715,
@@ -4479,7 +4649,51 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 22.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
+          "rank": 23,
+          "horse": "Hot Cash",
+          "trainer": "Jack Channon",
+          "jockey": "TBC",
+          "score": 45.2,
+          "score_breakdown": {
+            "class_rating": 12.747,
+            "recent_form": 4.006,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.64
+          },
+          "raw_signal_values": {
+            "class_rating": 47.160190828764684,
+            "recent_form": 25.925925925925924,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -4496,61 +4710,21 @@
         },
         {
           "rank": 24,
-          "horse": "Hot Cash",
-          "trainer": "Jack Channon",
-          "jockey": "TBC",
-          "score": 45.19,
-          "score_breakdown": {
-            "class_rating": 14.03,
-            "recent_form": 4.407,
-            "trainer_form": 0.0,
-            "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
-          },
-          "raw_signal_values": {
-            "class_rating": 47.160190828764684,
-            "recent_form": 25.925925925925924,
-            "trainer_form": 0.0,
-            "jockey": 0.0,
-            "course_distance": 50.0,
-            "going": 50.0,
-            "going_fit": 35.0,
-            "draw_bias": 50.0,
-            "class_move": 50.0
-          },
-          "missing_data_flags": [
-            "going_data_insufficient"
-          ],
-          "going_data": "insufficient",
-          "going_fit": {
-            "score": 0.35,
-            "going_data": "insufficient",
-            "target_going": "Good to Soft"
-          },
-          "morning_price": 22.5,
-          "odds_source": "synthetic",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
-        },
-        {
-          "rank": 25,
           "horse": "Alpha Crucis",
           "trainer": "Gary & Josh Moore",
           "jockey": "David Egan",
           "score": 45.14,
           "score_breakdown": {
-            "class_rating": 15.391,
-            "recent_form": 3.022,
+            "class_rating": 13.984,
+            "recent_form": 2.747,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 51.73543893797715,
@@ -4561,7 +4735,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -4577,21 +4752,65 @@
           "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
+          "rank": 25,
+          "horse": "Thunder Roar",
+          "trainer": "Tony Coyle & Kaine Wood",
+          "jockey": "Colin Keane",
+          "score": 44.94,
+          "score_breakdown": {
+            "class_rating": 16.457,
+            "recent_form": 1.03,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 2.8
+          },
+          "raw_signal_values": {
+            "class_rating": 60.885935156402084,
+            "recent_form": 6.666666666666667,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0,
+            "pace": 40.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 19.0,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
           "rank": 26,
           "horse": "Dante's Lad",
           "trainer": "Ian Williams",
           "jockey": "TBC",
-          "score": 43.13,
+          "score": 41.09,
           "score_breakdown": {
-            "class_rating": 16.752,
-            "recent_form": 0.756,
+            "class_rating": 15.221,
+            "recent_form": 0.687,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 2.8
           },
           "raw_signal_values": {
             "class_rating": 56.31068704718961,
@@ -4602,7 +4821,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 40.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -4622,17 +4842,18 @@
           "horse": "Ancient Rome",
           "trainer": "Charles Hills",
           "jockey": "Jamie Spencer",
-          "score": 42.3,
+          "score": 40.25,
           "score_breakdown": {
-            "class_rating": 16.752,
-            "recent_form": 0.378,
+            "class_rating": 15.221,
+            "recent_form": 0.343,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 2.8
           },
           "raw_signal_values": {
             "class_rating": 56.31068704718961,
@@ -4643,7 +4864,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 40.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -4665,15 +4887,16 @@
           "jockey": "TBC",
           "score": 37.86,
           "score_breakdown": {
-            "class_rating": 12.669,
-            "recent_form": 2.456,
+            "class_rating": 11.511,
+            "recent_form": 2.232,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 42.58494271955222,
@@ -4684,7 +4907,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -4707,14 +4931,15 @@
           "score": 5.0,
           "score_breakdown": {
             "class_rating": 0.0,
-            "recent_form": 0.283,
+            "recent_form": 0.258,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 0.0,
@@ -4725,7 +4950,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -4743,7 +4969,7 @@
       ],
       "confidence": "MED",
       "bet_recommendation": "EW",
-      "race_stdev": 16.32,
+      "race_stdev": 16.46,
       "race_competitiveness": "CLEAR FAVOURITE",
       "missing_data_flags": [
         "going_data_insufficient"
@@ -4762,15 +4988,16 @@
           "jockey": "Oisin Murphy",
           "score": 95.0,
           "score_breakdown": {
-            "class_rating": 19.242,
-            "recent_form": 10.074,
-            "trainer_form": 6.8,
-            "jockey": 7.65,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 10.822
+            "class_rating": 17.483,
+            "recent_form": 9.156,
+            "trainer_form": 6.176,
+            "jockey": 6.948,
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 9.834,
+            "pace": 2.94
           },
           "raw_signal_values": {
             "class_rating": 64.67949314393728,
@@ -4781,7 +5008,8 @@
             "going": 50.0,
             "going_fit": 72.14684466019418,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 42.0
           },
           "missing_data_flags": [],
           "going_data": "sufficient",
@@ -4801,17 +5029,18 @@
           "horse": "Ten Carat Harry",
           "trainer": "Jamie Osborne",
           "jockey": "Saffie Osborne",
-          "score": 46.42,
+          "score": 46.43,
           "score_breakdown": {
-            "class_rating": 16.447,
-            "recent_form": 10.2,
+            "class_rating": 14.943,
+            "recent_form": 9.27,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 10.568
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 9.603,
+            "pace": 2.94
           },
           "raw_signal_values": {
             "class_rating": 55.284617531817425,
@@ -4822,7 +5051,8 @@
             "going": 50.0,
             "going_fit": 70.45454545454545,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 42.0
           },
           "missing_data_flags": [],
           "going_data": "sufficient",
@@ -4842,17 +5072,18 @@
           "horse": "Postmodern",
           "trainer": "Hamad Al Jehani",
           "jockey": "James Doyle",
-          "score": 41.59,
+          "score": 45.04,
           "score_breakdown": {
-            "class_rating": 15.748,
-            "recent_form": 6.611,
+            "class_rating": 14.309,
+            "recent_form": 6.008,
             "trainer_form": 0.0,
-            "jockey": 5.95,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 7.181
+            "jockey": 5.404,
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 6.525,
+            "pace": 4.06
           },
           "raw_signal_values": {
             "class_rating": 52.935898628787456,
@@ -4863,7 +5094,8 @@
             "going": 50.0,
             "going_fit": 47.871753246753244,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 58.0
           },
           "missing_data_flags": [],
           "going_data": "sufficient",
@@ -4883,17 +5115,18 @@
           "horse": "Andab",
           "trainer": "Joseph Patrick O'Brien",
           "jockey": "TBC",
-          "score": 38.79,
+          "score": 38.8,
           "score_breakdown": {
-            "class_rating": 17.146,
-            "recent_form": 8.689,
+            "class_rating": 15.578,
+            "recent_form": 7.897,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 8.654
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 7.863,
+            "pace": 2.94
           },
           "raw_signal_values": {
             "class_rating": 57.63333643484739,
@@ -4904,7 +5137,8 @@
             "going": 50.0,
             "going_fit": 57.692307692307686,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 42.0
           },
           "missing_data_flags": [],
           "going_data": "sufficient",
@@ -4924,17 +5158,18 @@
           "horse": "Greek Mythology",
           "trainer": "Joseph Patrick O'Brien",
           "jockey": "TBC",
-          "score": 35.11,
+          "score": 35.12,
           "score_breakdown": {
-            "class_rating": 15.748,
-            "recent_form": 8.5,
+            "class_rating": 14.309,
+            "recent_form": 7.725,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 8.925
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 8.11,
+            "pace": 2.94
           },
           "raw_signal_values": {
             "class_rating": 52.935898628787456,
@@ -4945,7 +5180,8 @@
             "going": 50.0,
             "going_fit": 59.5,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 42.0
           },
           "missing_data_flags": [],
           "going_data": "sufficient",
@@ -4965,17 +5201,18 @@
           "horse": "Green Sense",
           "trainer": "Joseph Patrick O'Brien",
           "jockey": "TBC",
-          "score": 29.51,
+          "score": 32.96,
           "score_breakdown": {
-            "class_rating": 19.242,
-            "recent_form": 3.148,
+            "class_rating": 17.483,
+            "recent_form": 2.861,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 8.779
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 7.977,
+            "pace": 4.06
           },
           "raw_signal_values": {
             "class_rating": 64.67949314393728,
@@ -4986,7 +5223,8 @@
             "going": 50.0,
             "going_fit": 58.52713178294574,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 58.0
           },
           "missing_data_flags": [],
           "going_data": "sufficient",
@@ -5006,17 +5244,18 @@
           "horse": "Northern Champion",
           "trainer": "Ed Walker",
           "jockey": "Kieran Shoemark",
-          "score": 19.17,
+          "score": 22.62,
           "score_breakdown": {
-            "class_rating": 14.351,
-            "recent_form": 7.87,
+            "class_rating": 13.039,
+            "recent_form": 7.153,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 4.06
           },
           "raw_signal_values": {
             "class_rating": 48.23846082272753,
@@ -5027,7 +5266,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 58.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -5047,17 +5287,18 @@
           "horse": "Awaken",
           "trainer": "George Boughey",
           "jockey": "Billy Loughnane",
-          "score": 16.44,
+          "score": 19.89,
           "score_breakdown": {
-            "class_rating": 17.845,
-            "recent_form": 3.4,
+            "class_rating": 16.213,
+            "recent_form": 3.09,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 4.06
           },
           "raw_signal_values": {
             "class_rating": 59.98205533787736,
@@ -5068,7 +5309,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 58.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -5088,17 +5330,18 @@
           "horse": "Assaranca",
           "trainer": "Richard Hannon",
           "jockey": "Sean Levey",
-          "score": 14.35,
+          "score": 17.8,
           "score_breakdown": {
-            "class_rating": 4.569,
-            "recent_form": 9.13,
-            "trainer_form": 6.8,
+            "class_rating": 4.151,
+            "recent_form": 8.297,
+            "trainer_form": 6.176,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 4.06
           },
           "raw_signal_values": {
             "class_rating": 15.35639618030801,
@@ -5109,7 +5352,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 58.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -5129,17 +5373,18 @@
           "horse": "Ellusive Butterfly",
           "trainer": "K R Burke",
           "jockey": "Clifford Lee",
-          "score": 13.23,
+          "score": 16.68,
           "score_breakdown": {
-            "class_rating": 16.447,
-            "recent_form": 3.652,
+            "class_rating": 14.943,
+            "recent_form": 3.319,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 4.06
           },
           "raw_signal_values": {
             "class_rating": 55.284617531817425,
@@ -5150,7 +5395,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 58.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -5170,17 +5416,18 @@
           "horse": "Ardisia",
           "trainer": "Hugo Palmer",
           "jockey": "David Probert",
-          "score": 11.15,
+          "score": 14.6,
           "score_breakdown": {
-            "class_rating": 17.845,
-            "recent_form": 1.511,
+            "class_rating": 16.213,
+            "recent_form": 1.373,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 4.06
           },
           "raw_signal_values": {
             "class_rating": 59.98205533787736,
@@ -5191,7 +5438,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 58.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -5213,15 +5461,16 @@
           "jockey": "TBC",
           "score": 5.0,
           "score_breakdown": {
-            "class_rating": 3.87,
-            "recent_form": 7.335,
-            "trainer_form": 5.95,
+            "class_rating": 3.516,
+            "recent_form": 6.666,
+            "trainer_form": 5.404,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 2.94
           },
           "raw_signal_values": {
             "class_rating": 13.007677277278043,
@@ -5232,7 +5481,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 42.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -5250,7 +5500,7 @@
       ],
       "confidence": "HIGH",
       "bet_recommendation": "WIN",
-      "race_stdev": 23.34,
+      "race_stdev": 22.55,
       "race_competitiveness": "CLEAR FAVOURITE",
       "missing_data_flags": [
         "going_data_insufficient"
@@ -5269,15 +5519,16 @@
           "jockey": "Oisin Murphy",
           "score": 95.0,
           "score_breakdown": {
-            "class_rating": 18.747,
-            "recent_form": 8.878,
-            "trainer_form": 6.8,
-            "jockey": 7.65,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 10.653
+            "class_rating": 17.033,
+            "recent_form": 8.068,
+            "trainer_form": 6.176,
+            "jockey": 6.948,
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 9.68,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 63.01448015738384,
@@ -5288,7 +5539,8 @@
             "going": 50.0,
             "going_fit": 71.02272727272727,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [],
           "going_data": "sufficient",
@@ -5308,17 +5560,18 @@
           "horse": "Dublin Bay",
           "trainer": "Ollie Sangster",
           "jockey": "TBC",
-          "score": 70.92,
+          "score": 70.93,
           "score_breakdown": {
-            "class_rating": 19.521,
-            "recent_form": 10.2,
+            "class_rating": 17.736,
+            "recent_form": 9.27,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 11.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 10.223,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 65.6173761888606,
@@ -5329,7 +5582,8 @@
             "going": 50.0,
             "going_fit": 75.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [],
           "going_data": "sufficient",
@@ -5349,17 +5603,18 @@
           "horse": "Zarathos",
           "trainer": "Dylan Cunha",
           "jockey": "George Wood",
-          "score": 68.23,
+          "score": 68.24,
           "score_breakdown": {
-            "class_rating": 16.424,
-            "recent_form": 12.215,
+            "class_rating": 14.922,
+            "recent_form": 11.101,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 11.022
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 10.015,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 55.20579206295354,
@@ -5370,7 +5625,8 @@
             "going": 50.0,
             "going_fit": 73.47881355932202,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [],
           "going_data": "sufficient",
@@ -5390,17 +5646,18 @@
           "horse": "Pietro",
           "trainer": "James Fanshawe",
           "jockey": "George Wood",
-          "score": 61.27,
+          "score": 61.28,
           "score_breakdown": {
-            "class_rating": 16.424,
-            "recent_form": 10.074,
+            "class_rating": 14.922,
+            "recent_form": 9.156,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 9.765
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 8.873,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 55.20579206295354,
@@ -5411,7 +5668,8 @@
             "going": 50.0,
             "going_fit": 65.1006711409396,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [],
           "going_data": "sufficient",
@@ -5431,17 +5689,18 @@
           "horse": "Brighton Boy",
           "trainer": "Tim Easterby",
           "jockey": "TBC",
-          "score": 58.91,
+          "score": 58.92,
           "score_breakdown": {
-            "class_rating": 17.198,
-            "recent_form": 8.5,
+            "class_rating": 15.626,
+            "recent_form": 7.725,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 9.413
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 8.553,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 57.8086880944303,
@@ -5452,7 +5711,8 @@
             "going": 50.0,
             "going_fit": 62.751677852349,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [],
           "going_data": "sufficient",
@@ -5474,15 +5734,16 @@
           "jockey": "Sean Levey",
           "score": 54.55,
           "score_breakdown": {
-            "class_rating": 17.198,
-            "recent_form": 1.133,
-            "trainer_form": 6.8,
+            "class_rating": 15.626,
+            "recent_form": 1.03,
+            "trainer_form": 6.176,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 7.849
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 7.132,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 57.8086880944303,
@@ -5493,7 +5754,8 @@
             "going": 50.0,
             "going_fit": 52.32558139534883,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [],
           "going_data": "sufficient",
@@ -5515,15 +5777,16 @@
           "jockey": "TBC",
           "score": 46.57,
           "score_breakdown": {
-            "class_rating": 15.649,
-            "recent_form": 8.185,
+            "class_rating": 14.219,
+            "recent_form": 7.439,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 52.60289603147677,
@@ -5534,7 +5797,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -5556,15 +5820,16 @@
           "jockey": "David Allan",
           "score": 45.82,
           "score_breakdown": {
-            "class_rating": 18.747,
-            "recent_form": 4.722,
+            "class_rating": 17.033,
+            "recent_form": 4.292,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 63.01448015738384,
@@ -5575,7 +5840,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -5595,17 +5861,18 @@
           "horse": "Crimson Spirit",
           "trainer": "Daniel & Claire Kubler",
           "jockey": "Ray Dawson",
-          "score": 45.66,
+          "score": 45.67,
           "score_breakdown": {
-            "class_rating": 15.649,
-            "recent_form": 7.744,
+            "class_rating": 14.219,
+            "recent_form": 7.038,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 52.60289603147677,
@@ -5616,7 +5883,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -5636,17 +5904,18 @@
           "horse": "Musical Angel",
           "trainer": "Simon Dow",
           "jockey": "David Probert",
-          "score": 44.89,
+          "score": 44.9,
           "score_breakdown": {
-            "class_rating": 15.649,
-            "recent_form": 7.367,
+            "class_rating": 14.219,
+            "recent_form": 6.695,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 52.60289603147677,
@@ -5657,7 +5926,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -5677,17 +5947,18 @@
           "horse": "Supido",
           "trainer": "Ian Williams",
           "jockey": "Billy Loughnane",
-          "score": 44.63,
+          "score": 44.64,
           "score_breakdown": {
-            "class_rating": 15.649,
-            "recent_form": 7.241,
+            "class_rating": 14.219,
+            "recent_form": 6.581,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 52.60289603147677,
@@ -5698,7 +5969,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -5718,17 +5990,18 @@
           "horse": "Veblen Good",
           "trainer": "David O'Meara",
           "jockey": "Rossa Ryan",
-          "score": 44.63,
+          "score": 44.64,
           "score_breakdown": {
-            "class_rating": 15.649,
-            "recent_form": 7.241,
+            "class_rating": 14.219,
+            "recent_form": 6.581,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 52.60289603147677,
@@ -5739,7 +6012,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -5761,15 +6035,16 @@
           "jockey": "Colin Keane",
           "score": 44.12,
           "score_breakdown": {
-            "class_rating": 15.649,
-            "recent_form": 6.989,
+            "class_rating": 14.219,
+            "recent_form": 6.352,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 52.60289603147677,
@@ -5780,7 +6055,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -5800,17 +6076,18 @@
           "horse": "Sondad",
           "trainer": "Michael & David Easterby",
           "jockey": "TBC",
-          "score": 41.87,
+          "score": 41.88,
           "score_breakdown": {
-            "class_rating": 17.198,
-            "recent_form": 4.344,
+            "class_rating": 15.626,
+            "recent_form": 3.948,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 57.8086880944303,
@@ -5821,7 +6098,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -5843,15 +6121,16 @@
           "jockey": "Kieran Shoemark",
           "score": 40.96,
           "score_breakdown": {
-            "class_rating": 19.521,
-            "recent_form": 1.574,
+            "class_rating": 17.736,
+            "recent_form": 1.431,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 65.6173761888606,
@@ -5862,7 +6141,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -5882,17 +6162,18 @@
           "horse": "Aurora Majesty",
           "trainer": "Archie Watson",
           "jockey": "Luke Morris",
-          "score": 40.31,
+          "score": 40.32,
           "score_breakdown": {
-            "class_rating": 15.649,
-            "recent_form": 5.131,
+            "class_rating": 14.219,
+            "recent_form": 4.664,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 52.60289603147677,
@@ -5903,7 +6184,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -5923,17 +6205,18 @@
           "horse": "Monarch's Gold",
           "trainer": "Kevin Philippart De Foy",
           "jockey": "David Egan",
-          "score": 38.58,
+          "score": 38.59,
           "score_breakdown": {
-            "class_rating": 13.326,
-            "recent_form": 6.611,
+            "class_rating": 12.108,
+            "recent_form": 6.008,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 44.794207937046465,
@@ -5944,7 +6227,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -5964,17 +6248,18 @@
           "horse": "A War Eagle",
           "trainer": "Michael & David Easterby",
           "jockey": "Billy Garritty",
-          "score": 37.83,
+          "score": 37.84,
           "score_breakdown": {
-            "class_rating": 16.424,
-            "recent_form": 3.148,
+            "class_rating": 14.922,
+            "recent_form": 2.861,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 55.20579206295354,
@@ -5985,7 +6270,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -6005,17 +6291,18 @@
           "horse": "Rhoscolyn",
           "trainer": "David O'Meara",
           "jockey": "Jason Watson",
-          "score": 37.43,
+          "score": 37.44,
           "score_breakdown": {
-            "class_rating": 18.747,
-            "recent_form": 0.63,
+            "class_rating": 17.033,
+            "recent_form": 0.572,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 63.01448015738384,
@@ -6026,7 +6313,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -6048,15 +6336,16 @@
           "jockey": "Billy Loughnane",
           "score": 36.84,
           "score_breakdown": {
-            "class_rating": 17.198,
-            "recent_form": 1.889,
+            "class_rating": 15.626,
+            "recent_form": 1.717,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 57.8086880944303,
@@ -6067,7 +6356,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -6087,17 +6377,18 @@
           "horse": "Sunny Smile",
           "trainer": "Hugo Palmer",
           "jockey": "TBC",
-          "score": 32.26,
+          "score": 32.27,
           "score_breakdown": {
-            "class_rating": 9.454,
-            "recent_form": 7.398,
+            "class_rating": 8.59,
+            "recent_form": 6.724,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 31.779727779662625,
@@ -6108,7 +6399,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -6128,17 +6420,18 @@
           "horse": "Rare Change",
           "trainer": "Richard Hughes",
           "jockey": "Saffie Osborne",
-          "score": 32.08,
+          "score": 30.19,
           "score_breakdown": {
-            "class_rating": 14.875,
-            "recent_form": 1.889,
+            "class_rating": 13.515,
+            "recent_form": 1.717,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 2.8
           },
           "raw_signal_values": {
             "class_rating": 50.0,
@@ -6149,7 +6442,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 40.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -6166,61 +6460,21 @@
         },
         {
           "rank": 23,
-          "horse": "Solar Aclaim",
-          "trainer": "Julie Camacho",
-          "jockey": "TBC",
-          "score": 28.17,
-          "score_breakdown": {
-            "class_rating": 14.101,
-            "recent_form": 0.756,
-            "trainer_form": 0.0,
-            "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
-          },
-          "raw_signal_values": {
-            "class_rating": 47.39710396852323,
-            "recent_form": 4.444444444444445,
-            "trainer_form": 0.0,
-            "jockey": 0.0,
-            "course_distance": 50.0,
-            "going": 50.0,
-            "going_fit": 35.0,
-            "draw_bias": 50.0,
-            "class_move": 50.0
-          },
-          "missing_data_flags": [
-            "going_data_insufficient"
-          ],
-          "going_data": "insufficient",
-          "going_fit": {
-            "score": 0.35,
-            "going_data": "insufficient",
-            "target_going": "Good to Soft"
-          },
-          "morning_price": 19.5,
-          "odds_source": "synthetic",
-          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
-        },
-        {
-          "rank": 24,
           "horse": "Tailgunner Joe",
           "trainer": "Dylan Cunha",
           "jockey": "TBC",
-          "score": 27.32,
+          "score": 27.33,
           "score_breakdown": {
-            "class_rating": 12.552,
-            "recent_form": 1.889,
+            "class_rating": 11.404,
+            "recent_form": 1.717,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 42.1913119055697,
@@ -6231,7 +6485,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -6247,6 +6502,49 @@
           "odds_fetched_at": "2026-06-02T13:55:00+01:00"
         },
         {
+          "rank": 24,
+          "horse": "Solar Aclaim",
+          "trainer": "Julie Camacho",
+          "jockey": "TBC",
+          "score": 26.28,
+          "score_breakdown": {
+            "class_rating": 12.811,
+            "recent_form": 0.687,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 2.8
+          },
+          "raw_signal_values": {
+            "class_rating": 47.39710396852323,
+            "recent_form": 4.444444444444445,
+            "trainer_form": 0.0,
+            "jockey": 0.0,
+            "course_distance": 50.0,
+            "going": 50.0,
+            "going_fit": 35.0,
+            "draw_bias": 50.0,
+            "class_move": 50.0,
+            "pace": 40.0
+          },
+          "missing_data_flags": [
+            "going_data_insufficient"
+          ],
+          "going_data": "insufficient",
+          "going_fit": {
+            "score": 0.35,
+            "going_data": "insufficient",
+            "target_going": "Good to Soft"
+          },
+          "morning_price": 19.5,
+          "odds_source": "synthetic",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00"
+        },
+        {
           "rank": 25,
           "horse": "Colombier",
           "trainer": "Hamad Al Jehani",
@@ -6254,14 +6552,15 @@
           "score": 15.09,
           "score_breakdown": {
             "class_rating": 0.0,
-            "recent_form": 2.519,
+            "recent_form": 2.289,
             "trainer_form": 0.0,
-            "jockey": 5.95,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "jockey": 5.404,
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 0.0,
@@ -6272,7 +6571,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -6294,15 +6594,16 @@
           "jockey": "TBC",
           "score": 5.0,
           "score_breakdown": {
-            "class_rating": 3.26,
-            "recent_form": 0.283,
+            "class_rating": 2.962,
+            "recent_form": 0.258,
             "trainer_form": 0.0,
             "jockey": 0.0,
-            "course_distance": 4.25,
-            "going": 2.125,
-            "draw_bias": 2.125,
-            "class_move": 2.125,
-            "going_fit": 5.25
+            "course_distance": 3.86,
+            "going": 1.93,
+            "draw_bias": 3.005,
+            "class_move": 1.93,
+            "going_fit": 4.771,
+            "pace": 3.64
           },
           "raw_signal_values": {
             "class_rating": 10.956559527848487,
@@ -6313,7 +6614,8 @@
             "going": 50.0,
             "going_fit": 35.0,
             "draw_bias": 50.0,
-            "class_move": 50.0
+            "class_move": 50.0,
+            "pace": 52.0
           },
           "missing_data_flags": [
             "going_data_insufficient"
@@ -6331,7 +6633,7 @@
       ],
       "confidence": "HIGH",
       "bet_recommendation": "WIN",
-      "race_stdev": 17.45,
+      "race_stdev": 17.57,
       "race_competitiveness": "CLEAR FAVOURITE",
       "missing_data_flags": [
         "going_data_insufficient"

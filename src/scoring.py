@@ -35,8 +35,10 @@ from typing import Any
 
 try:  # supports both `python -m src...` and direct `sys.path` test imports
     from going import normalise_going, score_going_fit
+    from pace import extended_draw_signal, infer_run_style, pace_signal, project_race_pace
 except ImportError:  # pragma: no cover
     from .going import normalise_going, score_going_fit
+    from .pace import extended_draw_signal, infer_run_style, pace_signal, project_race_pace
 
 
 # ---------------------------------------------------------------------------
@@ -67,17 +69,19 @@ def load_default_config() -> dict:
     """
     return {
         "weights": {
-            # Existing factors are proportionally scaled to reserve 0.15
-            # of the total model weight for historical going-fit evidence.
-            "class_rating":    0.2975,
-            "recent_form":     0.1700,
-            "trainer_form":    0.0850,
-            "jockey":          0.0850,
-            "course_distance": 0.0850,
-            "going":           0.0425,
-            "draw_bias":       0.0425,
-            "class_move":      0.0425,
-            "going_fit":       0.1500,
+            # Re-normalised to introduce `pace` (0.0700) and broaden
+            # `draw_bias` (0.0425 -> 0.0601). All other weights scaled
+            # by ~0.9086 so the total still sums to 1.0.
+            "class_rating":    0.2703,
+            "recent_form":     0.1545,
+            "trainer_form":    0.0772,
+            "jockey":          0.0772,
+            "course_distance": 0.0772,
+            "going":           0.0386,
+            "draw_bias":       0.0601,
+            "class_move":      0.0386,
+            "going_fit":       0.1363,
+            "pace":            0.0700,
         },
         "form": {
             "position_points":        {1: 10, 2: 6, 3: 4, 4: 2},
@@ -224,11 +228,19 @@ def score_runner(runner: dict, race: dict, config: dict) -> dict:
     if going_fit.get("going_data") == "insufficient":
         flags.append("going_data_insufficient")
 
-    # 8. Draw bias
-    raw_signals["draw_bias"] = _draw_signal(runner, race, config["draw"])
+    # 8. Draw bias (Epsom course table first; falls back to legacy 5f rule)
+    ext_draw = extended_draw_signal(runner, race)
+    if ext_draw is not None:
+        raw_signals["draw_bias"] = ext_draw
+    else:
+        raw_signals["draw_bias"] = _draw_signal(runner, race, config["draw"])
 
     # 9. Class move
     raw_signals["class_move"] = _class_move_signal(runner, config["class_move"])
+
+    # 10. Pace / run-style fit
+    race_pace = race.get("_projected_pace") or project_race_pace(race.get("runners") or [])
+    raw_signals["pace"] = pace_signal(runner, race_pace)
 
     # Raw score (class_rating placeholder is 50 until z-score in score_race)
     class_val = raw_signals["class_rating"] if raw_signals["class_rating"] is not None else 50.0
@@ -301,6 +313,10 @@ def score_race(race: dict, config: dict) -> dict:
     runners = race.get("runners", [])
     if not runners:
         return _empty_race_result(race)
+
+    # Precompute projected race pace once per race so `score_runner`
+    # doesn't recompute it for every runner.
+    race["_projected_pace"] = project_race_pace(runners)
 
     # Step 1: raw per-runner signals
     runner_results = [score_runner(r, race, config) for r in runners]

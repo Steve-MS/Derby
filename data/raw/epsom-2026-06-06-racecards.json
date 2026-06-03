@@ -1260,9 +1260,9 @@
           "form_string": "11214-1",
           "last_run_days": null,
           "notes": "2025 Coronation Cup winner at Epsom; recently won Ormonde Stakes (Chester May 2026); defending champion",
-          "morning_price": 4.0,
-          "odds_source": "skysports",
-          "odds_fetched_at": "2026-06-03T09:05:09+00:00",
+          "morning_price": 3.5,
+          "odds_source": "ante_post",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
           "going_history": [
             {
               "date": "2026-05-07",
@@ -1329,9 +1329,9 @@
           "form_string": "21111-1",
           "last_run_days": null,
           "notes": "2025 Coronation Cup runner-up; since won King George VI, Champion Stakes, Japan Cup, Sheema Classic; Dubai Sheema Classic winner March 2026; re-match with Jan Brueghel",
-          "morning_price": 2.25,
-          "odds_source": "skysports",
-          "odds_fetched_at": "2026-06-03T09:05:09+00:00",
+          "morning_price": 2.5,
+          "odds_source": "ante_post",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
           "going_history": [
             {
               "date": "2026-03-28",
@@ -2923,9 +2923,9 @@
           "form_string": "2113-1",
           "last_run_days": null,
           "notes": "Chester Vase (G3) winner; leading contender; rating 7.67 highest evaluation; 9/4-5/2 favourite odds; sourced from horseracing.guide and epsomderby.com 2026-06-02",
-          "morning_price": 3.0,
-          "odds_source": "skysports",
-          "odds_fetched_at": "2026-06-03T09:05:09+00:00",
+          "morning_price": 3.25,
+          "odds_source": "ante_post",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
           "going_history": [
             {
               "date": "2026-05-06",
@@ -2974,9 +2974,9 @@
           "form_string": "11-1",
           "last_run_days": null,
           "notes": "Dante Stakes (G2) winner at York, unbeaten; rating 7.09; 4/1-5/1 second favourite; big improver",
-          "morning_price": 5.5,
-          "odds_source": "skysports",
-          "odds_fetched_at": "2026-06-03T09:05:09+00:00",
+          "morning_price": 5.0,
+          "odds_source": "ante_post",
+          "odds_fetched_at": "2026-06-02T13:55:00+01:00",
           "going_history": [
             {
               "date": "2026-05-14",
