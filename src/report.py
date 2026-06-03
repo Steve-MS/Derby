@@ -51,6 +51,8 @@ SIGNAL_LABELS: dict[str, str] = {
     "going_fit":       "Going Fit",
     "draw_bias":       "Draw",
     "class_move":      "Class Move",
+    "pace":            "Pace Fit",
+    "sire_stamina":    "Sire Stamina",
 }
 
 # Race-day names keyed by ISO weekday (Monday=0)

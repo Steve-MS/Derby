@@ -7,23 +7,30 @@
       "bet_type": "PASS",
       "stake_pts": 0.0,
       "stake_gbp": 0.0,
-      "model_prob": 0.1026,
+      "model_prob": 0.1036,
       "implied_prob": 0.0645,
-      "edge_pct": 59.02,
+      "edge_pct": 60.56,
       "expected_return_gbp": 0.0,
-      "rationale": "Confidence LOW, win edge 59.0%, combined EW edge 79.1% \u2014 below thresholds (15% WIN / 20% EW combined)."
+      "rationale": "Confidence LOW, win edge 60.6%, combined EW edge 81.8% \u2014 below thresholds (15% WIN / 20% EW combined)."
     },
     {
       "race_id": "epsom-2026-06-05-1405",
       "horse": "Wild Terrain",
-      "bet_type": "PASS",
-      "stake_pts": 0.0,
-      "stake_gbp": 0.0,
-      "model_prob": 0.1036,
+      "bet_type": "EW",
+      "stake_pts": 2.14,
+      "stake_gbp": 4.28,
+      "model_prob": 0.1067,
       "implied_prob": 0.0667,
-      "edge_pct": 55.44,
-      "expected_return_gbp": 0.0,
-      "rationale": "Confidence LOW, win edge 55.4%, combined EW edge 73.6% \u2014 below thresholds (15% WIN / 20% EW combined)."
+      "edge_pct": 60.12,
+      "place_edge_pct": 21.69,
+      "combined_edge_pct": 81.81,
+      "odds_decimal": 15.0,
+      "odds_raw": "15.0",
+      "places_paid": 3,
+      "model_place_prob": 0.3202,
+      "place_odds_decimal": 3.8,
+      "expected_return_gbp": 6.03,
+      "rationale": "Rank #1 (score 95.0), confidence MED. Win edge 60.1% + place edge 21.7% = 81.8% combined \u2265 20% EW threshold. EW: 1.07pts WIN + 1.07pts PLACE = 2.14pts total (\u00a34.28) @ 15.0 (3 places, 1/5 odds)."
     },
     {
       "race_id": "epsom-2026-06-05-1440",
@@ -31,25 +38,25 @@
       "bet_type": "PASS",
       "stake_pts": 0.0,
       "stake_gbp": 0.0,
-      "model_prob": 0.1432,
+      "model_prob": 0.1384,
       "implied_prob": 0.125,
-      "edge_pct": 14.58,
+      "edge_pct": 10.69,
       "expected_return_gbp": 0.0,
-      "rationale": "Confidence MED, win edge 14.6%, combined EW edge 17.7% \u2014 below thresholds (15% WIN / 20% EW combined)."
+      "rationale": "Confidence MED, win edge 10.7%, combined EW edge 10.3% \u2014 below thresholds (15% WIN / 20% EW combined)."
     },
     {
       "race_id": "epsom-2026-06-05-1515",
       "horse": "Respond",
       "bet_type": "WIN",
-      "stake_pts": 0.38,
-      "stake_gbp": 0.76,
-      "model_prob": 0.0881,
+      "stake_pts": 0.33,
+      "stake_gbp": 0.66,
+      "model_prob": 0.0863,
       "implied_prob": 0.0741,
-      "edge_pct": 18.95,
+      "edge_pct": 16.55,
       "odds_decimal": 13.5,
       "odds_raw": "13.5",
-      "expected_return_gbp": 0.9,
-      "rationale": "Rank #1 (score 95.0), confidence HIGH, model_prob 0.0881 vs implied 0.0741 \u2192 edge 18.9% \u2265 15% threshold. Quarter-Kelly stake: 0.38pts (\u00a30.76) @ 13.5."
+      "expected_return_gbp": 0.77,
+      "rationale": "Rank #1 (score 95.0), confidence HIGH, model_prob 0.0863 vs implied 0.0741 \u2192 edge 16.6% \u2265 15% threshold. Quarter-Kelly stake: 0.33pts (\u00a30.66) @ 13.5."
     },
     {
       "race_id": "epsom-2026-06-05-1600",
@@ -57,11 +64,11 @@
       "bet_type": "PASS",
       "stake_pts": 0.0,
       "stake_gbp": 0.0,
-      "model_prob": 0.1325,
+      "model_prob": 0.1272,
       "implied_prob": 0.0294,
-      "edge_pct": 350.52,
+      "edge_pct": 332.6,
       "expected_return_gbp": 0.0,
-      "rationale": "Confidence LOW, win edge 350.5%, combined EW edge 552.6% \u2014 below thresholds (15% WIN / 20% EW combined)."
+      "rationale": "Confidence LOW, win edge 332.6%, combined EW edge 522.7% \u2014 below thresholds (15% WIN / 20% EW combined)."
     },
     {
       "race_id": "epsom-2026-06-05-1640",
@@ -69,39 +76,39 @@
       "bet_type": "PASS",
       "stake_pts": 0.0,
       "stake_gbp": 0.0,
-      "model_prob": 0.0604,
+      "model_prob": 0.0586,
       "implied_prob": 0.0526,
-      "edge_pct": 14.82,
+      "edge_pct": 11.28,
       "expected_return_gbp": 0.0,
-      "rationale": "Confidence MED, win edge 14.8%, combined EW edge -1.8% \u2014 below thresholds (15% WIN / 20% EW combined)."
+      "rationale": "Confidence MED, win edge 11.3%, combined EW edge -7.9% \u2014 below thresholds (15% WIN / 20% EW combined)."
     },
     {
       "race_id": "epsom-2026-06-05-1715",
       "horse": "Stellar Sunrise",
       "bet_type": "WIN",
-      "stake_pts": 2.94,
-      "stake_gbp": 5.88,
-      "model_prob": 0.2436,
+      "stake_pts": 3.35,
+      "stake_gbp": 6.7,
+      "model_prob": 0.2577,
       "implied_prob": 0.1429,
-      "edge_pct": 70.54,
+      "edge_pct": 80.36,
       "odds_decimal": 7.0,
       "odds_raw": "7.0",
-      "expected_return_gbp": 10.03,
-      "rationale": "Rank #1 (score 95.0), confidence HIGH, model_prob 0.2436 vs implied 0.1429 \u2192 edge 70.5% \u2265 15% threshold. Quarter-Kelly stake: 2.94pts (\u00a35.88) @ 7.0."
+      "expected_return_gbp": 12.08,
+      "rationale": "Rank #1 (score 95.0), confidence HIGH, model_prob 0.2577 vs implied 0.1429 \u2192 edge 80.4% \u2265 15% threshold. Quarter-Kelly stake: 3.35pts (\u00a36.70) @ 7.0."
     },
     {
       "race_id": "epsom-2026-06-05-1750",
       "horse": "Dance In The Storm",
       "bet_type": "WIN",
-      "stake_pts": 0.66,
-      "stake_gbp": 1.32,
-      "model_prob": 0.0837,
+      "stake_pts": 0.6,
+      "stake_gbp": 1.2,
+      "model_prob": 0.0813,
       "implied_prob": 0.0588,
-      "edge_pct": 42.25,
+      "edge_pct": 38.19,
       "odds_decimal": 17.0,
       "odds_raw": "17.0",
-      "expected_return_gbp": 1.88,
-      "rationale": "Rank #1 (score 95.0), confidence HIGH, model_prob 0.0837 vs implied 0.0588 \u2192 edge 42.2% \u2265 15% threshold. Quarter-Kelly stake: 0.66pts (\u00a31.32) @ 17.0."
+      "expected_return_gbp": 1.66,
+      "rationale": "Rank #1 (score 95.0), confidence HIGH, model_prob 0.0813 vs implied 0.0588 \u2192 edge 38.2% \u2265 15% threshold. Quarter-Kelly stake: 0.60pts (\u00a31.20) @ 17.0."
     }
   ],
   "doubles": [
@@ -111,20 +118,20 @@
           "race_id": "epsom-2026-06-05-1515",
           "horse": "Respond",
           "odds_decimal": 13.5,
-          "model_prob": 0.0881
+          "model_prob": 0.0863
         },
         {
           "race_id": "epsom-2026-06-05-1715",
           "horse": "Stellar Sunrise",
           "odds_decimal": 7.0,
-          "model_prob": 0.2436
+          "model_prob": 0.2577
         }
       ],
       "combined_stake_gbp": 1.0,
       "potential_return_gbp": 94.5,
-      "combined_prob": 0.021461,
-      "expected_value_gbp": 1.03,
-      "rationale": "Double: Respond \u00d7 Stellar Sunrise. Model probs: 0.0881 \u00d7 0.2436 = 0.02146. Dec odds product: 94.50. EV: \u00a31.03."
+      "combined_prob": 0.02224,
+      "expected_value_gbp": 1.1,
+      "rationale": "Double: Respond \u00d7 Stellar Sunrise. Model probs: 0.0863 \u00d7 0.2577 = 0.02224. Dec odds product: 94.50. EV: \u00a31.10."
     },
     {
       "legs": [
@@ -132,20 +139,20 @@
           "race_id": "epsom-2026-06-05-1515",
           "horse": "Respond",
           "odds_decimal": 13.5,
-          "model_prob": 0.0881
+          "model_prob": 0.0863
         },
         {
           "race_id": "epsom-2026-06-05-1750",
           "horse": "Dance In The Storm",
           "odds_decimal": 17.0,
-          "model_prob": 0.0837
+          "model_prob": 0.0813
         }
       ],
       "combined_stake_gbp": 1.0,
       "potential_return_gbp": 229.5,
-      "combined_prob": 0.007374,
-      "expected_value_gbp": 0.69,
-      "rationale": "Double: Respond \u00d7 Dance In The Storm. Model probs: 0.0881 \u00d7 0.0837 = 0.00737. Dec odds product: 229.50. EV: \u00a30.69."
+      "combined_prob": 0.007016,
+      "expected_value_gbp": 0.61,
+      "rationale": "Double: Respond \u00d7 Dance In The Storm. Model probs: 0.0863 \u00d7 0.0813 = 0.00702. Dec odds product: 229.50. EV: \u00a30.61."
     },
     {
       "legs": [
@@ -153,20 +160,20 @@
           "race_id": "epsom-2026-06-05-1715",
           "horse": "Stellar Sunrise",
           "odds_decimal": 7.0,
-          "model_prob": 0.2436
+          "model_prob": 0.2577
         },
         {
           "race_id": "epsom-2026-06-05-1750",
           "horse": "Dance In The Storm",
           "odds_decimal": 17.0,
-          "model_prob": 0.0837
+          "model_prob": 0.0813
         }
       ],
       "combined_stake_gbp": 1.0,
       "potential_return_gbp": 119.0,
-      "combined_prob": 0.020389,
-      "expected_value_gbp": 1.43,
-      "rationale": "Double: Stellar Sunrise \u00d7 Dance In The Storm. Model probs: 0.2436 \u00d7 0.0837 = 0.02039. Dec odds product: 119.00. EV: \u00a31.43."
+      "combined_prob": 0.020951,
+      "expected_value_gbp": 1.49,
+      "rationale": "Double: Stellar Sunrise \u00d7 Dance In The Storm. Model probs: 0.2577 \u00d7 0.0813 = 0.02095. Dec odds product: 119.00. EV: \u00a31.49."
     }
   ],
   "trebles": [
@@ -176,26 +183,26 @@
           "race_id": "epsom-2026-06-05-1515",
           "horse": "Respond",
           "odds_decimal": 13.5,
-          "model_prob": 0.0881
+          "model_prob": 0.0863
         },
         {
           "race_id": "epsom-2026-06-05-1715",
           "horse": "Stellar Sunrise",
           "odds_decimal": 7.0,
-          "model_prob": 0.2436
+          "model_prob": 0.2577
         },
         {
           "race_id": "epsom-2026-06-05-1750",
           "horse": "Dance In The Storm",
           "odds_decimal": 17.0,
-          "model_prob": 0.0837
+          "model_prob": 0.0813
         }
       ],
       "combined_stake_gbp": 1.0,
       "potential_return_gbp": 1606.5,
-      "combined_prob": 0.001796,
-      "expected_value_gbp": 1.89,
-      "rationale": "Treble: Respond \u00d7 Stellar Sunrise \u00d7 Dance In The Storm. Combined prob 0.00180. Dec odds product: 1606.50. EV: \u00a31.89."
+      "combined_prob": 0.001808,
+      "expected_value_gbp": 1.9,
+      "rationale": "Treble: Respond \u00d7 Stellar Sunrise \u00d7 Dance In The Storm. Combined prob 0.00181. Dec odds product: 1606.50. EV: \u00a31.90."
     }
   ],
   "accumulators": [],
@@ -259,12 +266,12 @@
     }
   ],
   "portfolio_summary": {
-    "total_stake_gbp": 12.96,
-    "max_potential_return_gbp": 2062.31,
-    "expected_value_gbp": 9.89,
-    "rec_count": 8,
-    "active_singles": 3,
-    "passed_singles": 5,
+    "total_stake_gbp": 17.84,
+    "max_potential_return_gbp": 2070.04,
+    "expected_value_gbp": 12.8,
+    "rec_count": 9,
+    "active_singles": 4,
+    "passed_singles": 4,
     "doubles_count": 3,
     "trebles_count": 1,
     "accumulators_count": 0,

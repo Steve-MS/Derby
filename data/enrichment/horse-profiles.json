@@ -1,0 +1,41 @@
+{
+  "_meta": {
+    "purpose": "Per-horse static profile data not captured in racecards (currently: sire). Keyed by exact horse name as it appears in racecards.",
+    "schema": {"sire": "string sire name", "sire_source": "url or 'web_search' for provenance"},
+    "anti_fabrication_rule": "Only add horses where the sire has been verified from a public source. Unverified horses are simply absent from this file — the signal degrades to neutral 50 for them.",
+    "last_updated": "2026-06-03",
+    "coverage": "Derby (18) + Oaks (11) fields, verified via Racing Post / Horse Racing Nation / France Sire web sources."
+  },
+  "horses": {
+    "Action": {"sire": "Frankel", "sire_source": "web_search"},
+    "Alderman": {"sire": "Study Of Man", "sire_source": "web_search"},
+    "Ancient Egypt": {"sire": "Frankel", "sire_source": "web_search"},
+    "A Taste of Glory": {"sire": "Soldier Hollow", "sire_source": "web_search"},
+    "Balzac": {"sire": "Japan", "sire_source": "web_search"},
+    "Bay Of Brilliance": {"sire": "New Bay", "sire_source": "web_search"},
+    "Benvenuto Cellini": {"sire": "Frankel", "sire_source": "web_search"},
+    "Causeway": {"sire": "Wootton Bassett", "sire_source": "web_search"},
+    "Christmas Day": {"sire": "Camelot", "sire_source": "web_search"},
+    "Constitution River": {"sire": "Wootton Bassett", "sire_source": "horseracingnation/bloodhorse/france-sire"},
+    "Endorsement": {"sire": "Wootton Bassett", "sire_source": "web_search"},
+    "Item": {"sire": "Frankel", "sire_source": "web_search"},
+    "James J Braddock": {"sire": "Zarak", "sire_source": "web_search"},
+    "Maltese Cross": {"sire": "Sea The Stars", "sire_source": "web_search"},
+    "Pierre Bonnard": {"sire": "Camelot", "sire_source": "web_search"},
+    "Poker": {"sire": "Wootton Bassett", "sire_source": "web_search"},
+    "Proposition": {"sire": "Frankel", "sire_source": "web_search"},
+    "Rebel Rocker": {"sire": "Cityscape", "sire_source": "horise/racingpost/sportinglife"},
+
+    "Amelia Earhart": {"sire": "Camelot", "sire_source": "web_search"},
+    "Precise": {"sire": "Starspangledbanner", "sire_source": "web_search"},
+    "Legacy Link": {"sire": "Dubawi", "sire_source": "web_search"},
+    "Venetian Lace": {"sire": "Masar", "sire_source": "web_search"},
+    "Thundering On": {"sire": "Frankel", "sire_source": "web_search"},
+    "Cameo": {"sire": "Wootton Bassett", "sire_source": "web_search"},
+    "A La Prochaine": {"sire": "Lope De Vega", "sire_source": "web_search"},
+    "K Sarra": {"sire": "New Bay", "sire_source": "web_search"},
+    "Prizeland": {"sire": "Territories", "sire_source": "web_search"},
+    "Sugar Island": {"sire": "Dubawi", "sire_source": "web_search"},
+    "Beautify": {"sire": "Wootton Bassett", "sire_source": "web_search"}
+  }
+}

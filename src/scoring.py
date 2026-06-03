@@ -36,9 +36,13 @@ from typing import Any
 try:  # supports both `python -m src...` and direct `sys.path` test imports
     from going import normalise_going, score_going_fit
     from pace import extended_draw_signal, infer_run_style, pace_signal, project_race_pace
+    from cd_form import cd_form_signal
+    from sires import sire_stamina_signal
 except ImportError:  # pragma: no cover
     from .going import normalise_going, score_going_fit
     from .pace import extended_draw_signal, infer_run_style, pace_signal, project_race_pace
+    from .cd_form import cd_form_signal
+    from .sires import sire_stamina_signal
 
 
 # ---------------------------------------------------------------------------
@@ -69,19 +73,23 @@ def load_default_config() -> dict:
     """
     return {
         "weights": {
-            # Re-normalised to introduce `pace` (0.0700) and broaden
-            # `draw_bias` (0.0425 -> 0.0601). All other weights scaled
-            # by ~0.9086 so the total still sums to 1.0.
-            "class_rating":    0.2703,
-            "recent_form":     0.1545,
-            "trainer_form":    0.0772,
-            "jockey":          0.0772,
-            "course_distance": 0.0772,
-            "going":           0.0386,
-            "draw_bias":       0.0601,
-            "class_move":      0.0386,
-            "going_fit":       0.1363,
-            "pace":            0.0700,
+            # v0.3 weights — introduces `sire_stamina` (0.0500) for
+            # Classic-trip pedigree influence. All v0.2 weights
+            # scaled by 0.9500 to make room while preserving the
+            # relative balance. Total sums to 1.0 (validated).
+            # `course_distance` is now powered by RP badge extraction
+            # (cd_form.py) — previously dead-code on missing fields.
+            "class_rating":    0.2568,
+            "recent_form":     0.1468,
+            "trainer_form":    0.0733,
+            "jockey":          0.0733,
+            "course_distance": 0.0733,
+            "going":           0.0367,
+            "draw_bias":       0.0571,
+            "class_move":      0.0367,
+            "going_fit":       0.1295,
+            "pace":            0.0665,
+            "sire_stamina":    0.0500,
         },
         "form": {
             "position_points":        {1: 10, 2: 6, 3: 4, 4: 2},
@@ -215,8 +223,9 @@ def score_runner(runner: dict, race: dict, config: dict) -> dict:
     # 4. Jockey suitability
     raw_signals["jockey"] = _jockey_signal(runner, config["jockey_bumps"])
 
-    # 5. Course & distance
-    raw_signals["course_distance"] = _cd_signal(runner, race, config["cd"])
+    # 5. Course & distance (RP badges via cd_form module; legacy
+    # _cd_signal kept as fallback if module unavailable).
+    raw_signals["course_distance"] = cd_form_signal(runner, race)
 
     # 6. Going suitability
     raw_signals["going"] = _going_signal(runner, race, config["going"])
@@ -241,6 +250,9 @@ def score_runner(runner: dict, race: dict, config: dict) -> dict:
     # 10. Pace / run-style fit
     race_pace = race.get("_projected_pace") or project_race_pace(race.get("runners") or [])
     raw_signals["pace"] = pace_signal(runner, race_pace)
+
+    # 11. Sire stamina (gated to 10f+; neutral 50 when sire unknown)
+    raw_signals["sire_stamina"] = sire_stamina_signal(runner, race)
 
     # Raw score (class_rating placeholder is 50 until z-score in score_race)
     class_val = raw_signals["class_rating"] if raw_signals["class_rating"] is not None else 50.0
