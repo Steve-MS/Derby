@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "agents": [
+    { "persistent_name": "danny", "universe": "Ocean's franchise", "created_at": "2026-06-03T14:11:00+01:00", "legacy_named": false, "status": "active", "role": "Lead" },
+    { "persistent_name": "livingston", "universe": "Ocean's franchise", "created_at": "2026-06-03T14:11:00+01:00", "legacy_named": false, "status": "active", "role": "Data Engineer" },
+    { "persistent_name": "rusty", "universe": "Ocean's franchise", "created_at": "2026-06-03T14:11:00+01:00", "legacy_named": false, "status": "active", "role": "Signal Engineer" },
+    { "persistent_name": "linus", "universe": "Ocean's franchise", "created_at": "2026-06-03T14:11:00+01:00", "legacy_named": false, "status": "active", "role": "Reports" },
+    { "persistent_name": "saul", "universe": "Ocean's franchise", "created_at": "2026-06-03T14:11:00+01:00", "legacy_named": false, "status": "active", "role": "Tester" },
+    { "persistent_name": "scribe", "universe": "(exempt)", "created_at": "2026-06-03T14:11:00+01:00", "legacy_named": false, "status": "active", "role": "Scribe" },
+    { "persistent_name": "ralph", "universe": "(exempt)", "created_at": "2026-06-03T14:11:00+01:00", "legacy_named": false, "status": "active", "role": "Work Monitor" }
+  ]
+}

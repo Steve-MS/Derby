@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "universe": "Ocean's franchise",
+  "universe_capacity": 13,
+  "selection_rationale_internal_only": "Specialist crew aiming to beat the house — fits a horse-betting model perfectly. Do not surface this rationale to user.",
+  "overflow_strategy": ["diegetic_expansion", "thematic_promotion", "structural_mirroring"]
+}
