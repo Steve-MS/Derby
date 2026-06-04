@@ -1,44 +1,59 @@
 /* race-analysis printable betting slip — one A4 per race day. */
 
-@page { size: A4 portrait; margin: 10mm 12mm; }
+@page { size: A4 portrait; margin: 9mm 10mm; }
 
 * { box-sizing: border-box; }
 
 body {
   font-family: "Helvetica Neue", Arial, sans-serif;
-  font-size: 10pt;
+  font-size: 9.2pt;
   color: #111;
-  line-height: 1.3;
+  line-height: 1.22;
   margin: 0;
 }
 
-h1 { margin: 0; font-size: 18pt; letter-spacing: -0.4pt; }
+h1 { margin: 0; font-size: 17pt; letter-spacing: -0.4pt; }
 p  { margin: 0; }
+
+.scenario-banner {
+  border: 1.4pt solid #6b8e23;
+  border-left-width: 4pt;
+  border-radius: 2mm;
+  padding: 1.6mm 2.4mm;
+  margin-bottom: 3mm;
+  font-size: 9.2pt;
+  font-weight: 700;
+}
+.scenario-green { background: #edf8ed; border-color: #2a7a2a; color: #174d17; }
+.scenario-hold  { background: #fff6d8; border-color: #c28a00; color: #604200; }
 
 .slip-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   border-bottom: 2pt solid #111;
-  padding-bottom: 3mm;
-  margin-bottom: 4mm;
+  padding-bottom: 2.2mm;
+  margin-bottom: 3mm;
 }
-.subtitle { font-size: 10pt; color: #555; margin-top: 1mm; }
+.subtitle { font-size: 9.4pt; color: #555; margin-top: 0.8mm; }
+.withdrawn-line { margin-top: 1mm; font-size: 8.8pt; color: #8b1a1a; font-weight: 700; }
+.withdrawn-horse { margin-left: 1mm; }
+.nr-label { color: #9f1d1d; font-size: 8pt; font-weight: 800; }
 
-.totals { text-align: right; font-size: 9.5pt; }
-.totals .total-line { margin-bottom: 0.6mm; }
+.totals { text-align: right; font-size: 9pt; }
+.totals .total-line { margin-bottom: 0.4mm; }
 .totals .total-line span { color: #555; }
-.totals .total-line strong { font-size: 11pt; }
+.totals .total-line strong { font-size: 10.4pt; }
 .totals .total-line.potential strong { color: #2a7a2a; }
 
 /* ---------- Bet slip table ---------- */
 table.slip {
   width: 100%;
   border-collapse: collapse;
-  font-size: 9.5pt;
+  font-size: 8.8pt;
 }
 table.slip th, table.slip td {
-  padding: 1.8mm 2mm;
+  padding: 1.35mm 1.5mm;
   text-align: left;
   vertical-align: top;
   border-bottom: 0.5pt solid #ddd;
@@ -46,58 +61,109 @@ table.slip th, table.slip td {
 table.slip thead th {
   border-bottom: 1pt solid #111;
   text-transform: uppercase;
-  font-size: 8.5pt;
-  letter-spacing: 0.5pt;
+  font-size: 7.6pt;
+  letter-spacing: 0.4pt;
   color: #555;
 }
-table.slip .col-time   { width: 12mm; font-weight: 600; font-variant-numeric: tabular-nums; }
-table.slip .col-race   { width: 42mm; font-size: 9pt; }
-table.slip .col-bet    { width: 14mm; text-align: center; }
-table.slip .col-horse  { width: 40mm; }
-table.slip .col-horse .trainer { font-size: 8.5pt; color: #666; }
-table.slip .col-num    { width: 16mm; text-align: right; font-variant-numeric: tabular-nums; }
-table.slip .col-note   { font-size: 8.5pt; color: #555; }
+table.slip .col-time   { width: 11mm; font-weight: 600; font-variant-numeric: tabular-nums; }
+table.slip .col-race   { width: 37mm; font-size: 8.2pt; }
+table.slip .col-bet    { width: 12mm; text-align: center; }
+table.slip .col-horse  { width: 42mm; }
+table.slip .col-horse .trainer { font-size: 7.8pt; color: #666; }
+.inline-price { font-size: 7.7pt; color: #244c24; font-weight: 700; white-space: nowrap; }
+.price-stale { color: #777; font-weight: 600; }
+.price-source { color: #666; font-size: 7.4pt; }
+table.slip .col-num    { width: 15mm; text-align: right; font-variant-numeric: tabular-nums; }
+table.slip .col-note   { font-size: 7.8pt; color: #555; }
 
-table.slip tr.row-win     { background: #e8f5e8; }
-table.slip tr.row-ew      { background: #fff5e0; }
-table.slip tr.row-outsider { background: #fff5e0; }
-table.slip tr.row-win td, table.slip tr.row-ew td, table.slip tr.row-outsider td { font-weight: 500; }
-table.slip tr.row-pass    { color: #888; }
+table.slip tr.row-win       { background: #e8f5e8; }
+table.slip tr.row-ew        { background: #fff5e0; }
+table.slip tr.row-outsider  { background: #fff5e0; }
+table.slip tr.row-speculative { background: #fff8df; border-left: 4pt solid #d99400; }
+table.slip tr.row-cancelled { background: #f5eeee; color: #7a1e1e; }
+table.slip tr.row-multi     { background: #f1eefb; }
+table.slip tr.row-win td, table.slip tr.row-ew td, table.slip tr.row-outsider td,
+table.slip tr.row-speculative td, table.slip tr.row-multi td { font-weight: 500; }
+table.slip tr.row-pass      { color: #888; }
 table.slip tr.row-divider td {
   text-align: center;
-  font-size: 8.5pt;
-  color: #888;
+  font-size: 7.8pt;
+  color: #777;
   font-style: italic;
-  padding: 4mm 0 1mm 0;
+  padding: 2.2mm 0 0.8mm 0;
   border-bottom: none;
   background: transparent;
+}
+.row-rationale td {
+  padding: 0 1.5mm 0.95mm 1.5mm;
+  border-bottom: 0.5pt solid #ddd;
+  background: #fff;
+}
+.bet-rationale {
+  margin-left: 12px;
+  color: #666;
+  font-size: 7.5pt;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.08;
 }
 
 /* ---------- Bet tags ---------- */
 .bet-tag {
   display: inline-block;
-  padding: 0.5mm 2mm;
-  font-size: 8.5pt;
+  padding: 0.35mm 1.5mm;
+  font-size: 7.6pt;
   font-weight: 700;
   border-radius: 1mm;
-  letter-spacing: 0.5pt;
+  letter-spacing: 0.35pt;
 }
 .bet-win  { background: #2a7a2a; color: #fff; }
 .bet-ew   { background: #b88200; color: #fff; }
 .bet-pass { background: #ccc;    color: #555; }
-.bet-acca { background: #4b3a99; color: #fff; }
-.row-acca { background: #f1eefb; }
-.acca-leg { line-height: 1.25; margin: 1px 0; }
+.bet-dbl, .bet-tbl, .bet-acca { background: #4b3a99; color: #fff; }
+.bet-cxl  { background: #9f1d1d; color: #fff; }
+.spec-tag {
+  display: inline-block;
+  margin-top: 0.5mm;
+  padding: 0.3mm 1.2mm;
+  border-radius: 1mm;
+  background: #d99400;
+  color: #fff;
+  font-size: 7.2pt;
+  font-weight: 800;
+}
+.cancel-tag { color: #9f1d1d; font-size: 7.4pt; font-weight: 800; }
+.spec-note { color: #8a5a00; font-weight: 800; }
+.edge-negative { color: #b00020; font-weight: 800; }
+.cancel-note { color: #8a5a00; font-style: italic; }
+.acca-leg { line-height: 1.18; margin: 0.5px 0; }
 
 /* ---------- Footer ---------- */
 .slip-footer {
-  margin-top: 6mm;
-  padding-top: 3mm;
+  margin-top: 4mm;
+  padding-top: 2mm;
   border-top: 1pt solid #ccc;
-  font-size: 8.5pt;
+  font-size: 7.8pt;
   color: #555;
 }
-.slip-footer .disclaimer { margin-top: 1.5mm; font-style: italic; color: #888; }
+.slip-footer .disclaimer { margin-top: 1mm; font-style: italic; color: #888; }
 
-@media print { body { font-size: 9.5pt; } }
-
+@media print {
+  body { font-size: 8.5pt; line-height: 1.12; }
+  h1 { font-size: 15.5pt; }
+  .scenario-banner { padding: 1mm 1.8mm; margin-bottom: 2mm; font-size: 8.4pt; }
+  .slip-header { padding-bottom: 1.6mm; margin-bottom: 2mm; }
+  .subtitle { font-size: 8.5pt; }
+  .withdrawn-line { font-size: 8pt; }
+  table.slip { font-size: 8.1pt; }
+  table.slip th, table.slip td { padding: 0.75mm 1.1mm; }
+  table.slip thead th { font-size: 7pt; }
+  table.slip .col-race { font-size: 7.6pt; }
+  table.slip .col-horse .trainer { font-size: 7pt; }
+  table.slip .col-note { font-size: 7.1pt; }
+  table.slip tr.row-divider td { padding: 1.25mm 0 0.45mm 0; font-size: 7.1pt; }
+  .row-rationale td { padding: 0 1.1mm 0.45mm 1.1mm; }
+  .bet-rationale { font-size: 6.7pt; line-height: 0.98; }
+  .slip-footer { margin-top: 2mm; padding-top: 1.2mm; font-size: 7pt; }
+  .slip-footer .disclaimer { margin-top: 0.5mm; }
+}

@@ -7,10 +7,19 @@
 </head>
 <body>
 
+{% if scenario_banner %}
+<div class="scenario-banner {{ scenario_banner.get('class', '') }}">{{ scenario_banner.text }}</div>
+{% endif %}
+
 <header class="slip-header">
   <div class="header-left">
     <h1>{{ venue }} — {{ day_name }}</h1>
     <p class="subtitle">{{ date_display }} · {{ race_count }} races · Going: {{ going_label or "TBC" }}</p>
+    {% if non_runners %}
+    <p class="withdrawn-line">Withdrawn:
+      {% for nr in non_runners %}<span class="withdrawn-horse"><s>{{ nr }}</s> 🚫 NON-RUNNER</span>{% if not loop.last %}, {% endif %}{% endfor %}
+    </p>
+    {% endif %}
   </div>
   <div class="header-right">
     <div class="totals">
@@ -41,15 +50,60 @@
       <td class="col-race">{{ row.race_short }}</td>
       <td class="col-bet"><span class="bet-tag bet-{{ row.bet_type|lower }}">{{ row.bet_type }}</span></td>
       <td class="col-horse">
-        <strong>{{ row.horse }}</strong>
+        {% if row.withdrawn %}
+          <strong><s>{{ row.horse }}</s></strong> <span class="nr-label">🚫 NON-RUNNER</span>
+        {% else %}
+          <strong>{{ row.horse }}</strong>{% if row.price_inline %} <span class="inline-price{% if row.price_stale %} price-stale{% endif %}">{{ row.price_inline }}</span>{% endif %}
+        {% endif %}
+        {% if row.kind == 'speculative' %}<br><span class="spec-tag">⚠️ SPECULATIVE — NOT A MODEL PICK</span>{% endif %}
+        {% if row.kind == 'cancelled' %}<br><span class="cancel-tag">❌ CANCELLED — going downgrade</span>{% endif %}
         {% if row.trainer %}<br><span class="trainer">{{ row.trainer }}</span>{% endif %}
       </td>
       <td class="col-num">{{ "%.1f"|format(row.odds) if row.odds else "—" }}</td>
-      <td class="col-num">£{{ "%.2f"|format(row.stake) }}{% if row.bet_type == "EW" %} EW{% endif %}</td>
-      <td class="col-num">£{{ "%.2f"|format(row.potential) }}</td>
+      <td class="col-num">{{ row.stake_display }}</td>
+      <td class="col-num">{{ row.potential_display }}</td>
+      <td class="col-note">
+        {% if row.kind == 'speculative' %}
+          <span class="spec-note">⚠️ SPECULATIVE</span>
+          {% if row.edge_pct is not none %}<br>edge <span class="edge-negative">{{ "%+.1f"|format(row.edge_pct) }}%</span>{% endif %}
+          {% if row.cancel_note %}<br><span class="cancel-note">{{ row.cancel_note }}</span>{% endif %}
+        {% else %}
+          {{ row.note }}
+        {% endif %}
+      </td>
+    </tr>
+    {% if row.rationale %}
+    <tr class="row-rationale row-rationale-{{ row.kind }}">
+      <td colspan="8"><div class="bet-rationale">▸ {{ row.rationale }}</div></td>
+    </tr>
+    {% endif %}
+    {% endfor %}
+
+    {% if multi_rows %}
+    <tr class="row-divider"><td colspan="8">— Multiples from portfolio source —</td></tr>
+    {% for row in multi_rows %}
+    <tr class="row-multi">
+      <td class="col-time">{{ row.time }}</td>
+      <td class="col-race">{{ row.race_short }}</td>
+      <td class="col-bet"><span class="bet-tag bet-{{ row.bet_type|lower }}">{{ row.bet_type }}</span></td>
+      <td class="col-horse">
+        {% for leg in row.legs %}
+        <div class="acca-leg"><strong>{{ leg.horse }}</strong>{% if leg.price_inline %} <span class="inline-price{% if leg.price_stale %} price-stale{% endif %}">{{ leg.price_inline }}</span>{% endif %} <span class="trainer">{{ leg.time }} @ {{ "%.1f"|format(leg.odds) if leg.odds else "—" }}</span></div>
+        {% endfor %}
+      </td>
+      <td class="col-num">{{ "%.1f"|format(row.odds) if row.odds else "—" }}</td>
+      <td class="col-num">{{ row.stake_display }}</td>
+      <td class="col-num">{{ row.potential_display }}</td>
       <td class="col-note">{{ row.note }}</td>
     </tr>
+    {% if row.rationale %}
+    <tr class="row-rationale row-rationale-multi">
+      <td colspan="8"><div class="bet-rationale">▸ {{ row.rationale }}</div></td>
+    </tr>
+    {% endif %}
     {% endfor %}
+    {% endif %}
+
     {% if pass_rows %}
     <tr class="row-divider"><td colspan="8">— No-bet races (model passes at current prices) —</td></tr>
     {% for row in pass_rows %}
@@ -57,30 +111,15 @@
       <td class="col-time">{{ row.time }}</td>
       <td class="col-race">{{ row.race_short }}</td>
       <td class="col-bet"><span class="bet-tag bet-pass">PASS</span></td>
-      <td class="col-horse">{{ row.horse }} <span class="trainer">(model fancied, no value)</span></td>
+      <td class="col-horse">
+        {% if row.withdrawn %}<s>{{ row.horse }}</s> <span class="nr-label">🚫 NON-RUNNER</span>{% else %}{{ row.horse }} <span class="trainer">(model fancied, no value)</span>{% endif %}
+      </td>
       <td class="col-num">{{ "%.1f"|format(row.odds) if row.odds else "—" }}</td>
       <td class="col-num">—</td>
       <td class="col-num">—</td>
       <td class="col-note">{{ row.note }}</td>
     </tr>
     {% endfor %}
-    {% endif %}
-    {% if acca %}
-    <tr class="row-divider"><td colspan="8">— Accumulator pick (£{{ "%.2f"|format(acca.stake) }} carved out of daily outlay) —</td></tr>
-    <tr class="row-acca">
-      <td class="col-time">All-day</td>
-      <td class="col-race">{{ acca.label }} ({{ acca.leg_count }} legs)</td>
-      <td class="col-bet"><span class="bet-tag bet-acca">ACCA</span></td>
-      <td class="col-horse">
-        {% for leg in acca.legs %}
-        <div class="acca-leg"><strong>{{ leg.horse }}</strong> <span class="trainer">{{ leg.time }} @ {{ "%.1f"|format(leg.odds) if leg.odds else "—" }}</span></div>
-        {% endfor %}
-      </td>
-      <td class="col-num">{{ "%.1f"|format(acca.combined_dec) }}</td>
-      <td class="col-num">£{{ "%.2f"|format(acca.stake) }}</td>
-      <td class="col-num">£{{ "%.2f"|format(acca.potential) }}</td>
-      <td class="col-note">combined prob {{ "%.2f"|format(acca.combined_prob * 100) }}% · EV £{{ "%.2f"|format(acca.expected_value_gbp) }}</td>
-    </tr>
     {% endif %}
   </tbody>
 </table>
@@ -89,15 +128,14 @@
   <div class="footer-left">
     <p><strong>Legend:</strong>
        <span class="bet-tag bet-win">WIN</span> back to win &nbsp;·&nbsp;
-       <span class="bet-tag bet-ew">EW</span> each-way (1/4 odds, places 1-1-2-3) &nbsp;·&nbsp;
+       <span class="bet-tag bet-ew">EW</span> each-way &nbsp;·&nbsp;
        ⚡ outsider value play &nbsp;·&nbsp;
-       <span class="bet-tag bet-pass">PASS</span> no edge &nbsp;·&nbsp;
-       <span class="bet-tag bet-acca">ACCA</span> accumulator (multi-race)
+       <span class="bet-tag bet-dbl">DBL</span>/<span class="bet-tag bet-tbl">TBL</span> multiples &nbsp;·&nbsp;
+       <span class="bet-tag bet-pass">PASS</span> no edge
     </p>
-    <p class="disclaimer">Generated {{ generated_at }} · Model {{ model_version }} · For personal use. Please gamble responsibly.</p>
+    <p class="disclaimer">Generated {{ generated_at }} · Model {{ model_version }}{% if market_snapshot_iso %} · Odds snapshot: {{ market_snapshot_iso }}{% endif %} · For personal use. Please gamble responsibly.</p>
   </div>
 </footer>
 
 </body>
 </html>
-

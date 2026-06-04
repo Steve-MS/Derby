@@ -58,10 +58,10 @@
       "stake_pts": 0.0,
       "stake_gbp": 0.0,
       "model_prob": 0.0943,
-      "implied_prob": 0.3077,
-      "edge_pct": -69.36,
+      "implied_prob": null,
+      "edge_pct": null,
       "expected_return_gbp": 0.0,
-      "rationale": "Model pass: LOW Derby confidence; -69% edge in portfolio calc. Speculative 4/1 bet sits outside model."
+      "rationale": "Soft HOLD: Item cancelled; going_fit 0.95 to 0.55 and model edge stays negative."
     },
     {
       "race_id": "epsom-2026-06-06-1640",
@@ -189,15 +189,15 @@
       "morning_price": 29.0,
       "odds_source": "estimated",
       "model_rank": 4,
-      "market_rank": 11,
-      "rank_delta": 7,
+      "market_rank": 10,
+      "rank_delta": 6,
       "bet_type": "EW",
       "stake_pts": 0.25,
       "stake_gbp": 0.25,
       "ew_terms": "1/4 odds, 1-1-2-3",
       "potential_return_gbp_win": 7.25,
       "potential_return_gbp_place": 2.0,
-      "rationale": "EW outsider: Kaylee #4 vs market #11 at 28/1; Derby field/rank gap rewards place cover.",
+      "rationale": "Soft HOLD keeps Causeway: Kaylee #4 vs market #10 at 28/1; outsider EW not Item-dependent.",
       "outsider_pick": "Causeway"
     },
     {
@@ -234,7 +234,7 @@
     }
   },
   "disclaimer": "For entertainment only. 18+. Gamble responsibly. BeGambleAware.org.",
-  "scenario": "GREEN – going GTS or firmer",
+  "scenario": "HOLD – going declared Soft",
   "built_at": "2026-06-04T13:39:06.403396+00:00",
   "bankroll_note": "£100 bankroll. 1 pt = £1.00.",
   "going_advisory": {
@@ -253,26 +253,18 @@
     "Calandagan": 5.0,
     "Lambourn": 8.0,
     "Jan Brueghel": 4.5,
-    "Item": 3.25,
     "Benvenuto Cellini": 2.0,
     "James J Braddock": 10.0
   },
-  "item_special_bet": {
+  "item_advisory": {
     "race_id": "epsom-2026-06-06-1600",
     "horse": "Item",
-    "scenario": "GREEN – going GTS or firmer",
-    "bet_type": "WIN",
-    "stake_pts": 1.0,
-    "stake_gbp": 1.0,
-    "odds_decimal": 3.25,
-    "odds_fractional": "9/4",
-    "model_score": 95.0,
-    "going_fit_gts": 0.95,
-    "going_fit_soft": 0.55,
-    "edge_note": "Race confidence = LOW. Live price 3.25 implies 30.8 % win prob; model_prob ~9.4 % on stale field scores → negative edge (-69 %). Included as GOING-CONDITIONAL SPECULATIVE PUNT only: score 95, going_fit 0.95, market steam 5.0 → 3.25 (−35 %).",
-    "warning": "NOT a model-recommended WIN/EW signal. 18+ entertainment allowance only. Stake 1 pt (£1.00). Do NOT place if going declared Soft – switch to HOLD slip.",
-    "cancel_if": "going declared Soft",
-    "rationale": "Speculative, not a model pick; sentiment/connections at 4/1 despite -69% model edge. Cancel if Soft."
+    "scenario": "HOLD – going declared Soft",
+    "bet_type": "PASS",
+    "stake_pts": 0.0,
+    "stake_gbp": 0.0,
+    "rationale": "Soft HOLD: Item cancelled; going_fit 0.95 to 0.55 and model edge stays negative, freeing 1pt.",
+    "stake_freed_pts": 1.0
   },
-  "scenario_note": "Use this slip ONLY if going remains GTS or firmer. Check official declarations by 10:00 Derby morning. If Soft declared, switch to soft-contingency slip and cancel Item WIN."
+  "scenario_note": "Activate this slip if going is officially declared Soft on Derby morning. Item bet is cancelled; 1 pt stake retained. All other bets unchanged."
 }

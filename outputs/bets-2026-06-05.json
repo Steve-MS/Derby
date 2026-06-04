@@ -1,5 +1,5 @@
 {
-  "bankroll": 200.0,
+  "bankroll": 100.0,
   "singles": [
     {
       "race_id": "epsom-2026-06-05-1330",
@@ -7,30 +7,30 @@
       "bet_type": "PASS",
       "stake_pts": 0.0,
       "stake_gbp": 0.0,
-      "model_prob": 0.1036,
+      "model_prob": 0.1027,
       "implied_prob": 0.0645,
-      "edge_pct": 60.56,
+      "edge_pct": 59.26,
       "expected_return_gbp": 0.0,
-      "rationale": "Confidence LOW, win edge 60.6%, combined EW edge 81.8% \u2014 below thresholds (15% WIN / 20% EW combined)."
+      "rationale": "No bet: LOW confidence despite 59.3% win edge; did not clear Badger win/EW gates."
     },
     {
       "race_id": "epsom-2026-06-05-1405",
       "horse": "Wild Terrain",
       "bet_type": "EW",
-      "stake_pts": 2.14,
-      "stake_gbp": 4.28,
-      "model_prob": 0.1067,
+      "stake_pts": 2.44,
+      "stake_gbp": 2.44,
+      "model_prob": 0.1121,
       "implied_prob": 0.0667,
-      "edge_pct": 60.12,
-      "place_edge_pct": 21.69,
-      "combined_edge_pct": 81.81,
+      "edge_pct": 68.13,
+      "place_edge_pct": 27.78,
+      "combined_edge_pct": 95.91,
       "odds_decimal": 15.0,
       "odds_raw": "15.0",
       "places_paid": 3,
-      "model_place_prob": 0.3202,
+      "model_place_prob": 0.3363,
       "place_odds_decimal": 3.8,
-      "expected_return_gbp": 6.03,
-      "rationale": "Rank #1 (score 95.0), confidence MED. Win edge 60.1% + place edge 21.7% = 81.8% combined \u2265 20% EW threshold. EW: 1.07pts WIN + 1.07pts PLACE = 2.14pts total (\u00a34.28) @ 15.0 (3 places, 1/5 odds)."
+      "expected_return_gbp": 3.61,
+      "rationale": "Kaylee #1 with 95.9% combined EW edge; 14/1 price makes place cover worth taking."
     },
     {
       "race_id": "epsom-2026-06-05-1440",
@@ -38,37 +38,37 @@
       "bet_type": "PASS",
       "stake_pts": 0.0,
       "stake_gbp": 0.0,
-      "model_prob": 0.1384,
+      "model_prob": 0.1369,
       "implied_prob": 0.125,
-      "edge_pct": 10.69,
+      "edge_pct": 9.52,
       "expected_return_gbp": 0.0,
-      "rationale": "Confidence MED, win edge 10.7%, combined EW edge 10.3% \u2014 below thresholds (15% WIN / 20% EW combined)."
+      "rationale": "No bet: LOW confidence and only 9.5% win edge; below 15% WIN threshold."
     },
     {
       "race_id": "epsom-2026-06-05-1515",
       "horse": "Respond",
       "bet_type": "WIN",
-      "stake_pts": 0.33,
-      "stake_gbp": 0.66,
-      "model_prob": 0.0863,
+      "stake_pts": 0.34,
+      "stake_gbp": 0.34,
+      "model_prob": 0.0868,
       "implied_prob": 0.0741,
-      "edge_pct": 16.55,
+      "edge_pct": 17.13,
       "odds_decimal": 13.5,
       "odds_raw": "13.5",
-      "expected_return_gbp": 0.77,
-      "rationale": "Rank #1 (score 95.0), confidence HIGH, model_prob 0.0863 vs implied 0.0741 \u2192 edge 16.6% \u2265 15% threshold. Quarter-Kelly stake: 0.33pts (\u00a30.66) @ 13.5."
+      "expected_return_gbp": 0.4,
+      "rationale": "Kaylee #1 HIGH confidence with 17.1% edge; 25/2 price clears WIN gate."
     },
     {
       "race_id": "epsom-2026-06-05-1600",
-      "horse": "Prizeland",
+      "horse": "Amelia Earhart",
       "bet_type": "PASS",
       "stake_pts": 0.0,
       "stake_gbp": 0.0,
-      "model_prob": 0.1272,
-      "implied_prob": 0.0294,
-      "edge_pct": 332.6,
+      "model_prob": 0.1626,
+      "implied_prob": 0.4444,
+      "edge_pct": -63.42,
       "expected_return_gbp": 0.0,
-      "rationale": "Confidence LOW, win edge 332.6%, combined EW edge 522.7% \u2014 below thresholds (15% WIN / 20% EW combined)."
+      "rationale": "No bet: market too short after Oaks price cut; model edge -63.4%."
     },
     {
       "race_id": "epsom-2026-06-05-1640",
@@ -76,39 +76,39 @@
       "bet_type": "PASS",
       "stake_pts": 0.0,
       "stake_gbp": 0.0,
-      "model_prob": 0.0586,
+      "model_prob": 0.0595,
       "implied_prob": 0.0526,
-      "edge_pct": 11.28,
+      "edge_pct": 13.02,
       "expected_return_gbp": 0.0,
-      "rationale": "Confidence MED, win edge 11.3%, combined EW edge -7.9% \u2014 below thresholds (15% WIN / 20% EW combined)."
+      "rationale": "No bet: MED confidence but 13.0% win edge misses 15% WIN gate; place side negative."
     },
     {
       "race_id": "epsom-2026-06-05-1715",
       "horse": "Stellar Sunrise",
       "bet_type": "WIN",
-      "stake_pts": 3.35,
-      "stake_gbp": 6.7,
-      "model_prob": 0.2577,
+      "stake_pts": 2.7,
+      "stake_gbp": 2.7,
+      "model_prob": 0.2356,
       "implied_prob": 0.1429,
-      "edge_pct": 80.36,
+      "edge_pct": 64.92,
       "odds_decimal": 7.0,
       "odds_raw": "7.0",
-      "expected_return_gbp": 12.08,
-      "rationale": "Rank #1 (score 95.0), confidence HIGH, model_prob 0.2577 vs implied 0.1429 \u2192 edge 80.4% \u2265 15% threshold. Quarter-Kelly stake: 3.35pts (\u00a36.70) @ 7.0."
+      "expected_return_gbp": 4.45,
+      "rationale": "Kaylee #1 HIGH confidence with 64.9% edge; 6/1 price supports strongest Friday stake."
     },
     {
       "race_id": "epsom-2026-06-05-1750",
       "horse": "Dance In The Storm",
       "bet_type": "WIN",
-      "stake_pts": 0.6,
-      "stake_gbp": 1.2,
-      "model_prob": 0.0813,
+      "stake_pts": 0.63,
+      "stake_gbp": 0.63,
+      "model_prob": 0.0826,
       "implied_prob": 0.0588,
-      "edge_pct": 38.19,
+      "edge_pct": 40.46,
       "odds_decimal": 17.0,
       "odds_raw": "17.0",
-      "expected_return_gbp": 1.66,
-      "rationale": "Rank #1 (score 95.0), confidence HIGH, model_prob 0.0813 vs implied 0.0588 \u2192 edge 38.2% \u2265 15% threshold. Quarter-Kelly stake: 0.60pts (\u00a31.20) @ 17.0."
+      "expected_return_gbp": 0.88,
+      "rationale": "Kaylee #1 HIGH confidence with 40.5% edge; 16/1 price gives upside on small Kelly stake."
     }
   ],
   "doubles": [
@@ -118,20 +118,20 @@
           "race_id": "epsom-2026-06-05-1515",
           "horse": "Respond",
           "odds_decimal": 13.5,
-          "model_prob": 0.0863
+          "model_prob": 0.0868
         },
         {
           "race_id": "epsom-2026-06-05-1715",
           "horse": "Stellar Sunrise",
           "odds_decimal": 7.0,
-          "model_prob": 0.2577
+          "model_prob": 0.2356
         }
       ],
-      "combined_stake_gbp": 1.0,
-      "potential_return_gbp": 94.5,
-      "combined_prob": 0.02224,
-      "expected_value_gbp": 1.1,
-      "rationale": "Double: Respond \u00d7 Stellar Sunrise. Model probs: 0.0863 \u00d7 0.2577 = 0.02224. Dec odds product: 94.50. EV: \u00a31.10."
+      "combined_stake_gbp": 0.5,
+      "potential_return_gbp": 47.25,
+      "combined_prob": 0.02045,
+      "expected_value_gbp": 0.47,
+      "rationale": "Two HIGH-confidence Kaylee #1 WINs combined; 94.5 decimal product, EV +£0.47."
     },
     {
       "legs": [
@@ -139,20 +139,20 @@
           "race_id": "epsom-2026-06-05-1515",
           "horse": "Respond",
           "odds_decimal": 13.5,
-          "model_prob": 0.0863
+          "model_prob": 0.0868
         },
         {
           "race_id": "epsom-2026-06-05-1750",
           "horse": "Dance In The Storm",
           "odds_decimal": 17.0,
-          "model_prob": 0.0813
+          "model_prob": 0.0826
         }
       ],
-      "combined_stake_gbp": 1.0,
-      "potential_return_gbp": 229.5,
-      "combined_prob": 0.007016,
-      "expected_value_gbp": 0.61,
-      "rationale": "Double: Respond \u00d7 Dance In The Storm. Model probs: 0.0863 \u00d7 0.0813 = 0.00702. Dec odds product: 229.50. EV: \u00a30.61."
+      "combined_stake_gbp": 0.5,
+      "potential_return_gbp": 114.75,
+      "combined_prob": 0.00717,
+      "expected_value_gbp": 0.32,
+      "rationale": "Two HIGH-confidence #1 WINs at bigger prices combined; 229.5 decimal product, EV +£0.32."
     },
     {
       "legs": [
@@ -160,20 +160,20 @@
           "race_id": "epsom-2026-06-05-1715",
           "horse": "Stellar Sunrise",
           "odds_decimal": 7.0,
-          "model_prob": 0.2577
+          "model_prob": 0.2356
         },
         {
           "race_id": "epsom-2026-06-05-1750",
           "horse": "Dance In The Storm",
           "odds_decimal": 17.0,
-          "model_prob": 0.0813
+          "model_prob": 0.0826
         }
       ],
-      "combined_stake_gbp": 1.0,
-      "potential_return_gbp": 119.0,
-      "combined_prob": 0.020951,
-      "expected_value_gbp": 1.49,
-      "rationale": "Double: Stellar Sunrise \u00d7 Dance In The Storm. Model probs: 0.2577 \u00d7 0.0813 = 0.02095. Dec odds product: 119.00. EV: \u00a31.49."
+      "combined_stake_gbp": 0.5,
+      "potential_return_gbp": 59.5,
+      "combined_prob": 0.019461,
+      "expected_value_gbp": 0.66,
+      "rationale": "Late-card HIGH-confidence #1 pair; 119.0 decimal product with best double EV +£0.66."
     }
   ],
   "trebles": [
@@ -183,26 +183,26 @@
           "race_id": "epsom-2026-06-05-1515",
           "horse": "Respond",
           "odds_decimal": 13.5,
-          "model_prob": 0.0863
+          "model_prob": 0.0868
         },
         {
           "race_id": "epsom-2026-06-05-1715",
           "horse": "Stellar Sunrise",
           "odds_decimal": 7.0,
-          "model_prob": 0.2577
+          "model_prob": 0.2356
         },
         {
           "race_id": "epsom-2026-06-05-1750",
           "horse": "Dance In The Storm",
           "odds_decimal": 17.0,
-          "model_prob": 0.0813
+          "model_prob": 0.0826
         }
       ],
-      "combined_stake_gbp": 1.0,
-      "potential_return_gbp": 1606.5,
-      "combined_prob": 0.001808,
-      "expected_value_gbp": 1.9,
-      "rationale": "Treble: Respond \u00d7 Stellar Sunrise \u00d7 Dance In The Storm. Combined prob 0.00181. Dec odds product: 1606.50. EV: \u00a31.90."
+      "combined_stake_gbp": 0.5,
+      "potential_return_gbp": 803.25,
+      "combined_prob": 0.001689,
+      "expected_value_gbp": 0.86,
+      "rationale": "All three Friday HIGH-confidence #1 WINs stacked; 1606.5 decimal product, EV +£0.86."
     }
   ],
   "accumulators": [],
@@ -237,16 +237,16 @@
       "jockey": "TBC",
       "morning_price": 34.0,
       "odds_source": "estimated",
-      "model_rank": 1,
-      "market_rank": 9,
-      "rank_delta": 8,
+      "model_rank": 2,
+      "market_rank": 8,
+      "rank_delta": 6,
       "bet_type": "EW",
       "stake_pts": 0.25,
-      "stake_gbp": 0.5,
+      "stake_gbp": 0.25,
       "ew_terms": "1/4 odds, 1-1-2-3",
-      "potential_return_gbp_win": 17.0,
-      "potential_return_gbp_place": 4.62,
-      "rationale": "Model rates 1; market rates 9. Disagreement of 8 ranks \u2014 value play.",
+      "potential_return_gbp_win": 8.5,
+      "potential_return_gbp_place": 2.31,
+      "rationale": "EW outsider: Kaylee #2 vs market #8, 33/1 in Oaks; rank gap makes place cover worthwhile.",
       "outsider_pick": "Prizeland"
     },
     {
@@ -266,9 +266,9 @@
     }
   ],
   "portfolio_summary": {
-    "total_stake_gbp": 17.84,
-    "max_potential_return_gbp": 2070.04,
-    "expected_value_gbp": 12.8,
+    "total_stake_gbp": 8.61,
+    "max_potential_return_gbp": 1034.09,
+    "expected_value_gbp": 5.54,
     "rec_count": 9,
     "active_singles": 4,
     "passed_singles": 4,
@@ -277,10 +277,22 @@
     "accumulators_count": 0,
     "outsider_summary": {
       "count": 1,
-      "total_stake_gbp": 1.0,
-      "total_potential_return_gbp_win": 17.0,
-      "total_potential_return_gbp_place": 4.62
+      "total_stake_gbp": 0.5,
+      "total_potential_return_gbp_win": 8.5,
+      "total_potential_return_gbp_place": 2.31
     }
   },
-  "disclaimer": "For entertainment only. 18+. Gamble responsibly. BeGambleAware.org."
+  "disclaimer": "For entertainment only. 18+. Gamble responsibly. BeGambleAware.org.",
+  "built_at": "2026-06-04T13:39:06.403396+00:00",
+  "bankroll_note": "£100 bankroll. 1 pt = £1.00.",
+  "going_advisory": {
+    "going": "Good-to-Soft",
+    "declared_at": "2026-06-04T09:00+01:00",
+    "advisory": "Softened from Good (Tue call). No model re-run required; going_fit scores handle GTS adequately. Going stable, no further deterioration expected Friday."
+  },
+  "live_price_overrides_applied": {
+    "Amelia Earhart": 2.25,
+    "Legacy Link": 3.5,
+    "Precise": "WITHDRAWN – removed from field"
+  }
 }
