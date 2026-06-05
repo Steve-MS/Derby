@@ -784,3 +784,80 @@ If `src/report.py` ever gains a templating pass for a race-day refresh (e.g., re
 
 Until then, Linus handles as direct HTML patch.
 
+---
+
+## 2026-06-05 — Pass-rationale schema
+
+**Agent:** Linus (Reports)  
+**Date:** 2026-06-05  
+**Status:** ✅ Live on today's card — generalises to Derby Day and beyond.
+
+### What this is
+
+Every race where the model outputs PASS now carries a one-sentence plain-English explanation
+of *which gate the top pick failed* in src/betting.py.
+
+Previously, cards showed "PASS £0.00" with no explanation. Steve reads the card on the train
+and needs to understand *why* we didn't bet — not just that we didn't.
+
+### Gate reference (src/betting.py v0.1 — _build_single)
+
+| Gate | Condition | Output |
+|------|-----------|--------|
+| 1 | No parseable odds | PASS — "No odds available" |
+| 2 | confidence HIGH + win_edge ≥ 15% | WIN |
+| 3 | confidence HIGH/MED + combined EW edge ≥ 20% | EW |
+| 4 | Anything else | PASS — reason string in rationale field |
+
+The rationale field is already populated in the bet dict returned by _build_bets().
+It is not currently surfaced in src/report.py. Future: pipe it through to the HTML.
+
+### HTML schema (current — surgical injection)
+
+**Pick rationale** (WIN / EW races):
+```html
+<p class="pick-rationale">✅ Why we're on: [confidence], score [X]. [Key signals]. [Threshold cleared]. Stake £[X] @ [odds].</p>
+```
+Injected after the existing <p> inside .top-pick, before closing </div>.
+
+**Pass rationale** (PASS races):
+```html
+<p class="pass-rationale">⛔ Why we're passing: [confidence level] — [which gate failed and why]. [Field context if relevant].</p>
+```
+Injected after </ul> inside .race-bets, before closing </div>.
+
+**CSS** (add to report stylesheet):
+```css
+.pick-rationale {
+  font-size: .79rem;
+  color: var(--green-light);
+  font-style: italic;
+  margin-top: 6px;
+  padding-top: 5px;
+  border-top: 1px solid var(--border);
+}
+.pass-rationale {
+  font-size: .79rem;
+  color: var(--muted);
+  font-style: italic;
+  margin-top: 6px;
+  padding: 5px 0 0;
+}
+```
+
+### Ideal future state (for Danny / Rusty)
+
+src/report.py should read the rationale field already in each bet dict
+and render it automatically. The schema above is the HTML target.
+No new field is needed in _build_bets() output — it's already there.
+
+**Ask for Danny:** Add bet["rationale"] to the jinja template context for each race's
+race-bets block. Linus can wire up the HTML once the template exposes the value.
+
+### Derby Day
+
+Same pattern. Before adding pass rationale to tomorrow's card:
+1. Check decisions.md for Livingston gate notes (late declarations, market moves).
+2. For each PASS race, identify the gate from the bet dict or from confidence + edge values visible in the HTML.
+3. For a favourite PASS, always note the short-price / no-value angle explicitly.
+

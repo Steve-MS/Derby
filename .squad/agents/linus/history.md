@@ -63,3 +63,31 @@ Three footnotes injected into the Oaks (16:00) race block:
 
 4. **Never touch the scored data** — picks, scores, signals untouched. Footnotes are cosmetic-only.
 5. **Derby Day**: same pattern applies. Check decisions.md for any last-minute Livingston gate notes before adding footnotes.
+
+## 2026-06-05 — Pass-rationale injection (Ladies Day card)
+
+**What:** Surgically edited outputs/report-2026-06-05.html — NO regeneration.
+Added bet **pick rationale** (4 races: EW Wild Terrain, WIN Respond/Stellar Sunrise/Dance In The Storm) and
+**pass rationale** (4 races: PASS Naana's Shadow / Linwood / Amelia Earhart / Mister Winston).
+
+All 3 prior footnotes (On Message, Belinus, Sugar Island) preserved.
+
+**Injection points:**
+- Pick rationale: <p class="pick-rationale"> injected after the existing <p> inside .top-pick, before closing </div>.
+- Pass rationale: <p class="pass-rationale"> injected after </ul> inside .race-bets, before closing </div>.
+
+## Learnings
+
+### Pass-rationale on cards (2026-06-05, generalises to Derby Day)
+
+**Pattern:**
+1. Every PASS race needs one plain-English sentence in the race-bets block explaining which gate was missed.
+2. Gates in src/betting.py (v0.1): (a) No odds → "No odds available"; (b) confidence HIGH + win_edge ≥ 15% → WIN; (c) confidence HIGH/MED + combined EW edge ≥ 20% → EW; (d) anything else → PASS.
+3. The rationale text always names the gate: confidence level, threshold, and why it wasn't cleared.
+4. For PASS-on-a-favourite: also flag the short-price / overround problem explicitly.
+5. For PASS with an unscored runner: cross-reference the On Message footnote in the Oaks rationale — Steve should see both together.
+
+**Derby Day checklist:**
+- Same pattern. Run through each PASS race and name the gate.
+- Check decisions.md for any late Livingston gate notes before adding rationale.
+- If a race was EW-header but PASS in bet-list (inconsistent data like Mister Winston 16:40), write the rationale from the bet-list outcome (PASS) since that's what Steve acted on.
