@@ -1032,3 +1032,11 @@ Applied to:
 - `outputs/racecard-2026-06-05.html` — footer timestamp
 - `outputs/report-2026-06-05.html` — header + footer timestamps
 
+
+---
+
+### 2026-06-05: Betfair delayed key not usable for Oaks day refresh
+**By:** Livingston
+**What:** Betfair delayed-price activation is not feasible today. No Betfair app-key/session variable is configured, and `scripts/morning_odds.py` has no Betfair Exchange integration or login helper. Current live-ish path remains manual CSV overrides; automated script still falls back to stale 2026-06-02 racecard prices.
+**Why:** Betfair delayed app keys still require authenticated SSO/session-token setup before Exchange API calls can be made. With both credentials and code path absent, same-day activation before the 16:00 Oaks is blocked. Fastest alternative is manual CSV from a visible odds source, or a targeted scraper/probe for a public odds page if one is reachable without account credentials.
+

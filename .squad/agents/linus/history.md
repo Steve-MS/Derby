@@ -192,3 +192,8 @@ Confirmation: no price moves >20%, no new non-runners, prices remain stale/synth
 - Remove `<span class="odds-snapshot">` from report footer when there is no live odds snapshot available
 
 
+
+## 2026-06-05 — Betfair live data constraint (Scribe relay from Livingston)
+
+Betfair live data blocked indefinitely; (stale) tags remain canonical until delayed-key integration ships — see decisions.md 2026-06-05 entry.
+
