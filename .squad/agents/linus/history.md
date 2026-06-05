@@ -18,3 +18,10 @@
 - Added one explicit `runner=None` anti-fab regression test per module.
 - Left signal maths, scoring weights, schemas, and Danny's spec TODOs untouched.
 - Validation: `pytest -x` collected 326 tests and all 326 passed.
+
+## 2026-06-05 — Friday AM Gate: On Message data gap alert
+
+- **ALERT:** "On Message" (trainer Ralph Beckett, jockey Hector Crouch, ~25/1 odds) is declared in the Oaks field but MISSING from `data/raw/epsom-2026-06-05-racecards.json`.
+- Data pull was 2026-06-02; On Message either declared late or missed by the fetcher.
+- **Impact:** On Message will have NO score in the Ladies Day report (no entry in enrichment files).
+- Action: Flag in report output. Steve should be made aware for transparency.

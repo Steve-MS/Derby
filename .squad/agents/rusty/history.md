@@ -54,3 +54,11 @@ Implemented `src/equipment.py` and updated `src/scoring.py` to v0.6.
 - Added/updated tests for equipment scoring, None guard, loader shape, scoring integration, and weight sanity.
 
 **Decision note:** `.squad/decisions/inbox/rusty-v06-equip.md`
+
+## 2026-06-05 — Friday AM Gate: Sugar Island market_move signal limitation
+
+- **Finding:** Sugar Island (EW £0.25 @ 34.0) drifted inward from 33/1 → 16-22/1 today (decimal 17-23).
+- **Signal impact:** market_move returns neutral 50 (both baseline and latest have price 34.0 from racecard — no live odds feed).
+- **Real move:** Market shows genuine confidence (50–100% inward move), but market_move signal cannot detect it without live mid-race odds.
+- **Note:** This is a data-feed limitation, not a signal bug. Recommend manual note in report: "Sugar Island has moved in overnight market but signal shows no change due to no live odds feed."
+- **Mitigation for future:** Racing Post WebSocket odds would be needed for real-time market_move signal updates (currently blocked).

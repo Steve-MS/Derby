@@ -580,3 +580,130 @@ Cleared to ship v0.6 to main.
 - ✅ Rusty: implementation (verified)
 - ✅ Saul: tests + review (APPROVED)
 - ✅ Scribe: deployment (SHIP)
+
+---
+
+# Going Forecast Refresh — 2026-06-03 (River)
+
+## Weather Data Acquisition
+- **Primary source:** Open-Meteo API (free tier, no key required)
+- **Location:** Epsom Downs (lat 51.3127, lon -0.2664)
+- **Status:** ✓ Success
+
+## Rainfall Summary (mm)
+| Date | Rainfall | Precip Prob |
+|------|----------|-------------|
+| Wed 3 Jun | 3.2 | 100% |
+| Thu 4 Jun | 1.3 | 100% |
+| Fri 5 Jun (race day) | 0.0 | 31% |
+| Sat 6 Jun (race day) | 2.0 | 82% |
+
+## Going Estimates
+### Friday 5 June (Ladies Day)
+- **Going:** Good
+- **Confidence:** High
+- **48h rainfall:** 4.5mm (3.2mm Wed + 1.3mm Thu)
+- **Rationale:** Moderate rainfall mid-week; dry Friday race day allows ground to firm slightly. Narrow forecast uncertainty.
+
+### Saturday 6 June (Derby Day)
+- **Going:** Good
+- **Confidence:** High
+- **48h rainfall:** 2.0mm (0.0mm Fri + 2.0mm Sat race day)
+- **Rationale:** Minimal Friday rain; Saturday brings 2.0mm but remains Good. Ground stable, no deterioration expected.
+
+## Delta vs Previous Estimate
+| Day | Old Going | New Going | Old Confidence | New Confidence | Change |
+|-----|-----------|-----------|---|---|---|
+| Fri | Good | Good | Medium | **High** ↑ | **Confidence UP** |
+| Sat | Good to Soft | Good | Medium | **High** ↑ | **Confidence UP + Going FIRMER** |
+
+### Flags for Steve
+✅ **Saturday going improved:** Previous forecast estimated Good-to-Soft (0.9mm rain, medium confidence); fresh data shows 2.0mm but with realistic time distribution (Fri dry, Sat rain) → revises to Good with high confidence. This is material news for Saturday horses — softer-ground specialists may not get the conditions they need.
+
+✅ **Confidence increased both days:** High confidence now vs medium before. Both forecasts now in medium-to-high confidence window suitable for 2-3 day race window.
+
+## Technical
+- **Commit SHA:** 27c38501b40d21cc1f4a44a42600063b5f88602b
+- **File updated:** data/going-forecast.json
+- **Pushed:** origin/main ✓
+
+## No further action required
+Going forecasts stable and high-confidence. Friday + Saturday readiness confirmed. Ready for race-day pipeline execution Friday morning.
+
+
+---
+
+# Friday AM Gate — Decisions & Findings
+**Agent:** Livingston  
+**Date:** 2026-06-05T09:52:00+01:00  
+**Status:** ✅ Gate complete (2h52m late — ran at 09:52 BST vs 07:00 target)
+
+---
+
+## Decision 1: Belinus Refund — Conclusive
+
+**Status:** WITHDRAWN — confirmed absent from 9-runner final Oaks declarations.
+
+Steve holds WIN £5 @ 3.5 (decimal) on Belinus in the Betfred Oaks (Investec Oaks, Group 1).  
+Belinus was already flagged 🚨 WITHDRAWN in the Wed 2026-06-03 48hr drift check.  
+Today's web declaration check (Oaks 9 declared runners) confirms Belinus is definitively NOT in the field.
+
+**Action required:** Contact bookmaker to request void/refund for WIN £5 @ 3.5. This stake should not stand.
+
+---
+
+## Decision 2: Sugar Island — Price Drifted Inward ⚠️ REVIEW
+
+Steve holds EW £0.25 @ 34.0 (decimal) / 33/1 (fractional) on Sugar Island, Betfred Oaks.
+
+- **Stake price:** 33/1 (decimal 34.0)
+- **Current market (05 Jun 09:52 BST):** 16/1–22/1 (decimal ~17–23)
+- **Move:** Horse has shortened from 33/1 to as tight as 16/1 — a 50–100% inward move
+
+The EW stake was placed at 34.0 decimal. The bookmaker price is now ~17–23 decimal.  
+This is inside the `<20` flag threshold (16/1 = decimal 17.0 at best offers).  
+The inward move indicates market confidence — Sugar Island appears to be attracting money.  
+
+**Implication for EW:** Steve's bet is locked in at the original 34.0 — better value than current market. Sugar Island is live. Rusty should factor current market price (not racecard price) when recalculating market_move signal for this horse.
+
+**Recommended action:** Flag to Rusty: Sugar Island's market_move signal is based on racecard price (34.0 in both baseline and latest — unchanged). Real move from 33/1 → ~16–22/1 is NOT captured in market_move because we have no live odds feed. This signal will understate the horse's market confidence. Consider manual note in report.
+
+---
+
+## Decision 3: On Message — Missing from Racecard ⚠️ DATA GAP
+
+"On Message" (trainer: Ralph Beckett / jockey: Hector Crouch / odds: ~25/1) is a declared Oaks runner but is NOT in `data/raw/epsom-2026-06-05-racecards.json`.
+
+The racecard was built from a 2026-06-02 data pull. On Message was either:
+- Not declared at that point (late entry), or
+- Missed by the fetcher
+
+**Impact:** On Message will have NO score in the final Ladies Day output. Linus should note the gap in the report. Steve should be made aware.
+
+---
+
+## Decision 4: market-latest.json RP 406 — Partial Failure
+
+RP scrape returned HTTP 406 (Not Acceptable) when `--mode latest` ran ~20s after `--mode baseline`.  
+Latest file written with **144 runners (UNFILTERED)** — includes confirmed non-runners (Precise, Prizeland, Beautify).
+
+**Impact:** market_move signal will return 50 (neutral) for all horses in baseline (prices identical to racecard values in both files — no live price feed). The 38 extra horses in latest but not baseline will be ignored by market_move. Low operational impact for today.
+
+**Mitigation for next gate (15:00 BST):** Run latest with `--no-rp-scrape` flag OR wait 90s between baseline and latest runs. Baseline RP filter is canonical.
+
+---
+
+## Going: Stable — No stake review triggered
+
+- Racecard assumed: Good to Soft  
+- Current official: Good to Soft (light rain earlier this week)  
+- No material shift. No going-based stake review required.
+
+---
+
+## Next Gate
+
+Oaks off time: **16:00 BST**  
+Next gate (latest snapshot): **~15:00 BST**  
+Command: `python scripts/morning_odds.py --mode latest --date 2026-06-05 --no-rp-scrape`
+
