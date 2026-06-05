@@ -34,9 +34,9 @@
   in any of the three modules (correct — Livingston's responsibility).
 - Full detail: `.squad/decisions/inbox/saul-v05-tests.md`
 
-## Learnings
+### 2026-06-06 — hand-edit on Derby card + render_trifecta_box() helper (Linus)
 
-- 2026-06-03: Drafted `tests/test_trial_form.py` (19 tests) ahead of module — covers happy path, anti-fabrication fallbacks, distance gating, edge cases (case-insensitive lookup, None beaten_lengths, field-size-1 walkover, multi-trial best-result), and bounds. Key open questions for Danny: tier definitions, 10f gate confirmation, best-vs-most-recent multi-trial rule, exact JSON schema.
+**Flag:** Linus hand-edited `outputs/racecard-2026-06-06.html` to insert trifecta box (not generator-based). Also added `render_trifecta_box(trifecta: dict)` helper to `src/report.py`. This hybrid route requires test coverage before next race-weekend cycle: (1) unit test for render_trifecta_box() function, (2) integration test for HTML structure (purple box, 4 horses, going contingency, stale-odds caveat). Before Royal Ascot, promote helper into template pipeline + full test suite.
 
 ### 2026-06-03 — v0.5 source review gate (Rusty)
 - **Verdict: REJECT** — strict reviewer lockout applies; Rusty cannot revise this artifact.

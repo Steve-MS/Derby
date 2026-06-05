@@ -60,7 +60,7 @@
 
 **Heads-up:** Linus published first-ever trifecta-box recommendation for Derby. **Going contingency rule:** If Soft going is declared pre-race (tomorrow, race morning), drop Item from the 4-horse box → 3-horse box (Benvenuto Cellini, Maltese Cross, Causeway) at stake £2.50/combo × 6 = £15 total. This is contingent on tomorrow's 07:00 BST going declaration.
 
-**For race-morning runbook:** Check Official Going post (07:00 BST) against forecast. If Soft is declared → activate contingency flag, inform Steve before 16:00 race kickoff.
+**For race-morning runbook:** Check Official Going post (07:00 BST) against forecast. If Soft is declared → activate contingency flag, inform Steve before 16:00 race kickoff. **Print-card reminder:** Verify printed Derby card matches digital trifecta box (no mid-night re-edits post-print).
 
-**Reference:** `.squad/decisions.md` 2026-06-05 entry "Derby trifecta box + stake convention established".
+**Reference:** `.squad/decisions.md` 2026-06-05 PM entry "Derby Trifecta Box: Card Placement & Hybrid Delivery".
 

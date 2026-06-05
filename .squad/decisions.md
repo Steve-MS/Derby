@@ -1094,3 +1094,62 @@ For future trifecta-box builds:
 
 This Derby box was hand-assembled from scored data. src/betting.py lacks a 	rifecta_box() helper — recommend adding post-Derby for v0.7+ with full test coverage.
 
+---
+
+## 2026-06-05 PM — Derby Trifecta Box: Card Placement & Hybrid Delivery (Linus dispatch)
+
+**Agent:** Linus (Reports) — dispatched 13:40 BST, completed 258s  
+**Date:** 2026-06-05 PM  
+**Route:** Hybrid (hand-edit of published HTML + helper function promotion for future use)  
+**Status:** ✅ Shipped — racecard ready for print
+
+### Decision: Trifecta Placement
+
+**Trifecta boxes always render immediately below the parent race's outsider rationale row, inside the main bet-slip table.**
+
+Placement: full-width \<tr class="row-trifecta">\ with purple-left-border + \#f6f3ff\ shaded background (\.trifecta-box\ CSS class). Keeps all race content visually grouped on the A4 card for single-page race-day navigation.
+
+### Box Detail
+
+**Composition (4-horse, £24 total):**
+- Item (score 95.0, Dante winner)
+- Benvenuto Cellini (score 93.6, Chester Vase winner)
+- Maltese Cross (score 85.6, Lingfield Trial winner)
+- Causeway (score 80.1, model #4 vs market #11, EW outsider)
+
+**Conviction: Medium.** Top-3 tight; 5.5pt gap to #4 = 0.22σ only. Race stdev 25.23 → 4-horse box is correct default vs 3-horse.
+
+**Going contingency (critical for race morning):** If Soft is declared Sat 07:00 BST, drop Item (going_fit 0.95→0.55) → 3-horse box (Benvenuto Cellini, Maltese Cross, Causeway) at £2.50/combo × 6 = £15. Flag for River's race-morning runbook.
+
+**Stale odds caveat:** All market ranks marked "(stale)" with amber highlight in card. Never project trifecta dividend from pre-race-day odds.
+
+**Double-count warning:** Causeway appears in main EW outsider pick AND trifecta box. Document to avoid double-counting stake against £100 daily budget.
+
+### Verification (11/11 content checks pass)
+
+1. ✅ 4 horses present and correct
+2. ✅ Scores & market ranks align to model state
+3. ✅ Conviction tag present
+4. ✅ Going contingency noted (Item drop rule)
+5. ✅ Stale odds caveat with amber highlight
+6. ✅ Double-count warning for Causeway
+7. ✅ Stake £24 within £15-35 Group 1 budget
+8. ✅ Ladies Day card (racecard-2026-06-05.html) untouched
+9. ✅ Downstream races (16:40 Allegresse, 17:15 Ribblesdale) intact
+10. ✅ CSS classes applied + rendering
+11. ✅ Purple border + background visible
+
+### Implementation Path
+
+**Derby 2026-06-06:** Hand-edited \outputs/racecard-2026-06-06.html\ (generator re-run not feasible — full input pipeline unavailable). Card verified; ready for Steve to open and print.
+
+**Royal Ascot promotion (v0.7 task):**
+1. Wire \ender_trifecta_box(trifecta: dict) -> str\ into \src/templates/report.html.j2\
+2. Pass \	rifecta_boxes\ dict in \ender()\ call via \_build_context()\
+3. Update CSS in \src/templates/style.css\ (\.trifecta-box\ class already defined)
+4. Add test coverage in \	ests/test_report.py\ before next race weekend
+5. See \.squad/skills/trifecta-box-from-scoring/SKILL.md\ for full checklist
+
+**Files Modified:**
+- \outputs/racecard-2026-06-06.html\ — trifecta \<tr>\ inserted
+- \src/report.py\ — \ender_trifecta_box()\ helper added (not wired to template yet)

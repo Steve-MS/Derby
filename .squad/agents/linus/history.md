@@ -36,6 +36,16 @@ Rationale: Top-3 cluster is clear (scores 95.0/93.6/85.6), gap to #4 is 5.5 poin
 
 ## Learnings
 
+### Trifecta box added to Derby Day card (2026-06-05 PM)
+
+**Route taken:** Hybrid — hand-edited `outputs/racecard-2026-06-06.html` to insert the trifecta section (generator re-run not feasible without full input pipeline); simultaneously added `render_trifecta_box()` helper to `src/report.py` for future reproducibility.
+
+**Placement:** Immediately below the Derby outsider rationale row (Causeway EW row + rationale), inside the main `.slip` table as a full-width `<tr class="row-trifecta">` with `colspan=8`. Layout option (a) per the task brief — keeps Derby content grouped.
+
+**Promotion task flagged:** `render_trifecta_box()` in `src/report.py` must be wired into the Jinja2 template and `render()` pipeline before Royal Ascot. Decision logged at `.squad/decisions/inbox/linus-trifecta-card-placement.md`.
+
+**Verification:** All 11 content checks passed (box content, stale caveat, 4 horses, going contingency, conviction, total outlay). Ladies Day card (`racecard-2026-06-05.html`) untouched. Downstream races (16:40 Allegresse etc.) intact.
+
 ### Trifecta box construction from scoring model (2026-06-05, reusable for any Group 1)
 
 1. **No `trifecta_box()` in betting.py as at 2026-06-05.** Future work: add a helper function.

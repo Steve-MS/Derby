@@ -153,6 +153,43 @@ table.slip tr.row-divider td {
 }
 .slip-footer .disclaimer { margin-top: 1mm; font-style: italic; color: #888; }
 
+/* ---------- Derby Trifecta Box ---------- */
+tr.row-trifecta td { padding: 0; border-bottom: 2pt solid #4b3a99; }
+.trifecta-box {
+  margin: 2.5mm 0;
+  border: 1.5pt solid #4b3a99;
+  border-left: 4pt solid #4b3a99;
+  border-radius: 2mm;
+  padding: 2mm 2.5mm;
+  background: #f6f3ff;
+  font-size: 8.8pt;
+}
+.trifecta-box h3 { margin: 0 0 1.2mm 0; font-size: 9.8pt; color: #2d1f7a; letter-spacing: -0.2pt; }
+.trifecta-summary { display: flex; gap: 4mm; margin-bottom: 1.5mm; flex-wrap: wrap; align-items: baseline; }
+.trifecta-summary .ts-item { font-size: 8.4pt; }
+.trifecta-summary .ts-label { color: #666; }
+.trifecta-summary .ts-value { font-weight: 700; color: #2d1f7a; }
+.trifecta-summary .ts-outlay { font-size: 9.4pt; font-weight: 800; color: #2d1f7a; }
+.trifecta-conviction {
+  display: inline-block; padding: 0.3mm 1.5mm; border-radius: 1mm;
+  background: #b88200; color: #fff; font-size: 7.4pt; font-weight: 800; margin-right: 1.5mm;
+}
+table.trifecta-horses {
+  width: 100%; border-collapse: collapse; font-size: 8.2pt; margin-top: 1mm;
+}
+table.trifecta-horses th {
+  text-align: left; font-size: 7.2pt; text-transform: uppercase;
+  letter-spacing: 0.35pt; color: #555; border-bottom: 0.75pt solid #4b3a99; padding: 0.5mm 1mm;
+}
+table.trifecta-horses td { padding: 0.6mm 1mm; border-bottom: 0.4pt solid #d8d3f0; vertical-align: top; }
+table.trifecta-horses tr:last-child td { border-bottom: none; }
+.trifecta-notes { margin-top: 1.5mm; font-size: 7.8pt; color: #555; line-height: 1.22; }
+.trifecta-notes .tnote { margin-bottom: 0.4mm; }
+.trifecta-notes .stale-caveat {
+  background: #fff8dc; border-left: 3pt solid #d99400; padding: 0.8mm 1.5mm;
+  margin-top: 1mm; font-size: 7.6pt; color: #604200; font-weight: 600;
+}
+
 @media print {
   body { font-size: 8.5pt; line-height: 1.12; }
   h1 { font-size: 15.5pt; }
@@ -171,6 +208,12 @@ table.slip tr.row-divider td {
   .bet-rationale { font-size: 6.7pt; line-height: 0.98; }
   .slip-footer { margin-top: 2mm; padding-top: 1.2mm; font-size: 7pt; }
   .slip-footer .disclaimer { margin-top: 0.5mm; }
+  .trifecta-box { font-size: 8pt; padding: 1.2mm 1.8mm; margin: 1.5mm 0; }
+  .trifecta-box h3 { font-size: 8.8pt; margin-bottom: 0.8mm; }
+  table.trifecta-horses { font-size: 7.6pt; }
+  table.trifecta-horses th { font-size: 6.8pt; }
+  .trifecta-notes { font-size: 7.2pt; }
+  .trifecta-notes .stale-caveat { font-size: 7pt; padding: 0.5mm 1mm; }
 }
 </style>
 </head>
@@ -270,6 +313,78 @@ table.slip tr.row-divider td {
     <tr class="row-rationale row-rationale-outsider">
       <td colspan="8"><div class="bet-rationale">▸ EW outsider: Kaylee #4 vs market #11 at 28/1; Derby field/rank gap rewards place cover.</div></td>
     </tr>
+
+    <!-- ═══ DERBY TRIFECTA BOX ═══ -->
+    <tr class="row-trifecta">
+      <td colspan="8">
+        <div class="trifecta-box">
+          <h3>🎰 Derby Trifecta Box — 16:00 BST Sat 6 Jun 2026</h3>
+          <div class="trifecta-summary">
+            <div class="ts-item">
+              <span class="ts-label">Box: </span>
+              <span class="ts-value">Item · Benvenuto Cellini · Maltese Cross · Causeway (4 horses)</span>
+            </div>
+            <div class="ts-item">
+              <span class="ts-label">Combos: </span><span class="ts-value">24</span>&nbsp;·&nbsp;
+              <span class="ts-label">Stake/combo: </span><span class="ts-value">£1.00</span>&nbsp;·&nbsp;
+              <span class="ts-label">Total outlay: </span><span class="ts-outlay">£24.00</span>
+            </div>
+            <div class="ts-item">
+              <span class="trifecta-conviction">MEDIUM</span>
+              <span style="font-size:7.6pt;color:#555">top-3 cluster clear (95.0 / 93.6 / 85.6); race confidence LOW (stdev 25.23); #3→#4 gap only 5.5 pts (0.22σ)</span>
+            </div>
+          </div>
+          <table class="trifecta-horses">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Horse</th>
+                <th>Trainer</th>
+                <th>Odds (stale)</th>
+                <th>Why included</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td><strong>Item</strong></td>
+                <td>A. Balding</td>
+                <td>~4/1</td>
+                <td>Dante winner; GTS fit (going_fit 95)</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td><strong>Benvenuto Cellini</strong></td>
+                <td>—</td>
+                <td>~evens</td>
+                <td>Chester Vase winner; market steam (mkt_move 90)</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td><strong>Maltese Cross</strong></td>
+                <td>—</td>
+                <td>—</td>
+                <td>Lingfield Trial winner; sire/recent stamina</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td><strong>Causeway</strong> ⚡</td>
+                <td>A. O'Brien</td>
+                <td>~28/1</td>
+                <td>Model #4 vs market #11 — rank discrepancy value</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="trifecta-notes">
+            <div class="tnote">⚡ <strong>Causeway</strong> is also the EW outsider (£0.25 EW already on slip above) — the £24 trifecta is a separate bet; <em>do not double-count against your £100 daily outlay.</em></div>
+            <div class="tnote">🌧 <strong>Going contingency:</strong> If Soft declared Sat morning, drop Item (going_fit 0.95→0.55 on Soft) → 3-horse box (Benvenuto Cellini · Maltese Cross · Causeway) = 6 combos × £1.00 = <strong>£6.00 total</strong>. Switch to HOLD card.</div>
+            <div class="stale-caveat">⚠️ <strong>Stale-odds caveat:</strong> All odds above are 2026-06-02 morning quotes. Saturday SP could shift materially overnight. Selection is FORM-driven and valid independent of price; trifecta dividend cannot be projected from these stale odds.</div>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <!-- ═══ END DERBY TRIFECTA BOX ═══ -->
+
     <tr class="row-ew">
       <td class="col-time">16:40</td>
       <td class="col-race">Cherryfield (Croydon) Lester Piggott Handicap</td>
