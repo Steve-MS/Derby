@@ -33,3 +33,10 @@
   - `score_trainer_14d(0.10)` stays at 50.0: neutral at 10% is defensible and matches the stated 10–12% average-band intent.
   - `jt_combo` first-time override applies only when `combo_runners == 0`; if combo history exists, the sample guard/scoring curve wins and the flag is audit noise.
   - No runtime code change required; v0.5 can ship as-is with spec/documentation clarification only.
+
+- 2026-06-05 (session 6): Race-confidence metric flag (Derby). Linus's 4-horse trifecta box referenced:
+  - Derby model stdev: **25.23** (HIGH variance, low confidence in top cluster).
+  - Gap from #3 (Causeway) → #4 (Christmas Day): **0.22σ** (very tight, suggests 3-horse box inappropriate).
+  - **Decision tree consequence:** 4-horse box chosen (gap < 1σ, per established convention). This is correct, but **future weight tuning should consider whether a `race_confidence` signal belongs in the model** — stdev-based confidence flags could inform bet-sizing or box-width selection algorithmically rather than manually. Consider adding to v0.7+ backlog as an optional output dimension alongside score vectors (e.g., `score_and_confidence()` returning both score and race_confidence enum).
+
+- **Decision:** `.squad/decisions.md` 2026-06-05 entry "Derby trifecta box + stake convention established"; `.squad/orchestration-log/2026-06-05T11-59-04-linus.md`.

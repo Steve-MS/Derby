@@ -71,3 +71,16 @@
 - Validation PASS: `pytest -x` collected 352 items, 352 passed in 7.97s; equipment tests had 25 pass / 0 skips; smoke returned `50.0`.
 - Data caveat: `changed_vs_last_run` empty across 272; wind_surgery is ignored safely. Audit found two numeric wind_surgery entries despite source note saying null, but this is non-blocking because wind ops are out of v0.6 scope.
 - Decision note: `.squad/decisions/inbox/saul-v06-equip-review.md`.
+
+### 2026-06-05 12:59 — Derby trifecta-box hand assembly (Linus, heads-up for future helper)
+
+**Note:** Linus delivered a hand-assembled 4-horse trifecta-box recommendation (Item, Benvenuto Cellini, Maltese Cross, Causeway) for Derby. This was first-ever recommendation, built directly from scored data, **not** via a `trifecta_box()` helper in `src/betting.py`. **No test coverage** for this assembly — going contingency rule also hand-documented.
+
+**For future:** When `src/betting.py` gains a `trifecta_box()` helper (v0.7+ backlog), recommend test cases:
+- Box size selection (3/4/5 logic based on gap-to-#4, confidence, stdev)
+- Stake matrix (£2.50/£1.00/£0.50 per combo)
+- Going contingency (drop low-confidence horse if Soft declared)
+- Edge case: single-horse removal → rebalance stake/combo
+- Output format: ranked horses, combination count, total outlay
+
+**Decision:** `.squad/decisions.md` 2026-06-05 entry "Derby trifecta box + stake convention established".

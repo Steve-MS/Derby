@@ -1040,3 +1040,57 @@ Applied to:
 **What:** Betfair delayed-price activation is not feasible today. No Betfair app-key/session variable is configured, and `scripts/morning_odds.py` has no Betfair Exchange integration or login helper. Current live-ish path remains manual CSV overrides; automated script still falls back to stale 2026-06-02 racecard prices.
 **Why:** Betfair delayed app keys still require authenticated SSO/session-token setup before Exchange API calls can be made. With both credentials and code path absent, same-day activation before the 16:00 Oaks is blocked. Fastest alternative is manual CSV from a visible odds source, or a targeted scraper/probe for a public odds page if one is reachable without account credentials.
 
+---
+
+## 2026-06-05 — Derby odds provenance correction (Livingston survey)
+
+**Agent:** Livingston
+**Date:** 2026-06-05 12:44 BST
+**Decided:** Correct historical metadata in market records
+
+### Decision
+
+Update history.md and comment in src/market.py to reflect: all 2026-06-02 price snapshots for the Derby marked "(source: manually transcribed)" are actually **web-scraped from horseracing.guide and epsomderby.com**, not manually entered by a person. This affects data provenance and audit trail for Steve's decision log.
+
+### Rationale
+
+Prices are deterministic outputs from a scrape script, not subject to transcription error variance. The original "(manually transcribed)" label was misleading for future analysts auditing Steve's odds research.
+
+---
+
+## 2026-06-05 — Derby trifecta box — stake convention established
+
+**Agent:** Linus (Reports)
+**Date:** 2026-06-05
+**Delivered:** 4-horse trifecta box recommendation + conventions document
+
+### Decision Summary
+
+**Box:** 4-horse (Item, Benvenuto Cellini, Maltese Cross, Causeway)
+**Combinations:** 24
+**Stake/combo:** £1.00
+**Total:** £24.00
+**Conviction:** Medium
+
+**Going contingency:** If Soft going is declared (post-publication), drop Item → 3-horse box (6 combos × £2.50 = £15) to preserve EW/single-race budget.
+
+### Standards Established
+
+For future trifecta-box builds:
+
+1. **Stake convention matrix:**
+   - 3-horse: 6 combos × £2.50 = £15
+   - 4-horse: 24 combos × £1.00 = £24  (default for Group 1)
+   - 5-horse: 60 combos × £0.50 = £30
+
+2. **Box size decision tree:**
+   - 3-horse: only if top-3 cluster is clear AND gap to #4 > 1σ AND race confidence HIGH/MEDIUM
+   - 4-horse: gap to #4 < 1σ OR low confidence (default for stdev ≥ 20)
+   - 5-horse: only if race_stdev very high AND race_competitiveness = "COMPETITIVE"
+
+3. **Going adjustments:** Contingency drops must preserve daily £100 budget constraint.
+
+### Implementation Note
+
+This Derby box was hand-assembled from scored data. src/betting.py lacks a 	rifecta_box() helper — recommend adding post-Derby for v0.7+ with full test coverage.
+
