@@ -1,0 +1,399 @@
+{
+  "date": "2026-06-05",
+  "author": "Rusty (Signal Engineer)",
+  "stage": "Stage 2b — Signal Calibration",
+  "confidence_level": "LOW — n=3 non-void outsider picks on a single race day. All findings are hypotheses for testing, NOT recalibration mandates.",
+  "statistical_warning": "ONE-DAY SAMPLE IS NOT STATISTICALLY SIGNIFICANT. Treat every dial_up and dial_down recommendation as CONFIDENCE: LOW — a direction to watch over the next N race cards, not a law.",
+  "hard_rules_intact": [
+    "Live-verify-first protocol (Livingston gate): UNAFFECTED — this calibration does not touch the NR/runner-validity pipeline.",
+    "NR-swap pre-check pattern: UNAFFECTED",
+    "Runner-validity distinction (stale data vs live declarations): UNAFFECTED",
+    "Anti-fabrication (neutral 50 on missing data): UNAFFECTED"
+  ],
+
+  "race_conditions": {
+    "going_official": "Good to Soft (Good in places)",
+    "going_stick_derby_course": 5.7,
+    "stalls_1m113y": "Inside (remainder category)",
+    "stalls_7f_3y": "Inside (remainder category)",
+    "wind": "Moderate, half against",
+    "note": "Inside stalls confirmed for both 1m113y and 7f races. Low draw = rail side = bend exposure in multi-runner oval races at Epsom."
+  },
+
+  "outsider_picks": [
+    {
+      "horse": "Belinus",
+      "race": "14:40 Betfred Diomed Stakes G3",
+      "race_type": "Group 3, 1m 113y, 8 runners",
+      "finish": null,
+      "field_size": 8,
+      "verdict": "VOID",
+      "sp_decimal": null,
+      "model_score_frozen": null,
+      "bet_type": "WIN SPEC (standing ante-post stake £5 @ 3.5)",
+      "signal_stack": [],
+      "calibration_contribution": "NONE — VOID status means no signal evidence can be drawn. Stakes should be returned by bookmaker. Excluded from all dial_up / dial_down calculations.",
+      "notes": "Belinus was absent from live 09:52 BST baseline and confirmed not in the final 8-runner declared field. Pre-flagged since 2026-06-03 drift check. Not a race-day BHA NR — horse never made final declarations."
+    },
+    {
+      "horse": "Cameo (IRE)",
+      "race": "16:00 Betfred Oaks G1",
+      "race_type": "Group 1, 1m 4f 6y, 9 runners, Fillies' Classic",
+      "finish": 5,
+      "field_size": 9,
+      "verdict": "FAIL",
+      "sp_decimal": 8.0,
+      "sp_fraction": "7/1",
+      "stale_price_used": 15.0,
+      "price_movement": "Stale ~14/1 → actual 7/1. Horse shortened significantly pre-race — market confidence not captured by our synthetic prices.",
+      "model_score_frozen": 74.07,
+      "model_rank_in_field": "Replacement pick after Prizeland NR; highest scorer among remaining horses",
+      "bet_type": "EW £0.25 (NR replacement for Prizeland)",
+      "ew_outcome": "LOSS — 5th of 9; Group 1 EW terms pay 1-2-3 only",
+      "signal_stack": [
+        {
+          "signal": "class_rating",
+          "raw_score": 50.0,
+          "weight": "HIGH (0.1977)",
+          "verdict": "NEUTRAL",
+          "note": "Raw 50.0 — neutral in a Group 1 where all horses have comparable class ratings. Signal correctly fired neutral. Not informative either way for Group 1 fillies' classic."
+        },
+        {
+          "signal": "trainer_form",
+          "raw_score": 100.0,
+          "weight": "MED (0.0566)",
+          "verdict": "NEUTRAL",
+          "note": "A.P. O'Brien at maximum trainer form (100.0). The stable WON the race (Thundering On, J.P. O'Brien) and placed 3rd (Sugar Island). Signal was directionally correct — O'Brien dominated — but didn't differentiate WHICH O'Brien horse to back. Cameo was the weakest O'Brien finisher."
+        },
+        {
+          "signal": "trial_form",
+          "raw_score": 80.0,
+          "weight": "MED (0.0671)",
+          "verdict": "NEUTRAL",
+          "note": "80.0 raw suggests a good trial. Finished 5th. In Group 1 fillies' classics with 3+ top-yard horses, trial_form alone doesn't separate them well. Not misleading — signal was positive and horse ran respectably — but didn't predict a placing."
+        },
+        {
+          "signal": "trainer_14d",
+          "raw_score": 82.5,
+          "weight": "MED (0.0390)",
+          "verdict": "NEUTRAL",
+          "note": "O'Brien 14d form high (82.5). Confirmed directionally correct (stable won the race) but same differentiation problem as trainer_form."
+        },
+        {
+          "signal": "jockey",
+          "raw_score": 0.0,
+          "weight": "MED (0.0566)",
+          "verdict": "PREDICTED",
+          "note": "Jockey TBC at model freeze → 0.0 signal. This was a WARNING flag we did not weight sufficiently in outsider selection. Wayne Lordan rode — a capable jockey but not Oisin Murphy/Ryan Moore tier. The 0.0 jockey score should have been a reason to discount Cameo vs horses with confirmed jockey bookings."
+        },
+        {
+          "signal": "market_steam_manual",
+          "raw_score": "NOT IN MODEL",
+          "weight": "UNWEIGHTED",
+          "verdict": "PREDICTED",
+          "note": "Cameo shortened from ~14/1 stale to 7/1 actual — significant steam. We didn't capture this. Sugar Island (which we held separately and which placed 3rd) also steamed from 33/1 to 25/1 SP. Real-time market move is a genuine predictive signal for Group 1 races where information asymmetry is lower."
+        },
+        {
+          "signal": "nr_replacement_rank_logic",
+          "raw_score": "Replacement selector",
+          "weight": "PROCESS",
+          "verdict": "NEUTRAL",
+          "note": "Cameo scored highest among non-NR runners after Prizeland removed. This process is sound for handicaps but in a 9-runner Group 1 with top connections crowded together, taking 'highest scorer' is noisy — the margin between Cameo (74.07) and other O'Brien horses may have been within model noise."
+        }
+      ],
+      "race_type_note": "Group 1 fillies' classics are the HARDEST race type for the model. Small fields (9 runners), all top yards, all high trainer form. Model's differentiating signals are compressed. Outcome variance is high. This single result does NOT imply model is broken for Group 1."
+    },
+    {
+      "horse": "Asmen Warrior (IRE)",
+      "race": "16:40 HKJC World Pool Handicap",
+      "race_type": "Class 2 Handicap, 1m 113y, 18 runners, 4yo+",
+      "finish": 15,
+      "field_size": 18,
+      "verdict": "FAIL",
+      "sp_decimal": null,
+      "sp_fraction": null,
+      "stale_price_used": 21.5,
+      "model_score_frozen": 74.22,
+      "draw": 5,
+      "stalls_config": "Inside (remainder category) — draw 5 is rail side going into bends",
+      "bet_type": "EW £0.25 (live-verified NR replacement for Port Road/Triple Double A)",
+      "ew_outcome": "LOSS — 15th of 18",
+      "signal_stack": [
+        {
+          "signal": "class_rating_OR_RPR_gap",
+          "raw_score": 70.04,
+          "weight": "HIGH (0.1977 — dominant signal)",
+          "verdict": "MISLEADING",
+          "note": "RPR 112 vs OR 88 = 24pt gap. Raw class_rating 70.04 drove the outsider selection. Horse finished 15th/18. In a Class 2 handicap at Epsom with inside stalls, a large OR-RPR gap indicates POTENTIAL but the handicapper has assessed the horse at OR 88 for a reason. One-day sample only, but the gap did not translate to competitive finishing in this specific race type. CONFIDENCE: LOW."
+        },
+        {
+          "signal": "equipment_first_time_blinkers",
+          "raw_score": 58.0,
+          "weight": "LOW (0.0250)",
+          "verdict": "NEUTRAL",
+          "note": "Equipment signal returned 58.0 (first-time blinkers bonus +8 from base 50). The blinkers angle was part of the manual selection rationale ('narrowly denied Windsor 11d ago'). Horse finished 15th — no visible improvement from headgear application in this field. n=1, can't draw strong conclusions."
+        },
+        {
+          "signal": "draw_bias",
+          "raw_score": 50.0,
+          "weight": "MED (0.0440)",
+          "verdict": "MISLEADING",
+          "note": "Signal returned neutral 50.0. Actual result: draw 5 (inside, rail side) finished 15th. Top finishers in 18-runner HKJC were draw 8 (1st), draw 12 (2nd), draw 2 (3rd), draw 15 (4th). The signal SHOULD have penalised draw 5 in a big-field inside-stalls Epsom oval race. Data gap: model lacks race-specific draw calibration for Epsom 1m113y inside stalls. See race_type_modifiers."
+        },
+        {
+          "signal": "trainer_form",
+          "raw_score": 0.0,
+          "weight": "MED (0.0566)",
+          "verdict": "PREDICTED",
+          "note": "James Owen returned 0.0 trainer form — correctly signalling that this is a smaller yard with limited recent presence at this level. We used this as a 'neutral' factor in selection but it was actually a WARNING. In future outsider selection, trainer_form = 0.0 should be a flag requiring an additional corroborating signal before committing."
+        },
+        {
+          "signal": "jockey_silvestre_de_sousa",
+          "raw_score": 0.0,
+          "weight": "MED (0.0566)",
+          "verdict": "PREDICTED",
+          "note": "Jockey signal returned 0.0. De Sousa is a quality jockey but the signal flagged no recent combination data. Combined with trainer_form = 0.0, this was a second WARNING that went unheeded in the outsider selection process."
+        },
+        {
+          "signal": "going_fit",
+          "raw_score": 51.25,
+          "weight": "MED (0.0998)",
+          "verdict": "NEUTRAL",
+          "note": "Barely above neutral at 51.25. Horse not particularly suited or unsuited to GTS. Not a differentiating factor."
+        },
+        {
+          "signal": "recent_form",
+          "raw_score": 51.11,
+          "weight": "HIGH (0.1133)",
+          "verdict": "NEUTRAL",
+          "note": "Near-neutral 51.11. Recent form 262-232 — consistent but not outstanding. Not a predictive signal in either direction."
+        },
+        {
+          "signal": "market_move",
+          "raw_score": 50.0,
+          "weight": "MED (0.0683)",
+          "verdict": "NEUTRAL",
+          "note": "Synthetic prices — no live data. SP unknown. The winner Mister Winston (tote £8.30) was likely ~7-8/1 SP, suggesting a competitive handicap where the market correctly assessed the likely winner. Our stale price (~21.5 decimal) may have been significantly wrong."
+        },
+        {
+          "signal": "large_field_variance",
+          "raw_score": "NOT IN MODEL",
+          "weight": "UNWEIGHTED",
+          "verdict": "NEUTRAL",
+          "note": "18-runner Class 2 handicap with compressed finish (1l, 1.25l, hd to 4th). High intrinsic variance — even a well-handicapped horse faces severe competition from traffic, pace scenario, and draw. Model does not currently penalise expected_value for field-size-driven variance."
+        }
+      ],
+      "near_miss_cross_ref": {
+        "4th_place": "Popmaster (IRE) — draw 15, Ed Walker / Kieran Shoemark. SP unknown. SAME trainer/jockey combination as Arctic Thunder (17:50). Ed Walker/Shoemark stable sent out two horses to this meeting and both ran into 4th/6th respectively. The JT combo signal for this pairing (Ed Walker|Kieran Shoemark: 11/89, 12.4% in our data) was near-neutral — but the stable finished 4th in one race and 6th in another on the same day, suggesting they were in good form at Epsom.",
+        "implication": "If Ed Walker is training at Epsom and Shoemark is engaged, the stable form signal (trainer_14d 71.875 for Walker) and JT combo are possibly more predictive than model scores suggest on a day when the stable is firing."
+      }
+    },
+    {
+      "horse": "Arctic Thunder (IRE)",
+      "race": "17:50 Debenhams Handicap",
+      "race_type": "Class 2 Handicap, 7f 3y, 16 runners, 3yo+",
+      "finish": 6,
+      "field_size": 16,
+      "verdict": "FAIL",
+      "sp_decimal": 12.0,
+      "sp_fraction": "11/1",
+      "stale_price_used": 20.5,
+      "price_movement": "Stale ~20/1 → actual 11/1. Horse shortened ~45% inward from stale baseline. Significant market steam completely missed by market_move signal (synthetic prices).",
+      "model_score_frozen": 44.17,
+      "model_rank_in_field": "NOT a top-model pick — model scored 44.17 (BELOW neutral 50). Selected as outsider on MANUAL RPR-OR gap + D badge logic, overriding model score.",
+      "draw": 1,
+      "stalls_config": "Inside (remainder category) — draw 1 is rail side. Race won by draws 10, 16, 11 in top 3.",
+      "bet_type": "EW £0.25 (live-verified NR replacement for Blue Brother)",
+      "ew_outcome": "LOSS — 6th of 16; standard EW pays top 4 only",
+      "ew_near_miss_margin": "2 places from EW zone (needed 4th)",
+      "signal_stack": [
+        {
+          "signal": "model_score_gate",
+          "raw_score": 44.17,
+          "weight": "META",
+          "verdict": "MISLEADING",
+          "note": "Model score of 44.17 is BELOW neutral (50). This was a critical override: we selected Arctic Thunder as an outsider pick despite the model explicitly signalling it was below average in this field. The RPR-OR gap manual logic overrode a model that was correctly weighing recent_form (9.26) and going_fit (35.0) negatively. LESSON: Do not override a sub-50 model score with manual RPR-OR gap reasoning."
+        },
+        {
+          "signal": "class_rating_OR_RPR_gap",
+          "raw_score": 65.62,
+          "weight": "HIGH (0.1977)",
+          "verdict": "NEUTRAL",
+          "note": "RPR 110 vs OR 84 = 26pt gap. Raw class_rating 65.62 (above neutral). Horse finished 6th at 11/1. Son (27pt RPR-OR gap) finished 7th at 22/1 — we specifically chose Arctic Thunder over Son, and both underperformed. The RPR-OR gap signal was present but class_rating alone was not sufficient to overcome negative recent form and going fit."
+        },
+        {
+          "signal": "course_distance_D_badge",
+          "raw_score": 70.0,
+          "weight": "MED (0.0566)",
+          "verdict": "NEUTRAL",
+          "note": "D badge (Epsom course winner) fired at 70.0. Horse finished 6th. Course form did not translate on the day — going was softer than optimal (going_fit 35.0) and the draw was unfavourable. D badge is a useful corroborating signal but insufficient to overcome both a poor draw (1) and poor going fit (35.0). Not misleading — just not strong enough alone."
+        },
+        {
+          "signal": "recent_form",
+          "raw_score": 9.26,
+          "weight": "HIGH (0.1133)",
+          "verdict": "PREDICTED",
+          "note": "Recent form signal fired at 9.26 — very low, well below neutral. This was the model CORRECTLY identifying that Arctic Thunder's last two runs (7th, unplaced) were genuinely poor. We dismissed this as 'the horse is better than its recent form shows' based on RPR-OR reasoning. In hindsight, the signal was right."
+        },
+        {
+          "signal": "going_fit",
+          "raw_score": 35.0,
+          "weight": "HIGH (0.0998)",
+          "verdict": "PREDICTED",
+          "note": "Going fit 35.0 — clearly below neutral, signalling the horse is not well-suited to Good to Soft. The race was run on GTS (Good in places). This was another model warning we overrode. Horses with going_fit < 40 in GTS conditions should require VERY strong corroborating signals before selection as outsider pick."
+        },
+        {
+          "signal": "draw_bias",
+          "raw_score": 50.0,
+          "weight": "MED (0.0440)",
+          "verdict": "MISLEADING",
+          "note": "Signal returned neutral 50.0. Actual result: draw 1 (inside rail) finished 6th; top 3 finishers were draws 10, 16, 11. Inside draw in a 16-runner Epsom oval race appears systematically disadvantageous. Same pattern as HKJC. Model returning neutral when it should return below neutral for draw 1-3 in inside-stalls Epsom oval races is a data gap. See race_type_modifiers."
+        },
+        {
+          "signal": "trainer_14d_ed_walker",
+          "raw_score": 71.875,
+          "weight": "MED (0.0390)",
+          "verdict": "PREDICTED",
+          "note": "Ed Walker 14d signal at 71.875 — correctly identified as a hot stable. Walker also had Popmaster in the HKJC (4th of 18, same jockey Shoemark) confirming stable was firing. The direction was right; we backed the wrong Walker horse. Popmaster (in HKJC, also drew high at draw 15) placed 4th."
+        },
+        {
+          "signal": "market_steam",
+          "raw_score": "NOT IN MODEL (stale data)",
+          "weight": "UNWEIGHTED",
+          "verdict": "PREDICTED",
+          "note": "Market moved from ~20/1 (stale) to 11/1 (actual SP) — a ~45% inward move. Our market_move signal returned neutral 50 (synthetic prices, no live feed). If we had live prices, market_move would have signalled genuine confidence in this horse. The horse ran 6th — not a win but respectable in a strong 16-runner field. The market steam was directionally correct."
+        }
+      ],
+      "near_miss_cross_ref": {
+        "context": "No 4th-place finish at ≥10/1 in the 17:50 race itself. 3rd placed A War Eagle (40/1) was a near-miss for anyone who'd considered high-price qualifiers.",
+        "4th_place": "Crimson Spirit, draw 3, SP 17/2 (below 10/1 threshold)",
+        "across_meeting_near_miss": "A La Prochaine (FR) in the 16:00 Oaks finished 4th at 22/1 — this is the closest we have to a near-miss at ≥10/1 across the meeting. Not our pick (Cameo was the outsider). Signal stack for A La Prochaine unknown from our data.",
+        "implication": "No clear signal near-misses from our specific outsider picks. The outsider model wasn't 'almost right' — it was wrong, but not dramatically so for Arctic Thunder (6th in a 16-runner competitive handicap at 11/1 is a reasonable run at the price level)."
+      }
+    }
+  ],
+
+  "near_miss_summary": {
+    "definition": "4th-place finish at ≥10/1 SP",
+    "across_meeting": [
+      {
+        "horse": "A La Prochaine (FR)",
+        "race": "16:00 Oaks G1",
+        "finish": 4,
+        "sp": "22/1",
+        "was_our_pick": false,
+        "note": "Beckett yard, James Doyle. Not our outsider (we had Cameo). Signals unknown from our data. This is a 'missed opportunity' data point, not a 'signal was almost right' finding."
+      },
+      {
+        "horse": "Popmaster (IRE)",
+        "race": "16:40 HKJC",
+        "finish": 4,
+        "sp": "unknown",
+        "was_our_pick": false,
+        "note": "Ed Walker / Kieran Shoemark — same connections as our Arctic Thunder pick (17:50). Popmaster drew 15 (high draw, advantageous per race data). Our model didn't specifically evaluate Popmaster for the HKJC outsider slot (we were replacing Asmen Warrior v1 picks). The trainer/jockey combo had a productive day: 4th in one race, 6th in another."
+      }
+    ],
+    "verdict": "No near-misses from our actual picks. Nearest was Arctic Thunder (6th of 16, 2 from EW zone). No signal was 'almost right enough to flag as validated'. One-day null result.",
+    "note": "Stage 2a (Saul, P/L) will compute formal near-miss table. This is Rusty's manual cross-reference only."
+  },
+
+  "winner_model_rank_check": {
+    "hkjc_1640": {
+      "winner": "Mister Winston",
+      "model_note": "Model identified Mister Winston as top pick with 13.02% edge — PASS (below 15% WIN gate). The model correctly ranked the winner but the gate appropriately declined a borderline edge. Not a signal failure.",
+      "implication": "The 15% WIN gate may be causing us to miss low-edge winners. But this is a bankroll management decision (Danny/Steve), not a signal calibration issue."
+    },
+    "debenhams_1750": {
+      "winner": "Colombier",
+      "model_note": "Colombier finished 1st at 12/1. Our WIN bet was Dance In The Storm (5th at 15/8F). Colombier was likely not highly ranked in our model (no score data available for this horse). Winning trainer Hamad Al Jehani not in our trainer_14d enrichment data.",
+      "implication": "Missing trainer enrichment (65 of 93 trainers have no trainer_14d data) may be causing us to systematically underweight smaller/newer yards."
+    }
+  },
+
+  "dial_up": [
+    {
+      "signal": "market_steam_real_time",
+      "current_mechanism": "market_move returns neutral 50 (synthetic prices, no live feed)",
+      "evidence": "Arctic Thunder moved 20→11/1 (45% inward, ran 6th). Sugar Island moved 33→25/1 (held as existing bet, ran 3rd). Both steamed horses outperformed their stale prices. Market steam IS directionally predictive. The signal is BROKEN due to data, not logic.",
+      "recommendation": "Prioritise live odds ingestion before next race card. Even a manual annotation step (Livingston flags ≥30% inward moves at T-60min gate) would add significant value. Until live feed: annotate steam horses manually in racecard footnotes and weight them up in outsider selection.",
+      "delta_weight": "+0.5 (data-dependent — only applicable when live prices are available)",
+      "confidence": "LOW (n=2 steamed horses, both ran reasonably well; one day)"
+    },
+    {
+      "signal": "draw_bias_epsom_oval_specific",
+      "current_mechanism": "draw_bias returns 50.0 for both 1m113y and 7f oval races at Epsom",
+      "evidence": "HKJC (1m113y, inside stalls): draws 1/3/5 finished 15th/18th/17th; draws 8/12/15 in top 4. Debenhams (7f, inside stalls): draw 1 (6th), draws 10/16/11 in top 3. Both races show NEGATIVE correlation between low draw and finishing position in inside-stalls Epsom oval races.",
+      "recommendation": "Add race-specific draw calibration for Epsom distances where stalls='Inside' and field_size>12. Low draws (1-4) should be penalised by ~10-15 points in draw_bias for these configurations. HIGH DRAW (12-16) should be slightly boosted. This requires track-specific bias data — Livingston to source historical draw statistics for Epsom 1m and 7f with inside stalls.",
+      "delta_weight": "+0.5 on high-draw bonus for inside-stalls Epsom oval races; net neutral on weight in signal table but improved DIRECTIONAL accuracy",
+      "confidence": "LOW (n=2 races, same meeting; Epsom draw effects are well-documented in racing literature but our model currently has no calibration for them)"
+    },
+    {
+      "signal": "going_fit_gate_for_outsider_selection",
+      "current_mechanism": "going_fit is in model at weight 0.0998 but is not used as a hard gate in outsider selection logic",
+      "evidence": "Arctic Thunder: going_fit = 35.0 (clearly below neutral), selected as outsider anyway. Horse finished 6th. The model was correctly warning that this horse is poorly suited to GTS ground.",
+      "recommendation": "Add a HARD GATE in outsider selection: if going_fit < 40, disqualify candidate from outsider consideration regardless of RPR-OR gap. Going fit is a proven signal; overriding it manually is risky. Apply gate to Derby Day outsider candidates.",
+      "delta_weight": "Not a weight change — a selection gate. Effectively raises the bar for outsider candidates in adverse going conditions.",
+      "confidence": "LOW (n=1 for specific threshold value, but the principle — don't back horses poorly suited to the going as outsider picks — is sound)"
+    }
+  ],
+
+  "dial_down": [
+    {
+      "signal": "OR_RPR_gap_as_primary_outsider_selector",
+      "current_mechanism": "RPR-OR gap (24-27pts) used as PRIMARY selector for outsider picks in Class 2 handicaps",
+      "evidence": "Asmen Warrior (24pt gap): 15th/18. Arctic Thunder (26pt gap): 6th/16. Son (27pt gap, discarded candidate): 7th/16. All three horses with the largest RPR-OR gaps in their respective fields failed to place. n=3, same meeting, CONFIDENCE: LOW.",
+      "recommendation": "Demote RPR-OR gap from PRIMARY selector to CORROBORATING signal. Require at least TWO of: (a) model score ≥55, (b) going_fit ≥45, (c) draw neutral or better, (d) trainer_form > 0, (e) recent_form ≥45 — in addition to the RPR-OR gap. Do NOT select a sub-50-model-score horse on RPR-OR logic alone (see Arctic Thunder).",
+      "delta_weight": "-0.5 as standalone signal weight in outsider selection logic; retained as corroborating signal",
+      "confidence": "LOW (n=3, one day, one venue — Epsom's specific ground/draw conditions may be atypical)"
+    },
+    {
+      "signal": "first_time_equipment_in_large_field_handicaps",
+      "current_mechanism": "First-time blinkers get +8 bonus in equipment signal (raw 58.0), used as supporting rationale for outsider selection",
+      "evidence": "Asmen Warrior: first-time blinkers (equipment 58.0). Finished 15th/18. Equipment change didn't fire in a chaotic 18-runner field. The 'near-miss Windsor' rationale ('narrowly denied Windsor 11d ago') reflects the horse's recent form trajectory but blinkers in a 18-runner Class 2 handicap on GTS ground is a high-variance proposition.",
+      "recommendation": "Weight first-time equipment signal lower in large-field handicaps (>14 runners). In big fields, equipment changes are harder to convert to improved finishing position due to pace/traffic uncertainty. Apply full bonus in smaller fields (≤10 runners) or when combined with a favourable draw.",
+      "delta_weight": "-0.3 in large-field handicap context (14+ runners); retain full weight in small fields and Group races",
+      "confidence": "LOW (n=1 for this specific case; general principle has some theoretical backing)"
+    },
+    {
+      "signal": "group1_model_rank_for_outsider_selection",
+      "current_mechanism": "NR replacement picks the highest-scoring remaining runner; this was Cameo in the Oaks",
+      "evidence": "Cameo scored 74.07 (rank #1 in NR-adjusted field), yet finished 5th. The O'Brien stable also ran Sugar Island (3rd, 25/1 — not our outsider pick but an existing stake) and Thundering On (1st, 5/1). In a 9-runner Group 1 fillies' classic, all top horses are within model noise of each other — the highest-scorer may have only a marginal true edge.",
+      "recommendation": "In Group 1 fillies' classics (Oaks, 1000 Guineas, Coronation) with ≤10 runners, be more cautious about treating highest model rank as a strong outsider selector. If the top 2-3 model scores are within 5 points of each other, the selection is essentially arbitrary. Consider adding a 'Group 1 confidence penalty' — only recommend outsider EW if model score gap to 2nd-place runner is ≥8 points.",
+      "delta_weight": "-0.3 effective outsider selection confidence in Group 1 small-field races; does not change signal weights",
+      "confidence": "LOW (n=1 Oaks, one day)"
+    }
+  ],
+
+  "race_type_modifiers": {
+    "epsom_handicap_large_field_inside_stalls": "High-draw bias is strong and consistent (HKJC: draws 8/12/15 top 3; Debenhams: draws 10/16/11 top 3). Low draws 1-5 are systematically disadvantaged in inside-stalls Epsom oval races. draw_bias signal must be calibrated for this race type — neutral 50 is incorrect. Hypothesis: add -10 to draw_bias for draw 1-4, +8 for draw 12+ in >12-runner Epsom oval races with inside stalls. TEST ON FUTURE EPSOM CARDS.",
+    "epsom_listed_short_field": "Small sample (Surrey Stakes, 6 runners). Winner at 9/1 (Ellusive Butterfly, K.R. Burke). Model WIN pick (Stellar Sunrise) finished LAST as even-money favourite. Model had high confidence in Stellar Sunrise — devastating result. This is a general favourite-collapse issue not specific to outsider calibration. One note: the 3-horse NR cascade (Awaken, Northern Champion, Postmodern all 'unsuitable ground') compressed the field to 6 runners and made the Listed race effectively open.",
+    "group_1_fillies_classic": "Model is weakest in this race type. Small fields (9 runners), all top-yard horses with compressed model scores. O'Brien dominates: held 3 runners (Thundering On 1st, Sugar Island 3rd, Cameo 5th). In this type, trainer concentration at the top is the strongest predictor — which specific horse from the top yard fires is near-random from signal data alone. RECOMMENDATION: In Oaks/Guineas Group 1 with ≥2 runners from same top yard, prefer the one with named top jockey (Ryan Moore, Frankie Dettori tier) over one with TBC or second-choice booking.",
+    "epsom_1m_handicap_going_soft_end": "Going_fit is a genuine warning signal in GTS conditions for horses with below-neutral scores. The race going was GTS throughout the day. Three outsider-profile horses (Asmen Warrior, Arctic Thunder, Son) all with neutral-to-positive class signals but poor recent form finished well down the field. GTS going on Epsom's undulating oval amplifies the form requirement — horses out of form don't suddenly improve in soft-end conditions."
+  },
+
+  "favourite_collapse_note": {
+    "observed": "Three separate favourites collapsed on Ladies Day: Stellar Sunrise (evensF, last of 6), Dance In The Storm (15/8F, 5th of 16), Amelia Earhart (7/4F, 6th of 9 Oaks).",
+    "calibration_relevance": "Not directly relevant to outsider signal calibration, but this pattern is a market efficiency signal. When multiple favourites fail in a single meeting, it sometimes indicates the going/conditions are creating general form reversals. Our going_fit signal partially captures this but may underweight ground conditions on a day when the going was more testing than the 'GTS' label suggests (going stick 5.7 — borderline Soft).",
+    "derby_day_note": "If Saturday goes to Soft (forecast 2.0mm rain), going_fit signal becomes more important. Do not back horses with going_fit < 45 as WIN or EW selections regardless of other signals."
+  },
+
+  "derby_card_implications": [
+    "DRAW BIAS CHECK: For the Derby (1m4f, centre stalls), Epsom draw effects are different from the 1m113y/7f inside-stalls effects seen today. Derby draw has historically favoured mid-to-high stalls (6-15 in a typical 15-runner field) as low draws can get crowded at the early turn. Danny should verify draw_bias signal is calibrated specifically for 1m4f centre stalls — neutral 50 may again be incorrect.",
+    "MODEL SCORE GATE FOR OUTSIDER: If any Derby Day outsider candidate scores below 50 in the model, DO NOT override with manual RPR-OR logic. Arctic Thunder (44.17, selected anyway) is the cautionary case. The model's recent_form and going_fit signals were correctly warning us — trust them.",
+    "GOING_FIT GATE: Confirm Saturday going before any EW outsider selection. If official going is Good to Soft or softer, reject any outsider candidate with going_fit < 40. If Soft, raise gate to < 45. Apply to Derby and all Saturday handicap outsiders.",
+    "ITEM (DANTE WINNER, TRIAL FORM): The trial_form signal scored Cameo at 80.0 for an Oaks trial. Item's Dante win should score near 90 in the Derby context (Tier 1 trial). Ladies Day results do NOT undermine trial_form for the Derby — the signals operate in different contexts. MAINTAIN trial_form weighting for Item and other trial horses.",
+    "CAUSEWAY (TRIAL FORM, ENTRY UNCONFIRMED): trial_form returns neutral 50 for Causeway due to withdrawal flag. If entry is confirmed by Saturday, the signal will fire properly. No calibration change needed — anti-fabrication rule is working correctly.",
+    "MARKET STEAM GATE: On Saturday morning, if any Derby contender steams ≥30% inward (e.g., from 10/1 to 6/1), treat this as a HIGH-WEIGHT corroborating signal even though market_move will show neutral 50 (stale prices). Manual annotation by Livingston at T-90min gate should flag any steamed horses explicitly for Danny's review.",
+    "RPR-OR GAP FOR DERBY: The Derby is a GROUP 1 at level weights — the OR-RPR gap logic that applies to handicaps (handicapper-lag) is IRRELEVANT for the Derby. Do not apply RPR-OR outsider logic to Derby runners. Use trial_form, going_fit, draw_bias, and trainer/jockey signals instead.",
+    "ED WALKER / KIERAN SHOEMARK STABLE: If Walker has any runner(s) in Saturday's card, note that the stable ran well today (Popmaster 4th in HKJC, Arctic Thunder 6th in Debenhams). This is directional information for the trainer_14d signal and is now confirmed from a live meeting at Epsom."
+  ],
+
+  "outsider_model_verdict": "TWEAK",
+  "outsider_model_verdict_rationale": "0-for-3 on non-void outsider picks (Asmen Warrior FAIL, Arctic Thunder FAIL, Cameo FAIL; Belinus VOID). However: (1) n=3 is statistically meaningless for recalibration; (2) the specific failures trace to identifiable and correctable selection process issues (model score override, draw bias blindspot, going_fit override) rather than fundamental signal failures; (3) Arctic Thunder's result (6th of 16 at 11/1 with significant market steam) is not catastrophic at the price — it's the expected outcome for a speculative EW pick. The model needs TWEAKS not OVERHAUL: specifically, enforce model-score and going-fit gates in outsider selection, and address the draw_bias calibration gap for Epsom oval races.",
+
+  "confidence_summary": {
+    "overall": "LOW — n=3 non-void picks, one meeting, one venue. Do not treat these findings as validated. Treat as hypotheses for the next 5-10 race cards.",
+    "strongest_finding": "draw_bias neutral-50 in inside-stalls Epsom oval races appears systematically wrong (confirmed across 2 races, 34 horses). This is worth investigating even on one-day data because it aligns with known Epsom track characteristics.",
+    "weakest_finding": "RPR-OR gap dial-down. Three failures in one day at one venue is suggestive but far too small to dial down a signal that has theoretical backing."
+  }
+}

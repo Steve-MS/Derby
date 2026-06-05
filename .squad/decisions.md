@@ -1232,3 +1232,128 @@ Placement: full-width \<tr class="row-trifecta">\ with purple-left-border + \#f6
 **Hard rule confirmed:** live-runner verification before any NR swap. Stale `market-latest.json` is NOT trusted for runner identity.
 **Tech debt ratio:** Third NR swap triggers HARD RULE — `render_replacement_row()` helper in src/report.py must be promoted before Royal Ascot (16–20 Jun 2026). No exceptions.
 
+---
+
+## 2026-06-05 — Ladies Day Retro (Stages 1–3)
+
+**Summary:** Post-card retro completed. P/L -£7.67 / -100% ROI. Outsider layer DRAG; calibration verdict TWEAK. Derby card HOLD — no changes. All 4 hard rules held (3/3 stale catches correct, 0 misses, 0 false alarms).
+
+**Participants:** Livingston (Stage 1 results), Saul (Stage 2a P/L), Rusty (Stage 2b signals), Danny (Stage 3 verdict).
+
+### Stage 1: Livingston — Ladies Day Results Capture
+
+- 8/8 races resolved for winner jockey+trainer
+- 5/8 races with full horse names + SPs (Diomed G3, Oaks G1, HKJC, Surrey Stakes, Debenhams)
+- 3/8 races aggregate data only (13:30 Dash, 14:05 Woodcote, 15:15 Nifty 50 — horse names / SPs unresolved from non-paywalled sources)
+- NR audit: 5 official BHA NRs caught; 3 stale-data removals (Triple Double A, Port Road, Blue Brother) validated by result; 0 missed, 0 false alarms
+- Stake audit: 1 void (Belinus £5 returned), 8 stake horses detailed, key gaps on blocked bets
+- **Output:** `data/results/ladies-day-2026-06-05.json` (27,793 bytes)
+
+### Stage 2a: Saul — P/L Scoring + Hit-Rate
+
+- **Net P/L confirmed: -£7.67 on £7.67 staked = -100% ROI**
+- Void return: Belinus £5.00 (ante-post withdrawal)
+- Blocked stake: £3.94 (4 EW bets in unresolved races — WIN sides confirmed lost, PLACE portions unknown)
+- Worst case if blocked also lose: -£11.61 / -100%
+- HIGH-tier bets (7 picks including 2 favourites): 0/7 wins, -£5.67 confirmed
+- SPEC outsider picks (7 × £0.50 EW): 0/7 confirmed, -£2.00 (3 blocked)
+- **Headline failures:** Both largest-stake WIN picks (Stellar Sunrise £2.70, Dance In The Storm) went off as race favourites and lost; both showed significant market steam intraday (6/1→Evens, 16/1→15/8F)
+- **Output:** `data/results/pl-2026-06-05.json`
+
+### Stage 2b: Rusty — Signal Calibration
+
+**Caveat:** n=1 race day. All dial-up / dial-down recommendations are LOW CONFIDENCE hypotheses for testing over next 5–10 cards.
+
+**Hard rules intact:** Live-verify-first (Livingston gate), NR-swap pre-check, runner-validity distinction, anti-fabrication — all UNAFFECTED.
+
+**Outsider model verdict: TWEAK (not HOLD, not OVERHAUL)**
+- 0/3 non-void outsider picks, but failures trace to correctable selection-process decisions, not signal breakage:
+  - Asmen Warrior (15th/18): Model score 74.22 but selected on RPR-OR gap; trainer+jockey forms ignored (0/0)
+  - Arctic Thunder (6th/16): Model score **44.17 (below neutral)** — manual override of model-NO on RPR-OR gap + D badge
+  - Cameo (5th/9): Group 1 Oaks NR replacement; model scored mid-range (74.07); race type genuinely hard to model
+
+**Dial up (hypotheses):**
+1. Market steam / real-time movers (≥30% inward): Both steamed favourites today were not captured; Livingston T-90min gate annotation now live
+2. Draw bias for inside-stalls Epsom oval races: Model returned neutral 50; actual results showed high-draw advantage (HKJC, Debenhams). Requires track-specific calibration
+3. Going fit as outsider selection gate: Arctic Thunder (35.0 going_fit) was below neutral — proposal: if going_fit < 40, reject as outsider candidate
+
+**Dial down (hypotheses):**
+1. RPR-OR gap as primary outsider selector: 0/3 failures today; demote from PRIMARY to CORROBORATING — require ≥2 additional positive signals
+2. First-time headgear in large-field handicaps (>14 runners): Asmen Warrior (+8 equipment bonus) finished 15th/18; reduce weight in >14-runner contexts
+3. Highest model rank as sole NR-replacement criterion in Group 1: Cameo (74.07, rank #1) finished 5th/9; add Group 1 penalty: only trigger if gap to 2nd ≥8 points
+
+**Derby implications for Danny (not prescriptive):**
+- Draw bias: Verify calibration for 1m4f CENTRE stalls (Derby config, different from inside-stalls pattern today)
+- Model score gate: Any Derby outsider scoring < 50 rejected (Arctic Thunder 44.17 is cautionary case)
+- Going fit gate: Confirm Saturday going before outsider selection; if Soft/softer, reject going_fit < 40
+- Trial form: Ladies Day does NOT undermine trial_form; Item's Dante win should score ~90 on Tier 1 logic
+- RPR-OR gap: Irrelevant for Derby (level weights, not handicap)
+- Market steam Saturday morning: If any runner steams ≥30% inward, flag to Danny even if synthetic signal shows neutral
+
+**Output:** `data/results/signal-calibration-2026-06-05.json`
+
+### Stage 3: Danny — Architecture Decision
+
+**All 4 hard rules held: PASS.**
+
+| # | Rule | Test Today | Result |
+|---|------|-----------|--------|
+| 1 | Live-runner verification before NR swap | 3 stale-data catches (Triple Double A, Port Road, Blue Brother) — all correctly removed | ✅ PASS |
+| 2 | Stale market-latest.json NOT trusted for runner identity | Triple Double A was in stale data but NOT in live declarations — gate caught | ✅ PASS |
+| 3 | Runner-validity caveat separate from stale-price caveat | Both amber divs rendered correctly on replacement rows | ✅ PASS |
+| 4 | render_replacement_row() helper promotion before Royal Ascot | Not yet shipped (deferred to pre-Ascot window) — rule stands | ⏳ DEFERRED |
+
+**Gate stats:** 0 missed NRs, 0 false alarms, 3/3 stale catches confirmed valid. 16:40 ran 18 (expected ✓), 17:50 ran 16 (expected ✓). All 4 hard rules remain as hard rules (not yet automated). Revisit after Royal Ascot helper ships.
+
+**Outsider model verdict: HOLD — Derby card unchanged.**
+
+**Rationale:**
+1. Today's racing was 5f–1m4f handicaps + fillies' classic; Derby is 1m4f Group 1 colts' classic. Failed signals (RPR-OR gap, draw bias for inside stalls, equipment bonus in large fields) structurally inapplicable.
+2. No sub-50 model overrides on Derby card (Arctic Thunder failure mode does not exist in Saturday picks).
+3. Trial form is Derby's dominant signal; today's results provide zero evidence against trial_form validity.
+4. Derby outsiders (See The Fire, Causeway) are model-ranked picks (rank_delta vs market), not RPR-OR handicap logic.
+5. Going-conditional triggers already in place (Item cancel-if-Soft, going_fit checks).
+6. One-day sample rule applied: -100% ROI on one Friday card does not justify changing separately-constructed Saturday card.
+
+**PROPOSED rules (awaiting Saul + Rusty reaction before ratification):**
+
+1. **No manual override of sub-50 model score for outsiders** (n=1 case: Arctic Thunder 44.17 → 6th/16)
+   - Exception: ≥2 PMs (Steve + Danny, or Steve + Rusty) must explicitly sign off in writing
+   - Confidence: LOW — one data point, gate value (50 vs 45) needs more data
+   - Impact on Derby: ZERO (no sub-50 picks on Saturday)
+   - **Decision: PROPOSED, NOT RATIFIED** — trial through Royal Ascot, ratify with more data
+
+2. **Saturday morning drift/steam gate (≥30% inward or outward move)**
+   - Trigger: Any bet where live morning price (09:00 BST Saturday) moved ≥30% vs slip baseline
+   - Action: Flag to Danny for binary verdict (HOLD at new price or PULL)
+   - Mechanism: (a) Livingston 07:00 baseline (already scheduled), (b) Saul delta-check by 08:00, (c) Danny review by 09:00, (d) Steve GO/NO-GO by 10:00
+   - Confidence: MEDIUM — two steamed favourites today both lost; model priced at morning odds, edge evaporated/inverted at SP
+   - **Decision: PROPOSED, NOT RATIFIED** — operational detail needs Steve's input; zero impact on Derby if ratified (Dance In The Storm on Saturday slip at 35/2 flagged as high-steam risk)
+
+**Stage 3b:** SKIPPED — Linus not spawned. Derby card stands; two proposals are PROPOSED but have zero operational impact on Saturday picks. Standard operator runbook (Saturday morning sequence per proposal) applies.
+
+**Open questions for Steve:**
+1. Dance In The Storm (Saturday 17:55): Same horse lost today as 15/8F after steaming from 16/1. Saturday slip has it at 35/2. If it steams ≥30% again by morning, hard PULL or flag-and-review?
+2. Manual-override rule: Ratify now as hard rule, or trial as soft guidance through Royal Ascot?
+3. Saturday morning sequence: (a) Livingston 07:00, (b) Saul delta-check by 08:00, (c) Danny review by 09:00, (d) Steve GO/NO-GO by 10:00. Timeline OK?
+
+**Live-verified gate ratified: STAND.** Hard rules from e7061d3 intact.
+
+---
+
+## 2026-06-05 20:05 — Cross-Agent Notifications (Post-Retro Stage 4)
+
+**Scribe — Routing decision notifications per retro proposals:**
+
+**→ Saul:** PROPOSED RULE awaiting your reaction: *"No manual override of sub-50 model scores without 2-PM sign-off"* (origin: Arctic Thunder Ladies Day failure — 44.17 model score, manual override resulted in 6th/16). React in your next session.
+
+**→ Rusty:** (1) PROPOSED RULE awaiting your reaction: *"No manual override of sub-50 model scores without 2-PM sign-off"* (same context as Saul). (2) PROPOSED RULE awaiting your reaction: *"Saturday morning ≥30% steam/drift gate with Danny review"* (origin: Stellar Sunrise + Dance In The Storm steamed and bombed today — 6/1→Evens, 16/1→15/8F respectively). Confirm your market_move calibration can detect this magnitude of move.
+
+**→ Linus:** Derby card UNCHANGED tonight per Danny verdict HOLD. No work tonight. Saturday morning may trigger a re-render if the ≥30% steam/drift gate trips — wait for Danny ping.
+
+**→ River:** Saturday GO/NO-GO sequence per Danny: (1) Livingston 07:00 baseline → (2) Saul delta-check → (3) Danny review if ≥30% movers → (4) Steve GO/NO-GO by 10:00. Confirm you're ready to drive race-day ops Saturday.
+
+**→ Livingston:** 4 EW place portions still BLOCKED on unresolved Ladies Day winners (13:30, 14:05, 15:15). Steve hasn't asked for closure yet but may want a re-scrape attempt before Saturday racing. Standing instruction: re-attempt Sporting Life individual result pages with retries / fallback to Racing Post historical card before Saturday 07:00 baseline.
+
+**→ Ralph:** Hourly watchdog #1 continues through Sat ~21:30. Schedule #2 stopped earlier. No new monitor work needed.
+
