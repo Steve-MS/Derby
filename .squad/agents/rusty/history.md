@@ -70,3 +70,73 @@ Livingston (11:59 BST): midday market refresh executed. No material price moves 
 **Impact on v0.5 signals:** market_move signal returns neutral 50 for all runners (0% Δip detected). This is expected behavior given synthetic prices. Signal will remain inert until live-price ingestion is implemented.
 
 **Synthetic-price tag:** Retained in both racecard and report footers for Ladies Day + Derby Saturday.
+
+## Learnings
+
+### 2026-06-05 — Two NRs in 90 Minutes: Batch-Check Pattern
+
+**Trigger:** Two non-runner swaps in the same afternoon session — Prizeland (16:00 Oaks) confirmed ~15:02 BST, Port Road (16:40 HKJC Handicap) confirmed ~15:46 BST. Both were outsider-slot horses in separate races. Handled as two sequential single-NR interruptions.
+
+**Observation:** A batch NR-check pass at ~14:30-15:00 BST (i.e., ~90 minutes before the first afternoon race) would have caught both simultaneously rather than processing them as separate context-switches. The check is trivially cheap: iterate `market-baseline.json` keys against racecard horses and flag absences in one pass.
+
+**Workflow improvement for future race days:**
+1. **Batch NR pass at T-90min** (e.g., 14:30 for a 16:00 first race): compare all remaining racecard horses against `market-baseline.json` in a single pass; produce a single "NR found" list rather than relying on Steve to catch each one separately.
+2. **Handle all NRs as a batch**: if multiple NRs are found in step 1, execute all replacements in one agent session rather than one at a time. Reduces Steve's interruptions from N to 1.
+3. **Ladies Day risk higher than Derby Day**: big-field handicaps (HKJC 29 runners, Nifty 50 25 runners) tend to have more late scratches than Group 1 Classics — operator runbook should note an elevated NR probability for the Friday card specifically.
+4. **Outsider-slot horses are highest-risk for late NRs**: Port Road (TBC jockey, Simon Dow smaller yard, OR 79) and Prizeland (34/1) are exactly the profile that gets scratched late. Prioritise checking low-profile outsider-slot horses in the batch scan.
+
+**Stale-price trap awareness in big-field handicaps:** This NR highlighted how many runners in a 29-runner field have "stale-price trap" profiles (Zarathos: two recent wins; Jimmy Speaking: two wins + 2nd). In future, a pre-race stale-price audit of outsider candidates (checking recent form for price-compressions) should be standard before nominating any outsider pick in a multi-runner handicap.
+
+**Port Road replacement decision note:** `.squad/decisions/inbox/rusty-port-road-replacement.md`  
+**Replacement pick: Triple Double A** (Hugo Palmer / Saffie Osborne, OR 80 / RPR 109, ~23/1 stale, £0.25 EW)  
+**Action owner:** Linus (racecard HTML update)
+
+---
+
+### 2026-06-05 — Non-Runner Replacement Workflow (Race-Day-Eve Hot-Swap)
+
+**Trigger:** Steve confirmed Prizeland (16:00 Oaks) is not running ~1 hour before the race. Data files (market-latest.json, market-baseline.json) already reflected the NR via absence from baseline — verbal confirmation was authoritative but the data corroborated it independently.
+
+**Workflow pattern established:**
+
+1. **Confirm NR source.** Check market-baseline.json absence first (fastest); treat Steve's verbal as authoritative if data lags. Do not regenerate the full pipeline — surgical pick only.
+2. **Re-run score_race on the adjusted field** (exclude all confirmed NRs). Field-size normalisation shifts rankings non-trivially — a horse that was model #4 in the full 11-runner field can become model #2 in the 8-runner adjusted field. Always re-score; never assume ranks carry over.
+3. **Market rank also shifts.** When NRs are removed, market ranks compress. Recalculate from the remaining horses' decimal_odds to get the true rank-price gap for the replacement pick.
+4. **Watch for stale-price traps.** If a horse's intra-day market move is already documented in decisions.md footnotes (e.g., Sugar Island 34.0 → 17–23), the stale odds are specifically unreliable for that horse. Prefer alternatives where stale price is likely still indicative.
+5. **Check for existing bets before doubling up.** If the highest-scored alternative already has a live stake from a footnote/pre-existing pick, flag this and consider the next-ranked scorer to avoid unintended position doubling.
+
+**Scoring shortcuts for race-day-eve hot-swaps:**
+- Score the adjusted field (NRs removed) against the full enrichment stack — no need to rebuild enrichment files.
+- Market rank recalculation: `sorted([(name, odds) for name in active_field], key=lambda x: x[1])` gives immediate market order.
+- The `score_race()` function handles field-size normalisation automatically — pass only the active runners.
+- Jockey TBC (= 0/100 in jockey signal) suppresses both candidates equally when comparing two TBC horses; don't use jockey signal as a tiebreaker under those conditions.
+
+**Prizeland scoring re-check:**
+- Prizeland's adjusted-field score was 78.6 (rank #3 in the 8-runner field).
+- Original racecard said "model rank #2 vs market #8" — this was computed on the card-generation field (Precise already a NR at that run), giving a slightly different normalisation. Both representations are consistent with a genuine rank-price gap pick.
+- The original selection logic holds up: Prizeland had strong rank-price gap value at 33/1 vs a model ranking well above its market position. The replacement (Cameo) scores 88.4 vs Prizeland's 78.6 — the replacement is a genuine improvement, not a like-for-like downgrade.
+
+**Replacement pick: Cameo (Aidan O'Brien, £0.25 EW ~14/1 stale)**
+- Decision note: `.squad/decisions/inbox/rusty-prizeland-replacement.md`
+- Action owner: Linus (racecard HTML update)
+
+## 2026-06-05 PM — Port Road NR replacement (16:40 HKJC, second swap)
+
+**What:** Picked Triple Double A as 16:40 outsider replacement for Port Road (confirmed NR).
+
+**Key inputs:**
+- Race: 16:40 HKJC World Pool Handicap, Epsom Ladies Day, 29 runners
+- NR signal: Steve verbal 15:46 BST + corroborated by Port Road absence in market-baseline.json
+- Constraint: Outsider tier (£0.25 EW, ~24/1 price band), stale-price avoidance
+
+**Analysis:**
+- Screened 29-runner field for outsiders with poor recent form (5+ days since last run)
+- Triple Double A emerges: OR 80 vs RPR 109 (29-pt gap — outlier width), distance winner (D badge), Hugo Palmer trainer, Saffie Osborne jockey
+- Scoring delta vs Port Road: TS +20, RPR +2, OR +1, jockey/trainer both upgraded
+- Runners discarded: Zarathos, Jimmy Speaking, Footwork (all recent-form stale-price traps — likely much shorter today)
+
+**Confidence:** LOW/SPECULATIVE (standard EW outsider)
+
+**Stale-price caveat:** ~23/1 (24.0 decimal) is 2026-06-02 synthetic; verify at rail before staking.
+
+**Handoff:** Decision passed to Linus for HTML edits (Port Road row removed, Triple Double A row inserted with rationale + amber NR badge + stale-odds caveat).

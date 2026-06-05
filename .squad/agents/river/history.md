@@ -75,3 +75,15 @@
 
 **Reference:** `.squad/decisions/inbox/linus-prizeland-cameo-swap.md` (merged into decisions.md)
 
+
+## 2026-06-05 — Race-morning verification (Ladies Day, NR swaps #1 & #2)
+
+**Status:** Verification list + alert
+
+**Context:** Two confirmed NR swaps on Ladies Day card. Both carry stale-odds caveats (2026-06-02 synthetic pricing). Steve heads to rail soon — must verify both runners still declared before placing bets.
+
+**Race-morning verification list:**
+1. **16:00 Oaks:** Cameo replaces Prizeland (confirmed NR by Steve ~15:13 BST). Stale price ~33/1, £0.25 EW. Verify Cameo still running.
+2. **16:40 HKJC Handicap:** Triple Double A replaces Port Road (confirmed NR by Steve 15:46 BST; Port Road absent from market-baseline.json 09:52 BST). Stale price ~23/1, £0.25 EW. Verify Triple Double A still running.
+
+**Action:** Both NR notes visible in card footnotes (outputs/racecard-2026-06-05.html). Print card; confirm both footnotes present. Before Steve heads to rail, read both notes aloud to verify runner status.

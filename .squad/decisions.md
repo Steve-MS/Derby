@@ -1153,3 +1153,20 @@ Placement: full-width \<tr class="row-trifecta">\ with purple-left-border + \#f6
 **Files Modified:**
 - \outputs/racecard-2026-06-06.html\ — trifecta \<tr>\ inserted
 - \src/report.py\ — \ender_trifecta_box()\ helper added (not wired to template yet)
+
+### 2026-06-05: Port Road NR → Triple Double A (16:40 HKJC Handicap swap #2)
+
+**By:** Rusty (Signal Engineer) & Linus (Reports)
+**What:** Second NR replacement on Ladies Day card. Port Road confirmed non-runner by Steve 15:46 BST; replaced with Triple Double A, an outsider showing OR 80 vs RPR 109 gap, distance-winner badge (D), and Hugo Palmer / Saffie Osborne trainer-jockey combination. Both swaps now live on racecard-2026-06-05.html; footnotes carry both NR notes (Prizeland/Cameo at 16:00 + Port Road/Triple Double A at 16:40).
+**Why:** Port Road absent from market-baseline.json (09:52 BST) — independent data signal corroborating Steve's verbal NR call at 15:46. Triple Double A is a genuine improvement on Port Road's profile (higher TS +20, confirmed distance winner, materially stronger handler combination). The 29-pt OR/RPR gap and 28-day gap since last run explain the stale ~23/1 price; poor recent form (5-7-7) means the stale price is less likely to be compressed than peers like Zarathos or Jimmy Speaking (both showing recent wins and therefore likely much shorter today). Confidence: LOW/SPECULATIVE — standard EW outsider tier, 6-place EW at ~23/1.
+**Timestamp:** 2026-06-05T16:02:00+01:00
+**Record:** This entry consolidates two linked decisions:
+1. **Rusty (Pick):** .squad/decisions/inbox/rusty-port-road-replacement.md — sourced Triple Double A as replacement, provided full rationale (§2), discarded runners (§4), and action note for Linus (§5).
+2. **Linus (Edit):** .squad/decisions/inbox/linus-port-road-triple-double-a-swap.md — hand-edited outputs/racecard-2026-06-05.html, verified all 10 checks pass, flagged ender_replacement_row() for elevation to src/report.py with ELEVATED priority (two swaps in 90 min establish pattern; third NR swap today triggers hard rule to ship helper before Royal Ascot).
+
+**Stale-odds caveat:** Triple Double A odds (~23/1, 24.0 decimal) are 2026-06-02 synthetic estimates. Verify current price at rail before staking.
+
+**Action for Steve:** Print racecard, verify both NR notes in footnotes (Cameo at 16:00, Triple Double A at 16:40), confirm both runners still declared before heading to rail.
+
+**Action for Saul (test coverage):** ender_replacement_row() promotion pending Royal Ascot (HIGH priority). When shipped to src/report.py, must cover: NR badge renders with correct text + inline style, stale-odds caveat div present, special chars HTML-escaped, original horse NOT in output, row-rationale class correctly applied.
+

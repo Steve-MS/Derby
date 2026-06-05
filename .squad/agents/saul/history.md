@@ -101,3 +101,18 @@
   - No regression in other race rows
 
 **Reference:** `.squad/decisions/inbox/linus-prizeland-cameo-swap.md` (merged into decisions.md)
+
+### 2026-06-05 — NR replacement helper (ender_replacement_row()) ELEVATED priority
+
+**Context:** Second NR swap in 90 minutes on Ladies Day (Cameo for Prizeland at 16:00, Triple Double A for Port Road at 16:40). Pattern established. Linus hand-edits both cases with identical DOM structure + CSS styling. Two manual HTML surgeries on one race day = expected load for Group 1 / big-field cards.
+
+**Flag:** ender_replacement_row() test coverage now **ELEVATED priority**. Bake into src/report.py test suite alongside ender_trifecta_box() tests (both helpers need promotion before Royal Ascot). Third NR swap today makes it a **hard rule**: ship helper to src/report.py before next race day. No more hand-edits after three swaps.
+
+**Test coverage required when shipped:**
+1. NR badge renders with correct text + inline style (ackground:#fff8dc; border-left:3pt solid #d99400)
+2. Stale-odds caveat div is present in rationale row (same amber styling)
+3. Apostrophes and special characters are HTML-escaped correctly
+4. Original horse name does NOT appear in rendered HTML output (anti-regression)
+5. ow-rationale row-rationale-outsider class is correctly applied
+
+**Reviewer:** Saul (strict PRs for this helper; both Linus hand-edits verified before approval).

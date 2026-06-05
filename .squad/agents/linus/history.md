@@ -36,6 +36,25 @@ Rationale: Top-3 cluster is clear (scores 95.0/93.6/85.6), gap to #4 is 5.5 poin
 
 ## Learnings
 
+### Non-runner hot-swap pattern — when to hand-edit vs regenerate (2026-06-05)
+
+**Trigger:** Prizeland confirmed NR (16:00 Oaks) at 15:02 BST on race day. Replacement pick (Cameo) delivered by Rusty. Card is already printed / at-rail; pipeline re-run not feasible (no live input pipeline on race day).
+
+**Decision: hand-edit HTML directly.** Same call as the Derby trifecta box (2026-06-05 PM). Rule of thumb:
+- **Hand-edit when:** race day, pipeline input data unavailable, single-row surgical change, output already in Steve's hands.
+- **Regenerate when:** pre-race-day, full pipeline available, change touches scoring/weights/multi-row layout.
+
+**Pattern used:**
+1. Locate the `<tr class="row-outsider">` and its `<tr class="row-rationale">` pair for the NR horse.
+2. Replace both rows wholesale — do not attempt in-place field edits (too error-prone for apostrophes, HTML entities, etc.).
+3. In `col-note`: add an amber-highlighted NR badge using inline style matching `.stale-caveat` convention: `background:#fff8dc; border-left:3pt solid #d99400`.
+4. In `row-rationale`: add a second amber `<div>` for the stale-odds caveat immediately below the bet-rationale text.
+5. Update footnotes block at card bottom — add `🚫 Prizeland (NR) → Cameo` entry so it's visible even if the table is partially obscured.
+6. Confirm Derby card (`racecard-2026-06-06.html`) mtime unchanged before declaring done.
+
+**Helper-promotion flag — `render_replacement_row()` for Royal Ascot:**
+No helper currently exists for NR row replacement. This is the second hand-edit in two days (trifecta box was the first). Recommend adding `render_replacement_row(original_horse, replacement, bet, rationale, stale_price, conviction)` to `src/report.py` alongside `render_trifecta_box()` before Royal Ascot — Group 1 cards reliably produce late NRs on race day. **Cross-agent flag for Saul:** if `render_replacement_row()` is added, it needs test coverage for: NR badge rendering, stale-caveat presence, apostrophe escaping, and that the original horse's row is absent from output.
+
 ### Trifecta box added to Derby Day card (2026-06-05 PM)
 
 **Route taken:** Hybrid — hand-edited `outputs/racecard-2026-06-06.html` to insert the trifecta section (generator re-run not feasible without full input pipeline); simultaneously added `render_trifecta_box()` helper to `src/report.py` for future reproducibility.
@@ -58,6 +77,41 @@ Rationale: Top-3 cluster is clear (scores 95.0/93.6/85.6), gap to #4 is 5.5 poin
 5. **Going contingency:** Always note a going-triggered box reduction (e.g., if GTS→Soft, drop the going_fit-sensitive horse and reduce to 3-box). This is especially relevant for Epsom round course.
 6. **Odds column:** Always label "(stale)" and include a caveat. Never project trifecta dividend from stale odds.
 
+### Second NR hand-edit in one afternoon — Cameo + Triple Double A (2026-06-05, ~15:58 BST)
+
+**What happened:** Two NR swaps within 90 minutes on Ladies Day. Cameo at ~15:13 (Prizeland NR, 16:00 Oaks, main-outsider-row swap). Triple Double A at ~15:58 (Port Road NR, 16:40 HKJC Handicap, outsider-row swap). Both hand-edits to `outputs/racecard-2026-06-05.html`; both delivered from Rusty's decision files; both following the same amber-badge + amber-stale-caveat pattern. Derby Day card untouched in both cases.
+
+**Pattern confirmed:** Two swaps of the same structural type (find `row-outsider`, replace wholesale, inject rationale row, update footnotes) in a single afternoon is now a confirmed pattern for high-attendance Group 1 + big-field handicap cards. This is not an edge case; it is the expected race-day workload.
+
+**Per-race NR-check pass at gate time (~30 min before each race):** Would this catch these earlier? Yes — a 30-minute-before gate-time check of market data against the card would have surfaced both NRs before race day communication cut-off. Prizeland's absence from market-baseline.json was detectable at 09:52 BST; Port Road's absence was also in the baseline. The issue is not detection latency but process: there is no formalised gate-time NR-check step in the current race-day workflow. Recommend adding a named "gate-time check" step (30 min before each race) to the race-day runbook — scan market-baseline.json for any card horse with no entry; flag immediately to Rusty for replacement. This would convert reactive swaps into proactive ones and give more time for rationale construction.
+
+**Structural difference: outsider-row swap (Triple Double A) vs main-pick swap (Cameo):**
+- **Cameo (main-pick swap):** Replaced a `row-win`/`row-ew` row for a horse that had been the primary pick. The replacement row kept the same bet-tag type (EW) and full rationale row already existed as a sibling.
+- **Triple Double A (outsider swap):** Replaced a bare `row-outsider` that had NO `row-rationale` sibling (the original Port Road row was a one-line col-note injection, not a full rationale pair). Had to add the rationale row from scratch — this is a structural addition, not just a content replacement.
+- **Implication for `render_replacement_row()` helper signature:** The helper must accept a `has_existing_rationale_row: bool` parameter (or always produce the rationale row and let the caller decide whether to insert it). The outsider-swap path must always produce a rationale row even if the original had none. The main-pick-swap path must replace both rows. A single helper can cover both by always emitting the pair — the caller simply replaces 1 or 2 rows in the DOM accordingly.
+
+**`render_replacement_row()` — ELEVATED PRIORITY (cross-flag in decision file):**
+- Two hand-edits in 90 minutes confirms this is not a one-off. The helper should be in `src/report.py` before Royal Ascot (16–20 June 2026).
+- If a third NR swap arrives today (or at any future single-day session), this becomes a hard rule: no more hand-edits, the helper ships immediately after that race day ends.
+- Detailed signature and test requirements logged in `.squad/decisions/inbox/linus-port-road-triple-double-a-swap.md`.
+
 ---
 
 **Early session work (2026-06-03–2026-06-05 12:05) archived to history-archive.md**
+
+## 2026-06-05 PM — Port Road → Triple Double A swap (16:40 HKJC, second NR edit)
+
+**What:** Hand-edited outputs/racecard-2026-06-05.html to swap Port Road (NR) for Triple Double A replacement.
+
+**Edits:**
+- Removed Port Road row-outsider (bare row, no rationale sibling)
+- Inserted Triple Double A row-outsider + new row-rationale pair (matching Cameo pattern from earlier swap)
+- Amber NR badge: ackground:#fff8dc; border-left:3pt solid #d99400
+- Amber stale-odds caveat div (same style, 2026-06-02 vintage notice)
+- Appended Port Road NR note to card-bottom footnotes (Cameo/Prizeland note already present)
+
+**Verification:** All 10 pre-commit checks pass. Derby Day card untouched.
+
+**Pattern flag:** This is swap #2 in 90 minutes (Cameo ~15:13, Triple Double A ~15:58). Manual HTML is the expected load for Group 1 big-field cards. **ender_replacement_row() promotion to src/report.py ELEVATED priority** — bake into test suite alongside ender_trifecta_box(). Third NR swap today triggers hard rule: ship helper before next race day.
+
+**DRY violation:** Amber badge + stale-odds caveat CSS duplicated verbatim across Cameo and Triple Double A. When helper ships, consolidate to single render function with parameterized inline styles.
