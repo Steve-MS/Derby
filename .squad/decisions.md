@@ -911,3 +911,77 @@ Existing CSS `.row-rationale td` covers the styling — no new classes needed.
 - `.squad/agents/linus/history.md` — dual-artifact learning appended
 - `.squad/skills/bet-pass-rationale/SKILL.md` — 1-pager variant section added
 
+
+---
+
+# Decision: Per-Race Outsider Picks — Ladies Day 2026-06-05
+
+**Agent:** Linus (Reports)
+**Date:** 2026-06-05T11:32:49+01:00
+**Requested by:** Steve (Steven N)
+**Status:** Applied to both artifacts
+
+---
+
+## What was done
+
+Added one outsider pick per race across all 8 Epsom Ladies Day races, with a plain-English rationale for each. Both the 1-pager (`outputs/racecard-2026-06-05.html`) and the long report (`outputs/report-2026-06-05.html`) were updated in lockstep via surgical injection.
+
+---
+
+## Race-by-race outcomes
+
+| Time | Race | Outsider Pick | Price | Stake | Reason |
+|------|------|--------------|-------|-------|--------|
+| 13:30 | 3yo Dash Handicap | **Rosie Frith** | ~11/1 (stale) | £0.25 EW | Market's shortest outsider in 18-runner sprint — 11/1 EW place cover worthwhile |
+| 14:05 | EBF Woodcote Stakes | **Hickory Lad** | ~11/1 (stale) | £0.25 EW | Market-preferred longshot in juvenile EBF stakes — 11/1 implies market respect |
+| 14:40 | Diomed Stakes G3 | **NO PICK** | — | — | Entire 14-runner field priced 13/2–8/1; Cowardofthecounty longest at 8/1; no horse reaches 10/1+ threshold |
+| 15:15 | Nifty 50 Handicap | **Liberty Lane** | ~11/1 (stale) | £0.25 EW | Shortest longshot in 25-runner field; 5-place EW terms make 11/1 worthwhile |
+| 16:00 | The Oaks (G1) | **Prizeland** *(existing)* | ~33/1 (stale) | £0.25 EW | Already present — rationale updated to ⚡ format: Kaylee #2 vs market #8 rank-price gap |
+| 16:40 | HKJC Handicap | **Port Road** | ~24/1 (stale) | £0.25 EW | Longest price in 29-runner field; 6-place EW terms give ~6.25/1 place return |
+| 17:15 | Surrey Stakes Listed | **Assaranca** | ~9/1 (stale) | £0.25 EW | Sole outsider in tight Listed field (9/1 stands clear of 6/1–8/1 cluster); borderline pick at threshold |
+| 17:50 | Debenhams Handicap | **Blue Brother** | ~15/1 (stale) | £0.25 EW | Sharpest-priced alternative to main bet; 15/1 EW in 24-runner field gives solid place cover |
+
+---
+
+## Stake impact
+
+- **Existing outsider stake (Prizeland):** £0.50 — already in £8.61 total
+- **New outsider stakes added:** 6 × £0.25 EW = 6 × £0.50 = **£3.00**
+- **New day total:** £8.61 + £3.00 = **£11.61** (well under £100 cap)
+- **New bet count:** 9 → **15** (counting each EW as 1 bet)
+
+---
+
+## "No outsider" races
+
+| Race | Reason |
+|------|--------|
+| 14:40 Diomed G3 | 14 runners all priced 13/2–8/1. Tightest book on the card. Cowardofthecounty at 8/1 is the longest — does not meet 10/1+ threshold. |
+
+---
+
+## Sources used
+
+- **market-latest.json** (generated 2026-06-05T09:52:56 BST by Livingston): primary price source for all 8 races
+- All non-Oaks prices are "Synthetic from OR/field-size (River, 2026-06-02)" — marked as **(stale)** per convention
+- Oaks prices from "Racing Post ante-post / Estimated by form-analysis (River, 2026-06-02)" — also **(stale)**
+- No live bookmaker prices available for outsider horses; rationale is based on market position within the synthetic field
+
+---
+
+## Selection method
+
+For each race: identified all horses at 10/1 or longer (10.0 decimal), then selected the **shortest-priced outsider** (most market-backed among the longshots) as the single outsider pick. Rationale emphasises EW place-term maths for the field size.
+
+The Assaranca pick (9/1 = 10.0 decimal) was included under the "roughly 10/1" clause as it stands clearly above the 6/1–8/1 cluster in the Surrey Stakes — the sole genuine outsider in that race.
+
+---
+
+## Artifacts updated
+
+- `outputs/racecard-2026-06-05.html` — 7 new rows injected (6 outsiders + 1 no-pick), 1 Prizeland rationale reformatted; totals updated (£8.61→£11.61, 9→15 bets)
+- `outputs/report-2026-06-05.html` — 7 new `<div class="outsider-pick">` blocks injected; Prizeland rationale updated; portfolio card updated (£8.61→£11.61, 1 pick→7 picks)
+- `.squad/agents/linus/history.md` — per-race outsider pattern documented under Learnings
+- `.squad/skills/per-race-outsiders/SKILL.md` — new reusable skill created
+
