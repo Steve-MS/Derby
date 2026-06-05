@@ -707,3 +707,80 @@ Oaks off time: **16:00 BST**
 Next gate (latest snapshot): **~15:00 BST**  
 Command: `python scripts/morning_odds.py --mode latest --date 2026-06-05 --no-rp-scrape`
 
+---
+
+## 2026-06-05 — Late-Runner / Withdrawal / Market-Move Footnote Schema
+
+**Agent:** Linus (Reports)  
+**Date:** 2026-06-05  
+**Status:** ✅ Pattern established — applies to Derby Day and future race cards
+
+### Context
+
+On Ladies Day (2026-06-05), three race-day discrepancies arose for the Oaks (16:00):
+
+1. **"On Message"** — declared late, absent from our racecard data feed (no score, no signals)
+2. **Belinus** — WITHDRAWN after our card was generated; Steve holds WIN £5 @ 3.5
+3. **Sugar Island** — market steamed 34.0 → 17–23; Steve's stake locked at the better price
+
+All three were handled by surgical HTML injection into `outputs/report-2026-06-05.html` — no source data regeneration required.
+
+### Schema for footnote blocks
+
+#### Block type 1: Race-level warning box (late runner + withdrawals)
+
+**Trigger:** Any horse is declared for a race AFTER our data pull, OR any scored horse is subsequently withdrawn.
+
+**Location in HTML:** Inject a `<div>` immediately after `.race-header` closing `</div>`, before `.runners-section`. Use HTML comment `<!-- ⚠️ RACE-DAY FOOTNOTES — injected YYYY-MM-DD by Linus -->` to mark injection.
+
+**Inline styles:** `background:#fef3e2; border-bottom:2px solid #d68910; padding:12px 20px 10px; margin:0`
+
+**Late-runner text template:**
+```
+⚠️ Field is [N+1], not [N].
+"[Horse name]" ([Trainer] / [Jockey], ~[X]/1 in the market) is a late entry declared for this race
+but absent from our data feed. We have no form, no signals, and no score for this runner.
+Treat any "top pick" with awareness that there is one unscored horse in the field.
+```
+
+**Withdrawal text template:**
+```
+🚫 [Horse name] — WITHDRAWN. Refund due on [BET_TYPE] £[STAKE] @ [DECIMAL_ODDS] from bookmaker.
+```
+
+Multiple items stack vertically inside the same warning box. Each item uses `display:flex; align-items:flex-start; gap:9px` with an emoji as the leading icon.
+
+#### Block type 2: Per-runner market-move badge
+
+**Trigger:** A horse's odds have moved significantly since Steve's stake was placed (steam or drift).
+
+**Location in HTML:** Add a `<div>` inside the horse's name `<td>`, immediately after the `.trainer-jockey.hide-xs` div, before the closing `</td>`.
+
+**Inline styles:** `font-size:.69rem; color:#1a4a2e; background:#d4edda; border:1px solid #9bcfab; border-radius:3px; padding:2px 7px; margin-top:4px; display:inline-block; line-height:1.4`
+
+**Text template:**
+```
+📈 Market move: [OLD_DECIMAL] → [NEW_RANGE]. Your stake locked at [OLD_DECIMAL]. Bet is live.
+```
+OR for a drift:
+```
+📉 Market drift: [OLD_DECIMAL] → [NEW_RANGE]. Your stake locked at [OLD_DECIMAL]. Bet is live.
+```
+
+### Rules
+
+1. **Never regenerate** the full card if Steve has reviewed picks. Surgical HTML edit only.
+2. **Never alter** scored data, runner table rows, signals, or recommendations — footnotes are cosmetic-only.
+3. **One combined amber box** per race — don't create multiple separate warning boxes for the same race.
+4. **Market-move badge** goes at the runner level, not race level.
+5. Use inline styles only (no new CSS classes) to keep the template forward-compatible.
+
+### Implication for Rusty/Danny
+
+If `src/report.py` ever gains a templating pass for a race-day refresh (e.g., re-running the generator on race day), the renderer should support optional injection points:
+- `race.late_runner_warning: List[{horse, trainer, jockey, odds_approx}]`
+- `race.withdrawals: List[{horse, bet_type, stake, decimal_odds}]`
+- `runner.market_move_note: Optional[{old_decimal, new_range, locked_at}]`
+
+Until then, Linus handles as direct HTML patch.
+

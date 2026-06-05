@@ -234,6 +234,24 @@ a { color: var(--green); }
 
 .horse-name { font-weight: 600; }
 .trainer-jockey { color: var(--muted); font-size: .78rem; }
+.price-cell {
+  min-width: 82px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.price-cell strong { color: var(--green); font-size: .88rem; }
+.price-stale { color: var(--muted); opacity: .78; }
+.price-stale strong { color: var(--muted); }
+.price-source {
+  color: var(--muted);
+  font-size: .68rem;
+  line-height: 1.2;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.price-header { font-weight: 400; white-space: normal; display: inline-block; max-width: 150px; }
+.odds-snapshot { color: var(--muted); }
 
 /* Score bar */
 .score-cell { min-width: 120px; }
@@ -527,6 +545,163 @@ a { color: var(--green); }
   .runners-table .trainer-jockey { display: none; }
 }
 
+/* ================================================================
+   WAVE 3.3 ADDITIONS — Derby Weekend 2026
+   Non-runner banners, going advisories, scenario banners,
+   Item speculative-punt warning, soft-contingency slip.
+   ================================================================ */
+
+/* ---------- Non-runner banner ----------------------------- */
+.nr-banner {
+  background: #fdecea;
+  border: 1px solid #e74c3c;
+  border-left: 4px solid #e74c3c;
+  border-radius: var(--radius);
+  padding: 10px 16px;
+  margin-bottom: 10px;
+  font-size: .84rem;
+  color: #7f1d1d;
+  line-height: 1.5;
+}
+
+/* ---------- Going advisory card --------------------------- */
+.going-advisory-card {
+  background: var(--white);
+  border: 1px solid #86c1b9;
+  border-left: 4px solid var(--green);
+  border-radius: var(--radius);
+  padding: 10px 16px;
+  margin-bottom: 10px;
+  font-size: .84rem;
+}
+.ga-header {
+  font-weight: 700;
+  color: var(--green);
+  margin-bottom: 4px;
+  font-size: .84rem;
+}
+.ga-timestamp {
+  font-weight: 400;
+  color: var(--muted);
+  margin-left: 4px;
+}
+.ga-body {
+  color: var(--text);
+  line-height: 1.55;
+}
+
+/* ---------- Scenario banner (GREEN / HOLD) ---------------- */
+.scenario-banner {
+  border-radius: var(--radius);
+  padding: 10px 18px;
+  margin-bottom: 14px;
+  font-size: .88rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.scenario-green {
+  background: #d4edda;
+  border: 1px solid #28a745;
+  border-left: 4px solid #28a745;
+  color: #155724;
+}
+.scenario-hold {
+  background: #fff3cd;
+  border: 1px solid #ffc107;
+  border-left: 4px solid #ffc107;
+  color: #856404;
+}
+.scenario-note {
+  font-weight: 400;
+  font-size: .8rem;
+  margin-top: 6px;
+  line-height: 1.5;
+  opacity: .9;
+}
+
+/* ---------- Item speculative-punt warning ------------------ */
+.item-warning {
+  margin: 0 0 16px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 2px solid #d68910;
+}
+/* When rendered inside a race-block, match its padding */
+.race-block .item-warning {
+  margin: 0 20px 16px;
+}
+.item-warning-header {
+  background: repeating-linear-gradient(
+    45deg,
+    #d68910,
+    #d68910 10px,
+    #f0a500 10px,
+    #f0a500 20px
+  );
+  color: #fff;
+  font-weight: 900;
+  font-size: .85rem;
+  padding: 8px 14px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.item-warning-hold .item-warning-header {
+  background: #c0392b;
+}
+.item-warning-body {
+  background: #fef9e7;
+  padding: 12px 16px;
+  font-size: .82rem;
+}
+.item-badge {
+  display: inline-block;
+  background: #c0392b;
+  color: #fff;
+  border-radius: 4px;
+  padding: 3px 10px;
+  font-size: .73rem;
+  font-weight: 900;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.item-edge-note {
+  color: var(--text);
+  margin: 6px 0;
+  line-height: 1.5;
+}
+.item-edge-negative {
+  color: #c0392b;
+  font-weight: 900;
+  font-size: 1rem;
+}
+.item-cancel {
+  color: #7f1d1d;
+  margin: 6px 0;
+  font-size: .82rem;
+}
+.item-warning-text {
+  color: var(--muted);
+  font-style: italic;
+  font-size: .79rem;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dotted #e8c04a;
+}
+
+/* ---------- Contingency (HOLD) portfolio section ---------- */
+.contingency-portfolio {
+  border-top-color: #ffc107 !important;
+  margin-top: 8px;
+}
+.contingency-portfolio h2 {
+  color: #856404;
+}
+.contingency-banner {
+  margin-bottom: 16px;
+}
+
+
   </style>
 </head>
 <body>
@@ -545,9 +720,25 @@ a { color: var(--green); }
 
   <p class="disclaimer">
     For entertainment only · 18+ · Please gamble responsibly · GambleAware.org ·
-    Generated 2026-06-03T12:12 · Race-Analysis Plugin v0.1
+    Generated 2026-06-04T17:11 · Race-Analysis Plugin v0.1
   </p>
 </header>
+
+<div class="nr-banner">
+  🚫 <strong>Non-Runner Confirmed:</strong>
+<strong>Precise</strong>  — officially withdrawn. Any stakes already placed on affected races should be reclaimed.
+</div>
+
+<div class="going-advisory-card">
+  <div class="ga-header">
+    ⛅ Going Advisory
+    <span class="ga-timestamp">· Declared 2026-06-04T09:00+01:00</span>
+  </div>
+  <div class="ga-body">
+    <strong>Good-to-Soft</strong>
+ — Softened from Good (Tue call). No model re-run required; going_fit scores handle GTS adequately. Going stable, no further deterioration expected Friday.  </div>
+</div>
+
 
 
 <section class="race-block">
@@ -572,6 +763,7 @@ a { color: var(--green); }
             <th>#</th>
             <th>Horse</th>
             <th class="hide-xs">Trainer / Jockey</th>
+            <th class="price-cell">Best Price<br><span class="price-source price-header">Odds as of 16:41 BST, source: AK Bets, Bet365, BetGoodwin +2</span></th>
             <th>Score</th>
             <th>Conf</th>
             <th>Rec</th>
@@ -589,6 +781,9 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Katie Scott / Oisin Murphy
             </td>
+            <td class="price-cell">
+              <strong>6/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
@@ -615,12 +810,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Ivan Furtado / Silvestre De Sousa
             </td>
+            <td class="price-cell">
+              <strong>12/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
                   <div class="score-bar-fill" style="width:92%"></div>
                 </div>
-                <span class="score-val">92.3</span>
+                <span class="score-val">92.2</span>
               </div>
             </td>
             <td>
@@ -640,12 +838,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Craig Lidster / TBC
             </td>
+            <td class="price-cell price-stale">
+              <strong>~15.50/1</strong>
+<br><span class="price-source">stale fallback</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
                   <div class="score-bar-fill" style="width:73%"></div>
                 </div>
-                <span class="score-val">72.6</span>
+                <span class="score-val">72.5</span>
               </div>
             </td>
             <td>
@@ -665,12 +866,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Adrian Paul Keatley / Mikey Sheehy
             </td>
+            <td class="price-cell">
+              <strong>16/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
                   <div class="score-bar-fill" style="width:66%"></div>
                 </div>
-                <span class="score-val">65.7</span>
+                <span class="score-val">66.3</span>
               </div>
             </td>
             <td>
@@ -690,12 +894,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Michael Appleby / Robert Havlin
             </td>
+            <td class="price-cell price-stale">
+              <strong>~14/1</strong>
+<br><span class="price-source">stale fallback</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
                   <div class="score-bar-fill" style="width:60%"></div>
                 </div>
-                <span class="score-val">59.7</span>
+                <span class="score-val">59.6</span>
               </div>
             </td>
             <td>
@@ -707,20 +914,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">6</td>
             <td>
-              <div class="horse-name">One And Gone</div>
+              <div class="horse-name">Coyy</div>
               <div class="trainer-jockey hide-xs">
-                Ian Williams / Edward Greatrex
+                Eve Johnson Houghton / TBC
               </div>
             </td>
             <td class="trainer-jockey">
-              Ian Williams / Edward Greatrex
+              Eve Johnson Houghton / TBC
             </td>
+            <td class="price-cell">
+              <strong>10/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:55%"></div>
+                  <div class="score-bar-fill" style="width:57%"></div>
                 </div>
-                <span class="score-val">55.0</span>
+                <span class="score-val">56.8</span>
               </div>
             </td>
             <td>
@@ -732,20 +942,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">7</td>
             <td>
-              <div class="horse-name">Coyy</div>
+              <div class="horse-name">One And Gone</div>
               <div class="trainer-jockey hide-xs">
-                Eve Johnson Houghton / TBC
+                Ian Williams / Edward Greatrex
               </div>
             </td>
             <td class="trainer-jockey">
-              Eve Johnson Houghton / TBC
+              Ian Williams / Edward Greatrex
             </td>
+            <td class="price-cell">
+              <strong>10/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:50%"></div>
+                  <div class="score-bar-fill" style="width:55%"></div>
                 </div>
-                <span class="score-val">49.7</span>
+                <span class="score-val">55.0</span>
               </div>
             </td>
             <td>
@@ -765,12 +978,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Gemma Tutty / TBC
             </td>
+            <td class="price-cell">
+              <strong>25/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
                   <div class="score-bar-fill" style="width:48%"></div>
                 </div>
-                <span class="score-val">47.9</span>
+                <span class="score-val">47.8</span>
               </div>
             </td>
             <td>
@@ -790,12 +1006,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Charles Hills / Kieran Shoemark
             </td>
+            <td class="price-cell">
+              <strong>16/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
                   <div class="score-bar-fill" style="width:46%"></div>
                 </div>
-                <span class="score-val">45.6</span>
+                <span class="score-val">46.2</span>
               </div>
             </td>
             <td>
@@ -815,12 +1034,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Brian Ellison / Ben Robinson
             </td>
+            <td class="price-cell">
+              <strong>25/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
                   <div class="score-bar-fill" style="width:45%"></div>
                 </div>
-                <span class="score-val">45.5</span>
+                <span class="score-val">45.4</span>
               </div>
             </td>
             <td>
@@ -840,12 +1062,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Michael &amp; David Easterby / Billy Garritty
             </td>
+            <td class="price-cell">
+              <strong>9/2</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
                   <div class="score-bar-fill" style="width:44%"></div>
                 </div>
-                <span class="score-val">44.0</span>
+                <span class="score-val">43.6</span>
               </div>
             </td>
             <td>
@@ -865,12 +1090,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Dylan Cunha / Ray Dawson
             </td>
+            <td class="price-cell">
+              <strong>8/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
                   <div class="score-bar-fill" style="width:44%"></div>
                 </div>
-                <span class="score-val">43.6</span>
+                <span class="score-val">43.5</span>
               </div>
             </td>
             <td>
@@ -890,12 +1118,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Patrick Morris / Paddy Bradley
             </td>
+            <td class="price-cell">
+              <strong>20/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:42%"></div>
+                  <div class="score-bar-fill" style="width:41%"></div>
                 </div>
-                <span class="score-val">41.5</span>
+                <span class="score-val">41.4</span>
               </div>
             </td>
             <td>
@@ -915,12 +1146,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Ollie Sangster / TBC
             </td>
+            <td class="price-cell">
+              <strong>50/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
                   <div class="score-bar-fill" style="width:41%"></div>
                 </div>
-                <span class="score-val">40.9</span>
+                <span class="score-val">40.8</span>
               </div>
             </td>
             <td>
@@ -940,12 +1174,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Tim Easterby / David Allan
             </td>
+            <td class="price-cell">
+              <strong>14/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
                   <div class="score-bar-fill" style="width:41%"></div>
                 </div>
-                <span class="score-val">40.9</span>
+                <span class="score-val">40.7</span>
               </div>
             </td>
             <td>
@@ -965,12 +1202,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Richard Hughes / Billy Loughnane
             </td>
+            <td class="price-cell">
+              <strong>5/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
                   <div class="score-bar-fill" style="width:37%"></div>
                 </div>
-                <span class="score-val">36.5</span>
+                <span class="score-val">37.0</span>
               </div>
             </td>
             <td>
@@ -990,12 +1230,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Lemos De Souza / Tom Kiely-Marshall
             </td>
+            <td class="price-cell">
+              <strong>10/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
                   <div class="score-bar-fill" style="width:36%"></div>
                 </div>
-                <span class="score-val">35.8</span>
+                <span class="score-val">35.7</span>
               </div>
             </td>
             <td>
@@ -1015,6 +1258,9 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Patrick Magee / TBC
             </td>
+            <td class="price-cell">
+              <strong>20/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
@@ -1337,6 +1583,7 @@ a { color: var(--green); }
             <th>#</th>
             <th>Horse</th>
             <th class="hide-xs">Trainer / Jockey</th>
+            <th class="price-cell">Best Price<br><span class="price-source price-header">Odds as of 16:41 BST, source: AK Bets, Bet365, BetGoodwin +2</span></th>
             <th>Score</th>
             <th>Conf</th>
             <th>Rec</th>
@@ -1354,6 +1601,9 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Hugo Palmer / Oisin Murphy
             </td>
+            <td class="price-cell">
+              <strong>6/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
@@ -1372,20 +1622,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">2</td>
             <td>
-              <div class="horse-name">Hickory Lad</div>
+              <div class="horse-name">Possessive</div>
               <div class="trainer-jockey hide-xs">
-                Phillip Makin / TBC
+                K R Burke / Shane Foley
               </div>
             </td>
             <td class="trainer-jockey">
-              Phillip Makin / TBC
+              K R Burke / Shane Foley
             </td>
+            <td class="price-cell">
+              <strong>3/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:89%"></div>
+                  <div class="score-bar-fill" style="width:82%"></div>
                 </div>
-                <span class="score-val">88.6</span>
+                <span class="score-val">82.3</span>
               </div>
             </td>
             <td>
@@ -1397,20 +1650,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">3</td>
             <td>
-              <div class="horse-name">Possessive</div>
+              <div class="horse-name">Hickory Lad</div>
               <div class="trainer-jockey hide-xs">
-                K R Burke / Shane Foley
+                Phillip Makin / TBC
               </div>
             </td>
             <td class="trainer-jockey">
-              K R Burke / Shane Foley
+              Phillip Makin / TBC
             </td>
+            <td class="price-cell">
+              <strong>5/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:88%"></div>
+                  <div class="score-bar-fill" style="width:81%"></div>
                 </div>
-                <span class="score-val">87.8</span>
+                <span class="score-val">81.5</span>
               </div>
             </td>
             <td>
@@ -1430,12 +1686,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Joseph Patrick O&#39;Brien / TBC
             </td>
+            <td class="price-cell price-stale">
+              <strong>~12/1</strong>
+<br><span class="price-source">stale fallback</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:79%"></div>
+                  <div class="score-bar-fill" style="width:78%"></div>
                 </div>
-                <span class="score-val">79.0</span>
+                <span class="score-val">77.7</span>
               </div>
             </td>
             <td>
@@ -1455,12 +1714,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Tony Coyle &amp; Kaine Wood / Colin Keane
             </td>
+            <td class="price-cell">
+              <strong>16/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:67%"></div>
+                  <div class="score-bar-fill" style="width:62%"></div>
                 </div>
-                <span class="score-val">66.8</span>
+                <span class="score-val">61.6</span>
               </div>
             </td>
             <td>
@@ -1480,12 +1742,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               George Boughey / Billy Loughnane
             </td>
+            <td class="price-cell">
+              <strong>14/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:58%"></div>
+                  <div class="score-bar-fill" style="width:59%"></div>
                 </div>
-                <span class="score-val">57.7</span>
+                <span class="score-val">59.4</span>
               </div>
             </td>
             <td>
@@ -1505,12 +1770,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               David Evans / Saffie Osborne
             </td>
+            <td class="price-cell">
+              <strong>8/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:52%"></div>
+                  <div class="score-bar-fill" style="width:48%"></div>
                 </div>
-                <span class="score-val">52.1</span>
+                <span class="score-val">48.1</span>
               </div>
             </td>
             <td>
@@ -1530,12 +1798,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Richard Hughes / Hector Crouch
             </td>
+            <td class="price-cell">
+              <strong>12/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:51%"></div>
+                  <div class="score-bar-fill" style="width:47%"></div>
                 </div>
-                <span class="score-val">50.6</span>
+                <span class="score-val">47.1</span>
               </div>
             </td>
             <td>
@@ -1555,12 +1826,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Brian Meehan / TBC
             </td>
+            <td class="price-cell price-stale">
+              <strong>~13.50/1</strong>
+<br><span class="price-source">stale fallback</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:46%"></div>
+                  <div class="score-bar-fill" style="width:43%"></div>
                 </div>
-                <span class="score-val">46.3</span>
+                <span class="score-val">42.8</span>
               </div>
             </td>
             <td>
@@ -1572,20 +1846,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">10</td>
             <td>
-              <div class="horse-name">Alpe d&#39;Huez</div>
+              <div class="horse-name">Ardad Steve</div>
               <div class="trainer-jockey hide-xs">
-                Archie Watson / Luke Morris
+                Eve Johnson Houghton / Charles Bishop
               </div>
             </td>
             <td class="trainer-jockey">
-              Archie Watson / Luke Morris
+              Eve Johnson Houghton / Charles Bishop
             </td>
+            <td class="price-cell">
+              <strong>12/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:46%"></div>
+                  <div class="score-bar-fill" style="width:42%"></div>
                 </div>
-                <span class="score-val">46.0</span>
+                <span class="score-val">42.4</span>
               </div>
             </td>
             <td>
@@ -1597,20 +1874,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">11</td>
             <td>
-              <div class="horse-name">Social Spirit</div>
+              <div class="horse-name">Alpe d&#39;Huez</div>
               <div class="trainer-jockey hide-xs">
-                Michael &amp; David Easterby / Billy Garritty
+                Archie Watson / Luke Morris
               </div>
             </td>
             <td class="trainer-jockey">
-              Michael &amp; David Easterby / Billy Garritty
+              Archie Watson / Luke Morris
             </td>
+            <td class="price-cell">
+              <strong>6/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:43%"></div>
+                  <div class="score-bar-fill" style="width:41%"></div>
                 </div>
-                <span class="score-val">43.0</span>
+                <span class="score-val">41.3</span>
               </div>
             </td>
             <td>
@@ -1622,20 +1902,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">12</td>
             <td>
-              <div class="horse-name">El Lambo</div>
+              <div class="horse-name">Social Spirit</div>
               <div class="trainer-jockey hide-xs">
-                Charles Hills / Jason Watson
+                Michael &amp; David Easterby / Billy Garritty
               </div>
             </td>
             <td class="trainer-jockey">
-              Charles Hills / Jason Watson
+              Michael &amp; David Easterby / Billy Garritty
             </td>
+            <td class="price-cell">
+              <strong>14/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
                   <div class="score-bar-fill" style="width:40%"></div>
                 </div>
-                <span class="score-val">39.9</span>
+                <span class="score-val">39.7</span>
               </div>
             </td>
             <td>
@@ -1647,20 +1930,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">13</td>
             <td>
-              <div class="horse-name">Ardad Steve</div>
+              <div class="horse-name">El Lambo</div>
               <div class="trainer-jockey hide-xs">
-                Eve Johnson Houghton / Charles Bishop
+                Charles Hills / Jason Watson
               </div>
             </td>
             <td class="trainer-jockey">
-              Eve Johnson Houghton / Charles Bishop
+              Charles Hills / Jason Watson
             </td>
+            <td class="price-cell">
+              <strong>20/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:40%"></div>
+                  <div class="score-bar-fill" style="width:37%"></div>
                 </div>
-                <span class="score-val">39.6</span>
+                <span class="score-val">36.9</span>
               </div>
             </td>
             <td>
@@ -1680,12 +1966,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Charlie Clover / Pierre-Louis Jamin
             </td>
+            <td class="price-cell">
+              <strong>25/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:36%"></div>
+                  <div class="score-bar-fill" style="width:34%"></div>
                 </div>
-                <span class="score-val">36.4</span>
+                <span class="score-val">33.7</span>
               </div>
             </td>
             <td>
@@ -1705,12 +1994,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Michael &amp; David Easterby / TBC
             </td>
+            <td class="price-cell price-stale">
+              <strong>~15/1</strong>
+<br><span class="price-source">stale fallback</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:28%"></div>
+                  <div class="score-bar-fill" style="width:26%"></div>
                 </div>
-                <span class="score-val">28.0</span>
+                <span class="score-val">26.0</span>
               </div>
             </td>
             <td>
@@ -1730,12 +2022,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Richard Hughes / David Probert
             </td>
+            <td class="price-cell">
+              <strong>33/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:15%"></div>
+                  <div class="score-bar-fill" style="width:14%"></div>
                 </div>
-                <span class="score-val">14.9</span>
+                <span class="score-val">14.4</span>
               </div>
             </td>
             <td>
@@ -1755,12 +2050,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Ivan Furtado / Silvestre De Sousa
             </td>
+            <td class="price-cell">
+              <strong>66/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
                   <div class="score-bar-fill" style="width:13%"></div>
                 </div>
-                <span class="score-val">13.3</span>
+                <span class="score-val">12.6</span>
               </div>
             </td>
             <td>
@@ -1780,6 +2078,9 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Charlie Clover / TBC
             </td>
+            <td class="price-cell price-stale">
+              <strong>~17/1</strong>
+<br><span class="price-source">stale fallback</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
@@ -1886,91 +2187,7 @@ a { color: var(--green); }
       </div>
       <div style="margin-bottom:10px;">
         <div style="font-size:.78rem;font-weight:600;color:var(--green);margin-bottom:5px;">
-          2. Hickory Lad
-        </div>
-        <div class="signals-grid">
-          <div class="signal-row">
-            <span class="signal-label">Class / Rating</span>
-            <div class="signal-bar-track">
-              <div class="signal-bar-fill" style="width:75%"></div>
-            </div>
-            <span class="signal-val">75</span>
-          </div>
-          <div class="signal-row">
-            <span class="signal-label">Recent Form</span>
-            <div class="signal-bar-track">
-              <div class="signal-bar-fill" style="width:61%"></div>
-            </div>
-            <span class="signal-val">61</span>
-          </div>
-          <div class="signal-row">
-            <span class="signal-label">Trainer</span>
-            <div class="signal-bar-track">
-              <div class="signal-bar-fill" style="width:0%"></div>
-            </div>
-            <span class="signal-val">0</span>
-          </div>
-          <div class="signal-row">
-            <span class="signal-label">Jockey</span>
-            <div class="signal-bar-track">
-              <div class="signal-bar-fill" style="width:0%"></div>
-            </div>
-            <span class="signal-val">0</span>
-          </div>
-          <div class="signal-row">
-            <span class="signal-label">Course &amp; Distance</span>
-            <div class="signal-bar-track">
-              <div class="signal-bar-fill" style="width:50%"></div>
-            </div>
-            <span class="signal-val">50</span>
-          </div>
-          <div class="signal-row">
-            <span class="signal-label">Going</span>
-            <div class="signal-bar-track">
-              <div class="signal-bar-fill" style="width:50%"></div>
-            </div>
-            <span class="signal-val">50</span>
-          </div>
-          <div class="signal-row">
-            <span class="signal-label">Going Fit</span>
-            <div class="signal-bar-track">
-              <div class="signal-bar-fill" style="width:64%"></div>
-            </div>
-            <span class="signal-val">64</span>
-          </div>
-          <div class="signal-row">
-            <span class="signal-label">Draw</span>
-            <div class="signal-bar-track">
-              <div class="signal-bar-fill" style="width:50%"></div>
-            </div>
-            <span class="signal-val">50</span>
-          </div>
-          <div class="signal-row">
-            <span class="signal-label">Class Move</span>
-            <div class="signal-bar-track">
-              <div class="signal-bar-fill" style="width:50%"></div>
-            </div>
-            <span class="signal-val">50</span>
-          </div>
-          <div class="signal-row">
-            <span class="signal-label">Pace Fit</span>
-            <div class="signal-bar-track">
-              <div class="signal-bar-fill" style="width:42%"></div>
-            </div>
-            <span class="signal-val">42</span>
-          </div>
-          <div class="signal-row">
-            <span class="signal-label">Sire Stamina</span>
-            <div class="signal-bar-track">
-              <div class="signal-bar-fill" style="width:50%"></div>
-            </div>
-            <span class="signal-val">50</span>
-          </div>
-        </div>
-      </div>
-      <div style="margin-bottom:10px;">
-        <div style="font-size:.78rem;font-weight:600;color:var(--green);margin-bottom:5px;">
-          3. Possessive
+          2. Possessive
         </div>
         <div class="signals-grid">
           <div class="signal-row">
@@ -2052,6 +2269,90 @@ a { color: var(--green); }
           </div>
         </div>
       </div>
+      <div style="margin-bottom:10px;">
+        <div style="font-size:.78rem;font-weight:600;color:var(--green);margin-bottom:5px;">
+          3. Hickory Lad
+        </div>
+        <div class="signals-grid">
+          <div class="signal-row">
+            <span class="signal-label">Class / Rating</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:75%"></div>
+            </div>
+            <span class="signal-val">75</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Recent Form</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:61%"></div>
+            </div>
+            <span class="signal-val">61</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Trainer</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:0%"></div>
+            </div>
+            <span class="signal-val">0</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Jockey</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:0%"></div>
+            </div>
+            <span class="signal-val">0</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Course &amp; Distance</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:50%"></div>
+            </div>
+            <span class="signal-val">50</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Going</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:50%"></div>
+            </div>
+            <span class="signal-val">50</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Going Fit</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:64%"></div>
+            </div>
+            <span class="signal-val">64</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Draw</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:50%"></div>
+            </div>
+            <span class="signal-val">50</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Class Move</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:50%"></div>
+            </div>
+            <span class="signal-val">50</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Pace Fit</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:42%"></div>
+            </div>
+            <span class="signal-val">42</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Sire Stamina</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:50%"></div>
+            </div>
+            <span class="signal-val">50</span>
+          </div>
+        </div>
+      </div>
     </div>
 
 <div class="top-pick">
@@ -2072,7 +2373,7 @@ a { color: var(--green); }
             Wild Terrain
           </span>
           <span class="bet-amount">
-            £4.28
+            £2.44
           </span>
         </li>
       </ul>
@@ -2089,8 +2390,8 @@ a { color: var(--green); }
         <span>⛅ Good to Soft</span>
         <span>🐎 14 runners</span>
         <span>📊 CLEAR FAVOURITE</span>
-        <span class="chip conf-MED">MED</span>
-        <span class="chip rec-EW">EW</span>
+        <span class="chip conf-LOW">LOW</span>
+        <span class="chip rec-PASS">PASS</span>
       </div>
     </div>
 
@@ -2102,6 +2403,7 @@ a { color: var(--green); }
             <th>#</th>
             <th>Horse</th>
             <th class="hide-xs">Trainer / Jockey</th>
+            <th class="price-cell">Best Price<br><span class="price-source price-header">Odds as of 16:41 BST, source: AK Bets, Bet365, BetGoodwin +2</span></th>
             <th>Score</th>
             <th>Conf</th>
             <th>Rec</th>
@@ -2119,6 +2421,9 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Richard Hannon / Jamie Spencer
             </td>
+            <td class="price-cell price-stale">
+              <strong>~7/1</strong>
+<br><span class="price-source">stale fallback</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
@@ -2128,10 +2433,10 @@ a { color: var(--green); }
               </div>
             </td>
             <td>
-              <span class="chip conf-MED">MED</span>
+              <span class="chip conf-LOW">LOW</span>
             </td>
             <td>
-              <span class="chip rec-EW">EW</span>
+              <span class="chip rec-PASS">PASS</span>
             </td>
           </tr>
           <tr class="">
@@ -2145,12 +2450,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Hugo Palmer / Oisin Murphy
             </td>
+            <td class="price-cell">
+              <strong>4/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:86%"></div>
+                  <div class="score-bar-fill" style="width:90%"></div>
                 </div>
-                <span class="score-val">85.6</span>
+                <span class="score-val">90.1</span>
               </div>
             </td>
             <td>
@@ -2170,12 +2478,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               John &amp; Thady Gosden / Robert Havlin
             </td>
+            <td class="price-cell">
+              <strong>12/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:83%"></div>
+                  <div class="score-bar-fill" style="width:84%"></div>
                 </div>
-                <span class="score-val">82.5</span>
+                <span class="score-val">84.2</span>
               </div>
             </td>
             <td>
@@ -2195,12 +2506,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               K R Burke / Clifford Lee
             </td>
+            <td class="price-cell">
+              <strong>11/2</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:74%"></div>
+                  <div class="score-bar-fill" style="width:73%"></div>
                 </div>
-                <span class="score-val">74.4</span>
+                <span class="score-val">73.1</span>
               </div>
             </td>
             <td>
@@ -2220,12 +2534,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Richard Hannon / Sean Levey
             </td>
+            <td class="price-cell">
+              <strong>9/4</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:68%"></div>
+                  <div class="score-bar-fill" style="width:70%"></div>
                 </div>
-                <span class="score-val">68.4</span>
+                <span class="score-val">69.7</span>
               </div>
             </td>
             <td>
@@ -2245,12 +2562,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Ed Dunlop / Ryan Moore
             </td>
+            <td class="price-cell">
+              <strong>8/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:54%"></div>
+                  <div class="score-bar-fill" style="width:52%"></div>
                 </div>
-                <span class="score-val">54.1</span>
+                <span class="score-val">52.1</span>
               </div>
             </td>
             <td>
@@ -2262,20 +2582,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">7</td>
             <td>
-              <div class="horse-name">Qirat</div>
+              <div class="horse-name">Ice Max</div>
               <div class="trainer-jockey hide-xs">
-                Ralph Beckett / TBC
+                K R Burke / Sam James
               </div>
             </td>
             <td class="trainer-jockey">
-              Ralph Beckett / TBC
+              K R Burke / Sam James
             </td>
+            <td class="price-cell">
+              <strong>11/2</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:45%"></div>
+                  <div class="score-bar-fill" style="width:43%"></div>
                 </div>
-                <span class="score-val">45.0</span>
+                <span class="score-val">43.0</span>
               </div>
             </td>
             <td>
@@ -2295,12 +2618,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Andrew Balding / Silvestre De Sousa
             </td>
+            <td class="price-cell">
+              <strong>20/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:44%"></div>
+                  <div class="score-bar-fill" style="width:42%"></div>
                 </div>
-                <span class="score-val">44.0</span>
+                <span class="score-val">42.4</span>
               </div>
             </td>
             <td>
@@ -2312,20 +2638,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">9</td>
             <td>
-              <div class="horse-name">Ice Max</div>
+              <div class="horse-name">Qirat</div>
               <div class="trainer-jockey hide-xs">
-                K R Burke / Sam James
+                Ralph Beckett / TBC
               </div>
             </td>
             <td class="trainer-jockey">
-              K R Burke / Sam James
+              Ralph Beckett / TBC
             </td>
+            <td class="price-cell">
+              <strong>7/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:44%"></div>
+                  <div class="score-bar-fill" style="width:42%"></div>
                 </div>
-                <span class="score-val">43.7</span>
+                <span class="score-val">41.9</span>
               </div>
             </td>
             <td>
@@ -2345,12 +2674,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Joseph Patrick O&#39;Brien / TBC
             </td>
+            <td class="price-cell price-stale">
+              <strong>~13/2</strong>
+<br><span class="price-source">stale fallback</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:37%"></div>
+                  <div class="score-bar-fill" style="width:40%"></div>
                 </div>
-                <span class="score-val">36.7</span>
+                <span class="score-val">39.5</span>
               </div>
             </td>
             <td>
@@ -2370,12 +2702,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Edward Bethell / TBC
             </td>
+            <td class="price-cell price-stale">
+              <strong>~7/1</strong>
+<br><span class="price-source">stale fallback</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:34%"></div>
+                  <div class="score-bar-fill" style="width:32%"></div>
                 </div>
-                <span class="score-val">33.5</span>
+                <span class="score-val">31.6</span>
               </div>
             </td>
             <td>
@@ -2395,12 +2730,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Eve Johnson Houghton / Charles Bishop
             </td>
+            <td class="price-cell price-stale">
+              <strong>~7/1</strong>
+<br><span class="price-source">stale fallback</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:11%"></div>
+                  <div class="score-bar-fill" style="width:15%"></div>
                 </div>
-                <span class="score-val">10.6</span>
+                <span class="score-val">14.9</span>
               </div>
             </td>
             <td>
@@ -2420,12 +2758,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Joseph Patrick O&#39;Brien / TBC
             </td>
+            <td class="price-cell price-stale">
+              <strong>~8/1</strong>
+<br><span class="price-source">stale fallback</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:8%"></div>
+                  <div class="score-bar-fill" style="width:12%"></div>
                 </div>
-                <span class="score-val">8.1</span>
+                <span class="score-val">11.6</span>
               </div>
             </td>
             <td>
@@ -2445,6 +2786,9 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               David O&#39;Meara / Rossa Ryan
             </td>
+            <td class="price-cell price-stale">
+              <strong>~15/2</strong>
+<br><span class="price-source">stale fallback</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
@@ -2725,7 +3069,7 @@ a { color: var(--green); }
         <h4>Top Pick: Linwood
  — Richard Hannon        </h4>
       </div>
-      <p>Linwood leads the field with a model score of 95.0/100, driven by strong Going Fit and Trainer. Moderate confidence — Each-Way suggested.</p>
+      <p>Linwood leads the field with a model score of 95.0/100, driven by strong Going Fit and Trainer. Low confidence — model recommends passing this race.</p>
     </div>
 
     <div class="race-bets">
@@ -2767,6 +3111,7 @@ a { color: var(--green); }
             <th>#</th>
             <th>Horse</th>
             <th class="hide-xs">Trainer / Jockey</th>
+            <th class="price-cell">Best Price<br><span class="price-source price-header">Odds as of 16:41 BST, source: AK Bets, Bet365, BetGoodwin +2</span></th>
             <th>Score</th>
             <th>Conf</th>
             <th>Rec</th>
@@ -2784,6 +3129,9 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Andrew Balding / Oisin Murphy
             </td>
+            <td class="price-cell">
+              <strong>9/2</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
@@ -2810,12 +3158,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Hamad Al Jehani / James Doyle
             </td>
+            <td class="price-cell">
+              <strong>14/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:74%"></div>
+                  <div class="score-bar-fill" style="width:72%"></div>
                 </div>
-                <span class="score-val">73.7</span>
+                <span class="score-val">71.8</span>
               </div>
             </td>
             <td>
@@ -2835,12 +3186,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Michael Bell / David Probert
             </td>
+            <td class="price-cell">
+              <strong>12/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:68%"></div>
+                  <div class="score-bar-fill" style="width:67%"></div>
                 </div>
-                <span class="score-val">68.4</span>
+                <span class="score-val">66.5</span>
               </div>
             </td>
             <td>
@@ -2860,12 +3214,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Roger Varian / Ray Dawson
             </td>
+            <td class="price-cell">
+              <strong>7/2</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:59%"></div>
+                  <div class="score-bar-fill" style="width:60%"></div>
                 </div>
-                <span class="score-val">58.6</span>
+                <span class="score-val">60.2</span>
               </div>
             </td>
             <td>
@@ -2877,20 +3234,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">5</td>
             <td>
-              <div class="horse-name">Rastnet</div>
+              <div class="horse-name">Spoken Truth</div>
               <div class="trainer-jockey hide-xs">
-                John Butler / Silvestre De Sousa
+                David O&#39;Meara / Luke Morris
               </div>
             </td>
             <td class="trainer-jockey">
-              John Butler / Silvestre De Sousa
+              David O&#39;Meara / Luke Morris
             </td>
+            <td class="price-cell">
+              <strong>16/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:57%"></div>
+                  <div class="score-bar-fill" style="width:56%"></div>
                 </div>
-                <span class="score-val">56.9</span>
+                <span class="score-val">56.4</span>
               </div>
             </td>
             <td>
@@ -2902,20 +3262,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">6</td>
             <td>
-              <div class="horse-name">Spoken Truth</div>
+              <div class="horse-name">Rastnet</div>
               <div class="trainer-jockey hide-xs">
-                David O&#39;Meara / Luke Morris
+                John Butler / Silvestre De Sousa
               </div>
             </td>
             <td class="trainer-jockey">
-              David O&#39;Meara / Luke Morris
+              John Butler / Silvestre De Sousa
             </td>
+            <td class="price-cell price-stale">
+              <strong>~16.50/1</strong>
+<br><span class="price-source">stale fallback</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:57%"></div>
+                  <div class="score-bar-fill" style="width:55%"></div>
                 </div>
-                <span class="score-val">56.9</span>
+                <span class="score-val">55.4</span>
               </div>
             </td>
             <td>
@@ -2935,12 +3298,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Harry Charlton / Lewis Edmunds
             </td>
+            <td class="price-cell">
+              <strong>6/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:49%"></div>
+                  <div class="score-bar-fill" style="width:52%"></div>
                 </div>
-                <span class="score-val">48.8</span>
+                <span class="score-val">51.6</span>
               </div>
             </td>
             <td>
@@ -2960,12 +3326,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Richard &amp; Peter Fahey / TBC
             </td>
+            <td class="price-cell">
+              <strong>16/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:48%"></div>
+                  <div class="score-bar-fill" style="width:47%"></div>
                 </div>
-                <span class="score-val">48.3</span>
+                <span class="score-val">47.1</span>
               </div>
             </td>
             <td>
@@ -2985,12 +3354,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Tom Dascombe / Kieran Shoemark
             </td>
+            <td class="price-cell">
+              <strong>16/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:48%"></div>
+                  <div class="score-bar-fill" style="width:46%"></div>
                 </div>
-                <span class="score-val">47.6</span>
+                <span class="score-val">46.4</span>
               </div>
             </td>
             <td>
@@ -3002,20 +3374,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">10</td>
             <td>
-              <div class="horse-name">Beylerbeyi</div>
+              <div class="horse-name">Celeborn</div>
               <div class="trainer-jockey hide-xs">
-                Ian Williams / Billy Loughnane
+                George Boughey / TBC
               </div>
             </td>
             <td class="trainer-jockey">
-              Ian Williams / Billy Loughnane
+              George Boughey / TBC
             </td>
+            <td class="price-cell">
+              <strong>9/2</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
                   <div class="score-bar-fill" style="width:46%"></div>
                 </div>
-                <span class="score-val">46.2</span>
+                <span class="score-val">46.4</span>
               </div>
             </td>
             <td>
@@ -3035,12 +3410,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               David Menuisier / Jason Watson
             </td>
+            <td class="price-cell price-stale">
+              <strong>~15.50/1</strong>
+<br><span class="price-source">stale fallback</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
                   <div class="score-bar-fill" style="width:45%"></div>
                 </div>
-                <span class="score-val">44.6</span>
+                <span class="score-val">45.4</span>
               </div>
             </td>
             <td>
@@ -3052,20 +3430,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">12</td>
             <td>
-              <div class="horse-name">Tycoon</div>
+              <div class="horse-name">Beylerbeyi</div>
               <div class="trainer-jockey hide-xs">
-                Kevin Philippart De Foy / David Egan
+                Ian Williams / Billy Loughnane
               </div>
             </td>
             <td class="trainer-jockey">
-              Kevin Philippart De Foy / David Egan
+              Ian Williams / Billy Loughnane
             </td>
+            <td class="price-cell">
+              <strong>33/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:44%"></div>
+                  <div class="score-bar-fill" style="width:45%"></div>
                 </div>
-                <span class="score-val">44.3</span>
+                <span class="score-val">45.0</span>
               </div>
             </td>
             <td>
@@ -3077,20 +3458,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">13</td>
             <td>
-              <div class="horse-name">Tribal Wisdom</div>
+              <div class="horse-name">Ammes</div>
               <div class="trainer-jockey hide-xs">
-                Michael Attwater / TBC
+                James Owen / TBC
               </div>
             </td>
             <td class="trainer-jockey">
-              Michael Attwater / TBC
+              James Owen / TBC
             </td>
+            <td class="price-cell">
+              <strong>25/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:44%"></div>
+                  <div class="score-bar-fill" style="width:43%"></div>
                 </div>
-                <span class="score-val">44.1</span>
+                <span class="score-val">43.4</span>
               </div>
             </td>
             <td>
@@ -3102,20 +3486,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">14</td>
             <td>
-              <div class="horse-name">Ammes</div>
+              <div class="horse-name">Tycoon</div>
               <div class="trainer-jockey hide-xs">
-                James Owen / TBC
+                Kevin Philippart De Foy / David Egan
               </div>
             </td>
             <td class="trainer-jockey">
-              James Owen / TBC
+              Kevin Philippart De Foy / David Egan
             </td>
+            <td class="price-cell">
+              <strong>8/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
                   <div class="score-bar-fill" style="width:43%"></div>
                 </div>
-                <span class="score-val">43.2</span>
+                <span class="score-val">43.1</span>
               </div>
             </td>
             <td>
@@ -3127,20 +3514,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">15</td>
             <td>
-              <div class="horse-name">Celeborn</div>
+              <div class="horse-name">Tribal Wisdom</div>
               <div class="trainer-jockey hide-xs">
-                George Boughey / TBC
+                Michael Attwater / TBC
               </div>
             </td>
             <td class="trainer-jockey">
-              George Boughey / TBC
+              Michael Attwater / TBC
             </td>
+            <td class="price-cell price-stale">
+              <strong>~19/1</strong>
+<br><span class="price-source">stale fallback</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
                   <div class="score-bar-fill" style="width:43%"></div>
                 </div>
-                <span class="score-val">42.6</span>
+                <span class="score-val">42.9</span>
               </div>
             </td>
             <td>
@@ -3160,6 +3550,9 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               K R Burke / Jack Nicholls
             </td>
+            <td class="price-cell">
+              <strong>16/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
@@ -3185,12 +3578,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               David Evans / Saffie Osborne
             </td>
+            <td class="price-cell">
+              <strong>33/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:42%"></div>
+                  <div class="score-bar-fill" style="width:41%"></div>
                 </div>
-                <span class="score-val">42.0</span>
+                <span class="score-val">40.9</span>
               </div>
             </td>
             <td>
@@ -3210,12 +3606,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Ian Williams / TBC
             </td>
+            <td class="price-cell price-stale">
+              <strong>~15.50/1</strong>
+<br><span class="price-source">stale fallback</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:41%"></div>
+                  <div class="score-bar-fill" style="width:40%"></div>
                 </div>
-                <span class="score-val">40.8</span>
+                <span class="score-val">39.7</span>
               </div>
             </td>
             <td>
@@ -3235,12 +3634,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Gary &amp; Josh Moore / TBC
             </td>
+            <td class="price-cell">
+              <strong>10/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:40%"></div>
+                  <div class="score-bar-fill" style="width:39%"></div>
                 </div>
-                <span class="score-val">39.8</span>
+                <span class="score-val">38.8</span>
               </div>
             </td>
             <td>
@@ -3260,12 +3662,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Andrew Slattery / TBC
             </td>
+            <td class="price-cell price-stale">
+              <strong>~15/1</strong>
+<br><span class="price-source">stale fallback</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:39%"></div>
+                  <div class="score-bar-fill" style="width:38%"></div>
                 </div>
-                <span class="score-val">39.2</span>
+                <span class="score-val">38.2</span>
               </div>
             </td>
             <td>
@@ -3285,12 +3690,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               K R Burke / Pierre-Louis Jamin
             </td>
+            <td class="price-cell">
+              <strong>16/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
                   <div class="score-bar-fill" style="width:37%"></div>
                 </div>
-                <span class="score-val">36.6</span>
+                <span class="score-val">37.2</span>
               </div>
             </td>
             <td>
@@ -3310,12 +3718,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               James Tate / Rossa Ryan
             </td>
+            <td class="price-cell">
+              <strong>33/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
                   <div class="score-bar-fill" style="width:36%"></div>
                 </div>
-                <span class="score-val">35.7</span>
+                <span class="score-val">36.4</span>
               </div>
             </td>
             <td>
@@ -3335,6 +3746,9 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Ian Williams / TBC
             </td>
+            <td class="price-cell">
+              <strong>33/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
@@ -3627,7 +4041,7 @@ a { color: var(--green); }
             Respond
           </span>
           <span class="bet-amount">
-            £0.66
+            £0.34
           </span>
         </li>
       </ul>
@@ -3642,11 +4056,31 @@ a { color: var(--green); }
       <span class="race-name">Betfred Oaks (Investec Oaks, Group 1, Fillies&#39; Classic)</span>
       <div class="race-attrs">
         <span>⛅ Good to Soft</span>
-        <span>🐎 11 runners</span>
+        <span>🐎 10 runners</span>
         <span>📊 CLEAR FAVOURITE</span>
         <span class="chip conf-LOW">LOW</span>
         <span class="chip rec-PASS">PASS</span>
       </div>
+    </div>
+
+    <!-- ⚠️ RACE-DAY FOOTNOTES — injected 2026-06-05 by Linus -->
+    <div style="margin:0;padding:12px 20px 10px;background:#fef3e2;border-bottom:2px solid #d68910;">
+
+      <!-- On Message — late declaration, unscored -->
+      <div style="display:flex;align-items:flex-start;gap:9px;margin-bottom:10px;">
+        <span style="font-size:1.05rem;flex-shrink:0;">⚠️</span>
+        <div>
+          <strong style="font-size:.83rem;color:#7d4e00;display:block;margin-bottom:3px;">Field is 9, not 8.</strong>
+          <p style="font-size:.80rem;color:#5a3a00;line-height:1.55;margin:0;">"On Message" (Ralph Beckett / Hector Crouch, ~25/1 in the market) is a late entry declared for this race but absent from our data feed. We have no form, no signals, and no score for this runner. Treat any "top pick" with awareness that there is one unscored horse in the field.</p>
+        </div>
+      </div>
+
+      <!-- Belinus — withdrawn, refund due -->
+      <div style="display:flex;align-items:flex-start;gap:9px;">
+        <span style="font-size:1.05rem;flex-shrink:0;">🚫</span>
+        <p style="font-size:.80rem;color:#5a3a00;line-height:1.55;margin:0;"><strong>Belinus — WITHDRAWN.</strong> Refund due on WIN £5 @ 3.5 from bookmaker. Chase this before racing starts.</p>
+      </div>
+
     </div>
 
     <div class="runners-section">
@@ -3657,6 +4091,7 @@ a { color: var(--green); }
             <th>#</th>
             <th>Horse</th>
             <th class="hide-xs">Trainer / Jockey</th>
+            <th class="price-cell">Best Price<br><span class="price-source price-header">Odds as of 16:41 BST, source: AK Bets, Bet365, BetGoodwin +2</span></th>
             <th>Score</th>
             <th>Conf</th>
             <th>Rec</th>
@@ -3666,14 +4101,17 @@ a { color: var(--green); }
           <tr class="rank-1">
             <td class="rank-num">1</td>
             <td>
-              <div class="horse-name">Prizeland</div>
+              <div class="horse-name">Amelia Earhart</div>
               <div class="trainer-jockey hide-xs">
-                Andrew Balding / TBC
+                Aidan O&#39;Brien / Ryan Moore (expected)
               </div>
             </td>
             <td class="trainer-jockey">
-              Andrew Balding / TBC
+              Aidan O&#39;Brien / Ryan Moore (expected)
             </td>
+            <td class="price-cell">
+              <strong>9/4</strong>
+<br><span class="price-source">Betfred</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
@@ -3692,20 +4130,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">2</td>
             <td>
-              <div class="horse-name">Sugar Island</div>
+              <div class="horse-name">Prizeland</div>
               <div class="trainer-jockey hide-xs">
-                Aidan O&#39;Brien / TBC
+                Andrew Balding / TBC
               </div>
             </td>
             <td class="trainer-jockey">
-              Aidan O&#39;Brien / TBC
+              Andrew Balding / TBC
             </td>
+            <td class="price-cell price-stale">
+              <strong>~33/1</strong>
+<br><span class="price-source">stale fallback</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:95%"></div>
+                  <div class="score-bar-fill" style="width:75%"></div>
                 </div>
-                <span class="score-val">94.9</span>
+                <span class="score-val">75.0</span>
               </div>
             </td>
             <td>
@@ -3717,20 +4158,24 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">3</td>
             <td>
-              <div class="horse-name">Amelia Earhart</div>
+              <div class="horse-name">Sugar Island</div>
               <div class="trainer-jockey hide-xs">
-                Aidan O&#39;Brien / Ryan Moore (expected)
+                Aidan O&#39;Brien / TBC
               </div>
+              <div style="font-size:.69rem;color:#1a4a2e;background:#d4edda;border:1px solid #9bcfab;border-radius:3px;padding:2px 7px;margin-top:4px;display:inline-block;line-height:1.4;">📈 Market move: 34.0 → 17–23. Your stake locked at <strong>34.0</strong>. Bet is live.</div>
             </td>
             <td class="trainer-jockey">
-              Aidan O&#39;Brien / Ryan Moore (expected)
+              Aidan O&#39;Brien / TBC
             </td>
+            <td class="price-cell">
+              <strong>22/1</strong>
+<br><span class="price-source">Bet365</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:92%"></div>
+                  <div class="score-bar-fill" style="width:75%"></div>
                 </div>
-                <span class="score-val">91.8</span>
+                <span class="score-val">74.8</span>
               </div>
             </td>
             <td>
@@ -3750,12 +4195,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Aidan O&#39;Brien / TBC
             </td>
+            <td class="price-cell">
+              <strong>8/1</strong>
+<br><span class="price-source">Betfred</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:88%"></div>
+                  <div class="score-bar-fill" style="width:74%"></div>
                 </div>
-                <span class="score-val">87.7</span>
+                <span class="score-val">74.1</span>
               </div>
             </td>
             <td>
@@ -3767,20 +4215,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">5</td>
             <td>
-              <div class="horse-name">K Sarra</div>
+              <div class="horse-name">Legacy Link</div>
               <div class="trainer-jockey hide-xs">
-                Ralph Beckett / TBC
+                John &amp; Thady Gosden / TBC
               </div>
             </td>
             <td class="trainer-jockey">
-              Ralph Beckett / TBC
+              John &amp; Thady Gosden / TBC
             </td>
+            <td class="price-cell">
+              <strong>7/2</strong>
+<br><span class="price-source">Bet365</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:80%"></div>
+                  <div class="score-bar-fill" style="width:73%"></div>
                 </div>
-                <span class="score-val">79.8</span>
+                <span class="score-val">73.5</span>
               </div>
             </td>
             <td>
@@ -3792,20 +4243,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">6</td>
             <td>
-              <div class="horse-name">Precise</div>
+              <div class="horse-name">K Sarra</div>
               <div class="trainer-jockey hide-xs">
-                Aidan O&#39;Brien / TBC
+                Ralph Beckett / TBC
               </div>
             </td>
             <td class="trainer-jockey">
-              Aidan O&#39;Brien / TBC
+              Ralph Beckett / TBC
             </td>
+            <td class="price-cell">
+              <strong>16/1</strong>
+<br><span class="price-source">Bet365</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:77%"></div>
+                  <div class="score-bar-fill" style="width:59%"></div>
                 </div>
-                <span class="score-val">77.0</span>
+                <span class="score-val">59.5</span>
               </div>
             </td>
             <td>
@@ -3817,20 +4271,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">7</td>
             <td>
-              <div class="horse-name">Legacy Link</div>
+              <div class="horse-name">Thundering On</div>
               <div class="trainer-jockey hide-xs">
-                John &amp; Thady Gosden / TBC
+                Joseph Patrick O&#39;Brien / TBC
               </div>
             </td>
             <td class="trainer-jockey">
-              John &amp; Thady Gosden / TBC
+              Joseph Patrick O&#39;Brien / TBC
             </td>
+            <td class="price-cell">
+              <strong>11/2</strong>
+<br><span class="price-source">Bet365</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:59%"></div>
+                  <div class="score-bar-fill" style="width:53%"></div>
                 </div>
-                <span class="score-val">59.2</span>
+                <span class="score-val">53.2</span>
               </div>
             </td>
             <td>
@@ -3842,20 +4299,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">8</td>
             <td>
-              <div class="horse-name">Thundering On</div>
+              <div class="horse-name">Beautify</div>
               <div class="trainer-jockey hide-xs">
-                Joseph Patrick O&#39;Brien / TBC
+                Aidan O&#39;Brien / TBC
               </div>
             </td>
             <td class="trainer-jockey">
-              Joseph Patrick O&#39;Brien / TBC
+              Aidan O&#39;Brien / TBC
             </td>
+            <td class="price-cell price-stale">
+              <strong>~100/1</strong>
+<br><span class="price-source">stale fallback</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:59%"></div>
+                  <div class="score-bar-fill" style="width:38%"></div>
                 </div>
-                <span class="score-val">59.0</span>
+                <span class="score-val">37.9</span>
               </div>
             </td>
             <td>
@@ -3875,12 +4335,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Ralph Beckett / James Doyle (expected)
             </td>
+            <td class="price-cell">
+              <strong>8/1</strong>
+<br><span class="price-source">Bet365</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:54%"></div>
+                  <div class="score-bar-fill" style="width:37%"></div>
                 </div>
-                <span class="score-val">53.9</span>
+                <span class="score-val">36.6</span>
               </div>
             </td>
             <td>
@@ -3892,31 +4355,6 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">10</td>
             <td>
-              <div class="horse-name">Beautify</div>
-              <div class="trainer-jockey hide-xs">
-                Aidan O&#39;Brien / TBC
-              </div>
-            </td>
-            <td class="trainer-jockey">
-              Aidan O&#39;Brien / TBC
-            </td>
-            <td class="score-cell">
-              <div class="score-bar-wrap">
-                <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:43%"></div>
-                </div>
-                <span class="score-val">43.3</span>
-              </div>
-            </td>
-            <td>
-            </td>
-            <td>
-              <span class="chip rec-PASS">PASS</span>
-            </td>
-          </tr>
-          <tr class="">
-            <td class="rank-num">11</td>
-            <td>
               <div class="horse-name">Venetian Lace</div>
               <div class="trainer-jockey hide-xs">
                 Charlie Johnston / TBC
@@ -3925,6 +4363,9 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Charlie Johnston / TBC
             </td>
+            <td class="price-cell">
+              <strong>12/1</strong>
+<br><span class="price-source">Bet365</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
@@ -3947,175 +4388,7 @@ a { color: var(--green); }
       <h4>Signal Breakdown — Top 3 Runners</h4>
       <div style="margin-bottom:10px;">
         <div style="font-size:.78rem;font-weight:600;color:var(--green);margin-bottom:5px;">
-          1. Prizeland
-        </div>
-        <div class="signals-grid">
-          <div class="signal-row">
-            <span class="signal-label">Class / Rating</span>
-            <div class="signal-bar-track">
-              <div class="signal-bar-fill" style="width:50%"></div>
-            </div>
-            <span class="signal-val">50</span>
-          </div>
-          <div class="signal-row">
-            <span class="signal-label">Recent Form</span>
-            <div class="signal-bar-track">
-              <div class="signal-bar-fill" style="width:50%"></div>
-            </div>
-            <span class="signal-val">50</span>
-          </div>
-          <div class="signal-row">
-            <span class="signal-label">Trainer</span>
-            <div class="signal-bar-track">
-              <div class="signal-bar-fill" style="width:80%"></div>
-            </div>
-            <span class="signal-val">80</span>
-          </div>
-          <div class="signal-row">
-            <span class="signal-label">Jockey</span>
-            <div class="signal-bar-track">
-              <div class="signal-bar-fill" style="width:0%"></div>
-            </div>
-            <span class="signal-val">0</span>
-          </div>
-          <div class="signal-row">
-            <span class="signal-label">Course &amp; Distance</span>
-            <div class="signal-bar-track">
-              <div class="signal-bar-fill" style="width:50%"></div>
-            </div>
-            <span class="signal-val">50</span>
-          </div>
-          <div class="signal-row">
-            <span class="signal-label">Going</span>
-            <div class="signal-bar-track">
-              <div class="signal-bar-fill" style="width:50%"></div>
-            </div>
-            <span class="signal-val">50</span>
-          </div>
-          <div class="signal-row">
-            <span class="signal-label">Going Fit</span>
-            <div class="signal-bar-track">
-              <div class="signal-bar-fill" style="width:77%"></div>
-            </div>
-            <span class="signal-val">77</span>
-          </div>
-          <div class="signal-row">
-            <span class="signal-label">Draw</span>
-            <div class="signal-bar-track">
-              <div class="signal-bar-fill" style="width:50%"></div>
-            </div>
-            <span class="signal-val">50</span>
-          </div>
-          <div class="signal-row">
-            <span class="signal-label">Class Move</span>
-            <div class="signal-bar-track">
-              <div class="signal-bar-fill" style="width:50%"></div>
-            </div>
-            <span class="signal-val">50</span>
-          </div>
-          <div class="signal-row">
-            <span class="signal-label">Pace Fit</span>
-            <div class="signal-bar-track">
-              <div class="signal-bar-fill" style="width:48%"></div>
-            </div>
-            <span class="signal-val">48</span>
-          </div>
-          <div class="signal-row">
-            <span class="signal-label">Sire Stamina</span>
-            <div class="signal-bar-track">
-              <div class="signal-bar-fill" style="width:60%"></div>
-            </div>
-            <span class="signal-val">60</span>
-          </div>
-        </div>
-      </div>
-      <div style="margin-bottom:10px;">
-        <div style="font-size:.78rem;font-weight:600;color:var(--green);margin-bottom:5px;">
-          2. Sugar Island
-        </div>
-        <div class="signals-grid">
-          <div class="signal-row">
-            <span class="signal-label">Class / Rating</span>
-            <div class="signal-bar-track">
-              <div class="signal-bar-fill" style="width:50%"></div>
-            </div>
-            <span class="signal-val">50</span>
-          </div>
-          <div class="signal-row">
-            <span class="signal-label">Recent Form</span>
-            <div class="signal-bar-track">
-              <div class="signal-bar-fill" style="width:50%"></div>
-            </div>
-            <span class="signal-val">50</span>
-          </div>
-          <div class="signal-row">
-            <span class="signal-label">Trainer</span>
-            <div class="signal-bar-track">
-              <div class="signal-bar-fill" style="width:100%"></div>
-            </div>
-            <span class="signal-val">100</span>
-          </div>
-          <div class="signal-row">
-            <span class="signal-label">Jockey</span>
-            <div class="signal-bar-track">
-              <div class="signal-bar-fill" style="width:0%"></div>
-            </div>
-            <span class="signal-val">0</span>
-          </div>
-          <div class="signal-row">
-            <span class="signal-label">Course &amp; Distance</span>
-            <div class="signal-bar-track">
-              <div class="signal-bar-fill" style="width:50%"></div>
-            </div>
-            <span class="signal-val">50</span>
-          </div>
-          <div class="signal-row">
-            <span class="signal-label">Going</span>
-            <div class="signal-bar-track">
-              <div class="signal-bar-fill" style="width:50%"></div>
-            </div>
-            <span class="signal-val">50</span>
-          </div>
-          <div class="signal-row">
-            <span class="signal-label">Going Fit</span>
-            <div class="signal-bar-track">
-              <div class="signal-bar-fill" style="width:58%"></div>
-            </div>
-            <span class="signal-val">58</span>
-          </div>
-          <div class="signal-row">
-            <span class="signal-label">Draw</span>
-            <div class="signal-bar-track">
-              <div class="signal-bar-fill" style="width:50%"></div>
-            </div>
-            <span class="signal-val">50</span>
-          </div>
-          <div class="signal-row">
-            <span class="signal-label">Class Move</span>
-            <div class="signal-bar-track">
-              <div class="signal-bar-fill" style="width:50%"></div>
-            </div>
-            <span class="signal-val">50</span>
-          </div>
-          <div class="signal-row">
-            <span class="signal-label">Pace Fit</span>
-            <div class="signal-bar-track">
-              <div class="signal-bar-fill" style="width:48%"></div>
-            </div>
-            <span class="signal-val">48</span>
-          </div>
-          <div class="signal-row">
-            <span class="signal-label">Sire Stamina</span>
-            <div class="signal-bar-track">
-              <div class="signal-bar-fill" style="width:78%"></div>
-            </div>
-            <span class="signal-val">78</span>
-          </div>
-        </div>
-      </div>
-      <div style="margin-bottom:10px;">
-        <div style="font-size:.78rem;font-weight:600;color:var(--green);margin-bottom:5px;">
-          3. Amelia Earhart
+          1. Amelia Earhart
         </div>
         <div class="signals-grid">
           <div class="signal-row">
@@ -4184,9 +4457,9 @@ a { color: var(--green); }
           <div class="signal-row">
             <span class="signal-label">Pace Fit</span>
             <div class="signal-bar-track">
-              <div class="signal-bar-fill" style="width:55%"></div>
+              <div class="signal-bar-fill" style="width:42%"></div>
             </div>
-            <span class="signal-val">55</span>
+            <span class="signal-val">42</span>
           </div>
           <div class="signal-row">
             <span class="signal-label">Sire Stamina</span>
@@ -4197,15 +4470,183 @@ a { color: var(--green); }
           </div>
         </div>
       </div>
+      <div style="margin-bottom:10px;">
+        <div style="font-size:.78rem;font-weight:600;color:var(--green);margin-bottom:5px;">
+          2. Prizeland
+        </div>
+        <div class="signals-grid">
+          <div class="signal-row">
+            <span class="signal-label">Class / Rating</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:50%"></div>
+            </div>
+            <span class="signal-val">50</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Recent Form</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:50%"></div>
+            </div>
+            <span class="signal-val">50</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Trainer</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:80%"></div>
+            </div>
+            <span class="signal-val">80</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Jockey</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:0%"></div>
+            </div>
+            <span class="signal-val">0</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Course &amp; Distance</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:50%"></div>
+            </div>
+            <span class="signal-val">50</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Going</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:50%"></div>
+            </div>
+            <span class="signal-val">50</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Going Fit</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:77%"></div>
+            </div>
+            <span class="signal-val">77</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Draw</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:50%"></div>
+            </div>
+            <span class="signal-val">50</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Class Move</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:50%"></div>
+            </div>
+            <span class="signal-val">50</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Pace Fit</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:70%"></div>
+            </div>
+            <span class="signal-val">70</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Sire Stamina</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:60%"></div>
+            </div>
+            <span class="signal-val">60</span>
+          </div>
+        </div>
+      </div>
+      <div style="margin-bottom:10px;">
+        <div style="font-size:.78rem;font-weight:600;color:var(--green);margin-bottom:5px;">
+          3. Sugar Island
+        </div>
+        <div class="signals-grid">
+          <div class="signal-row">
+            <span class="signal-label">Class / Rating</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:50%"></div>
+            </div>
+            <span class="signal-val">50</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Recent Form</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:50%"></div>
+            </div>
+            <span class="signal-val">50</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Trainer</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:100%"></div>
+            </div>
+            <span class="signal-val">100</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Jockey</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:0%"></div>
+            </div>
+            <span class="signal-val">0</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Course &amp; Distance</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:50%"></div>
+            </div>
+            <span class="signal-val">50</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Going</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:50%"></div>
+            </div>
+            <span class="signal-val">50</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Going Fit</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:58%"></div>
+            </div>
+            <span class="signal-val">58</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Draw</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:50%"></div>
+            </div>
+            <span class="signal-val">50</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Class Move</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:50%"></div>
+            </div>
+            <span class="signal-val">50</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Pace Fit</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:70%"></div>
+            </div>
+            <span class="signal-val">70</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Sire Stamina</span>
+            <div class="signal-bar-track">
+              <div class="signal-bar-fill" style="width:78%"></div>
+            </div>
+            <span class="signal-val">78</span>
+          </div>
+        </div>
+      </div>
     </div>
 
 <div class="top-pick">
       <div class="top-pick-header">
         <span class="trophy">🏆</span>
-        <h4>Top Pick: Prizeland
- — Andrew Balding        </h4>
+        <h4>Top Pick: Amelia Earhart
+ — Aidan O&#39;Brien        </h4>
       </div>
-      <p>Prizeland leads the field with a model score of 95.0/100, driven by strong Trainer and Going Fit. Low confidence — model recommends passing this race.</p>
+      <p>Amelia Earhart leads the field with a model score of 95.0/100, driven by strong Trainer and market_move. Low confidence — model recommends passing this race.</p>
     </div>
 
     <div class="race-bets">
@@ -4214,7 +4655,7 @@ a { color: var(--green); }
         <li>
           <span>
             <span class="chip rec-PASS">PASS</span>
-            Prizeland
+            Amelia Earhart
           </span>
           <span class="bet-amount">
             £0.00
@@ -4235,14 +4676,14 @@ a { color: var(--green); }
           <span class="odds-source-badge">estimated</span>
         </span>
         <span>
-          <b>Stake:</b> £0.50 EW @ 1/4 odds, 1-1-2-3        </span>
-        <span><b>Return Win:</b> £17.00</span>
-        <span><b>Return Place:</b> £4.62</span>
+          <b>Stake:</b> £0.25 EW @ 1/4 odds, 1-1-2-3        </span>
+        <span><b>Return Win:</b> £8.50</span>
+        <span><b>Return Place:</b> £2.31</span>
       </div>
       <div class="outsider-rank">
-        Model: 1 / Market: 9
-(Δ +8)      </div>
-      <p class="outsider-rationale">Model rates 1; market rates 9. Disagreement of 8 ranks — value play.</p>
+        Model: 2 / Market: 8
+(Δ +6)      </div>
+      <p class="outsider-rationale">EW outsider: Kaylee #2 vs market #8, 33/1 in Oaks; rank gap makes place cover worthwhile.</p>
     </div>
 
   </section>
@@ -4268,6 +4709,7 @@ a { color: var(--green); }
             <th>#</th>
             <th>Horse</th>
             <th class="hide-xs">Trainer / Jockey</th>
+            <th class="price-cell">Best Price<br><span class="price-source price-header">Odds as of 16:41 BST, source: AK Bets, Bet365, BetGoodwin +2</span></th>
             <th>Score</th>
             <th>Conf</th>
             <th>Rec</th>
@@ -4285,6 +4727,9 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Andrew Balding / Oisin Murphy
             </td>
+            <td class="price-cell">
+              <strong>6/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
@@ -4311,12 +4756,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Ed Dunlop / Ryan Moore
             </td>
+            <td class="price-cell">
+              <strong>14/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:82%"></div>
+                  <div class="score-bar-fill" style="width:80%"></div>
                 </div>
-                <span class="score-val">82.4</span>
+                <span class="score-val">80.2</span>
               </div>
             </td>
             <td>
@@ -4336,12 +4784,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Dylan Cunha / TBC
             </td>
+            <td class="price-cell">
+              <strong>8/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:81%"></div>
+                  <div class="score-bar-fill" style="width:79%"></div>
                 </div>
-                <span class="score-val">81.3</span>
+                <span class="score-val">78.7</span>
               </div>
             </td>
             <td>
@@ -4353,20 +4804,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">4</td>
             <td>
-              <div class="horse-name">Jimmy Speaking</div>
+              <div class="horse-name">First Principle</div>
               <div class="trainer-jockey hide-xs">
-                Chris Dwyer / TBC
+                William Haggas / Cieren Fallon
               </div>
             </td>
             <td class="trainer-jockey">
-              Chris Dwyer / TBC
+              William Haggas / Cieren Fallon
             </td>
+            <td class="price-cell price-stale">
+              <strong>~18.50/1</strong>
+<br><span class="price-source">stale fallback</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:77%"></div>
+                  <div class="score-bar-fill" style="width:74%"></div>
                 </div>
-                <span class="score-val">76.5</span>
+                <span class="score-val">74.5</span>
               </div>
             </td>
             <td>
@@ -4386,12 +4840,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               James Owen / Silvestre De Sousa
             </td>
+            <td class="price-cell">
+              <strong>10/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
                   <div class="score-bar-fill" style="width:74%"></div>
                 </div>
-                <span class="score-val">74.4</span>
+                <span class="score-val">74.2</span>
               </div>
             </td>
             <td>
@@ -4403,20 +4860,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">6</td>
             <td>
-              <div class="horse-name">First Principle</div>
+              <div class="horse-name">Jimmy Speaking</div>
               <div class="trainer-jockey hide-xs">
-                William Haggas / Cieren Fallon
+                Chris Dwyer / TBC
               </div>
             </td>
             <td class="trainer-jockey">
-              William Haggas / Cieren Fallon
+              Chris Dwyer / TBC
             </td>
+            <td class="price-cell">
+              <strong>16/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
                   <div class="score-bar-fill" style="width:74%"></div>
                 </div>
-                <span class="score-val">73.5</span>
+                <span class="score-val">74.1</span>
               </div>
             </td>
             <td>
@@ -4436,12 +4896,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Ralph Beckett / Rossa Ryan
             </td>
+            <td class="price-cell">
+              <strong>7/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:62%"></div>
+                  <div class="score-bar-fill" style="width:60%"></div>
                 </div>
-                <span class="score-val">62.4</span>
+                <span class="score-val">59.7</span>
               </div>
             </td>
             <td>
@@ -4461,12 +4924,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Charlie Johnston / TBC
             </td>
+            <td class="price-cell price-stale">
+              <strong>~21/1</strong>
+<br><span class="price-source">stale fallback</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:61%"></div>
+                  <div class="score-bar-fill" style="width:59%"></div>
                 </div>
-                <span class="score-val">60.6</span>
+                <span class="score-val">59.4</span>
               </div>
             </td>
             <td>
@@ -4478,20 +4944,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">9</td>
             <td>
-              <div class="horse-name">Principality</div>
+              <div class="horse-name">Walsingham</div>
               <div class="trainer-jockey hide-xs">
-                Harry Eustace / George Wood
+                David O&#39;Meara / Jason Watson
               </div>
             </td>
             <td class="trainer-jockey">
-              Harry Eustace / George Wood
+              David O&#39;Meara / Jason Watson
             </td>
+            <td class="price-cell">
+              <strong>20/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:60%"></div>
+                  <div class="score-bar-fill" style="width:59%"></div>
                 </div>
-                <span class="score-val">60.3</span>
+                <span class="score-val">59.3</span>
               </div>
             </td>
             <td>
@@ -4503,20 +4972,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">10</td>
             <td>
-              <div class="horse-name">Walsingham</div>
+              <div class="horse-name">Mirsky</div>
               <div class="trainer-jockey hide-xs">
-                David O&#39;Meara / Jason Watson
+                David O&#39;Meara / Hector Crouch
               </div>
             </td>
             <td class="trainer-jockey">
-              David O&#39;Meara / Jason Watson
+              David O&#39;Meara / Hector Crouch
             </td>
+            <td class="price-cell">
+              <strong>14/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:60%"></div>
+                  <div class="score-bar-fill" style="width:59%"></div>
                 </div>
-                <span class="score-val">60.0</span>
+                <span class="score-val">59.1</span>
               </div>
             </td>
             <td>
@@ -4528,20 +5000,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">11</td>
             <td>
-              <div class="horse-name">Mirsky</div>
+              <div class="horse-name">Principality</div>
               <div class="trainer-jockey hide-xs">
-                David O&#39;Meara / Hector Crouch
+                Harry Eustace / George Wood
               </div>
             </td>
             <td class="trainer-jockey">
-              David O&#39;Meara / Hector Crouch
+              Harry Eustace / George Wood
             </td>
+            <td class="price-cell">
+              <strong>8/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:60%"></div>
+                  <div class="score-bar-fill" style="width:58%"></div>
                 </div>
-                <span class="score-val">59.8</span>
+                <span class="score-val">58.4</span>
               </div>
             </td>
             <td>
@@ -4561,12 +5036,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Ian Williams / Edward Greatrex
             </td>
+            <td class="price-cell price-stale">
+              <strong>~20/1</strong>
+<br><span class="price-source">stale fallback</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:59%"></div>
+                  <div class="score-bar-fill" style="width:57%"></div>
                 </div>
-                <span class="score-val">58.6</span>
+                <span class="score-val">56.8</span>
               </div>
             </td>
             <td>
@@ -4586,12 +5064,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Ian Williams / Charles Bishop
             </td>
+            <td class="price-cell">
+              <strong>50/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:58%"></div>
+                  <div class="score-bar-fill" style="width:56%"></div>
                 </div>
-                <span class="score-val">57.6</span>
+                <span class="score-val">55.8</span>
               </div>
             </td>
             <td>
@@ -4603,20 +5084,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">14</td>
             <td>
-              <div class="horse-name">Mr Swivell</div>
+              <div class="horse-name">Celeborn</div>
               <div class="trainer-jockey hide-xs">
-                Kevin Philippart De Foy / Ray Dawson
+                George Boughey / Billy Loughnane
               </div>
             </td>
             <td class="trainer-jockey">
-              Kevin Philippart De Foy / Ray Dawson
+              George Boughey / Billy Loughnane
             </td>
+            <td class="price-cell">
+              <strong>9/2</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:54%"></div>
+                  <div class="score-bar-fill" style="width:55%"></div>
                 </div>
-                <span class="score-val">54.0</span>
+                <span class="score-val">55.2</span>
               </div>
             </td>
             <td>
@@ -4628,20 +5112,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">15</td>
             <td>
-              <div class="horse-name">Bragbor</div>
+              <div class="horse-name">Mr Swivell</div>
               <div class="trainer-jockey hide-xs">
-                Richard &amp; Peter Fahey / TBC
+                Kevin Philippart De Foy / Ray Dawson
               </div>
             </td>
             <td class="trainer-jockey">
-              Richard &amp; Peter Fahey / TBC
+              Kevin Philippart De Foy / Ray Dawson
             </td>
+            <td class="price-cell">
+              <strong>20/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:53%"></div>
+                  <div class="score-bar-fill" style="width:52%"></div>
                 </div>
-                <span class="score-val">52.9</span>
+                <span class="score-val">52.3</span>
               </div>
             </td>
             <td>
@@ -4653,20 +5140,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">16</td>
             <td>
-              <div class="horse-name">Final Night</div>
+              <div class="horse-name">Bragbor</div>
               <div class="trainer-jockey hide-xs">
-                John Butler / TBC
+                Richard &amp; Peter Fahey / TBC
               </div>
             </td>
             <td class="trainer-jockey">
-              John Butler / TBC
+              Richard &amp; Peter Fahey / TBC
             </td>
+            <td class="price-cell">
+              <strong>16/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:52%"></div>
+                  <div class="score-bar-fill" style="width:51%"></div>
                 </div>
-                <span class="score-val">51.8</span>
+                <span class="score-val">51.2</span>
               </div>
             </td>
             <td>
@@ -4678,20 +5168,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">17</td>
             <td>
-              <div class="horse-name">Celeborn</div>
+              <div class="horse-name">Triple Double A</div>
               <div class="trainer-jockey hide-xs">
-                George Boughey / Billy Loughnane
+                Hugo Palmer / Saffie Osborne
               </div>
             </td>
             <td class="trainer-jockey">
-              George Boughey / Billy Loughnane
+              Hugo Palmer / Saffie Osborne
             </td>
+            <td class="price-cell price-stale">
+              <strong>~23/1</strong>
+<br><span class="price-source">stale fallback</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
                   <div class="score-bar-fill" style="width:51%"></div>
                 </div>
-                <span class="score-val">50.9</span>
+                <span class="score-val">51.1</span>
               </div>
             </td>
             <td>
@@ -4711,12 +5204,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Ed Walker / Kieran Shoemark
             </td>
+            <td class="price-cell">
+              <strong>33/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:50%"></div>
+                  <div class="score-bar-fill" style="width:51%"></div>
                 </div>
-                <span class="score-val">49.8</span>
+                <span class="score-val">50.9</span>
               </div>
             </td>
             <td>
@@ -4728,20 +5224,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">19</td>
             <td>
-              <div class="horse-name">Port Road</div>
+              <div class="horse-name">Stem</div>
               <div class="trainer-jockey hide-xs">
-                Simon Dow / TBC
+                Richard Hannon / Pat Dobbs
               </div>
             </td>
             <td class="trainer-jockey">
-              Simon Dow / TBC
+              Richard Hannon / Pat Dobbs
             </td>
+            <td class="price-cell">
+              <strong>5/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:50%"></div>
+                  <div class="score-bar-fill" style="width:51%"></div>
                 </div>
-                <span class="score-val">49.6</span>
+                <span class="score-val">50.6</span>
               </div>
             </td>
             <td>
@@ -4753,20 +5252,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">20</td>
             <td>
-              <div class="horse-name">Triple Double A</div>
+              <div class="horse-name">Final Night</div>
               <div class="trainer-jockey hide-xs">
-                Hugo Palmer / Saffie Osborne
+                John Butler / TBC
               </div>
             </td>
             <td class="trainer-jockey">
-              Hugo Palmer / Saffie Osborne
+              John Butler / TBC
             </td>
+            <td class="price-cell">
+              <strong>20/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:49%"></div>
+                  <div class="score-bar-fill" style="width:50%"></div>
                 </div>
-                <span class="score-val">49.4</span>
+                <span class="score-val">50.2</span>
               </div>
             </td>
             <td>
@@ -4778,20 +5280,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">21</td>
             <td>
-              <div class="horse-name">Stem</div>
+              <div class="horse-name">Port Road</div>
               <div class="trainer-jockey hide-xs">
-                Richard Hannon / Pat Dobbs
+                Simon Dow / TBC
               </div>
             </td>
             <td class="trainer-jockey">
-              Richard Hannon / Pat Dobbs
+              Simon Dow / TBC
             </td>
+            <td class="price-cell price-stale">
+              <strong>~23.50/1</strong>
+<br><span class="price-source">stale fallback</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:49%"></div>
+                  <div class="score-bar-fill" style="width:48%"></div>
                 </div>
-                <span class="score-val">49.3</span>
+                <span class="score-val">48.1</span>
               </div>
             </td>
             <td>
@@ -4811,12 +5316,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Gary &amp; Josh Moore / David Egan
             </td>
+            <td class="price-cell">
+              <strong>10/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:48%"></div>
+                  <div class="score-bar-fill" style="width:47%"></div>
                 </div>
-                <span class="score-val">48.5</span>
+                <span class="score-val">47.0</span>
               </div>
             </td>
             <td>
@@ -4836,12 +5344,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Jack Channon / TBC
             </td>
+            <td class="price-cell">
+              <strong>16/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:47%"></div>
+                  <div class="score-bar-fill" style="width:46%"></div>
                 </div>
-                <span class="score-val">47.0</span>
+                <span class="score-val">45.6</span>
               </div>
             </td>
             <td>
@@ -4861,12 +5372,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Michael &amp; David Easterby / Billy Garritty
             </td>
+            <td class="price-cell">
+              <strong>33/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:45%"></div>
+                  <div class="score-bar-fill" style="width:44%"></div>
                 </div>
-                <span class="score-val">45.0</span>
+                <span class="score-val">43.6</span>
               </div>
             </td>
             <td>
@@ -4886,12 +5400,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Tony Coyle &amp; Kaine Wood / Colin Keane
             </td>
+            <td class="price-cell">
+              <strong>25/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:45%"></div>
+                  <div class="score-bar-fill" style="width:43%"></div>
                 </div>
-                <span class="score-val">44.5</span>
+                <span class="score-val">43.1</span>
               </div>
             </td>
             <td>
@@ -4911,12 +5428,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Charles Hills / Jamie Spencer
             </td>
+            <td class="price-cell price-stale">
+              <strong>~18.50/1</strong>
+<br><span class="price-source">stale fallback</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:44%"></div>
+                  <div class="score-bar-fill" style="width:42%"></div>
                 </div>
-                <span class="score-val">43.6</span>
+                <span class="score-val">42.3</span>
               </div>
             </td>
             <td>
@@ -4936,12 +5456,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Ian Williams / TBC
             </td>
+            <td class="price-cell price-stale">
+              <strong>~20/1</strong>
+<br><span class="price-source">stale fallback</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:41%"></div>
+                  <div class="score-bar-fill" style="width:39%"></div>
                 </div>
-                <span class="score-val">40.7</span>
+                <span class="score-val">39.5</span>
               </div>
             </td>
             <td>
@@ -4961,12 +5484,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Ian Williams / TBC
             </td>
+            <td class="price-cell">
+              <strong>50/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:38%"></div>
+                  <div class="score-bar-fill" style="width:36%"></div>
                 </div>
-                <span class="score-val">37.5</span>
+                <span class="score-val">36.4</span>
               </div>
             </td>
             <td>
@@ -4986,6 +5512,9 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Hamad Al Jehani / TBC
             </td>
+            <td class="price-cell price-stale">
+              <strong>~17.50/1</strong>
+<br><span class="price-source">stale fallback</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
@@ -5308,6 +5837,7 @@ a { color: var(--green); }
             <th>#</th>
             <th>Horse</th>
             <th class="hide-xs">Trainer / Jockey</th>
+            <th class="price-cell">Best Price<br><span class="price-source price-header">Odds as of 16:41 BST, source: AK Bets, Bet365, BetGoodwin +2</span></th>
             <th>Score</th>
             <th>Conf</th>
             <th>Rec</th>
@@ -5325,6 +5855,9 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Andrew Balding / Oisin Murphy
             </td>
+            <td class="price-cell">
+              <strong>9/4</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
@@ -5343,20 +5876,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">2</td>
             <td>
-              <div class="horse-name">Ten Carat Harry</div>
+              <div class="horse-name">Andab</div>
               <div class="trainer-jockey hide-xs">
-                Jamie Osborne / Saffie Osborne
+                Joseph Patrick O&#39;Brien / TBC
               </div>
             </td>
             <td class="trainer-jockey">
-              Jamie Osborne / Saffie Osborne
+              Joseph Patrick O&#39;Brien / TBC
             </td>
+            <td class="price-cell price-stale">
+              <strong>~6/1</strong>
+<br><span class="price-source">stale fallback</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:42%"></div>
+                  <div class="score-bar-fill" style="width:43%"></div>
                 </div>
-                <span class="score-val">41.7</span>
+                <span class="score-val">43.3</span>
               </div>
             </td>
             <td>
@@ -5376,12 +5912,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Hamad Al Jehani / James Doyle
             </td>
+            <td class="price-cell">
+              <strong>8/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
                   <div class="score-bar-fill" style="width:41%"></div>
                 </div>
-                <span class="score-val">41.5</span>
+                <span class="score-val">40.8</span>
               </div>
             </td>
             <td>
@@ -5393,20 +5932,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">4</td>
             <td>
-              <div class="horse-name">Andab</div>
+              <div class="horse-name">Ten Carat Harry</div>
               <div class="trainer-jockey hide-xs">
-                Joseph Patrick O&#39;Brien / TBC
+                Jamie Osborne / Saffie Osborne
               </div>
             </td>
             <td class="trainer-jockey">
-              Joseph Patrick O&#39;Brien / TBC
+              Jamie Osborne / Saffie Osborne
             </td>
+            <td class="price-cell">
+              <strong>5/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:39%"></div>
+                  <div class="score-bar-fill" style="width:41%"></div>
                 </div>
-                <span class="score-val">38.8</span>
+                <span class="score-val">40.7</span>
               </div>
             </td>
             <td>
@@ -5426,12 +5968,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Joseph Patrick O&#39;Brien / TBC
             </td>
+            <td class="price-cell">
+              <strong>5/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:35%"></div>
+                  <div class="score-bar-fill" style="width:40%"></div>
                 </div>
-                <span class="score-val">35.1</span>
+                <span class="score-val">39.8</span>
               </div>
             </td>
             <td>
@@ -5451,12 +5996,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Joseph Patrick O&#39;Brien / TBC
             </td>
+            <td class="price-cell price-stale">
+              <strong>~13/2</strong>
+<br><span class="price-source">stale fallback</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:29%"></div>
+                  <div class="score-bar-fill" style="width:34%"></div>
                 </div>
-                <span class="score-val">29.4</span>
+                <span class="score-val">34.4</span>
               </div>
             </td>
             <td>
@@ -5476,12 +6024,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Ed Walker / Kieran Shoemark
             </td>
+            <td class="price-cell">
+              <strong>4/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:23%"></div>
+                  <div class="score-bar-fill" style="width:26%"></div>
                 </div>
-                <span class="score-val">22.6</span>
+                <span class="score-val">26.0</span>
               </div>
             </td>
             <td>
@@ -5493,20 +6044,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">8</td>
             <td>
-              <div class="horse-name">Assaranca</div>
+              <div class="horse-name">Awaken</div>
               <div class="trainer-jockey hide-xs">
-                Richard Hannon / Sean Levey
+                George Boughey / Billy Loughnane
               </div>
             </td>
             <td class="trainer-jockey">
-              Richard Hannon / Sean Levey
+              George Boughey / Billy Loughnane
             </td>
+            <td class="price-cell">
+              <strong>16/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:18%"></div>
+                  <div class="score-bar-fill" style="width:23%"></div>
                 </div>
-                <span class="score-val">17.8</span>
+                <span class="score-val">22.5</span>
               </div>
             </td>
             <td>
@@ -5518,20 +6072,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">9</td>
             <td>
-              <div class="horse-name">Ellusive Butterfly</div>
+              <div class="horse-name">Assaranca</div>
               <div class="trainer-jockey hide-xs">
-                K R Burke / Clifford Lee
+                Richard Hannon / Sean Levey
               </div>
             </td>
             <td class="trainer-jockey">
-              K R Burke / Clifford Lee
+              Richard Hannon / Sean Levey
             </td>
+            <td class="price-cell">
+              <strong>33/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:17%"></div>
+                  <div class="score-bar-fill" style="width:22%"></div>
                 </div>
-                <span class="score-val">16.7</span>
+                <span class="score-val">22.5</span>
               </div>
             </td>
             <td>
@@ -5543,20 +6100,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">10</td>
             <td>
-              <div class="horse-name">Awaken</div>
+              <div class="horse-name">Ellusive Butterfly</div>
               <div class="trainer-jockey hide-xs">
-                George Boughey / Billy Loughnane
+                K R Burke / Clifford Lee
               </div>
             </td>
             <td class="trainer-jockey">
-              George Boughey / Billy Loughnane
+              K R Burke / Clifford Lee
             </td>
+            <td class="price-cell">
+              <strong>12/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:15%"></div>
+                  <div class="score-bar-fill" style="width:19%"></div>
                 </div>
-                <span class="score-val">15.2</span>
+                <span class="score-val">18.7</span>
               </div>
             </td>
             <td>
@@ -5576,12 +6136,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Hugo Palmer / David Probert
             </td>
+            <td class="price-cell">
+              <strong>14/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:10%"></div>
+                  <div class="score-bar-fill" style="width:15%"></div>
                 </div>
-                <span class="score-val">9.9</span>
+                <span class="score-val">14.6</span>
               </div>
             </td>
             <td>
@@ -5601,6 +6164,9 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Ralph Beckett / TBC
             </td>
+            <td class="price-cell price-stale">
+              <strong>~7/1</strong>
+<br><span class="price-source">stale fallback</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
@@ -5707,22 +6273,22 @@ a { color: var(--green); }
       </div>
       <div style="margin-bottom:10px;">
         <div style="font-size:.78rem;font-weight:600;color:var(--green);margin-bottom:5px;">
-          2. Ten Carat Harry
+          2. Andab
         </div>
         <div class="signals-grid">
           <div class="signal-row">
             <span class="signal-label">Class / Rating</span>
             <div class="signal-bar-track">
-              <div class="signal-bar-fill" style="width:55%"></div>
+              <div class="signal-bar-fill" style="width:58%"></div>
             </div>
-            <span class="signal-val">55</span>
+            <span class="signal-val">58</span>
           </div>
           <div class="signal-row">
             <span class="signal-label">Recent Form</span>
             <div class="signal-bar-track">
-              <div class="signal-bar-fill" style="width:60%"></div>
+              <div class="signal-bar-fill" style="width:51%"></div>
             </div>
-            <span class="signal-val">60</span>
+            <span class="signal-val">51</span>
           </div>
           <div class="signal-row">
             <span class="signal-label">Trainer</span>
@@ -5741,9 +6307,9 @@ a { color: var(--green); }
           <div class="signal-row">
             <span class="signal-label">Course &amp; Distance</span>
             <div class="signal-bar-track">
-              <div class="signal-bar-fill" style="width:50%"></div>
+              <div class="signal-bar-fill" style="width:70%"></div>
             </div>
-            <span class="signal-val">50</span>
+            <span class="signal-val">70</span>
           </div>
           <div class="signal-row">
             <span class="signal-label">Going</span>
@@ -5755,9 +6321,9 @@ a { color: var(--green); }
           <div class="signal-row">
             <span class="signal-label">Going Fit</span>
             <div class="signal-bar-track">
-              <div class="signal-bar-fill" style="width:70%"></div>
+              <div class="signal-bar-fill" style="width:58%"></div>
             </div>
-            <span class="signal-val">70</span>
+            <span class="signal-val">58</span>
           </div>
           <div class="signal-row">
             <span class="signal-label">Draw</span>
@@ -5893,7 +6459,7 @@ a { color: var(--green); }
             Stellar Sunrise
           </span>
           <span class="bet-amount">
-            £6.70
+            £2.70
           </span>
         </li>
       </ul>
@@ -5923,6 +6489,7 @@ a { color: var(--green); }
             <th>#</th>
             <th>Horse</th>
             <th class="hide-xs">Trainer / Jockey</th>
+            <th class="price-cell">Best Price<br><span class="price-source price-header">Odds as of 16:41 BST, source: AK Bets, Bet365, BetGoodwin +2</span></th>
             <th>Score</th>
             <th>Conf</th>
             <th>Rec</th>
@@ -5940,6 +6507,9 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Andrew Balding / Oisin Murphy
             </td>
+            <td class="price-cell">
+              <strong>5/2</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
@@ -5966,12 +6536,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Ollie Sangster / TBC
             </td>
+            <td class="price-cell price-stale">
+              <strong>~20.50/1</strong>
+<br><span class="price-source">stale fallback</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:72%"></div>
+                  <div class="score-bar-fill" style="width:70%"></div>
                 </div>
-                <span class="score-val">71.8</span>
+                <span class="score-val">69.8</span>
               </div>
             </td>
             <td>
@@ -5991,12 +6564,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Dylan Cunha / George Wood
             </td>
+            <td class="price-cell">
+              <strong>8/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:69%"></div>
+                  <div class="score-bar-fill" style="width:67%"></div>
                 </div>
-                <span class="score-val">69.2</span>
+                <span class="score-val">67.3</span>
               </div>
             </td>
             <td>
@@ -6016,12 +6592,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               James Fanshawe / George Wood
             </td>
+            <td class="price-cell">
+              <strong>14/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:64%"></div>
+                  <div class="score-bar-fill" style="width:62%"></div>
                 </div>
-                <span class="score-val">64.2</span>
+                <span class="score-val">62.4</span>
               </div>
             </td>
             <td>
@@ -6041,12 +6620,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Tim Easterby / TBC
             </td>
+            <td class="price-cell price-stale">
+              <strong>~19.50/1</strong>
+<br><span class="price-source">stale fallback</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:60%"></div>
+                  <div class="score-bar-fill" style="width:58%"></div>
                 </div>
-                <span class="score-val">60.3</span>
+                <span class="score-val">58.5</span>
               </div>
             </td>
             <td>
@@ -6066,12 +6648,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Richard Hannon / Sean Levey
             </td>
+            <td class="price-cell price-stale">
+              <strong>~18.50/1</strong>
+<br><span class="price-source">stale fallback</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:56%"></div>
+                  <div class="score-bar-fill" style="width:58%"></div>
                 </div>
-                <span class="score-val">56.0</span>
+                <span class="score-val">57.6</span>
               </div>
             </td>
             <td>
@@ -6091,12 +6676,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Daniel &amp; Claire Kubler / Ray Dawson
             </td>
+            <td class="price-cell">
+              <strong>8/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:49%"></div>
+                  <div class="score-bar-fill" style="width:48%"></div>
                 </div>
-                <span class="score-val">49.2</span>
+                <span class="score-val">47.8</span>
               </div>
             </td>
             <td>
@@ -6108,20 +6696,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">8</td>
             <td>
-              <div class="horse-name">Musical Angel</div>
+              <div class="horse-name">Sterling Knight</div>
               <div class="trainer-jockey hide-xs">
-                Simon Dow / David Probert
+                Ed Dunlop / TBC
               </div>
             </td>
             <td class="trainer-jockey">
-              Simon Dow / David Probert
+              Ed Dunlop / TBC
             </td>
+            <td class="price-cell">
+              <strong>14/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:48%"></div>
+                  <div class="score-bar-fill" style="width:47%"></div>
                 </div>
-                <span class="score-val">48.4</span>
+                <span class="score-val">47.4</span>
               </div>
             </td>
             <td>
@@ -6133,20 +6724,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">9</td>
             <td>
-              <div class="horse-name">Sterling Knight</div>
+              <div class="horse-name">Musical Angel</div>
               <div class="trainer-jockey hide-xs">
-                Ed Dunlop / TBC
+                Simon Dow / David Probert
               </div>
             </td>
             <td class="trainer-jockey">
-              Ed Dunlop / TBC
+              Simon Dow / David Probert
             </td>
+            <td class="price-cell">
+              <strong>33/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:48%"></div>
+                  <div class="score-bar-fill" style="width:47%"></div>
                 </div>
-                <span class="score-val">48.4</span>
+                <span class="score-val">47.1</span>
               </div>
             </td>
             <td>
@@ -6166,12 +6760,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Ian Williams / Billy Loughnane
             </td>
+            <td class="price-cell price-stale">
+              <strong>~16.50/1</strong>
+<br><span class="price-source">stale fallback</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:47%"></div>
+                  <div class="score-bar-fill" style="width:45%"></div>
                 </div>
-                <span class="score-val">46.5</span>
+                <span class="score-val">45.2</span>
               </div>
             </td>
             <td>
@@ -6191,12 +6788,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Heather Main / Colin Keane
             </td>
+            <td class="price-cell">
+              <strong>14/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:46%"></div>
+                  <div class="score-bar-fill" style="width:45%"></div>
                 </div>
-                <span class="score-val">46.0</span>
+                <span class="score-val">44.8</span>
               </div>
             </td>
             <td>
@@ -6208,20 +6808,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">12</td>
             <td>
-              <div class="horse-name">Son</div>
+              <div class="horse-name">Arctic Thunder</div>
               <div class="trainer-jockey hide-xs">
-                Tim Easterby / David Allan
+                Ed Walker / Kieran Shoemark
               </div>
             </td>
             <td class="trainer-jockey">
-              Tim Easterby / David Allan
+              Ed Walker / Kieran Shoemark
             </td>
+            <td class="price-cell">
+              <strong>10/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
                   <div class="score-bar-fill" style="width:44%"></div>
                 </div>
-                <span class="score-val">44.3</span>
+                <span class="score-val">44.2</span>
               </div>
             </td>
             <td>
@@ -6233,20 +6836,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">13</td>
             <td>
-              <div class="horse-name">Aurora Majesty</div>
+              <div class="horse-name">Veblen Good</div>
               <div class="trainer-jockey hide-xs">
-                Archie Watson / Luke Morris
+                David O&#39;Meara / Rossa Ryan
               </div>
             </td>
             <td class="trainer-jockey">
-              Archie Watson / Luke Morris
+              David O&#39;Meara / Rossa Ryan
             </td>
+            <td class="price-cell">
+              <strong>20/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:44%"></div>
+                  <div class="score-bar-fill" style="width:43%"></div>
                 </div>
-                <span class="score-val">44.0</span>
+                <span class="score-val">43.0</span>
               </div>
             </td>
             <td>
@@ -6258,20 +6864,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">14</td>
             <td>
-              <div class="horse-name">Veblen Good</div>
+              <div class="horse-name">Son</div>
               <div class="trainer-jockey hide-xs">
-                David O&#39;Meara / Rossa Ryan
+                Tim Easterby / David Allan
               </div>
             </td>
             <td class="trainer-jockey">
-              David O&#39;Meara / Rossa Ryan
+              Tim Easterby / David Allan
             </td>
+            <td class="price-cell">
+              <strong>33/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
                   <div class="score-bar-fill" style="width:43%"></div>
                 </div>
-                <span class="score-val">43.2</span>
+                <span class="score-val">43.0</span>
               </div>
             </td>
             <td>
@@ -6283,20 +6892,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">15</td>
             <td>
-              <div class="horse-name">Arctic Thunder</div>
+              <div class="horse-name">Aurora Majesty</div>
               <div class="trainer-jockey hide-xs">
-                Ed Walker / Kieran Shoemark
+                Archie Watson / Luke Morris
               </div>
             </td>
             <td class="trainer-jockey">
-              Ed Walker / Kieran Shoemark
+              Archie Watson / Luke Morris
             </td>
+            <td class="price-cell">
+              <strong>20/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:43%"></div>
+                  <div class="score-bar-fill" style="width:42%"></div>
                 </div>
-                <span class="score-val">43.0</span>
+                <span class="score-val">41.8</span>
               </div>
             </td>
             <td>
@@ -6316,12 +6928,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Michael &amp; David Easterby / TBC
             </td>
+            <td class="price-cell price-stale">
+              <strong>~17/1</strong>
+<br><span class="price-source">stale fallback</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:43%"></div>
+                  <div class="score-bar-fill" style="width:41%"></div>
                 </div>
-                <span class="score-val">42.5</span>
+                <span class="score-val">41.3</span>
               </div>
             </td>
             <td>
@@ -6341,12 +6956,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               David O&#39;Meara / Jason Watson
             </td>
+            <td class="price-cell">
+              <strong>5/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
                   <div class="score-bar-fill" style="width:41%"></div>
                 </div>
-                <span class="score-val">41.3</span>
+                <span class="score-val">41.2</span>
               </div>
             </td>
             <td>
@@ -6366,12 +6984,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Ian Williams / Billy Loughnane
             </td>
+            <td class="price-cell">
+              <strong>14/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:39%"></div>
+                  <div class="score-bar-fill" style="width:38%"></div>
                 </div>
-                <span class="score-val">39.0</span>
+                <span class="score-val">37.9</span>
               </div>
             </td>
             <td>
@@ -6391,12 +7012,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Kevin Philippart De Foy / David Egan
             </td>
+            <td class="price-cell">
+              <strong>14/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:37%"></div>
+                  <div class="score-bar-fill" style="width:36%"></div>
                 </div>
-                <span class="score-val">37.4</span>
+                <span class="score-val">36.3</span>
               </div>
             </td>
             <td>
@@ -6416,12 +7040,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Michael &amp; David Easterby / Billy Garritty
             </td>
+            <td class="price-cell">
+              <strong>33/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:37%"></div>
+                  <div class="score-bar-fill" style="width:36%"></div>
                 </div>
-                <span class="score-val">36.6</span>
+                <span class="score-val">35.6</span>
               </div>
             </td>
             <td>
@@ -6433,20 +7060,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">21</td>
             <td>
-              <div class="horse-name">Rare Change</div>
+              <div class="horse-name">Sunny Smile</div>
               <div class="trainer-jockey hide-xs">
-                Richard Hughes / Saffie Osborne
+                Hugo Palmer / TBC
               </div>
             </td>
             <td class="trainer-jockey">
-              Richard Hughes / Saffie Osborne
+              Hugo Palmer / TBC
             </td>
+            <td class="price-cell">
+              <strong>25/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:33%"></div>
+                  <div class="score-bar-fill" style="width:34%"></div>
                 </div>
-                <span class="score-val">32.6</span>
+                <span class="score-val">34.1</span>
               </div>
             </td>
             <td>
@@ -6458,20 +7088,23 @@ a { color: var(--green); }
           <tr class="">
             <td class="rank-num">22</td>
             <td>
-              <div class="horse-name">Sunny Smile</div>
+              <div class="horse-name">Rare Change</div>
               <div class="trainer-jockey hide-xs">
-                Hugo Palmer / TBC
+                Richard Hughes / Saffie Osborne
               </div>
             </td>
             <td class="trainer-jockey">
-              Hugo Palmer / TBC
+              Richard Hughes / Saffie Osborne
             </td>
+            <td class="price-cell price-stale">
+              <strong>~20/1</strong>
+<br><span class="price-source">stale fallback</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:31%"></div>
+                  <div class="score-bar-fill" style="width:32%"></div>
                 </div>
-                <span class="score-val">31.3</span>
+                <span class="score-val">32.0</span>
               </div>
             </td>
             <td>
@@ -6491,12 +7124,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Dylan Cunha / TBC
             </td>
+            <td class="price-cell price-stale">
+              <strong>~18/1</strong>
+<br><span class="price-source">stale fallback</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
-                  <div class="score-bar-fill" style="width:30%"></div>
+                  <div class="score-bar-fill" style="width:29%"></div>
                 </div>
-                <span class="score-val">29.9</span>
+                <span class="score-val">29.1</span>
               </div>
             </td>
             <td>
@@ -6516,12 +7152,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Julie Camacho / TBC
             </td>
+            <td class="price-cell price-stale">
+              <strong>~18.50/1</strong>
+<br><span class="price-source">stale fallback</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
                   <div class="score-bar-fill" style="width:25%"></div>
                 </div>
-                <span class="score-val">25.5</span>
+                <span class="score-val">24.6</span>
               </div>
             </td>
             <td>
@@ -6541,12 +7180,15 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Hamad Al Jehani / James Doyle
             </td>
+            <td class="price-cell">
+              <strong>12/1</strong>
+<br><span class="price-source">FanOdds</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
                   <div class="score-bar-fill" style="width:18%"></div>
                 </div>
-                <span class="score-val">18.1</span>
+                <span class="score-val">17.7</span>
               </div>
             </td>
             <td>
@@ -6566,6 +7208,9 @@ a { color: var(--green); }
             <td class="trainer-jockey">
               Hamad Al Jehani / TBC
             </td>
+            <td class="price-cell price-stale">
+              <strong>~15.50/1</strong>
+<br><span class="price-source">stale fallback</span>            </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
                 <div class="score-bar-track">
@@ -6858,7 +7503,7 @@ a { color: var(--green); }
             Dance In The Storm
           </span>
           <span class="bet-amount">
-            £1.20
+            £0.63
           </span>
         </li>
       </ul>
@@ -6868,6 +7513,7 @@ a { color: var(--green); }
   </section>
 
 
+
 <hr class="section-divider">
 <section class="portfolio">
   <h2>📊 Day Portfolio — Full Card</h2>
@@ -6875,15 +7521,15 @@ a { color: var(--green); }
   <div class="portfolio-grid">
     <div class="portfolio-card">
       <h4>Total Stake</h4>
-      <div class="p-val">£17.84</div>
+      <div class="p-val">£8.61</div>
     </div>
     <div class="portfolio-card outsider-portfolio-card">
       <h4>Outsiders <span style="font-weight:400;font-size:.7rem;color:var(--muted)">(separate bankroll)</span></h4>
       <div class="p-val">1 pick</div>
       <div class="p-sub">
-        £1.00 stake ·
-        Win: £17.00 ·
-        Place: £4.62
+        £0.50 stake ·
+        Win: £8.50 ·
+        Place: £2.31
       </div>
     </div>
   </div>
@@ -6907,7 +7553,7 @@ a { color: var(--green); }
           <td>Wild Terrain</td>
           <td>epsom-2026-06-05-1405</td>
           <td>—</td>
-          <td class="amt">£4.28</td>
+          <td class="amt">£2.44</td>
           <td>—</td>
         </tr>
         <tr>
@@ -6923,12 +7569,12 @@ a { color: var(--green); }
           <td>Respond</td>
           <td>epsom-2026-06-05-1515</td>
           <td>—</td>
-          <td class="amt">£0.66</td>
+          <td class="amt">£0.34</td>
           <td>—</td>
         </tr>
         <tr>
           <td><span class="chip rec-PASS">PASS</span></td>
-          <td>Prizeland</td>
+          <td>Amelia Earhart</td>
           <td>epsom-2026-06-05-1600</td>
           <td>—</td>
           <td class="amt">£0.00</td>
@@ -6947,7 +7593,7 @@ a { color: var(--green); }
           <td>Stellar Sunrise</td>
           <td>epsom-2026-06-05-1715</td>
           <td>—</td>
-          <td class="amt">£6.70</td>
+          <td class="amt">£2.70</td>
           <td>—</td>
         </tr>
         <tr>
@@ -6955,7 +7601,7 @@ a { color: var(--green); }
           <td>Dance In The Storm</td>
           <td>epsom-2026-06-05-1750</td>
           <td>—</td>
-          <td class="amt">£1.20</td>
+          <td class="amt">£0.63</td>
           <td>—</td>
         </tr>
       </tbody>
@@ -6966,17 +7612,17 @@ a { color: var(--green); }
       <thead><tr><th>Bet</th><th>Stake</th><th>Est. Return</th></tr></thead>
       <tbody>
         <tr>
-          <td>{&#39;race_id&#39;: &#39;epsom-2026-06-05-1515&#39;, &#39;horse&#39;: &#39;Respond&#39;, &#39;odds_decimal&#39;: 13.5, &#39;model_prob&#39;: 0.0863} / {&#39;race_id&#39;: &#39;epsom-2026-06-05-1715&#39;, &#39;horse&#39;: &#39;Stellar Sunrise&#39;, &#39;odds_decimal&#39;: 7.0, &#39;model_prob&#39;: 0.2577}</td>
+          <td>{&#39;race_id&#39;: &#39;epsom-2026-06-05-1515&#39;, &#39;horse&#39;: &#39;Respond&#39;, &#39;odds_decimal&#39;: 13.5, &#39;model_prob&#39;: 0.0868} / {&#39;race_id&#39;: &#39;epsom-2026-06-05-1715&#39;, &#39;horse&#39;: &#39;Stellar Sunrise&#39;, &#39;odds_decimal&#39;: 7.0, &#39;model_prob&#39;: 0.2356}</td>
           <td class="amt">£0.00</td>
           <td>—</td>
         </tr>
         <tr>
-          <td>{&#39;race_id&#39;: &#39;epsom-2026-06-05-1515&#39;, &#39;horse&#39;: &#39;Respond&#39;, &#39;odds_decimal&#39;: 13.5, &#39;model_prob&#39;: 0.0863} / {&#39;race_id&#39;: &#39;epsom-2026-06-05-1750&#39;, &#39;horse&#39;: &#39;Dance In The Storm&#39;, &#39;odds_decimal&#39;: 17.0, &#39;model_prob&#39;: 0.0813}</td>
+          <td>{&#39;race_id&#39;: &#39;epsom-2026-06-05-1515&#39;, &#39;horse&#39;: &#39;Respond&#39;, &#39;odds_decimal&#39;: 13.5, &#39;model_prob&#39;: 0.0868} / {&#39;race_id&#39;: &#39;epsom-2026-06-05-1750&#39;, &#39;horse&#39;: &#39;Dance In The Storm&#39;, &#39;odds_decimal&#39;: 17.0, &#39;model_prob&#39;: 0.0826}</td>
           <td class="amt">£0.00</td>
           <td>—</td>
         </tr>
         <tr>
-          <td>{&#39;race_id&#39;: &#39;epsom-2026-06-05-1715&#39;, &#39;horse&#39;: &#39;Stellar Sunrise&#39;, &#39;odds_decimal&#39;: 7.0, &#39;model_prob&#39;: 0.2577} / {&#39;race_id&#39;: &#39;epsom-2026-06-05-1750&#39;, &#39;horse&#39;: &#39;Dance In The Storm&#39;, &#39;odds_decimal&#39;: 17.0, &#39;model_prob&#39;: 0.0813}</td>
+          <td>{&#39;race_id&#39;: &#39;epsom-2026-06-05-1715&#39;, &#39;horse&#39;: &#39;Stellar Sunrise&#39;, &#39;odds_decimal&#39;: 7.0, &#39;model_prob&#39;: 0.2356} / {&#39;race_id&#39;: &#39;epsom-2026-06-05-1750&#39;, &#39;horse&#39;: &#39;Dance In The Storm&#39;, &#39;odds_decimal&#39;: 17.0, &#39;model_prob&#39;: 0.0826}</td>
           <td class="amt">£0.00</td>
           <td>—</td>
         </tr>
@@ -6988,7 +7634,7 @@ a { color: var(--green); }
       <thead><tr><th>Bet</th><th>Stake</th><th>Est. Return</th></tr></thead>
       <tbody>
         <tr>
-          <td>{&#39;race_id&#39;: &#39;epsom-2026-06-05-1515&#39;, &#39;horse&#39;: &#39;Respond&#39;, &#39;odds_decimal&#39;: 13.5, &#39;model_prob&#39;: 0.0863} / {&#39;race_id&#39;: &#39;epsom-2026-06-05-1715&#39;, &#39;horse&#39;: &#39;Stellar Sunrise&#39;, &#39;odds_decimal&#39;: 7.0, &#39;model_prob&#39;: 0.2577} / {&#39;race_id&#39;: &#39;epsom-2026-06-05-1750&#39;, &#39;horse&#39;: &#39;Dance In The Storm&#39;, &#39;odds_decimal&#39;: 17.0, &#39;model_prob&#39;: 0.0813}</td>
+          <td>{&#39;race_id&#39;: &#39;epsom-2026-06-05-1515&#39;, &#39;horse&#39;: &#39;Respond&#39;, &#39;odds_decimal&#39;: 13.5, &#39;model_prob&#39;: 0.0868} / {&#39;race_id&#39;: &#39;epsom-2026-06-05-1715&#39;, &#39;horse&#39;: &#39;Stellar Sunrise&#39;, &#39;odds_decimal&#39;: 7.0, &#39;model_prob&#39;: 0.2356} / {&#39;race_id&#39;: &#39;epsom-2026-06-05-1750&#39;, &#39;horse&#39;: &#39;Dance In The Storm&#39;, &#39;odds_decimal&#39;: 17.0, &#39;model_prob&#39;: 0.0826}</td>
           <td class="amt">£0.00</td>
           <td>—</td>
         </tr>
@@ -6999,9 +7645,10 @@ a { color: var(--green); }
 
   </div></section>
 
+
 <footer class="report-footer">
   <p>
-    Race Analysis Plugin v0.1 · Generated 2026-06-03T12:12<br>
+    Race Analysis Plugin v0.1 · Generated 2026-06-04T17:11<br><span class="odds-snapshot">Odds snapshot: 2026-06-04T16:41:23+01:00</span><br>
     For entertainment only · 18+ · Please gamble responsibly ·
     <a href="https://www.gambleaware.org" target="_blank">GambleAware.org</a>
     · <a href="https://www.begambleaware.org" target="_blank">BeGambleAware.org</a>

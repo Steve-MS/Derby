@@ -25,3 +25,41 @@
 - Data pull was 2026-06-02; On Message either declared late or missed by the fetcher.
 - **Impact:** On Message will have NO score in the Ladies Day report (no entry in enrichment files).
 - Action: Flag in report output. Steve should be made aware for transparency.
+
+## 2026-06-05 — Ladies Day footnote injection (Oaks section)
+
+**What:** Surgically edited `outputs/report-2026-06-05.html` — NO regeneration from source data.
+Three footnotes injected into the Oaks (16:00) race block:
+
+1. **⚠️ On Message warning** — amber box between race header and runners table.
+   Text: "Field is 9, not 8. On Message (Ralph Beckett / Hector Crouch, ~25/1) is late-declared, absent from our data feed. No form, no signals, no score."
+2. **🚫 Belinus withdrawal** — same amber box, second item.
+   Text: "Belinus — WITHDRAWN. Refund due on WIN £5 @ 3.5 from bookmaker."
+3. **📈 Sugar Island market-move badge** — small green badge inside the Sugar Island runner row.
+   Text: "Market move: 34.0 → 17–23. Your stake locked at 34.0. Bet is live."
+
+**Pattern established:** All three are raw HTML div/p blocks with inline styles matching existing CSS variables (`--amber-pale`, `--green-pale`, `--green`). No new CSS classes needed. No re-run of `src/report.py` required.
+
+## Learnings
+
+### Late-runner / withdrawal / market-move footnotes (2026-06-05)
+
+**When this happens again** (Derby Day or any future race day):
+
+1. **Late declaration (unscored runner):**
+   - Edit the HTML directly — surgical injection only. Do NOT regenerate if Steve has reviewed picks.
+   - Inject an amber (`background:#fef3e2; border:solid #d68910`) warning box between `.race-header` and `.runners-section`.
+   - Text template: "Field is N+1, not N. '[Horse]' ([Trainer] / [Jockey], ~X/1) is a late entry declared for this race but absent from our data feed. No form, no signals, no score. Treat top pick with awareness that there is one unscored horse in the field."
+   - Comment the HTML block: `<!-- ⚠️ RACE-DAY FOOTNOTES — injected YYYY-MM-DD by Linus -->`
+
+2. **Withdrawal (refund due):**
+   - Add to the same amber footnote box (second `<div>` item with 🚫 icon).
+   - Text template: "[Horse] — WITHDRAWN. Refund due on [bet type] £X @ Y.Y from bookmaker."
+   - Horse does NOT need to appear in the runners table if already absent.
+
+3. **Market steam / stake locked at better price:**
+   - Add a small green badge (`background:#d4edda; border:1px solid #9bcfab`) directly inside the horse's `<td>` in the runners table, below the trainer-jockey div.
+   - Text template: "📈 Market move: OLD → NEW. Your stake locked at OLD. Bet is live."
+
+4. **Never touch the scored data** — picks, scores, signals untouched. Footnotes are cosmetic-only.
+5. **Derby Day**: same pattern applies. Check decisions.md for any last-minute Livingston gate notes before adding footnotes.
