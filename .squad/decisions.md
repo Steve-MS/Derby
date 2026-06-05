@@ -1155,6 +1155,7 @@ Placement: full-width \<tr class="row-trifecta">\ with purple-left-border + \#f6
 - \src/report.py\ — \ender_trifecta_box()\ helper added (not wired to template yet)
 
 ### 2026-06-05: Port Road NR → Triple Double A (16:40 HKJC Handicap swap #2)
+⚠️ **[SUPERSEDED — see 2026-06-05 rusty-port-road-replacement-v2.md below]**
 
 **By:** Rusty (Signal Engineer) & Linus (Reports)
 **What:** Second NR replacement on Ladies Day card. Port Road confirmed non-runner by Steve 15:46 BST; replaced with Triple Double A, an outsider showing OR 80 vs RPR 109 gap, distance-winner badge (D), and Hugo Palmer / Saffie Osborne trainer-jockey combination. Both swaps now live on racecard-2026-06-05.html; footnotes carry both NR notes (Prizeland/Cameo at 16:00 + Port Road/Triple Double A at 16:40).
@@ -1162,11 +1163,72 @@ Placement: full-width \<tr class="row-trifecta">\ with purple-left-border + \#f6
 **Timestamp:** 2026-06-05T16:02:00+01:00
 **Record:** This entry consolidates two linked decisions:
 1. **Rusty (Pick):** .squad/decisions/inbox/rusty-port-road-replacement.md — sourced Triple Double A as replacement, provided full rationale (§2), discarded runners (§4), and action note for Linus (§5).
-2. **Linus (Edit):** .squad/decisions/inbox/linus-port-road-triple-double-a-swap.md — hand-edited outputs/racecard-2026-06-05.html, verified all 10 checks pass, flagged ender_replacement_row() for elevation to src/report.py with ELEVATED priority (two swaps in 90 min establish pattern; third NR swap today triggers hard rule to ship helper before Royal Ascot).
+2. **Linus (Edit):** .squad/decisions/inbox/linus-port-road-triple-double-a-swap.md — hand-edited outputs/racecard-2026-06-05.html, verified all 10 checks pass, flagged ender_replacement_row() for elevation to src/report.py with ELEVATED priority (two swaps in 90 min establish pattern; third NR swap today triggers hard rule to ship helper before Royal Ascot).
 
 **Stale-odds caveat:** Triple Double A odds (~23/1, 24.0 decimal) are 2026-06-02 synthetic estimates. Verify current price at rail before staking.
 
 **Action for Steve:** Print racecard, verify both NR notes in footnotes (Cameo at 16:00, Triple Double A at 16:40), confirm both runners still declared before heading to rail.
 
-**Action for Saul (test coverage):** ender_replacement_row() promotion pending Royal Ascot (HIGH priority). When shipped to src/report.py, must cover: NR badge renders with correct text + inline style, stale-odds caveat div present, special chars HTML-escaped, original horse NOT in output, row-rationale class correctly applied.
+**Action for Saul (test coverage):** ender_replacement_row() promotion pending Royal Ascot (HIGH priority). When shipped to src/report.py, must cover: NR badge renders with correct text + inline style, stale-odds caveat div present, special chars HTML-escaped, original horse NOT in output, row-rationale class correctly applied.
+
+---
+
+## 2026-06-05 — Live-Verified Reset: Ladies Day NR cascade
+
+**Status:** ✅ COMPLETE — 3 NR swaps, live-verified protocol applied throughout, racecard + report rebuilt clean.
+
+### 2026-06-05 16:25: Live verification — Ladies Day card vs live racecards
+**By:** Livingston (Data Eng)
+**What:** Compared `outputs/racecard-2026-06-05.html` against live-verified runners fetched from Sporting Life (corroborated by Sky Sports, Timeform, Racing Post, Betfair). Three remaining races cross-checked: 16:40, 17:15, 17:50.
+**Status:** 2 critical mismatches found — Triple Double A (16:40 NOT in live field), Blue Brother (17:50 NOT in live field)
+**Verification URLs:** Sporting Life 16:40, 17:15, 17:50 — all live-checked 2026-06-05T16:25 BST
+**Key finding:** `market-latest.json` is 2026-06-02 vintage; 11 non-runners declared since. Proposed LIVINGSTON LIVE-RUNNER GATE as hard rule: before Rusty scores or Linus renders, verify all runners against live source within 4h of race-time. Output: `live-runners-YYYY-MM-DD.json` as ground truth.
+**Files touched:** None (verification only)
+**Action:** See rusty-port-road-replacement-v2.md & rusty-blue-brother-replacement.md below
+
+---
+
+### 2026-06-05 16:13: 16:40 HKJC Outsider Replacement — v2 (Port Road NR → Asmen Warrior)
+**By:** Rusty (Signal Eng)
+**What:** Re-picked after Triple Double A confirmed NR by Livingston's live verification. Asmen Warrior live-verified (cloth #15, draw 5, form 262-232, Sporting Life 2026-06-05T16:13 BST). Supersedes triple-double-a v1 decision above.
+**Rationale:** RPR 112 vs OR 88 (24-point gap — widest among outsiders), 5-star Timeform, first-time blinkers, near-miss Windsor form (11 days, same distance), named jockey Silvestre De Sousa
+**Stake:** £0.25 EW at ~20/1 (stale)
+**Status:** ✅ PICK MADE — awaiting Linus hand-edit
+**Files touched:** None yet (awaiting Linus)
+**Process note:** v1 pick (Triple Double A) failed — based on stale enrichment data. v2 pick verified against live Sporting Life racecard only. Hard rule applied: runner-list verification before any NR swap.
+
+---
+
+### 2026-06-05 16:32: 16:40 hot-swap #2 — Triple Double A → Asmen Warrior
+**By:** Linus (Reports)
+**What:** Replaced Triple Double A row in outputs/racecard-2026-06-05.html with Asmen Warrior. Amber NR-replacement styling retained. Footnotes updated to record both NR steps (Port Road → Triple Double A → Asmen Warrior).
+**Status:** ✅ COMPLETED
+**Files touched:** outputs/racecard-2026-06-05.html (1 row + rationale row + footnotes — lines ~486–506, ~517–518)
+**Tech debt elevated:** `render_replacement_row()` helper must be promoted to src/report.py before Royal Ascot (three manual swaps in one afternoon prove pattern). Helper must support runner_verified_source parameter to distinguish stale-price caveat from runner-validity caveat.
+**Stale-price vs runner-validity distinction:** Current merged caveat ("stale odds — verify at rail") assumes runner is valid. This failure proved the distinction matters — horse can be invalid, not just price. Proposed: separate amber divs for (1) stale price, (2) runner not live-verified.
+
+---
+
+### 2026-06-05 16:30: 17:50 Debenhams outsider — Blue Brother NR replacement
+**By:** Rusty (Signal Eng)
+**What:** Arctic Thunder (Ed Walker / Kieran Shoemark, £0.25 EW @ ~20/1). RPR 110 vs OR 84 (26-point gap — widest among non-stale-trap outsiders). D badge (Epsom course winner). TS 102. Form 434-07 (no recent wins — no stale-price trap).
+**Live-verified source:** data/enrichment/live-runners-2026-06-05.json (race 17:50, runner #11, draw 1). Verified against Sporting Life confirmed 16-runner field.
+**Replaces:** Blue Brother (confirmed NR per Livingston — absent from all declarations)
+**Status:** ✅ PICK MADE — awaiting Linus hand-edit
+**Files touched:** None yet (awaiting Linus)
+
+---
+
+### 2026-06-05 16:45: 17:50 swap + report regen — live-verified reset complete
+**By:** Linus (Reports)
+**What:**
+  - Racecard: Blue Brother → Arctic Thunder on 17:50, verification stamp added
+  - Report: Hand-edited (Option B) — Port Road, Triple Double A, Blue Brother blocks replaced; Asmen Warrior, Arctic Thunder blocks inserted; verification stamp added
+  - Verification sweep: every named horse on card confirmed against live-runners-2026-06-05.json (clean sweep, no mismatches beyond already-handled NRs)
+**Status:** ✅ COMPLETED
+**Files touched:** outputs/racecard-2026-06-05.html, outputs/report-2026-06-05.html
+**Verification stamp added to both outputs:**
+> 🟢 Live-verified 2026-06-05 16:25 BST — All runners confirmed against Sporting Life + corroborating sources. Earlier card carried 3 non-runners (Port Road, Triple Double A, Blue Brother) — now replaced. Prices remain 2026-06-02 vintage; verify at the rail.
+**Hard rule confirmed:** live-runner verification before any NR swap. Stale `market-latest.json` is NOT trusted for runner identity.
+**Tech debt ratio:** Third NR swap triggers HARD RULE — `render_replacement_row()` helper in src/report.py must be promoted before Royal Ascot (16–20 Jun 2026). No exceptions.
 

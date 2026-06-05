@@ -11,6 +11,50 @@
   - Accumulator suggestion per day
 - `SIGNAL_LABELS` dict lives at lines ~44-56 of `src/report.py` — add new label whenever Rusty ships a signal.
 
+## 2026-06-05 16:50 — ESCALATION: render_replacement_row() promotion to HARD-RULE priority
+
+**Issue:** Three NR swaps on Ladies Day required manual HTML surgery (hand-editing racecard + report footnotes). Two swaps involved picking invalid replacements (Triple Double A, Blue Brother) that bypassed the stale-odds caveat — the caveat only warns about price, not runner validity.
+
+**Current merged caveat:** "Stale odds — verify at rail" implies the runner is fine but price is uncertain. This is not always true.
+
+**New requirement:** Promote `render_replacement_row()` to public, hardened helper in src/report.py with expanded parameter set:
+- **New param:** `runner_verified_source: str | None`
+  - If supplied (e.g., `"Sporting Life 2026-06-05T16:25 BST"`) → render GREEN ✅ caveat: "Runner live-verified [source]"
+  - If None → render AMBER ⚠️ caveat: "Runner not live-verified — re-check at gate before staking"
+- **Stale-price caveat:** Render SEPARATELY in amber (not merged): "Price ~20/1 from 2026-06-02 enrichment — verify at rail"
+
+**Why:** Distinguishes two failure modes:
+1. Stale price → expected, OK to hedge with stale-odds warning
+2. Stale runner → unexpected, hard-stop risk (horse may not run)
+
+**Implementation:** 
+- Signature: `render_replacement_row(original_horse, replacement_horse, rationale, stale_price, runner_verified_source=None)`
+- Render two separate `<div class="amber-caveat">` blocks if `runner_verified_source is None`, else one `<div class="green-verified">` + one `<div class="amber-caveat">`
+- HTML templates in `src/report.py` ~line 200 (stale-odds caveat template)
+
+**Priority:** HARD-RULE — ship BEFORE Royal Ascot (16–20 Jun 2026). No exceptions. Three manual swaps in one afternoon establishes pattern.
+
+**Blockers:** None (additive parameter, existing CSS stable)
+
+**Test coverage:** Saul owns render_replacement_row() tests (both parameter values + HTML output validation)
+
+---
+
+## 2026-06-05 16:45 — Live-verified reset: Card + Report rebuild complete
+
+**What:** Full hand-edit of outputs/racecard-2026-06-05.html + outputs/report-2026-06-05.html with 2 NR swaps and verification stamps.
+
+**NR swaps:**
+1. 16:40 Triple Double A (NR) → Asmen Warrior (live-verified cloth #15)
+2. 17:50 Blue Brother (NR) → Arctic Thunder (live-verified cloth #11)
+
+**Rebuild approach (Option B):** Hand-edited outsider-pick recommendation blocks; retained field ranking tables as historical audit trail (model's original scoring preserved). Full verification sweep: all named horses on card cross-checked against live-runners-2026-06-05.json — CLEAN, no additional mismatches found.
+
+**Verification stamp added to both outputs:**
+> 🟢 Live-verified 2026-06-05 16:25 BST — All runners confirmed against Sporting Life + corroborating sources. Earlier card carried 3 non-runners (Port Road, Triple Double A, Blue Brother) — now replaced. Prices remain 2026-06-02 vintage; verify at the rail.
+
+---
+
 ## 2026-06-05 PM — Derby Trifecta Box (race-day-eve)
 
 **What:** Produced a hand-assembled Derby trifecta box recommendation on race-day eve for Steve. No `trifecta_box()` helper exists in `src/betting.py` — this was a one-off manual construction from the scoring model. **Flag for future work:** add a `trifecta_box(race_scores, n=4)` helper to `src/betting.py`.
@@ -35,6 +79,28 @@ Rationale: Top-3 cluster is clear (scores 95.0/93.6/85.6), gap to #4 is 5.5 poin
 **Going contingency noted:** If Soft declared Sat morning, Item going_fit collapses 0.95→0.55. In that case, switch to 3-horse box (Benvenuto Cellini, Maltese Cross, Causeway) at £6 total.
 
 ## Learnings
+
+### Live-verified reset — 17:50 Arctic Thunder swap + full report regen (2026-06-05T16:45)
+
+**Pipeline approach:** Option B (hand-edit). Option A (pipeline re-run) not viable on race day — stale enrichment data is the root cause, so re-running the pipeline would reproduce the same NR contamination. Surgical HTML edits to the outsider-pick blocks were the correct call. Gotcha: the report's field-ranking tables legitimately retain Port Road / Triple Double A / Blue Brother as historical model scoring rows — only the actionable recommendation blocks (`outsider-pick` divs) needed replacing.
+
+**Verification stamp is now standard pattern:** Both racecard and report carry a 🟢 live-verified banner. This should be added to every race-day output going forward. Template:
+```
+🟢 Live-verified {DATE} {TIME} BST — All runners confirmed against Sporting Life + corroborating sources. Prices remain {DATE} vintage; verify at the rail.
+```
+
+**`render_replacement_row()` is a HARD RULE now — next race day starts with this work.** Four manual NR swap edits across two files in one afternoon (Cameo, Asmen Warrior, Arctic Thunder in racecard; Asmen Warrior + Arctic Thunder in report) is the definitive threshold. The helper ships before Royal Ascot (16–20 Jun 2026). It must cover: outsider-row swap, main-pick swap, separate stale-price vs runner-validity amber divs, always-emit rationale row, HTML entity escaping. No more hand-edits after this.
+
+### Third NR swap today — `render_replacement_row()` HARD-RULE elevated (2026-06-05T16:32)
+
+**What happened:** A third non-runner hot-swap in a single afternoon (Cameo ~15:13, Triple Double A ~15:58, Asmen Warrior ~16:32). Triple Double A was itself the v1 replacement for Port Road — it too was declared NR, caught by Steve at 16:12 BST. Asmen Warrior (James Owen / Silvestre De Sousa, draw 5, OR 88 / RPR 112, 5-star Timeform, ~20/1 stale) is the confirmed live-verified final pick for the 16:40 HKJC Handicap.
+
+**HARD RULE — `render_replacement_row()` ships before Royal Ascot (16–20 Jun 2026):** Three hand-edits in one afternoon is the threshold. This is no longer a future-work flag — it is a hard delivery requirement. The helper must cover both outsider-row-only swaps and main-pick swaps (see history entry ~15:58 for required signature detail).
+
+**Amber stale-odds caveat needs two-way split:** The current merged amber div ("stale odds — verify at rail") conflates price uncertainty with runner validity. Triple Double A proved these are separate concerns: the horse was invalid, not just the price. Propose splitting into: (1) stale-price caveat; (2) runner-validity caveat with `runner_verified_source` parameter — green div if live-verified, amber div if not. Full proposal in `.squad/decisions/inbox/linus-1640-asmen-warrior-swap.md`.
+
+
+
 
 ### Non-runner hot-swap pattern — when to hand-edit vs regenerate (2026-06-05)
 

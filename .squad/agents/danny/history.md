@@ -28,6 +28,18 @@
 
 - 2026-06-05 (session 5): Midday refresh round. Livingston (11:59 BST) executed market refresh: no material price moves, no new non-runners, prices remain synthetic 2026-06-02. Linus executed Option B regen (timestamp-only, preserving in-day manual work). Synthetic-price tag retained for Ladies Day + Derby Saturday. Market_move signal inert (0% deltas) until live-price ingestion implemented.
 
+- 2026-06-05 16:50 — ESCALATION: Helper promotion `render_replacement_row()` elevated to HARD-RULE priority
+  - **Context:** Three NR swaps on Ladies Day (Port Road → Triple Double A → Asmen Warrior, Blue Brother → Arctic Thunder) with two manual failures (Triple Double A also NR, caught 28min before race). Current merged stale-odds caveat conflates two distinct concerns: stale PRICE vs stale RUNNER.
+  - **Problem:** `render_replacement_row()` currently in `src/report.py` is not generalized enough. Manual swap pattern (Linus hand-edits HTML + footnotes) is proving unsustainable. Three swaps in one afternoon = pattern.
+  - **New requirement:** Promote helper to hardened public API with `runner_verified_source: str | None` parameter:
+    - If `runner_verified_source='Sporting Life 2026-06-05T16:25 BST'` → render green ✅ caveat: "Runner live-verified [source]"
+    - If None → render amber ⚠️ caveat: "Runner not live-verified — re-check at gate"
+    - Stale-price caveat rendered SEPARATELY in amber: "Price ~20/1 from 2026-06-02 enrichment — verify at rail"
+  - **Implementation priority:** HARD-RULE — helper ships BEFORE Royal Ascot (16–20 Jun 2026). No exceptions.
+  - **Blockers:** None (existing HTML/CSS in src/report.py is stable; parameter is additive)
+  - **Handoff:** Linus owns implementation; Saul owns test coverage (render_replacement_row() tests with both parameter values)
+  - **Rationale:** Three manual hot-swaps in one afternoon proves the current manual workflow is error-prone. A hardened helper enables Saturday's Derby race-day pipeline to scale to multiple NR swaps without manual HTML surgery.
+
 - 2026-06-03 (session 4): Resolved v0.5 spec-vs-implementation mismatches in `.squad/decisions/inbox/danny-v05-spec-addendum.md`.
   - `score_market_move(0.024)` stays at 65.5: the piecewise curve itself is coherent; the `~62` anchor was an arithmetic/example error.
   - `score_trainer_14d(0.10)` stays at 50.0: neutral at 10% is defensible and matches the stated 10–12% average-band intent.

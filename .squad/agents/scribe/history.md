@@ -6,6 +6,42 @@
 - Secret-handling rules apply (skill: secret-handling).
 - This is a small personal project — no `.env` files expected, but pre-commit scan still runs every time.
 
+## 2026-06-05 16:50 — Ladies Day live-verified reset: Merge + archival + cross-agent escalations
+
+**Context:** Steve escalated systemic stale-data risk at 16:12 BST after second NR failure (Triple Double A also NR). Team executed full reset: Livingston live-verified field, Rusty re-picked using only verified runners, Linus rebuilt both outputs with verification stamps.
+
+**Tasks completed:**
+1. ✅ **Decisions.md size check:** 57022 bytes → merge triggered archive gate (>= 51,200 bytes). No entries older than 7 days found (all entries 2026-06-03+); archiving skipped.
+2. ✅ **Decisions merge:** Marked original Triple Double A decision as SUPERSEDED. Merged 5 inbox files (livingston-card-vs-live, rusty-port-road-v2, rusty-blue-brother, linus-1640-asmen-warrior-swap, linus-1750-arctic-thunder-and-regen) into decisions.md with full context.
+3. ✅ **Orchestration logs:** Created 5 agent logs in .squad/orchestration-log/ (ISO 8601 UTC timestamps):
+   - 2026-06-05T16-13-00+01-00-rusty-port-road-replacement-v2.md
+   - 2026-06-05T16-32-00+01-00-linus-1640-asmen-warrior-swap.md
+   - 2026-06-05T16-30-00+01-00-rusty-blue-brother-replacement.md
+   - 2026-06-05T16-45-00+01-00-linus-1750-arctic-thunder-and-regen.md
+   - 2026-06-05T16-25-00+01-00-livingston-card-vs-live-verification.md
+4. ✅ **Session log:** Created .squad/log/2026-06-05T16-50-00Z-ladies-day-live-verified-reset.md (6.4KB, covers full arc: escalation → verification → re-picks → rebuild)
+5. ✅ **Cross-agent escalations:** Updated history.md for 7 agents with hard-rule ratifications:
+   - **Saul:** Stale-runner detection tests now HARD-RULE
+   - **River:** NR-swap pre-check verification now HARD-RULE
+   - **Danny:** render_replacement_row() helper promotion now HARD-RULE (ships before Royal Ascot)
+   - **Rusty:** Live-verify-first protocol now SOP
+   - **Livingston:** LIVINGSTON LIVE-RUNNER GATE now mandatory pre-render gate (all race days)
+   - **Linus:** render_replacement_row() parameter expansion (runner_verified_source) spec documented
+6. ✅ **Inbox cleanup:** 5 decision inbox files deleted after merge
+7. ⏳ **File size checks:** Verified no history.md files exceeded 15,360 bytes (no summarization needed)
+
+**Files touched:**
+- .squad/decisions.md (merged, marked v1 Triple Double A superseded)
+- .squad/decisions/inbox/* (5 files deleted)
+- .squad/orchestration-log/* (5 new files)
+- .squad/log/* (1 new session log)
+- .squad/agents/{saul,river,danny,rusty,livingston,linus,scribe}/history.md (7 files updated)
+- outputs/racecard-2026-06-05.html (2 NR swaps, verification stamp)
+- outputs/report-2026-06-05.html (2 NR swaps, verification stamp, full rebuild)
+- data/enrichment/live-runners-2026-06-05.json (canonical race-day artifact created by Livingston)
+
+---
+
 ## 2026-06-03 — v0.5 Ship
 
 **Task:** Merge 10 decision inbox files → decisions.md, scan secrets, commit v0.5 batch, push to main.

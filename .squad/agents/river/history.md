@@ -9,6 +9,42 @@
 - **Race weekend:** Ladies Day Fri 5 Jun 2026 + Derby Day Sat 6 Jun 2026
 - **Today:** 2026-06-03 (Wed) — ~3 days to Derby
 
+## Standing stakes (as of 2026-06-05)
+
+- **Belinus** — WIN £5 @ decimal 3.5 (Friday Oaks) — **WITHDRAWN**, stake pending refund
+- **Sugar Island** — EW £0.25 (Friday Oaks)
+- **Asmen Warrior** — EW £0.25 @ ~20/1 (Ladies Day 16:40 — live-verified, stale price, verify at rail)
+- **Arctic Thunder** — EW £0.25 @ ~20/1 (Ladies Day 17:50 — live-verified, stale price, verify at rail)
+
+---
+
+## 2026-06-05 16:50 — ESCALATION: NR-Swap Pre-Check Hard Rule (Ladies Day live-verified reset)
+
+**HARD RULE RATIFIED:** NR swaps MUST verify replacement against live source (Racing Post / Sporting Life / At The Races) BEFORE Linus hand-edits.
+
+**Failure chain today:**
+1. Port Road (16:40) declared NR early (Steve 15:46 BST)
+2. Rusty picked Triple Double A as replacement (from stale enrichment data)
+3. Triple Double A ALSO NR by race-time (16:25 BST) — caught by Livingston's live check
+4. Blue Brother (17:50) similar — not in live declarations, caught by Livingston sweep
+
+**Root cause:** No verification step existed between Rusty's NR-replacement pick and Linus's hand-edit to racecard. Stale data (market-latest.json 2026-06-02) was trusted for runner identity.
+
+**New protocol (effective 2026-06-05):**
+1. **NR declared** → Rusty sources replacement from live-runners-YYYY-MM-DD.json ONLY (built by Livingston live-verification pass)
+2. **Replacement candidate identified** → Rusty confirms horse is runner #N in live-runners file (double-check via source URL if needed)
+3. **Pick handed to Linus** → Linus receives decision with `live_verified: true` flag + source URL + fetch timestamp
+4. **Linus hand-edits** → racecard reflects live-verified pick; stale-price caveat rendered with runner_verified_source parameter (see Linus escalation)
+
+**If Livingston verification is blocked** (live source unreachable):
+- Status = `blocked`
+- Request Steve to paste declared runners list manually OR accept no EW pick at that time slot
+- NEVER fall back to stale data silently
+
+**Impact:** live-runners-2026-06-05.json is the canonical race-day artifact going forward. Market-latest.json is forbidden for runner-identity purposes; price orientation only.
+
+---
+
 ## Standing stakes (as of 2026-06-03)
 
 - **Belinus** — WIN £5 @ decimal 3.5 (Friday Oaks)

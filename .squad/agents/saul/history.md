@@ -20,6 +20,17 @@
 - No test assertion gaming detected.
 - Noted issues (none blocking): (1) Rusty's decision note incorrectly describes freshness as `exp(-days/365)` — code is correct step-function; (2) `load_trial_data()` return type diverges from Danny's spec signature (nested dict vs list) — self-consistent; (3) No `_clear_caches` test — Saul's own omission.
 
+### 2026-06-05 16:50 — ESCALATION: Stale-runner detection test coverage (Ladies Day NR cascade)
+- **ELEVATED to HARD RULE:** Test coverage gap identified. Current test suite covers stale-price failures (e.g., Zarathos) but NOT stale-runner failures (horse entirely absent from live declared list).
+- **Pattern:** Third NR failure on Ladies Day (Port Road → Triple Double A → Asmen Warrior → Arctic Thunder). Triple Double A v1 and Blue Brother both confirmed non-runners by Livingston's live-verification sweep — pipeline had NO protection against this failure mode.
+- **Action required:** Add test fixtures and assertions for stale-runner detection:
+  - Test case: `test_market_latest_contains_nr_not_in_live_field()` — load live-runners-2026-06-05.json as ground truth, confirm model runner list excludes NRs
+  - Fixtures: Use live-runners-2026-06-05.json (generated today by Livingston) as canonical reference
+  - Coverage: Tests must verify that any horse in enrichment data but absent from live-runners file is flagged and excluded from scoring/output
+  - No partial credit — test must FAIL if a stale NR is present in model output
+- **Related test gaps:** Also verify render_replacement_row() handles runner_verified_source parameter (see Linus escalation below)
+- **Blockers:** River's NR-swap pre-check (see below) will upstream this validation, but Saul's test suite should independently guard against stale-runner leakage
+
 ### 2026-06-05 — v0.5 signal batch tests (market_move, trainer_14d, jt_combo)
 - **77/77 tests passing.** 58 new tests written across 3 files.
 - Initial stubs assumed wrong API (pre-implementation). All three files fully
