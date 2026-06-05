@@ -861,3 +861,53 @@ Same pattern. Before adding pass rationale to tomorrow's card:
 2. For each PASS race, identify the gate from the bet dict or from confidence + edge values visible in the HTML.
 3. For a favourite PASS, always note the short-price / no-value angle explicitly.
 
+---
+
+## 2026-06-05 — 1-pager surgical update — pass-rationale + footnotes
+
+**Agent:** Linus (Reports)  
+**Date:** 2026-06-05T10:33:03+01:00  
+**Status:** ✅ Done — racecard-2026-06-05.html updated
+
+### What happened
+
+This morning's pass-rationale + footnote injections were applied to `outputs/report-2026-06-05.html` (long report, commit fdbd840) but the 1-pager (`outputs/racecard-2026-06-05.html`) was not updated at the same time.
+
+Afternoon patch (2026-06-05) applied the same content to the 1-pager surgically:
+
+1. **4 pass-rationale rows** added after each existing PASS row in the bet slip table:
+   - 13:30 Naana's Shadow — LOW confidence, 18-runner signal disagreement
+   - 14:40 Linwood — LOW confidence, G3 14-runner agreement insufficient
+   - 16:00 Amelia Earhart — LOW confidence, 9/4 favourite no WIN edge + unscored On Message
+   - 16:40 Mister Winston — MED confidence, EW edge below 20% in 29-runner field
+
+2. **3 footnotes block** added between `</table>` and `<footer>`:
+   - ⚠️ On Message (late declaration, unscored, field is 9 not 8)
+   - 🚫 Belinus (WITHDRAWN, pre-card WIN £5 @ 3.5 refund due)
+   - 📈 Sugar Island (market move 34.0 → 17–23, stake locked at 34.0)
+
+3. **Prizeland price** — left as `~33/1 (stale)`. market-latest.json confirms 34.0 / 33/1 sourced from 2026-06-02 form-analysis estimate. No live bookmaker price available.
+
+### Dual-artifact rule (NEW)
+
+> **Any in-day event that changes the long report must ALSO be applied to the 1-pager.**
+
+The two files are independent HTML artifacts. They are not generated from a shared template at race-day injection time. Whenever Linus touches one, he must check and update the other.
+
+### 1-pager format note
+
+The 1-pager is a `<table class="slip">` layout. Pass rationale is injected as:
+```html
+<tr class="row-rationale row-rationale-pass">
+  <td colspan="8"><div class="bet-rationale">⛔ [rationale text]</div></td>
+</tr>
+```
+NOT as `<p class="pass-rationale">` (that's the long report's card-div pattern).
+Existing CSS `.row-rationale td` covers the styling — no new classes needed.
+
+### Files touched
+
+- `outputs/racecard-2026-06-05.html` — surgical edit (pass rationales + footnotes)
+- `.squad/agents/linus/history.md` — dual-artifact learning appended
+- `.squad/skills/bet-pass-rationale/SKILL.md` — 1-pager variant section added
+
