@@ -62,3 +62,11 @@ Implemented `src/equipment.py` and updated `src/scoring.py` to v0.6.
 - **Real move:** Market shows genuine confidence (50–100% inward move), but market_move signal cannot detect it without live mid-race odds.
 - **Note:** This is a data-feed limitation, not a signal bug. Recommend manual note in report: "Sugar Island has moved in overnight market but signal shows no change due to no live odds feed."
 - **Mitigation for future:** Racing Post WebSocket odds would be needed for real-time market_move signal updates (currently blocked).
+
+## 2026-06-05 — Midday Refresh Round: Synthetic-price tag retained
+
+Livingston (11:59 BST): midday market refresh executed. No material price moves (<20% threshold), no new non-runners. **Critical finding:** prices still synthetic, dated 2026-06-02 (no live Betfair API implemented). RP scrape bypasses JS-rendered odds, falls back to enrichment DB.
+
+**Impact on v0.5 signals:** market_move signal returns neutral 50 for all runners (0% Δip detected). This is expected behavior given synthetic prices. Signal will remain inert until live-price ingestion is implemented.
+
+**Synthetic-price tag:** Retained in both racecard and report footers for Ladies Day + Derby Saturday.

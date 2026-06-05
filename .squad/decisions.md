@@ -985,3 +985,50 @@ The Assaranca pick (9/1 = 10.0 decimal) was included under the "roughly 10/1" cl
 - `.squad/agents/linus/history.md` — per-race outsider pattern documented under Learnings
 - `.squad/skills/per-race-outsiders/SKILL.md` — new reusable skill created
 
+---
+
+## 2026-06-05 — Midday Market Refresh Decision Note — 11:59 BST
+
+**Agent:** Livingston (Data Sourcer)  
+**Date:** 2026-06-05T11:59:32+01:00
+
+Midday market refresh executed at 11:59 BST (4 hours before Oaks at 16:00). Files updated; all verification checks passed. **Critical finding:** Prices remain stale/synthetic (dated 2026-06-02) — not live Betfair exchange data.
+
+**Files:**
+- **market-baseline.json** (09:52 gate): 39 KB, 106 runners filtered
+- **market-latest.json** (11:59 refresh): 52.8 KB, 144 runners unfiltered
+- **All 8 Ladies Day races confirmed**: 13:30, 14:05, 14:40, 15:15, 16:00 Oaks, 16:40, 17:15, 17:50
+
+**Price Move Analysis:** No moves >20% detected. All tracked horses (11 in both baseline + latest) showed 0% movement — active bets, passes, outsiders all flat. Horses absent from baseline (non-runners): Prizeland (16:00), Linwood (14:40), Port Road (16:40), Blue Brother (17:50).
+
+**Price Freshness:** **CRITICAL** — Prices are NOT live. RP scrape with `--no-rp-scrape` flag bypasses HTML parsing; RP odds are loaded dynamically by JS, not in SSR HTML. Script falls back to enrichment database (always dated 2026-06-02). No live Betfair/bookmaker price fetcher implemented.
+
+**Recommendation:** Price move signal is inert until live-price ingestion implemented. All moves show 0% until then. Manual price input (CSV override) is only current path to inject live prices pre-race.
+
+**Status:** ✓ Refresh completed. Data structure sound. Prices stale (expected design constraint). Market_move signal will show neutral until live prices available.
+
+---
+
+## 2026-06-05 — Midday Regen Flow Decision: Option B (Timestamp-Only) — 12:05 BST
+
+**Agent:** Linus (Reports)  
+**Date:** 2026-06-05T12:05+01:00  
+**Context:** Livingston delivered a midday market refresh at 11:59:32 BST (market-latest.json, 144 runners, 52.8KB). No material price changes, no new non-runners.
+
+**Decision:** When Livingston's midday refresh shows no material price moves (<20% threshold) and no new runners/non-runners, the correct regen flow is **Option B: surgical timestamp-only edit**. Do NOT invoke `python -m src.report --date YYYY-MM-DD` as it wipes all manual in-day annotations.
+
+**Rationale:** Ladies Day card had significant in-day manual work: footnotes (On Message late declaration, Belinus withdrawal, Sugar Island steam), pass rationale blocks, per-race outsider picks. Full regen destroys this. Since underlying data didn't change, only "freshness" claim of footer was stale. Fix: update three timestamp strings only.
+
+**Timestamp Format:** `Generated YYYY-MM-DD HH:MM BST — prices stale (YYYY-MM-DD synthetic basis), no Betfair API`
+
+Applied to:
+- `racecard-YYYY-MM-DD.html` footer disclaimer paragraph
+- `report-YYYY-MM-DD.html` page header disclaimer
+- `report-YYYY-MM-DD.html` page footer `<footer>` block (removed `<span class="odds-snapshot">` — not applicable)
+
+**Option A Trigger (for future reference):** Use full regen + annotation port only when underlying scored data changes (new signal, weight change, new runners scored, data fix). In that case: regen to temp HTML, port all manual annotations from old file before replacing.
+
+**Files Updated:**
+- `outputs/racecard-2026-06-05.html` — footer timestamp
+- `outputs/report-2026-06-05.html` — header + footer timestamps
+

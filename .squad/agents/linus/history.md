@@ -91,3 +91,104 @@ All 3 prior footnotes (On Message, Belinus, Sugar Island) preserved.
 - Same pattern. Run through each PASS race and name the gate.
 - Check decisions.md for any late Livingston gate notes before adding rationale.
 - If a race was EW-header but PASS in bet-list (inconsistent data like Mister Winston 16:40), write the rationale from the bet-list outcome (PASS) since that's what Steve acted on.
+
+### Dual-artifact update pattern (2026-06-05)
+
+**Key learning:** The 1-pager (`outputs/racecard-YYYY-MM-DD.html`) and the long report (`outputs/report-YYYY-MM-DD.html`) are TWO SEPARATE artifacts. Any in-day event (withdrawal, late entry, market steam, pass-rationale addition) must be applied to BOTH files independently.
+
+- This morning's pass-rationale + footnotes work was applied to the long report (commit fdbd840) but NOT to the 1-pager.
+- The 1-pager was left stale until the afternoon surgical update on 2026-06-05.
+- **Checklist for any future in-day injection:** (1) Edit long report, (2) immediately edit 1-pager with the same content adapted to the compact table format, (3) verify both files before finishing.
+- The 1-pager uses `row-rationale row-rationale-pass` table rows (not `<p class="pass-rationale">`) because it is a table-based layout, not the card-based long report layout.
+
+## 2026-06-05 — Per-race outsider picks injection
+
+**What:** Steve requested one outsider pick per race across all 8 Ladies Day races.
+Added 6 new outsider picks (EW £0.25 each) + 1 "no outsider" entry (Diomed G3) to both artifacts.
+
+### Learnings
+
+#### Per-race outsider picks pattern (2026-06-05, reusable every race day)
+
+**Source:** market-latest.json prices. Mark as "(stale)" if source is "Synthetic from OR/field-size" dated before race day.
+
+**Outsider definition used:**
+- Horse priced ~10/1 or longer (10.0 decimal = 9/1 fractional is borderline — include if it's the longest in the field by a clear margin)
+- Minimum ONE positive signal: market support at price, shortest longshot in field, field-size place-value maths, model rank discrepancy
+- Stake: £0.25 EW standard
+- If no horse qualifies at 10/1+: show a "no outsider" row with 1-line reason
+
+**1-pager placement:**
+- Outsider row goes IMMEDIATELY AFTER the main bet rationale row (same race pair)
+- For PASS races: outsider row goes IMMEDIATELY AFTER the pass rationale row (same race pair)
+- Use **single-row format** (data + rationale in the col-note column) to preserve page fit
+- CSS: `row-outsider` class already handles background; `inline-price price-stale` for stale prices
+- Prefix the col-note rationale with "⚡" for picks, "⛔" for no-pick rows
+- Keep col-note rationale to ~60 chars (fits at print font size in the 63mm column)
+
+**Long report placement:**
+- `<div class="outsider-pick">` goes AFTER the closing `</div>` of `<div class="race-bets">`, INSIDE the `<section class="race-block">`
+- Use existing CSS classes: `.outsider-pick`, `.outsider-pick-header`, `.outsider-meta`, `.outsider-rationale`
+- For "no outsider" races: use inline style `background:#f5f5f5; border-color:#bbb; border-left-color:#999` to visually distinguish
+- Rationale: 2-3 sentences covering: who the main bet is (if any), why this horse at this price, what the EW maths look like
+
+**Stake accounting:**
+- 6 new EW picks × £0.50 = £3.00 added to day total
+- Update 1-pager header "Total outlay" and "Bets" count (each EW = 1 bet in this system)
+- Update long report portfolio card "Total Stake" and outsider card ("N picks / £X stake")
+
+**"No outsider" threshold cases:**
+- Diomed G3 (14:40): entire 14-runner field priced 13/2–8/1. No pick; say so plainly.
+- Surrey Listed (17:15): Assaranca at 9/1 is borderline — include with clear note that it's at the threshold.
+
+**Dual-artifact checklist for future outsider runs:**
+1. Check market-latest.json for each race — list horses ≥ 10/1+
+2. Pick the market-shortest (most market-backed) outsider per race — most defensible single-signal rationale
+3. If G1/G2/G3 field is tight (all ≤ 8/1): declare no pick with reason
+4. 1-pager: insert single-row outsider immediately after each race's rationale row
+5. Long report: insert outsider-pick div at end of each race section
+6. Update stake totals in both files
+7. Mark all synthetic/estimated prices as "(stale)"
+
+## 2026-06-05 — Midday refresh regen (12:05 BST)
+
+**What:** Livingston landed a refreshed market-latest.json at 11:59:32 BST (144 runners, 52.8KB).
+Confirmation: no price moves >20%, no new non-runners, prices remain stale/synthetic (2026-06-02 basis).
+
+**Decision:** Used **Option B** (surgical timestamp-only update). No data changed, so no re-render of picks, scores, signals, outsiders, accumulators, passes, or footnotes was needed or performed.
+
+**Edits made:**
+- `outputs/racecard-2026-06-05.html` line 512: updated disclaimer footer timestamp to "Generated 2026-06-05 12:05 BST — prices stale (2026-06-02 synthetic basis), no Betfair API"
+- `outputs/report-2026-06-05.html` line 739 (page header disclaimer): same timestamp update
+- `outputs/report-2026-06-05.html` line 7753 (page footer): same timestamp update; removed `<span class="odds-snapshot">` since that referred to a now-stale FanOdds snapshot
+
+**Checklist verified post-edit:**
+- 5 active bets present (Wild Terrain EW, Respond WIN, Prizeland EW outsider, Stellar Sunrise WIN, Dance In The Storm WIN)
+- 7 outsider picks present (Rosie Frith, Hickory Lad, Liberty Lane, Prizeland, Port Road, Assaranca, Blue Brother)
+- 4 passes present (Naana's Shadow, Linwood, Amelia Earhart, Mister Winston)
+- 3 footnotes present (On Message, Belinus, Sugar Island)
+- 3 doubles + 1 treble accumulators present
+- Day total stake £11.61 unchanged
+- All stale prices retain `(stale)` tag (9 occurrences on 1-pager, throughout report)
+- Both footers now read "Generated 2026-06-05 12:05 BST — prices stale (2026-06-02 synthetic basis), no Betfair API"
+
+## Learnings
+
+### Midday regen without data change (2026-06-05)
+
+**Rule:** If Livingston's midday refresh shows no material price moves and no new non-runners, use Option B (timestamp-only surgical edit). Do NOT regenerate from src/report.py — it would wipe all manual in-day annotations.
+
+**Trigger test:** Use Option B when ALL of these hold:
+  1. No price move >20% on any staked horse
+  2. No new non-runners since morning gate
+  3. No new declared runners since morning gate
+  4. Prices remain stale/synthetic (no live API)
+
+**Use Option A (surgical port of annotations into fresh regen) only when:** the underlying scored data changes materially (e.g. new signal shipped, weight change by Danny, new runners scored by Livingston).
+
+**Timestamp format adopted (2026-06-05):**
+- 1-pager: `Generated YYYY-MM-DD HH:MM BST — prices stale (YYYY-MM-DD synthetic basis), no Betfair API`
+- Report header + footer: same format
+- Remove `<span class="odds-snapshot">` from report footer when there is no live odds snapshot available
+
+

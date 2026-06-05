@@ -26,6 +26,8 @@
   - v0.6 weight rebalance: existing 15 v0.5 signals × 0.9750; class_rating absorbs −0.0002 rounding overshoot (0.1980 → 0.1978); 16-signal total sums exactly to 1.0000.
   - 4 open questions for Steve (stacking penalty, removal direction, Livingston data reliability, scope Friday+Saturday).
 
+- 2026-06-05 (session 5): Midday refresh round. Livingston (11:59 BST) executed market refresh: no material price moves, no new non-runners, prices remain synthetic 2026-06-02. Linus executed Option B regen (timestamp-only, preserving in-day manual work). Synthetic-price tag retained for Ladies Day + Derby Saturday. Market_move signal inert (0% deltas) until live-price ingestion implemented.
+
 - 2026-06-03 (session 4): Resolved v0.5 spec-vs-implementation mismatches in `.squad/decisions/inbox/danny-v05-spec-addendum.md`.
   - `score_market_move(0.024)` stays at 65.5: the piecewise curve itself is coherent; the `~62` anchor was an arithmetic/example error.
   - `score_trainer_14d(0.10)` stays at 50.0: neutral at 10% is defensible and matches the stated 10–12% average-band intent.
