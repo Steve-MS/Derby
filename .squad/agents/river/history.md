@@ -64,3 +64,14 @@
 
 **Reference:** `.squad/decisions.md` 2026-06-05 PM entry "Derby Trifecta Box: Card Placement & Hybrid Delivery".
 
+## 2026-06-05 15:18 — Ladies Day Racecard: Prizeland NR Swap (Linus)
+
+**Heads-up:** Prizeland confirmed NR (absent from market-baseline.json 09:52 BST, verbal confirmation from Steve 15:02 BST). Linus hand-edited `outputs/racecard-2026-06-05.html` to replace Prizeland row (16:00 Oaks) with Cameo (£0.25 EW @ ~14/1, model #3 vs market #4, Aidan O'Brien trial winner).
+
+**For race-morning runbook (Fri 5 Jun 07:00 BST):**
+- **Print-card verification:** Check printed Ladies Day card shows **Cameo, not Prizeland** in the 16:00 Oaks race block.
+- If printed card shows Prizeland → alert Steve immediately (mid-night re-edit occurred; disregard printed card, use digital racecard instead).
+- Verify amber NR badge + stale-odds caveat visible on digital card for Cameo row.
+
+**Reference:** `.squad/decisions/inbox/linus-prizeland-cameo-swap.md` (merged into decisions.md)
+

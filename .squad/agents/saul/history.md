@@ -84,3 +84,20 @@
 - Output format: ranked horses, combination count, total outlay
 
 **Decision:** `.squad/decisions.md` 2026-06-05 entry "Derby trifecta box + stake convention established".
+
+### 2026-06-05 15:13 — Prizeland NR Replacement (Linus hand-edit + render_replacement_row() flag)
+
+**Flag:** Linus hand-edited `outputs/racecard-2026-06-05.html` to swap Prizeland row (16:00 Oaks, confirmed NR) with Cameo (£0.25 EW @ ~14/1, model #3 vs market #4, trial winner). This is the **second hand-edit in two days** (first: Derby trifecta box 2026-06-05 12:59). Pattern signals **reproducibility problem.**
+
+**Before Royal Ascot:**
+- Add `render_replacement_row(original_horse, replacement, bet, rationale, stale_price, conviction) -> str` to `src/report.py` alongside existing `render_trifecta_box()`.
+- Wire into template pipeline (`.squad/` + Linus ownership).
+- **Test coverage for render_replacement_row():**
+  - NR badge rendered in `col-note` with correct amber inline style (background:#fff8dc; border-left:3pt solid #d99400)
+  - Stale-odds caveat `<div>` present in `row-rationale`
+  - Apostrophe/HTML-entity escaping (esp. trainer names: Aidan O'Brien)
+  - Original horse name absent from rendered output
+  - Decimal odds and stake × odds return column consistent
+  - No regression in other race rows
+
+**Reference:** `.squad/decisions/inbox/linus-prizeland-cameo-swap.md` (merged into decisions.md)
