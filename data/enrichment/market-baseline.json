@@ -3,1072 +3,1022 @@
     "doc": "Market snapshot for Epsom Derby Day 2026-06-05/06. Used by market_move signal: compare baseline vs latest to detect price moves indicating shrewd-money confidence.",
     "anti_fabrication": "Prices from verified sources only: ante_post from Racing Post (2026-06-02), estimated from form context, synthetic from official ratings/field-size.  No bookmaker prices invented.",
     "dates": [
-      "2026-06-05"
+      "2026-06-06"
     ],
     "snapshot_type": "baseline"
   },
-  "generated": "2026-06-05T09:52:35.131023+01:00",
+  "generated": "2026-06-06T07:08:00.227074+01:00",
   "snapshot_type": "baseline",
   "horses": {
-    "Riley Rocks": {
-      "race_date": "2026-06-05",
-      "race_name": "Win With Zyn 3yo Dash Handicap",
+    "Witness Stand": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Tattenham Corner Stakes (Group 3)",
       "off_time": "13:30",
-      "decimal_odds": 16.0,
-      "fractional_odds": "15/1",
-      "implied_probability": 0.0625,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Temple Of Athena": {
-      "race_date": "2026-06-05",
-      "race_name": "Win With Zyn 3yo Dash Handicap",
-      "off_time": "13:30",
-      "decimal_odds": 13.5,
-      "fractional_odds": "12/1",
-      "implied_probability": 0.0741,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Artista": {
-      "race_date": "2026-06-05",
-      "race_name": "Win With Zyn 3yo Dash Handicap",
-      "off_time": "13:30",
-      "decimal_odds": 17.5,
-      "fractional_odds": "16/1",
-      "implied_probability": 0.0571,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Coyy": {
-      "race_date": "2026-06-05",
-      "race_name": "Win With Zyn 3yo Dash Handicap",
-      "off_time": "13:30",
-      "decimal_odds": 17.0,
-      "fractional_odds": "16/1",
-      "implied_probability": 0.0588,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Henrythenate": {
-      "race_date": "2026-06-05",
-      "race_name": "Win With Zyn 3yo Dash Handicap",
-      "off_time": "13:30",
-      "decimal_odds": 15.5,
-      "fractional_odds": "14/1",
-      "implied_probability": 0.0645,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Naana's Shadow": {
-      "race_date": "2026-06-05",
-      "race_name": "Win With Zyn 3yo Dash Handicap",
-      "off_time": "13:30",
-      "decimal_odds": 15.5,
-      "fractional_odds": "14/1",
-      "implied_probability": 0.0645,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Alfa Duplicate": {
-      "race_date": "2026-06-05",
-      "race_name": "Win With Zyn 3yo Dash Handicap",
-      "off_time": "13:30",
-      "decimal_odds": 16.0,
-      "fractional_odds": "15/1",
-      "implied_probability": 0.0625,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Hanney Girl": {
-      "race_date": "2026-06-05",
-      "race_name": "Win With Zyn 3yo Dash Handicap",
-      "off_time": "13:30",
-      "decimal_odds": 16.0,
-      "fractional_odds": "15/1",
-      "implied_probability": 0.0625,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Call Margot": {
-      "race_date": "2026-06-05",
-      "race_name": "Win With Zyn 3yo Dash Handicap",
-      "off_time": "13:30",
-      "decimal_odds": 16.0,
-      "fractional_odds": "15/1",
-      "implied_probability": 0.0625,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "U S S Charleston": {
-      "race_date": "2026-06-05",
-      "race_name": "Win With Zyn 3yo Dash Handicap",
-      "off_time": "13:30",
-      "decimal_odds": 15.5,
-      "fractional_odds": "14/1",
-      "implied_probability": 0.0645,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Proof": {
-      "race_date": "2026-06-05",
-      "race_name": "Win With Zyn 3yo Dash Handicap",
-      "off_time": "13:30",
-      "decimal_odds": 16.0,
-      "fractional_odds": "15/1",
-      "implied_probability": 0.0625,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Rosie Frith": {
-      "race_date": "2026-06-05",
-      "race_name": "Win With Zyn 3yo Dash Handicap",
-      "off_time": "13:30",
-      "decimal_odds": 12.5,
-      "fractional_odds": "11/1",
-      "implied_probability": 0.08,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Chairmanfourtimes": {
-      "race_date": "2026-06-05",
-      "race_name": "Win With Zyn 3yo Dash Handicap",
-      "off_time": "13:30",
-      "decimal_odds": 13.0,
-      "fractional_odds": "12/1",
-      "implied_probability": 0.0769,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Wedonttelllies": {
-      "race_date": "2026-06-05",
-      "race_name": "Win With Zyn 3yo Dash Handicap",
-      "off_time": "13:30",
-      "decimal_odds": 14.5,
-      "fractional_odds": "13/1",
-      "implied_probability": 0.069,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "One And Gone": {
-      "race_date": "2026-06-05",
-      "race_name": "Win With Zyn 3yo Dash Handicap",
-      "off_time": "13:30",
-      "decimal_odds": 15.5,
-      "fractional_odds": "14/1",
-      "implied_probability": 0.0645,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Shes Got A Brother": {
-      "race_date": "2026-06-05",
-      "race_name": "Win With Zyn 3yo Dash Handicap",
-      "off_time": "13:30",
-      "decimal_odds": 14.5,
-      "fractional_odds": "13/1",
-      "implied_probability": 0.069,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "The Bookkeeper": {
-      "race_date": "2026-06-05",
-      "race_name": "Oddschecker British EBF Woodcote Stakes",
-      "off_time": "14:05",
-      "decimal_odds": 15.0,
-      "fractional_odds": "14/1",
-      "implied_probability": 0.0667,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Benefacta": {
-      "race_date": "2026-06-05",
-      "race_name": "Oddschecker British EBF Woodcote Stakes",
-      "off_time": "14:05",
-      "decimal_odds": 18.0,
-      "fractional_odds": "17/1",
-      "implied_probability": 0.0556,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Alpe d'Huez": {
-      "race_date": "2026-06-05",
-      "race_name": "Oddschecker British EBF Woodcote Stakes",
-      "off_time": "14:05",
-      "decimal_odds": 16.0,
-      "fractional_odds": "15/1",
-      "implied_probability": 0.0625,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Dandyman Dan": {
-      "race_date": "2026-06-05",
-      "race_name": "Oddschecker British EBF Woodcote Stakes",
-      "off_time": "14:05",
-      "decimal_odds": 14.0,
-      "fractional_odds": "13/1",
-      "implied_probability": 0.0714,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Rlasthope": {
-      "race_date": "2026-06-05",
-      "race_name": "Oddschecker British EBF Woodcote Stakes",
-      "off_time": "14:05",
-      "decimal_odds": 13.0,
-      "fractional_odds": "12/1",
-      "implied_probability": 0.0769,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Hickory Lad": {
-      "race_date": "2026-06-05",
-      "race_name": "Oddschecker British EBF Woodcote Stakes",
-      "off_time": "14:05",
-      "decimal_odds": 12.5,
-      "fractional_odds": "11/1",
-      "implied_probability": 0.08,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "El Lambo": {
-      "race_date": "2026-06-05",
-      "race_name": "Oddschecker British EBF Woodcote Stakes",
-      "off_time": "14:05",
-      "decimal_odds": 16.5,
-      "fractional_odds": "15/1",
-      "implied_probability": 0.0606,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Ardad Steve": {
-      "race_date": "2026-06-05",
-      "race_name": "Oddschecker British EBF Woodcote Stakes",
-      "off_time": "14:05",
-      "decimal_odds": 14.5,
-      "fractional_odds": "13/1",
-      "implied_probability": 0.069,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Romidijo": {
-      "race_date": "2026-06-05",
-      "race_name": "Oddschecker British EBF Woodcote Stakes",
-      "off_time": "14:05",
-      "decimal_odds": 15.5,
-      "fractional_odds": "14/1",
-      "implied_probability": 0.0645,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Wild Terrain": {
-      "race_date": "2026-06-05",
-      "race_name": "Oddschecker British EBF Woodcote Stakes",
-      "off_time": "14:05",
-      "decimal_odds": 15.0,
-      "fractional_odds": "14/1",
-      "implied_probability": 0.0667,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Social Spirit": {
-      "race_date": "2026-06-05",
-      "race_name": "Oddschecker British EBF Woodcote Stakes",
-      "off_time": "14:05",
-      "decimal_odds": 14.5,
-      "fractional_odds": "13/1",
-      "implied_probability": 0.069,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Time And Effort": {
-      "race_date": "2026-06-05",
-      "race_name": "Oddschecker British EBF Woodcote Stakes",
-      "off_time": "14:05",
-      "decimal_odds": 18.0,
-      "fractional_odds": "17/1",
-      "implied_probability": 0.0556,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Havana Flash": {
-      "race_date": "2026-06-05",
-      "race_name": "Oddschecker British EBF Woodcote Stakes",
-      "off_time": "14:05",
-      "decimal_odds": 18.0,
-      "fractional_odds": "17/1",
-      "implied_probability": 0.0556,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Possessive": {
-      "race_date": "2026-06-05",
-      "race_name": "Oddschecker British EBF Woodcote Stakes",
-      "off_time": "14:05",
-      "decimal_odds": 13.0,
-      "fractional_odds": "12/1",
-      "implied_probability": 0.0769,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Persica": {
-      "race_date": "2026-06-05",
-      "race_name": "Betfred Diomed Stakes (Group 3)",
-      "off_time": "14:40",
-      "decimal_odds": 7.5,
-      "fractional_odds": "13/2",
-      "implied_probability": 0.1333,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Boiling Point": {
-      "race_date": "2026-06-05",
-      "race_name": "Betfred Diomed Stakes (Group 3)",
-      "off_time": "14:40",
-      "decimal_odds": 7.5,
-      "fractional_odds": "13/2",
-      "implied_probability": 0.1333,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Ice Max": {
-      "race_date": "2026-06-05",
-      "race_name": "Betfred Diomed Stakes (Group 3)",
-      "off_time": "14:40",
       "decimal_odds": 8.0,
       "fractional_odds": "7/1",
       "implied_probability": 0.125,
       "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
     },
-    "Skukuza": {
-      "race_date": "2026-06-05",
-      "race_name": "Betfred Diomed Stakes (Group 3)",
-      "off_time": "14:40",
-      "decimal_odds": 8.0,
-      "fractional_odds": "7/1",
-      "implied_probability": 0.125,
+    "Golden Mind": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Tattenham Corner Stakes (Group 3)",
+      "off_time": "13:30",
+      "decimal_odds": 8.5,
+      "fractional_odds": "15/2",
+      "implied_probability": 0.1176,
       "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
     },
-    "Qirat": {
-      "race_date": "2026-06-05",
-      "race_name": "Betfred Diomed Stakes (Group 3)",
-      "off_time": "14:40",
+    "Alcantor": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Tattenham Corner Stakes (Group 3)",
+      "off_time": "13:30",
       "decimal_odds": 7.5,
       "fractional_odds": "13/2",
       "implied_probability": 0.1333,
       "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
     },
-    "Seagulls Eleven": {
-      "race_date": "2026-06-05",
-      "race_name": "Betfred Diomed Stakes (Group 3)",
-      "off_time": "14:40",
+    "Never So Brave": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Tattenham Corner Stakes (Group 3)",
+      "off_time": "13:30",
       "decimal_odds": 7.5,
       "fractional_odds": "13/2",
       "implied_probability": 0.1333,
       "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
     },
-    "Royal Playwright": {
-      "race_date": "2026-06-05",
-      "race_name": "Betfred Diomed Stakes (Group 3)",
-      "off_time": "14:40",
+    "Poet Master": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Tattenham Corner Stakes (Group 3)",
+      "off_time": "13:30",
       "decimal_odds": 8.0,
       "fractional_odds": "7/1",
       "implied_probability": 0.125,
       "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
     },
-    "Chancellor": {
-      "race_date": "2026-06-05",
-      "race_name": "Betfred Diomed Stakes (Group 3)",
-      "off_time": "14:40",
+    "Ten Bob Tony": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Tattenham Corner Stakes (Group 3)",
+      "off_time": "13:30",
       "decimal_odds": 8.0,
       "fractional_odds": "7/1",
       "implied_probability": 0.125,
       "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
     },
-    "Dhahabi": {
-      "race_date": "2026-06-05",
-      "race_name": "Betfred Nifty 50 Handicap",
-      "off_time": "15:15",
-      "decimal_odds": 14.5,
-      "fractional_odds": "13/1",
-      "implied_probability": 0.069,
+    "Chicago Critic": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Tattenham Corner Stakes (Group 3)",
+      "off_time": "13:30",
+      "decimal_odds": 8.0,
+      "fractional_odds": "7/1",
+      "implied_probability": 0.125,
       "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
     },
-    "Liberty Lane": {
-      "race_date": "2026-06-05",
-      "race_name": "Betfred Nifty 50 Handicap",
-      "off_time": "15:15",
-      "decimal_odds": 12.5,
-      "fractional_odds": "11/1",
-      "implied_probability": 0.08,
+    "Balmacara": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Tattenham Corner Stakes (Group 3)",
+      "off_time": "13:30",
+      "decimal_odds": 8.0,
+      "fractional_odds": "7/1",
+      "implied_probability": 0.125,
       "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
     },
-    "Have Secret": {
-      "race_date": "2026-06-05",
-      "race_name": "Betfred Nifty 50 Handicap",
-      "off_time": "15:15",
-      "decimal_odds": 15.5,
-      "fractional_odds": "14/1",
-      "implied_probability": 0.0645,
+    "Sparks Fly": {
+      "race_date": "2026-06-06",
+      "race_name": "Princess Elizabeth Stakes (Group 3)",
+      "off_time": "14:05",
+      "decimal_odds": 7.0,
+      "fractional_odds": "6/1",
+      "implied_probability": 0.1429,
       "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
     },
-    "King's Code": {
-      "race_date": "2026-06-05",
-      "race_name": "Betfred Nifty 50 Handicap",
-      "off_time": "15:15",
-      "decimal_odds": 15.0,
-      "fractional_odds": "14/1",
-      "implied_probability": 0.0667,
+    "Princess Child": {
+      "race_date": "2026-06-06",
+      "race_name": "Princess Elizabeth Stakes (Group 3)",
+      "off_time": "14:05",
+      "decimal_odds": 7.5,
+      "fractional_odds": "13/2",
+      "implied_probability": 0.1333,
       "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
     },
-    "Beylerbeyi": {
-      "race_date": "2026-06-05",
-      "race_name": "Betfred Nifty 50 Handicap",
-      "off_time": "15:15",
-      "decimal_odds": 14.0,
-      "fractional_odds": "13/1",
-      "implied_probability": 0.0714,
+    "Arisaig": {
+      "race_date": "2026-06-06",
+      "race_name": "Princess Elizabeth Stakes (Group 3)",
+      "off_time": "14:05",
+      "decimal_odds": 8.0,
+      "fractional_odds": "7/1",
+      "implied_probability": 0.125,
       "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
     },
-    "Alpha Crucis": {
-      "race_date": "2026-06-05",
-      "race_name": "HKJC World Pool Handicap",
-      "off_time": "16:40",
-      "decimal_odds": 20.0,
-      "fractional_odds": "19/1",
-      "implied_probability": 0.05,
+    "Love Dynasty": {
+      "race_date": "2026-06-06",
+      "race_name": "Princess Elizabeth Stakes (Group 3)",
+      "off_time": "14:05",
+      "decimal_odds": 8.5,
+      "fractional_odds": "15/2",
+      "implied_probability": 0.1176,
       "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
     },
-    "Bolster": {
-      "race_date": "2026-06-05",
-      "race_name": "Betfred Nifty 50 Handicap",
-      "off_time": "15:15",
-      "decimal_odds": 13.0,
-      "fractional_odds": "12/1",
-      "implied_probability": 0.0769,
+    "Betty Clover": {
+      "race_date": "2026-06-06",
+      "race_name": "Princess Elizabeth Stakes (Group 3)",
+      "off_time": "14:05",
+      "decimal_odds": 8.5,
+      "fractional_odds": "15/2",
+      "implied_probability": 0.1176,
       "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
     },
-    "Auld Toon Loon": {
-      "race_date": "2026-06-05",
-      "race_name": "Betfred Nifty 50 Handicap",
-      "off_time": "15:15",
-      "decimal_odds": 15.0,
-      "fractional_odds": "14/1",
-      "implied_probability": 0.0667,
+    "Shes Perfect": {
+      "race_date": "2026-06-06",
+      "race_name": "Princess Elizabeth Stakes (Group 3)",
+      "off_time": "14:05",
+      "decimal_odds": 7.0,
+      "fractional_odds": "6/1",
+      "implied_probability": 0.1429,
       "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
     },
-    "Let's Dream": {
-      "race_date": "2026-06-05",
-      "race_name": "Betfred Nifty 50 Handicap",
-      "off_time": "15:15",
-      "decimal_odds": 16.0,
-      "fractional_odds": "15/1",
-      "implied_probability": 0.0625,
+    "Pina Sonata": {
+      "race_date": "2026-06-06",
+      "race_name": "Princess Elizabeth Stakes (Group 3)",
+      "off_time": "14:05",
+      "decimal_odds": 8.0,
+      "fractional_odds": "7/1",
+      "implied_probability": 0.125,
       "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
     },
-    "Hand Of God": {
-      "race_date": "2026-06-05",
-      "race_name": "Betfred Nifty 50 Handicap",
-      "off_time": "15:15",
-      "decimal_odds": 14.0,
-      "fractional_odds": "13/1",
-      "implied_probability": 0.0714,
+    "Breckenbrough": {
+      "race_date": "2026-06-06",
+      "race_name": "Princess Elizabeth Stakes (Group 3)",
+      "off_time": "14:05",
+      "decimal_odds": 8.0,
+      "fractional_odds": "7/1",
+      "implied_probability": 0.125,
       "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
     },
-    "Spoken Truth": {
-      "race_date": "2026-06-05",
-      "race_name": "Betfred Nifty 50 Handicap",
-      "off_time": "15:15",
-      "decimal_odds": 17.5,
-      "fractional_odds": "16/1",
-      "implied_probability": 0.0571,
+    "Pacific Mission": {
+      "race_date": "2026-06-06",
+      "race_name": "Princess Elizabeth Stakes (Group 3)",
+      "off_time": "14:05",
+      "decimal_odds": 7.5,
+      "fractional_odds": "13/2",
+      "implied_probability": 0.1333,
       "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
     },
-    "Celeborn": {
-      "race_date": "2026-06-05",
-      "race_name": "HKJC World Pool Handicap",
-      "off_time": "16:40",
-      "decimal_odds": 21.0,
-      "fractional_odds": "20/1",
-      "implied_probability": 0.0476,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
+    "Lambourn": {
+      "race_date": "2026-06-06",
+      "race_name": "Coolmore Coronation Cup (Group 1)",
+      "off_time": "14:40",
+      "decimal_odds": 3.0,
+      "fractional_odds": "2/1",
+      "implied_probability": 0.3333,
+      "source": "Racing Post ante-post (captured 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
     },
-    "Great David": {
-      "race_date": "2026-06-05",
-      "race_name": "Betfred Nifty 50 Handicap",
-      "off_time": "15:15",
-      "decimal_odds": 14.5,
-      "fractional_odds": "13/1",
-      "implied_probability": 0.069,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Tycoon": {
-      "race_date": "2026-06-05",
-      "race_name": "Betfred Nifty 50 Handicap",
-      "off_time": "15:15",
-      "decimal_odds": 15.5,
-      "fractional_odds": "14/1",
-      "implied_probability": 0.0645,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Quai De Bethune": {
-      "race_date": "2026-06-05",
-      "race_name": "Betfred Nifty 50 Handicap",
-      "off_time": "15:15",
-      "decimal_odds": 14.5,
-      "fractional_odds": "13/1",
-      "implied_probability": 0.069,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Sallaal": {
-      "race_date": "2026-06-05",
-      "race_name": "Betfred Nifty 50 Handicap",
-      "off_time": "15:15",
-      "decimal_odds": 13.0,
-      "fractional_odds": "12/1",
-      "implied_probability": 0.0769,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Ammes": {
-      "race_date": "2026-06-05",
-      "race_name": "Betfred Nifty 50 Handicap",
-      "off_time": "15:15",
-      "decimal_odds": 16.0,
-      "fractional_odds": "15/1",
-      "implied_probability": 0.0625,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Respond": {
-      "race_date": "2026-06-05",
-      "race_name": "Betfred Nifty 50 Handicap",
-      "off_time": "15:15",
-      "decimal_odds": 13.5,
-      "fractional_odds": "12/1",
-      "implied_probability": 0.0741,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Amelia Earhart": {
-      "race_date": "2026-06-05",
-      "race_name": "Betfred Oaks (Investec Oaks, Group 1, Fillies' Classic)",
-      "off_time": "16:00",
+    "Jan Brueghel": {
+      "race_date": "2026-06-06",
+      "race_name": "Coolmore Coronation Cup (Group 1)",
+      "off_time": "14:40",
       "decimal_odds": 3.5,
       "fractional_odds": "5/2",
       "implied_probability": 0.2857,
       "source": "Racing Post ante-post (captured 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
     },
-    "Legacy Link": {
-      "race_date": "2026-06-05",
-      "race_name": "Betfred Oaks (Investec Oaks, Group 1, Fillies' Classic)",
-      "off_time": "16:00",
-      "decimal_odds": 6.0,
-      "fractional_odds": "5/1",
-      "implied_probability": 0.1667,
+    "Calandagan": {
+      "race_date": "2026-06-06",
+      "race_name": "Coolmore Coronation Cup (Group 1)",
+      "off_time": "14:40",
+      "decimal_odds": 2.5,
+      "fractional_odds": "6/4",
+      "implied_probability": 0.4,
       "source": "Racing Post ante-post (captured 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
     },
-    "Venetian Lace": {
-      "race_date": "2026-06-05",
-      "race_name": "Betfred Oaks (Investec Oaks, Group 1, Fillies' Classic)",
+    "Convergent": {
+      "race_date": "2026-06-06",
+      "race_name": "Coolmore Coronation Cup (Group 1)",
+      "off_time": "14:40",
+      "decimal_odds": 11.0,
+      "fractional_odds": "10/1",
+      "implied_probability": 0.0909,
+      "source": "Estimated by form-analysis (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Bay City Roller": {
+      "race_date": "2026-06-06",
+      "race_name": "Coolmore Coronation Cup (Group 1)",
+      "off_time": "14:40",
+      "decimal_odds": 9.0,
+      "fractional_odds": "8/1",
+      "implied_probability": 0.1111,
+      "source": "Estimated by form-analysis (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Illinois": {
+      "race_date": "2026-06-06",
+      "race_name": "Coolmore Coronation Cup (Group 1)",
+      "off_time": "14:40",
+      "decimal_odds": 21.0,
+      "fractional_odds": "20/1",
+      "implied_probability": 0.0476,
+      "source": "Estimated by form-analysis (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Brazen Bolt": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "off_time": "15:15",
+      "decimal_odds": 26.0,
+      "fractional_odds": "25/1",
+      "implied_probability": 0.0385,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Dream Composer": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "off_time": "15:15",
+      "decimal_odds": 26.5,
+      "fractional_odds": "25/1",
+      "implied_probability": 0.0377,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Emperor Spirit": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "off_time": "15:15",
+      "decimal_odds": 26.5,
+      "fractional_odds": "25/1",
+      "implied_probability": 0.0377,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Vintage Clarets": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "off_time": "15:15",
+      "decimal_odds": 27.0,
+      "fractional_odds": "26/1",
+      "implied_probability": 0.037,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Democracy Dilemma": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "off_time": "15:15",
+      "decimal_odds": 21.5,
+      "fractional_odds": "20/1",
+      "implied_probability": 0.0465,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Rhythm N Hooves": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "off_time": "15:15",
+      "decimal_odds": 26.5,
+      "fractional_odds": "25/1",
+      "implied_probability": 0.0377,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Another Baar": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "off_time": "15:15",
+      "decimal_odds": 22.0,
+      "fractional_odds": "21/1",
+      "implied_probability": 0.0455,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Almaty Star": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "off_time": "15:15",
+      "decimal_odds": 27.0,
+      "fractional_odds": "26/1",
+      "implied_probability": 0.037,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Partisan Hero": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "off_time": "17:55",
+      "decimal_odds": 18.5,
+      "fractional_odds": "17/1",
+      "implied_probability": 0.0541,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Betsen": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "off_time": "15:15",
+      "decimal_odds": 26.0,
+      "fractional_odds": "25/1",
+      "implied_probability": 0.0385,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Rogue Enforcer": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "off_time": "15:15",
+      "decimal_odds": 24.0,
+      "fractional_odds": "23/1",
+      "implied_probability": 0.0417,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "King Of Light": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "off_time": "15:15",
+      "decimal_odds": 24.0,
+      "fractional_odds": "23/1",
+      "implied_probability": 0.0417,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Cindy Lou Who": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "off_time": "15:15",
+      "decimal_odds": 23.0,
+      "fractional_odds": "22/1",
+      "implied_probability": 0.0435,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Dyonisos": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "off_time": "15:15",
+      "decimal_odds": 26.0,
+      "fractional_odds": "25/1",
+      "implied_probability": 0.0385,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Ziggy's Triton": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "off_time": "15:15",
+      "decimal_odds": 24.5,
+      "fractional_odds": "24/1",
+      "implied_probability": 0.0408,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Stormy Impact": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "off_time": "17:55",
+      "decimal_odds": 19.5,
+      "fractional_odds": "18/1",
+      "implied_probability": 0.0513,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Lexington Blitz": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "off_time": "15:15",
+      "decimal_odds": 22.0,
+      "fractional_odds": "21/1",
+      "implied_probability": 0.0455,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Star Chorus": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "off_time": "17:55",
+      "decimal_odds": 21.0,
+      "fractional_odds": "20/1",
+      "implied_probability": 0.0476,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Kinswoman": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "off_time": "15:15",
+      "decimal_odds": 24.0,
+      "fractional_odds": "23/1",
+      "implied_probability": 0.0417,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Arklow Lad": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "off_time": "15:15",
+      "decimal_odds": 26.0,
+      "fractional_odds": "25/1",
+      "implied_probability": 0.0385,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Eclairage": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "off_time": "15:15",
+      "decimal_odds": 23.5,
+      "fractional_odds": "22/1",
+      "implied_probability": 0.0426,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Benvenuto Cellini": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Derby (Group 1, Colts & Fillies Classic)",
+      "off_time": "16:00",
+      "decimal_odds": 3.25,
+      "fractional_odds": "9/4",
+      "implied_probability": 0.3077,
+      "source": "Racing Post ante-post (captured 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Item": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Derby (Group 1, Colts & Fillies Classic)",
+      "off_time": "16:00",
+      "decimal_odds": 5.0,
+      "fractional_odds": "4/1",
+      "implied_probability": 0.2,
+      "source": "Racing Post ante-post (captured 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Ancient Egypt": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Derby (Group 1, Colts & Fillies Classic)",
+      "off_time": "16:00",
+      "decimal_odds": 17.0,
+      "fractional_odds": "16/1",
+      "implied_probability": 0.0588,
+      "source": "Racing Post ante-post (captured 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "A Taste of Glory": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Derby (Group 1, Colts & Fillies Classic)",
+      "off_time": "16:00",
+      "decimal_odds": 51.0,
+      "fractional_odds": "50/1",
+      "implied_probability": 0.0196,
+      "source": "Estimated by form-analysis (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Balzac": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Derby (Group 1, Colts & Fillies Classic)",
+      "off_time": "16:00",
+      "decimal_odds": 41.0,
+      "fractional_odds": "40/1",
+      "implied_probability": 0.0244,
+      "source": "Estimated by form-analysis (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Bay Of Brilliance": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Derby (Group 1, Colts & Fillies Classic)",
+      "off_time": "16:00",
+      "decimal_odds": 21.0,
+      "fractional_odds": "20/1",
+      "implied_probability": 0.0476,
+      "source": "Estimated by form-analysis (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Christmas Day": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Derby (Group 1, Colts & Fillies Classic)",
+      "off_time": "16:00",
+      "decimal_odds": 15.0,
+      "fractional_odds": "14/1",
+      "implied_probability": 0.0667,
+      "source": "Estimated by form-analysis (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "James J Braddock": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Derby (Group 1, Colts & Fillies Classic)",
       "off_time": "16:00",
       "decimal_odds": 11.0,
       "fractional_odds": "10/1",
       "implied_probability": 0.0909,
       "source": "Racing Post ante-post (captured 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
     },
-    "Thundering On": {
-      "race_date": "2026-06-05",
-      "race_name": "Betfred Oaks (Investec Oaks, Group 1, Fillies' Classic)",
+    "Maltese Cross": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Derby (Group 1, Colts & Fillies Classic)",
       "off_time": "16:00",
-      "decimal_odds": 21.0,
-      "fractional_odds": "20/1",
-      "implied_probability": 0.0476,
-      "source": "Estimated by form-analysis (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Cameo": {
-      "race_date": "2026-06-05",
-      "race_name": "Betfred Oaks (Investec Oaks, Group 1, Fillies' Classic)",
-      "off_time": "16:00",
-      "decimal_odds": 15.0,
-      "fractional_odds": "14/1",
-      "implied_probability": 0.0667,
+      "decimal_odds": 9.0,
+      "fractional_odds": "8/1",
+      "implied_probability": 0.1111,
       "source": "Racing Post ante-post (captured 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
     },
-    "A La Prochaine": {
-      "race_date": "2026-06-05",
-      "race_name": "Betfred Oaks (Investec Oaks, Group 1, Fillies' Classic)",
+    "Pierre Bonnard": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Derby (Group 1, Colts & Fillies Classic)",
       "off_time": "16:00",
       "decimal_odds": 17.0,
       "fractional_odds": "16/1",
       "implied_probability": 0.0588,
       "source": "Estimated by form-analysis (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
     },
-    "K Sarra": {
-      "race_date": "2026-06-05",
-      "race_name": "Betfred Oaks (Investec Oaks, Group 1, Fillies' Classic)",
+    "Action": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Derby (Group 1, Colts & Fillies Classic)",
       "off_time": "16:00",
-      "decimal_odds": 26.0,
-      "fractional_odds": "25/1",
-      "implied_probability": 0.0385,
+      "decimal_odds": 13.0,
+      "fractional_odds": "12/1",
+      "implied_probability": 0.0769,
       "source": "Estimated by form-analysis (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
     },
-    "Sugar Island": {
-      "race_date": "2026-06-05",
-      "race_name": "Betfred Oaks (Investec Oaks, Group 1, Fillies' Classic)",
+    "Alderman": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Derby (Group 1, Colts & Fillies Classic)",
       "off_time": "16:00",
-      "decimal_odds": 34.0,
-      "fractional_odds": "33/1",
-      "implied_probability": 0.0294,
+      "decimal_odds": 101.0,
+      "fractional_odds": "100/1",
+      "implied_probability": 0.0099,
       "source": "Estimated by form-analysis (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
     },
-    "Popmaster": {
-      "race_date": "2026-06-05",
-      "race_name": "HKJC World Pool Handicap",
+    "Poker": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Derby (Group 1, Colts & Fillies Classic)",
+      "off_time": "16:00",
+      "decimal_odds": 101.0,
+      "fractional_odds": "100/1",
+      "implied_probability": 0.0099,
+      "source": "Estimated by form-analysis (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Rebel Rocker": {
+      "race_date": "2026-06-06",
+      "race_name": "Betfred Derby (Group 1, Colts & Fillies Classic)",
+      "off_time": "16:00",
+      "decimal_odds": 67.0,
+      "fractional_odds": "66/1",
+      "implied_probability": 0.0149,
+      "source": "Estimated by form-analysis (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Starlight Time": {
+      "race_date": "2026-06-06",
+      "race_name": "Cherryfield (Croydon) Lester Piggott Handicap",
       "off_time": "16:40",
-      "decimal_odds": 19.0,
-      "fractional_odds": "18/1",
-      "implied_probability": 0.0526,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Sterling Knight": {
-      "race_date": "2026-06-05",
-      "race_name": "Debenhams Handicap",
-      "off_time": "17:50",
-      "decimal_odds": 18.0,
-      "fractional_odds": "17/1",
-      "implied_probability": 0.0556,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Thunder Roar": {
-      "race_date": "2026-06-05",
-      "race_name": "HKJC World Pool Handicap",
-      "off_time": "16:40",
-      "decimal_odds": 19.0,
-      "fractional_odds": "18/1",
-      "implied_probability": 0.0526,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Mirsky": {
-      "race_date": "2026-06-05",
-      "race_name": "HKJC World Pool Handicap",
-      "off_time": "16:40",
-      "decimal_odds": 19.0,
-      "fractional_odds": "18/1",
-      "implied_probability": 0.0526,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Walsingham": {
-      "race_date": "2026-06-05",
-      "race_name": "HKJC World Pool Handicap",
-      "off_time": "16:40",
-      "decimal_odds": 21.5,
-      "fractional_odds": "20/1",
-      "implied_probability": 0.0465,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Mr Swivell": {
-      "race_date": "2026-06-05",
-      "race_name": "HKJC World Pool Handicap",
-      "off_time": "16:40",
-      "decimal_odds": 20.0,
-      "fractional_odds": "19/1",
-      "implied_probability": 0.05,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Jimmy Speaking": {
-      "race_date": "2026-06-05",
-      "race_name": "HKJC World Pool Handicap",
-      "off_time": "16:40",
-      "decimal_odds": 22.5,
-      "fractional_odds": "22/1",
-      "implied_probability": 0.0444,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Ozat": {
-      "race_date": "2026-06-05",
-      "race_name": "HKJC World Pool Handicap",
-      "off_time": "16:40",
-      "decimal_odds": 18.0,
-      "fractional_odds": "17/1",
-      "implied_probability": 0.0556,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Hot Cash": {
-      "race_date": "2026-06-05",
-      "race_name": "HKJC World Pool Handicap",
-      "off_time": "16:40",
-      "decimal_odds": 22.5,
-      "fractional_odds": "22/1",
-      "implied_probability": 0.0444,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "A War Eagle": {
-      "race_date": "2026-06-05",
-      "race_name": "Debenhams Handicap",
-      "off_time": "17:50",
-      "decimal_odds": 20.5,
-      "fractional_odds": "19/1",
-      "implied_probability": 0.0488,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Mister Winston": {
-      "race_date": "2026-06-05",
-      "race_name": "HKJC World Pool Handicap",
-      "off_time": "16:40",
-      "decimal_odds": 19.0,
-      "fractional_odds": "18/1",
-      "implied_probability": 0.0526,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Stem": {
-      "race_date": "2026-06-05",
-      "race_name": "HKJC World Pool Handicap",
-      "off_time": "16:40",
-      "decimal_odds": 21.0,
-      "fractional_odds": "20/1",
-      "implied_probability": 0.0476,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Asmen Warrior": {
-      "race_date": "2026-06-05",
-      "race_name": "HKJC World Pool Handicap",
-      "off_time": "16:40",
-      "decimal_odds": 21.5,
-      "fractional_odds": "20/1",
-      "implied_probability": 0.0465,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Nizam": {
-      "race_date": "2026-06-05",
-      "race_name": "HKJC World Pool Handicap",
-      "off_time": "16:40",
-      "decimal_odds": 19.5,
-      "fractional_odds": "18/1",
-      "implied_probability": 0.0513,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Zarathos": {
-      "race_date": "2026-06-05",
-      "race_name": "Debenhams Handicap",
-      "off_time": "17:50",
-      "decimal_odds": 20.0,
-      "fractional_odds": "19/1",
-      "implied_probability": 0.05,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Man Of La Mancha": {
-      "race_date": "2026-06-05",
-      "race_name": "HKJC World Pool Handicap",
-      "off_time": "16:40",
-      "decimal_odds": 21.0,
-      "fractional_odds": "20/1",
-      "implied_probability": 0.0476,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Final Night": {
-      "race_date": "2026-06-05",
-      "race_name": "HKJC World Pool Handicap",
-      "off_time": "16:40",
-      "decimal_odds": 24.0,
-      "fractional_odds": "23/1",
-      "implied_probability": 0.0417,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Bragbor": {
-      "race_date": "2026-06-05",
-      "race_name": "HKJC World Pool Handicap",
-      "off_time": "16:40",
-      "decimal_odds": 21.0,
-      "fractional_odds": "20/1",
-      "implied_probability": 0.0476,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Principality": {
-      "race_date": "2026-06-05",
-      "race_name": "HKJC World Pool Handicap",
-      "off_time": "16:40",
-      "decimal_odds": 21.0,
-      "fractional_odds": "20/1",
-      "implied_probability": 0.0476,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Ardisia": {
-      "race_date": "2026-06-05",
-      "race_name": "Cygames Surrey Stakes (Listed)",
-      "off_time": "17:15",
-      "decimal_odds": 7.0,
-      "fractional_odds": "6/1",
-      "implied_probability": 0.1429,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Ellusive Butterfly": {
-      "race_date": "2026-06-05",
-      "race_name": "Cygames Surrey Stakes (Listed)",
-      "off_time": "17:15",
-      "decimal_odds": 8.0,
-      "fractional_odds": "7/1",
-      "implied_probability": 0.125,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Awaken": {
-      "race_date": "2026-06-05",
-      "race_name": "Cygames Surrey Stakes (Listed)",
-      "off_time": "17:15",
-      "decimal_odds": 7.5,
-      "fractional_odds": "13/2",
-      "implied_probability": 0.1333,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Stellar Sunrise": {
-      "race_date": "2026-06-05",
-      "race_name": "Cygames Surrey Stakes (Listed)",
-      "off_time": "17:15",
-      "decimal_odds": 7.0,
-      "fractional_odds": "6/1",
-      "implied_probability": 0.1429,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Postmodern": {
-      "race_date": "2026-06-05",
-      "race_name": "Cygames Surrey Stakes (Listed)",
-      "off_time": "17:15",
-      "decimal_odds": 7.5,
-      "fractional_odds": "13/2",
-      "implied_probability": 0.1333,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Assaranca": {
-      "race_date": "2026-06-05",
-      "race_name": "Cygames Surrey Stakes (Listed)",
-      "off_time": "17:15",
       "decimal_odds": 10.0,
       "fractional_odds": "9/1",
       "implied_probability": 0.1,
       "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
     },
-    "Northern Champion": {
-      "race_date": "2026-06-05",
-      "race_name": "Cygames Surrey Stakes (Listed)",
-      "off_time": "17:15",
-      "decimal_odds": 7.0,
-      "fractional_odds": "6/1",
-      "implied_probability": 0.1429,
+    "Silver State": {
+      "race_date": "2026-06-06",
+      "race_name": "Cherryfield (Croydon) Lester Piggott Handicap",
+      "off_time": "16:40",
+      "decimal_odds": 10.0,
+      "fractional_odds": "9/1",
+      "implied_probability": 0.1,
       "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
     },
-    "Ten Carat Harry": {
-      "race_date": "2026-06-05",
-      "race_name": "Cygames Surrey Stakes (Listed)",
-      "off_time": "17:15",
-      "decimal_odds": 7.5,
-      "fractional_odds": "13/2",
-      "implied_probability": 0.1333,
+    "Lake Como": {
+      "race_date": "2026-06-06",
+      "race_name": "Cherryfield (Croydon) Lester Piggott Handicap",
+      "off_time": "16:40",
+      "decimal_odds": 9.5,
+      "fractional_odds": "17/2",
+      "implied_probability": 0.1053,
       "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
     },
-    "Greek Mythology": {
-      "race_date": "2026-06-05",
-      "race_name": "Cygames Surrey Stakes (Listed)",
-      "off_time": "17:15",
-      "decimal_odds": 7.5,
-      "fractional_odds": "13/2",
-      "implied_probability": 0.1333,
+    "Tailgunner Joe": {
+      "race_date": "2026-06-06",
+      "race_name": "Cherryfield (Croydon) Lester Piggott Handicap",
+      "off_time": "16:40",
+      "decimal_odds": 9.5,
+      "fractional_odds": "17/2",
+      "implied_probability": 0.1053,
       "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
     },
-    "Rhoscolyn": {
-      "race_date": "2026-06-05",
-      "race_name": "Debenhams Handicap",
-      "off_time": "17:50",
+    "Folk Pageant": {
+      "race_date": "2026-06-06",
+      "race_name": "Cherryfield (Croydon) Lester Piggott Handicap",
+      "off_time": "16:40",
+      "decimal_odds": 11.0,
+      "fractional_odds": "10/1",
+      "implied_probability": 0.0909,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Be The Standard": {
+      "race_date": "2026-06-06",
+      "race_name": "Cherryfield (Croydon) Lester Piggott Handicap",
+      "off_time": "16:40",
+      "decimal_odds": 10.5,
+      "fractional_odds": "9/1",
+      "implied_probability": 0.0952,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Allegresse": {
+      "race_date": "2026-06-06",
+      "race_name": "Cherryfield (Croydon) Lester Piggott Handicap",
+      "off_time": "16:40",
+      "decimal_odds": 9.0,
+      "fractional_odds": "8/1",
+      "implied_probability": 0.1111,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Hell Yeah He Did": {
+      "race_date": "2026-06-06",
+      "race_name": "Cherryfield (Croydon) Lester Piggott Handicap",
+      "off_time": "16:40",
+      "decimal_odds": 10.0,
+      "fractional_odds": "9/1",
+      "implied_probability": 0.1,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Savvy Disko": {
+      "race_date": "2026-06-06",
+      "race_name": "Cherryfield (Croydon) Lester Piggott Handicap",
+      "off_time": "16:40",
+      "decimal_odds": 10.0,
+      "fractional_odds": "9/1",
+      "implied_probability": 0.1,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "York Tower": {
+      "race_date": "2026-06-06",
+      "race_name": "Cherryfield (Croydon) Lester Piggott Handicap",
+      "off_time": "16:40",
+      "decimal_odds": 11.0,
+      "fractional_odds": "10/1",
+      "implied_probability": 0.0909,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Pendella": {
+      "race_date": "2026-06-06",
+      "race_name": "Cherryfield (Croydon) Lester Piggott Handicap",
+      "off_time": "16:40",
+      "decimal_odds": 11.0,
+      "fractional_odds": "10/1",
+      "implied_probability": 0.0909,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Prydwen": {
+      "race_date": "2026-06-06",
+      "race_name": "HKJC World Pool Northern Dancer Handicap",
+      "off_time": "17:20",
+      "decimal_odds": 12.5,
+      "fractional_odds": "11/1",
+      "implied_probability": 0.08,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Max Mayhem": {
+      "race_date": "2026-06-06",
+      "race_name": "HKJC World Pool Northern Dancer Handicap",
+      "off_time": "17:20",
+      "decimal_odds": 15.0,
+      "fractional_odds": "14/1",
+      "implied_probability": 0.0667,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Asgard's Captain": {
+      "race_date": "2026-06-06",
+      "race_name": "HKJC World Pool Northern Dancer Handicap",
+      "off_time": "17:20",
+      "decimal_odds": 14.5,
+      "fractional_odds": "13/1",
+      "implied_probability": 0.069,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Dancing In Paris": {
+      "race_date": "2026-06-06",
+      "race_name": "HKJC World Pool Northern Dancer Handicap",
+      "off_time": "17:20",
+      "decimal_odds": 14.5,
+      "fractional_odds": "13/1",
+      "implied_probability": 0.069,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Gordon Grey": {
+      "race_date": "2026-06-06",
+      "race_name": "HKJC World Pool Northern Dancer Handicap",
+      "off_time": "17:20",
+      "decimal_odds": 15.5,
+      "fractional_odds": "14/1",
+      "implied_probability": 0.0645,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Night Breeze": {
+      "race_date": "2026-06-06",
+      "race_name": "HKJC World Pool Northern Dancer Handicap",
+      "off_time": "17:20",
+      "decimal_odds": 15.0,
+      "fractional_odds": "14/1",
+      "implied_probability": 0.0667,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Lord Melbourne": {
+      "race_date": "2026-06-06",
+      "race_name": "HKJC World Pool Northern Dancer Handicap",
+      "off_time": "17:20",
+      "decimal_odds": 13.5,
+      "fractional_odds": "12/1",
+      "implied_probability": 0.0741,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Military Academy": {
+      "race_date": "2026-06-06",
+      "race_name": "HKJC World Pool Northern Dancer Handicap",
+      "off_time": "17:20",
+      "decimal_odds": 13.0,
+      "fractional_odds": "12/1",
+      "implied_probability": 0.0769,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Give It To Me Oj": {
+      "race_date": "2026-06-06",
+      "race_name": "HKJC World Pool Northern Dancer Handicap",
+      "off_time": "17:20",
+      "decimal_odds": 15.0,
+      "fractional_odds": "14/1",
+      "implied_probability": 0.0667,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Too Soon": {
+      "race_date": "2026-06-06",
+      "race_name": "HKJC World Pool Northern Dancer Handicap",
+      "off_time": "17:20",
+      "decimal_odds": 15.5,
+      "fractional_odds": "14/1",
+      "implied_probability": 0.0645,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Regal Ulixes": {
+      "race_date": "2026-06-06",
+      "race_name": "HKJC World Pool Northern Dancer Handicap",
+      "off_time": "17:20",
+      "decimal_odds": 13.5,
+      "fractional_odds": "12/1",
+      "implied_probability": 0.0741,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Elsass": {
+      "race_date": "2026-06-06",
+      "race_name": "HKJC World Pool Northern Dancer Handicap",
+      "off_time": "17:20",
+      "decimal_odds": 15.5,
+      "fractional_odds": "14/1",
+      "implied_probability": 0.0645,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Northwest Passage": {
+      "race_date": "2026-06-06",
+      "race_name": "HKJC World Pool Northern Dancer Handicap",
+      "off_time": "17:20",
       "decimal_odds": 18.0,
       "fractional_odds": "17/1",
       "implied_probability": 0.0556,
       "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
     },
-    "Mister Bluebird": {
-      "race_date": "2026-06-05",
-      "race_name": "Debenhams Handicap",
-      "off_time": "17:50",
-      "decimal_odds": 19.5,
-      "fractional_odds": "18/1",
-      "implied_probability": 0.0513,
+    "Antrim": {
+      "race_date": "2026-06-06",
+      "race_name": "HKJC World Pool Northern Dancer Handicap",
+      "off_time": "17:20",
+      "decimal_odds": 14.5,
+      "fractional_odds": "13/1",
+      "implied_probability": 0.069,
       "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
     },
-    "Son": {
-      "race_date": "2026-06-05",
-      "race_name": "Debenhams Handicap",
-      "off_time": "17:50",
-      "decimal_odds": 21.0,
-      "fractional_odds": "20/1",
-      "implied_probability": 0.0476,
+    "Spinning Wheel": {
+      "race_date": "2026-06-06",
+      "race_name": "HKJC World Pool Northern Dancer Handicap",
+      "off_time": "17:20",
+      "decimal_odds": 13.0,
+      "fractional_odds": "12/1",
+      "implied_probability": 0.0769,
       "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
     },
-    "Crimson Spirit": {
-      "race_date": "2026-06-05",
-      "race_name": "Debenhams Handicap",
-      "off_time": "17:50",
-      "decimal_odds": 18.5,
-      "fractional_odds": "17/1",
-      "implied_probability": 0.0541,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Colombier": {
-      "race_date": "2026-06-05",
-      "race_name": "Debenhams Handicap",
-      "off_time": "17:50",
-      "decimal_odds": 18.5,
-      "fractional_odds": "17/1",
-      "implied_probability": 0.0541,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Arctic Thunder": {
-      "race_date": "2026-06-05",
-      "race_name": "Debenhams Handicap",
-      "off_time": "17:50",
-      "decimal_odds": 20.5,
-      "fractional_odds": "19/1",
-      "implied_probability": 0.0488,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Pietro": {
-      "race_date": "2026-06-05",
-      "race_name": "Debenhams Handicap",
-      "off_time": "17:50",
-      "decimal_odds": 20.5,
-      "fractional_odds": "19/1",
-      "implied_probability": 0.0488,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Musical Angel": {
-      "race_date": "2026-06-05",
-      "race_name": "Debenhams Handicap",
-      "off_time": "17:50",
-      "decimal_odds": 21.0,
-      "fractional_odds": "20/1",
-      "implied_probability": 0.0476,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Veblen Good": {
-      "race_date": "2026-06-05",
-      "race_name": "Debenhams Handicap",
-      "off_time": "17:50",
-      "decimal_odds": 18.5,
-      "fractional_odds": "17/1",
-      "implied_probability": 0.0541,
-      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
-    },
-    "Dance In The Storm": {
-      "race_date": "2026-06-05",
-      "race_name": "Debenhams Handicap",
-      "off_time": "17:50",
+    "Hengest": {
+      "race_date": "2026-06-06",
+      "race_name": "HKJC World Pool Northern Dancer Handicap",
+      "off_time": "17:20",
       "decimal_odds": 17.0,
       "fractional_odds": "16/1",
       "implied_probability": 0.0588,
       "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
     },
-    "Aurora Majesty": {
-      "race_date": "2026-06-05",
-      "race_name": "Debenhams Handicap",
-      "off_time": "17:50",
-      "decimal_odds": 18.5,
-      "fractional_odds": "17/1",
-      "implied_probability": 0.0541,
+    "Bulletin": {
+      "race_date": "2026-06-06",
+      "race_name": "HKJC World Pool Northern Dancer Handicap",
+      "off_time": "17:20",
+      "decimal_odds": 15.5,
+      "fractional_odds": "14/1",
+      "implied_probability": 0.0645,
       "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
     },
-    "The Angel King": {
-      "race_date": "2026-06-05",
-      "race_name": "Debenhams Handicap",
-      "off_time": "17:50",
-      "decimal_odds": 18.5,
-      "fractional_odds": "17/1",
-      "implied_probability": 0.0541,
+    "Badri": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "off_time": "17:55",
+      "decimal_odds": 20.0,
+      "fractional_odds": "19/1",
+      "implied_probability": 0.05,
       "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
     },
-    "Sunny Smile": {
-      "race_date": "2026-06-05",
-      "race_name": "Debenhams Handicap",
-      "off_time": "17:50",
+    "Strike Red": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "off_time": "17:55",
+      "decimal_odds": 20.5,
+      "fractional_odds": "19/1",
+      "implied_probability": 0.0488,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Saint Lawrence": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "off_time": "17:55",
       "decimal_odds": 21.0,
       "fractional_odds": "20/1",
       "implied_probability": 0.0476,
       "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
     },
-    "Monarch's Gold": {
-      "race_date": "2026-06-05",
-      "race_name": "Debenhams Handicap",
-      "off_time": "17:50",
+    "Apollo One": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "off_time": "17:55",
       "decimal_odds": 18.0,
       "fractional_odds": "17/1",
       "implied_probability": 0.0556,
       "source": "Synthetic from OR/field-size (River, 2026-06-02)",
-      "captured_at": "2026-06-05T09:52:35.131023+01:00"
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Roman Dragon": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "off_time": "17:55",
+      "decimal_odds": 17.5,
+      "fractional_odds": "16/1",
+      "implied_probability": 0.0571,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Twilight Jet": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "off_time": "17:55",
+      "decimal_odds": 20.5,
+      "fractional_odds": "19/1",
+      "implied_probability": 0.0488,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Purest Time": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "off_time": "17:55",
+      "decimal_odds": 21.0,
+      "fractional_odds": "20/1",
+      "implied_probability": 0.0476,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Eye Of Dubai": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "off_time": "17:55",
+      "decimal_odds": 20.0,
+      "fractional_odds": "19/1",
+      "implied_probability": 0.05,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Kylian": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "off_time": "17:55",
+      "decimal_odds": 18.0,
+      "fractional_odds": "17/1",
+      "implied_probability": 0.0556,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Solar Aclaim": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "off_time": "17:55",
+      "decimal_odds": 21.0,
+      "fractional_odds": "20/1",
+      "implied_probability": 0.0476,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Fine Interview": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "off_time": "17:55",
+      "decimal_odds": 17.5,
+      "fractional_odds": "16/1",
+      "implied_probability": 0.0571,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Sondad": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "off_time": "17:55",
+      "decimal_odds": 19.5,
+      "fractional_odds": "18/1",
+      "implied_probability": 0.0513,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Invictus Gold": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "off_time": "17:55",
+      "decimal_odds": 17.5,
+      "fractional_odds": "16/1",
+      "implied_probability": 0.0571,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Gold Star Hero": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "off_time": "17:55",
+      "decimal_odds": 18.5,
+      "fractional_odds": "17/1",
+      "implied_probability": 0.0541,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
+    },
+    "Topwarrior": {
+      "race_date": "2026-06-06",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "off_time": "17:55",
+      "decimal_odds": 19.5,
+      "fractional_odds": "18/1",
+      "implied_probability": 0.0513,
+      "source": "Synthetic from OR/field-size (River, 2026-06-02)",
+      "captured_at": "2026-06-06T07:08:00.227074+01:00"
     }
   }
 }

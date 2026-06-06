@@ -1357,3 +1357,221 @@ Placement: full-width \<tr class="row-trifecta">\ with purple-left-border + \#f6
 
 **→ Ralph:** Hourly watchdog #1 continues through Sat ~21:30. Schedule #2 stopped earlier. No new monitor work needed.
 
+---
+
+## 2026-06-06 — Derby Day Morning Gate
+
+### 2026-06-06T07:05+01:00: Saturday Blockers Resolution (Derby Day)
+**By:** Danny (Lead)
+**Requested by:** Steve (via race-day watchdog 07:00 gate)
+
+#### BLOCKER #2 — Derby Race Time: RESOLVED ✅
+
+**Verdict: 16:00 BST is CORRECT. No patch required.**
+
+Sources confirming 16:00:
+1. The Jockey Club / Epsom Downs official — https://www.thejockeyclub.co.uk/epsom-derby/plan-your-day/when-and-what-time/
+2. HorseRacing.net racecard — https://www.horseracing.net/epsom/06-06-26
+3. IrishRacing.com racecard — https://www.irishracing.com/racecards/Sat-6th-Jun-2026/Epsom/1600
+
+The coordinator brief stating "16:30" was in error. `bets-2026-06-06.json` race_id `epsom-2026-06-06-1600` and Saturday HTML extracted times are both correct. No file changes needed.
+
+#### BLOCKER #1 — Causeway NR: PATH C (Hybrid) ✅
+
+**Chosen: (C) Annotate now, re-render only if more NRs surface from Livingston's 07:00 baseline.**
+
+**Rationale (1 sentence):** Causeway is a £0.25 EW outsider that voids automatically at declarations — the financial risk is nil, re-rendering risks fresh bugs on Derby morning, and annotation takes 2 minutes with zero blast radius.
+
+**What happens now:**
+- NO re-render by Linus (unnecessary given £0.25 void-at-declarations + no visual confusion for Steve since he knows Causeway is out)
+- Livingston's 07:00 baseline capture will confirm NR status from live RP scrape
+- If Livingston's baseline surfaces ADDITIONAL NRs beyond Causeway → escalate to full re-render (Linus, Path A) before Steve's 10:00 GO/NO-GO
+- If Causeway is the only NR → let it void naturally; it's already flagged in Livingston's report
+
+**If escalation to Linus becomes necessary (scope brief):**
+> **Linus brief (conditional — only if ≥2 NRs total):**
+> Re-generate `outputs/racecard-2026-06-06.html` + `outputs/bets-2026-06-06.json` with ALL confirmed NRs removed (Causeway + any from 07:00 baseline). Preserve: all other picks, trifecta block (adjust box if #4 model-ranked horse drops), going advisory, outsider rationale for remaining runners. Source of truth for NR list: Livingston's baseline capture + RP declarations page. Do NOT touch `data/results/*.json`.
+
+#### CHECKPOINT 4 — Saturday Operator Sequence & PROPOSED Rules
+
+**Context:** Two rules remain PROPOSED (not ratified by Steve):
+1. No manual override of sub-50 model scores without 2-PM sign-off
+2. Saturday morning ≥30% steam/drift gate
+
+**My call (Danny, Lead):**
+
+**Operate under PROPOSED rule #2 as soft guidance today — no ratification required.**
+
+Reasoning:
+- Rule #2 has ZERO impact on Derby picks (no sub-50 picks exist on Saturday card per decisions.md line 1323)
+- The mechanism is already in motion regardless: Livingston 07:00 baseline → Saul delta-check → Danny review → Steve 10:00
+- If Saul's delta-check surfaces ≥30% movers, I will review them and flag to Steve with a binary HOLD/PULL recommendation
+- This is operationally identical to ratification — but we're treating it as guidance not hard rule, so Steve retains full override authority at 10:00
+- Formal ratification deferred to post-Derby (more data from Royal Ascot will strengthen the case)
+
+**What Saul should expect:**
+- Run delta-check by 07:30 as planned
+- If ANY runner has moved ≥30% (steam or drift) vs the bets-file baseline price, flag it to Danny immediately
+- I'll review and make a HOLD/PULL call before Steve's 10:00 window
+- If no ≥30% movers: proceed to 10:00 GO/NO-GO with card as-is
+
+**Rule #1 (sub-50 gate):** Not operationally relevant today — no sub-50 picks on Saturday card. Fully deferred to Royal Ascot data.
+
+#### New Flags
+
+None surfaced. Causeway is the only confirmed NR. Livingston's 07:00 baseline will be the authoritative check for any further NRs declared overnight.
+
+#### Summary
+
+| Item | Outcome |
+|------|---------|
+| Derby time | **16:00 BST confirmed** (3 sources) — no patch |
+| Causeway NR | **Path C** — let void naturally; re-render only if more NRs surface |
+| Linus brief written | **Conditional only** — fires if ≥2 NRs from baseline |
+| PROPOSED rules | Operate as soft guidance; Saul runs delta-check as planned |
+| New flags | None |
+
+---
+
+### 2026-06-06T07:08 BST: Saturday 07:00 baseline gate — capture complete
+**By:** Livingston (scheduled watchdog tick, Derby Day)
+**Requested by:** Steve
+
+#### Baseline Capture Summary
+
+| Field | Value |
+|---|---|
+| **Capture timestamp** | 2026-06-06T07:08:00.227074+01:00 BST |
+| **Mode** | baseline (07:00 Saturday gate) |
+| **Date** | 2026-06-06 |
+| **Race count** | 8 races (all Epsom) |
+| **Runner count (baseline)** | 101 confirmed runners |
+| **Runner count (racecard input)** | 142 (pre-NR-filter) |
+| **Probable NRs filtered** | 41 |
+| **market-baseline.json size** | 39,019 bytes |
+| **market-latest.json size** | 39,140 bytes (BASELINE_CAPTURE status) |
+
+#### Race-level runner counts (post-NR filter)
+
+| Off time | Race | Racecard | Baseline | Delta |
+|---|---|---|---|---|
+| 13:30 | Betfred Tattenham Corner Stakes G3 | 14 | 8 | −6 |
+| 14:05 | Princess Elizabeth Stakes G3 | 13 | 9 | −4 |
+| 14:40 | Coolmore Coronation Cup G1 | 8 | 6 | −2 |
+| 15:15 | Betfred Dash Handicap (Heritage) | 34 | 18 | −16 (expected ballot) |
+| 16:00 | Betfred Derby G1 | 18 | 14 | −4 (Causeway + 3) |
+| 16:40 | Cherryfield Lester Piggott Hcp | 13 | 11 | −2 |
+| 17:20 | HKJC Northern Dancer Hcp | 21 | 17 | −4 |
+| 17:55 | JRA Tokyo Trophy Hcp | 28 | 18 | −10 (ballot + NRs) |
+| **Total** | | **149*** | **101** | **−48*** |
+
+*\*149 unique horses across card; ~142 after deduplication of cross-race entries (Desert Cop, Partisan Hero etc. entered in 2 races each).*
+
+#### Going
+
+Official going declared in racecard (from Racing Post 2026-06-03):
+> **"Good to Soft (Good in places); 5f course Good (Light rain)"**
+
+As of 07:08 BST: **no updated official going available from RP scrape** — the racecard `going` field remains the 2026-06-03 source. Based on the bets file weather advisory (River forecast: 5.2mm overnight rain, 60-80% probability of Soft by Derby post-time):
+- Expected going: **Good to Soft → Soft possible by 16:00**
+- Going advisory in bets file: use GREEN slip until official declarations; switch to HOLD slip if Soft declared
+- Steve GO/NO-GO call at 10:00 should include going check
+
+#### Key Pick Status
+
+| Horse | Race | Baseline status | Price (synthetic) | Bets file price | Note |
+|---|---|---|---|---|---|
+| Item | 16:00 Derby G1 | ✅ CONFIRMED | 5.0 (4/1) | 3.25 (live override) | Synthetic price is 5.0; bets file live override was 3.25. Price gap expected — synthetic baseline. |
+| Kinswoman | 15:15 Dash | ✅ CONFIRMED | 24.0 (23/1) | 24.0 | Stable |
+| Allegresse | 16:40 Lester Piggott | ✅ CONFIRMED | 9.0 (8/1) | 9.0 | Stable |
+| Lord Melbourne | 17:20 Northern Dancer | ✅ CONFIRMED | 13.5 (12/1) | 13.5 | Stable |
+| **Dance In The Storm** | 17:55 Tokyo Trophy | ⚠️ **PROBABLE NR** | N/A | 18.5 (WIN £1.33) | **URGENT — WIN bet. Absent from RP live racecard 07:08. Verify before betting.** |
+| **See The Fire** | 14:40 Coronation Cup G1 | ⚠️ **PROBABLE NR** | N/A | 13.0 (EW outsider £0.25) | Absent from RP live racecard 07:08. Coronation Cup now 6 runners. |
+| Causeway | 16:00 Derby G1 | ❌ ABSENT | N/A | 29.0 (EW outsider £0.25) | Known NR since Friday gate. Confirmed. Danny reviewing HTML. |
+
+#### Anomalies for Saul's Attention
+
+##### ⚠️ HIGH PRIORITY — New probable NRs on bet horses
+1. **Dance In The Storm**: WIN bet £1.33 at 17:55 — probable NR per RP scrape. **If confirmed, this eliminates the main late WIN from the portfolio and removes one leg of the Kinswoman+Dance In The Storm double (£0.50).** Total stake at risk: £1.33 WIN + £0.50 double = £1.83.
+
+2. **See The Fire**: EW outsider £0.25 at 14:40 Coronation Cup — probable NR per RP scrape. Stake at risk: £0.25.
+
+##### ℹ️ MEDIUM — Field compression
+- **Coronation Cup G1 14:40** now 6 runners (was 8). Place terms may change (bookmaker by bookmaker). Affects any remaining EW bets on this race.
+- **Dash Handicap 15:15** down to 18 from 34 — expected ballot reduction for this heritage race. Kinswoman confirmed.
+- **Derby 16:00** confirmed at 14 runners — consistent with 2026-06-05 RP check (4 NRs: Causeway, Constitution River, Endorsement, Proposition all absent).
+
+##### ℹ️ LOW — Price source note
+All baseline prices are **synthetic (from racecard 2026-06-02)** or **ante_post (RP 2026-06-02)**. No live market prices are available (RP odds are JS/WebSocket, not in SSR HTML). Saul's delta-check vs Friday closing prices will show ~0% movement everywhere — this is expected behaviour. Only the NR filter (reduced field) is meaningful data from this scrape. Live price comparison requires manual override CSV (see runbook).
+
+##### ℹ️ NOTE — Item price discrepancy
+Item shows **5.0 (4/1)** in baseline (synthetic, 2026-06-02 source). Bets file used **live override 3.25 (9/4)**. The 3.25 was a manually confirmed live price (applied when the bet slip was built). The synthetic baseline correctly anchors at 5.0 — this is expected and is NOT a market move signal. The actual live Derby market should be checked at 09:00–10:00 gate.
+
+#### Next steps (per operator sequence)
+
+- **~07:30** → Saul: delta-check vs Friday close prices (note: prices are synthetic/flat, delta will be neutral; NR flags are the actionable findings)
+- **If ≥30% steam/drift on any pick**: spawn Danny for review (PROPOSED rule)
+- **By 10:00** → Steve: GO/NO-GO call on Derby Day bets. **Verify Dance In The Storm and See The Fire NR status before this call.**
+- **Going check**: Official going update expected by ~09:00 from Epsom Racecourse. Key trigger: if Soft declared → cancel Item WIN, switch to HOLD slip.
+
+**Files written:**
+- `data/enrichment/market-baseline.json` — 39,019 bytes, 101 runners, status: baseline
+- `data/enrichment/market-latest.json` — 39,140 bytes, 101 runners, status: BASELINE_CAPTURE
+- `.squad/decisions/inbox/livingston-sat-baseline-NRs.md` — full NR list with bet impact
+
+---
+
+### 2026-06-06T07:08 BST: Saturday NR check — 07:00 baseline gate
+**By:** Livingston (Derby Day baseline capture)
+**Source:** RP __NEXT_DATA__ live racecard scrape at 07:08 BST
+
+#### ⚠️ PROBABLE NEW NON-RUNNERS — BET IMPACT (URGENT for Danny / Steve)
+
+These horses are **present in the locked racecard HTML** but **absent from the RP live racecard** at 07:08 BST. Filtered as probable NRs by the morning_odds script. **Requires official confirmation before betting.**
+
+##### 1. DANCE IN THE STORM — 17:55 JRA Tokyo Trophy Handicap
+- **Bet impact: WIN £1.33 @ 18.5 (35/2)** — Steve's main late-race WIN
+- Bets file: `epsom-2026-06-06-1755`, stake £1.33, edge +93.3%
+- Status: ABSENT from RP racecard at 07:08. **Must be verified before bet placement.**
+- Action required: Danny / Steve to confirm via official Epsom declarations or bookmaker.
+
+##### 2. SEE THE FIRE — 14:40 Coolmore Coronation Cup G1
+- **Bet impact: outsider EW £0.25 @ 13.0 (12/1)** — Kaylee #1 vs market #6
+- Bets file: `epsom-2026-06-06-1440`, outsiders block
+- Status: ABSENT from RP racecard at 07:08. Coronation Cup now shows 6 confirmed runners (was 8).
+- Action required: Confirm runner status. If NR, EW outsider bet is void.
+
+#### ✅ KNOWN NR — CONFIRMED
+
+- **Causeway** — 16:00 Derby G1: CONFIRMED NR (absent from RP since 2026-06-05; known from Friday gate). Still present in locked racecard HTML. Danny reviewing HTML fix separately.
+  - Bet impact: outsider EW £0.25 in bets file — stake is void if officially NR.
+
+#### Other horses from bets file — STATUS OK
+
+- **Item** — 16:00 Derby G1: IN BASELINE at 5.0 (4/1). Bets file live override was 3.25; synthetic racecard price 5.0. Runner confirmed.
+- **Kinswoman** — 15:15 Dash Handicap: IN BASELINE at 24.0 (23/1). Confirmed runner.
+- **Allegresse** — 16:40 Lester Piggott Handicap: IN BASELINE at 9.0 (8/1). Confirmed runner.
+- **Lord Melbourne** — 17:20 Northern Dancer Handicap: IN BASELINE at 13.5 (12/1). Confirmed runner.
+
+#### Additional NRs removed by RP scrape (non-bet impact, for information)
+
+The full list of 41 horses removed as probable NRs at 07:08 (racecard count 142 → live 101):
+
+**13:30 Tattenham Corner G3** (14→8): Audience, Cowardofthecounty, Copacabana Sands, Humam, Lake Forest, Linwood
+
+**14:05 Princess Elizabeth G3** (13→9): Alobayyah, Celestial Orbit, Sindria, Sunlit Uplands
+
+**14:40 Coronation Cup G1** (8→6): See The Fire, Sunway
+
+**15:15 Dash Handicap** (34→18): Counsel, Desert Cop, Fierce Fortitude, Forager, Francisco's Piece, Golden Long, Law Of Average, Marching Mac, Michaela's Boy, Nogo's Dream, Oneforthegutter, Seven Questions, Spangled Mac, Sturlasson, Tatterstall, The Bell Conductor
+
+**16:00 Derby G1** (18→14): Causeway, Constitution River, Endorsement, Proposition
+
+**16:40 Lester Piggott Hcp** (13→11): My Mate Roger, Tai Hang Pegasus
+
+**17:20 Northern Dancer Hcp** (21→17): Patagonia Girl, Sunway *(note: Sunway appears in both 14:40 and 17:20 listings — racecard deduplication artefact)*, Will Scarlet, Oneforthegutter *(possible dedup)*
+
+**17:55 Tokyo Trophy Hcp** (28→18): Cinque Verde, Dance In The Storm, Toyotomi, Veblen Good, Winged Messenger + others in Dash double-runners (Desert Cop, Francisco's Piece, Golden Long, Seven Questions, Spangled Mac, Stormy Impact, Star Chorus)
+
+**Note:** All NR filtering is based on RP __NEXT_DATA__ scrape. RP does not publish official Epsom declarations — this is a best-available live confirmation. Cross-reference against BHA/Epsom official declarations when available.
+
