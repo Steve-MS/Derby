@@ -1,0 +1,286 @@
+{
+  "generated": "2026-06-06T23:02:55+01:00",
+  "generated_by": "Livingston (Data Engineer)",
+  "meeting": "Epsom Downs Derby Day",
+  "date": "2026-06-06",
+  "going_official": "Derby course — GOOD TO SOFT (Good in places) changing to GOOD TO SOFT after Race 1 (13:30) changing to SOFT after Race 4 (15:15). 5f course — GOOD TO SOFT (Good in places).",
+  "weather": "Rain",
+  "wind": "Fairly strong, half behind",
+  "total_nrs_on_card": 10,
+  "scrape_sources": [
+    {
+      "source": "Racing Post aggregate results page",
+      "url": "https://www.racingpost.com/results/9/epsom-downs/2026-06-06/",
+      "status": "SUCCESS",
+      "data_retrieved": "Going, NRs, dividends, finishing distances, times, jockey/trainer names, Rule 4 notices. Horse names NOT rendered (stripped as HTML link anchors)."
+    },
+    {
+      "source": "Web search (Bing/AI aggregation via web_search tool)",
+      "status": "SUCCESS",
+      "data_retrieved": "Horse names 1st/2nd/3rd all races, SPs, finishing positions for our picks. Sources cited: horseandhound.co.uk, channelnewsasia.com, myracing.com, racingtv.com, sportinglife.com, oddschecker.com, timeform.com, racingandsports.com.au, kickthebookies.com, thehorsesmouth.co.uk, thesun.co.uk."
+    },
+    {
+      "source": "Sporting Life (authenticated)",
+      "status": "SKIPPED — SPORTINGLIFE_USER env var not set in current session"
+    }
+  ],
+  "races": [
+    {
+      "race_time": "13:30",
+      "race_name": "Betfred Tattenham Corner Stakes G3",
+      "distance": "7f",
+      "our_pick": null,
+      "bet_status": "NO_BET",
+      "runners": 8,
+      "non_runners": [],
+      "going_at_race": "Good to Soft (Good in places)",
+      "result": {
+        "1st": {"horse": "Ten Bob Tony", "jockey": "Kieran Shoemark", "trainer": "Ed Walker", "sp": "approx 5/1"},
+        "2nd": {"horse": "unconfirmed", "sp": null},
+        "3rd": {"horse": "unconfirmed", "sp": null}
+      },
+      "fav": {"horse": "Never So Brave", "sp": "15/8F", "finished": "unplaced"},
+      "distances": "hd, 2¼l, 2¼l",
+      "time": "1m 23.79s",
+      "time_comment": "slow by 2.69s",
+      "tote_win": 6.85,
+      "csf": 66.95,
+      "outcome_our_bets": "N/A — no bet"
+    },
+    {
+      "race_time": "14:05",
+      "race_name": "Princess Elizabeth Stakes G3",
+      "distance": "1m2f",
+      "our_pick": "Princess Child",
+      "bet_status": "REFUND — NR",
+      "stake_gbp": 1.00,
+      "price_taken": "11/1",
+      "runners": 7,
+      "non_runners": [
+        {"horse": "Arisaig", "reason": "unsuitable ground"},
+        {"horse": "Princess Child", "reason": "withdrawn — vet's certificate", "rule4": "10p in pound (withdrawal price 13/2)"}
+      ],
+      "going_at_race": "Good to Soft",
+      "result": {
+        "1st": {"horse": "Sparks Fly", "jockey": "Laura Pearson", "trainer": "David Loughnane", "sp": "7/2"},
+        "2nd": {"horse": "unconfirmed", "sp": null},
+        "3rd": {"horse": "unconfirmed", "sp": null}
+      },
+      "fav": {"horse": "Pina Sonata", "sp": "16/5F", "finished": "unplaced"},
+      "distances": "8½l, 2¼l, hd",
+      "time": "1m 46.07s",
+      "time_comment": "slow by 2.87s",
+      "tote_win": 4.20,
+      "outcome_our_bets": "REFUND £1.00 — Princess Child NR (vet's certificate)",
+      "rule4_impact": "10p in pound on any winning bets in this race (not applicable to our refunded stake)"
+    },
+    {
+      "race_time": "14:40",
+      "race_name": "Coolmore Coronation Cup G1",
+      "distance": "1m4f",
+      "our_pick": null,
+      "bet_status": "NO_BET — Illinois invalidated (rank 6/6, rank_gap 0)",
+      "runners": 6,
+      "non_runners": [],
+      "going_at_race": "Good to Soft",
+      "result": {
+        "1st": {"horse": "Bay City Roller", "jockey": "Oisin Murphy", "trainer": "George Scott", "sp": "approx 11/2"},
+        "2nd": {"horse": "Jan Brueghel", "sp": null},
+        "3rd": {"horse": "Lambourn", "sp": null}
+      },
+      "fav": {"horse": "Calandagan", "sp": "5/4F", "finished": "unplaced"},
+      "distances": "10l, 5½l, 26l",
+      "time": "2m 40.08s",
+      "time_comment": "slow by 4.48s",
+      "tote_win": 13.75,
+      "csf": 27.02,
+      "outcome_our_bets": "N/A — no bet. Notable: model correctly avoided (Illinois scored last, rank_gap 0). The favourite Calandagan also unplaced."
+    },
+    {
+      "race_time": "15:15",
+      "race_name": "Betfred Dash Heritage Handicap",
+      "distance": "5f",
+      "our_picks": [
+        {"horse": "Another Baar", "bet_type": "WIN", "stake_gbp": 0.25, "price_taken": "39/1"},
+        {"horse": "Ziggy's Triton", "bet_type": "EW", "stake_gbp": 0.50, "price_taken": "32/1"}
+      ],
+      "runners": 20,
+      "non_runners": [],
+      "going_at_race": "Good to Soft (transitioning to Soft — Race 4 triggered the change)",
+      "result": {
+        "1st": {"horse": "Arklow Lad", "jockey": "Harry Davies", "trainer": "Michael Appleby", "sp": "approx 12/1"},
+        "2nd": {"horse": "Vintage Clarets", "sp": null},
+        "3rd": {"horse": "Lexington Blitz", "sp": null}
+      },
+      "fav": {"horse": "Kinswoman", "sp": "5/1F", "finished": "unplaced"},
+      "finishing_positions": {
+        "Another Baar": 10,
+        "Ziggy's Triton": 11
+      },
+      "distances": "¾l, ½l, 1l",
+      "time": "57.36s",
+      "time_comment": "slow by 3.56s",
+      "tote_win": 8.80,
+      "csf": 86.37,
+      "outcome_our_bets": "LOST — Another Baar 10th (LOST £0.25), Ziggy's Triton 11th (LOST £0.50 EW both parts). COMPRESSED_RANGE_CAUTION and SYNTHETIC_BASE_CAVEAT flags proved correct.",
+      "pl_gbp": -0.75
+    },
+    {
+      "race_time": "16:00",
+      "race_name": "Betfred Derby G1",
+      "distance": "1m4f",
+      "our_picks": [
+        {"horse": "Action", "bet_type": "WIN", "stake_gbp": 1.00, "price_taken": "13/1"},
+        {
+          "bet_type": "TRIFECTA_BOX",
+          "stake_gbp": 6.00,
+          "horses": ["Action", "Benvenuto Cellini", "Item"],
+          "combos": 6
+        }
+      ],
+      "runners": 13,
+      "non_runners": [
+        {
+          "horse": "Benvenuto Cellini",
+          "reason": "leg caught in starting stalls — declared non-runner by stewards",
+          "sp_at_withdrawal": "3/1F",
+          "rule4": "25p in pound on winning bets"
+        }
+      ],
+      "going_at_race": "Soft",
+      "result": {
+        "1st": {"horse": "Christmas Day", "jockey": "Ronan Whelan", "trainer": "A P O'Brien", "sp": "7/1"},
+        "2nd": {"horse": "Maltese Cross", "sp": "12/1"},
+        "3rd": {"horse": "James J Braddock", "sp": "9/1"},
+        "4th": {"horse": "Bay Of Brilliance", "sp": "9/1"},
+        "9th": {"horse": "Item", "sp": "11/2"},
+        "12th": {"horse": "Action", "sp": "16/1"}
+      },
+      "distances": "2¾l, 2½l, 2l",
+      "time": "2m 43.75s",
+      "time_comment": "slow by 8.15s",
+      "tote_win": 6.50,
+      "tote_pl": [2.25, 2.60, 3.15],
+      "csf": 49.67,
+      "total_sp_pool_pct": 94,
+      "outcome_our_bets": "LOST — Action finished 12th. Trifecta VOID/REFUNDED (Benvenuto Cellini NR — stalls incident voided the box). Rule 4 (25p/£) applies to Derby winning bets.",
+      "pl_gbp": -1.00,
+      "trifecta_refund_gbp": 6.00,
+      "notes": [
+        "Christmas Day = O'Brien's 12th Derby win.",
+        "Benvenuto Cellini (3/1F, steamed from 9/4 ante-post) caught leg in stalls — major race-day operational risk event.",
+        "Our model scored Benvenuto Cellini 88.0 (rank 1/14, model top pick) — would have won if he'd had a clean start.",
+        "Christmas Day was our Trifecta Leg 3 (model_score 77.1 per earlier scoring) but was V1_INVALIDATED_CHRISTMAS_DAY in the final bets file. Significant model miss.",
+        "Item finished 9th (model scored 85.8, rank 2/14). Both our trifecta picks underperformed."
+      ]
+    },
+    {
+      "race_time": "16:40",
+      "race_name": "Cherryfield (Croydon) Lester Piggott Handicap",
+      "distance": "1m4f",
+      "our_pick": "Folk Pageant",
+      "bet_type": "WIN",
+      "stake_gbp": 1.50,
+      "price_taken": "6/1",
+      "runners": 9,
+      "non_runners": [
+        {"horse": "Be The Standard", "reason": "self certificate — not eaten up"},
+        {"horse": "Savvy Disko", "reason": "unsuitable ground"}
+      ],
+      "going_at_race": "Soft",
+      "result": {
+        "1st": {"horse": "Folk Pageant", "jockey": "Rowan Scott", "trainer": "Charlie Johnston", "sp": "5/1"},
+        "2nd": {"horse": "Silver State (IRE)", "sp": "20/1", "margin": "1¾l"},
+        "3rd": {"horse": "Pendella (IRE)", "sp": "9/1", "margin": "3¼l further"}
+      },
+      "fav": {"horse": "Hell Yeah He Did", "sp": "5/4F", "finished": "unplaced"},
+      "distances": "1¾l, 3¼l, ½l",
+      "time": "2m 15.88s",
+      "time_comment": "slow by 9.98s",
+      "tote_win": 6.25,
+      "outcome_our_bets": "WINNER — Folk Pageant won at 5/1 SP (price taken 6/1 > SP — early price advantage retained). Return: £10.50 gross / £9.00 profit.",
+      "pl_gbp": 9.00,
+      "return_gbp": 10.50
+    },
+    {
+      "race_time": "17:20",
+      "race_name": "HKJC World Pool Northern Dancer Handicap",
+      "distance": "1m4f",
+      "our_picks": [
+        {"horse": "Lord Melbourne", "bet_type": "WIN", "stake_gbp": 0.75, "price_taken": "19/1"},
+        {"horse": "Prydwen", "bet_type": "EW", "stake_gbp": 0.50, "price_taken": "17/1"}
+      ],
+      "runners": 13,
+      "non_runners": [
+        {"horse": "Elsass", "reason": "unsuitable ground"},
+        {"horse": "Northwest Passage", "reason": "vet's certificate — bad scope"},
+        {"horse": "Prydwen", "reason": "unsuitable ground"},
+        {"horse": "Regal Ulixes", "reason": "unsuitable ground"}
+      ],
+      "going_at_race": "Soft",
+      "result": {
+        "1st": {"horse": "Too Soon", "jockey": "Warren Fentiman", "trainer": "Gary & Josh Moore", "sp": "17/2"},
+        "2nd": {"horse": "Night Breeze", "sp": "15/2"},
+        "3rd": {"horse": "Bulletin", "sp": "15/2"},
+        "4th": {"horse": "Asgard's Captain", "sp": "14/1"},
+        "5th": {"horse": "Lord Melbourne", "jockey": "Jack Dace", "trainer": "Ralph Beckett", "sp_note": "approx 15/2 per market (model price 19/1 — market had significantly revised on the day)"}
+      },
+      "fav": {"horse": "Spinning Wheel", "sp": "16/5F", "finished": "unplaced"},
+      "distances": "1¼l, 5½l, hd",
+      "time": "2m 45.57s",
+      "time_comment": "slow by 9.97s",
+      "tote_win": 11.05,
+      "tote_pl": [3.85, 2.25, 2.80],
+      "outcome_our_bets": "LOST — Lord Melbourne 5th (LOST £0.75). Prydwen NR (unsuitable ground) — REFUNDED £0.50. Model had Lord Melbourne as rank 1/17 with rank_gap +13 (strongest signal on card) but finished 5th. Market also disagreed — SP appears ~15/2, not 19/1.",
+      "pl_gbp": -0.75,
+      "prydwen_refund_gbp": 0.50
+    },
+    {
+      "race_time": "17:55",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "distance": "6f",
+      "our_pick": "Apollo One",
+      "bet_type": "WIN",
+      "stake_gbp": 1.00,
+      "price_taken": "7/1",
+      "runners": 15,
+      "non_runners": [
+        {"horse": "Purest Time", "reason": "unsuitable ground"}
+      ],
+      "going_at_race": "Soft",
+      "result": {
+        "1st": {"horse": "Sondad", "jockey": "Joanna Mason", "trainer": "Michael & David Easterby", "sp": "11/2"},
+        "2nd": {"horse": "Invictus Gold", "sp": "28/1"},
+        "3rd": {"horse": "Partisan Hero", "sp": "11/1"}
+      },
+      "fav": {"horse": "Fine Interview", "sp": "15/8F", "finished": "unplaced"},
+      "finishing_positions": {
+        "Apollo One": "unplaced (outside top 3; parade ring notes: 'not as fit as he could be', 'one for later in the season')"
+      },
+      "distances": "1¾l, ¾l, ½l",
+      "time": "1m 11.81s",
+      "time_comment": "slow by 4.01s",
+      "tote_win": 7.70,
+      "tote_pl": [2.55, 9.85, 3.90],
+      "outcome_our_bets": "LOST — Apollo One unplaced. OVERRIDE_OF_VOID and GOING_FIT_CAUTION_PRECAUTIONARY flags proved correct concerns. Parade ring reports suggest below-par performance.",
+      "pl_gbp": -1.00
+    }
+  ],
+  "portfolio_summary": {
+    "total_staked_portfolio_gbp": 6.50,
+    "trifecta_side_bet_gbp": 6.00,
+    "total_outlay_gbp": 12.50,
+    "winners": ["Folk Pageant (16:40)"],
+    "refunds": [
+      {"horse": "Princess Child", "stake_refunded_gbp": 1.00, "reason": "NR — vet's certificate"},
+      {"horse": "Prydwen", "stake_refunded_gbp": 0.50, "reason": "NR — unsuitable ground"},
+      {"horse": "Trifecta box", "stake_refunded_gbp": 6.00, "reason": "Benvenuto Cellini NR — stalls incident"}
+    ],
+    "total_refunded_gbp": 7.50,
+    "gross_returns_gbp": 10.50,
+    "net_pl_gbp": 5.50,
+    "roi_pct": "net +£5.50 on £12.50 outlay = +44.0% ROI",
+    "nrs_on_our_picks": 3,
+    "commentary": "The card was saved by Folk Pageant's win (our Lester Piggott pick, model rank 2/10). Two picks NR (Princess Child, Prydwen). Benvenuto Cellini's stalls incident voided the trifecta and triggered Rule 4 in the Derby. Action finished 12th — V1 pick Christmas Day would have won (Linus invalidated correctly per rank_gap rule but in hindsight Christmas Day was the winner). Going reached full Soft from Race 4 onwards — HOLD card correctly calibrated."
+  }
+}
