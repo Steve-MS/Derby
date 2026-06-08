@@ -109,3 +109,7 @@ Wave-1 publish-readiness sprint shipped GREEN. Saul-3 gate review verdict 🟢 G
 **Path rule:** Report/racecard renderers now expose `report_output_path()` / `racecard_output_path()` wrappers over `course_config.path_for()`. Epsom remains legacy (`outputs/report-YYYY-MM-DD.html`, `outputs/racecard-YYYY-MM-DD.html`); Ascot renders to course-prefixed outputs.
 
 **Gotcha:** Current committed/untracked historical Epsom HTML artifacts are hand-edited race-day files, not clean renderer output; byte-diffing fresh CLI output against them is not meaningful for full-file equality. Header/title presentation stayed legacy-identical in fresh render smoke; document any historical diff as artifact drift rather than a presentation regression.
+
+### Linus-18 CLI seam patch - schema drift lesson (2026-06-08)
+
+CLI and script paths had drifted: Badger's legacy `singles`/`portfolio_summary` payload still powered report/racecard rows, while Linus header/T-60 consumers expected `meta` plus entry records. The safe migration pattern is additive: keep legacy keys byte/semantic-stable for Steve/report consumers, add `meta` and `entries`, and make watchdog/render-header derive equivalent entries from legacy payloads until every producer is upgraded. Slip validation must understand EW display conventions: entries store EW unit stake for computation, while operator slips may show either unit or total EW outlay. Future CLI seams should share schema adapters from `src/` instead of reimplementing totals in scripts.

@@ -40,3 +40,39 @@ score_equipment() does not consume it. Empty default + no Epsom
 calibration found means this is not a functional blocker today.
 Wire it up if/when course-specific equipment calibration is added.
 Priority: low.
+
+## FU-5 - R-10 cli card going passthrough
+Created: 2026-06-08 by Scribe-26 (from Livingston-8)
+Owner: TBD
+Concern: cli card still renders racecard subtitle Going: TBC even when Ascot report has Good to Firm.
+Impact: low operator polish; non-blocking for R-7/R-8/R-9 ship.
+Priority: defer to Chunk 5/6.
+
+## FU-6 - R-5 report footer Epsom market-latest leak
+Created: 2026-06-08 by Scribe-26 (from Livingston-7/8)
+Owner: TBD
+Concern: non-Epsom report/racecard paths can still surface stale Epsom odds snapshot context.
+Impact: low-medium presentation provenance issue; not in Linus-18 blocker scope.
+Priority: defer to Chunk 5/6.
+
+## FU-7 - R-6 Derby Weekend CSS comment
+Created: 2026-06-08 by Scribe-26 (from Livingston-7/8)
+Owner: TBD
+Concern: generated report HTML still contains a Derby Weekend CSS comment.
+Impact: cosmetic only; non-user-facing.
+Priority: low, defer.
+
+## FU-8 - R-11 PowerShell line-wrap on T-60 GBP total
+Created: 2026-06-08 by Scribe-26 (from Livingston-8)
+Owner: TBD
+Concern: T-60 operator table can wrap/split the GBP 11.70 header consistency detail in PowerShell transcripts.
+Impact: cosmetic terminal rendering only; status remains correct.
+Priority: low, defer.
+
+## FU-9 - Audit stale committed outputs baselines
+Created: 2026-06-08 by Scribe-26 (Saul-10 stale-baseline lesson)
+Owner: TBD
+Concern: committed outputs/ files can be mistaken for current regression contracts after schema migrations.
+Impact: process risk for future gates.
+Fix: audit other stale committed outputs/ files; consider moving canonical baselines to tests/fixtures/regression/.
+Priority: process improvement, defer.

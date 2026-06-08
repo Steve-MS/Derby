@@ -129,3 +129,9 @@
 - Inbox stubs for Rusty, Danny-5, and Saul-9 were summary-merged and removed from the working tree; Danny-4's canonical scoping inbox remains as the retained reference.
 - v0.4 #6 MVP is complete: chunks 1+2+3+4 landed, Epsom remains byte-equivalent, and Ascot can run with neutral course priors.
 - Follow-up tracker now carries FU-2/FU-3/FU-4 so non-blocking Chunk 4 caveats are durable before any non-neutral non-Epsom calibration.
+
+### 2026-06-08 - Scribe-26 stale-baseline lesson
+
+- Saul-10's CONDITIONAL verdict was useful gate pressure but exposed a process trap: HEAD outputs/bets-2026-06-06.json was a stale pre-wave-1 artifact, not the active CLI contract. Scribe should verify that a committed artifact is a current baseline before treating byte drift as a regression.
+- Generated outputs are poor long-term regression fixtures unless refreshed intentionally; canonical schema baselines should move under tests/fixtures/regression/ with tests naming the contract they protect.
+- For three-commit ship batches, regenerate ignored outputs with `git add -f` only on the explicitly approved files, and keep Ascot smoke artifacts plus retained large inbox records out of the staged set.

@@ -762,3 +762,9 @@ python scripts/check_env.py   # should exit 0
 **Evidence:** Saul-9 independently verified `tests/test_chunk4_priors.py` 4/4 and full suite 484/484 with wave33 ignored.
 **Regression:** Independent canonical recompute confirmed Epsom byte-equivalence: 8 races, 149 runners, 149 score fields, Derby top 3 unchanged.
 **Scope:** Gate confirmed allowed Chunk 4 files only, Ascot neutrality, centralized `scoring_priors_for()`, and no forbidden output/template/report churn.
+
+## 2026-06-08T14:30 v0.4 #6 polish: CLI seam blockers + stale-baseline lesson
+
+Livingston-7 Ascot E2E smoke surfaced 10 rough edges. Linus-18 patched 3 publish-blockers (R-7 predict schema, R-8 card->bets wiring, R-9 slip generation). Saul-10 returned CONDITIONAL on R-7 because comparison against HEAD outputs/bets-2026-06-06.json failed; investigation revealed HEAD was a pre-wave-1 stale artifact from "Linus Reports Engineer v3", not a true CLI baseline. Steve approved refreshing baseline (option A). Linus-18 shipped: 490 pass, Ascot T-60 clean. Livingston-8 independently confirmed R-7/R-8/R-9 closed via re-smoke. New low edge R-11 (PowerShell line-wrap on T-60 GBP total) logged.
+
+LESSON: gate prompts that say "compare against HEAD" need to verify HEAD is the current contract, not a stale committed artifact. Future regression baselines belong in tests/fixtures/regression/, not in outputs/.

@@ -108,3 +108,9 @@ Wave-1 publish-readiness sprint shipped GREEN. All four work items GREEN GO. Ful
 - Config extraction reviews need two distinct checks: value faithfulness against `HEAD` for legacy priors, and neutrality smoke for new courses so old Epsom edge cannot leak by default.
 - If compatibility commands write outputs during review, preserve and restore bytes in-memory, then check `git status --short outputs` to keep reviewer evidence from polluting the worktree.
 - Non-blocking caveats should be tied to production-path reachability: direct-helper empty-object semantics can wait when the production `score_runner()` path supplies merged priors.
+
+### 2026-06-08 - CLI blocker gate (Saul-10)
+- Critical generated-artifact gates must compare against git HEAD when available, even if the implementer reports semantic preservation; here the command-level smoke exposed a HEAD schema/value regression that unit tests with fake `build_bets()` did not cover.
+- For schema migrations, test both directions: legacy Badger `singles` payloads and already-published Linus/header `bets` payloads. Add a fixture shaped like the committed race-day artifact, not just a minimal synthetic dict.
+- When validating CLI-generated artifacts, restore tracked outputs after evidence capture so reviewer commands do not pollute a shared dirty tree.
+
