@@ -1,24 +1,31 @@
 {
   "friday_2026_06_05": {
-    "source": "Open-Meteo API (Epsom Downs: lat 51.3127, lon -0.2664)",
-    "going": "Good",
-    "rainfall_mm_48h": 4.5,
-    "rationale": "4.5mm accumulated rainfall Wed-Thu (3.2mm + 1.3mm); no rain forecast for Friday race day. High confidence due to consistent OpenMeteo forecast and narrow uncertainty band.",
-    "confidence": "high"
-  },
-  "history_source": {
-    "enrichment_cost": "Manual review of each horse's Racing Post form history page to extract per-run going; estimated 10-15 mins per horse at full complexity. Automated scrape via Racing Post API (if available) would reduce to ~2 mins per card. Alternative: Sporting Life form tool or At The Races replays (video-based, higher effort).",
-    "available_in_racecards": false,
-    "fallback_source": "Racing Post form",
-    "field_path": "N/A"
+    "source": "Racing Post + Met Office weather forecast (2026-06-04 12:15 UTC+1)",
+    "going": "Good to Soft (Good in places)",
+    "rainfall_mm_48h": 2.3,
+    "rationale": "Mainly dry Friday forecast; no rain expected. Ground is on the soft side after Wed/Thu light rain (estimated 2.3mm 48h total). Ground should improve slightly with dry Friday conditions. No heavy ground expected.",
+    "confidence": "high",
+    "weather_notes": "Light winds, temperatures 17°C daytime. Dry spells throughout Friday race day. No rain risk.",
+    "official_going": "Derby course GOOD TO SOFT; 5f course GOOD (per Racing Post 2026-06-04)",
+    "retrieved_at": "2026-06-04T12:15:00+01:00",
+    "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-05"
   },
   "saturday_2026_06_06": {
-    "source": "Open-Meteo API (Epsom Downs: lat 51.3127, lon -0.2664)",
-    "going": "Good",
-    "rainfall_mm_48h": 2.0,
-    "rationale": "2.0mm rain forecast for Saturday; Friday has no rain forecast, so ground benefits from overnight drying. Conditions remain Good with stable high confidence.",
-    "confidence": "high"
+    "source": "Racing Post + Met Office weather forecast (2026-06-04 12:15 UTC+1)",
+    "going": "Good to Soft (likely easing toward Soft in places)",
+    "rainfall_mm_48h": 5.2,
+    "rationale": "Light rain forecast Saturday morning and scattered showers throughout day (60–80% rain probability per Met Office). Overnight drying from Friday helps slightly, but renewed Saturday rain will soften ground. Expect SOFT or GOOD TO SOFT by post time. No heavy ground, but softer than Friday. Derby-course drainage good; 5f course may be softer.",
+    "confidence": "high",
+    "weather_notes": "Breezy conditions Saturday, temperatures 15-16°C. Rain probability 60–80% with scattered showers. Wind may affect young 3yos at 1m4f distance.",
+    "official_going": "Derby course GOOD TO SOFT; 5f course GOOD (per Racing Post 2026-06-04, but likely softer by race time)",
+    "retrieved_at": "2026-06-04T12:15:00+01:00",
+    "source_url": "https://www.racingpost.com/racecards/17/epsom/2026-06-06"
   },
-  "fetched_at": "2026-06-03T17:34:21+01:00",
-  "notes": "Epsom Downs official going updates page returns 404; relying on weather data. Racecards JSON includes meeting-level going forecast but not per-run historical going for each horse's form string. Kaylee's going-fit scoring will require enrichment step before implementation."
+  "key_implications": {
+    "friday": "Good to Soft, favorable for balanced horses. No soft-ground specialists need edge Friday. Amelia Earhart (no soft-ground win flag) should handle well.",
+    "saturday": "Likely soft ground by Derby post time. Horses with proven soft-ground form have advantage. Item (Dante @ York neutral) OK; Benvenuto Cellini (Chester going unknown) neutral. Windy conditions may affect some young 3yos.",
+    "model_impact": "Friday ground stable; Saturday ground softer than current forecast. Expect each-way bets at 30–40% odds to gain value if horses show soft-ground form."
+  },
+  "fetched_at": "2026-06-04T12:15:00+01:00",
+  "notes": "Precise withdrawal Thursday morning due to ground concerns (soft ground forecast). This confirms soft-ground sensitivity among top contenders. Watch for any additional late withdrawals Friday morning if going deteriorates faster than expected."
 }

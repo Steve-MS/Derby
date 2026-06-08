@@ -2629,6 +2629,7 @@
         },
         {
           "horse": "Precise",
+          "withdrawn": true,
           "age": 3,
           "trainer": "Aidan O'Brien",
           "jockey": "TBC",

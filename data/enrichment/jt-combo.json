@@ -1,0 +1,1428 @@
+{
+  "generated_at": "2026-06-03T08:00:00+01:00",
+  "window_label": "trailing_365d",
+  "horses": {
+    "Riley Rocks": {
+      "trainer": "Dylan Cunha",
+      "jockey": "Ray Dawson",
+      "combo_key": "Dylan Cunha|Ray Dawson",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Ambishio": {
+      "trainer": "Michael Appleby",
+      "jockey": "Robert Havlin",
+      "combo_key": "Michael Appleby|Robert Havlin",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Temple Of Athena": {
+      "trainer": "Brian Ellison",
+      "jockey": "Ben Robinson",
+      "combo_key": "Brian Ellison|Ben Robinson",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Henrythenate": {
+      "trainer": "Patrick Morris",
+      "jockey": "Paddy Bradley",
+      "combo_key": "Patrick Morris|Paddy Bradley",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Naana's Shadow": {
+      "trainer": "Katie Scott",
+      "jockey": "Oisin Murphy",
+      "combo_key": "Katie Scott|Oisin Murphy",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Alfa Duplicate": {
+      "trainer": "Ivan Furtado",
+      "jockey": "Silvestre De Sousa",
+      "combo_key": "Ivan Furtado|Silvestre De Sousa",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Hanney Girl": {
+      "trainer": "Tim Easterby",
+      "jockey": "David Allan",
+      "combo_key": "Tim Easterby|David Allan",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "U S S Charleston": {
+      "trainer": "Lemos De Souza",
+      "jockey": "Tom Kiely-Marshall",
+      "combo_key": "Lemos De Souza|Tom Kiely-Marshall",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Proof": {
+      "trainer": "Charles Hills",
+      "jockey": "Kieran Shoemark",
+      "combo_key": "Charles Hills|Kieran Shoemark",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Chairmanfourtimes": {
+      "trainer": "Adrian Paul Keatley",
+      "jockey": "Mikey Sheehy",
+      "combo_key": "Adrian Paul Keatley|Mikey Sheehy",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Wedonttelllies": {
+      "trainer": "Richard Hughes",
+      "jockey": "Billy Loughnane",
+      "combo_key": "Richard Hughes|Billy Loughnane",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "One And Gone": {
+      "trainer": "Ian Williams",
+      "jockey": "Edward Greatrex",
+      "combo_key": "Ian Williams|Edward Greatrex",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Shes Got A Brother": {
+      "trainer": "Michael & David Easterby",
+      "jockey": "Billy Garritty",
+      "combo_key": "Michael & David Easterby|Billy Garritty",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "The Bookkeeper": {
+      "trainer": "Richard Hughes",
+      "jockey": "Hector Crouch",
+      "combo_key": "Richard Hughes|Hector Crouch",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Benefacta": {
+      "trainer": "Richard Hughes",
+      "jockey": "David Probert",
+      "combo_key": "Richard Hughes|David Probert",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Alpe d'Huez": {
+      "trainer": "Archie Watson",
+      "jockey": "Luke Morris",
+      "combo_key": "Archie Watson|Luke Morris",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Dandyman Dan": {
+      "trainer": "David Evans",
+      "jockey": "Saffie Osborne",
+      "combo_key": "David Evans|Saffie Osborne",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Rlasthope": {
+      "trainer": "Tony Coyle & Kaine Wood",
+      "jockey": "Colin Keane",
+      "combo_key": "Tony Coyle & Kaine Wood|Colin Keane",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "El Lambo": {
+      "trainer": "Charles Hills",
+      "jockey": "Jason Watson",
+      "combo_key": "Charles Hills|Jason Watson",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Ardad Steve": {
+      "trainer": "Eve Johnson Houghton",
+      "jockey": "Charles Bishop",
+      "combo_key": "Eve Johnson Houghton|Charles Bishop",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Romidijo": {
+      "trainer": "Charlie Clover",
+      "jockey": "Pierre-Louis Jamin",
+      "combo_key": "Charlie Clover|Pierre-Louis Jamin",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Wild Terrain": {
+      "trainer": "Hugo Palmer",
+      "jockey": "Oisin Murphy",
+      "combo_key": "Hugo Palmer|Oisin Murphy",
+      "combo_wins": 7,
+      "combo_runners": 22,
+      "first_time_pairing": false,
+      "source": "ai-raceday.co.uk/jockey/oisin-murphy"
+    },
+    "Social Spirit": {
+      "trainer": "Michael & David Easterby",
+      "jockey": "Billy Garritty",
+      "combo_key": "Michael & David Easterby|Billy Garritty",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Time And Effort": {
+      "trainer": "Ivan Furtado",
+      "jockey": "Silvestre De Sousa",
+      "combo_key": "Ivan Furtado|Silvestre De Sousa",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Havana Flash": {
+      "trainer": "George Boughey",
+      "jockey": "Billy Loughnane",
+      "combo_key": "George Boughey|Billy Loughnane",
+      "combo_wins": 55,
+      "combo_runners": 280,
+      "first_time_pairing": false,
+      "source": "tracklab.bet/jockey/billy-loughnane"
+    },
+    "Possessive": {
+      "trainer": "K R Burke",
+      "jockey": "Shane Foley",
+      "combo_key": "K R Burke|Shane Foley",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Audience": {
+      "trainer": "David O'Meara",
+      "jockey": "Rossa Ryan",
+      "combo_key": "David O'Meara|Rossa Ryan",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Persica": {
+      "trainer": "Richard Hannon",
+      "jockey": "Sean Levey",
+      "combo_key": "Richard Hannon|Sean Levey",
+      "combo_wins": 21,
+      "combo_runners": 133,
+      "first_time_pairing": false,
+      "source": "ai-raceday.co.uk/trainer/richard-hannon"
+    },
+    "Boiling Point": {
+      "trainer": "K R Burke",
+      "jockey": "Clifford Lee",
+      "combo_key": "K R Burke|Clifford Lee",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Ice Max": {
+      "trainer": "K R Burke",
+      "jockey": "Sam James",
+      "combo_key": "K R Burke|Sam James",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Skukuza": {
+      "trainer": "Ed Dunlop",
+      "jockey": "Ryan Moore",
+      "combo_key": "Ed Dunlop|Ryan Moore",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Balmacara": {
+      "trainer": "Eve Johnson Houghton",
+      "jockey": "Charles Bishop",
+      "combo_key": "Eve Johnson Houghton|Charles Bishop",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Seagulls Eleven": {
+      "trainer": "Hugo Palmer",
+      "jockey": "Oisin Murphy",
+      "combo_key": "Hugo Palmer|Oisin Murphy",
+      "combo_wins": 7,
+      "combo_runners": 22,
+      "first_time_pairing": false,
+      "source": "ai-raceday.co.uk/jockey/oisin-murphy"
+    },
+    "Linwood": {
+      "trainer": "Richard Hannon",
+      "jockey": "Jamie Spencer",
+      "combo_key": "Richard Hannon|Jamie Spencer",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Royal Playwright": {
+      "trainer": "Andrew Balding",
+      "jockey": "Silvestre De Sousa",
+      "combo_key": "Andrew Balding|Silvestre De Sousa",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Chancellor": {
+      "trainer": "John & Thady Gosden",
+      "jockey": "Robert Havlin",
+      "combo_key": "John & Thady Gosden|Robert Havlin",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Liberty Lane": {
+      "trainer": "K R Burke",
+      "jockey": "Jack Nicholls",
+      "combo_key": "K R Burke|Jack Nicholls",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "King's Code": {
+      "trainer": "David Evans",
+      "jockey": "Saffie Osborne",
+      "combo_key": "David Evans|Saffie Osborne",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Beylerbeyi": {
+      "trainer": "Ian Williams",
+      "jockey": "Billy Loughnane",
+      "combo_key": "Ian Williams|Billy Loughnane",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Bolster": {
+      "trainer": "K R Burke",
+      "jockey": "Pierre-Louis Jamin",
+      "combo_key": "K R Burke|Pierre-Louis Jamin",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Auld Toon Loon": {
+      "trainer": "Tom Dascombe",
+      "jockey": "Kieran Shoemark",
+      "combo_key": "Tom Dascombe|Kieran Shoemark",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Let's Dream": {
+      "trainer": "Michael Bell",
+      "jockey": "David Probert",
+      "combo_key": "Michael Bell|David Probert",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Hand Of God": {
+      "trainer": "Harry Charlton",
+      "jockey": "Lewis Edmunds",
+      "combo_key": "Harry Charlton|Lewis Edmunds",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "City Of Delight": {
+      "trainer": "David Menuisier",
+      "jockey": "Jason Watson",
+      "combo_key": "David Menuisier|Jason Watson",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Spoken Truth": {
+      "trainer": "David O'Meara",
+      "jockey": "Luke Morris",
+      "combo_key": "David O'Meara|Luke Morris",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Great David": {
+      "trainer": "James Tate",
+      "jockey": "Rossa Ryan",
+      "combo_key": "James Tate|Rossa Ryan",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Tycoon": {
+      "trainer": "Kevin Philippart De Foy",
+      "jockey": "David Egan",
+      "combo_key": "Kevin Philippart De Foy|David Egan",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Quai De Bethune": {
+      "trainer": "Hamad Al Jehani",
+      "jockey": "James Doyle",
+      "combo_key": "Hamad Al Jehani|James Doyle",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Sallaal": {
+      "trainer": "Roger Varian",
+      "jockey": "Ray Dawson",
+      "combo_key": "Roger Varian|Ray Dawson",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Respond": {
+      "trainer": "Andrew Balding",
+      "jockey": "Oisin Murphy",
+      "combo_key": "Andrew Balding|Oisin Murphy",
+      "combo_wins": 32,
+      "combo_runners": 120,
+      "first_time_pairing": false,
+      "source": "ai-raceday.co.uk/jockey/oisin-murphy"
+    },
+    "Rastnet": {
+      "trainer": "John Butler",
+      "jockey": "Silvestre De Sousa",
+      "combo_key": "John Butler|Silvestre De Sousa",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Amelia Earhart": {
+      "trainer": "Aidan O'Brien",
+      "jockey": "Ryan Moore",
+      "combo_key": "Aidan O'Brien|Ryan Moore",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "A La Prochaine": {
+      "trainer": "Ralph Beckett",
+      "jockey": "James Doyle",
+      "combo_key": "Ralph Beckett|James Doyle",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Popmaster": {
+      "trainer": "Ed Walker",
+      "jockey": "Kieran Shoemark",
+      "combo_key": "Ed Walker|Kieran Shoemark",
+      "combo_wins": 11,
+      "combo_runners": 89,
+      "first_time_pairing": false,
+      "source": "horseracing.net/trainers/ed-walker"
+    },
+    "Sterling Knight": {
+      "trainer": "Ed Dunlop",
+      "jockey": "Ryan Moore",
+      "combo_key": "Ed Dunlop|Ryan Moore",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Ancient Rome": {
+      "trainer": "Charles Hills",
+      "jockey": "Jamie Spencer",
+      "combo_key": "Charles Hills|Jamie Spencer",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Thunder Roar": {
+      "trainer": "Tony Coyle & Kaine Wood",
+      "jockey": "Colin Keane",
+      "combo_key": "Tony Coyle & Kaine Wood|Colin Keane",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Mirsky": {
+      "trainer": "David O'Meara",
+      "jockey": "Hector Crouch",
+      "combo_key": "David O'Meara|Hector Crouch",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Walsingham": {
+      "trainer": "David O'Meara",
+      "jockey": "Jason Watson",
+      "combo_key": "David O'Meara|Jason Watson",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Alpha Crucis": {
+      "trainer": "Gary & Josh Moore",
+      "jockey": "David Egan",
+      "combo_key": "Gary & Josh Moore|David Egan",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Mr Swivell": {
+      "trainer": "Kevin Philippart De Foy",
+      "jockey": "Ray Dawson",
+      "combo_key": "Kevin Philippart De Foy|Ray Dawson",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Ozat": {
+      "trainer": "Ian Williams",
+      "jockey": "Charles Bishop",
+      "combo_key": "Ian Williams|Charles Bishop",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Celeborn": {
+      "trainer": "George Boughey",
+      "jockey": "Billy Loughnane",
+      "combo_key": "George Boughey|Billy Loughnane",
+      "combo_wins": 55,
+      "combo_runners": 280,
+      "first_time_pairing": false,
+      "source": "tracklab.bet/jockey/billy-loughnane"
+    },
+    "A War Eagle": {
+      "trainer": "Michael & David Easterby",
+      "jockey": "Billy Garritty",
+      "combo_key": "Michael & David Easterby|Billy Garritty",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Mister Winston": {
+      "trainer": "Andrew Balding",
+      "jockey": "Oisin Murphy",
+      "combo_key": "Andrew Balding|Oisin Murphy",
+      "combo_wins": 32,
+      "combo_runners": 120,
+      "first_time_pairing": false,
+      "source": "ai-raceday.co.uk/jockey/oisin-murphy"
+    },
+    "Stem": {
+      "trainer": "Richard Hannon",
+      "jockey": "Pat Dobbs",
+      "combo_key": "Richard Hannon|Pat Dobbs",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Asmen Warrior": {
+      "trainer": "James Owen",
+      "jockey": "Silvestre De Sousa",
+      "combo_key": "James Owen|Silvestre De Sousa",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Shafdar": {
+      "trainer": "Ian Williams",
+      "jockey": "Edward Greatrex",
+      "combo_key": "Ian Williams|Edward Greatrex",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Triple Double A": {
+      "trainer": "Hugo Palmer",
+      "jockey": "Saffie Osborne",
+      "combo_key": "Hugo Palmer|Saffie Osborne",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Man Of La Mancha": {
+      "trainer": "Ralph Beckett",
+      "jockey": "Rossa Ryan",
+      "combo_key": "Ralph Beckett|Rossa Ryan",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "First Principle": {
+      "trainer": "William Haggas",
+      "jockey": "Cieren Fallon",
+      "combo_key": "William Haggas|Cieren Fallon",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Principality": {
+      "trainer": "Harry Eustace",
+      "jockey": "George Wood",
+      "combo_key": "Harry Eustace|George Wood",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Ardisia": {
+      "trainer": "Hugo Palmer",
+      "jockey": "David Probert",
+      "combo_key": "Hugo Palmer|David Probert",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Ellusive Butterfly": {
+      "trainer": "K R Burke",
+      "jockey": "Clifford Lee",
+      "combo_key": "K R Burke|Clifford Lee",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Awaken": {
+      "trainer": "George Boughey",
+      "jockey": "Billy Loughnane",
+      "combo_key": "George Boughey|Billy Loughnane",
+      "combo_wins": 55,
+      "combo_runners": 280,
+      "first_time_pairing": false,
+      "source": "tracklab.bet/jockey/billy-loughnane"
+    },
+    "Stellar Sunrise": {
+      "trainer": "Andrew Balding",
+      "jockey": "Oisin Murphy",
+      "combo_key": "Andrew Balding|Oisin Murphy",
+      "combo_wins": 32,
+      "combo_runners": 120,
+      "first_time_pairing": false,
+      "source": "ai-raceday.co.uk/jockey/oisin-murphy"
+    },
+    "Postmodern": {
+      "trainer": "Hamad Al Jehani",
+      "jockey": "James Doyle",
+      "combo_key": "Hamad Al Jehani|James Doyle",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Assaranca": {
+      "trainer": "Richard Hannon",
+      "jockey": "Sean Levey",
+      "combo_key": "Richard Hannon|Sean Levey",
+      "combo_wins": 21,
+      "combo_runners": 133,
+      "first_time_pairing": false,
+      "source": "ai-raceday.co.uk/trainer/richard-hannon"
+    },
+    "Northern Champion": {
+      "trainer": "Ed Walker",
+      "jockey": "Kieran Shoemark",
+      "combo_key": "Ed Walker|Kieran Shoemark",
+      "combo_wins": 11,
+      "combo_runners": 89,
+      "first_time_pairing": false,
+      "source": "horseracing.net/trainers/ed-walker"
+    },
+    "Ten Carat Harry": {
+      "trainer": "Jamie Osborne",
+      "jockey": "Saffie Osborne",
+      "combo_key": "Jamie Osborne|Saffie Osborne",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Rhoscolyn": {
+      "trainer": "David O'Meara",
+      "jockey": "Jason Watson",
+      "combo_key": "David O'Meara|Jason Watson",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Mister Bluebird": {
+      "trainer": "Heather Main",
+      "jockey": "Colin Keane",
+      "combo_key": "Heather Main|Colin Keane",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Talis Evolvere": {
+      "trainer": "Richard Hannon",
+      "jockey": "Sean Levey",
+      "combo_key": "Richard Hannon|Sean Levey",
+      "combo_wins": 21,
+      "combo_runners": 133,
+      "first_time_pairing": false,
+      "source": "ai-raceday.co.uk/trainer/richard-hannon"
+    },
+    "Son": {
+      "trainer": "Tim Easterby",
+      "jockey": "David Allan",
+      "combo_key": "Tim Easterby|David Allan",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Crimson Spirit": {
+      "trainer": "Daniel & Claire Kubler",
+      "jockey": "Ray Dawson",
+      "combo_key": "Daniel & Claire Kubler|Ray Dawson",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Colombier": {
+      "trainer": "Hamad Al Jehani",
+      "jockey": "James Doyle",
+      "combo_key": "Hamad Al Jehani|James Doyle",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Arctic Thunder": {
+      "trainer": "Ed Walker",
+      "jockey": "Kieran Shoemark",
+      "combo_key": "Ed Walker|Kieran Shoemark",
+      "combo_wins": 11,
+      "combo_runners": 89,
+      "first_time_pairing": false,
+      "source": "horseracing.net/trainers/ed-walker"
+    },
+    "Rare Change": {
+      "trainer": "Richard Hughes",
+      "jockey": "Saffie Osborne",
+      "combo_key": "Richard Hughes|Saffie Osborne",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Pietro": {
+      "trainer": "James Fanshawe",
+      "jockey": "George Wood",
+      "combo_key": "James Fanshawe|George Wood",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Supido": {
+      "trainer": "Ian Williams",
+      "jockey": "Billy Loughnane",
+      "combo_key": "Ian Williams|Billy Loughnane",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Musical Angel": {
+      "trainer": "Simon Dow",
+      "jockey": "David Probert",
+      "combo_key": "Simon Dow|David Probert",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Veblen Good": {
+      "trainer": "David O'Meara",
+      "jockey": "Rossa Ryan",
+      "combo_key": "David O'Meara|Rossa Ryan",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Zarathos": {
+      "trainer": "Dylan Cunha",
+      "jockey": "George Wood",
+      "combo_key": "Dylan Cunha|George Wood",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Dance In The Storm": {
+      "trainer": "Andrew Balding",
+      "jockey": "Oisin Murphy",
+      "combo_key": "Andrew Balding|Oisin Murphy",
+      "combo_wins": 32,
+      "combo_runners": 120,
+      "first_time_pairing": false,
+      "source": "ai-raceday.co.uk/jockey/oisin-murphy"
+    },
+    "Aurora Majesty": {
+      "trainer": "Archie Watson",
+      "jockey": "Luke Morris",
+      "combo_key": "Archie Watson|Luke Morris",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "The Angel King": {
+      "trainer": "Ian Williams",
+      "jockey": "Billy Loughnane",
+      "combo_key": "Ian Williams|Billy Loughnane",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Monarch's Gold": {
+      "trainer": "Kevin Philippart De Foy",
+      "jockey": "David Egan",
+      "combo_key": "Kevin Philippart De Foy|David Egan",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Witness Stand": {
+      "trainer": "Dr Richard Newland & Jamie Insole",
+      "jockey": "Billy Loughnane",
+      "combo_key": "Dr Richard Newland & Jamie Insole|Billy Loughnane",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Never So Brave": {
+      "trainer": "Andrew Balding",
+      "jockey": "Oisin Murphy",
+      "combo_key": "Andrew Balding|Oisin Murphy",
+      "combo_wins": 32,
+      "combo_runners": 120,
+      "first_time_pairing": false,
+      "source": "ai-raceday.co.uk/jockey/oisin-murphy"
+    },
+    "Lake Forest": {
+      "trainer": "William Haggas",
+      "jockey": "Tom Marquand",
+      "combo_key": "William Haggas|Tom Marquand",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Ten Bob Tony": {
+      "trainer": "Ed Walker",
+      "jockey": "Kieran Shoemark",
+      "combo_key": "Ed Walker|Kieran Shoemark",
+      "combo_wins": 11,
+      "combo_runners": 89,
+      "first_time_pairing": false,
+      "source": "horseracing.net/trainers/ed-walker"
+    },
+    "Copacabana Sands": {
+      "trainer": "Andrew Balding",
+      "jockey": "Oisin Murphy",
+      "combo_key": "Andrew Balding|Oisin Murphy",
+      "combo_wins": 32,
+      "combo_runners": 120,
+      "first_time_pairing": false,
+      "source": "ai-raceday.co.uk/jockey/oisin-murphy"
+    },
+    "Humam": {
+      "trainer": "Stuart Williams",
+      "jockey": "Marco Ghiani",
+      "combo_key": "Stuart Williams|Marco Ghiani",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Sparks Fly": {
+      "trainer": "David Loughnane",
+      "jockey": "Laura Pearson",
+      "combo_key": "David Loughnane|Laura Pearson",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Arisaig": {
+      "trainer": "Charlie Johnston",
+      "jockey": "Jamie Spencer",
+      "combo_key": "Charlie Johnston|Jamie Spencer",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Love Dynasty": {
+      "trainer": "Kevin Ryan",
+      "jockey": "Billy Loughnane",
+      "combo_key": "Kevin Ryan|Billy Loughnane",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Betty Clover": {
+      "trainer": "Eve Johnson Houghton",
+      "jockey": "Charles Bishop",
+      "combo_key": "Eve Johnson Houghton|Charles Bishop",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Shes Perfect": {
+      "trainer": "Charlie Fellowes",
+      "jockey": "Kieran Shoemark",
+      "combo_key": "Charlie Fellowes|Kieran Shoemark",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Pina Sonata": {
+      "trainer": "James Fanshawe",
+      "jockey": "Daniel Muscutt",
+      "combo_key": "James Fanshawe|Daniel Muscutt",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Sunlit Uplands": {
+      "trainer": "Stuart Williams",
+      "jockey": "Hector Crouch",
+      "combo_key": "Stuart Williams|Hector Crouch",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Breckenbrough": {
+      "trainer": "Mario Baratti",
+      "jockey": "Oisin Murphy",
+      "combo_key": "Mario Baratti|Oisin Murphy",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Pacific Mission": {
+      "trainer": "Andrew Balding",
+      "jockey": "Colin Keane",
+      "combo_key": "Andrew Balding|Colin Keane",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "The Bell Conductor": {
+      "trainer": "Ivan Furtado",
+      "jockey": "Silvestre De Sousa",
+      "combo_key": "Ivan Furtado|Silvestre De Sousa",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Brazen Bolt": {
+      "trainer": "Ruth Carr",
+      "jockey": "Warren Fentiman",
+      "combo_key": "Ruth Carr|Warren Fentiman",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Dream Composer": {
+      "trainer": "Tony Carroll",
+      "jockey": "Dougie Costello",
+      "combo_key": "Tony Carroll|Dougie Costello",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Emperor Spirit": {
+      "trainer": "Michael Keady",
+      "jockey": "Ray Dawson",
+      "combo_key": "Michael Keady|Ray Dawson",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Nogo's Dream": {
+      "trainer": "Richard Hughes",
+      "jockey": "Saffie Osborne",
+      "combo_key": "Richard Hughes|Saffie Osborne",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Tatterstall": {
+      "trainer": "Michael Dods",
+      "jockey": "Connor Beasley",
+      "combo_key": "Michael Dods|Connor Beasley",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Democracy Dilemma": {
+      "trainer": "Robert Cowell",
+      "jockey": "Jack Mitchell",
+      "combo_key": "Robert Cowell|Jack Mitchell",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Another Baar": {
+      "trainer": "Adrian Paul Keatley",
+      "jockey": "Mikey Sheehy",
+      "combo_key": "Adrian Paul Keatley|Mikey Sheehy",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Partisan Hero": {
+      "trainer": "David Loughnane",
+      "jockey": "Robert Havlin",
+      "combo_key": "David Loughnane|Robert Havlin",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Desert Cop": {
+      "trainer": "George Baker",
+      "jockey": "Charles Bishop",
+      "combo_key": "George Baker|Charles Bishop",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Sturlasson": {
+      "trainer": "John Ryan",
+      "jockey": "Stevie Donohoe",
+      "combo_key": "John Ryan|Stevie Donohoe",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Betsen": {
+      "trainer": "Tony Carroll",
+      "jockey": "Clifford Lee",
+      "combo_key": "Tony Carroll|Clifford Lee",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Law Of Average": {
+      "trainer": "Chelsea Banham",
+      "jockey": "Joey Haynes",
+      "combo_key": "Chelsea Banham|Joey Haynes",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Rogue Enforcer": {
+      "trainer": "Archie Watson",
+      "jockey": "Kieran Shoemark",
+      "combo_key": "Archie Watson|Kieran Shoemark",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Golden Long": {
+      "trainer": "Lemos De Souza",
+      "jockey": "J F Egan",
+      "combo_key": "Lemos De Souza|J F Egan",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Marching Mac": {
+      "trainer": "Phil McEntee",
+      "jockey": "Grace McEntee",
+      "combo_key": "Phil McEntee|Grace McEntee",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "King Of Light": {
+      "trainer": "Stuart Williams",
+      "jockey": "Marco Ghiani",
+      "combo_key": "Stuart Williams|Marco Ghiani",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Francisco's Piece": {
+      "trainer": "Adrian Paul Keatley",
+      "jockey": "Mikey Sheehy",
+      "combo_key": "Adrian Paul Keatley|Mikey Sheehy",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Cindy Lou Who": {
+      "trainer": "Tony Carroll",
+      "jockey": "William Carson",
+      "combo_key": "Tony Carroll|William Carson",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Dyonisos": {
+      "trainer": "Ian Williams",
+      "jockey": "David Egan",
+      "combo_key": "Ian Williams|David Egan",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Ziggy's Triton": {
+      "trainer": "David O'Meara",
+      "jockey": "Jason Hart",
+      "combo_key": "David O'Meara|Jason Hart",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Stormy Impact": {
+      "trainer": "Richard & Peter Fahey",
+      "jockey": "Warren Fentiman",
+      "combo_key": "Richard & Peter Fahey|Warren Fentiman",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Lexington Blitz": {
+      "trainer": "Robert Cowell",
+      "jockey": "Edward Greatrex",
+      "combo_key": "Robert Cowell|Edward Greatrex",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Star Chorus": {
+      "trainer": "Mike Murphy",
+      "jockey": "Rob Hornby",
+      "combo_key": "Mike Murphy|Rob Hornby",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Kinswoman": {
+      "trainer": "William Haggas",
+      "jockey": "Tom Marquand",
+      "combo_key": "William Haggas|Tom Marquand",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Arklow Lad": {
+      "trainer": "Michael Appleby",
+      "jockey": "Harry Davies",
+      "combo_key": "Michael Appleby|Harry Davies",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Ancient Egypt": {
+      "trainer": "Charlie Johnston",
+      "jockey": "David Egan",
+      "combo_key": "Charlie Johnston|David Egan",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "A Taste of Glory": {
+      "trainer": "Andrew Balding",
+      "jockey": "Jamie Spencer",
+      "combo_key": "Andrew Balding|Jamie Spencer",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Balzac": {
+      "trainer": "Jane Chapple-Hyam",
+      "jockey": "Silvestre De Sousa",
+      "combo_key": "Jane Chapple-Hyam|Silvestre De Sousa",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Bay Of Brilliance": {
+      "trainer": "Ralph Beckett",
+      "jockey": "Hector Crouch",
+      "combo_key": "Ralph Beckett|Hector Crouch",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Starlight Time": {
+      "trainer": "Roger Varian",
+      "jockey": "Ray Dawson",
+      "combo_key": "Roger Varian|Ray Dawson",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Lake Como": {
+      "trainer": "George Boughey",
+      "jockey": "Billy Loughnane",
+      "combo_key": "George Boughey|Billy Loughnane",
+      "combo_wins": 55,
+      "combo_runners": 280,
+      "first_time_pairing": false,
+      "source": "tracklab.bet/jockey/billy-loughnane"
+    },
+    "Tailgunner Joe": {
+      "trainer": "Dylan Cunha",
+      "jockey": "David Egan",
+      "combo_key": "Dylan Cunha|David Egan",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Folk Pageant": {
+      "trainer": "Charlie Johnston",
+      "jockey": "Rowan Scott",
+      "combo_key": "Charlie Johnston|Rowan Scott",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Allegresse": {
+      "trainer": "Andrew Balding",
+      "jockey": "Oisin Murphy",
+      "combo_key": "Andrew Balding|Oisin Murphy",
+      "combo_wins": 32,
+      "combo_runners": 120,
+      "first_time_pairing": false,
+      "source": "ai-raceday.co.uk/jockey/oisin-murphy"
+    },
+    "Hell Yeah He Did": {
+      "trainer": "Ralph Beckett",
+      "jockey": "Hector Crouch",
+      "combo_key": "Ralph Beckett|Hector Crouch",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Tai Hang Pegasus": {
+      "trainer": "Charlie Fellowes",
+      "jockey": "Silvestre De Sousa",
+      "combo_key": "Charlie Fellowes|Silvestre De Sousa",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Savvy Disko": {
+      "trainer": "S Woods",
+      "jockey": "Robert Havlin",
+      "combo_key": "S Woods|Robert Havlin",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "York Tower": {
+      "trainer": "William Haggas",
+      "jockey": "Harry Davies",
+      "combo_key": "William Haggas|Harry Davies",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Max Mayhem": {
+      "trainer": "George Baker",
+      "jockey": "Charles Bishop",
+      "combo_key": "George Baker|Charles Bishop",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Asgard's Captain": {
+      "trainer": "Dylan Cunha",
+      "jockey": "Kieran Shoemark",
+      "combo_key": "Dylan Cunha|Kieran Shoemark",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Gordon Grey": {
+      "trainer": "George Baker",
+      "jockey": "Silvestre De Sousa",
+      "combo_key": "George Baker|Silvestre De Sousa",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Night Breeze": {
+      "trainer": "Ian Williams",
+      "jockey": "Billy Loughnane",
+      "combo_key": "Ian Williams|Billy Loughnane",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Lord Melbourne": {
+      "trainer": "Ralph Beckett",
+      "jockey": "Jack Dace",
+      "combo_key": "Ralph Beckett|Jack Dace",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Military Academy": {
+      "trainer": "Jane Chapple-Hyam",
+      "jockey": "Paddy Bradley",
+      "combo_key": "Jane Chapple-Hyam|Paddy Bradley",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Regal Ulixes": {
+      "trainer": "Andrew Balding",
+      "jockey": "Oisin Murphy",
+      "combo_key": "Andrew Balding|Oisin Murphy",
+      "combo_wins": 32,
+      "combo_runners": 120,
+      "first_time_pairing": false,
+      "source": "ai-raceday.co.uk/jockey/oisin-murphy"
+    },
+    "Elsass": {
+      "trainer": "Charlie Johnston",
+      "jockey": "Connor Beasley",
+      "combo_key": "Charlie Johnston|Connor Beasley",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Antrim": {
+      "trainer": "K R Burke",
+      "jockey": "Sam James",
+      "combo_key": "K R Burke|Sam James",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Hengest": {
+      "trainer": "Dylan Cunha",
+      "jockey": "Saffie Osborne",
+      "combo_key": "Dylan Cunha|Saffie Osborne",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Fierce Fortitude": {
+      "trainer": "Kevin Philippart De Foy",
+      "jockey": "David Egan",
+      "combo_key": "Kevin Philippart De Foy|David Egan",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Badri": {
+      "trainer": "Michael Herrington",
+      "jockey": "Dylan Hogan",
+      "combo_key": "Michael Herrington|Dylan Hogan",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Spangled Mac": {
+      "trainer": "George Boughey",
+      "jockey": "Billy Loughnane",
+      "combo_key": "George Boughey|Billy Loughnane",
+      "combo_wins": 55,
+      "combo_runners": 280,
+      "first_time_pairing": false,
+      "source": "tracklab.bet/jockey/billy-loughnane"
+    },
+    "Cinque Verde": {
+      "trainer": "Tony Carroll",
+      "jockey": "William Carson",
+      "combo_key": "Tony Carroll|William Carson",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Purest Time": {
+      "trainer": "Ian Williams",
+      "jockey": "Edward Greatrex",
+      "combo_key": "Ian Williams|Edward Greatrex",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Eye Of Dubai": {
+      "trainer": "John & Sean Quinn",
+      "jockey": "Jason Hart",
+      "combo_key": "John & Sean Quinn|Jason Hart",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Kylian": {
+      "trainer": "Robert Cowell",
+      "jockey": "Jack Mitchell",
+      "combo_key": "Robert Cowell|Jack Mitchell",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Seven Questions": {
+      "trainer": "Robert Cowell",
+      "jockey": "Jamie Spencer",
+      "combo_key": "Robert Cowell|Jamie Spencer",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Winged Messenger": {
+      "trainer": "Julie Camacho",
+      "jockey": "Saffie Osborne",
+      "combo_key": "Julie Camacho|Saffie Osborne",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Fine Interview": {
+      "trainer": "Hamad Al Jehani",
+      "jockey": "James Doyle",
+      "combo_key": "Hamad Al Jehani|James Doyle",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Sondad": {
+      "trainer": "Michael & David Easterby",
+      "jockey": "Joanna Mason",
+      "combo_key": "Michael & David Easterby|Joanna Mason",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Invictus Gold": {
+      "trainer": "Tom Clover",
+      "jockey": "David Egan",
+      "combo_key": "Tom Clover|David Egan",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Gold Star Hero": {
+      "trainer": "Michael Bell",
+      "jockey": "Tom Marquand",
+      "combo_key": "Michael Bell|Tom Marquand",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    },
+    "Topwarrior": {
+      "trainer": "Ralph Beckett",
+      "jockey": "Hector Crouch",
+      "combo_key": "Ralph Beckett|Hector Crouch",
+      "combo_wins": 0,
+      "combo_runners": 0,
+      "first_time_pairing": false
+    }
+  }
+}

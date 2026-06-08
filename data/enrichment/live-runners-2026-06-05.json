@@ -1,0 +1,154 @@
+{
+  "fetched_at": "2026-06-05T16:25:00+01:00",
+  "meeting": "Epsom — Ladies Day",
+  "current_time_bst": "2026-06-05T16:19:06+01:00",
+  "source_note": "Runner lists fetched via Sporting Life racecards + web_search corroboration (Sky Sports / Timeform / Racing Post). market-latest.json (2026-06-02 vintage) explicitly NOT used for runner identity.",
+  "races": [
+    {
+      "time": "13:30",
+      "name": "Win With Zyn 3yo Dash Handicap",
+      "status": "already_run",
+      "reason": "Race time 13:30 BST is before current time 16:19 BST"
+    },
+    {
+      "time": "14:05",
+      "name": "Oddschecker British EBF Woodcote Stakes",
+      "status": "already_run",
+      "reason": "Race time 14:05 BST is before current time 16:19 BST"
+    },
+    {
+      "time": "14:40",
+      "name": "Betfred Diomed Stakes (Group 3)",
+      "status": "already_run",
+      "reason": "Race time 14:40 BST is before current time 16:19 BST"
+    },
+    {
+      "time": "15:15",
+      "name": "Betfred Nifty 50 Handicap",
+      "status": "already_run",
+      "reason": "Race time 15:15 BST is before current time 16:19 BST"
+    },
+    {
+      "time": "16:00",
+      "name": "Betfred Oaks (Fillies' Group 1)",
+      "status": "already_run",
+      "reason": "Race time 16:00 BST is before current time 16:19 BST"
+    },
+    {
+      "time": "16:40",
+      "name": "HKJC World Pool Handicap",
+      "source_url": "https://www.sportinglife.com/racing/racecards/2026-06-05/epsom-downs/racecard/920736/hkjc-world-pool-handicap",
+      "source_name": "Sporting Life (corroborated: Sky Sports / Timeform / Racing Post via web_search)",
+      "corroboration_urls": [
+        "https://www.skysports.com/racing/racecards/epsom-downs/05-06-2026/1362613/hkjc-world-pool-handicap",
+        "https://www.timeform.com/horse-racing/racecards/epsom-downs/2026-06-05/1640/16/6/hkjc-world-pool-handicap",
+        "https://www.racingpost.com/racecards/17/epsom/2026-06-05/920047/compact-view/"
+      ],
+      "class": "Class 2",
+      "distance": "1m 113y",
+      "going": "Good to Soft (Good in places)",
+      "conditions": "4YO plus",
+      "declared_count_stale": 29,
+      "live_runner_count": 18,
+      "runners": [
+        {"number": 1, "draw": 4,  "name": "Ozat (FR)",           "jockey": "Edward Greatrex",      "trainer": "Ian Williams",                "price": null},
+        {"number": 2, "draw": 15, "name": "Popmaster (IRE)",     "jockey": "Kieran Shoemark",       "trainer": "Ed Walker",                   "price": null},
+        {"number": 3, "draw": 8,  "name": "Mister Winston",      "jockey": "Oisin Murphy",          "trainer": "Andrew Balding",              "price": null},
+        {"number": 4, "draw": 13, "name": "Thunder Roar",        "jockey": "Colin Keane",           "trainer": "Tony Coyle & K Wood",         "price": null},
+        {"number": 5, "draw": 10, "name": "Mirsky",              "jockey": "Hector Crouch",         "trainer": "David O'Meara",               "price": null},
+        {"number": 6, "draw": 18, "name": "Nizam (FR)",          "jockey": "Charles Bishop",        "trainer": "Ian Williams",                "price": null},
+        {"number": 7, "draw": 7,  "name": "Mr Swivell",          "jockey": "Ray Dawson",            "trainer": "Kevin Philippart De Foy",     "price": null},
+        {"number": 8, "draw": 1,  "name": "Sterling Knight",     "jockey": "Ryan Moore",            "trainer": "Ed Dunlop",                   "price": null},
+        {"number": 9, "draw": 2,  "name": "Man Of La Mancha",    "jockey": "Rossa Ryan",            "trainer": "Ralph Beckett",               "price": null},
+        {"number": 10,"draw": 6,  "name": "Principality (IRE)",  "jockey": "George Wood",           "trainer": "Harry Eustace",               "price": null},
+        {"number": 11,"draw": 14, "name": "Stem (IRE)",          "jockey": "Pat Dobbs",             "trainer": "Richard Hannon",              "price": null},
+        {"number": 12,"draw": 9,  "name": "Celeborn",            "jockey": "Billy Loughnane",       "trainer": "George Boughey",              "price": null},
+        {"number": 13,"draw": 3,  "name": "Bragbor",             "jockey": "Jamie Spencer",         "trainer": "Richard & Peter Fahey",       "price": null},
+        {"number": 14,"draw": 11, "name": "Walsingham (IRE)",    "jockey": "Jason Watson",          "trainer": "David O'Meara",               "price": null},
+        {"number": 15,"draw": 5,  "name": "Asmen Warrior (IRE)", "jockey": "Silvestre de Sousa",    "trainer": "James Owen",                  "price": null},
+        {"number": 16,"draw": 12, "name": "Hot Cash",            "jockey": "David Probert",         "trainer": "Jack Channon",                "price": null},
+        {"number": 17,"draw": 16, "name": "Jimmy Speaking",      "jockey": "Luke Morris",           "trainer": "Chris Dwyer",                 "price": null},
+        {"number": 18,"draw": 17, "name": "Final Night",         "jockey": "Saffie Osborne",        "trainer": "John Butler",                 "price": null}
+      ],
+      "non_runners_excluded": [
+        "Port Road (confirmed NR — absent from 09:52 BST baseline; Steve verbal 15:46 BST)",
+        "Triple Double A (confirmed NR — Steve flagged 16:12 BST)",
+        "~9 additional NRs — stale market-latest.json declared 29 runners; live field is 18; exact identities require cross-referencing stale data"
+      ],
+      "status": "verified",
+      "notes": "Saffie Osborne, originally Triple Double A's jockey (stale data), is now riding Final Night (#18). This corroborates yard entry confirmation. Sterling Knight (Ryan Moore, draw 1) is the likely market leader based on recent Newmarket win over Jimmy Speaking (#17)."
+    },
+    {
+      "time": "17:15",
+      "name": "Cygames Surrey Stakes (Listed)",
+      "source_url": "https://www.sportinglife.com/racing/racecards/2026-06-05/epsom-downs/racecard/920737/cygames-surrey-stakes-listed",
+      "source_name": "Sporting Life (corroborated: Sky Sports / Timeform / Racing TV via web_search)",
+      "corroboration_urls": [
+        "https://www.skysports.com/racing/racecards/epsom-downs/05-06-2026/1362614/cygames-surrey-stakes-listed",
+        "https://www.timeform.com/horse-racing/racecards/epsom-downs/2026-06-05/1715/16/7/cygames-surrey-stakes",
+        "https://www.racingtv.com/racecards/2026-06-05/epsom-downs/1715"
+      ],
+      "class": "Class 1 (Listed)",
+      "distance": "7f 3y",
+      "going": "Good to Soft (Good in places)",
+      "conditions": "3YO only",
+      "declared_count_stale": null,
+      "live_runner_count": 6,
+      "runners": [
+        {"number": 1, "draw": 4, "name": "Ardisia",              "jockey": "David Probert",           "trainer": "Hugo Palmer",              "price": null},
+        {"number": 2, "draw": 6, "name": "Greek Mythology (IRE)","jockey": "Dylan Browne McMonagle",  "trainer": "Joseph Patrick O'Brien",   "price": null},
+        {"number": 5, "draw": 5, "name": "Stellar Sunrise",      "jockey": "Oisin Murphy",            "trainer": "Andrew Balding",           "price": null},
+        {"number": 6, "draw": 8, "name": "Ten Carat Harry",      "jockey": "Saffie Osborne",          "trainer": "Jamie Osborne",            "price": null},
+        {"number": 7, "draw": 7, "name": "Assaranca (IRE)",      "jockey": "S M Levey",               "trainer": "Richard Hannon",           "price": null},
+        {"number": 9, "draw": 9, "name": "Ellusive Butterfly (IRE)","jockey": "Clifford Lee",         "trainer": "K R Burke",                "price": null}
+      ],
+      "non_runners_excluded": [
+        "Northern Champion (IRE) — cloth number 3, withdrawn (absent from live 6-runner field)",
+        "Postmodern (IRE) — cloth number 4, withdrawn (absent from live 6-runner field)",
+        "Awaken (IRE) — cloth number 8, withdrawn (absent from live 6-runner field)"
+      ],
+      "status": "verified",
+      "notes": "Original declaration was 9 runners (Ardisia, Greek Mythology, Northern Champion, Postmodern, Stellar Sunrise, Ten Carat Harry, Assaranca, Awaken, Ellusive Butterfly). Cloth numbers 3, 4, 8 absent from live Sporting Life page = non-runners. 6 live runners confirmed via Sporting Life cloth-number listing and web_search corroboration."
+    },
+    {
+      "time": "17:50",
+      "name": "Debenhams Handicap",
+      "source_url": "https://www.sportinglife.com/racing/racecards/2026-06-05/epsom-downs/racecard/920738/debenhams-handicap",
+      "source_name": "Sporting Life (corroborated: The Sun Racing / Betfair / Sky Sports via web_search)",
+      "corroboration_urls": [
+        "https://www.thesun.co.uk/sport/horseracing/racecards/2026-06-05/epsom-downs/17:50",
+        "https://betting.betfair.com/horse-racing/racecards/05-june-2026/epsom-downs/16/8/",
+        "https://www.skysports.com/racing/racecards/epsom-downs/05-06-2026/1362615/debenhams-handicap"
+      ],
+      "class": "Class 2",
+      "distance": "7f 3y",
+      "going": "Good to Soft (Good in places)",
+      "conditions": "3YO plus",
+      "declared_count_stale": null,
+      "live_runner_count": 16,
+      "runners": [
+        {"number": 1,  "draw": 2,  "name": "Dance In The Storm", "jockey": "Oisin Murphy",     "trainer": "Andrew Balding",           "price": null},
+        {"number": 2,  "draw": 13, "name": "Rhoscolyn",          "jockey": "Jason Watson",     "trainer": "David O'Meara",            "price": null},
+        {"number": 3,  "draw": 8,  "name": "The Angel King",     "jockey": "Billy Loughnane",  "trainer": "Ian Williams",             "price": null},
+        {"number": 4,  "draw": 9,  "name": "Aurora Majesty",     "jockey": "Luke Morris",      "trainer": "Archie Watson",            "price": null},
+        {"number": 5,  "draw": 12, "name": "Veblen Good",        "jockey": null,               "trainer": null,                       "price": null},
+        {"number": 6,  "draw": 3,  "name": "Crimson Spirit",     "jockey": "Ray Dawson",       "trainer": "Daniel & Claire Kubler",   "price": null},
+        {"number": 7,  "draw": 10, "name": "Colombier",          "jockey": null,               "trainer": null,                       "price": null},
+        {"number": 8,  "draw": 6,  "name": "Mister Bluebird",    "jockey": null,               "trainer": null,                       "price": null},
+        {"number": 9,  "draw": 16, "name": "Zarathos",           "jockey": "Hector Crouch",    "trainer": "Dylan Cunha",              "price": null},
+        {"number": 10, "draw": 11, "name": "A War Eagle",        "jockey": null,               "trainer": null,                       "price": null},
+        {"number": 11, "draw": 1,  "name": "Arctic Thunder",     "jockey": null,               "trainer": null,                       "price": null},
+        {"number": 12, "draw": 4,  "name": "Pietro",             "jockey": "George Wood",      "trainer": "James Fanshawe",           "price": null},
+        {"number": 13, "draw": 15, "name": "Monarch's Gold",     "jockey": null,               "trainer": null,                       "price": null},
+        {"number": 14, "draw": 7,  "name": "Musical Angel",      "jockey": null,               "trainer": null,                       "price": null},
+        {"number": 15, "draw": 5,  "name": "Son",                "jockey": null,               "trainer": null,                       "price": null},
+        {"number": 16, "draw": 14, "name": "Sunny Smile",        "jockey": null,               "trainer": null,                       "price": null}
+      ],
+      "non_runners_excluded": [
+        "Blue Brother (stale market-latest.json EW pick @~15/1 — NOT present in live 16-runner declared field)"
+      ],
+      "status": "verified",
+      "notes": "Sporting Life listed all cloth numbers 1–16 consecutively with no gaps, confirming exactly 16 runners with no late NRs visible. Blue Brother, which was an EW outsider pick on the current card, is not in the live declarations. Jockey/trainer for runners 5, 7, 8, 10, 11, 13, 14, 15, 16 are not confirmed in available sources — null values to be backfilled if needed."
+    }
+  ]
+}

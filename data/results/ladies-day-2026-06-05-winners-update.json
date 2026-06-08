@@ -1,0 +1,112 @@
+{
+  "generated_by": "Livingston — Friday 21:00 archive gate, re-scrape attempt",
+  "sources": [
+    "racingpost:https://www.racingpost.com/results/17/epsom/2026-06-05/920049/ (13:30 Dash Handicap)",
+    "racingpost:https://www.racingpost.com/results/17/epsom/2026-06-05/920050/ (14:05 Woodcote Stakes)",
+    "racingpost:https://www.racingpost.com/results/17/epsom/2026-06-05/920045/ (15:15 Nifty 50)"
+  ],
+  "method": "RP individual result pages — horses listed in finishing order (verified: cloth numbers present but display order = finishing position order, confirmed by cross-checking Naana's Shadow/Hickory Lad jockey+trainer against known winner details)",
+  "do_not_overwrite": "data/results/ladies-day-2026-06-05.json (Stage 1 source of truth — immutable)",
+  "races": [
+    {
+      "race_id": "epsom-2026-06-05-1330",
+      "winner": {
+        "jockey": "Oisin Murphy",
+        "sp_decimal": 4.5,
+        "cloth_no": 6,
+        "sp_fraction": "7/2F",
+        "pos": 1,
+        "horse": "Naana's Shadow (IRE)",
+        "trainer": "Katie Scott"
+      },
+      "previously_unresolved": "winner_horse_name",
+      "off_time": "13:30",
+      "finishing_positions_of_interest": [
+        {
+          "finish_pos": 12,
+          "ew_terms": "top 4",
+          "place_portion_outcome": "LOSE",
+          "horse": "Rosie Frith",
+          "placed": false
+        }
+      ],
+      "name": "Win With Zyn 3yo Dash Handicap",
+      "rp_result_page_id": 920049,
+      "full_finishing_order_positions_extracted": 16
+    },
+    {
+      "race_id": "epsom-2026-06-05-1405",
+      "name": "Oddschecker British EBF Woodcote Stakes (Listed)",
+      "critical_correction": "Saul Stage 2a incorrectly assumed Hickory Lad WIN side lost. Hickory Lad IS the Phillip Makin/Sam James winner. Both WIN and PLACE portions return for o02-hickory-lad-ew.",
+      "finishing_positions_of_interest": [
+        {
+          "place_portion_outcome": "WIN",
+          "placed": true,
+          "finish_pos": 1,
+          "horse": "Hickory Lad (IRE)",
+          "win_portion_outcome": "WIN",
+          "ew_terms": "top 3"
+        },
+        {
+          "finish_pos": 12,
+          "ew_terms": "top 3",
+          "place_portion_outcome": "LOSE",
+          "horse": "Wild Terrain",
+          "placed": false
+        }
+      ],
+      "previously_unresolved": "winner_horse_name; full finishing order",
+      "off_time": "14:05",
+      "full_finishing_order_positions_extracted": 13,
+      "rp_result_page_id": 920050,
+      "winner": {
+        "jockey": "Sam James",
+        "sp_decimal": 4.333,
+        "cloth_no": 4,
+        "sp_fraction": "100/30",
+        "pos": 1,
+        "horse": "Hickory Lad (IRE)",
+        "trainer": "Phillip Makin"
+      }
+    },
+    {
+      "race_id": "epsom-2026-06-05-1515",
+      "winner": {
+        "cloth_no": 3,
+        "jockey": "Ray Dawson",
+        "horse": "Sallaal (IRE)",
+        "note": "Cloth 3 confirmed. Ladies-day Stage 1 note 'drew widest draw 16' was incorrect commentary capture — cloth 3 is inner draw. SP 5/2F matches tote_win 3.55.",
+        "trainer": "Roger Varian",
+        "sp_fraction": "5/2F",
+        "sp_decimal": 3.5,
+        "pos": 1
+      },
+      "previously_unresolved": "winner_horse_name; full finishing order",
+      "off_time": "15:15",
+      "finishing_positions_of_interest": [
+        {
+          "ew_terms": "top 3",
+          "horse": "Liberty Lane (IRE)",
+          "finish_pos": 8,
+          "cloth_no": 1,
+          "place_portion_outcome": "LOSE",
+          "sp_fraction": "12/1",
+          "sp_decimal": 13.0,
+          "placed": false
+        },
+        {
+          "finish_pos": 2,
+          "sp_fraction": "11/4",
+          "note": "Respond sp now confirmed 11/4 (updates pl-2026-06-05 s02 record)",
+          "horse": "Respond (IRE)",
+          "sp_decimal": 3.75
+        }
+      ],
+      "name": "Betfred Nifty 50 Handicap",
+      "rp_result_page_id": 920045,
+      "full_finishing_order_positions_extracted": 16
+    }
+  ],
+  "generated_at": "2026-06-05T21:00+01:00",
+  "description": "Delta update: official winner name + SP resolutions for 3 previously unresolved Ladies Day races"
+}

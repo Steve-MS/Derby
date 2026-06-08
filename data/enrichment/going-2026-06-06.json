@@ -1,0 +1,95 @@
+{
+  "source_url": "https://www.racingpost.com/racecards/2026-06-06",
+  "retrieved_at": "2026-06-06T11:01 BST",
+  "scraped_at": "2026-06-06T11:14:24.869936",
+  "going_string": "Good To Soft",
+  "going_full_declaration": "Derby course - GOOD TO SOFT, Good in places; 5f course - GOOD, Good to soft in places",
+  "going_by_course": {
+    "derby_course": "Good To Soft, Good in places",
+    "5f_course": "Good, Good to soft in places"
+  },
+  "going_stick": {
+    "derby_course": 6.0,
+    "5f_course": 6.2,
+    "note": "GoingStick: below 6.5 = Good to Soft; 7.0+ = Good; 5.0- = Soft"
+  },
+  "weather": "Rain",
+  "going_by_race": {
+    "13:30": {
+      "course": "derby_course",
+      "going": "Good To Soft"
+    },
+    "14:05": {
+      "course": "derby_course",
+      "going": "Good To Soft"
+    },
+    "14:40": {
+      "course": "derby_course",
+      "going": "Good To Soft"
+    },
+    "15:15": {
+      "course": "5f_course",
+      "going": "Good (Good To Soft in places)"
+    },
+    "16:00": {
+      "course": "derby_course",
+      "going": "Good To Soft"
+    },
+    "16:40": {
+      "course": "derby_course",
+      "going": "Good To Soft"
+    },
+    "17:20": {
+      "course": "derby_course",
+      "going": "Good To Soft"
+    },
+    "17:55": {
+      "course": "derby_course",
+      "going": "Good To Soft"
+    }
+  },
+  "soft_declared": true,
+  "card_path": "HOLD",
+  "hold_trigger_reason": "Derby course declared GOOD TO SOFT (GoingStick 6.0) with rain. HOLD path activated per team protocol.",
+  "going_source": "Racing Post racecards page (goingDetails field in __NEXT_DATA__)",
+  "previous_forecast": "Good (pre-race forecast before overnight rain)",
+  "going_change_since_forecast": "DETERIORATED - moved from forecast Good to Good To Soft overnight. Rain reported on course.",
+  "source_tried": [
+    {
+      "strategy": "jockey_club_main",
+      "url": "https://www.thejockeyclub.co.uk/epsom/",
+      "http_status": 200,
+      "result": "no going data found in page"
+    },
+    {
+      "strategy": "jockey_club_races",
+      "url": "https://www.thejockeyclub.co.uk/epsom/events-tickets/epsom-derby-festival/",
+      "http_status": 404
+    },
+    {
+      "strategy": "atc_epsom",
+      "http_status": 403
+    },
+    {
+      "strategy": "bbc_sport",
+      "http_status": 404
+    },
+    {
+      "strategy": "sl_going",
+      "http_status": 404
+    },
+    {
+      "strategy": "rp_main",
+      "url": "https://www.racingpost.com/racecards/2026-06-06",
+      "http_status": 200,
+      "result": "SUCCESS - full going declaration found in goingDetails field"
+    }
+  ],
+  "notes": [
+    "CRITICAL: Derby course declared GOOD TO SOFT - this IS the HOLD card trigger",
+    "5f course (Dash 15:15) is Good but Good to Soft in places - borderline",
+    "GoingStick 6.0 for Derby course indicates firm end of Good to Soft",
+    "Weather: Rain - going may deteriorate further through the afternoon",
+    "Going declared post-09:00 BST inspection window - authoritative as of ~10:00 BST"
+  ]
+}

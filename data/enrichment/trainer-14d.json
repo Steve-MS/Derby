@@ -1,0 +1,175 @@
+{
+  "generated_at": "2026-06-03T08:00:00+01:00",
+  "window_days": 14,
+  "as_of_date": "2026-06-03",
+  "trainers": {
+    "Aidan O'Brien": {
+      "wins_14d": 7,
+      "runners_14d": 28,
+      "strike_rate": 0.25,
+      "source": "racingpost.com/profile/trainer/489/a-p-o-brien"
+    },
+    "Andrew Balding": {
+      "wins_14d": 3,
+      "runners_14d": 26,
+      "strike_rate": 0.115,
+      "source": "britishracecourses.org/in-form-trainers/"
+    },
+    "Archie Watson": {
+      "wins_14d": 2,
+      "runners_14d": 31,
+      "strike_rate": 0.065,
+      "source": "racingpost.com/profile/trainer/32276/archie-watson"
+    },
+    "Charlie Johnston": {
+      "wins_14d": 3,
+      "runners_14d": 24,
+      "strike_rate": 0.125,
+      "source": "britishracecourses.org/in-form-trainers/"
+    },
+    "David Menuisier": {
+      "wins_14d": 3,
+      "runners_14d": 17,
+      "strike_rate": 0.176,
+      "source": "racingpost.com/profile/trainer/29411/david-menuisier"
+    },
+    "David O'Meara": {
+      "wins_14d": 7,
+      "runners_14d": 51,
+      "strike_rate": 0.137,
+      "source": "racingpost.com/profile/trainer/22839/david-omeara"
+    },
+    "Ed Dunlop": {
+      "wins_14d": 2,
+      "runners_14d": 18,
+      "strike_rate": 0.111,
+      "source": "britishracecourses.org/in-form-trainers/"
+    },
+    "Ed Walker": {
+      "wins_14d": 6,
+      "runners_14d": 32,
+      "strike_rate": 0.188,
+      "source": "racingpost.com/profile/trainer/23926/ed-walker"
+    },
+    "Eve Johnson Houghton": {
+      "wins_14d": 3,
+      "runners_14d": 9,
+      "strike_rate": 0.333,
+      "source": "britishracecourses.org/in-form-trainers/"
+    },
+    "George Boughey": {
+      "wins_14d": 4,
+      "runners_14d": 16,
+      "strike_rate": 0.25,
+      "source": "britishracecourses.org/in-form-trainers/"
+    },
+    "Harry Charlton": {
+      "wins_14d": 2,
+      "runners_14d": 6,
+      "strike_rate": 0.333,
+      "source": "britishracecourses.org/in-form-trainers/"
+    },
+    "Hugo Palmer": {
+      "wins_14d": 4,
+      "runners_14d": 19,
+      "strike_rate": 0.211,
+      "source": "britishracecourses.org/in-form-trainers/"
+    },
+    "James Owen": {
+      "wins_14d": 9,
+      "runners_14d": 60,
+      "strike_rate": 0.15,
+      "source": "racingpost.com/profile/trainer/40072/james-owen"
+    },
+    "James Tate": {
+      "wins_14d": 1,
+      "runners_14d": 7,
+      "strike_rate": 0.143,
+      "source": "britishracecourses.org/in-form-trainers/"
+    },
+    "John & Thady Gosden": {
+      "wins_14d": 7,
+      "runners_14d": 28,
+      "strike_rate": 0.25,
+      "source": "ai-raceday.co.uk/trainer/john-and-thady-gosden"
+    },
+    "Jonathan Portman": {
+      "wins_14d": 1,
+      "runners_14d": 10,
+      "strike_rate": 0.1,
+      "source": "britishracecourses.org/in-form-trainers/"
+    },
+    "Joseph Patrick O'Brien": {
+      "wins_14d": 5,
+      "runners_14d": 19,
+      "strike_rate": 0.263,
+      "source": "britishracecourses.org/in-form-trainers/"
+    },
+    "Julie Camacho": {
+      "wins_14d": 2,
+      "runners_14d": 22,
+      "strike_rate": 0.091,
+      "source": "racingpost.com/profile/trainer/12225/julie-camacho"
+    },
+    "K R Burke": {
+      "wins_14d": 3,
+      "runners_14d": 21,
+      "strike_rate": 0.143,
+      "source": "britishracecourses.org/in-form-trainers/"
+    },
+    "Kevin Ryan": {
+      "wins_14d": 3,
+      "runners_14d": 17,
+      "strike_rate": 0.176,
+      "source": "britishracecourses.org/in-form-trainers/"
+    },
+    "Ralph Beckett": {
+      "wins_14d": 2,
+      "runners_14d": 27,
+      "strike_rate": 0.074,
+      "source": "racingpost.com/profile/trainer/13917/ralph-beckett"
+    },
+    "Richard Hannon": {
+      "wins_14d": 5,
+      "runners_14d": 26,
+      "strike_rate": 0.192,
+      "source": "britishracecourses.org/in-form-trainers/"
+    },
+    "Richard Hughes": {
+      "wins_14d": 3,
+      "runners_14d": 27,
+      "strike_rate": 0.111,
+      "source": "racingpost.com/profile/trainer/31188/richard-hughes"
+    },
+    "Roger Varian": {
+      "wins_14d": 7,
+      "runners_14d": 30,
+      "strike_rate": 0.233,
+      "source": "ai-raceday.co.uk/trainer/roger-varian"
+    },
+    "Simon & Ed Crisford": {
+      "wins_14d": 2,
+      "runners_14d": 16,
+      "strike_rate": 0.125,
+      "source": "racingpost.com/profile/trainer/37478/simon-ed-crisford"
+    },
+    "Tim Easterby": {
+      "wins_14d": 9,
+      "runners_14d": 92,
+      "strike_rate": 0.098,
+      "source": "racingpost.com/profile/trainer/10152/tim-easterby"
+    },
+    "Tony Carroll": {
+      "wins_14d": 12,
+      "runners_14d": 48,
+      "strike_rate": 0.25,
+      "source": "racingpost.com/profile/trainer/9714/tony-carroll"
+    },
+    "William Haggas": {
+      "wins_14d": 8,
+      "runners_14d": 38,
+      "strike_rate": 0.211,
+      "source": "ai-raceday.co.uk/trainer/william-haggas"
+    }
+  }
+}

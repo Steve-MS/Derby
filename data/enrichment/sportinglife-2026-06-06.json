@@ -1,0 +1,50 @@
+{
+  "horses": {},
+  "source_tried": [
+    {
+      "strategy": "direct",
+      "url": "https://www.sportinglife.com/racing/racecards/2026-06-06/epsom",
+      "http_status": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length": 94812
+    },
+    {
+      "strategy": "mobile",
+      "url": "https://m.sportinglife.com/racing/racecards/2026-06-06/epsom",
+      "http_status": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length": 94810
+    },
+    {
+      "strategy": "alt1",
+      "url": "https://www.sportinglife.com/racing/results/2026-06-06/epsom",
+      "http_status": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length": 94762
+    },
+    {
+      "strategy": "api_v1",
+      "url": "https://www.sportinglife.com/api/racing/racecards/2026-06-06/epsom",
+      "http_status": 404,
+      "content_type": "application/json",
+      "content_length": 81
+    },
+    {
+      "strategy": "api_v2",
+      "url": "https://api.sportinglife.com/racing/v1/racecards?date=2026-06-06&course=epsom",
+      "http_status": "ERROR: HTTPSConnectionPool(host='api.sportinglife.com', port=443): Max retries exceeded"
+    },
+    {
+      "strategy": "api_v3",
+      "url": "https://www.sportinglife.com/api/horseracing/racecards?date=2026-06-06&track=epsom",
+      "http_status": 404,
+      "content_type": "application/json",
+      "content_length": 97
+    }
+  ],
+  "success": false,
+  "errors": [
+    "api_v2: HTTPSConnectionPool(host='api.sportinglife.com', port=443): Max retries exceeded with url: /racing/v"
+  ],
+  "scraped_at": "2026-06-06T11:05:20.569267"
+}

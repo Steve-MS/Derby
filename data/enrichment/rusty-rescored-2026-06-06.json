@@ -1,0 +1,1227 @@
+{
+  "meta": {
+    "generated": "2026-06-06T11:30:00+01:00",
+    "requested_by": "Steve Newby",
+    "produced_by": "Rusty (Signal Engineer)",
+    "market_latest_timestamp": "2026-06-06T11:26 BST",
+    "market_baseline_timestamp": "2026-06-06T07:08 BST",
+    "going_derby_course": "Good To Soft, Good in places",
+    "going_5f_course": "Good, Good to soft in places",
+    "going_stick_derby": 6.0,
+    "going_stick_5f": 6.2,
+    "weather": "Rain",
+    "card_path": "HOLD",
+    "total_runners_listed": 101,
+    "total_active_runners": 100,
+    "confirmed_nrs": [
+      "Be The Standard (16:40 — new since 07:08 baseline)",
+      "Causeway (16:00 Derby — known pre-baseline)",
+      "Dance In The Storm (17:55 JRA Tokyo — known pre-baseline)",
+      "See The Fire (14:40 Coronation Cup — known pre-baseline)"
+    ],
+    "late_additions_15:15_dash": [
+      "Star Chorus (cloth 11, draw 1) — LATE_ENTRY_NEUTRAL scored at 50",
+      "Stormy Impact (cloth 6, draw 16) — LATE_ENTRY_NEUTRAL scored at 50"
+    ],
+    "race_counts": {
+      "13:30": 8, "14:05": 9, "14:40": 6,
+      "15:15": 20, "16:00": 14, "16:40": 10,
+      "17:20": 17, "17:55": 16
+    },
+    "scoring_method": "Composite normalised score: RPM×0.45 + OR×0.30 + TS×0.25, field-normalised to 5–95 range. Adjustments: headgear(×0.90) in fields≥14 runners; EDGE_ERODED(×0.85) where steam_drift_pct≥30% AND market_rank≤3. going_fit<40 → REJECT flag. model_score<50 → NO_OVERRIDE flag.",
+    "steam_drift_note": "steam_drift_pct = (baseline_dec - latest_dec)/baseline_dec × 100. Positive = shortening (steam), negative = drifting. CRITICAL CAVEAT: market-baseline.json prices for 13:30, 14:05, 15:15, 16:40, 17:20, 17:55 were SYNTHETIC (OR/field-size estimates dated 2026-06-02). EDGE_ERODED flags in those races reflect synthetic→real price revelation, NOT genuine shrewd-money steam. Exception: 14:40 Coronation Cup and 16:00 Derby baseline prices were real ante-post (RP 2026-06-02). Benvenuto Cellini (9/4 ante-post → Evs) is the ONLY confirmed genuine steam signal on the card.",
+    "win_criteria": "rank_gap >= +2 AND model_score >= 50 AND going_fit >= 40 AND no REJECT/EDGE_ERODED flags",
+    "ew_criteria": "rank_gap >= +3 AND price >= 8/1 (budget-dependent, consult Danny if uncertain)",
+    "v1_picks_under_review": {
+      "14:40_Illinois": "model_rank 6/6, model_score 12.1, NO_OVERRIDE, rank_gap 0 — INVALIDATED",
+      "16:00_Christmas_Day": "model_rank 8/14, rank_gap +0.5, below +2 threshold — INVALIDATED"
+    }
+  },
+  "biggest_shifts_vs_baseline": [
+    "1. Benvenuto Cellini (Derby 16:00): 9/4 ante-post → Evs = 38.5% genuine steam. Only real MARKET_STEAM_MAJOR on the card. EDGE_ERODED flag applied. Has ground concerns on soft.",
+    "2. Lord Melbourne (Northern Dancer 17:20): model rank 1/17, rank_gap +13, going_fit 78 (Nov Hcp soft 2024, 2-3 C&D on GTS). Upgraded from EW outsider to WIN candidate on rescore.",
+    "3. Both Linus-v1 picks invalidated: Illinois (14:40) model_score 12.1/NO_OVERRIDE; Christmas Day (16:00) rank_gap +0.5 below threshold. Derby WIN switches to Action (rank_gap +3.5, 13/1, cheekpieces).",
+    "4. Kinswoman (Dash 15:15) moved from synthetic 23/1 → real 4/1: EDGE_ERODED flag (synthetic-base caveat). Original bets-file EW outsider slot now price-eroded for the WIN criterion.",
+    "5. Going confirmed GTS with rain: 4 Derby runners REJECTED going_fit<40 (Ancient Egypt, Balzac, A Taste Of Glory, Poker — all good-to-firm specialists). HOLD card path confirmed correct."
+  ],
+  "races": {
+    "13:30_tattenham_corner_g3": {
+      "race_name": "Betfred Tattenham Corner Stakes (Group 3)",
+      "off_time": "13:30",
+      "runners_active": 8,
+      "going": "Good To Soft",
+      "runners": [
+        {
+          "cloth": 5, "horse": "Never So Brave",
+          "model_score": 95.0, "model_rank": 1,
+          "market_impl_prob": 0.800, "market_rank": 1, "rank_gap": 0,
+          "price": "1/4", "decimal_odds": 1.25,
+          "steam_drift_pct": 83.3,
+          "going_fit": 45,
+          "flags": ["EDGE_ERODED", "SYNTHETIC_BASE_CAVEAT"],
+          "final_signal": 80.8,
+          "notes": "Synthetic 13/2→1/4. Going mixed messages (beat soft rivals previously, but spotty). 1/4 is efficient; no overlay."
+        },
+        {
+          "cloth": 1, "horse": "Alcantor",
+          "model_score": 78.1, "model_rank": 2,
+          "market_impl_prob": 0.250, "market_rank": 2, "rank_gap": 0,
+          "price": "3/1", "decimal_odds": 4.0,
+          "steam_drift_pct": 46.7,
+          "going_fit": 72,
+          "flags": ["EDGE_ERODED", "SYNTHETIC_BASE_CAVEAT"],
+          "final_signal": 66.4,
+          "notes": "Group 3 winner in France on testing ground; stable debut run forgivable. Market and model aligned."
+        },
+        {
+          "cloth": 7, "horse": "Ten Bob Tony",
+          "model_score": 45.6, "model_rank": 5,
+          "market_impl_prob": 0.182, "market_rank": 3, "rank_gap": -2,
+          "price": "9/2", "decimal_odds": 5.5,
+          "steam_drift_pct": 31.3,
+          "going_fit": 68,
+          "flags": ["NO_OVERRIDE", "EDGE_ERODED", "SYNTHETIC_BASE_CAVEAT"],
+          "final_signal": 38.8,
+          "notes": "Won this race last year at Haydock; TS 76 drags composite down. Market overrates vs model."
+        },
+        {
+          "cloth": 8, "horse": "Witness Stand",
+          "model_score": 62.8, "model_rank": 3,
+          "market_impl_prob": 0.111, "market_rank": 4.5, "rank_gap": 1.5,
+          "price": "8/1", "decimal_odds": 9.0,
+          "steam_drift_pct": -12.5,
+          "going_fit": 75,
+          "flags": [],
+          "final_signal": 62.8,
+          "notes": "Listed winner on soft; strong Group 2 form last summer; wind op + tongue-tie today. rank_gap 1.5 (just below +2 WIN threshold)."
+        },
+        {
+          "cloth": 6, "horse": "Poet Master",
+          "model_score": 46.9, "model_rank": 4,
+          "market_impl_prob": 0.111, "market_rank": 4.5, "rank_gap": 0.5,
+          "price": "8/1", "decimal_odds": 9.0,
+          "steam_drift_pct": -28.6,
+          "going_fit": 65,
+          "flags": ["NO_OVERRIDE"],
+          "final_signal": 46.9,
+          "notes": "Group 2 winner; below-best this season. model_score sub-50."
+        },
+        {
+          "cloth": 4, "horse": "Golden Mind",
+          "model_score": 32.6, "model_rank": 7,
+          "market_impl_prob": 0.071, "market_rank": 6, "rank_gap": -1,
+          "price": "13/1", "decimal_odds": 14.0,
+          "steam_drift_pct": -64.7,
+          "going_fit": 72,
+          "flags": ["NO_OVERRIDE"],
+          "final_signal": 32.6,
+          "notes": "Heavy-ground winner in handicaps; has something to find at Group level."
+        },
+        {
+          "cloth": 3, "horse": "Chicago Critic",
+          "model_score": 42.7, "model_rank": 6,
+          "market_impl_prob": 0.063, "market_rank": 7, "rank_gap": 1,
+          "price": "15/1", "decimal_odds": 16.0,
+          "steam_drift_pct": -100.0,
+          "going_fit": 45,
+          "flags": ["NO_OVERRIDE"],
+          "final_signal": 42.7,
+          "notes": "Meydan G2 near-miss but needs bigger; going borderline (mostly good runs)."
+        },
+        {
+          "cloth": 2, "horse": "Balmacara",
+          "model_score": 22.9, "model_rank": 8,
+          "market_impl_prob": 0.036, "market_rank": 8, "rank_gap": 0,
+          "price": "27/1", "decimal_odds": 28.0,
+          "steam_drift_pct": -250.0,
+          "going_fit": 60,
+          "flags": ["NO_OVERRIDE"],
+          "final_signal": 22.9,
+          "notes": "0-11 since novice wins; Listed runner-up but up against it."
+        }
+      ],
+      "recommendation": {
+        "type": "NO_BET",
+        "reason": "No runner clears rank_gap≥+2 with model_score≥50 and no EDGE_ERODED/REJECT flags. Never So Brave (1/4) and Alcantor (3/1) dominate with efficient pricing. Witness Stand (rank_gap +1.5, going_fit 75) is the most interesting outsider but narrowly misses the +2 gate. Market broadly efficient for this 8-runner Group 3.",
+        "win_candidate": null,
+        "ew_outsider": null
+      }
+    },
+    "14:05_princess_elizabeth_g3": {
+      "race_name": "Princess Elizabeth Stakes (Group 3)",
+      "off_time": "14:05",
+      "runners_active": 9,
+      "going": "Good To Soft",
+      "runners": [
+        {
+          "cloth": 8, "horse": "Shes Perfect",
+          "model_score": 95.0, "model_rank": 1,
+          "market_impl_prob": 0.333, "market_rank": 1, "rank_gap": 0,
+          "price": "2/1", "decimal_odds": 3.0,
+          "steam_drift_pct": 57.1,
+          "going_fit": 55,
+          "flags": ["EDGE_ERODED", "SYNTHETIC_BASE_CAVEAT"],
+          "final_signal": 80.8,
+          "notes": "Model and market agree she's the standout. Synthetic baseline caveat. Going neutral — not proven on soft but no disqualifying evidence."
+        },
+        {
+          "cloth": 1, "horse": "Sparks Fly",
+          "model_score": 78.0, "model_rank": 2,
+          "market_impl_prob": 0.286, "market_rank": 2, "rank_gap": 0,
+          "price": "5/2", "decimal_odds": 3.5,
+          "steam_drift_pct": 50.0,
+          "going_fit": 78,
+          "flags": ["EDGE_ERODED", "SYNTHETIC_BASE_CAVEAT"],
+          "final_signal": 66.3,
+          "notes": "Group 3 winner at Saint-Cloud (very soft) last autumn. Excellent GTS credentials. Market and model in agreement."
+        },
+        {
+          "cloth": 7, "horse": "Princess Child",
+          "model_score": 77.5, "model_rank": 3,
+          "market_impl_prob": 0.083, "market_rank": 6.5, "rank_gap": 3.5,
+          "price": "11/1", "decimal_odds": 12.0,
+          "steam_drift_pct": -60.0,
+          "going_fit": 80,
+          "flags": [],
+          "final_signal": 77.5,
+          "notes": "★ WIN CANDIDATE. Group 3 winner Tipperary (yielding), 2nd Curragh (soft/heavy). Strong GTS form. Drifted from synthetic baseline — no steam concern. rank_gap +3.5, all criteria clear."
+        },
+        {
+          "cloth": 9, "horse": "Pacific Mission",
+          "model_score": 76.4, "model_rank": 4,
+          "market_impl_prob": 0.182, "market_rank": 3.5, "rank_gap": -0.5,
+          "price": "9/2", "decimal_odds": 5.5,
+          "steam_drift_pct": 26.7,
+          "going_fit": 68,
+          "flags": [],
+          "final_signal": 76.4,
+          "notes": "2nd in G2 May Hill (GTS). Market slightly shorter than model. Slight steam but below 30% threshold."
+        },
+        {
+          "cloth": 2, "horse": "Arisaig",
+          "model_score": 64.2, "model_rank": 5,
+          "market_impl_prob": 0.143, "market_rank": 5, "rank_gap": 0,
+          "price": "6/1", "decimal_odds": 7.0,
+          "steam_drift_pct": 12.5,
+          "going_fit": 55,
+          "flags": [],
+          "final_signal": 64.2,
+          "notes": "Smart hold-up mare; closely matched with Shes Perfect at Goodwood. No strong going evidence."
+        },
+        {
+          "cloth": 6, "horse": "Pina Sonata",
+          "model_score": 53.7, "model_rank": 6,
+          "market_impl_prob": 0.182, "market_rank": 3.5, "rank_gap": -2.5,
+          "price": "9/2", "decimal_odds": 5.5,
+          "steam_drift_pct": 31.3,
+          "going_fit": 68,
+          "flags": [],
+          "final_signal": 53.7,
+          "notes": "AW Listed winner; has form on good to soft. Market much shorter than model suggests. No EDGE_ERODED (market_rank 3.5 not strictly ≤3)."
+        },
+        {
+          "cloth": 4, "horse": "Breckenbrough",
+          "model_score": 32.7, "model_rank": 7,
+          "market_impl_prob": 0.083, "market_rank": 6.5, "rank_gap": -0.5,
+          "price": "11/1", "decimal_odds": 12.0,
+          "steam_drift_pct": -50.0,
+          "going_fit": 75,
+          "flags": ["NO_OVERRIDE"],
+          "final_signal": 32.7,
+          "notes": "French Listed winner on soft. model_score sub-50; TS 61 drags score down."
+        },
+        {
+          "cloth": 5, "horse": "Love Dynasty",
+          "model_score": 22.3, "model_rank": 8,
+          "market_impl_prob": 0.050, "market_rank": 8, "rank_gap": 0,
+          "price": "19/1", "decimal_odds": 20.0,
+          "steam_drift_pct": -135.3,
+          "going_fit": 82,
+          "flags": ["NO_OVERRIDE"],
+          "final_signal": 22.3,
+          "notes": "Raced only on soft/heavy — outstanding GTS credentials but model sub-50. Interesting if scoring improves with live soft-form signal."
+        },
+        {
+          "cloth": 3, "horse": "Betty Clover",
+          "model_score": 5.0, "model_rank": 9,
+          "market_impl_prob": 0.036, "market_rank": 9, "rank_gap": 0,
+          "price": "27/1", "decimal_odds": 28.0,
+          "steam_drift_pct": -229.4,
+          "going_fit": 50,
+          "flags": ["NO_OVERRIDE"],
+          "final_signal": 5.0,
+          "notes": "0-13 since 2yo Listed win. Well held by today's rivals at Goodwood."
+        }
+      ],
+      "recommendation": {
+        "type": "WIN",
+        "win_candidate": {
+          "horse": "Princess Child",
+          "cloth": 7,
+          "price": "11/1",
+          "decimal_odds": 12.0,
+          "model_score": 77.5,
+          "model_rank": 3,
+          "market_rank": 6.5,
+          "rank_gap": 3.5,
+          "going_fit": 80,
+          "final_signal": 77.5,
+          "rationale": "Proven Group 3 winner on yielding/soft ground (Tipperary, Curragh). GTS going plays directly to her strengths. Market drifted vs synthetic — no steam concern. rank_gap +3.5: market materially undervalues vs model rank. Flagged 'needs to bounce back from latest Curragh' but today's GTS is optimal for her."
+        },
+        "ew_outsider": null,
+        "note": "Love Dynasty (19/1, going_fit 82) is tempting for EW but model_score 22.3 triggers NO_OVERRIDE — do not override without ≥2 corroborating signals beyond going fit."
+      }
+    },
+    "14:40_coronation_cup_g1": {
+      "race_name": "Coolmore Coronation Cup (Group 1)",
+      "off_time": "14:40",
+      "runners_active": 6,
+      "going": "Good To Soft",
+      "nrs_excluded": ["See The Fire (confirmed NR pre-baseline)"],
+      "runners": [
+        {
+          "cloth": 2, "horse": "Calandagan",
+          "model_score": 95.0, "model_rank": 1,
+          "market_impl_prob": 0.526, "market_rank": 1, "rank_gap": 0,
+          "price": "-1/11", "decimal_odds": 0.909,
+          "steam_drift_pct": 63.6,
+          "going_fit": 55,
+          "flags": ["EDGE_ERODED"],
+          "final_signal": 80.8,
+          "notes": "World's highest-rated racehorse; 9/1 in 9 runs at Group 1. EDGE_ERODED from real ante-post. Genuine ground concern — spotlight notes 'not certain to run if it's a slog scenario'. GTS is workable but risk flag retained."
+        },
+        {
+          "cloth": 5, "horse": "Jan Brueghel",
+          "model_score": 65.6, "model_rank": 2,
+          "market_impl_prob": 0.364, "market_rank": 2, "rank_gap": 0,
+          "price": "7/4", "decimal_odds": 2.75,
+          "steam_drift_pct": 21.4,
+          "going_fit": 75,
+          "flags": [],
+          "final_signal": 65.6,
+          "notes": "Won this race last year (GTS). Model and market well aligned."
+        },
+        {
+          "cloth": 6, "horse": "Lambourn",
+          "model_score": 42.7, "model_rank": 3,
+          "market_impl_prob": 0.154, "market_rank": 3.5, "rank_gap": -0.5,
+          "price": "11/2", "decimal_odds": 6.5,
+          "steam_drift_pct": -116.7,
+          "going_fit": 62,
+          "flags": ["NO_OVERRIDE"],
+          "final_signal": 42.7,
+          "notes": "2025 Derby/Irish Derby winner. MASSIVELY DRIFTED from 2/1 ante-post to 11/2 (Ryan Moore post-run comments at Chester tempered expectations). model sub-50. Linus v1 watch: if Linus had Lambourn as a pick, consider review."
+        },
+        {
+          "cloth": 3, "horse": "Convergent",
+          "model_score": 22.0, "model_rank": 5,
+          "market_impl_prob": 0.154, "market_rank": 3.5, "rank_gap": -1.5,
+          "price": "11/2", "decimal_odds": 6.5,
+          "steam_drift_pct": 40.9,
+          "going_fit": 65,
+          "flags": ["NO_OVERRIDE"],
+          "final_signal": 22.0,
+          "notes": "Progressive; won Newbury Group 3 on reappearance. Market much shorter than model (low RPM vs top-tier). model sub-50."
+        },
+        {
+          "cloth": 1, "horse": "Bay City Roller",
+          "model_score": 40.4, "model_rank": 4,
+          "market_impl_prob": 0.056, "market_rank": 5, "rank_gap": 1,
+          "price": "17/1", "decimal_odds": 18.0,
+          "steam_drift_pct": -100.0,
+          "going_fit": 70,
+          "flags": ["NO_OVERRIDE"],
+          "final_signal": 40.4,
+          "notes": "Won in Germany on soft; massive drift from 8/1 ante-post. TS 130 is notable but RPM 132 and OR 118 drag composite down vs Calandagan. model sub-50."
+        },
+        {
+          "cloth": 4, "horse": "Illinois",
+          "model_score": 12.1, "model_rank": 6,
+          "market_impl_prob": 0.025, "market_rank": 6, "rank_gap": 0,
+          "price": "39/1", "decimal_odds": 40.0,
+          "steam_drift_pct": -90.5,
+          "going_fit": 60,
+          "flags": ["NO_OVERRIDE"],
+          "final_signal": 12.1,
+          "notes": "⚠️ V1 PICK INVALIDATED. model_rank 6/6, model_score 12.1, NO_OVERRIDE. Massive drift 20/1→39/1. Market and model agree: likely pacemaker role. DO NOT BET."
+        }
+      ],
+      "recommendation": {
+        "type": "NO_BET",
+        "reason": "Race dominated by Calandagan (EDGE_ERODED from ante-post steam) and Jan Brueghel (efficient pricing, rank_gap 0). Remaining runners all sub-50 model score (NO_OVERRIDE). No qualifier clears rank_gap≥+2 with model≥50 and no flags.",
+        "win_candidate": null,
+        "ew_outsider": null,
+        "v1_invalidation": {
+          "horse": "Illinois",
+          "reason": "model_score 12.1 — NO_OVERRIDE. Market correctly priced at 39/1 (pacemaker role). rank_gap 0. INVALIDATED."
+        },
+        "note": "Lambourn's drift from 2/1 ante-post to 11/2 is the biggest story in this race. Ryan Moore post-Chester quotes indicate rust; market has repriced accordingly."
+      }
+    },
+    "15:15_dash_heritage_handicap": {
+      "race_name": "Betfred 'Dash' Handicap (Heritage Handicap)",
+      "off_time": "15:15",
+      "runners_active": 20,
+      "going": "Good",
+      "field_size_note": "Field≥14: headgear-in-large-field rule active (×0.90 to final_signal for headgear wearers, excluding tongue-tie-only)",
+      "late_additions": ["Star Chorus", "Stormy Impact"],
+      "runners": [
+        {
+          "cloth": 7, "horse": "Kinswoman",
+          "model_score": 80.3, "model_rank": 6,
+          "market_impl_prob": 0.200, "market_rank": 1, "rank_gap": -5,
+          "price": "4/1", "decimal_odds": 5.0,
+          "steam_drift_pct": 79.2,
+          "going_fit": 70,
+          "flags": ["EDGE_ERODED", "SYNTHETIC_BASE_CAVEAT"],
+          "final_signal": 68.3,
+          "notes": "Synthetic 23/1→4/1 EDGE_ERODED (price revelation not genuine steam). Progressive sprinter; Yarmouth return solid. Original bets-file EW pick — price now compressed, no longer overlaid vs model."
+        },
+        {
+          "cloth": 3, "horse": "Lexington Blitz",
+          "model_score": 84.7, "model_rank": 4,
+          "market_impl_prob": 0.167, "market_rank": 2, "rank_gap": -2,
+          "price": "5/1", "decimal_odds": 6.0,
+          "steam_drift_pct": 72.7,
+          "going_fit": 75,
+          "flags": ["EDGE_ERODED", "SYNTHETIC_BASE_CAVEAT", "HEADGEAR_LARGE_FIELD"],
+          "final_signal": 64.8,
+          "notes": "Impressed at Goodwood (5f, good) last month. Synthetic steam. cheekpieces. Dual downgrade applied."
+        },
+        {
+          "cloth": 15, "horse": "Dyonisos",
+          "model_score": 71.5, "model_rank": 11,
+          "market_impl_prob": 0.125, "market_rank": 3, "rank_gap": -8,
+          "price": "7/1", "decimal_odds": 8.0,
+          "steam_drift_pct": 69.2,
+          "going_fit": 72,
+          "flags": ["EDGE_ERODED", "SYNTHETIC_BASE_CAVEAT"],
+          "final_signal": 60.8,
+          "notes": "Pipped at Goodwood last month. Synthetic steam. Market well shorter than model; edge eroded."
+        },
+        {
+          "cloth": 5, "horse": "Eclairage",
+          "model_score": 83.5, "model_rank": 5,
+          "market_impl_prob": 0.111, "market_rank": 4, "rank_gap": -1,
+          "price": "8/1", "decimal_odds": 9.0,
+          "steam_drift_pct": 61.7,
+          "going_fit": 60,
+          "flags": ["SYNTHETIC_BASE_CAVEAT"],
+          "final_signal": 83.5,
+          "notes": "Fine 2nd at Navan (5f) three weeks ago. Tongue-tie (no headgear downgrade). steam 61.7% but market_rank 4 — no EDGE_ERODED per rule. Rank_gap -1 (market slightly shorter)."
+        },
+        {
+          "cloth": 1, "horse": "Democracy Dilemma",
+          "model_score": 64.4, "model_rank": 13,
+          "market_impl_prob": 0.100, "market_rank": 5.5, "rank_gap": -7.5,
+          "price": "9/1", "decimal_odds": 10.0,
+          "steam_drift_pct": 53.5,
+          "going_fit": 65,
+          "flags": ["SYNTHETIC_BASE_CAVEAT", "HEADGEAR_LARGE_FIELD"],
+          "final_signal": 58.0,
+          "notes": "2nd in 2024 Dash off 3lb higher. Visor returns. Market much shorter than model. Final_signal after headgear ×0.90."
+        },
+        {
+          "cloth": 14, "horse": "Arklow Lad",
+          "model_score": 60.4, "model_rank": 14,
+          "market_impl_prob": 0.100, "market_rank": 5.5, "rank_gap": -8.5,
+          "price": "9/1", "decimal_odds": 10.0,
+          "steam_drift_pct": 61.5,
+          "going_fit": 70,
+          "flags": ["SYNTHETIC_BASE_CAVEAT", "HEADGEAR_LARGE_FIELD"],
+          "final_signal": 54.4,
+          "notes": "2-4 for Mick Appleby; won Pontefract (GTS, cheekpieces). Tongue-tie + cheekpieces = tp. Market well shorter than model."
+        },
+        {
+          "cloth": 17, "horse": "Dream Composer",
+          "model_score": 65.5, "model_rank": 12,
+          "market_impl_prob": 0.083, "market_rank": 7.5, "rank_gap": -4.5,
+          "price": "11/1", "decimal_odds": 12.0,
+          "steam_drift_pct": 54.7,
+          "going_fit": 72,
+          "flags": ["SYNTHETIC_BASE_CAVEAT"],
+          "final_signal": 65.5,
+          "notes": "Won 2024 Dash off 5lb higher mark (GTS). Good form for new stable. Rain no concern."
+        },
+        {
+          "cloth": 6, "horse": "Stormy Impact",
+          "model_score": 50.0, "model_rank": 15,
+          "market_impl_prob": 0.083, "market_rank": 7.5, "rank_gap": -7.5,
+          "price": "11/1", "decimal_odds": 12.0,
+          "steam_drift_pct": 38.5,
+          "going_fit": 60,
+          "flags": ["LATE_ENTRY_NEUTRAL"],
+          "final_signal": 50.0,
+          "notes": "★ LATE ADDITION (not in 07:08 baseline). Scored as neutral 50. Was 2025 Dash third? Baseline artefact — not in score DB. Do not use for selection decisions."
+        },
+        {
+          "cloth": 8, "horse": "King Of Light",
+          "model_score": 88.6, "model_rank": 2,
+          "market_impl_prob": 0.071, "market_rank": 9, "rank_gap": 7,
+          "price": "13/1", "decimal_odds": 14.0,
+          "steam_drift_pct": 41.7,
+          "going_fit": 35,
+          "flags": ["REJECT"],
+          "final_signal": 0.0,
+          "notes": "⚠️ REJECT: going_fit 35 (<40). 'The more rain the better' — today is GOOD (5f course), not soft. Spotlight explicitly flags rain preference. High model score but going-incompatible. Do NOT select."
+        },
+        {
+          "cloth": 12, "horse": "Brazen Bolt",
+          "model_score": 78.3, "model_rank": 7,
+          "market_impl_prob": 0.063, "market_rank": 10.5, "rank_gap": 3.5,
+          "price": "15/1", "decimal_odds": 16.0,
+          "steam_drift_pct": 38.5,
+          "going_fit": 72,
+          "flags": [],
+          "final_signal": 78.3,
+          "notes": "Won big-field 5f handicaps York and Goodwood last July. 1-1 at Epsom (7f). Suits good/firmer — today's Good going ideal. rank_gap +3.5 qualifies."
+        },
+        {
+          "cloth": 19, "horse": "Vintage Clarets",
+          "model_score": 5.0, "model_rank": 20,
+          "market_impl_prob": 0.063, "market_rank": 10.5, "rank_gap": -9.5,
+          "price": "15/1", "decimal_odds": 16.0,
+          "steam_drift_pct": 40.7,
+          "going_fit": 55,
+          "flags": ["NO_OVERRIDE"],
+          "final_signal": 5.0,
+          "notes": "Prolific historical winner but off 11lb lower mark. 2026 form poor. model sub-50."
+        },
+        {
+          "cloth": 16, "horse": "Emperor Spirit",
+          "model_score": 77.9, "model_rank": 8,
+          "market_impl_prob": 0.050, "market_rank": 13, "rank_gap": 5,
+          "price": "19/1", "decimal_odds": 20.0,
+          "steam_drift_pct": 24.5,
+          "going_fit": 68,
+          "flags": ["HEADGEAR_LARGE_FIELD"],
+          "final_signal": 70.1,
+          "notes": "Good 2nd at Ascot on turf return. TP headgear; downgraded ×0.90. 'Rarely seen on slower than Good' — today Good (ok). rank_gap +5 qualifies."
+        },
+        {
+          "cloth": 18, "horse": "Rhythm N Hooves",
+          "model_score": 49.7, "model_rank": 17,
+          "market_impl_prob": 0.050, "market_rank": 13, "rank_gap": -4,
+          "price": "19/1", "decimal_odds": 20.0,
+          "steam_drift_pct": 24.5,
+          "going_fit": 50,
+          "flags": ["NO_OVERRIDE", "HEADGEAR_LARGE_FIELD"],
+          "final_signal": 44.7,
+          "notes": "Gradually edging down weights. model_score 49.7 — borderline NO_OVERRIDE. cheekpieces downgrade."
+        },
+        {
+          "cloth": 20, "horse": "Almaty Star",
+          "model_score": 76.7, "model_rank": 9,
+          "market_impl_prob": 0.050, "market_rank": 13, "rank_gap": 4,
+          "price": "19/1", "decimal_odds": 20.0,
+          "steam_drift_pct": 25.9,
+          "going_fit": 45,
+          "flags": ["HEADGEAR_LARGE_FIELD"],
+          "final_signal": 69.0,
+          "notes": "AW specialist; visor. Won Yarmouth on turf but this is much deeper. Stalls incident concern. going_fit borderline at 45 (above REJECT threshold). rank_gap +4."
+        },
+        {
+          "cloth": 13, "horse": "Betsen",
+          "model_score": 73.9, "model_rank": 10,
+          "market_impl_prob": 0.040, "market_rank": 15.5, "rank_gap": 5.5,
+          "price": "24/1", "decimal_odds": 25.0,
+          "steam_drift_pct": 3.8,
+          "going_fit": 68,
+          "flags": ["HEADGEAR_LARGE_FIELD"],
+          "final_signal": 66.5,
+          "notes": "Won Class 4 Chepstow (5f, GTS) last month with blinkers. In much deeper today. rank_gap +5.5."
+        },
+        {
+          "cloth": 4, "horse": "Cindy Lou Who",
+          "model_score": 47.6, "model_rank": 18,
+          "market_impl_prob": 0.040, "market_rank": 15.5, "rank_gap": -2.5,
+          "price": "24/1", "decimal_odds": 25.0,
+          "steam_drift_pct": -8.7,
+          "going_fit": 65,
+          "flags": ["NO_OVERRIDE"],
+          "final_signal": 47.6,
+          "notes": "Bath Listed 2nd on return; disappointing last time and up 11lb. model sub-50."
+        },
+        {
+          "cloth": 10, "horse": "Ziggy's Triton",
+          "model_score": 95.0, "model_rank": 1,
+          "market_impl_prob": 0.030, "market_rank": 17, "rank_gap": 16,
+          "price": "32/1", "decimal_odds": 33.0,
+          "steam_drift_pct": -34.7,
+          "going_fit": 68,
+          "flags": ["HEADGEAR_LARGE_FIELD", "COMPRESSED_RANGE_CAUTION"],
+          "final_signal": 85.5,
+          "notes": "⚠️ EW CANDIDATE but COMPRESSED_RANGE_CAUTION: RPM range in this field is only 102–107 (5 points); Ziggy's Triton leads on combined composite but differences are analytically tiny. Beaten only 3l at York two weeks ago. cheekpieces downgrade ×0.90 applied. Market has him at 32/1 likely for form reasons ('others more appealing'). rank_gap +16 is a scoring artefact of compressed range."
+        },
+        {
+          "cloth": 2, "horse": "Another Baar",
+          "model_score": 86.2, "model_rank": 3,
+          "market_impl_prob": 0.025, "market_rank": 18, "rank_gap": 15,
+          "price": "39/1", "decimal_odds": 40.0,
+          "steam_drift_pct": -81.8,
+          "going_fit": 60,
+          "flags": ["COMPRESSED_RANGE_CAUTION"],
+          "final_signal": 86.2,
+          "notes": "★ WIN CANDIDATE (highest qualifying final_signal). Acts on any ground. Won 5f in Bahrain (Jan); four-timer last term. 'Looks high in weights' per RP. rank_gap +15. COMPRESSED_RANGE_CAUTION applies — RPM differential is minimal."
+        },
+        {
+          "cloth": 9, "horse": "Rogue Enforcer",
+          "model_score": 34.9, "model_rank": 19,
+          "market_impl_prob": 0.020, "market_rank": 19.5, "rank_gap": 0.5,
+          "price": "49/1", "decimal_odds": 50.0,
+          "steam_drift_pct": -108.3,
+          "going_fit": 60,
+          "flags": ["NO_OVERRIDE", "HEADGEAR_LARGE_FIELD"],
+          "final_signal": 31.4,
+          "notes": "Listed win Italy; well held in two starts for new stable. blinkers. model sub-50."
+        },
+        {
+          "cloth": 11, "horse": "Star Chorus",
+          "model_score": 50.0, "model_rank": 15,
+          "market_impl_prob": 0.020, "market_rank": 19.5, "rank_gap": 4.5,
+          "price": "49/1", "decimal_odds": 50.0,
+          "steam_drift_pct": null,
+          "going_fit": 55,
+          "flags": ["LATE_ENTRY_NEUTRAL"],
+          "final_signal": 50.0,
+          "notes": "★ LATE ADDITION (not in 07:08 baseline). Scored at neutral 50. AW wins at Southwell. Slowly away at Goodwood latest. Do not use for selection decisions."
+        }
+      ],
+      "recommendation": {
+        "type": "WIN_AND_EW",
+        "win_candidate": {
+          "horse": "Another Baar",
+          "cloth": 2,
+          "price": "39/1",
+          "decimal_odds": 40.0,
+          "model_score": 86.2,
+          "model_rank": 3,
+          "market_rank": 18,
+          "rank_gap": 15,
+          "going_fit": 60,
+          "final_signal": 86.2,
+          "rationale": "Highest qualifying final_signal (86.2) among runners clearing all criteria. Acts on any ground; four-timer including 5f. rank_gap +15. COMPRESSED_RANGE_CAUTION: the 5-point RPM range (102–107) means model differences are analytically small — treat as speculative outsider, not high-confidence signal."
+        },
+        "ew_outsider": {
+          "horse": "Ziggy's Triton",
+          "cloth": 10,
+          "price": "32/1",
+          "decimal_odds": 33.0,
+          "model_score": 95.0,
+          "model_rank": 1,
+          "market_rank": 17,
+          "rank_gap": 16,
+          "going_fit": 68,
+          "final_signal": 85.5,
+          "rationale": "EW outsider (budget permitting). Model rank 1 vs market rank 17 — biggest rank gap on card. cheekpieces downgrade applied (85.5 after ×0.90). COMPRESSED_RANGE_CAUTION: same caveat as Another Baar. 3l third at York recently; market says others more appealing."
+        },
+        "rejected": [
+          {"horse": "King Of Light", "reason": "REJECT: going_fit 35 (<40). Needs rain/soft; today Good."},
+          {"horse": "Kinswoman", "reason": "EDGE_ERODED (79.2% steam, rank 1). Price now compressed from 23/1 synthetic."},
+          {"horse": "Lexington Blitz", "reason": "EDGE_ERODED (72.7% steam, rank 2). Double-downgraded."},
+          {"horse": "Dyonisos", "reason": "EDGE_ERODED (69.2% steam, rank 3). Market well shorter than model."}
+        ]
+      }
+    },
+    "16:00_derby_g1": {
+      "race_name": "Betfred Derby (Group 1)",
+      "off_time": "16:00",
+      "runners_active": 14,
+      "going": "Good To Soft",
+      "field_size_note": "Field≥14: headgear-in-large-field rule active",
+      "nrs_excluded": ["Causeway (confirmed NR; EW stake voids; trifecta box stands per Danny Path C)"],
+      "runners": [
+        {
+          "cloth": 7, "horse": "Benvenuto Cellini",
+          "model_score": 88.0, "model_rank": 1,
+          "market_impl_prob": 0.500, "market_rank": 1, "rank_gap": 0,
+          "price": "Evs", "decimal_odds": 2.0,
+          "steam_drift_pct": 38.5,
+          "going_fit": 50,
+          "flags": ["EDGE_ERODED", "MARKET_STEAM_MAJOR"],
+          "final_signal": 74.8,
+          "notes": "⚠️ MARKET_STEAM_MAJOR: 9/4 ante-post → Evs = genuine 38.5% steam (real baseline, not synthetic). Model rank 1 but EDGE_ERODED (final_signal ×0.85 = 74.8). Scored at CURRENT price (Evs) per task special rule. Going concern: spotlight says 'soft ground would introduce something for him to prove'. GTS is workable but ground risk is non-trivial."
+        },
+        {
+          "cloth": 9, "horse": "Item",
+          "model_score": 85.8, "model_rank": 2,
+          "market_impl_prob": 0.222, "market_rank": 2, "rank_gap": 0,
+          "price": "7/2", "decimal_odds": 4.5,
+          "steam_drift_pct": 10.0,
+          "going_fit": 48,
+          "flags": [],
+          "final_signal": 85.8,
+          "notes": "Dane in Dante at York. Settled better from 2yo. NR from Group 1 Futurity due to heavy going — going concern on GTS (but not REJECT). Model and market closely aligned. Bets file uses live override 3.25 (9/4) — NOT a steam flag per Saul C9."
+        },
+        {
+          "cloth": 1, "horse": "Action",
+          "model_score": 77.1, "model_rank": 3,
+          "market_impl_prob": 0.071, "market_rank": 6.5, "rank_gap": 3.5,
+          "price": "13/1", "decimal_odds": 14.0,
+          "steam_drift_pct": -7.7,
+          "going_fit": 68,
+          "flags": ["HEADGEAR_LARGE_FIELD"],
+          "final_signal": 69.4,
+          "notes": "★ WIN CANDIDATE. 2nd in Group 1 Futurity (heavy) as 2yo; 2nd Dante to Item. cheekpieces go on. GTS going_fit 68 (heavy form as 2yo). rank_gap +3.5. headgear ×0.90 applied. Closely related to 2025 Derby winner Lambourn. NOTE: replaces Christmas Day as WIN candidate."
+        },
+        {
+          "cloth": 11, "horse": "Maltese Cross",
+          "model_score": 70.9, "model_rank": 4,
+          "market_impl_prob": 0.111, "market_rank": 5, "rank_gap": 1,
+          "price": "8/1", "decimal_odds": 9.0,
+          "steam_drift_pct": 0.0,
+          "going_fit": 65,
+          "flags": [],
+          "final_signal": 70.9,
+          "notes": "Won last three; Lingfield Derby Trial. Debut on soft. rank_gap +1 (below threshold)."
+        },
+        {
+          "cloth": 12, "horse": "Pierre Bonnard",
+          "model_score": 70.1, "model_rank": 5,
+          "market_impl_prob": 0.167, "market_rank": 3, "rank_gap": -2,
+          "price": "5/1", "decimal_odds": 6.0,
+          "steam_drift_pct": 64.7,
+          "going_fit": 72,
+          "flags": ["EDGE_ERODED", "SYNTHETIC_BASE_CAVEAT"],
+          "final_signal": 59.6,
+          "notes": "Strong 2yo form including Group 1 Saint-Cloud (very soft). 16/1 → 5/1 is synthetic→real transition. Going_fit 72 (excellent soft credentials). EDGE_ERODED flag applied."
+        },
+        {
+          "cloth": 10, "horse": "James J Braddock",
+          "model_score": 68.3, "model_rank": 6,
+          "market_impl_prob": 0.125, "market_rank": 4, "rank_gap": -2,
+          "price": "7/1", "decimal_odds": 8.0,
+          "steam_drift_pct": 27.3,
+          "going_fit": 68,
+          "flags": [],
+          "final_signal": 68.3,
+          "notes": "Won Leopardstown Derby Trial (good). Market shorter than model. 27.3% steam below 30% threshold — borderline."
+        },
+        {
+          "cloth": 6, "horse": "Bay Of Brilliance",
+          "model_score": 67.1, "model_rank": 7,
+          "market_impl_prob": 0.071, "market_rank": 6.5, "rank_gap": -0.5,
+          "price": "13/1", "decimal_odds": 14.0,
+          "steam_drift_pct": 33.3,
+          "going_fit": 70,
+          "flags": [],
+          "final_signal": 67.1,
+          "notes": "Pushed Maltese Cross in Lingfield Derby Trial. Maiden wins on soft as 2yo. steam 33.3% but market_rank 6.5 — not ≤3, no EDGE_ERODED. rank_gap -0.5."
+        },
+        {
+          "cloth": 8, "horse": "Christmas Day",
+          "model_score": 66.0, "model_rank": 8,
+          "market_impl_prob": 0.063, "market_rank": 8.5, "rank_gap": 0.5,
+          "price": "15/1", "decimal_odds": 16.0,
+          "steam_drift_pct": -6.7,
+          "going_fit": 72,
+          "flags": [],
+          "final_signal": 66.0,
+          "notes": "⚠️ V1 PICK INVALIDATED. rank_gap only +0.5 — below the +2 WIN threshold. Won maiden on heavy; Group 3 Ballysax. Plugged on in Dante. Not invalidated on going_fit (72, strong soft credentials) or model_score (66.0 ≥ 50) — solely on rank_gap. Action replaces as WIN candidate."
+        },
+        {
+          "cloth": 3, "horse": "Ancient Egypt",
+          "model_score": 58.7, "model_rank": 9,
+          "market_impl_prob": 0.063, "market_rank": 8.5, "rank_gap": -0.5,
+          "price": "15/1", "decimal_odds": 16.0,
+          "steam_drift_pct": 5.9,
+          "going_fit": 35,
+          "flags": ["REJECT"],
+          "final_signal": 0.0,
+          "notes": "⚠️ REJECT: going_fit 35 (<40). All four career races on good to firm — no soft/GTS form whatsoever. Listed win at Newmarket (GFS). GTS going is a material risk for this horse."
+        },
+        {
+          "cloth": 14, "horse": "Rebel Rocker",
+          "model_score": 47.3, "model_rank": 10,
+          "market_impl_prob": 0.010, "market_rank": 11, "rank_gap": 1,
+          "price": "99/1", "decimal_odds": 100.0,
+          "steam_drift_pct": -49.3,
+          "going_fit": 45,
+          "flags": ["NO_OVERRIDE"],
+          "final_signal": 47.3,
+          "notes": "2nd in Listed Derby Trial here; model sub-50. Long shot outsider."
+        },
+        {
+          "cloth": 5, "horse": "Balzac",
+          "model_score": 43.2, "model_rank": 11,
+          "market_impl_prob": 0.010, "market_rank": 11, "rank_gap": 0,
+          "price": "99/1", "decimal_odds": 100.0,
+          "steam_drift_pct": -143.9,
+          "going_fit": 38,
+          "flags": ["REJECT", "NO_OVERRIDE"],
+          "final_signal": 0.0,
+          "notes": "⚠️ REJECT: going_fit 38 (<40). Lingfield Derby Trial on good to firm. Also model sub-50."
+        },
+        {
+          "cloth": 2, "horse": "Alderman",
+          "model_score": 23.9, "model_rank": 12,
+          "market_impl_prob": 0.010, "market_rank": 11, "rank_gap": -1,
+          "price": "99/1", "decimal_odds": 100.0,
+          "steam_drift_pct": 1.0,
+          "going_fit": 50,
+          "flags": ["NO_OVERRIDE"],
+          "final_signal": 23.9,
+          "notes": "Maiden runner; promising but not a serious contender. model sub-50."
+        },
+        {
+          "cloth": 4, "horse": "A Taste Of Glory",
+          "model_score": 20.0, "model_rank": 13,
+          "market_impl_prob": 0.005, "market_rank": 13.5, "rank_gap": -0.5,
+          "price": "199/1", "decimal_odds": 200.0,
+          "steam_drift_pct": -292.2,
+          "going_fit": 30,
+          "flags": ["REJECT", "NO_OVERRIDE"],
+          "final_signal": 0.0,
+          "notes": "⚠️ REJECT: going_fit 30 (<40). Last of 10 in French G1 (very soft); last of 6 in Lingfield Derby Trial (GFS). Both extremes of going produced poor results."
+        },
+        {
+          "cloth": 13, "horse": "Poker",
+          "model_score": 12.7, "model_rank": 14,
+          "market_impl_prob": 0.005, "market_rank": 13.5, "rank_gap": -0.5,
+          "price": "199/1", "decimal_odds": 200.0,
+          "steam_drift_pct": -98.0,
+          "going_fit": 38,
+          "flags": ["REJECT", "NO_OVERRIDE"],
+          "final_signal": 0.0,
+          "notes": "⚠️ REJECT: going_fit 38 (<40). Haydock novice on good to firm. Most expensive yearling ever sold at European auction — but racing evidence suggests good/firm specialist."
+        }
+      ],
+      "recommendation": {
+        "type": "WIN",
+        "win_candidate": {
+          "horse": "Action",
+          "cloth": 1,
+          "price": "13/1",
+          "decimal_odds": 14.0,
+          "model_score": 77.1,
+          "model_rank": 3,
+          "market_rank": 6.5,
+          "rank_gap": 3.5,
+          "going_fit": 68,
+          "final_signal": 69.4,
+          "rationale": "Closely related to 2025 Derby winner Lambourn. 2nd in Group 1 Futurity (heavy ground as 2yo) and 2nd Dante to Item. GTS going_fit 68 — has shown ability on soft/heavy. cheekpieces (headgear ×0.90 applied = 69.4). rank_gap +3.5: market undervalues vs model rank. Could be an improved cheekpieces positive."
+        },
+        "ew_outsider": null,
+        "v1_invalidation": {
+          "horse": "Christmas Day",
+          "reason": "rank_gap +0.5 — fails rank_gap≥+2 criterion. Model rank 8, market rank 8.5. No material overlay. Note: strong going_fit (72) preserved — horse is GTS-suited but not mispriced at 15/1."
+        },
+        "note_benvenuto_cellini": "MARKET_STEAM_MAJOR: Benvenuto Cellini (Evs, was 9/4) is the dominant story. Genuine ante-post confidence move. EDGE_ERODED flag applied per rule (steam 38.5%, rank 1) reducing final_signal to 74.8. Ground is the residual risk — if going deteriorates to proper Soft by 16:00 the short price may be materially wrong.",
+        "trifecta_note": "Causeway void in trifecta box. Danny Path C confirmed — box stands as 3-effective-horses (Item, Benvenuto Cellini, Maltese Cross). Ancient Egypt REJECT (going_fit 35) would invalidate as trifecta leg if included — verify box composition with Danny."
+      }
+    },
+    "16:40_lester_piggott_hcp": {
+      "race_name": "Cherryfield (Croydon) Lester Piggott Handicap",
+      "off_time": "16:40",
+      "runners_active": 10,
+      "going": "Good To Soft",
+      "field_size_note": "Field=10 (<14): headgear-in-large-field rule does NOT apply",
+      "nrs_excluded": ["Be The Standard (confirmed NR since 07:08; cloth 8, draw 3)"],
+      "runners": [
+        {
+          "cloth": 7, "horse": "Hell Yeah He Did",
+          "model_score": 64.4, "model_rank": 1,
+          "market_impl_prob": 0.300, "market_rank": 1, "rank_gap": 0,
+          "price": "7/3", "decimal_odds": 3.333,
+          "steam_drift_pct": 66.7,
+          "going_fit": 82,
+          "flags": ["EDGE_ERODED", "SYNTHETIC_BASE_CAVEAT"],
+          "final_signal": 54.7,
+          "notes": "All 3 turf races as 2yo on soft/heavy — outstanding GTS credentials. Seasonal + handicap debut. EDGE_ERODED from synthetic 9/1→7/3. Price revelation, not genuine steam but rule applied."
+        },
+        {
+          "cloth": 1, "horse": "Allegresse",
+          "model_score": 57.8, "model_rank": 3,
+          "market_impl_prob": 0.200, "market_rank": 2, "rank_gap": -1,
+          "price": "4/1", "decimal_odds": 5.0,
+          "steam_drift_pct": 44.4,
+          "going_fit": 42,
+          "flags": ["EDGE_ERODED", "SYNTHETIC_BASE_CAVEAT"],
+          "final_signal": 49.1,
+          "notes": "Kempton AW novice wins; Goodwood conditions stakes below par (unraced on softer than good). going_fit 42 (borderline — GTS is untested). EDGE_ERODED from synthetic 8/1→4/1. Original bets-file EW outsider pick — now EDGE_ERODED."
+        },
+        {
+          "cloth": 4, "horse": "Starlight Time",
+          "model_score": 40.1, "model_rank": 6,
+          "market_impl_prob": 0.182, "market_rank": 3, "rank_gap": -3,
+          "price": "9/2", "decimal_odds": 5.5,
+          "steam_drift_pct": 45.0,
+          "going_fit": 42,
+          "flags": ["EDGE_ERODED", "SYNTHETIC_BASE_CAVEAT", "NO_OVERRIDE"],
+          "final_signal": 34.1,
+          "notes": "Debut Epsom winner (7f, good); AW novice. No soft evidence. going_fit 42 borderline. EDGE_ERODED from synthetic. model sub-50."
+        },
+        {
+          "cloth": 9, "horse": "Folk Pageant",
+          "model_score": 64.1, "model_rank": 2,
+          "market_impl_prob": 0.143, "market_rank": 4, "rank_gap": 2,
+          "price": "6/1", "decimal_odds": 7.0,
+          "steam_drift_pct": 36.4,
+          "going_fit": 65,
+          "flags": [],
+          "final_signal": 64.1,
+          "notes": "★ WIN CANDIDATE. Won 1m2f handicaps Newmarket and Chester in last two starts (good/GTS). 2nd on GTS as only 2yo run. rank_gap exactly +2. market_rank 4 (steam 36.4% but not ≤3 — no EDGE_ERODED per rule). Consistent performer on going likely encountered today."
+        },
+        {
+          "cloth": 2, "horse": "Lake Como",
+          "model_score": 31.1, "model_rank": 8,
+          "market_impl_prob": 0.125, "market_rank": 5.5, "rank_gap": -2.5,
+          "price": "7/1", "decimal_odds": 8.0,
+          "steam_drift_pct": 15.8,
+          "going_fit": 35,
+          "flags": ["REJECT", "NO_OVERRIDE"],
+          "final_signal": 0.0,
+          "notes": "⚠️ REJECT: going_fit 35 (<40). Unraced on softer than good — GTS is uncharted territory. Worth a go at 1m2f trip-wise, but going kills the signal. model sub-50."
+        },
+        {
+          "cloth": 10, "horse": "Pendella",
+          "model_score": 50.6, "model_rank": 4,
+          "market_impl_prob": 0.125, "market_rank": 5.5, "rank_gap": 1.5,
+          "price": "7/1", "decimal_odds": 8.0,
+          "steam_drift_pct": 27.3,
+          "going_fit": 42,
+          "flags": [],
+          "final_signal": 50.6,
+          "notes": "2nd of 10 at York (1m2f, good) last start. going_fit 42 borderline (no soft form). rank_gap 1.5 — just below +2 threshold."
+        },
+        {
+          "cloth": 6, "horse": "Savvy Disko",
+          "model_score": 28.7, "model_rank": 8,
+          "market_impl_prob": 0.091, "market_rank": 7, "rank_gap": -1,
+          "price": "10/1", "decimal_odds": 11.0,
+          "steam_drift_pct": -10.0,
+          "going_fit": 45,
+          "flags": ["NO_OVERRIDE"],
+          "final_signal": 28.7,
+          "notes": "Won Lingfield novice (AW) last month. Going_fit borderline. model sub-50."
+        },
+        {
+          "cloth": 5, "horse": "Silver State",
+          "model_score": 36.2, "model_rank": 7,
+          "market_impl_prob": 0.083, "market_rank": 8.5, "rank_gap": 1.5,
+          "price": "11/1", "decimal_odds": 12.0,
+          "steam_drift_pct": -20.0,
+          "going_fit": 68,
+          "flags": ["NO_OVERRIDE"],
+          "final_signal": 36.2,
+          "notes": "Won Bath (GTS) and Doncaster (turf) with visor. Going_fit 68 is a positive but model sub-50. Visored — field <14 so no headgear penalty."
+        },
+        {
+          "cloth": 11, "horse": "York Tower",
+          "model_score": 28.7, "model_rank": 8,
+          "market_impl_prob": 0.083, "market_rank": 8.5, "rank_gap": 0.5,
+          "price": "11/1", "decimal_odds": 12.0,
+          "steam_drift_pct": -9.1,
+          "going_fit": 45,
+          "flags": ["NO_OVERRIDE"],
+          "final_signal": 28.7,
+          "notes": "Handicap newcomer; best days ahead per RP. model sub-50."
+        },
+        {
+          "cloth": 3, "horse": "Tailgunner Joe",
+          "model_score": 41.0, "model_rank": 5,
+          "market_impl_prob": 0.030, "market_rank": 10, "rank_gap": 5,
+          "price": "32/1", "decimal_odds": 33.0,
+          "steam_drift_pct": -247.4,
+          "going_fit": 40,
+          "flags": ["NO_OVERRIDE"],
+          "final_signal": 41.0,
+          "notes": "Meydan campaign form; gelded. rank_gap +5 but model sub-50 (41.0 < 50 → NO_OVERRIDE). EW outsider disqualified by model threshold."
+        }
+      ],
+      "recommendation": {
+        "type": "WIN",
+        "win_candidate": {
+          "horse": "Folk Pageant",
+          "cloth": 9,
+          "price": "6/1",
+          "decimal_odds": 7.0,
+          "model_score": 64.1,
+          "model_rank": 2,
+          "market_rank": 4,
+          "rank_gap": 2,
+          "going_fit": 65,
+          "final_signal": 64.1,
+          "rationale": "Won 1m2f handicaps at Newmarket and Chester on last two starts (strong finishing); placed on GTS as only 2yo run. Today's GTS fits. rank_gap exactly +2 — hits WIN threshold. No flags. 6lb rise is a stiffer test but horse is progressive and finishes strongly."
+        },
+        "ew_outsider": null,
+        "rejected": [
+          {"horse": "Hell Yeah He Did", "reason": "EDGE_ERODED (synthetic 9/1→7/3, rank 1)"},
+          {"horse": "Allegresse", "reason": "EDGE_ERODED (synthetic 8/1→4/1, rank 2). Note: original bets-file EW outsider pick now flagged."},
+          {"horse": "Starlight Time", "reason": "EDGE_ERODED + NO_OVERRIDE (synthetic, model sub-50)"},
+          {"horse": "Lake Como", "reason": "REJECT: going_fit 35, unraced on softer than good"}
+        ],
+        "note_allegresse": "Allegresse was the original bets-file EW outsider for 16:40. Post-rescore it is EDGE_ERODED (synthetic steam, rank 2) and going_fit is borderline (42). Recommend Steve review before bet placement: the price has moved significantly from the original bets-file basis."
+      }
+    },
+    "17:20_northern_dancer_hcp": {
+      "race_name": "HKJC World Pool Northern Dancer Handicap",
+      "off_time": "17:20",
+      "runners_active": 17,
+      "going": "Good To Soft",
+      "field_size_note": "Field=17 (≥14): headgear-in-large-field rule active",
+      "runners": [
+        {
+          "cloth": 2, "horse": "Spinning Wheel",
+          "model_score": 78.3, "model_rank": 2,
+          "market_impl_prob": 0.182, "market_rank": 1, "rank_gap": -1,
+          "price": "9/2", "decimal_odds": 5.5,
+          "steam_drift_pct": 57.7,
+          "going_fit": 72,
+          "flags": ["EDGE_ERODED", "SYNTHETIC_BASE_CAVEAT"],
+          "final_signal": 66.6,
+          "notes": "Unexposed 4yo; won Leicester (GTS). Synthetic 13/1→9/2 EDGE_ERODED. Market and model close."
+        },
+        {
+          "cloth": 12, "horse": "Elsass",
+          "model_score": 38.1, "model_rank": 15,
+          "market_impl_prob": 0.167, "market_rank": 2, "rank_gap": -13,
+          "price": "5/1", "decimal_odds": 6.0,
+          "steam_drift_pct": 61.3,
+          "going_fit": 52,
+          "flags": ["EDGE_ERODED", "SYNTHETIC_BASE_CAVEAT", "NO_OVERRIDE"],
+          "final_signal": 32.4,
+          "notes": "2-2 since gelding (Hamilton good, Southwell AW). Synthetic EDGE_ERODED. Market much shorter than model; model sub-50."
+        },
+        {
+          "cloth": 10, "horse": "Give It To Me Oj",
+          "model_score": 59.3, "model_rank": 7,
+          "market_impl_prob": 0.143, "market_rank": 3.5, "rank_gap": -3.5,
+          "price": "6/1", "decimal_odds": 7.0,
+          "steam_drift_pct": 53.3,
+          "going_fit": 78,
+          "flags": ["EDGE_ERODED", "SYNTHETIC_BASE_CAVEAT", "HEADGEAR_LARGE_FIELD"],
+          "final_signal": 45.1,
+          "notes": "Dual C&D winner (Jump/Apprentice Derbies on soft/good). Excellent course form. cheekpieces. EDGE_ERODED + headgear double downgrade."
+        },
+        {
+          "cloth": 4, "horse": "Regal Ulixes",
+          "model_score": 53.4, "model_rank": 9,
+          "market_impl_prob": 0.143, "market_rank": 3.5, "rank_gap": -5.5,
+          "price": "6/1", "decimal_odds": 7.0,
+          "steam_drift_pct": 48.1,
+          "going_fit": 70,
+          "flags": ["EDGE_ERODED", "SYNTHETIC_BASE_CAVEAT", "HEADGEAR_LARGE_FIELD"],
+          "final_signal": 40.7,
+          "notes": "Won on soft as 2yo. Hood headgear. EDGE_ERODED + headgear downgrade."
+        },
+        {
+          "cloth": 9, "horse": "Night Breeze",
+          "model_score": 32.7, "model_rank": 14,
+          "market_impl_prob": 0.111, "market_rank": 5, "rank_gap": -9,
+          "price": "8/1", "decimal_odds": 9.0,
+          "steam_drift_pct": 40.0,
+          "going_fit": 68,
+          "flags": ["NO_OVERRIDE"],
+          "final_signal": 32.7,
+          "notes": "Won Great Metropolitan over C&D (good) in April. steam 40% but market_rank 5 — no EDGE_ERODED. model sub-50. Tongue-tie (no headgear penalty)."
+        },
+        {
+          "cloth": 13, "horse": "Too Soon",
+          "model_score": 73.2, "model_rank": 3,
+          "market_impl_prob": 0.100, "market_rank": 6.5, "rank_gap": 3.5,
+          "price": "9/1", "decimal_odds": 10.0,
+          "steam_drift_pct": 35.5,
+          "going_fit": 75,
+          "flags": ["HEADGEAR_LARGE_FIELD"],
+          "final_signal": 65.9,
+          "notes": "Sole win at Epsom (8.5f, heavy). First-time cheekpieces today — headgear ×0.90 applied. GTS confirmed track preference. rank_gap +3.5. Warren Fentiman booking noted as interesting in spotlight. Qualifies as secondary WIN candidate."
+        },
+        {
+          "cloth": 16, "horse": "Hengest",
+          "model_score": 34.0, "model_rank": 13,
+          "market_impl_prob": 0.100, "market_rank": 6.5, "rank_gap": -6.5,
+          "price": "9/1", "decimal_odds": 10.0,
+          "steam_drift_pct": 41.2,
+          "going_fit": 38,
+          "flags": ["REJECT"],
+          "final_signal": 0.0,
+          "notes": "⚠️ REJECT: going_fit 38 (<40). Unbeaten in 3 handicaps on good/good-to-firm. 'Softer ground would pose a query' per spotlight. GTS is specifically flagged as a risk. Also model sub-50."
+        },
+        {
+          "cloth": 7, "horse": "Asgard's Captain",
+          "model_score": 33.6, "model_rank": 16,
+          "market_impl_prob": 0.091, "market_rank": 8.5, "rank_gap": -7.5,
+          "price": "10/1", "decimal_odds": 11.0,
+          "steam_drift_pct": 24.1,
+          "going_fit": 70,
+          "flags": ["NO_OVERRIDE"],
+          "final_signal": 33.6,
+          "notes": "3rd in this 2024 (GTS), 4th last year. Won Great Met C&D; won Newmarket latest. model sub-50. TS 78 drags score."
+        },
+        {
+          "cloth": 15, "horse": "Bulletin",
+          "model_score": 60.6, "model_rank": 5,
+          "market_impl_prob": 0.091, "market_rank": 8.5, "rank_gap": 3.5,
+          "price": "10/1", "decimal_odds": 11.0,
+          "steam_drift_pct": 29.0,
+          "going_fit": 65,
+          "flags": [],
+          "final_signal": 60.6,
+          "notes": "Not out of frame in 15 starts. Acts on GTS. steam 29% — just below EDGE_ERODED threshold. rank_gap +3.5. No headgear. Qualifies for WIN criteria."
+        },
+        {
+          "cloth": 6, "horse": "Dancing In Paris",
+          "model_score": 60.5, "model_rank": 6,
+          "market_impl_prob": 0.071, "market_rank": 10, "rank_gap": 4,
+          "price": "13/1", "decimal_odds": 14.0,
+          "steam_drift_pct": 3.4,
+          "going_fit": 68,
+          "flags": [],
+          "final_signal": 60.5,
+          "notes": "No win since Aug 2024 but ran well at Goodwood (1m6f, GTS) in August. TS 108. rank_gap +4. Likely short of best at 1m4f today per spotlight."
+        },
+        {
+          "cloth": 14, "horse": "Gordon Grey",
+          "model_score": 53.4, "model_rank": 9,
+          "market_impl_prob": 0.063, "market_rank": 11.5, "rank_gap": 2.5,
+          "price": "15/1", "decimal_odds": 16.0,
+          "steam_drift_pct": -3.2,
+          "going_fit": 60,
+          "flags": [],
+          "final_signal": 53.4,
+          "notes": "3-4 record at Epsom including two Ladies' Derbys. Tongue-tie (no headgear penalty). rank_gap +2.5. 'A good bit hotter than those events' per spotlight."
+        },
+        {
+          "cloth": 8, "horse": "Antrim",
+          "model_score": 38.2, "model_rank": 12,
+          "market_impl_prob": 0.063, "market_rank": 11.5, "rank_gap": -0.5,
+          "price": "15/1", "decimal_odds": 16.0,
+          "steam_drift_pct": -10.3,
+          "going_fit": 42,
+          "flags": ["NO_OVERRIDE", "HEADGEAR_LARGE_FIELD"],
+          "final_signal": 34.4,
+          "notes": "0-4 on turf; latest third at Hamilton respectable. 'Softer ground a query'. cheekpieces penalty. model sub-50."
+        },
+        {
+          "cloth": 1, "horse": "Prydwen",
+          "model_score": 62.9, "model_rank": 4,
+          "market_impl_prob": 0.056, "market_rank": 13, "rank_gap": 9,
+          "price": "17/1", "decimal_odds": 18.0,
+          "steam_drift_pct": -44.0,
+          "going_fit": 68,
+          "flags": [],
+          "final_signal": 62.9,
+          "notes": "★ EW OUTSIDER CANDIDATE. 11th win at Ripon (good) in April. 'Won't mind how the ground is riding.' rank_gap +9. Drifted from 11/1 synthetic — no steam concern. No headgear. OR 103 (highest in field)."
+        },
+        {
+          "cloth": 5, "horse": "Lord Melbourne",
+          "model_score": 78.8, "model_rank": 1,
+          "market_impl_prob": 0.050, "market_rank": 14, "rank_gap": 13,
+          "price": "19/1", "decimal_odds": 20.0,
+          "steam_drift_pct": -48.1,
+          "going_fit": 78,
+          "flags": [],
+          "final_signal": 78.8,
+          "notes": "★ WIN CANDIDATE (highest final_signal). Won 23-runner November Handicap (1m4f, soft) 2024. 2-3 at Epsom including GTS win last September. Drifted from 12/1 synthetic — no steam, no flags. OR 97, RPM 118 (joint-highest in race). rank_gap +13. NOTE: upgrades from EW outsider in bets file to WIN candidate."
+        },
+        {
+          "cloth": 11, "horse": "Max Mayhem",
+          "model_score": 56.3, "model_rank": 8,
+          "market_impl_prob": 0.030, "market_rank": 15.5, "rank_gap": 7.5,
+          "price": "32/1", "decimal_odds": 33.0,
+          "steam_drift_pct": -120.0,
+          "going_fit": 60,
+          "flags": [],
+          "final_signal": 56.3,
+          "notes": "Locally trained; acts on GTS. 7th in Kempton return; drifted massively. rank_gap +7.5 qualifies for WIN criteria (model ≥50, going_fit ≥40, no flags)."
+        },
+        {
+          "cloth": 3, "horse": "Military Academy",
+          "model_score": 50.8, "model_rank": 11,
+          "market_impl_prob": 0.030, "market_rank": 15.5, "rank_gap": 4.5,
+          "price": "32/1", "decimal_odds": 33.0,
+          "steam_drift_pct": -153.8,
+          "going_fit": 72,
+          "flags": ["HEADGEAR_LARGE_FIELD"],
+          "final_signal": 45.7,
+          "notes": "AW Listed winner; acts on GTS. blinkers penalty. 'Below par on last three starts' — form concern. rank_gap +4.5 but final_signal reduced to 45.7."
+        },
+        {
+          "cloth": 17, "horse": "Northwest Passage",
+          "model_score": 15.2, "model_rank": 17,
+          "market_impl_prob": 0.025, "market_rank": 17, "rank_gap": 0,
+          "price": "39/1", "decimal_odds": 40.0,
+          "steam_drift_pct": -122.2,
+          "going_fit": 78,
+          "flags": ["NO_OVERRIDE"],
+          "final_signal": 15.2,
+          "notes": "Heavy-ground specialist (Salisbury and Newbury on soft). going_fit 78 but model sub-50. 5lb out of the handicap. Two poor starts for new yard."
+        }
+      ],
+      "recommendation": {
+        "type": "WIN_AND_EW",
+        "win_candidate": {
+          "horse": "Lord Melbourne",
+          "cloth": 5,
+          "price": "19/1",
+          "decimal_odds": 20.0,
+          "model_score": 78.8,
+          "model_rank": 1,
+          "market_rank": 14,
+          "rank_gap": 13,
+          "going_fit": 78,
+          "final_signal": 78.8,
+          "rationale": "Strongest WIN signal on the entire card on a rank_gap basis. November Handicap 2024 winner on soft (1m4f). 2-3 record at Epsom including GTS win in September 2025 at this meeting. Today's conditions replicate his optimal scenario. No headgear. No flags. rank_gap +13. UPGRADE from bets-file EW outsider to WIN candidate. Note: 'tempting mark if he can stage a revival; poor three starts in 2026 at 1m2f' — key risk is 2026 form dip at shorter trips; today 1m4f on GTS should be different.",
+          "upgrade_from_bets_file": "Lord Melbourne was original EW outsider in bets file. Rescore upgrades to WIN based on model rank 1/17 and rank_gap +13."
+        },
+        "ew_outsider": {
+          "horse": "Prydwen",
+          "cloth": 1,
+          "price": "17/1",
+          "decimal_odds": 18.0,
+          "model_score": 62.9,
+          "model_rank": 4,
+          "market_rank": 13,
+          "rank_gap": 9,
+          "going_fit": 68,
+          "final_signal": 62.9,
+          "rationale": "EW outsider (budget permitting, consult Danny). OR 103 (highest in field). 11th career win at Ripon in April. 'Won't mind how the ground is riding'. rank_gap +9. Drifted 11/1→17/1 — no steam concern. Consistent track record."
+        },
+        "rejected": [
+          {"horse": "Spinning Wheel", "reason": "EDGE_ERODED (synthetic 13/1→9/2, rank 1)"},
+          {"horse": "Elsass", "reason": "EDGE_ERODED (synthetic 14/1→5/1, rank 2) + NO_OVERRIDE"},
+          {"horse": "Give It To Me Oj", "reason": "EDGE_ERODED (synthetic 14/1→6/1, rank 3.5) + headgear"},
+          {"horse": "Regal Ulixes", "reason": "EDGE_ERODED (synthetic 12/1→6/1, rank 3.5) + headgear"},
+          {"horse": "Hengest", "reason": "REJECT: going_fit 38 (<40). Good-to-firm specialist; GTS flagged as a query."}
+        ]
+      }
+    },
+    "17:55_jra_tokyo_trophy": {
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "off_time": "17:55",
+      "runners_active": 16,
+      "going": "Good To Soft",
+      "status": "VOID",
+      "void_reason": "Dance In The Storm confirmed NR (absent from RP live racecard at 07:08 and 11:26). WIN bet £1.33 @ 18.5 (35/2) voids. Kinswoman+Dance double £0.50 also at risk. Saul checklist C1 applies — no replacement WIN pick assigned (requires Steve decision). No bets to be placed in this race.",
+      "saul_exposure_note": "£1.83 total at-risk exposure: WIN £1.33 + double leg £0.50. Per Saul C1: handle as REQUIRES_STEVE_REVIEW until explicit decision on replacement or acceptance of void.",
+      "runners_note": "Full ranked table omitted per VOID status. Fine Interview (5/2, market_rank 1, steam 79.4% from real 16/1 baseline — EDGE_ERODED) leads market. Apollo One (model_rank 1, score 95.0, 7/1) and Sondad (2nd, 81.7, 7/1) lead model ranking. Sondad won this race last year. For completeness: if a replacement WIN is ever needed, Apollo One (rank_gap +3) and Sondad (rank_gap +2) are the top non-EDGE_ERODED model picks.",
+      "recommendation": {
+        "type": "VOID",
+        "win_candidate": null,
+        "ew_outsider": null,
+        "note": "Awaiting Steve decision on void acceptance or replacement. Do not regenerate racecard or bets for this race without explicit Steve instruction."
+      }
+    }
+  },
+  "per_race_summary": {
+    "13:30": {"type": "NO_BET", "win": null, "ew": null},
+    "14:05": {"type": "WIN", "win": "Princess Child @ 11/1", "ew": null},
+    "14:40": {"type": "NO_BET", "win": null, "ew": null, "v1_invalidation": "Illinois INVALIDATED (model rank 6/6, NO_OVERRIDE)"},
+    "15:15": {"type": "WIN_AND_EW", "win": "Another Baar @ 39/1 (COMPRESSED_RANGE_CAUTION)", "ew": "Ziggy's Triton @ 32/1 (COMPRESSED_RANGE_CAUTION)"},
+    "16:00": {"type": "WIN", "win": "Action @ 13/1", "ew": null, "v1_invalidation": "Christmas Day INVALIDATED (rank_gap +0.5 < +2)"},
+    "16:40": {"type": "WIN", "win": "Folk Pageant @ 6/1", "ew": null, "note_allegresse": "Allegresse (existing bets-file EW pick) now EDGE_ERODED post-rescore"},
+    "17:20": {"type": "WIN_AND_EW", "win": "Lord Melbourne @ 19/1 (UPGRADED from EW to WIN)", "ew": "Prydwen @ 17/1"},
+    "17:55": {"type": "VOID", "win": null, "ew": null, "note": "Dance In The Storm NR — £1.83 at risk per Saul C1"}
+  },
+  "hold_card_confidence": {
+    "assessment": "HIGH",
+    "rationale": [
+      "GTS with rain confirmed: going correctly triggers HOLD path.",
+      "4 Derby runners REJECTed on going_fit (<40): Ancient Egypt, Balzac, A Taste Of Glory, Poker — all good/firm specialists.",
+      "Soft-preference horses upgraded: Lord Melbourne (Nov Hcp soft winner), Princess Child (Tipperary yielding/Curragh soft-heavy), Too Soon (Epsom heavy winner), Folk Pageant (GTS 2yo debut), Hell Yeah He Did (all 3 turf runs on soft/heavy).",
+      "Standard card would have missed the going-based signals and likely retained good-to-firm horses as valid picks.",
+      "HOLD card signal: confirmed CORRECT for Derby going declarations."
+    ]
+  }
+}
