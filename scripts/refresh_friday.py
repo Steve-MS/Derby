@@ -2,6 +2,7 @@
 refresh_friday.py — Friday-morning odds refresh wrapper.
 
 Run this on Friday 5 June 2026 once bookmakers post morning prices to:
+  0. Run the T-60 artifact watchdog and abort on any stale/inconsistent gate
   1. (Optionally) merge fresh prices from a CSV you paste in
   2. Re-run enrich_odds.py (restores hardcoded ante-post + synthetic fallback)
   3. Re-score both meetings
@@ -33,25 +34,6 @@ import subprocess
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
-
-# ── Credential gate ───────────────────────────────────────────────────────────
-# Validate required environment variables before doing any work.
-# Exit 1 immediately with a clear message if anything is missing.
-def _gate_env() -> None:
-    _here = Path(__file__).resolve().parent
-    import runpy
-    result = subprocess.run(
-        [sys.executable, str(_here / "check_env.py")],
-        cwd=_here.parent,
-    )
-    if result.returncode != 0:
-        sys.exit(
-            "\n❌  refresh_friday.py aborted: environment check failed.\n"
-            "    Fix the issues reported above, then re-run.\n"
-        )
-
-_gate_env()
-# ─────────────────────────────────────────────────────────────────────────────
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DATA_RAW = PROJECT_ROOT / "data" / "raw"
@@ -143,6 +125,9 @@ def main() -> None:
     args = parser.parse_args()
 
     print(f"=== refresh_friday.py @ {datetime.now().isoformat(timespec='seconds')} ===")
+
+    print("\n[T-60] Running artifact watchdog")
+    run([PY, str(PROJECT_ROOT / "scripts" / "t60_watchdog.py"), "--date", DATES[0]])
 
     if not args.skip_enrich:
         print("\n[1/4] Running enrich_odds.py (hardcoded ante-post + synthetic fallback)")

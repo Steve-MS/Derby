@@ -4,7 +4,7 @@
 
 **Scope:** Epsom Group racing (specifically Ladies Day Fri & Derby Day Sat). Covers the common case, with fallbacks for observed failure modes.
 
-**Last Updated:** 2026-06-07 | **Model Version:** v0.4 | **Venue:** Epsom
+**Last Updated:** 2026-06-08 | **Model Version:** v0.4 | **Venue:** Epsom
 
 ---
 
@@ -128,6 +128,8 @@ Yesterday's audit identified a critical finding: **Racing Post racecard pages re
 
 ## 3. Race-Day Timeline
 
+For exact copy-paste commands, keep the [Quick Reference Card](#8-quick-reference-card) open during the operator window.
+
 ### T-24h (Evening before race day)
 
 - **Full overnight refresh**
@@ -152,6 +154,15 @@ Yesterday's audit identified a critical finding: **Racing Post racecard pages re
   - Output: `data/enrichment/market-baseline.json`
   - Use this as your reference for "yesterday's price" when comparing pre-race moves
   - **Critical:** If RP scrape fails (406), add 60s delay and retry, OR use `--no-rp-scrape` on next latest call
+
+### T-60min before first race
+
+- **T-60 watchdog gate**
+  - Run `python scripts/t60_watchdog.py --date YYYY-MM-DD`
+  - Confirms required racecards, live runners, Sporting Life/Racing Post/going enrichment, scores, bets, report, racecard, and slip are present and fresh
+  - Cross-checks that bets/card horses are live, bets total matches the rendered header/slip, and `scripts/check_env.py` passes
+  - **Exit handling:** `0` = clear; `1` = review stale artifacts before proceeding; `2` = **DO NOT RUN PIPELINE** until missing/inconsistent artifacts are fixed
+  - `scripts/refresh_friday.py` invokes this as its first T-60 step and aborts on any non-zero result
 
 ### T-1h per Group 1 race (1h before race off)
 
@@ -188,6 +199,14 @@ Yesterday's audit identified a critical finding: **Racing Post racecard pages re
 ## 4. Manual Live-Odds Fallback
 
 When every automated source fails (Example: yesterday 15:39, RP blocked + Sporting Life returned 373-byte response), use this procedure.
+
+If the scheduled `scripts/refresh_friday.py` did not run, invoke the T-60 gate directly before editing manual prices:
+
+```bash
+python scripts/t60_watchdog.py --date $(date +%F)
+```
+
+This writes `outputs/t60-status-YYYY-MM-DD.json` and fails loud on missing/stale artifacts before manual fallback work begins.
 
 ### Step 1: Capture Prices Manually
 
@@ -489,6 +508,7 @@ PRE-RACE CHECKLIST (Start T-2h, ~07:00 BST)
 ☐ Run: python scripts/morning_odds.py --mode baseline --date 2026-06-06
 ☐ Inspect: data/enrichment/market-baseline.json (39KB ≈ right size)
 ☐ Check: data/enrichment/live-runners-2026-06-06.json for NRs
+☐ T-60 manifest check: python scripts/t60_watchdog.py --date $(date +%F) — fail-loud on any missing/stale artifact
 
 T-1H BEFORE EACH GROUP 1 RACE
 ─────────────────────────────
@@ -536,6 +556,9 @@ python -c "import os; print('API ready:', bool(os.getenv('RACING_API_USERNAME'))
 
 # Baseline capture
 python scripts/morning_odds.py --mode baseline --date 2026-06-06
+
+# T-60 manifest check; fail-loud on any missing/stale artifact
+python scripts/t60_watchdog.py --date $(date +%F)
 
 # Latest prices (with auto-60s-retry for RP 406)
 python scripts/morning_odds.py --mode latest --date 2026-06-06 --no-rp-scrape
