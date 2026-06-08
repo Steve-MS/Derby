@@ -231,6 +231,11 @@ def path_for(course_slug: str, date_str: str, kind: str) -> Path:
 
     Supported kinds: ``raw-racecards``, ``scores``, ``bets``, ``report``,
     ``racecard``, ``slip``, ``results``, and ``enrichment-{name}``.
+
+    Layout is intentionally flat: Epsom keeps its legacy archive paths, while
+    other courses add the course slug to filenames rather than moving into
+    nested directories. Historical Epsom artifacts must not be re-emitted under
+    new prefixed paths.
     """
     slug = _normalise_slug(course_slug)
     if not date_str:
