@@ -113,3 +113,12 @@ Wave-1 publish-readiness sprint shipped GREEN. Saul-3 gate review verdict 🟢 G
 ### Linus-18 CLI seam patch - schema drift lesson (2026-06-08)
 
 CLI and script paths had drifted: Badger's legacy `singles`/`portfolio_summary` payload still powered report/racecard rows, while Linus header/T-60 consumers expected `meta` plus entry records. The safe migration pattern is additive: keep legacy keys byte/semantic-stable for Steve/report consumers, add `meta` and `entries`, and make watchdog/render-header derive equivalent entries from legacy payloads until every producer is upgraded. Slip validation must understand EW display conventions: entries store EW unit stake for computation, while operator slips may show either unit or total EW outlay. Future CLI seams should share schema adapters from `src/` instead of reimplementing totals in scripts.
+
+### Linus-19 chunk6 src polish (2026-06-08)
+
+- Going artifact pattern: CLI card should resolve `enrichment-going` through `path_for()` and pass the extracted string into `render_card(going=...)`. Let the template keep `Going: TBC` only as a missing-data fallback, not as CLI behavior.
+- Market snapshot pattern: Epsom keeps legacy `data/enrichment/market-latest.json`; non-Epsom must use `market-latest-{course}.json` or render `Odds snapshot unavailable`. Never let report/card default to Epsom market context for another course.
+- Priors edge-case pattern: `scoring_priors_for(..., priors={})` is the direct empty-object contract; null config means neutral; non-object config is a loud `CourseConfigError`; partial config deep-merges neutral defaults.
+- Trial-form loader pattern: raw trial enrichment normalization now requires an explicit course. `trial_form_signal()` resolves the course once and the cache is keyed by course, preventing silent Epsom prior coupling when a second course later enables trial-form calibration.
+- Equipment defaults decision: removed empty unused `equipment_defaults` from course configs and neutral priors as YAGNI. Reintroduce only when `score_equipment()` has a real course-specific calibration contract and regression coverage.
+- Regression note: Epsom 2026-06-06 scores exact-match after changes; bets only changed in volatile `generated_at` during the smoke run. Full suite excluding `test_racecard_wave33.py` passed 500/500.

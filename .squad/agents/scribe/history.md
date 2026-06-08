@@ -135,3 +135,12 @@
 - Saul-10's CONDITIONAL verdict was useful gate pressure but exposed a process trap: HEAD outputs/bets-2026-06-06.json was a stale pre-wave-1 artifact, not the active CLI contract. Scribe should verify that a committed artifact is a current baseline before treating byte drift as a regression.
 - Generated outputs are poor long-term regression fixtures unless refreshed intentionally; canonical schema baselines should move under tests/fixtures/regression/ with tests naming the contract they protect.
 - For three-commit ship batches, regenerate ignored outputs with `git add -f` only on the explicitly approved files, and keep Ascot smoke artifacts plus retained large inbox records out of the staged set.
+
+
+### 2026-06-08 - Scribe-27 combined Chunk 5 + 6 ship
+
+- Four logical commits kept review provenance readable: Livingston data-layout docs, Livingston RUNBOOK/FU-1, Linus source polish FU-2..FU-6, then Squad state.
+- When a file has both documentation and code changes from different agents, split the index intentionally and verify the cached diff; commit 1 staged only the `path_for()` layout paragraph while commit 3 carried market_snapshot/scoring code.
+- Summary-only merges scale: decisions.md records verdicts, tests, lessons, and retained inbox references without pasting full gate reports.
+- Closed follow-ups should be marked in `followups.md` with status lines, not deleted, so later agents can audit why work disappeared from the open queue.
+- Secret scan remained mandatory before each commit, including state-only commits, because `.squad/` files are durable audit artifacts.

@@ -768,3 +768,13 @@ python scripts/check_env.py   # should exit 0
 Livingston-7 Ascot E2E smoke surfaced 10 rough edges. Linus-18 patched 3 publish-blockers (R-7 predict schema, R-8 card->bets wiring, R-9 slip generation). Saul-10 returned CONDITIONAL on R-7 because comparison against HEAD outputs/bets-2026-06-06.json failed; investigation revealed HEAD was a pre-wave-1 stale artifact from "Linus Reports Engineer v3", not a true CLI baseline. Steve approved refreshing baseline (option A). Linus-18 shipped: 490 pass, Ascot T-60 clean. Livingston-8 independently confirmed R-7/R-8/R-9 closed via re-smoke. New low edge R-11 (PowerShell line-wrap on T-60 GBP total) logged.
 
 LESSON: gate prompts that say "compare against HEAD" need to verify HEAD is the current contract, not a stale committed artifact. Future regression baselines belong in tests/fixtures/regression/, not in outputs/.
+
+
+### 2026-06-08: v0.4 #6 fully shipped - Chunk 5 + Chunk 6 complete
+**Verdict:** SHIPPED. Combined Livingston-9, Linus-19, and Saul-11 batch closed the course-agnostic publish-ready skill work.
+**Chunk 5:** Livingston-9 kept the flat course-prefixed data layout, added `docs/data-layout.md`, and documented `path_for()` layout intent. Saul-11 verdict: AMBER CONDITIONAL with FU-10 for the T-60/path_for ownership wording gap.
+**Chunk 6a:** Livingston-9 rewrote RUNBOOK as Windows-first, course-agnostic operator docs and fixed FU-1 by moving `morning_odds.py` credential gating after dry-run handling. Saul-11 verdicts: GREEN SHIP for RUNBOOK and FU-1.
+**Chunk 6b/6c:** Linus-19 closed FU-2 through FU-6: priors edge tests, explicit trial_form course parameter, equipment_defaults YAGNI delete, card going passthrough, and course-scoped market snapshots. Saul-11 verdicts: GREEN SHIP for FU-2/FU-3/FU-4/FU-5 and AMBER CONDITIONAL for FU-6 because the remaining broad Derby grep hit is the existing FU-7 CSS comment.
+**Test count:** Saul-11 verified 500/500 with `python -m pytest --ignore=tests/test_racecard_wave33.py`; Scribe final rerun used `python -m pytest -x --ignore=tests/test_racecard_wave33.py`.
+**Lessons:** Stale-baseline trap confirmed by Saul-10 and Saul-11: verify the baseline is the current contract before regression-comparing. Parallel-agent file boundaries worked: Livingston owned docs/scripts while Linus owned source/tests, with only compatible `src/course_config.py` overlap.
+**Followups:** CLOSED in this batch: FU-1, FU-2, FU-3, FU-4, FU-5, FU-6. OPEN after ship: FU-7, FU-8, FU-9, FU-10.

@@ -114,3 +114,9 @@ Wave-1 publish-readiness sprint shipped GREEN. All four work items GREEN GO. Ful
 - For schema migrations, test both directions: legacy Badger `singles` payloads and already-published Linus/header `bets` payloads. Add a fixture shaped like the committed race-day artifact, not just a minimal synthetic dict.
 - When validating CLI-generated artifacts, restore tracked outputs after evidence capture so reviewer commands do not pollute a shared dirty tree.
 
+
+### 2026-06-08 — Combined chunk6 gate (Saul-11)
+- Stale-baseline check succeeded only after comparing against commit b91063c, not current working output: bets differed solely in meta.generated_at and scores matched exactly.
+- A broad whole-report brand grep can trip over intentionally deferred CSS comments (FU-7) even when the footer/data leak is fixed; record footer-scoped and whole-document evidence separately.
+- Data-layout docs need explicit ownership boundaries for artifacts not handled by path_for(), especially watchdog manifests.
+- PowerShell wildcard arguments are not expanded for pytest file paths passed through python; rerun explicit filenames before treating a targeted suite as failed.
