@@ -24,6 +24,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from src.bet_schema import computed_total, entries_from_legacy_bets
+from src.slip import build_bookmaker_slip
+
 # ---------------------------------------------------------------------------
 # Path helpers
 # ---------------------------------------------------------------------------
@@ -202,6 +205,50 @@ def cmd_score(args: argparse.Namespace) -> int:
 # predict
 # ---------------------------------------------------------------------------
 
+def _date_label(date: str, course_cfg: dict[str, Any], meeting: dict[str, Any]) -> str:
+    try:
+        dt = datetime.strptime(date, "%Y-%m-%d")
+        day = dt.strftime("%A")
+        display = dt.strftime("%#d %B %Y") if sys.platform == "win32" else dt.strftime("%-d %B %Y")
+    except ValueError:
+        day = ""
+        display = date
+    day_cfg = (meeting.get("days") or {}).get(date, {}) if isinstance(meeting.get("days"), dict) else {}
+    suffix = f" ({day_cfg.get('label')})" if day_cfg.get("label") else ""
+    prefix = f"{day} " if day else ""
+    return f"{prefix}{display} – {course_cfg.get('display_name', '')}{suffix}".strip()
+
+
+def _attach_cli_schema(bets: dict[str, Any], scores_data: dict[str, Any], args: argparse.Namespace, bankroll: float, course_cfg: dict[str, Any]) -> dict[str, Any]:
+    meeting_cfg = resolve_meeting(course_cfg, args.meeting)
+    course_display = course_cfg.get("display_name") or args.course
+    entries = entries_from_legacy_bets(bets, scores=scores_data.get("races", []), course=course_display)
+    total_stake = computed_total(entries)
+    bets["meta"] = {
+        "schema_version": "linus-cli-bets-v1",
+        "course": course_display,
+        "course_slug": args.course,
+        "meeting": meeting_cfg.get("title") or args.meeting,
+        "meeting_slug": args.meeting,
+        "date": args.date,
+        "card_date": args.date,
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "bankroll": bankroll,
+        "total_stake": total_stake,
+        "total_stake_gbp": total_stake,
+    }
+    bets["entries"] = entries
+    return bets
+
+
+def _write_slip(args: argparse.Namespace, bets: dict[str, Any], course_cfg: dict[str, Any]) -> Path:
+    meeting_cfg = resolve_meeting(course_cfg, args.meeting)
+    slip_path = _artifact_path(args, "slip")
+    slip_path.parent.mkdir(parents=True, exist_ok=True)
+    slip_path.write_text(build_bookmaker_slip(_date_label(args.date, course_cfg, meeting_cfg), bets), encoding="utf-8")
+    return slip_path
+
+
 def cmd_predict(args: argparse.Namespace) -> int:
     """Call Badger's betting.build_bets() and write outputs/bets-{date}.json.
 
@@ -211,7 +258,7 @@ def cmd_predict(args: argparse.Namespace) -> int:
     bankroll: float = args.bankroll
 
     try:
-        _course_context(args)
+        course_cfg = _course_context(args)
     except CourseConfigError as exc:
         print(f"Error: {exc}", file=sys.stderr)
         return 2
@@ -236,13 +283,17 @@ def cmd_predict(args: argparse.Namespace) -> int:
     config: dict = betting_default_config()
 
     bets: dict = build_bets(scores_list, bankroll, config)
+    _attach_cli_schema(bets, scores_data, args, bankroll, course_cfg)
 
     out_path = _artifact_path(args, "bets")
     out_path.parent.mkdir(parents=True, exist_ok=True)
     with out_path.open("w", encoding="utf-8") as fh:
         json.dump(bets, fh, indent=2)
 
+    slip_path = _write_slip(args, bets, course_cfg)
+
     print(f"✓  Bets written → {out_path}")
+    print(f"✓  Slip written → {slip_path}")
     return 0
 
 
@@ -430,14 +481,18 @@ def cmd_card(args: argparse.Namespace) -> int:
 
     bets_path = _artifact_path(args, "bets")
     output_path = _artifact_path(args, "racecard")
+    bets_arg = str(bets_path) if bets_path.exists() else None
+    if bets_arg is None:
+        print(f"⚠  Bets JSON not found: {bets_path} — rendering card without trifecta/header JSON.", file=sys.stderr)
 
     render_card(
         date=date,
         scores_path=str(scores_path),
-        bets_path=str(bets_path) if bets_path.exists() else None,
+        bets_path=bets_arg,
         output_path=str(output_path),
         daily_outlay_gbp=args.outlay,
         raw_racecard_path=str(_artifact_path(args, "raw-racecards")),
+        bets_json_path=bets_arg,
         course=args.course,
         meeting=args.meeting,
     )

@@ -27,6 +27,7 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 REPO_ROOT = SCRIPT_DIR.parent
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
+from src.bet_schema import computed_total, schema_entries  # noqa: E402
 from src.course_config import (  # noqa: E402
     CourseConfigError,
     PROJECT_ROOT as COURSE_CONFIG_ROOT,
@@ -181,18 +182,10 @@ def _extract_stake(value: Any) -> float:
 
 
 def _computed_bets_total(bets: dict[str, Any]) -> float:
-    total = 0.0
-    for entry in bets.get("bets") or bets.get("entries") or []:
-        status = str(entry.get("status") or "").upper()
-        if status in {"NR", "VOID", "NO_BET", "REFUNDED", "NON_RUNNER", "NON-RUNNER", "WITHDRAWN", "SCRATCHED", "CANCELLED"}:
-            continue
-        if status == "WIN":
-            total += _extract_stake(entry.get("stake_guidance"))
-        elif status == "EW":
-            total += _extract_stake(entry.get("stake_guidance")) * 2
-        elif status == "TRIFECTA" or str(entry.get("bet_type") or "").lower() == "trifecta_box":
-            total += _extract_stake(entry.get("total_stake") or entry.get("stake_guidance"))
-    return round(total, 2)
+    # Contract during migration: prefer Linus schema (`meta` + `entries`/`bets`),
+    # but derive equivalent entries from legacy Badger keys when only
+    # `singles`/`portfolio_summary` exist.
+    return computed_total(schema_entries(bets))
 
 
 def _render_header_total(bets: dict[str, Any]) -> float | None:
@@ -245,7 +238,7 @@ def _active_bet_horses(bets: dict[str, Any]) -> list[dict[str, str]]:
     horses: list[dict[str, str]] = []
     meta = bets.get("meta") if isinstance(bets.get("meta"), dict) else {}
     default_course = str(meta.get("course") or meta.get("venue") or "")
-    for entry in bets.get("bets") or bets.get("entries") or []:
+    for entry in schema_entries(bets):
         status = str(entry.get("status") or "").upper()
         race_time = str(entry.get("race_time") or entry.get("off_time") or entry.get("race_id") or "")
         race_name = str(entry.get("race_name") or entry.get("name") or "")
@@ -549,8 +542,12 @@ def run_watchdog(
                 missing_bits.append(bet["horse"])
                 continue
             stake = _extract_stake(bet.get("stake"))
-            if stake and f"£{stake:.2f}" not in slip_text:
-                missing_bits.append(f"{bet['horse']} stake GBP {stake:.2f}")
+            if stake:
+                accepted = [f"£{stake:.2f}"]
+                if bet.get("status") == "EW":
+                    accepted.append(f"£{stake * 2:.2f}")
+                if not any(token in slip_text for token in accepted):
+                    missing_bits.append(f"{bet['horse']} stake GBP {stake:.2f}")
         if missing_bits:
             slip_row.status = INCONSISTENT
             slip_row.severity = 2

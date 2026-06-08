@@ -46,6 +46,7 @@ p  { margin: 0; }
 .totals .total-line strong { font-size: 10.4pt; }
 .totals .total-line.potential strong { color: #2a7a2a; }
 .subtotal-note { font-size: 7.8pt; color: #555; }
+.trifecta-box { margin-top: 1mm; font-size: 8pt; color: #3b2b76; font-weight: 700; }
 .validation-tag { margin-top: 1.4mm; font-size: 8pt; color: #1a7a1a; font-weight: 700; }
 .nr-reason { font-size: 7.6pt; color: #666; font-weight: 400; }
 

@@ -29,8 +29,10 @@ from pathlib import Path
 from typing import Any
 
 try:
+    from .bet_schema import MULTI_STATUSES, MULTI_TYPES, parse_money, schema_entries
     from .render_helpers import default_course_display, output_path_for, presentation_context
 except ImportError:  # direct import via src/ on sys.path in cli.py
+    from bet_schema import MULTI_STATUSES, MULTI_TYPES, parse_money, schema_entries
     from render_helpers import default_course_display, output_path_for, presentation_context
 
 try:
@@ -654,10 +656,7 @@ def _parse_stake_amount(s: str | None) -> float:
         "£6.00"                            → 6.0
         None / ""                          → 0.0
     """
-    if not s:
-        return 0.0
-    m = re.search(r"[£$€](\d+(?:\.\d+)?)", str(s))
-    return float(m.group(1)) if m else 0.0
+    return parse_money(s)
 
 
 def render_header(bets_data: dict) -> dict:
@@ -667,9 +666,10 @@ def render_header(bets_data: dict) -> dict:
     bet count — is in scope for Linus whenever bets JSON changes.
     No coordinator escalation required.
 
-    Handles both old schema (flat ``"bets": [...]``) and new schema
-    (``"meta": {...}, "entries": [...]``).  If ``meta`` is absent the renderer
-    falls back gracefully: course defaults to the configured default course, validation to ``None``.
+    Handles Linus schema (``"meta": {...}, "entries": [...]`` or ``"bets": [...]``)
+    and derives equivalent entries from legacy Badger ``singles``/``portfolio_summary``
+    payloads during the migration.  If ``meta`` is absent the renderer falls back
+    gracefully: course defaults to the configured default course, validation to ``None``.
 
     Parameters
     ----------
@@ -697,7 +697,7 @@ def render_header(bets_data: dict) -> dict:
     - Trifecta stake is read from ``entry["total_stake"]``; falls back to
       ``entry["stake_guidance"]``.
     """
-    entries = bets_data.get("bets") or bets_data.get("entries") or []
+    entries = schema_entries(bets_data)
     meta = bets_data.get("meta") or {}
 
     course = meta.get("course") or VENUE
@@ -742,6 +742,11 @@ def render_header(bets_data: dict) -> dict:
             trifecta_horses = [
                 h.get("horse", "") for h in (entry.get("horses") or [])
             ]
+            continue
+
+        if status in MULTI_STATUSES or bet_type in MULTI_TYPES:
+            winew_total += _parse_stake_amount(entry.get("total_stake") or entry.get("stake_guidance") or entry.get("combined_stake_gbp"))
+            active_bets += 1
             continue
 
         # Regular WIN / EW bets.

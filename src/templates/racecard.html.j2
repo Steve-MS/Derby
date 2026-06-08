@@ -38,6 +38,9 @@
       {% endif %}
       <div class="total-line"><span>Active bets:</span> <strong>{{ active_bet_count }}</strong>{% if trifecta_outlay %} <span class="subtotal-note">+ trifecta</span>{% endif %}</div>
       <div class="total-line potential"><span>Max potential:</span> <strong>£{{ "%.2f"|format(total_potential_gbp) }}</strong>{% if trifecta_outlay %} <span class="subtotal-note">(WIN/EW only)</span>{% endif %}</div>
+      {% if trifecta_outlay and trifecta_horses %}
+      <div class="trifecta-box">Trifecta box: {{ trifecta_horses | join(' / ') }}</div>
+      {% endif %}
       {% if validation_tag %}
       <div class="validation-tag">{{ validation_tag }}</div>
       {% endif %}
