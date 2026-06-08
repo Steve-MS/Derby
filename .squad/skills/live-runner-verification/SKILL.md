@@ -2,160 +2,130 @@
 
 ## Purpose
 
-Verify live declared runners for all remaining races at a meeting, before Rusty scores or Linus renders, to prevent stale non-runners appearing on the printed card.
-
-This skill exists because on 2026-06-05 Ladies Day at Epsom, `market-latest.json` (2026-06-02 vintage) was used as runner-identity source-of-truth. Two horses on the card — Port Road and Triple Double A — were confirmed non-runners, requiring manual emergency swaps. Blue Brother (17:50) was also not in live declarations and would have been backed without this verification pass.
+Verify source-order live declared runners for a configured `{course}`, `{meeting}`, and `{date}` before scoring, betting, report generation, or printing. The goal is to stop stale raw data or stale market files from putting non-runners on a consumer-facing card.
 
 ## When to use
 
-- Any time Rusty is about to re-score after a non-runner swap
-- Any time Linus is about to render a race card or regenerate the betting slip
-- Within 4 hours of race-time for the day's remaining races
-- Whenever `market-latest.json` is older than midnight on race day
+- Before any T-60 watchdog gate.
+- Before Rusty re-scores after a non-runner or replacement.
+- Before Linus renders or edits `outputs\racecard-{course}-{date}.html` or `outputs\report-{course}-{date}.html`.
+- Whenever the current market snapshot is older than race-day midnight.
+- Whenever the operator has manually swapped a horse.
 
----
+## Inputs
 
-## Step sequence
+Resolve paths with `src.course_config.path_for()` or `docs\data-layout.md`.
 
-### 1. Read context
+| Artifact | Epsom legacy example | Non-Epsom example |
+|---|---|---|
+| Raw racecards | `data\raw\epsom-2026-06-06-racecards.json` | `data\raw\ascot-2026-06-16-racecards.json` |
+| Live runners | `data\enrichment\live-runners-2026-06-06.json` | `data\enrichment\live-runners-ascot-2026-06-16.json` |
+| Market snapshot | `data\enrichment\market-latest.json` | `data\enrichment\market-latest-ascot.json` |
+| Racecard HTML | `outputs\racecard-2026-06-06.html` | `outputs\racecard-ascot-2026-06-16.html` |
 
-- `data/enrichment/market-latest.json` — `generated` field to check staleness. If `generated` date < race day → STALE, must not trust for runner identity.
-- `outputs/racecard-YYYY-MM-DD.html` — note every horse displayed, by race time.
-- `.squad/agents/livingston/history.md` — any prior non-runner flags from the AM gate.
+Do not use `market-latest*.json` as runner identity truth. It is price context only.
 
-### 2. Identify races still to run
+## Source order
 
-Current time (from CURRENT_DATETIME in prompt). Skip any race with `time < current_time_bst`.
+Try these sources in order. Stop at the first source that yields a complete runner list for a race; use a second source only to resolve ambiguity.
 
-### 3. Fetch live runners per race
+### 1. Sporting Life
 
-Try sources in this order, stop at first success per race:
-
-**Source A — Sporting Life (MOST RELIABLE — confirmed working 2026-06-05)**
-```
-https://www.sportinglife.com/racing/racecards/{YYYY-MM-DD}/epsom-downs/racecard/{race_id}/{race-slug}
-```
-Race IDs for Epsom 2026-06-05: 920732–920738 (13:30 through 17:50). Race list at:
-```
-https://www.sportinglife.com/racing/racecards
-```
-→ Find meeting "Epsom Downs" → copy individual race URLs.
-
-**Source B — Sky Sports Racing**
-```
-https://www.skysports.com/racing/racecards/epsom-downs/{DD-MM-YYYY}/{race_id}/{race-slug}
+```text
+https://www.sportinglife.com/racing/racecards/{date}/{sportinglife_path}/racecard/{race_id}/{race_slug}
 ```
 
-**Source C — Racing Post**
+Find `{sportinglife_path}`, `{race_id}`, and `{race_slug}` from the configured course page or the Sporting Life racecard list. Examples of paths are `epsom-downs` and `ascot`.
+
+### 2. Racing Post
+
+```text
+https://www.racingpost.com/racecards/{course_id}/{course_path}/{date}/{race_id}/compact-view/
 ```
-https://www.racingpost.com/racecards/17/epsom/{YYYY-MM-DD}/{race_id}/compact-view/
+
+`{course_id}` and `{course_path}` come from `config\courses\{course}.json`. Racing Post can return HTTP 406 on repeated fetches; wait at least 60 seconds before retrying.
+
+### 3. Other public racecard pages
+
+Template the query from course/date/time rather than hardcoding a venue:
+
+```text
+{course_display} {date} {off_time} {race_name} confirmed runners
 ```
-Known quirk: RP returns HTTP 406 if fetched twice within ~60s. Fetch once.
 
-**Source D — web_search fallback**
-Query: `"Epsom HH:MM [race name] {date} confirmed runners list"`
-Use when direct page fetch returns 403/404/JS-only response.
+### 4. Search fallback
 
-### 4. Extract confirmed runners
+Use a web search only when direct pages are blocked or JavaScript-only:
 
-From the live racecard page, note:
-- Total declared runner count (shown in header e.g. "18 Runners")
-- Cloth numbers listed — any **gap** in cloth sequence = non-runner (withdrawn but cloth reserved)
-- For each runner: number, name, jockey, trainer
-
-**Non-runner detection:**
-- Sporting Life: cloth numbers with no entry in the runner list = NR (e.g. cloth 3 and 4 absent → NR)
-- Racing Post: struck-through horse names or explicit "Non-Runners" block
-- Stale data field count vs live count discrepancy (e.g. 29 declared → 18 live = 11 NRs)
-
-### 5. Cross-check against current card
-
-For each remaining race:
-- List every horse currently shown in `racecard-YYYY-MM-DD.html`
-- Check each against the live runner list
-- Flag as **must remove** if not in live field
-
-### 6. Write output files
-
-**Canonical runners file:**
+```text
+"{course_display}" "{race_name}" "{date}" confirmed runners jockey trainer
 ```
-data/enrichment/live-runners-YYYY-MM-DD.json
+
+## Procedure
+
+1. Set scope.
+
+```powershell
+$course = "{course}"
+$meeting = "{meeting}"
+$date = "{date}"
 ```
-Schema:
+
+2. Read the raw racecard and current rendered card. List every race that has not yet run, using `CURRENT_DATETIME` from the task prompt.
+
+3. For each remaining race, collect off time, race name, runner count, cloth numbers, horse name, jockey, trainer, and source URL.
+
+4. Detect discrepancies:
+   - horse appears in raw/card but not live source: remove or mark no bet
+   - cloth number absent from source order: probable non-runner
+   - horse appears live but not in raw: unscored late entry or data gap
+   - source count differs from rendered field count: investigate before publish
+
+5. Write or update the canonical live-runner file.
+
 ```json
 {
   "fetched_at": "YYYY-MM-DDTHH:MM:SS+01:00",
-  "meeting": "Epsom — Ladies Day",
+  "course": "{course}",
+  "meeting": "{meeting}",
+  "date": "{date}",
   "races": [
     {
-      "time": "16:40",
-      "name": "...",
-      "source_url": "...",
+      "time": "HH:MM",
+      "name": "Race name",
       "source_name": "Sporting Life",
-      "runners": [{"number": 1, "draw": 4, "name": "...", "jockey": "...", "trainer": "...", "price": null}],
-      "non_runners_excluded": ["Horse A (reason)", "Horse B (reason)"],
-      "status": "verified"
-    },
-    {
-      "time": "17:15",
-      "status": "blocked",
-      "reason": "web_fetch returned 403 from all sources"
+      "source_url": "https://...",
+      "status": "verified",
+      "runners": [
+        {"number": 1, "draw": 4, "name": "Horse", "jockey": "Jockey", "trainer": "Trainer", "price": null}
+      ],
+      "non_runners_excluded": []
     }
   ]
 }
 ```
 
-**Mismatch report + hard-rule proposal:**
+6. Write a mismatch note when any discrepancy exists:
+
+```text
+.squad\decisions\inbox\livingston-card-vs-live-{course}-{date}.md
 ```
-.squad/decisions/inbox/livingston-card-vs-live-YYYY-MM-DD.md
-```
-Include: per-race table (horse | card type | live status | action), source URLs, process post-mortem if this was triggered by a prior NR failure.
 
-### 7. Hand off to Rusty and Linus
+Include `race_time`, `horse`, `card_status`, `live_status`, `action`, and `source_url`.
 
-- Ping Rusty with: race times that need re-scoring + the `live-runners-YYYY-MM-DD.json` path
-- Ping Linus with: horses to remove per race time + confirmed replacements (or `[VACANT — no bet]`)
-- If `status: blocked` on any race: tell Steve the exact race time and ask for manual runner paste
+7. Hand off:
+   - Rusty: races requiring re-score and the live-runner path.
+   - Linus: horses to remove, replacements to render, or races that must become PASS.
+   - Coordinator: blocked races needing manual runner paste.
 
----
+## First use: Epsom Ladies Day 2026
 
-## Constraints
+On 2026-06-05 at Epsom, stale runner identity from a 2026-06-02 market file allowed Port Road and Triple Double A to remain on the card after they were non-runners. Blue Brother was also missing from live declarations. This skill generalizes that incident into a source-order verification gate for every course.
 
-- Do **NOT** use `market-latest.json` for runner identity — only for historical price estimates
-- Do **NOT** guess at runners. If all sources fail → `status: blocked`, report to Steve
-- Do **NOT** include races already past (race time < current time)
-- Prices from any live source are preferred to stale estimates; if unavailable, set `"price": null`
+## Rules
 
----
-
-## Known pitfalls
-
-| Pitfall | Mitigation |
-|---|---|
-| RP 406 on second fetch | Use `--no-rp-scrape` or 90s gap; or use SL as primary |
-| SL horse names hidden by JS | Use web_search with race name + date as fallback for names |
-| Stale field sizes (29 declared → 18 live) | Always trust live page count, not stale JSON count |
-| NR replacement horse also a NR | Re-run live verification on replacement before card update |
-| Cloth-number gaps on SL page | Absent cloth numbers = NRs (withdrawn but cloth reserved) |
-
----
-
-## Source reliability log (2026-06-05)
-
-| Source | Result |
-|---|---|
-| Racing Post `/racecards/today` | ❌ 404 |
-| Racing Post `/racecards/YYYY-MM-DD/epsom` | ❌ 404 |
-| Sporting Life `/racing/racecards` (meeting list) | ✅ **WORKS** — returns race list with URLs |
-| Sporting Life individual race pages | ✅ **WORKS** — cloth numbers + Timeform descriptions; horse names may need web_search |
-| At The Races | ❌ JS-only (browser extension error) |
-| web_search (Sky Sports / Timeform / RP via Bing) | ✅ **WORKS** — returns full runner + jockey + trainer lists |
-
-**Recommended path for next run:** `web_search` for each race to get names+jockeys+trainers, then cross-validate count against Sporting Life individual racecard page.
-
----
-
-## Output file example
-
-See `data/enrichment/live-runners-2026-06-05.json` — first run of this skill.
-See `.squad/decisions/inbox/livingston-card-vs-live-2026-06-05.md` — first mismatch report.
+- Do not guess runners.
+- Do not trust stale market files for runner identity.
+- Do not include races already past.
+- If every source fails, mark the race `blocked` and escalate for manual runner paste.
+- Prices are optional; runner identity is mandatory.

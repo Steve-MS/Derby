@@ -1,143 +1,121 @@
 # Skill: midday-regen-preserving-context
 
-**Owner:** Linus (Reports)  
-**First used:** 2026-06-05 Ladies Day (12:05 BST midday refresh)  
-**Status:** Active — use on every race day when Livingston delivers a midday market refresh after manual annotations have been added to the HTML artifacts
-
----
+**Owner:** Linus (Reports)
+**First used:** 2026-06-05 Ladies Day, 12:05 BST midday refresh
+**Status:** Active - use on every race day when market refresh happens after manual annotations were added
 
 ## Purpose
 
-Regenerate the "freshness" claim of both HTML artifacts (updated timestamp, refreshed market data) without losing the in-day manual annotations — footnotes, pass rationale, outsider picks, bets placed, footnotes about withdrawals and non-runners — that Steve and the team built up during the morning.
-
-There are two options depending on how much the data changed. This skill governs which to choose and how to execute each.
-
----
+Refresh both HTML artifacts after a midday or afternoon market update without losing in-day manual annotations. Annotations can include footnotes, pass rationale, outsider picks, placed-bet notes, withdrawal notes, non-runner warnings, and manual stake context.
 
 ## When to apply
 
-Any midday or afternoon call from Livingston that says: "I've refreshed the market data — please regenerate the report." Before touching anything, run the Option B / Option A triage below.
+Use when Livingston reports a refreshed market or live-runner update and asks for regenerated artifacts for a configured `{course}`, `{meeting}`, and `{date}`.
 
----
+## Paths
 
-## Step 1: Triage — Option B vs Option A
+Use `docs\data-layout.md` and `path_for()` for exact paths.
 
-Read Livingston's refresh report (typically in the task prompt or in `.squad/log/`). Answer these four questions:
-
-| Question | Option B (timestamp-only) | Option A (full regen + port) |
+| Artifact | Epsom legacy path | Non-Epsom path |
 |---|---|---|
-| Any price move >20% on a staked horse? | No | Yes |
-| Any new non-runners since morning gate? | No | Yes |
-| Any new runners scored since morning gate? | No | Yes |
-| Prices remain stale/synthetic? | Yes | No (live prices available) |
+| Long report | `outputs\report-{date}.html` | `outputs\report-{course}-{date}.html` |
+| Printable racecard | `outputs\racecard-{date}.html` | `outputs\racecard-{course}-{date}.html` |
+| Bets | `outputs\bets-{date}.json` | `outputs\bets-{course}-{date}.json` |
+| Latest market | `data\enrichment\market-latest.json` | `data\enrichment\market-latest-{course}.json` |
 
-**Use Option B if ALL four answers are in the Option B column.** This is the common case for synthetic-price race days (no Betfair API).
+## Step 1: triage Option B vs Option A
 
-**Use Option A if ANY answer is in the Option A column** — i.e. data changed materially.
+Read Livingston's refresh report and answer these questions.
 
----
+| Question | Option B: timestamp/context edit | Option A: full regen plus port |
+|---|---|---|
+| Any price move over 20 percent on a staked horse? | No | Yes |
+| Any new non-runners since the morning gate? | No | Yes |
+| Any new runners or late entries? | No | Yes |
+| Prices remain stale/synthetic? | Yes | No |
 
-## Option B — Surgical timestamp-only edit
+Use Option B if all answers are in the Option B column. Use Option A if any answer lands in the Option A column.
 
-### When: no material data change
+## Option B: surgical timestamp/context edit
 
-1. Read current timestamps in both files:
-   ```powershell
-   Get-Content outputs\racecard-YYYY-MM-DD.html | Select-String -Pattern "Generated"
-   Get-Content outputs\report-YYYY-MM-DD.html   | Select-String -Pattern "Generated"
-   ```
+1. Read current timestamps.
 
-2. Edit the footer disclaimer in the 1-pager:
-   - Old: `Generated YYYY-MM-DDT<old-time> · Model v0.1 · Odds snapshot: ... · For personal use.`
-   - New: `Generated YYYY-MM-DD HH:MM BST — prices stale (YYYY-MM-DD synthetic basis), no Betfair API · Model v0.1 · For personal use. Please gamble responsibly.`
-
-3. Edit the header disclaimer in the long report (search for `Generated` near line 740):
-   - Old: `Generated YYYY-MM-DDT<old-time> · Race-Analysis Plugin v0.1`
-   - New: `Generated YYYY-MM-DD HH:MM BST — prices stale (YYYY-MM-DD synthetic basis), no Betfair API · Race-Analysis Plugin v0.1`
-
-4. Edit the footer block in the long report (search for `Generated` near end of file):
-   - Old: `Race Analysis Plugin v0.1 · Generated YYYY-MM-DDT<old-time><br><span class="odds-snapshot">...</span><br>`
-   - New: `Race Analysis Plugin v0.1 · Generated YYYY-MM-DD HH:MM BST — prices stale (YYYY-MM-DD synthetic basis), no Betfair API<br>`
-   - Note: remove `<span class="odds-snapshot">` when there is no live snapshot.
-
-5. Verify with grep:
-   ```powershell
-   Get-Content outputs\racecard-YYYY-MM-DD.html | Select-String "Generated"
-   Get-Content outputs\report-YYYY-MM-DD.html   | Select-String "Generated"
-   ```
-
-### Timestamp format
-
-```
-Generated YYYY-MM-DD HH:MM BST — prices stale (YYYY-MM-DD synthetic basis), no Betfair API
+```powershell
+Get-Content outputs\racecard-{course}-{date}.html | Select-String -Pattern "Generated"
+Get-Content outputs\report-{course}-{date}.html | Select-String -Pattern "Generated"
 ```
 
-Where the second date is the synthetic-price source date (from Livingston's `source` field in market-latest.json — typically "Synthetic from OR/field-size (YYYY-MM-DD)").
+For Epsom legacy files, drop `{course}-` from the output filename.
 
----
+2. Update generated text only. Use this ASCII format:
 
-## Option A — Full regen + annotation port
+```text
+Generated YYYY-MM-DD HH:MM BST - prices stale ([source]), no live-price API - Model v0.4 - For personal use. Please gamble responsibly.
+```
 
-### When: data changed materially (new scores, new prices, non-runner confirmed)
+3. Verify that only timestamp/context lines changed.
 
-**Do NOT run this without a complete list of all annotations to preserve.**
+```powershell
+Get-Content outputs\racecard-{course}-{date}.html | Select-String "Generated"
+Get-Content outputs\report-{course}-{date}.html | Select-String "Generated"
+```
 
-1. Collect the current annotation inventory from both files:
-   ```powershell
-   $rp = Get-Content outputs\report-YYYY-MM-DD.html
-   # Footnote blocks
-   $rp | Select-String "injected \d{4}-\d{2}-\d{2} by Linus" | ForEach-Object { "$($_.LineNumber): $($_.Line)" }
-   # Outsider picks
-   $rp | Select-String "class=""outsider-pick""" | Measure-Object
-   # Pass rationale
-   $rp | Select-String "class=""pass-rationale""" | Measure-Object
-   ```
+## Option A: full regen plus annotation port
 
-2. Run the regeneration:
-   ```powershell
-   python -m src.report --date YYYY-MM-DD > outputs\report-YYYY-MM-DD-new.html
-   python -m src.report --date YYYY-MM-DD --card > outputs\racecard-YYYY-MM-DD-new.html
-   ```
+Do not run this without a complete annotation inventory.
 
-3. Port each annotation block from the old file to the new, following the injection patterns in:
-   - `.squad/skills/race-day-report-footnotes/SKILL.md` — for footnotes
-   - `.squad/skills/per-race-outsiders/SKILL.md` — for outsider picks
-   - `.squad/skills/bet-pass-rationale/SKILL.md` — for pass rationale
+### 1. Build a generic annotation inventory
 
-4. Once ported, replace old with new:
-   ```powershell
-   Move-Item outputs\report-YYYY-MM-DD-new.html  outputs\report-YYYY-MM-DD.html  -Force
-   Move-Item outputs\racecard-YYYY-MM-DD-new.html outputs\racecard-YYYY-MM-DD.html -Force
-   ```
+Search both artifacts and record line numbers plus snippets for each category.
 
-5. Run the full verification checklist (see below).
+```powershell
+$report = "outputs\report-{course}-{date}.html"
+$card = "outputs\racecard-{course}-{date}.html"
 
----
+Get-Content $report | Select-String "RACE-DAY FOOTNOTES|footnote|WITHDRAWN|non-runner|unscored|market move" | Select-Object LineNumber, Line
+Get-Content $report | Select-String 'class="outsider-pick"|Outsider Pick|No Outsider' | Select-Object LineNumber, Line
+Get-Content $report | Select-String 'class="pass-rationale"|class="pick-rationale"' | Select-Object LineNumber, Line
+Get-Content $card | Select-String "row-outsider|row-rationale|RACE-DAY FOOTNOTES|WITHDRAWN|non-runner|market move" | Select-Object LineNumber, Line
+```
 
-## Verification checklist (both options)
+Record the inventory in the task response or decision note before regeneration.
 
-After any regen, confirm in both files:
+### 2. Regenerate with current CLI commands
 
-- [ ] Both timestamps read `Generated YYYY-MM-DD HH:MM BST — prices stale (...), no Betfair API`
-- [ ] All 5 active bets present (horse names match bets-YYYY-MM-DD.json)
-- [ ] All outsider picks present (count matches per-race-outsiders run)
-- [ ] All pass rationale rows present
-- [ ] All footnotes present (On Message / Belinus / Sugar Island pattern or equivalent)
-- [ ] Accumulators present (3 doubles + 1 treble is the Ladies Day standard)
-- [ ] Day total stake unchanged (check `£XX.XX` in 1-pager header and report portfolio card)
-- [ ] All stale prices retain `(stale)` tag — do NOT drop it
+```powershell
+python -m src.cli score --course=$course --meeting=$meeting --date=$date
+python -m src.cli predict --course=$course --meeting=$meeting --date=$date --bankroll 100
+python -m src.cli report --course=$course --meeting=$meeting --date=$date
+python -m src.cli card --course=$course --meeting=$meeting --date=$date
+```
 
----
+### 3. Port annotations
 
-## Page-fit note (1-pager)
+Use these skills as the insertion guides:
 
-Option B makes no layout change — no fit check needed.
+- `.squad\skills\race-day-report-footnotes\SKILL.md`
+- `.squad\skills\per-race-outsiders\SKILL.md`
+- `.squad\skills\bet-pass-rationale\SKILL.md`
 
-Option A may change row counts. After a full regen, estimate mm by counting table rows × ~6mm per row (print font ~8pt) and check against ~216mm A4 printable. If the card overflows, shorten col-note rationale strings to ~40 chars.
+Port every inventory item. If an annotation no longer applies because the horse is a non-runner or the race moved to PASS, state that in the decision note.
 
----
+## Verification checklist
+
+After either option:
+
+- [ ] Both artifacts have current generated text.
+- [ ] Active bets match the bets JSON.
+- [ ] Pass and pick rationale are present for every race.
+- [ ] Outsider picks are present where requested.
+- [ ] Race-day footnotes and non-runner notes are preserved or explicitly retired.
+- [ ] Stale prices keep a stale label.
+- [ ] Day total stake is unchanged unless the operator approved a change.
+- [ ] T-60 watchdog result is reviewed before publish.
+
+## Historical note: Ladies Day first use
+
+The first use on 2026-06-05 preserved Ladies Day manual annotations, including accumulator context. That accumulator count was specific to that historical card. For future meetings, preserve whatever accumulator or manual-bet inventory exists; do not assume the Ladies Day structure.
 
 ## Post-task writes
 
-1. Append to `.squad/agents/linus/history.md` under today's date
-2. Write `.squad/decisions/inbox/linus-midday-regen-YYYY-MM-DD.md` with: option chosen, reason, files changed, checklist outcome
+Append the outcome to `.squad\agents\linus\history.md` and write `.squad\decisions\inbox\linus-midday-regen-{course}-{date}.md` with option chosen, reason, files changed, and checklist outcome.

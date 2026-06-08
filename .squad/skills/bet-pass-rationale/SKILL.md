@@ -2,139 +2,112 @@
 
 **Owner:** Linus (Reports)
 **First used:** 2026-06-05 Ladies Day
-**Status:** Active — use on every race day
-
----
+**Status:** Active - use on every race day
 
 ## Purpose
 
-Every race where the model outputs PASS needs a plain-English explanation on the card
-so Steve understands *why* we didn't bet — not just that we didn't.
-Same applies to picks: one line explaining which signal + threshold combination fired.
-
----
+Every race where the model outputs PASS needs a plain-English explanation on the card so Steve understands why we did not bet. The same rule applies to picks: add one line explaining which signal and threshold combination fired.
 
 ## When to apply
 
-Any time you are publishing or editing a race-day HTML report (outputs/report-YYYY-MM-DD.html).
-Every race block must have either a .pick-rationale or .pass-rationale paragraph.
+Use this when publishing or editing race-day HTML artifacts for a configured `{course}`, `{meeting}`, and `{date}`.
 
----
+Typical paths:
+
+- Epsom legacy report: `outputs\report-{date}.html`
+- Non-Epsom report: `outputs\report-{course}-{date}.html`
+- Epsom legacy racecard: `outputs\racecard-{date}.html`
+- Non-Epsom racecard: `outputs\racecard-{course}-{date}.html`
+
+Every race block must have either a `.pick-rationale` or `.pass-rationale` paragraph. The printable racecard must carry the same rationale in its table-row format.
 
 ## Step-by-step
 
-### 1. Identify each race's outcome
+### 1. Identify each race outcome
 
-From the race header chips (ec-WIN, ec-EW, ec-PASS) and the bet-list amounts.
-If header and bet-list contradict, trust the bet-list (it reflects actual stake output).
+Read the rendered race header chips and the bet-list amounts. If the header and bet-list contradict, trust the bets JSON and the bet-list, because they reflect actual stake output.
 
 ### 2. Read the gate hit
 
-Open src/betting.py, function _build_single. The gates in order:
+Open `src\betting.py` and inspect `_build_single`.
 
 | Gate | Trigger | Outcome |
-|------|---------|---------|
+|---|---|---|
 | 1 | No parseable odds | PASS |
-| 2 | confidence HIGH + win_edge ≥ 15% | WIN |
-| 3 | confidence HIGH/MED + combined EW edge ≥ 20% | EW |
+| 2 | confidence HIGH plus win_edge >= 15 percent | WIN |
+| 3 | confidence HIGH/MED plus combined EW edge >= 20 percent | EW |
 | 4 | fallthrough | PASS |
 
-Also read the et["rationale"] string from uild_bets() output — it contains the exact numbers.
+Also read the `bet["rationale"]` string from `build_bets()` output when available.
 
 ### 3. Write the rationale text
 
-**Pick template:**
-> ✅ Why we're on: Confidence [HIGH/MED], score [X]. [Top 2 signals from top-pick text]. [Which threshold cleared]. Stake £[X] @ [odds].
+Pick template:
 
-**Pass template:**
-> ⛔ Why we're passing: Confidence [level] — [which gate was required vs what we have]. [Field context: N runners, short price, unscored runner, etc.].
+```text
+Why we are on: Confidence [HIGH/MED], score [X]. [Top two signals]. [Threshold cleared]. Stake GBP [X] at [odds].
+```
 
-Keep it to 1–2 sentences. No jargon. Steve reads on a train.
+Pass template:
 
-### 4. Inject into the HTML (surgical)
+```text
+Why we are passing: Confidence [level] - [required gate vs actual]. [Field context: N runners, short price, unscored runner, stale odds, etc.].
+```
 
-**Pick rationale:** After the <p> description inside .top-pick, before </div>.
-`html
-<p class="pick-rationale">✅ Why we're on: ...</p>
-`
+Keep it to one or two short sentences.
 
-**Pass rationale:** After </ul> inside .race-bets, before </div>.
-`html
-<p class="pass-rationale">⛔ Why we're passing: ...</p>
-`
+### 4. Inject into the long report
 
-### 5. Ensure CSS is present
+Insert after the description inside `.top-pick`, before the closing `</div>`:
 
-Add to the report stylesheet (once per report, after .outsider-rationale):
+```html
+<p class="pick-rationale">Why we are on: ...</p>
+```
 
-`css
-.pick-rationale {
-  font-size: .79rem;
-  color: var(--green-light);
-  font-style: italic;
-  margin-top: 6px;
-  padding-top: 5px;
-  border-top: 1px solid var(--border);
-}
-.pass-rationale {
-  font-size: .79rem;
-  color: var(--muted);
-  font-style: italic;
-  margin-top: 6px;
-  padding: 5px 0 0;
-}
-`
+Insert after `</ul>` inside `.race-bets`, before the closing `</div>`:
 
----
+```html
+<p class="pass-rationale">Why we are passing: ...</p>
+```
 
-## Preserve existing footnotes
+### 5. Inject into the printable racecard
 
-If the card was hand-touched before you edit it (race-day injections by Linus),
-check for <!-- ⚠️ RACE-DAY FOOTNOTES --> blocks and DO NOT overwrite them.
-Use surgical dit replacements; do not regenerate the full report.
-
----
-
-## Example output
-
-**Pick (WIN):**
-> ✅ Why we're on: Confidence HIGH, score 95.0. Model edge over 9/2 implied probability clears the 15% WIN threshold. Quarter-Kelly stake £0.34. Strong Jockey and Trainer signals in a 23-runner field — top score stands clear.
-
-**Pass (LOW confidence):**
-> ⛔ Why we're passing: Confidence LOW — WIN gate requires HIGH, EW gate requires HIGH or MED. Signal agreement is weak across 18 runners. High score for the top pick, but the model can't separate the field with conviction.
-
-**Pass (favourite, no edge):**
-> ⛔ Why we're passing: Confidence LOW. Top pick goes off at 9/4 — short-priced favourite with no model edge above the 15% WIN minimum at that price.
-
----
-
-## Future automation
-
-src/report.py already has the et["rationale"] string from uild_bets().
-When the jinja template is updated to expose it, these <p> blocks can be
-generated automatically and this surgical injection step disappears.
-
-
----
-
-## 1-pager variant (table-based layout)
-
-The 1-pager (`outputs/racecard-YYYY-MM-DD.html`) is a `<table class="slip">` layout,
-not the card-div layout of the long report. Pass rationale goes in a `row-rationale` row:
+The 1-pager uses a `<table class="slip">` layout. Pass rationale goes in a `row-rationale` row immediately after the PASS row for that race.
 
 ```html
 <tr class="row-rationale row-rationale-pass">
-  <td colspan="8"><div class="bet-rationale">⛔ [rationale text]</div></td>
+  <td colspan="8"><div class="bet-rationale">Why we are passing: ...</div></td>
 </tr>
 ```
 
-**Where to inject:** Immediately after the closing `</tr>` of the PASS row for that race.
+## Preserve existing footnotes
 
-**CSS:** Already covered by `.row-rationale td` in the 1-pager stylesheet. No new classes needed.
+If the card was hand-touched before you edit it, check for race-day footnote blocks and do not overwrite them. Use surgical replacements; do not regenerate the full report just to add rationale.
 
-**Content:** Same rationale text as the long report — stripped to a single compact sentence.
-Keep ⛔ prefix. Max ~120 characters to stay on one line at 8pt print.
+## Examples
 
-**Dual-artifact rule:** Whenever pass-rationale (or footnotes) are applied to the long report,
-apply the same content to the 1-pager immediately after. Both are independent HTML files —
-they do not share a template at race-day injection time.
+WIN:
+
+```text
+Why we are on: Confidence HIGH, score 95.0. Strong jockey and trainer signals in a 23-runner field. Model edge over 9/2 clears the 15 percent WIN threshold. Stake GBP 0.34.
+```
+
+PASS, low confidence:
+
+```text
+Why we are passing: Confidence LOW - WIN requires HIGH and EW requires HIGH or MED. Signal agreement is weak across 18 runners, so the model cannot separate the field with conviction.
+```
+
+PASS, no edge:
+
+```text
+Why we are passing: Confidence LOW. The top pick is a short-priced favourite and does not clear the 15 percent WIN edge threshold.
+```
+
+## Dual-artifact rule
+
+Whenever pass rationale or pick rationale is applied to the long report, apply the same content to the printable racecard immediately after. They are independent HTML files at race-day edit time.
+
+## Future automation
+
+`src\report.py` already receives rationale strings from `build_bets()`. Once the template exposes them everywhere, this manual injection skill can retire.
