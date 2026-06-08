@@ -78,6 +78,11 @@ def _normalize_race(raw_race: dict, meeting: str, date: str, card_going: str) ->
     # Per-race going overrides card-level going when present
     going: str = raw_race.get("going") or card_going
 
+    runners = [
+        r for r in raw_race.get("runners", [])
+        if not r.get("withdrawn", False)
+    ]
+
     return {
         "race_id":    race_id,
         "race_name":  raw_race.get("name", ""),
@@ -85,7 +90,7 @@ def _normalize_race(raw_race: dict, meeting: str, date: str, card_going: str) ->
         "course":     meeting,
         "distance_f": raw_race.get("distance_f"),
         "going":      going,
-        "runners":    raw_race.get("runners", []),
+        "runners":    runners,
     }
 
 

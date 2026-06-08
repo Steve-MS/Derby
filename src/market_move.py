@@ -65,8 +65,60 @@ def _find_data_file(name: str) -> str | None:
     return None
 
 
+def _snake_to_title(s: str) -> str:
+    """Convert snake_case horse key to display name: james_j_braddock → James J Braddock."""
+    return " ".join(word.capitalize() for word in s.split("_"))
+
+
+def _extract_odds(entry: dict) -> float | None:
+    """Return the first valid decimal odds value from a horse entry dict."""
+    for field in ("decimal_odds", "odds_decimal"):
+        val = entry.get(field)
+        if val is not None:
+            try:
+                f = float(val)
+                return f if f > 1.0 else None
+            except (ValueError, TypeError):
+                pass
+    return None
+
+
+def _parse_horses(horses: dict) -> dict[str, float]:
+    """Parse a horses dict into {display_name: decimal_odds}.
+
+    Handles two schemas:
+    - Flat:   {HorseName: {decimal_odds: float, ...}}
+    - Nested: {race_day: {race_slug: {snake_name: {odds_decimal: float, ...}}}}
+    """
+    result: dict[str, float] = {}
+    for name, entry in horses.items():
+        if not isinstance(entry, dict):
+            continue
+        odds = _extract_odds(entry)
+        if odds is not None:
+            # Flat schema — name is already the horse display name
+            result[name] = odds
+        else:
+            # Nested schema — entry is {race_slug: {snake_horse: {odds_decimal: ...}}}
+            for race_slug, race_runners in entry.items():
+                if not isinstance(race_runners, dict):
+                    continue
+                for horse_key, horse_data in race_runners.items():
+                    if not isinstance(horse_data, dict):
+                        continue
+                    h_odds = _extract_odds(horse_data)
+                    if h_odds is not None:
+                        display_name = _snake_to_title(horse_key)
+                        result[display_name] = h_odds
+    return result
+
+
 def _load_snapshot(filename: str) -> dict[str, float]:
-    """Load one snapshot file; return {horse_name: decimal_odds} or {}."""
+    """Load one snapshot file; return {horse_name: decimal_odds} or {}.
+
+    Supports both the flat baseline schema ({HorseName: {decimal_odds: ...}})
+    and the nested latest schema ({race_day: {race: {snake_name: {odds_decimal: ...}}}}).
+    """
     path = _find_data_file(filename)
     if path is None or not os.path.exists(path):
         return {}
@@ -79,20 +131,7 @@ def _load_snapshot(filename: str) -> dict[str, float]:
     horses = raw.get("horses", {})
     if not isinstance(horses, dict):
         return {}
-
-    result: dict[str, float] = {}
-    for name, entry in horses.items():
-        if not isinstance(entry, dict):
-            continue
-        odds = entry.get("decimal_odds")
-        if odds is not None:
-            try:
-                odds_f = float(odds)
-                if odds_f > 1.0:
-                    result[name] = odds_f
-            except (ValueError, TypeError):
-                pass
-    return result
+    return _parse_horses(horses)
 
 
 def load_market_move_data(
@@ -139,17 +178,7 @@ def load_market_move_data(
             latest_raw = raw_l.get("horses", {})
         except (OSError, json.JSONDecodeError):
             latest_raw = {}
-        latest: dict[str, float] = {}
-        for name, entry in latest_raw.items():
-            if isinstance(entry, dict):
-                odds = entry.get("decimal_odds")
-                if odds is not None:
-                    try:
-                        odds_f = float(odds)
-                        if odds_f > 1.0:
-                            latest[name] = odds_f
-                    except (ValueError, TypeError):
-                        pass
+        latest: dict[str, float] = _parse_horses(latest_raw) if isinstance(latest_raw, dict) else {}
     else:
         latest = _load_snapshot("market-latest.json")
 

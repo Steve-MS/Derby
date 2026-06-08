@@ -49,6 +49,49 @@
   </p>
 </header>
 
+{# ── NON-RUNNER BANNER ─────────────────────────────────── #}
+{% if non_runners %}
+<div class="nr-banner">
+  🚫 <strong>Non-Runner{{ 's' if non_runners|length > 1 else '' }} Confirmed:</strong>
+  {% for nr in non_runners %}<strong>{{ nr }}</strong>{% if not loop.last %}, {% endif %}{% endfor %}
+  — officially withdrawn. Any stakes already placed on affected races should be reclaimed.
+</div>
+{% endif %}
+
+{# ── GOING ADVISORY ────────────────────────────────────── #}
+{% if going_advisory %}
+<div class="going-advisory-card">
+  <div class="ga-header">
+    ⛅ Going Advisory
+    {% if going_advisory.get('declared_at') %}
+    <span class="ga-timestamp">· Declared {{ going_advisory['declared_at'] }}</span>
+    {% elif going_advisory.get('forecast_by') %}
+    <span class="ga-timestamp">· {{ going_advisory['forecast_by'] }}</span>
+    {% endif %}
+  </div>
+  <div class="ga-body">
+    <strong>{{ going_advisory.get('going', '') }}</strong>
+    {% if going_advisory.get('advisory') %} — {{ going_advisory['advisory'] }}{% endif %}
+    {% if going_advisory.get('rain_mm') %}
+    <span class="muted"> · Rain: {{ going_advisory['rain_mm'] }}mm forecast</span>
+    {% endif %}
+    {% if going_advisory.get('probability_soft') %}
+    <span class="muted"> · Soft probability: {{ going_advisory['probability_soft'] }}</span>
+    {% endif %}
+  </div>
+</div>
+{% endif %}
+
+{# ── SATURDAY SCENARIO BANNER ──────────────────────────── #}
+{% if scenario %}
+<div class="scenario-banner {% if 'GREEN' in scenario %}scenario-green{% elif 'HOLD' in scenario %}scenario-hold{% else %}scenario-green{% endif %}">
+  {% if 'GREEN' in scenario %}🟢 <strong>GREEN SLIP</strong> — Active portfolio: going is currently Good-to-Soft or firmer.
+  {% elif 'HOLD' in scenario %}🟡 <strong>HOLD SLIP</strong> — Activate ONLY if going is officially declared Soft on race morning.
+  {% else %}📋 <strong>{{ scenario }}</strong>{% endif %}
+  {% if scenario_note %}<div class="scenario-note">{{ scenario_note }}</div>{% endif %}
+</div>
+{% endif %}
+
 {# ── RACE-DAY CONTEXT ─────────────────────────────────────── #}
 {% if narrative or going_detail %}
 <div class="context-card">
@@ -118,6 +161,7 @@
             <th>#</th>
             <th>Horse</th>
             <th class="hide-xs">Trainer / Jockey</th>
+            <th class="price-cell">Best Price{% if market_odds_label %}<br><span class="price-source price-header">{{ market_odds_label }}</span>{% endif %}</th>
             <th>Score</th>
             <th>Conf</th>
             <th>Rec</th>
@@ -139,6 +183,17 @@
             </td>
             <td class="trainer-jockey">
               {{ runner.get('trainer', '—') }} / {{ runner.get('jockey', '—') }}
+            </td>
+            {% set price = runner.get('market_price') %}
+            <td class="price-cell{% if price and price.get('stale') %} price-stale{% endif %}">
+              {% if price and price.get('fractional') %}
+              <strong>{{ price.get('prefix', '') }}{{ price.fractional }}</strong>
+              {% if price.get('source_display') %}<br><span class="price-source">{{ price.source_display }}</span>{% endif %}
+              {% elif price and price.get('status') == 'WITHDRAWN' %}
+              <span class="price-source">withdrawn</span>
+              {% else %}
+              <span class="price-source">—</span>
+              {% endif %}
             </td>
             <td class="score-cell">
               <div class="score-bar-wrap">
@@ -278,6 +333,34 @@
 {% else %}
 <div class="context-card">
   <p class="empty-state">No race scores available for this card yet.</p>
+</div>
+{% endif %}
+
+{# ── ITEM SPECULATIVE PUNT ─────────────────────────────── #}
+{# Always shown when item_special_bet is present (GREEN slip only). #}
+{% if item_special_bet %}
+<div class="item-warning">
+  <div class="item-warning-header">⚠️  Speculative Punt — NOT a Model Pick</div>
+  <div class="item-warning-body">
+    <div class="item-badge">⚠️ SPECULATIVE — NOT A MODEL PICK</div>
+    {% set item_price = item_special_bet.get('market_price') %}
+    <p class="item-edge-note">
+      <strong>{{ item_special_bet.horse }}</strong>
+      @ <strong>{{ item_special_bet.get('odds_fractional', '—') }}</strong>
+      ({{ item_special_bet.get('odds_decimal', '—') }}){% if item_price and item_price.get('source_display') %} <span class="price-source">{{ item_price.source_display }}</span>{% endif %} ·
+      £{{ "%.2f"|format(item_special_bet.get('stake_gbp', 0)) }} WIN ·
+      Edge: <span class="item-edge-negative">{{ item_special_bet.get('edge_note', '—') }}</span>
+    </p>
+    {% if item_special_bet.get('cancel_if') %}
+    <p class="item-cancel">🚫 Cancel if: {{ item_special_bet['cancel_if'] }}</p>
+    {% endif %}
+    {% if item_special_bet.get('rationale') %}
+    <p class="item-edge-note">{{ item_special_bet['rationale'] }}</p>
+    {% endif %}
+    {% if item_special_bet.get('warning') %}
+    <p class="item-warning-text">{{ item_special_bet['warning'] }}</p>
+    {% endif %}
+  </div>
 </div>
 {% endif %}
 
@@ -433,10 +516,115 @@
 </section>
 {% endif %}
 
+{# ── SOFT CONTINGENCY (HOLD) SLIP — Saturday only ─────── #}
+{% if soft_contingency %}
+{% set sc = soft_contingency %}
+{% set sc_summary = sc.get('portfolio_summary', {}) %}
+{% set sc_singles = sc.get('singles', []) | selectattr('bet_type', 'ne', 'PASS') | list %}
+<hr class="section-divider">
+<section class="portfolio contingency-portfolio">
+  <div class="contingency-banner scenario-banner scenario-hold">
+    🟡 <strong>HOLD SLIP — Soft Contingency</strong><br>
+    Activate this portfolio ONLY if going is officially declared <strong>Soft</strong> on race morning.
+    Replace the GREEN slip above entirely.
+    {% if sc.get('scenario_note') %}<div class="scenario-note">{{ sc['scenario_note'] }}</div>{% endif %}
+  </div>
+
+  <h2>📊 HOLD Portfolio — Soft Scenario</h2>
+
+  {# Summary cards #}
+  {% if sc_summary %}
+  <div class="portfolio-grid">
+    {% if sc_summary.get('total_stake_gbp') is not none %}
+    <div class="portfolio-card">
+      <h4>Total Stake</h4>
+      <p class="portfolio-value">£{{ "%.2f"|format(sc_summary['total_stake_gbp']) }}</p>
+    </div>
+    {% endif %}
+    {% if sc_summary.get('expected_value_gbp') is not none %}
+    <div class="portfolio-card">
+      <h4>Expected Value</h4>
+      <p class="portfolio-value {% if sc_summary['expected_value_gbp'] >= 0 %}positive{% else %}negative{% endif %}">
+        £{{ "%.2f"|format(sc_summary['expected_value_gbp']) }}
+      </p>
+    </div>
+    {% endif %}
+    {% if sc_summary.get('total_est_return_gbp') is not none %}
+    <div class="portfolio-card">
+      <h4>Est. Return</h4>
+      <p class="portfolio-value">£{{ "%.2f"|format(sc_summary['total_est_return_gbp']) }}</p>
+    </div>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  <div class="portfolio-bets">
+    {# Singles #}
+    {% if sc_singles %}
+    <h3>Singles</h3>
+    <table class="portfolio-table">
+      <thead><tr><th>Horse</th><th>Bet</th><th>Price</th><th>Stake</th><th>Est. Return</th></tr></thead>
+      <tbody>
+        {% for b in sc_singles %}
+        <tr>
+          <td>{{ b.get('horse', '—') }}</td>
+          <td>{{ b.get('bet_type', '—') }}</td>
+          <td>{{ b.get('odds_fractional') or b.get('price') or b.get('odds_raw', '—') }}</td>
+          <td class="amt">£{{ "%.2f"|format(b.get('stake_gbp', 0)) }}</td>
+          <td>{% if b.get('potential_return_gbp_win') %}£{{ "%.2f"|format(b['potential_return_gbp_win']) }}{% else %}—{% endif %}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+
+    {# Doubles #}
+    {% set sc_doubles = sc.get('doubles', []) %}
+    {% if sc_doubles %}
+    <h3>Doubles</h3>
+    <table class="portfolio-table">
+      <thead><tr><th>Selection</th><th>Stake</th><th>Est. Return</th></tr></thead>
+      <tbody>
+        {% for b in sc_doubles %}
+        <tr>
+          <td>{{ b.get('label', 'Double') }}</td>
+          <td class="amt">£{{ "%.2f"|format(b.get('stake_gbp',0)) }}</td>
+          <td>{% if b.get('est_return_gbp') %}£{{ "%.2f"|format(b['est_return_gbp']) }}{% else %}—{% endif %}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+
+    {# Item advisory — shown when contingency slip has item_advisory #}
+    {% if sc.get('item_advisory') %}
+    {% set ia = sc['item_advisory'] %}
+    <div class="item-warning item-warning-hold" style="margin: 12px 0;">
+      <div class="item-warning-header">❌ Item — Cancelled (Soft Going)</div>
+      <div class="item-warning-body">
+        <div class="item-badge" style="background:#c0392b;">CANCELLED — SOFT TRIGGER</div>
+        <p class="item-edge-note">
+          <strong>{{ ia.get('horse', 'Item') }}</strong>
+          — <span class="item-edge-negative">{{ ia.get('reason', 'Going fit collapses on Soft') }}</span>
+        </p>
+        {% if ia.get('going_fit_change') %}
+        <p class="item-edge-note">Going-fit: {{ ia['going_fit_change'] }}</p>
+        {% endif %}
+        {% if ia.get('note') %}
+        <p class="item-warning-text">{{ ia['note'] }}</p>
+        {% endif %}
+      </div>
+    </div>
+    {% endif %}
+
+  </div>{# /portfolio-bets #}
+</section>
+{% endif %}
+
 {# ── FOOTER ───────────────────────────────────────────────── #}
 <footer class="report-footer">
   <p>
-    Race Analysis Plugin {{ model_version }} · Generated {{ generated_at }}<br>
+    Race Analysis Plugin {{ model_version }} · Generated {{ generated_at }}{% if market_snapshot_iso %}<br><span class="odds-snapshot">Odds snapshot: {{ market_snapshot_iso }}</span>{% endif %}<br>
     For entertainment only · 18+ · Please gamble responsibly ·
     <a href="https://www.gambleaware.org" target="_blank">GambleAware.org</a>
     · <a href="https://www.begambleaware.org" target="_blank">BeGambleAware.org</a>

@@ -6,6 +6,7 @@ Run:  pytest tests/test_report.py -q
 
 from __future__ import annotations
 
+import json
 import os
 import re
 import tempfile
@@ -219,6 +220,50 @@ class TestRenderDateDisplay:
         html = _render_to_tmp(date="2026-06-06", scores=[], bets={}, context={})
         assert "2026" in html
         assert "Epsom" in html
+
+
+def test_report_renders_market_latest_price_in_runner_context():
+    """Renderer pulls a best price from market-latest.json into runner output."""
+    market = {
+        "generated": "2026-06-04T16:41:23+01:00",
+        "horses": {
+            "2026_06_06": {
+                "1600_derby": {
+                    "city_of_troy": {
+                        "horse": "City Of Troy",
+                        "race_date": "2026-06-06",
+                        "race_name": "Betfred Derby (Group 1)",
+                        "off_time": "16:00",
+                        "best_price_decimal": 5.0,
+                        "best_price_fractional": "4/1",
+                        "bookmaker": "Betfred",
+                        "source": "JustBookies best-price comparison",
+                        "retrieved_at": "2026-06-04T16:41:23+01:00",
+                        "fresh": True,
+                        "status": "priced",
+                    }
+                }
+            }
+        },
+    }
+    with tempfile.TemporaryDirectory() as tmpdir:
+        tmp = Path(tmpdir)
+        market_path = tmp / "market-latest.json"
+        out = tmp / "report.html"
+        market_path.write_text(json.dumps(market), encoding="utf-8")
+        render(
+            date="2026-06-06",
+            scores=[SAMPLE_RACE],
+            bets=SAMPLE_BETS,
+            race_context=SAMPLE_CONTEXT,
+            output_path=str(out),
+            market_latest_path=str(market_path),
+        )
+        html = out.read_text(encoding="utf-8")
+    assert "Best Price" in html
+    assert "4/1" in html
+    assert "Betfred" in html
+    assert "Odds snapshot: 2026-06-04T16:41:23+01:00" in html
 
 
 class TestRenderSections:
