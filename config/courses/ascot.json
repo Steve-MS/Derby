@@ -39,5 +39,63 @@
   "course_distance": {},
   "defaults": {
     "race_date_for_trial_freshness": null
+  },
+  "scoring_priors": {
+    "draw_bias": {
+      "extended": {},
+      "legacy_5f": {
+        "material_distances": [],
+        "material_courses": [],
+        "good_goings": [],
+        "low_draw_threshold": 0,
+        "high_draw_threshold": 0,
+        "low_draw_signal": 50,
+        "mid_draw_signal": 50,
+        "high_draw_signal": 50
+      }
+    },
+    "pace_modifiers": {
+      "default_signal": 50,
+      "fit_table": {}
+    },
+    "cd_form_weights": {
+      "badge_scores": {
+        "CD": 50,
+        "D": 50,
+        "C": 50,
+        "BF": 50
+      },
+      "first_time_long_trip": {
+        "enabled": false,
+        "runner_flag": "first_time_epsom",
+        "min_distance_f": 999.0,
+        "score": 50,
+        "legacy_penalty": 0
+      },
+      "structured_bonuses": {
+        "cd_win_bonus": 0,
+        "cd_place_bonus": 0,
+        "course_win_bonus": 0,
+        "course_place_bonus": 0,
+        "neutral_signal": 50,
+        "bonus_scale": 0
+      }
+    },
+    "trial_form_weights": {
+      "enabled": false,
+      "min_distance_f": 999.0,
+      "default_race_date": null,
+      "tier_map": {},
+      "tier_factors": {},
+      "position_base_scores": {},
+      "default_position_score": 50,
+      "freshness_adjustments": [
+        {
+          "adjustment": 0
+        }
+      ],
+      "walkover_max_score": 50
+    },
+    "equipment_defaults": {}
   }
 }

@@ -115,6 +115,8 @@ def _normalize_race(raw_race: dict, course_slug: str, venue: str, date: str, car
         "race_name":  raw_race.get("name", ""),
         "race_time":  off_time,
         "course":     venue,
+        "course_slug": course_slug,
+        "date":       date,
         "distance_f": raw_race.get("distance_f"),
         "going":      going,
         "runners":    runners,
@@ -162,7 +164,7 @@ def cmd_score(args: argparse.Namespace) -> int:
         if not race_dict["runners"]:
             print(f"  ⚠  {race_dict['race_time']} {race_dict['race_name'][:40]} — no runners, skipped")
             continue
-        result: dict = score_race(race_dict, config)
+        result: dict = score_race(race_dict, config, course=args.course)
         # Attach display fields not returned by score_race()
         result["race_name"] = race_dict["race_name"]
         result["race_time"] = race_dict["race_time"]

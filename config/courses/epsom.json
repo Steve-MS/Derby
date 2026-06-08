@@ -27,5 +27,215 @@
   "course_distance": {},
   "defaults": {
     "race_date_for_trial_freshness": null
+  },
+  "scoring_priors": {
+    "draw_bias": {
+      "extended": {
+        "5.0": {
+          "low": 78,
+          "mid": 50,
+          "high": 28,
+          "low_threshold": 4,
+          "high_threshold": 10,
+          "field_size_pivot": 8,
+          "going_filter": [
+            "good",
+            "good to firm",
+            "firm"
+          ]
+        },
+        "6.0": {
+          "low": 65,
+          "mid": 50,
+          "high": 38,
+          "low_threshold": 4,
+          "high_threshold": 10,
+          "field_size_pivot": 10,
+          "going_filter": [
+            "good",
+            "good to firm",
+            "firm"
+          ]
+        },
+        "7.0": {
+          "low": 58,
+          "mid": 50,
+          "high": 44,
+          "low_threshold": 5,
+          "high_threshold": 12,
+          "field_size_pivot": 12,
+          "going_filter": null
+        },
+        "8.5": {
+          "low": 55,
+          "mid": 50,
+          "high": 47,
+          "low_threshold": 5,
+          "high_threshold": 12,
+          "field_size_pivot": 14,
+          "going_filter": null
+        },
+        "10.0": {
+          "low": 60,
+          "mid": 52,
+          "high": 42,
+          "low_threshold": 6,
+          "high_threshold": 12,
+          "field_size_pivot": 12,
+          "going_filter": null
+        },
+        "12.0": {
+          "low": 52,
+          "mid": 50,
+          "high": 48,
+          "low_threshold": 6,
+          "high_threshold": 14,
+          "field_size_pivot": 14,
+          "going_filter": null
+        }
+      },
+      "legacy_5f": {
+        "material_distances": [
+          5.0
+        ],
+        "material_courses": [
+          "Epsom"
+        ],
+        "good_goings": [
+          "good",
+          "good to firm"
+        ],
+        "low_draw_threshold": 4,
+        "high_draw_threshold": 10,
+        "low_draw_signal": 80,
+        "mid_draw_signal": 50,
+        "high_draw_signal": 30
+      }
+    },
+    "pace_modifiers": {
+      "default_signal": 50,
+      "fit_table": {
+        "LONE_LEAD": {
+          "LED": 78,
+          "PROM": 65,
+          "MID": 45,
+          "HELD": 32
+        },
+        "DUEL": {
+          "LED": 35,
+          "PROM": 42,
+          "MID": 58,
+          "HELD": 70
+        },
+        "EVEN": {
+          "LED": 52,
+          "PROM": 55,
+          "MID": 50,
+          "HELD": 48
+        },
+        "NO_PACE": {
+          "LED": 62,
+          "PROM": 60,
+          "MID": 52,
+          "HELD": 40
+        }
+      }
+    },
+    "cd_form_weights": {
+      "badge_scores": {
+        "CD": 80,
+        "D": 70,
+        "C": 62,
+        "BF": 55
+      },
+      "first_time_long_trip": {
+        "enabled": true,
+        "runner_flag": "first_time_epsom",
+        "min_distance_f": 12.0,
+        "score": 40,
+        "legacy_penalty": 10
+      },
+      "structured_bonuses": {
+        "cd_win_bonus": 15,
+        "cd_place_bonus": 8,
+        "course_win_bonus": 5,
+        "course_place_bonus": 3,
+        "neutral_signal": 50,
+        "bonus_scale": 2
+      }
+    },
+    "trial_form_weights": {
+      "enabled": true,
+      "min_distance_f": 10.0,
+      "default_race_date": "2026-06-06",
+      "tier_map": {
+        "Dante Stakes": 1,
+        "Chester Vase": 1,
+        "Musidora Stakes": 1,
+        "Cheshire Oaks": 1,
+        "Lingfield Derby Trial": 2,
+        "Dee Stakes": 2,
+        "Lingfield Oaks Trial": 2,
+        "Cashel Palace Hotel Derby Trial Stakes": 2,
+        "Newmarket Stakes": 3,
+        "Craven Stakes": 3,
+        "Greenham Stakes": 3,
+        "Tetrarch Stakes": 3,
+        "Blue Riband Trial": 3,
+        "1000 Guineas": 3,
+        "Irish 1000 Guineas": 3
+      },
+      "tier_factors": {
+        "1": 1.0,
+        "2": 0.75,
+        "3": 0.55
+      },
+      "position_base_scores": {
+        "1": 90,
+        "2": [
+          {
+            "max_beaten_lengths": 0.5,
+            "score": 78
+          },
+          {
+            "max_beaten_lengths": 2.0,
+            "score": 70
+          },
+          {
+            "score": 62
+          }
+        ],
+        "3": [
+          {
+            "max_beaten_lengths": 2.0,
+            "score": 60
+          },
+          {
+            "score": 52
+          }
+        ],
+        "4": 44
+      },
+      "default_position_score": 35,
+      "freshness_adjustments": [
+        {
+          "max_days": 28,
+          "adjustment": 0
+        },
+        {
+          "max_days": 42,
+          "adjustment": -2
+        },
+        {
+          "max_days": 56,
+          "adjustment": -4
+        },
+        {
+          "adjustment": -7
+        }
+      ],
+      "walkover_max_score": 70
+    },
+    "equipment_defaults": {}
   }
 }

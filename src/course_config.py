@@ -16,6 +16,7 @@ operator input cannot silently render a nonsense card.
 
 from __future__ import annotations
 
+import copy
 import json
 import re
 from pathlib import Path
@@ -45,6 +46,87 @@ _OUTPUT_EXTENSIONS = {
     "racecard": "html",
     "slip": "txt",
 }
+
+_NEUTRAL_SCORING_PRIORS: dict[str, Any] = {
+    "draw_bias": {
+        "extended": {},
+        "legacy_5f": {
+            "material_distances": [],
+            "material_courses": [],
+            "good_goings": [],
+            "low_draw_threshold": 0,
+            "high_draw_threshold": 0,
+            "low_draw_signal": 50,
+            "mid_draw_signal": 50,
+            "high_draw_signal": 50,
+        },
+    },
+    "pace_modifiers": {
+        "default_signal": 50,
+        "fit_table": {},
+    },
+    "cd_form_weights": {
+        "badge_scores": {"CD": 50, "D": 50, "C": 50, "BF": 50},
+        "first_time_long_trip": {
+            "enabled": False,
+            "runner_flag": "first_time_epsom",
+            "min_distance_f": 999.0,
+            "score": 50,
+            "legacy_penalty": 0,
+        },
+        "structured_bonuses": {
+            "cd_win_bonus": 0,
+            "cd_place_bonus": 0,
+            "course_win_bonus": 0,
+            "course_place_bonus": 0,
+            "neutral_signal": 50,
+            "bonus_scale": 0,
+        },
+    },
+    "trial_form_weights": {
+        "enabled": False,
+        "min_distance_f": 999.0,
+        "default_race_date": None,
+        "tier_map": {},
+        "tier_factors": {},
+        "position_base_scores": {},
+        "default_position_score": 50,
+        "freshness_adjustments": [{"adjustment": 0}],
+        "walkover_max_score": 50,
+    },
+    "equipment_defaults": {},
+}
+
+
+def _deep_merge(base: dict[str, Any], override: dict[str, Any]) -> dict[str, Any]:
+    merged = copy.deepcopy(base)
+    for key, value in override.items():
+        if isinstance(value, dict) and isinstance(merged.get(key), dict):
+            merged[key] = _deep_merge(merged[key], value)
+        else:
+            merged[key] = copy.deepcopy(value)
+    return merged
+
+
+def neutral_scoring_priors() -> dict[str, Any]:
+    """Return neutral scoring priors with no course-specific adjustments."""
+    return copy.deepcopy(_NEUTRAL_SCORING_PRIORS)
+
+
+def scoring_priors_for(course_slug: str | None = None) -> dict[str, Any]:
+    """Return scoring priors for a course, falling back to neutral if omitted.
+
+    A known course with no ``scoring_priors`` section is treated as neutral so
+    newly added course configs never inherit Epsom assumptions by accident.
+    Unknown courses still raise ``CourseConfigError`` via ``load_course_config``.
+    """
+    cfg = load_course_config(course_slug or default_course())
+    priors = cfg.get("scoring_priors")
+    if priors is None:
+        return neutral_scoring_priors()
+    if not isinstance(priors, dict):
+        raise CourseConfigError(f"course config {cfg.get('course_slug')!r} field 'scoring_priors' must be an object")
+    return _deep_merge(_NEUTRAL_SCORING_PRIORS, priors)
 
 
 class CourseConfigError(ValueError):

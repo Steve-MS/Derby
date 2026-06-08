@@ -43,6 +43,7 @@ try:  # supports both `python -m src...` and direct `sys.path` test imports
     from trainer_14d import trainer_14d_signal
     from jt_combo import jt_combo_signal
     from equipment import score_equipment
+    from course_config import default_course, scoring_priors_for
 except ImportError:  # pragma: no cover
     from .going import normalise_going, score_going_fit
     from .pace import extended_draw_signal, infer_run_style, pace_signal, project_race_pace
@@ -53,6 +54,7 @@ except ImportError:  # pragma: no cover
     from .trainer_14d import trainer_14d_signal
     from .jt_combo import jt_combo_signal
     from .equipment import score_equipment
+    from .course_config import default_course, scoring_priors_for
 
 
 # ---------------------------------------------------------------------------
@@ -109,25 +111,8 @@ def load_default_config() -> dict:
             "absence_threshold_days": 120,
             "absence_penalty":        5,
         },
-        "cd": {
-            "cd_win_bonus":            15,
-            "cd_place_bonus":           8,
-            "course_win_bonus":         5,
-            "course_place_bonus":       3,
-            "first_time_epsom_penalty": 10,
-            "epsom_long_dist_furlongs": 12,  # 1m4f threshold for penalty
-        },
-        "draw": {
-            # Only applied for 5f Dash at Epsom
-            "material_distances": [5.0],
-            "material_courses":   ["Epsom"],
-            "good_goings":        ["good", "good to firm"],
-            "low_draw_threshold": 4,
-            "high_draw_threshold": 10,
-            "low_draw_signal":    80,
-            "mid_draw_signal":    50,
-            "high_draw_signal":   30,
-        },
+        "cd": {},
+        "draw": {},
         "class_move": {
             "drop_signal":  70,
             "same_signal":  50,
@@ -171,7 +156,7 @@ def load_default_config() -> dict:
     }
 
 
-def score_runner(runner: dict, race: dict, config: dict) -> dict:
+def score_runner(runner: dict, race: dict, config: dict, course: str | None = None) -> dict:
     """Compute signal values for a single runner.
 
     Does NOT normalise scores to the race — call ``score_race`` for
@@ -214,6 +199,8 @@ def score_runner(runner: dict, race: dict, config: dict) -> dict:
     True
     """
     _validate_weights(config["weights"])
+    course_slug = _course_slug_for_scoring(race, course)
+    priors = scoring_priors_for(course_slug)
     flags: list[str] = []
 
     raw_signals: dict[str, float] = {}
@@ -237,7 +224,9 @@ def score_runner(runner: dict, race: dict, config: dict) -> dict:
 
     # 5. Course & distance (RP badges via cd_form module; legacy
     # _cd_signal kept as fallback if module unavailable).
-    raw_signals["course_distance"] = cd_form_signal(runner, race)
+    raw_signals["course_distance"] = _call_course_prior_signal(
+        cd_form_signal, runner, race, course_slug, priors.get("cd_form_weights")
+    )
 
     # 6. Going suitability
     raw_signals["going"] = _going_signal(runner, race, config["going"])
@@ -249,25 +238,27 @@ def score_runner(runner: dict, race: dict, config: dict) -> dict:
     if going_fit.get("going_data") == "insufficient":
         flags.append("going_data_insufficient")
 
-    # 8. Draw bias (Epsom course table first; falls back to legacy 5f rule)
-    ext_draw = extended_draw_signal(runner, race)
+    # 8. Draw bias (course-configured extended table, then legacy fallback)
+    ext_draw = extended_draw_signal(runner, race, course=course_slug, priors=priors.get("draw_bias"))
     if ext_draw is not None:
         raw_signals["draw_bias"] = ext_draw
     else:
-        raw_signals["draw_bias"] = _draw_signal(runner, race, config["draw"])
+        raw_signals["draw_bias"] = _draw_signal(runner, race, priors.get("draw_bias", {}).get("legacy_5f", {}))
 
     # 9. Class move
     raw_signals["class_move"] = _class_move_signal(runner, config["class_move"])
 
     # 10. Pace / run-style fit
     race_pace = race.get("_projected_pace") or project_race_pace(race.get("runners") or [])
-    raw_signals["pace"] = pace_signal(runner, race_pace)
+    raw_signals["pace"] = pace_signal(runner, race_pace, course=course_slug, priors=priors.get("pace_modifiers"))
 
     # 11. Sire stamina (gated to 10f+; neutral 50 when sire unknown)
     raw_signals["sire_stamina"] = sire_stamina_signal(runner, race)
 
     # 12. Trial form (gated to 10f+; neutral 50 when no trial data)
-    raw_signals["trial_form"] = trial_form_signal(runner, race)
+    raw_signals["trial_form"] = _call_course_prior_signal(
+        trial_form_signal, runner, race, course_slug, priors.get("trial_form_weights")
+    )
 
     # 13. Market move (implied-probability shift; neutral 50 when no latest price)
     raw_signals["market_move"] = market_move_signal(runner, race)
@@ -296,7 +287,7 @@ def score_runner(runner: dict, race: dict, config: dict) -> dict:
     }
 
 
-def score_race(race: dict, config: dict) -> dict:
+def score_race(race: dict, config: dict, course: str | None = None) -> dict:
     """Score all runners in a race, normalise, rank, and emit a recommendation.
 
     Parameters
@@ -358,7 +349,8 @@ def score_race(race: dict, config: dict) -> dict:
     race["_projected_pace"] = project_race_pace(runners)
 
     # Step 1: raw per-runner signals
-    runner_results = [score_runner(r, race, config) for r in runners]
+    course_slug = _course_slug_for_scoring(race, course)
+    runner_results = [score_runner(r, race, config, course=course_slug) for r in runners]
 
     # Step 2: z-score the class/rating signal across the field
     ratings = [
@@ -487,6 +479,22 @@ def score_race(race: dict, config: dict) -> dict:
 # ---------------------------------------------------------------------------
 
 
+
+def _call_course_prior_signal(func, runner: dict, race: dict, course_slug: str, priors: dict | None) -> float:
+    """Call a course-prior-aware signal while preserving old two-arg test doubles."""
+    try:
+        return float(func(runner, race, course=course_slug, priors=priors))
+    except TypeError as exc:
+        if "unexpected keyword" not in str(exc):
+            raise
+        return float(func(runner, race))
+
+
+def _course_slug_for_scoring(race: dict, course: str | None = None) -> str:
+    explicit = course or race.get("course_slug") or race.get("course") or default_course()
+    return str(explicit).strip().lower().replace(" ", "-")
+
+
 def _best_rating(runner: dict) -> float | None:
     """Return best available rating: RPR > TS > OR > None.
 
@@ -581,42 +589,41 @@ def _jockey_signal(runner: dict, jockey_bumps: dict) -> float:
 
 
 def _cd_signal(runner: dict, race: dict, cd_cfg: dict) -> float:
-    """Course & distance signal (0–100)."""
+    """Legacy structured Course & Distance signal (0-100) from priors."""
     cd_wins    = int(runner.get("cd_wins", 0) or 0)
     cd_places  = int(runner.get("cd_places", 0) or 0)
     c_wins     = int(runner.get("course_wins", 0) or 0)
     c_places   = int(runner.get("course_places", 0) or 0)
-    # Also handle River's boolean-style fields from test fixtures
     if runner.get("cd_wins") is None and runner.get("course_winner"):
         c_wins = max(c_wins, 1)
     if runner.get("cd_wins") is None and runner.get("distance_winner"):
         cd_wins = max(cd_wins, 1)
 
-    first_epsom = bool(runner.get("first_time_epsom", False))
-
+    structured = cd_cfg.get("structured_bonuses", {})
     bonus = 0.0
     if cd_wins > 0:
-        bonus += cd_cfg["cd_win_bonus"]
+        bonus += float(structured.get("cd_win_bonus", 0.0))
     elif cd_places > 0:
-        bonus += cd_cfg["cd_place_bonus"]
+        bonus += float(structured.get("cd_place_bonus", 0.0))
     elif c_wins > 0:
-        bonus += cd_cfg["course_win_bonus"]
+        bonus += float(structured.get("course_win_bonus", 0.0))
     elif c_places > 0:
-        bonus += cd_cfg["course_place_bonus"]
+        bonus += float(structured.get("course_place_bonus", 0.0))
 
+    first_time = cd_cfg.get("first_time_long_trip", {})
+    flag = first_time.get("runner_flag", "first_time_epsom")
     dist_f = float(race.get("distance_f") or race.get("distance_furlongs") or 0)
     if (
-        first_epsom
-        and race.get("course", "").lower() == "epsom"
-        and dist_f >= cd_cfg["epsom_long_dist_furlongs"]
+        first_time.get("enabled", False)
+        and bool(runner.get(flag, False))
+        and dist_f >= float(first_time.get("min_distance_f", 999.0))
     ):
-        bonus -= cd_cfg["first_time_epsom_penalty"]
+        bonus -= float(first_time.get("legacy_penalty", 0.0))
 
-    # Scale: 0 neutral is bonus=0; max realistic bonus ~15; map linearly
-    # Use 0 as 50 (neutral), max bonus (+15) → 80, min penalty → 20
-    signal = 50.0 + bonus * 2.0
+    neutral = float(structured.get("neutral_signal", 50.0))
+    scale = float(structured.get("bonus_scale", 0.0))
+    signal = neutral + bonus * scale
     return max(0.0, min(100.0, signal))
-
 
 def _going_signal(runner: dict, race: dict, going_cfg: dict) -> float:
     """Going suitability signal (0–100)."""
@@ -650,8 +657,8 @@ def _draw_signal(runner: dict, race: dict, draw_cfg: dict) -> float:
     draw    = runner.get("draw")
 
     material = (
-        dist_f in draw_cfg["material_distances"]
-        and course in draw_cfg["material_courses"]
+        dist_f in draw_cfg.get("material_distances", [])
+        and course in draw_cfg.get("material_courses", [])
     )
     if not material:
         return 50.0
@@ -660,12 +667,12 @@ def _draw_signal(runner: dict, race: dict, draw_cfg: dict) -> float:
         return 50.0
 
     draw = int(draw)
-    if going in draw_cfg["good_goings"]:
-        if draw <= draw_cfg["low_draw_threshold"]:
-            return float(draw_cfg["low_draw_signal"])
-        if draw > draw_cfg["high_draw_threshold"]:
-            return float(draw_cfg["high_draw_signal"])
-    return float(draw_cfg["mid_draw_signal"])
+    if going in draw_cfg.get("good_goings", []):
+        if draw <= draw_cfg.get("low_draw_threshold", 0):
+            return float(draw_cfg.get("low_draw_signal", 50.0))
+        if draw > draw_cfg.get("high_draw_threshold", 0):
+            return float(draw_cfg.get("high_draw_signal", 50.0))
+    return float(draw_cfg.get("mid_draw_signal", 50.0))
 
 
 def _class_move_signal(runner: dict, class_cfg: dict) -> float:

@@ -49,40 +49,14 @@ import os
 from datetime import date
 from functools import lru_cache
 
+try:
+    from course_config import default_course, scoring_priors_for
+except ImportError:  # pragma: no cover
+    from .course_config import default_course, scoring_priors_for
+
 # ---------------------------------------------------------------------------
 # Constants
 # ---------------------------------------------------------------------------
-
-_MIN_DISTANCE_F = 10.0
-
-_DEFAULT_RACE_DATE = "2026-06-06"  # Epsom Derby — used as fallback reference date
-
-# Maps canonical trial names → tier.  Any unlisted name is treated as Tier 3.
-_TIER_MAP: dict[str, int] = {
-    # Tier 1 — Derby
-    "Dante Stakes": 1,
-    "Chester Vase": 1,
-    # Tier 1 — Oaks
-    "Musidora Stakes": 1,
-    "Cheshire Oaks": 1,
-    # Tier 2 — Derby
-    "Lingfield Derby Trial": 2,
-    "Dee Stakes": 2,
-    # Tier 2 — Oaks
-    "Lingfield Oaks Trial": 2,
-    # Tier 2 — Irish (Leopardstown Derby Trial; Steve Q3)
-    "Cashel Palace Hotel Derby Trial Stakes": 2,
-    # Tier 3
-    "Newmarket Stakes": 3,
-    "Craven Stakes": 3,
-    "Greenham Stakes": 3,
-    "Tetrarch Stakes": 3,
-    "Blue Riband Trial": 3,
-    "1000 Guineas": 3,
-    "Irish 1000 Guineas": 3,
-}
-
-_TIER_FACTORS: dict[int, float] = {1: 1.00, 2: 0.75, 3: 0.55}
 
 _DATA_DIR_CANDIDATES = (
     # Running from project root
@@ -93,6 +67,15 @@ _DATA_DIR_CANDIDATES = (
         "data", "enrichment",
     ),
 )
+
+
+def _course_slug(course: str | None = None, race: dict | None = None) -> str:
+    explicit = course or (race or {}).get("course_slug") or (race or {}).get("course") or default_course()
+    return str(explicit).strip().lower().replace(" ", "-")
+
+
+def _trial_priors(course: str | None = None, priors: dict | None = None) -> dict:
+    return priors or scoring_priors_for(_course_slug(course)).get("trial_form_weights", {})
 
 
 # ---------------------------------------------------------------------------
@@ -107,7 +90,7 @@ def _find_data_file(name: str) -> str | None:
     return None
 
 
-def _normalise_trial(raw: dict) -> dict:
+def _normalise_trial(raw: dict, priors: dict | None = None) -> dict:
     """Convert a raw JSON trial entry to the normalised in-memory shape.
 
     Handles both Danny's spec field names (``race``, ``position``) and
@@ -120,7 +103,8 @@ def _normalise_trial(raw: dict) -> dict:
     race_name = raw.get("race") or raw.get("trial_name") or ""
     tier = raw.get("tier")
     if tier is None:
-        tier = _TIER_MAP.get(race_name, 3)
+        tier_map = (priors or _trial_priors()).get("tier_map", {})
+        tier = tier_map.get(race_name, 3)
 
     position = raw.get("position") or raw.get("finishing_position")
     bl_raw = raw.get("beaten_lengths")
@@ -176,7 +160,8 @@ def load_trial_form(path: str | None = None) -> dict:
             continue
         # Accept both "trials" and "trial_runs" for forward-compat
         trials_raw = entry.get("trials") or entry.get("trial_runs") or []
-        normalised = [_normalise_trial(t) for t in trials_raw if isinstance(t, dict)]
+        priors = _trial_priors()
+        normalised = [_normalise_trial(t, priors) for t in trials_raw if isinstance(t, dict)]
         result[name.lower()] = {"trials": normalised}
 
     return result
@@ -196,72 +181,50 @@ def load_trial_data() -> dict:
 # Scoring — pure functions
 # ---------------------------------------------------------------------------
 
+def _position_base_score(position: int, beaten_lengths: float, priors: dict) -> float:
+    scores = priors.get("position_base_scores", {})
+    cfg = scores.get(str(position))
+    if cfg is None:
+        return float(priors.get("default_position_score", 50.0))
+    if isinstance(cfg, (int, float)):
+        return float(cfg)
+    for bucket in cfg:
+        if "max_beaten_lengths" not in bucket or beaten_lengths <= float(bucket["max_beaten_lengths"]):
+            return float(bucket.get("score", priors.get("default_position_score", 50.0)))
+    return float(priors.get("default_position_score", 50.0))
+
+
+def _freshness_adjustment(days_since: int, priors: dict) -> float:
+    for bucket in priors.get("freshness_adjustments", [{"adjustment": 0}]):
+        if "max_days" not in bucket or days_since <= int(bucket["max_days"]):
+            return float(bucket.get("adjustment", 0.0))
+    return 0.0
+
+
 def score_trial_run(
     tier: int,
     position: int,
     beaten_lengths: float,
     days_since: int,
+    course: str | None = None,
+    priors: dict | None = None,
 ) -> float:
-    """Score a single trial run → 0–100 float.
+    """Score a single trial run → 0-100 float using course priors."""
+    trial_priors = _trial_priors(course, priors)
+    if not trial_priors.get("enabled", False):
+        return 50.0
 
-    Pure function; no I/O.  Implements Danny's four-step formula.
-
-    Parameters
-    ----------
-    tier : int
-        1, 2, or 3 from the taxonomy (unknown → treated as 3).
-    position : int
-        Finishing position (1 = winner).
-    beaten_lengths : float
-        0.0 for winners; lengths behind winner for placed horses.
-    days_since : int
-        Days between trial date and race day (clamped to ≥ 0).
-
-    Returns
-    -------
-    float
-        Clamped to [0.0, 100.0].
-    """
-    # Step 1 — Position base score
-    if position == 1:
-        base = 90.0
-    elif position == 2:
-        if beaten_lengths <= 0.5:
-            base = 78.0
-        elif beaten_lengths <= 2.0:
-            base = 70.0
-        else:
-            base = 62.0
-    elif position == 3:
-        if beaten_lengths <= 2.0:
-            base = 60.0
-        else:
-            base = 52.0
-    elif position == 4:
-        base = 44.0
-    else:  # 5th+
-        base = 35.0
-
-    # Step 2 — Tier compression
-    tier_factor = _TIER_FACTORS.get(tier, _TIER_FACTORS[3])
+    base = _position_base_score(position, beaten_lengths, trial_priors)
+    tier_factors = trial_priors.get("tier_factors", {})
+    tier_factor = float(tier_factors.get(str(tier), tier_factors.get("3", 1.0)))
     tier_adjusted = 50.0 + (base - 50.0) * tier_factor
 
-    # Step 3 — Freshness adjustment
     d = max(0, days_since)
-    if d <= 28:
-        freshness = 0
-    elif d <= 42:
-        freshness = -2
-    elif d <= 56:
-        freshness = -4
-    else:
-        freshness = -7
-
-    # Step 4 — Clamp
+    freshness = _freshness_adjustment(d, trial_priors)
     return float(max(0.0, min(100.0, tier_adjusted + freshness)))
 
 
-def _score_single_trial(trial: dict, race_date: str) -> float | None:
+def _score_single_trial(trial: dict, race_date: str, priors: dict | None = None) -> float | None:
     """Score one normalised trial dict.
 
     Returns *None* when the trial is malformed (missing tier/position/date),
@@ -304,20 +267,20 @@ def _score_single_trial(trial: dict, race_date: str) -> float | None:
     except (ValueError, TypeError):
         days_since = 0
 
-    raw_score = score_trial_run(tier, position, beaten_lengths, days_since)
+    raw_score = score_trial_run(tier, position, beaten_lengths, days_since, priors=priors)
 
     # Walkover discount: no real credit for a 1-horse field
     if field_size is not None:
         try:
             if int(field_size) == 1:
-                raw_score = min(raw_score, 70.0)
+                raw_score = min(raw_score, float((priors or _trial_priors()).get("walkover_max_score", 50.0)))
         except (ValueError, TypeError):
             pass
 
     return raw_score
 
 
-def best_trial_score(trial_runs: list[dict], race_date: str) -> float:
+def best_trial_score(trial_runs: list[dict], race_date: str, course: str | None = None, priors: dict | None = None) -> float:
     """Score each run and return the maximum (best-result rule).
 
     Parameters
@@ -333,13 +296,14 @@ def best_trial_score(trial_runs: list[dict], race_date: str) -> float:
         Maximum individual score, or 50.0 if trial_runs is empty /
         all entries are malformed.
     """
-    if not trial_runs:
+    trial_priors = _trial_priors(course, priors)
+    if not trial_priors.get("enabled", False) or not trial_runs:
         return 50.0
     scores = []
     for t in trial_runs:
         if not isinstance(t, dict):
             continue
-        s = _score_single_trial(t, race_date)
+        s = _score_single_trial(t, race_date, trial_priors)
         if s is not None:
             scores.append(s)
     return float(max(scores)) if scores else 50.0
@@ -353,7 +317,9 @@ def score_trial_form(
     horse_name: str,
     distance_f: float,
     data: dict,
-    race_date: str = _DEFAULT_RACE_DATE,
+    race_date: str | None = None,
+    course: str | None = None,
+    priors: dict | None = None,
 ) -> float:
     """Score a horse's trial form given a pre-loaded data dict.
 
@@ -379,7 +345,10 @@ def score_trial_form(
     float
         0–100 signal score.  50 = neutral / no data.
     """
-    if distance_f < _MIN_DISTANCE_F:
+    trial_priors = _trial_priors(course, priors)
+    if not trial_priors.get("enabled", False):
+        return 50.0
+    if distance_f < float(trial_priors.get("min_distance_f", 999.0)):
         return 50.0
 
     horse_lower = horse_name.lower()
@@ -395,14 +364,17 @@ def score_trial_form(
         return 50.0
 
     trials = horse_entry.get("trials") or horse_entry.get("trial_runs") or []
-    return best_trial_score(list(trials), race_date)
+    ref_date = race_date or trial_priors.get("default_race_date")
+    if not ref_date:
+        return 50.0
+    return best_trial_score(list(trials), ref_date, course=course, priors=trial_priors)
 
 
 # ---------------------------------------------------------------------------
 # Top-level signal entry point (scoring.py integration)
 # ---------------------------------------------------------------------------
 
-def trial_form_signal(runner: dict, race: dict) -> float:
+def trial_form_signal(runner: dict, race: dict, course: str | None = None, priors: dict | None = None) -> float:
     """Trial-form signal for ``score_runner`` in scoring.py.
 
     Returns neutral 50 when:
@@ -423,8 +395,11 @@ def trial_form_signal(runner: dict, race: dict) -> float:
     float
         0–100 signal score.
     """
+    trial_priors = _trial_priors(course or _course_slug(race=race), priors)
+    if not trial_priors.get("enabled", False):
+        return 50.0
     dist_f = float(race.get("distance_f") or race.get("distance_furlongs") or 0.0)
-    if dist_f < _MIN_DISTANCE_F:
+    if dist_f < float(trial_priors.get("min_distance_f", 999.0)):
         return 50.0
 
     horse = runner.get("horse") or runner.get("horse_name")
@@ -432,9 +407,9 @@ def trial_form_signal(runner: dict, race: dict) -> float:
         return 50.0
 
     data = load_trial_data()
-    race_date = race.get("date") or _DEFAULT_RACE_DATE
+    race_date = race.get("date") or trial_priors.get("default_race_date")
 
-    return score_trial_form(horse, dist_f, data, race_date)
+    return score_trial_form(horse, dist_f, data, race_date, course=course or _course_slug(race=race), priors=trial_priors)
 
 
 # ---------------------------------------------------------------------------
