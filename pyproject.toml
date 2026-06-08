@@ -4,8 +4,8 @@ build-backend = "setuptools.backends.legacy:build"
 
 [project]
 name = "race-analysis"
-version = "0.1.0"
-description = "Race prediction CLI for Steve — Epsom Classics 2026"
+version = "0.4.0"
+description = "Course-agnostic UK Flat race-prediction CLI. Ships with Epsom 2026 and Royal Ascot 2026 worked examples."
 requires-python = ">=3.10"
 dependencies = [
     # CLI uses stdlib only (argparse, json, subprocess, pathlib) — no extra runtime deps.
