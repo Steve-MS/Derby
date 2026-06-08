@@ -1,0 +1,43 @@
+{
+  "course_slug": "ascot",
+  "display_name": "Ascot",
+  "racingpost": {
+    "course_id": null,
+    "course_path": "ascot"
+  },
+  "aliases": [
+    "ascot",
+    "royal ascot"
+  ],
+  "meetings": {
+    "royal-ascot-2026": {
+      "days": {
+        "2026-06-16": {
+          "label": "Day 1",
+          "going_key": null
+        },
+        "2026-06-17": {
+          "label": "Day 2",
+          "going_key": null
+        },
+        "2026-06-18": {
+          "label": "Day 3",
+          "going_key": null
+        },
+        "2026-06-19": {
+          "label": "Day 4 (Gold Cup)",
+          "going_key": null
+        },
+        "2026-06-20": {
+          "label": "Day 5",
+          "going_key": null
+        }
+      }
+    }
+  },
+  "draw_bias": {},
+  "course_distance": {},
+  "defaults": {
+    "race_date_for_trial_freshness": null
+  }
+}

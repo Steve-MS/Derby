@@ -1,0 +1,31 @@
+{
+  "course_slug": "epsom",
+  "display_name": "Epsom",
+  "racingpost": {
+    "course_id": 17,
+    "course_path": "epsom"
+  },
+  "aliases": [
+    "epsom",
+    "epsom downs"
+  ],
+  "meetings": {
+    "derby-2026": {
+      "days": {
+        "2026-06-05": {
+          "label": "Ladies / Oaks Day",
+          "going_key": "friday"
+        },
+        "2026-06-06": {
+          "label": "Derby Day",
+          "going_key": "saturday"
+        }
+      }
+    }
+  },
+  "draw_bias": {},
+  "course_distance": {},
+  "defaults": {
+    "race_date_for_trial_freshness": null
+  }
+}

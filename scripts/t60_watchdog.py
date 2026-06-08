@@ -24,6 +24,18 @@ from typing import Any
 
 PROJECT_ROOT = Path.cwd()
 SCRIPT_DIR = Path(__file__).resolve().parent
+REPO_ROOT = SCRIPT_DIR.parent
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+from src.course_config import (  # noqa: E402
+    CourseConfigError,
+    PROJECT_ROOT as COURSE_CONFIG_ROOT,
+    default_course,
+    default_meeting,
+    load_course_config,
+    path_for,
+    resolve_meeting,
+)
 for _stream in (sys.stdout, sys.stderr):
     if hasattr(_stream, "reconfigure"):
         _stream.reconfigure(encoding="utf-8", errors="replace")
@@ -65,6 +77,8 @@ class WatchdogContext:
     race_date: str
     now: datetime
     rows: list[ArtifactRow] = field(default_factory=list)
+    course_slug: str = default_course()
+    meeting_slug: str = default_meeting()
     courses: list[str] = field(default_factory=list)
     files: dict[str, Path] = field(default_factory=dict)
     data: dict[str, Any] = field(default_factory=dict)
@@ -362,12 +376,21 @@ def _check_env() -> tuple[bool, str]:
     return True, "required environment variables set"
 
 
+def _project_path(root: Path, course_slug: str, date_str: str, kind: str) -> Path:
+    canonical = path_for(course_slug, date_str, kind)
+    try:
+        return root / canonical.relative_to(COURSE_CONFIG_ROOT)
+    except ValueError:
+        return canonical
+
+
 def _discover_courses(ctx: WatchdogContext) -> list[Path]:
-    raw_dir = ctx.root / "data" / "raw"
-    suffix = f"-{ctx.race_date}-racecards.json"
-    paths = sorted(raw_dir.glob(f"*{suffix}"))
-    ctx.courses = [p.name[: -len(suffix)] for p in paths]
-    return paths
+    path = _project_path(ctx.root, ctx.course_slug, ctx.race_date, "raw-racecards")
+    if path.exists():
+        ctx.courses = [ctx.course_slug]
+        return [path]
+    ctx.courses = []
+    return []
 
 
 def _load_if_ok(ctx: WatchdogContext, key: str, path: Path) -> None:
@@ -378,21 +401,33 @@ def _load_if_ok(ctx: WatchdogContext, key: str, path: Path) -> None:
             ctx.add(ArtifactRow(key, _rel(ctx.root, path), INCONSISTENT, _human_age(path, ctx.now), _human_size(path), f"invalid JSON: {exc}", 2))
 
 
-def run_watchdog(race_date: str, root: Path | None = None, now: datetime | None = None) -> int:
+def run_watchdog(
+    race_date: str,
+    root: Path | None = None,
+    now: datetime | None = None,
+    course_slug: str = default_course(),
+    meeting_slug: str = default_meeting(),
+) -> int:
     root = (root or PROJECT_ROOT).resolve()
     now = now or datetime.now(timezone.utc)
-    ctx = WatchdogContext(root=root, race_date=race_date, now=now)
+    try:
+        course_cfg = load_course_config(course_slug)
+        resolve_meeting(course_cfg, meeting_slug)
+    except CourseConfigError as exc:
+        print(f"Course config error: {exc}", file=sys.stderr)
+        return 2
+    ctx = WatchdogContext(root=root, race_date=race_date, now=now, course_slug=course_slug, meeting_slug=meeting_slug)
 
     outputs_dir = root / "outputs"
-    enrich_dir = root / "data" / "enrichment"
     outputs_dir.mkdir(parents=True, exist_ok=True)
 
     raw_paths = _discover_courses(ctx)
     if not raw_paths:
-        ctx.add(ArtifactRow("racecards", f"data/raw/*-{race_date}-racecards.json", MISSING, detail="no course racecards discovered", severity=2))
+        missing_raw = _project_path(root, course_slug, race_date, "raw-racecards")
+        ctx.add(ArtifactRow("racecards", _rel(root, missing_raw), MISSING, detail="course racecard not found", severity=2))
     raw_cards: list[dict[str, Any]] = []
     for path in raw_paths:
-        course = path.name[: -len(f"-{race_date}-racecards.json")]
+        course = course_slug
         row = _status_row(ctx, f"racecards:{course}", path, timedelta(hours=24), min_size=1)
         ctx.add(row)
         if row.severity < 2:
@@ -402,10 +437,10 @@ def run_watchdog(race_date: str, root: Path | None = None, now: datetime | None 
                 ctx.add(ArtifactRow(f"racecards:{course}:json", _rel(root, path), INCONSISTENT, _human_age(path, now), _human_size(path), f"invalid JSON: {exc}", 2))
 
     required = {
-        "live-runners": (enrich_dir / f"live-runners-{race_date}.json", timedelta(hours=4), 1),
-        "sportinglife": (enrich_dir / f"sportinglife-{race_date}.json", timedelta(hours=4), 1025),
-        "racingpost": (enrich_dir / f"racingpost-{race_date}.json", timedelta(hours=4), 1),
-        "going": (enrich_dir / f"going-{race_date}.json", timedelta(hours=12), 1),
+        "live-runners": (_project_path(root, course_slug, race_date, "enrichment-live-runners"), timedelta(hours=4), 1),
+        "sportinglife": (_project_path(root, course_slug, race_date, "enrichment-sportinglife"), timedelta(hours=4), 1025),
+        "racingpost": (_project_path(root, course_slug, race_date, "enrichment-racingpost"), timedelta(hours=4), 1),
+        "going": (_project_path(root, course_slug, race_date, "enrichment-going"), timedelta(hours=12), 1),
     }
     for key, (path, max_age, min_size) in required.items():
         row = _status_row(ctx, key, path, max_age, min_size=min_size, stale_is_fail=False)
@@ -417,7 +452,7 @@ def run_watchdog(race_date: str, root: Path | None = None, now: datetime | None 
         ctx.files[key] = path
         _load_if_ok(ctx, key, path)
 
-    scores_path = outputs_dir / f"scores-{race_date}.json"
+    scores_path = _project_path(root, course_slug, race_date, "scores")
     scores_row = _status_row(ctx, "scores", scores_path, None, min_size=1)
     if scores_row.severity == 0:
         enrichment_mtimes = [_mtime(p) for p, _, _ in required.values() if p.exists()]
@@ -428,7 +463,7 @@ def run_watchdog(race_date: str, root: Path | None = None, now: datetime | None 
     ctx.add(scores_row)
     ctx.files["scores"] = scores_path
 
-    bets_path = outputs_dir / f"bets-{race_date}.json"
+    bets_path = _project_path(root, course_slug, race_date, "bets")
     bets_row = _status_row(ctx, "bets", bets_path, None, min_size=1)
     header_row: ArtifactRow | None = None
     bets_data: dict[str, Any] = {}
@@ -479,7 +514,7 @@ def run_watchdog(race_date: str, root: Path | None = None, now: datetime | None 
     ctx.files["bets"] = bets_path
     ctx.data["bets"] = bets_data
 
-    report_path = outputs_dir / f"report-{race_date}.html"
+    report_path = _project_path(root, course_slug, race_date, "report")
     report_row = _status_row(ctx, "report", report_path, None, min_size=1)
     if report_row.severity == 0 and scores_path.exists() and _mtime(report_path) <= _mtime(scores_path):
         report_row.status = STALE
@@ -487,7 +522,7 @@ def run_watchdog(race_date: str, root: Path | None = None, now: datetime | None 
         report_row.detail = "report not modified after scores"
     ctx.add(report_row)
 
-    racecard_path = outputs_dir / f"racecard-{race_date}.html"
+    racecard_path = _project_path(root, course_slug, race_date, "racecard")
     racecard_row = _status_row(ctx, "racecard", racecard_path, None, min_size=1)
     if racecard_row.severity == 0:
         if bets_path.exists() and _mtime(racecard_path) <= _mtime(bets_path):
@@ -502,7 +537,7 @@ def run_watchdog(race_date: str, root: Path | None = None, now: datetime | None 
                 racecard_row.detail = f"header does not show bets total GBP {expected_total:.2f}"
     ctx.add(racecard_row)
 
-    slip_path = outputs_dir / f"slip-{race_date}.txt"
+    slip_path = _project_path(root, course_slug, race_date, "slip")
     slip_row = _status_row(ctx, "slip", slip_path, None, min_size=1)
     if slip_row.severity == 0 and bets_data:
         slip_text = slip_path.read_text(encoding="utf-8", errors="ignore")
@@ -590,13 +625,15 @@ def _print_console(ctx: WatchdogContext, manifest_path: Path) -> None:
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="T-60 race-day artifact watchdog")
     parser.add_argument("--date", default=date_cls.today().isoformat(), help="Race date YYYY-MM-DD (default: today)")
+    parser.add_argument("--course", default=default_course(), help="Course slug (default: epsom)")
+    parser.add_argument("--meeting", default=default_meeting(), help="Meeting slug (default: derby-2026)")
     args = parser.parse_args(argv)
     try:
         datetime.strptime(args.date, "%Y-%m-%d")
     except ValueError:
         print("--date must be YYYY-MM-DD", file=sys.stderr)
         return 2
-    return run_watchdog(args.date)
+    return run_watchdog(args.date, course_slug=args.course, meeting_slug=args.meeting)
 
 
 if __name__ == "__main__":

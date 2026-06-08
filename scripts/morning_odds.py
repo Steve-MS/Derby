@@ -70,10 +70,33 @@ import os
 import re
 import subprocess
 import sys
+from datetime import date as date_cls
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.error import URLError
 from urllib.request import Request, urlopen
+
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+from src.course_config import (  # noqa: E402
+    CourseConfigError,
+    PROJECT_ROOT as COURSE_CONFIG_ROOT,
+    default_course,
+    default_meeting,
+    load_course_config,
+    path_for,
+    resolve_meeting,
+)
+
+
+def _project_path_for(course_slug: str, date_str: str, kind: str) -> Path:
+    canonical = path_for(course_slug, date_str, kind)
+    try:
+        return PROJECT_ROOT / canonical.relative_to(COURSE_CONFIG_ROOT)
+    except ValueError:
+        return canonical
+
 
 # ── Credential gate ───────────────────────────────────────────────────────────
 # Fail loud before any scrape attempt if Sporting Life credentials are absent.
@@ -91,14 +114,12 @@ def _gate_env() -> None:
             "    Fix the issues reported above, then re-run.\n"
         )
 
-_gate_env()
 # ─────────────────────────────────────────────────────────────────────────────
 
 # ---------------------------------------------------------------------------
 # Paths
 # ---------------------------------------------------------------------------
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = PROJECT_ROOT / "data"
 ENRICHMENT_DIR = DATA_DIR / "enrichment"
 ARCHIVE_DIR = ENRICHMENT_DIR / "archive"
@@ -109,12 +130,7 @@ OUTPUT_PATHS = {
     "latest":   ENRICHMENT_DIR / "market-latest.json",
 }
 
-RACECARD_FILES = {
-    "2026-06-05": RAW_DIR / "epsom-2026-06-05-racecards.json",
-    "2026-06-06": RAW_DIR / "epsom-2026-06-06-racecards.json",
-}
-
-RP_RACECARD_URL = "https://www.racingpost.com/racecards/17/epsom/{date}"
+RP_RACECARD_URL = "https://www.racingpost.com/racecards/{course_id}/{course_path}/{date}"
 
 # ---------------------------------------------------------------------------
 # Fractional odds conversion
@@ -157,7 +173,7 @@ _SOURCE_LABEL = {
 _CAPTURED_AT_RACECARD = "2026-06-02T13:55:00+01:00"
 
 
-def load_racecard_prices(dates: list[str]) -> dict[str, dict]:
+def load_racecard_prices(dates: list[str], course_slug: str) -> dict[str, dict]:
     """
     Return {horse_name: {race_date, race_name, off_time, decimal_odds,
                           fractional_odds, implied_probability,
@@ -166,8 +182,8 @@ def load_racecard_prices(dates: list[str]) -> dict[str, dict]:
     """
     prices: dict[str, dict] = {}
     for date in dates:
-        path = RACECARD_FILES.get(date)
-        if not path or not path.exists():
+        path = _project_path_for(course_slug, date, "raw-racecards")
+        if not path.exists():
             print(f"  [warn] racecard file not found for {date}: {path}", file=sys.stderr)
             continue
         with path.open(encoding="utf-8") as fh:
@@ -210,7 +226,7 @@ _RP_HEADERS = {
 }
 
 
-def _fetch_rp_runners(date: str) -> list[str] | None:
+def _fetch_rp_runners(date: str, course_cfg: dict) -> list[str] | None:
     """
     Fetch Racing Post racecard page and extract horse names from __NEXT_DATA__.
     Returns a list of confirmed runner names, or None on failure.
@@ -219,7 +235,12 @@ def _fetch_rp_runners(date: str) -> list[str] | None:
     via a browser WebSocket (diffusion channel).  This function returns
     NAMES ONLY for runner-list confirmation and non-runner detection.
     """
-    url = RP_RACECARD_URL.format(date=date)
+    rp_cfg = course_cfg.get("racingpost", {})
+    course_id = rp_cfg.get("course_id")
+    course_path = rp_cfg.get("course_path")
+    if course_id is None or not course_path:
+        raise CourseConfigError(f"Racing Post config incomplete for {course_cfg.get('course_slug')!r}")
+    url = RP_RACECARD_URL.format(course_id=course_id, course_path=course_path, date=date)
     try:
         req = Request(url, headers=_RP_HEADERS)
         with urlopen(req, timeout=20) as resp:
@@ -340,20 +361,24 @@ def build_snapshot(
     snapshot_type: str,
     csv_path: str | None,
     skip_rp_scrape: bool = False,
+    course_slug: str = default_course(),
+    meeting_slug: str = default_meeting(),
 ) -> dict:
     """Build the full snapshot dict."""
     captured_at = datetime.now(timezone.utc).astimezone().isoformat()
+    course_cfg = load_course_config(course_slug)
+    resolve_meeting(course_cfg, meeting_slug)
 
     # Source 3: racecard baseline
     print("Loading racecard prices ...")
-    prices = load_racecard_prices(dates)
+    prices = load_racecard_prices(dates, course_slug)
     print(f"  {len(prices)} runners from racecard files")
 
     # Source 2: RP runner-list confirmation (names only, no live prices)
     if not skip_rp_scrape:
         for date in dates:
             print(f"Fetching RP runner list for {date} ...")
-            rp_names = _fetch_rp_runners(date)
+            rp_names = _fetch_rp_runners(date, course_cfg)
             if rp_names:
                 prices = apply_rp_runner_filter(prices, date, rp_names)
 
@@ -386,6 +411,8 @@ def build_snapshot(
             ),
             "dates": dates,
             "snapshot_type": snapshot_type,
+            "course": course_slug,
+            "meeting": meeting_slug,
         },
         "generated": captured_at,
         "snapshot_type": snapshot_type,
@@ -397,7 +424,7 @@ def build_snapshot(
 # Archive mode
 # ---------------------------------------------------------------------------
 
-def archive_market_files(date: str, dry_run: bool = False) -> int:
+def archive_market_files(date: str, course_slug: str = default_course(), dry_run: bool = False) -> int:
     """
     Archive the current market-baseline.json and market-latest.json to
     data/enrichment/archive/ with date suffix.
@@ -414,8 +441,12 @@ def archive_market_files(date: str, dry_run: bool = False) -> int:
         print(f"  [error] latest file not found: {latest_src}", file=sys.stderr)
         return 1
     
-    baseline_archive = ARCHIVE_DIR / f"market-baseline-{date}.json"
-    latest_archive = ARCHIVE_DIR / f"market-latest-{date}-final.json"
+    if course_slug == default_course():
+        baseline_archive = ARCHIVE_DIR / f"market-baseline-{date}.json"
+        latest_archive = ARCHIVE_DIR / f"market-latest-{date}-final.json"
+    else:
+        baseline_archive = ARCHIVE_DIR / f"market-baseline-{course_slug}-{date}.json"
+        latest_archive = ARCHIVE_DIR / f"market-latest-{course_slug}-{date}-final.json"
     
     if not dry_run:
         ARCHIVE_DIR.mkdir(parents=True, exist_ok=True)
@@ -454,14 +485,16 @@ def parse_args() -> argparse.Namespace:
     p.add_argument(
         "--mode",
         choices=["baseline", "latest", "archive"],
-        required=True,
+        default="baseline",
         help="'baseline' -> write market-baseline.json; 'latest' -> write market-latest.json; 'archive' -> snapshot to archive/",
     )
     p.add_argument(
         "--date",
-        default=None,
-        help="YYYY-MM-DD date to process (default: both 2026-06-05 and 2026-06-06 for snapshot modes)",
+        default=date_cls.today().isoformat(),
+        help="YYYY-MM-DD date to process (default: today)",
     )
+    p.add_argument("--course", default=default_course(), help="Course slug (default: epsom)")
+    p.add_argument("--meeting", default=default_meeting(), help="Meeting slug (default: derby-2026)")
     p.add_argument(
         "--prices",
         default=None,
@@ -483,24 +516,27 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> int:
     args = parse_args()
+    _gate_env()
 
     if args.mode == "archive":
         if not args.date:
             print("  [error] --mode archive requires --date YYYY-MM-DD", file=sys.stderr)
             return 1
-        print(f"\n=== morning_odds  mode=archive  date={args.date} ===")
-        return archive_market_files(args.date, dry_run=args.dry_run)
+        print(f"\n=== morning_odds  mode=archive  course={args.course}  meeting={args.meeting}  date={args.date} ===")
+        return archive_market_files(args.date, course_slug=args.course, dry_run=args.dry_run)
 
-    dates = [args.date] if args.date else ["2026-06-05", "2026-06-06"]
+    dates = [args.date]
     out_path = OUTPUT_PATHS[args.mode]
 
-    print(f"\n=== morning_odds  mode={args.mode}  dates={dates} ===")
+    print(f"\n=== morning_odds  mode={args.mode}  course={args.course}  meeting={args.meeting}  dates={dates} ===")
 
     snapshot = build_snapshot(
         dates=dates,
         snapshot_type=args.mode,
         csv_path=args.prices,
         skip_rp_scrape=args.no_rp_scrape,
+        course_slug=args.course,
+        meeting_slug=args.meeting,
     )
 
     horse_count = len(snapshot["horses"])

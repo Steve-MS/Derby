@@ -19,6 +19,7 @@ import argparse
 import json
 import subprocess
 import sys
+from datetime import date as date_cls
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -40,6 +41,27 @@ if hasattr(sys.stdout, "reconfigure"):
 if hasattr(sys.stderr, "reconfigure"):
     sys.stderr.reconfigure(encoding="utf-8", errors="replace")
 
+from course_config import (  # noqa: E402
+    CourseConfigError,
+    default_course,
+    default_meeting,
+    load_course_config,
+    path_for,
+    race_id_for,
+    resolve_meeting,
+)
+
+
+def _course_context(args: argparse.Namespace) -> dict[str, Any]:
+    """Validate shared course/meeting CLI arguments and return config."""
+    cfg = load_course_config(args.course)
+    resolve_meeting(cfg, args.meeting)
+    return cfg
+
+
+def _artifact_path(args: argparse.Namespace, kind: str) -> Path:
+    return path_for(args.course, args.date, kind)
+
 
 # ---------------------------------------------------------------------------
 # fetch
@@ -52,7 +74,12 @@ def cmd_fetch(args: argparse.Namespace) -> int:
     data is present before running score.
     """
     date: str = args.date
-    racecard_path = _ROOT / "data" / "raw" / f"epsom-{date}-racecards.json"
+    try:
+        _course_context(args)
+        racecard_path = _artifact_path(args, "raw-racecards")
+    except CourseConfigError as exc:
+        print(f"Error: {exc}", file=sys.stderr)
+        return 2
     if racecard_path.exists():
         print(f"✓  Racecard found: {racecard_path}")
         return 0
@@ -70,11 +97,11 @@ def cmd_fetch(args: argparse.Namespace) -> int:
 # score
 # ---------------------------------------------------------------------------
 
-def _normalize_race(raw_race: dict, meeting: str, date: str, card_going: str) -> dict:
+def _normalize_race(raw_race: dict, course_slug: str, venue: str, date: str, card_going: str) -> dict:
     """Map a raw racecard race dict to the shape expected by score_race()."""
     off_time: str = raw_race.get("off_time", "")
     time_slug: str = off_time.replace(":", "")
-    race_id: str = f"{meeting.lower()}-{date}-{time_slug}"
+    race_id: str = race_id_for(course_slug, date, off_time)
     # Per-race going overrides card-level going when present
     going: str = raw_race.get("going") or card_going
 
@@ -87,7 +114,7 @@ def _normalize_race(raw_race: dict, meeting: str, date: str, card_going: str) ->
         "race_id":    race_id,
         "race_name":  raw_race.get("name", ""),
         "race_time":  off_time,
-        "course":     meeting,
+        "course":     venue,
         "distance_f": raw_race.get("distance_f"),
         "going":      going,
         "runners":    runners,
@@ -99,12 +126,24 @@ def cmd_score(args: argparse.Namespace) -> int:
     date: str = args.date
 
     try:
+        course_cfg = _course_context(args)
+        racecard_path = _artifact_path(args, "raw-racecards")
+    except CourseConfigError as exc:
+        print(f"Error: {exc}", file=sys.stderr)
+        return 2
+
+    try:
         from scoring import load_default_config, score_race  # noqa: PLC0415
     except ImportError as exc:
         print(f"Error: cannot import scoring module: {exc}", file=sys.stderr)
         return 1
 
-    racecard_path = _ROOT / "data" / "raw" / f"epsom-{date}-racecards.json"
+    try:
+        _course_context(args)
+        racecard_path = _artifact_path(args, "raw-racecards")
+    except CourseConfigError as exc:
+        print(f"Error: {exc}", file=sys.stderr)
+        return 2
     if not racecard_path.exists():
         print(f"Error: racecard not found: {racecard_path}", file=sys.stderr)
         print(f"  Run `fetch --date {date}` first or drop JSON into data/raw/.", file=sys.stderr)
@@ -114,12 +153,12 @@ def cmd_score(args: argparse.Namespace) -> int:
         racecard: dict = json.load(fh)
 
     config: dict = load_default_config()
-    meeting: str = racecard.get("meeting", "Epsom")
+    venue: str = racecard.get("meeting") or course_cfg.get("display_name", args.course)
     card_going: str = racecard.get("going") or "Good"
 
     scored_races: list[dict] = []
     for raw_race in racecard.get("races", []):
-        race_dict = _normalize_race(raw_race, meeting, date, card_going)
+        race_dict = _normalize_race(raw_race, args.course, venue, date, card_going)
         if not race_dict["runners"]:
             print(f"  ⚠  {race_dict['race_time']} {race_dict['race_name'][:40]} — no runners, skipped")
             continue
@@ -131,15 +170,16 @@ def cmd_score(args: argparse.Namespace) -> int:
 
     output: dict[str, Any] = {
         "card_date":  date,
-        "venue":      meeting,
+        "venue":      venue,
+        "course_slug": args.course,
+        "meeting_slug": args.meeting,
         "frozen_by":  "wash-cli",
         "frozen_at":  datetime.now(timezone.utc).isoformat(),
         "races":      scored_races,
     }
 
-    outputs_dir = _ROOT / "outputs"
-    outputs_dir.mkdir(exist_ok=True)
-    out_path = outputs_dir / f"scores-{date}.json"
+    out_path = _artifact_path(args, "scores")
+    out_path.parent.mkdir(parents=True, exist_ok=True)
     with out_path.open("w", encoding="utf-8") as fh:
         json.dump(output, fh, indent=2)
 
@@ -169,13 +209,19 @@ def cmd_predict(args: argparse.Namespace) -> int:
     bankroll: float = args.bankroll
 
     try:
+        _course_context(args)
+    except CourseConfigError as exc:
+        print(f"Error: {exc}", file=sys.stderr)
+        return 2
+
+    try:
         from betting import build_bets, default_config as betting_default_config  # noqa: PLC0415
     except ImportError:
         print("ℹ  Module 'betting' is not yet available — Badger is still building it.")
         print("   Once src/betting.py ships, re-run: predict --date", date)
         return 0
 
-    scores_path = _ROOT / "outputs" / f"scores-{date}.json"
+    scores_path = _artifact_path(args, "scores")
     if not scores_path.exists():
         print(f"Error: scores not found: {scores_path}", file=sys.stderr)
         print(f"  Run `score --date {date}` first.", file=sys.stderr)
@@ -189,9 +235,8 @@ def cmd_predict(args: argparse.Namespace) -> int:
 
     bets: dict = build_bets(scores_list, bankroll, config)
 
-    outputs_dir = _ROOT / "outputs"
-    outputs_dir.mkdir(exist_ok=True)
-    out_path = outputs_dir / f"bets-{date}.json"
+    out_path = _artifact_path(args, "bets")
+    out_path.parent.mkdir(parents=True, exist_ok=True)
     with out_path.open("w", encoding="utf-8") as fh:
         json.dump(bets, fh, indent=2)
 
@@ -251,7 +296,13 @@ def cmd_backtest(args: argparse.Namespace) -> int:
     date: str = args.date
     results_path: str = args.results
 
-    scores_path = _ROOT / "outputs" / f"scores-{date}.json"
+    try:
+        _course_context(args)
+    except CourseConfigError as exc:
+        print(f"Error: {exc}", file=sys.stderr)
+        return 2
+
+    scores_path = _artifact_path(args, "scores")
     if not scores_path.exists():
         print(f"Error: scores not found: {scores_path}", file=sys.stderr)
         print(f"  Run `score --date {date}` first.", file=sys.stderr)
@@ -262,7 +313,8 @@ def cmd_backtest(args: argparse.Namespace) -> int:
 
     # Write backtest-compatible predictions alongside scores
     predictions_data = _to_backtest_predictions(scores_data)
-    predictions_path = _ROOT / "outputs" / f"predictions-{date}.json"
+    predictions_name = f"predictions-{date}.json" if args.course == default_course() else f"predictions-{args.course}-{date}.json"
+    predictions_path = _ROOT / "outputs" / predictions_name
     with predictions_path.open("w", encoding="utf-8") as fh:
         json.dump(predictions_data, fh, indent=2)
 
@@ -296,13 +348,19 @@ def cmd_report(args: argparse.Namespace) -> int:
     fmt: str = args.format
 
     try:
+        _course_context(args)
+    except CourseConfigError as exc:
+        print(f"Error: {exc}", file=sys.stderr)
+        return 2
+
+    try:
         from report import render  # noqa: PLC0415
     except ImportError:
         print("ℹ  Module 'report' is not yet available — Mr. Universe is still building it.")
         print("   Once src/report.py ships, re-run: report --date", date)
         return 0
 
-    scores_path = _ROOT / "outputs" / f"scores-{date}.json"
+    scores_path = _artifact_path(args, "scores")
     if not scores_path.exists():
         print(f"Error: scores not found: {scores_path}", file=sys.stderr)
         print(f"  Run `score --date {date}` first.", file=sys.stderr)
@@ -313,14 +371,13 @@ def cmd_report(args: argparse.Namespace) -> int:
 
     # Load bets if available (optional)
     bets: dict = {}
-    bets_path = _ROOT / "outputs" / f"bets-{date}.json"
+    bets_path = _artifact_path(args, "bets")
     if bets_path.exists():
         with bets_path.open(encoding="utf-8") as fh:
             bets = json.load(fh)
 
-    outputs_dir = _ROOT / "outputs"
-    outputs_dir.mkdir(exist_ok=True)
-    output_path = str(outputs_dir / f"report-{date}.{fmt}")
+    output_path = str(_artifact_path(args, "report"))
+    Path(output_path).parent.mkdir(parents=True, exist_ok=True)
 
     race_context: dict = {
         "venue":     scores_data.get("venue", ""),
@@ -348,19 +405,25 @@ def cmd_card(args: argparse.Namespace) -> int:
     date: str = args.date
 
     try:
+        _course_context(args)
+    except CourseConfigError as exc:
+        print(f"Error: {exc}", file=sys.stderr)
+        return 2
+
+    try:
         from racecard import render_card  # noqa: PLC0415
     except ImportError as exc:
         print(f"Error: cannot import racecard module: {exc}", file=sys.stderr)
         return 1
 
-    scores_path = _ROOT / "outputs" / f"scores-{date}.json"
+    scores_path = _artifact_path(args, "scores")
     if not scores_path.exists():
         print(f"Error: scores not found: {scores_path}", file=sys.stderr)
         print(f"  Run `score --date {date}` first.", file=sys.stderr)
         return 1
 
-    bets_path = _ROOT / "outputs" / f"bets-{date}.json"
-    output_path = _ROOT / "outputs" / f"racecard-{date}.html"
+    bets_path = _artifact_path(args, "bets")
+    output_path = _artifact_path(args, "racecard")
 
     render_card(
         date=date,
@@ -378,6 +441,12 @@ def cmd_card(args: argparse.Namespace) -> int:
 # ---------------------------------------------------------------------------
 # CLI wiring
 # ---------------------------------------------------------------------------
+
+def _add_course_args(parser: argparse.ArgumentParser) -> None:
+    parser.add_argument("--course", default=default_course(), help="Course slug (default: epsom)")
+    parser.add_argument("--meeting", default=default_meeting(), help="Meeting slug (default: derby-2026)")
+    parser.add_argument("--date", default=date_cls.today().isoformat(), metavar="YYYY-MM-DD", help="Race date (default: today)")
+
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
@@ -398,18 +467,18 @@ def build_parser() -> argparse.ArgumentParser:
     sub.required = True
 
     p = sub.add_parser("fetch", help="Validate that a racecard JSON exists for a date")
-    p.add_argument("--date", required=True, metavar="YYYY-MM-DD")
+    _add_course_args(p)
     p.set_defaults(func=cmd_fetch)
 
     p = sub.add_parser("score", help="Score all runners for a date → outputs/scores-{date}.json")
-    p.add_argument("--date", required=True, metavar="YYYY-MM-DD")
+    _add_course_args(p)
     p.set_defaults(func=cmd_score)
 
     p = sub.add_parser(
         "predict",
         help="Generate betting predictions via Badger's betting.py → outputs/bets-{date}.json",
     )
-    p.add_argument("--date", required=True, metavar="YYYY-MM-DD")
+    _add_course_args(p)
     p.add_argument(
         "--bankroll", type=float, default=100.0, metavar="FLOAT",
         help="Total bankroll in GBP (default: 100.0)",
@@ -420,7 +489,7 @@ def build_parser() -> argparse.ArgumentParser:
         "backtest",
         help="Run Jayne's backtest harness against actual results; propagates exit code",
     )
-    p.add_argument("--date", required=True, metavar="YYYY-MM-DD")
+    _add_course_args(p)
     p.add_argument("--results", required=True, metavar="PATH",
                    help="Path to actual results JSON")
     p.set_defaults(func=cmd_backtest)
@@ -429,7 +498,7 @@ def build_parser() -> argparse.ArgumentParser:
         "report",
         help="Generate HTML report via Mr. Universe's report.py → outputs/report-{date}.html",
     )
-    p.add_argument("--date", required=True, metavar="YYYY-MM-DD")
+    _add_course_args(p)
     p.add_argument("--format", default="html", choices=["html"],
                    help="Output format (default: html)")
     p.set_defaults(func=cmd_report)
@@ -438,7 +507,7 @@ def build_parser() -> argparse.ArgumentParser:
         "card",
         help="Generate printable race card → outputs/racecard-{date}.html (A4, one race per page)",
     )
-    p.add_argument("--date", required=True, metavar="YYYY-MM-DD")
+    _add_course_args(p)
     p.add_argument(
         "--outlay",
         type=float,
