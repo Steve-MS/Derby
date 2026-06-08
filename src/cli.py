@@ -66,6 +66,20 @@ def _artifact_path(args: argparse.Namespace, kind: str) -> Path:
     return path_for(args.course, args.date, kind)
 
 
+def _going_label_from_artifact(path: Path) -> str:
+    if not path.exists():
+        return ""
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return ""
+    for key in ("going", "official_going", "going_string", "going_full_declaration"):
+        value = data.get(key)
+        if isinstance(value, str) and value.strip():
+            return value.strip()
+    return ""
+
+
 # ---------------------------------------------------------------------------
 # fetch
 # ---------------------------------------------------------------------------
@@ -445,6 +459,7 @@ def cmd_report(args: argparse.Namespace) -> int:
         bets=bets,
         race_context=race_context,
         output_path=output_path,
+        market_latest_path=str(_artifact_path(args, "market_snapshot")),
         course=args.course,
         meeting=args.meeting,
     )
@@ -485,6 +500,8 @@ def cmd_card(args: argparse.Namespace) -> int:
     if bets_arg is None:
         print(f"⚠  Bets JSON not found: {bets_path} — rendering card without trifecta/header JSON.", file=sys.stderr)
 
+    going_label = _going_label_from_artifact(_artifact_path(args, "enrichment-going"))
+
     render_card(
         date=date,
         scores_path=str(scores_path),
@@ -493,6 +510,8 @@ def cmd_card(args: argparse.Namespace) -> int:
         daily_outlay_gbp=args.outlay,
         raw_racecard_path=str(_artifact_path(args, "raw-racecards")),
         bets_json_path=bets_arg,
+        market_latest_path=str(_artifact_path(args, "market_snapshot")),
+        going=going_label,
         course=args.course,
         meeting=args.meeting,
     )

@@ -559,6 +559,7 @@ def render_card(
     scenario_banner: dict[str, str] | None = None,
     market_latest_path: str | None = None,
     bets_json_path: str | None = None,
+    going: str | None = None,
     course: str | None = None,
     meeting: str | None = None,
 ) -> Path:
@@ -609,7 +610,7 @@ def render_card(
         date_display = date
 
     day_name = presentation["day"].get("label", "")
-    going_label = (race_context or {}).get("going") or _going_label_from_forecast(date, going_forecast_path)
+    going_label = going or (race_context or {}).get("going") or _going_label_from_forecast(date, going_forecast_path)
 
     total_stakes = round(sum(float(r.get("stake", 0) or 0) for r in active_rows), 2)
     total_potential = round(sum(float(r.get("potential", 0) or 0) for r in active_rows), 2)

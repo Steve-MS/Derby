@@ -624,7 +624,7 @@
 {# ── FOOTER ───────────────────────────────────────────────── #}
 <footer class="report-footer">
   <p>
-    Race Analysis Plugin {{ model_version }} · Generated {{ generated_at }}{% if market_snapshot_iso %}<br><span class="odds-snapshot">Odds snapshot: {{ market_snapshot_iso }}</span>{% endif %}<br>
+    Race Analysis Plugin {{ model_version }} · Generated {{ generated_at }}<br><span class="odds-snapshot">{% if market_snapshot_iso %}Odds snapshot: {{ market_snapshot_iso }}{% else %}Odds snapshot unavailable{% endif %}</span><br>
     For entertainment only · 18+ · Please gamble responsibly ·
     <a href="https://www.gambleaware.org" target="_blank">GambleAware.org</a>
     · <a href="https://www.begambleaware.org" target="_blank">BeGambleAware.org</a>

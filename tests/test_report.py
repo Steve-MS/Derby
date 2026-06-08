@@ -287,6 +287,34 @@ def test_report_renders_market_latest_price_in_runner_context():
     assert "Odds snapshot: 2026-06-04T16:41:23+01:00" in html
 
 
+def test_ascot_report_without_course_market_snapshot_does_not_use_epsom_default(tmp_path, monkeypatch):
+    missing_market = tmp_path / "market-latest-ascot.json"
+
+    def fake_path_for(course_slug: str, date_str: str, kind: str) -> Path:
+        assert course_slug == "ascot"
+        assert date_str == "2026-06-16"
+        assert kind == "market_snapshot"
+        return missing_market
+
+    monkeypatch.setattr("src.report.path_for", fake_path_for)
+    out = tmp_path / "report-ascot.html"
+    render(
+        date="2026-06-16",
+        scores=[],
+        bets={},
+        race_context={"course": "ascot", "meeting": "royal-ascot-2026"},
+        output_path=str(out),
+        course="ascot",
+        meeting="royal-ascot-2026",
+    )
+
+    html = out.read_text(encoding="utf-8")
+    footer = html.split('<footer class="report-footer">', 1)[1].split("</footer>", 1)[0]
+    assert "Odds snapshot unavailable" in footer
+    assert "Derby" not in footer
+    assert "City Of Troy" not in footer
+
+
 class TestRenderSections:
     """Key sections must appear when data is present."""
 

@@ -75,7 +75,9 @@ def _course_slug(course: str | None = None, race: dict | None = None) -> str:
 
 
 def _trial_priors(course: str | None = None, priors: dict | None = None) -> dict:
-    return priors or scoring_priors_for(_course_slug(course)).get("trial_form_weights", {})
+    if priors is not None:
+        return priors
+    return scoring_priors_for(_course_slug(course)).get("trial_form_weights", {})
 
 
 # ---------------------------------------------------------------------------
@@ -103,7 +105,8 @@ def _normalise_trial(raw: dict, priors: dict | None = None) -> dict:
     race_name = raw.get("race") or raw.get("trial_name") or ""
     tier = raw.get("tier")
     if tier is None:
-        tier_map = (priors or _trial_priors()).get("tier_map", {})
+        tier_priors = priors if priors is not None else _trial_priors()
+        tier_map = tier_priors.get("tier_map", {})
         tier = tier_map.get(race_name, 3)
 
     position = raw.get("position") or raw.get("finishing_position")
@@ -130,16 +133,21 @@ def _normalise_trial(raw: dict, priors: dict | None = None) -> dict:
     }
 
 
-def load_trial_form(path: str | None = None) -> dict:
+def load_trial_form(path: str | None = None, *, course: str | None = None) -> dict:
     """Load and normalise trial-form enrichment from *path*.
 
-    If *path* is None the file is auto-discovered via ``_DATA_DIR_CANDIDATES``.
-    Returns an empty dict if the file is missing or malformed — callers must
-    treat the result as "no data available" and return neutral 50.
+    ``course`` is required so raw enrichment is normalised with the caller's
+    course priors rather than silently inheriting Epsom defaults. If *path* is
+    None the file is auto-discovered via ``_DATA_DIR_CANDIDATES``. Returns an
+    empty dict if the file is missing or malformed; callers must treat that as
+    "no data available" and return neutral 50.
 
     Keys in the returned dict are lower-cased horse names for case-insensitive
-    lookup.  Each value is ``{"trials": [<normalised trial dicts>]}``.
+    lookup. Each value is ``{"trials": [<normalised trial dicts>]}``.
     """
+    if not course:
+        raise ValueError("load_trial_form requires course")
+    trial_priors = _trial_priors(course)
     if path is None:
         path = _find_data_file("trial-form.json")
     if path is None or not os.path.exists(path):
@@ -160,21 +168,16 @@ def load_trial_form(path: str | None = None) -> dict:
             continue
         # Accept both "trials" and "trial_runs" for forward-compat
         trials_raw = entry.get("trials") or entry.get("trial_runs") or []
-        priors = _trial_priors()
-        normalised = [_normalise_trial(t, priors) for t in trials_raw if isinstance(t, dict)]
+        normalised = [_normalise_trial(t, trial_priors) for t in trials_raw if isinstance(t, dict)]
         result[name.lower()] = {"trials": normalised}
 
     return result
 
 
-@lru_cache(maxsize=1)
-def load_trial_data() -> dict:
-    """Cached version of ``load_trial_form`` (no path arg).
-
-    Use this inside ``trial_form_signal``; use ``load_trial_form(path)``
-    in tests that need a specific file.
-    """
-    return load_trial_form()
+@lru_cache(maxsize=None)
+def load_trial_data(course: str) -> dict:
+    """Cached default trial-form enrichment for a course."""
+    return load_trial_form(course=course)
 
 
 # ---------------------------------------------------------------------------
@@ -273,7 +276,8 @@ def _score_single_trial(trial: dict, race_date: str, priors: dict | None = None)
     if field_size is not None:
         try:
             if int(field_size) == 1:
-                raw_score = min(raw_score, float((priors or _trial_priors()).get("walkover_max_score", 50.0)))
+                walkover_priors = priors if priors is not None else _trial_priors()
+                raw_score = min(raw_score, float(walkover_priors.get("walkover_max_score", 50.0)))
         except (ValueError, TypeError):
             pass
 
@@ -395,7 +399,8 @@ def trial_form_signal(runner: dict, race: dict, course: str | None = None, prior
     float
         0–100 signal score.
     """
-    trial_priors = _trial_priors(course or _course_slug(race=race), priors)
+    course_slug = _course_slug(course, race)
+    trial_priors = _trial_priors(course_slug, priors)
     if not trial_priors.get("enabled", False):
         return 50.0
     dist_f = float(race.get("distance_f") or race.get("distance_furlongs") or 0.0)
@@ -406,10 +411,10 @@ def trial_form_signal(runner: dict, race: dict, course: str | None = None, prior
     if not horse:
         return 50.0
 
-    data = load_trial_data()
+    data = load_trial_data(course_slug)
     race_date = race.get("date") or trial_priors.get("default_race_date")
 
-    return score_trial_form(horse, dist_f, data, race_date, course=course or _course_slug(race=race), priors=trial_priors)
+    return score_trial_form(horse, dist_f, data, race_date, course=course_slug, priors=trial_priors)
 
 
 # ---------------------------------------------------------------------------

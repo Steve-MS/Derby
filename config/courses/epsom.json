@@ -235,7 +235,6 @@
         }
       ],
       "walkover_max_score": 70
-    },
-    "equipment_defaults": {}
+    }
   }
 }

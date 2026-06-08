@@ -60,3 +60,50 @@ def test_known_course_missing_scoring_priors_falls_back_to_neutral(monkeypatch):
     assert priors["pace_modifiers"]["default_signal"] == 50
     assert priors["cd_form_weights"]["badge_scores"]["CD"] == 50
     assert priors["trial_form_weights"]["enabled"] is False
+
+
+def test_null_scoring_priors_falls_back_to_neutral(monkeypatch):
+    def fake_load(course_slug):
+        return {"course_slug": course_slug, "scoring_priors": None}
+
+    monkeypatch.setattr("src.course_config.load_course_config", fake_load)
+    priors = scoring_priors_for("null-priors")
+    assert priors == scoring_priors_for("null-priors", priors={})
+    assert priors["draw_bias"]["extended"] == {}
+    assert priors["trial_form_weights"]["enabled"] is False
+
+
+def test_non_object_scoring_priors_raises(monkeypatch):
+    def fake_load(course_slug):
+        return {"course_slug": course_slug, "scoring_priors": "garbage_string"}
+
+    monkeypatch.setattr("src.course_config.load_course_config", fake_load)
+    with pytest.raises(CourseConfigError, match="scoring_priors"):
+        scoring_priors_for("bad-priors")
+
+
+@pytest.mark.parametrize("override", [{}, {"draw_bias": {"extended": {}}}])
+def test_empty_and_partial_scoring_priors_merge_neutral_defaults(monkeypatch, override):
+    def fake_load(course_slug):
+        return {"course_slug": course_slug, "scoring_priors": override}
+
+    monkeypatch.setattr("src.course_config.load_course_config", fake_load)
+    priors = scoring_priors_for("partial")
+    assert priors["draw_bias"]["extended"] == {}
+    assert priors["pace_modifiers"]["default_signal"] == 50
+    assert priors["cd_form_weights"]["badge_scores"]["CD"] == 50
+    assert priors["trial_form_weights"]["enabled"] is False
+
+
+def test_direct_empty_priors_override_uses_neutral_defaults():
+    priors = scoring_priors_for("unused", priors={})
+    assert priors["draw_bias"]["extended"] == {}
+    assert priors["pace_modifiers"]["default_signal"] == 50
+    assert priors["cd_form_weights"]["badge_scores"]["CD"] == 50
+    assert priors["trial_form_weights"]["enabled"] is False
+
+
+def test_equipment_defaults_removed_until_scoring_consumes_them():
+    assert "equipment_defaults" not in load_course_config("epsom")["scoring_priors"]
+    assert "equipment_defaults" not in load_course_config("ascot")["scoring_priors"]
+    assert "equipment_defaults" not in scoring_priors_for("epsom")

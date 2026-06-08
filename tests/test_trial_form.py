@@ -154,8 +154,14 @@ def test_missing_file_returns_50(tmp_path):
     """load_trial_form with a nonexistent path returns empty/neutral, and
     score_trial_form on that result returns 50."""
     nonexistent = str(tmp_path / "does_not_exist.json")
-    data = load_trial_form(nonexistent)
+    data = load_trial_form(nonexistent, course="epsom")
     assert score_trial_form("Any Horse", DERBY_DIST, data) == 50.0
+
+
+def test_load_trial_form_requires_course_or_loud_default(tmp_path):
+    nonexistent = str(tmp_path / "does_not_exist.json")
+    with pytest.raises(ValueError, match="requires course"):
+        load_trial_form(nonexistent)
 
 
 # ===========================================================================

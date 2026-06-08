@@ -30,9 +30,11 @@ from typing import Any
 
 try:
     from .bet_schema import MULTI_STATUSES, MULTI_TYPES, parse_money, schema_entries
+    from .course_config import CourseConfigError, path_for
     from .render_helpers import default_course_display, output_path_for, presentation_context
 except ImportError:  # direct import via src/ on sys.path in cli.py
     from bet_schema import MULTI_STATUSES, MULTI_TYPES, parse_money, schema_entries
+    from course_config import CourseConfigError, path_for
     from render_helpers import default_course_display, output_path_for, presentation_context
 
 try:
@@ -217,7 +219,7 @@ def _build_context(
         datetime.now().strftime("%Y-%m-%dT%H:%M"),
     )
 
-    market_snapshot = _load_market_latest(market_latest_path)
+    market_snapshot = _load_market_latest(market_latest_path, course=presentation["course"]["slug"], date=date)
     market_index = _build_market_index(date, market_snapshot)
     scores_with_prices = _attach_market_prices(date, scores, market_index, presentation["course"]["display_name"])
     market_summary = _market_summary(date, market_snapshot, market_index)
@@ -282,8 +284,14 @@ def _build_context(
 # ---------------------------------------------------------------------------
 
 
-def _load_market_latest(path: str | None = None) -> dict:
-    p = Path(path) if path else BASE_DIR / "data" / "enrichment" / "market-latest.json"
+def _load_market_latest(path: str | None = None, course: str | None = None, date: str | None = None) -> dict:
+    if path:
+        p = Path(path)
+    else:
+        try:
+            p = path_for(course or "epsom", date or "0000-00-00", "market_snapshot")
+        except CourseConfigError:
+            return {}
     if not p.exists():
         return {}
     try:

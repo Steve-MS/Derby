@@ -94,7 +94,6 @@ _NEUTRAL_SCORING_PRIORS: dict[str, Any] = {
         "freshness_adjustments": [{"adjustment": 0}],
         "walkover_max_score": 50,
     },
-    "equipment_defaults": {},
 }
 
 
@@ -113,20 +112,27 @@ def neutral_scoring_priors() -> dict[str, Any]:
     return copy.deepcopy(_NEUTRAL_SCORING_PRIORS)
 
 
-def scoring_priors_for(course_slug: str | None = None) -> dict[str, Any]:
+def scoring_priors_for(course_slug: str | None = None, priors: dict[str, Any] | None = None) -> dict[str, Any]:
     """Return scoring priors for a course, falling back to neutral if omitted.
 
     A known course with no ``scoring_priors`` section is treated as neutral so
     newly added course configs never inherit Epsom assumptions by accident.
+    Passing ``priors`` directly applies the same neutral merge without reading
+    config, which lets tests and future loaders exercise empty-object semantics.
     Unknown courses still raise ``CourseConfigError`` via ``load_course_config``.
     """
+    if priors is not None:
+        if not isinstance(priors, dict):
+            raise CourseConfigError("scoring_priors override must be an object")
+        return _deep_merge(_NEUTRAL_SCORING_PRIORS, priors)
+
     cfg = load_course_config(course_slug or default_course())
-    priors = cfg.get("scoring_priors")
-    if priors is None:
+    config_priors = cfg.get("scoring_priors")
+    if config_priors is None:
         return neutral_scoring_priors()
-    if not isinstance(priors, dict):
+    if not isinstance(config_priors, dict):
         raise CourseConfigError(f"course config {cfg.get('course_slug')!r} field 'scoring_priors' must be an object")
-    return _deep_merge(_NEUTRAL_SCORING_PRIORS, priors)
+    return _deep_merge(_NEUTRAL_SCORING_PRIORS, config_priors)
 
 
 class CourseConfigError(ValueError):
@@ -230,7 +236,8 @@ def path_for(course_slug: str, date_str: str, kind: str) -> Path:
     """Return the canonical artifact path for a course/date/kind.
 
     Supported kinds: ``raw-racecards``, ``scores``, ``bets``, ``report``,
-    ``racecard``, ``slip``, ``results``, and ``enrichment-{name}``.
+    ``racecard``, ``slip``, ``results``, ``market_snapshot``, and
+    ``enrichment-{name}``.
 
     Layout is intentionally flat: Epsom keeps its legacy archive paths, while
     other courses add the course slug to filenames rather than moving into
@@ -248,6 +255,9 @@ def path_for(course_slug: str, date_str: str, kind: str) -> Path:
     if kind == "results":
         filename = f"results-{date_str}.json" if slug == _DEFAULT_COURSE else f"results-{slug}-{date_str}.json"
         return PROJECT_ROOT / "data" / "results" / filename
+    if kind == "market_snapshot":
+        filename = "market-latest.json" if slug == _DEFAULT_COURSE else f"market-latest-{slug}.json"
+        return PROJECT_ROOT / "data" / "enrichment" / filename
     if kind.startswith("enrichment-"):
         name = kind.removeprefix("enrichment-")
         if not name:
