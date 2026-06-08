@@ -16,3 +16,8 @@ Thumbs.db
 .idea/
 .cookies/
 cookies.txt
+
+# Local-only race-day artifacts (Danny-3 + Steve approved 2026-06-08)
+.squad/.scribe-health-*.txt
+data/enrichment/archive/
+outputs/slip-*.txt
