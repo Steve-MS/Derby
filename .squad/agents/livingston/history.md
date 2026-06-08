@@ -95,3 +95,11 @@ v0.4 market_drift module proposed with 0 HIGH / 1 MEDIUM / 8 SPECULATIVE confide
 See .squad/orchestration-log/2026-06-07T00-36-45Z-rusty.md for full signal frame.
 
 ---
+
+## 2026-06-08 — Livingston-6 Chunk 2 scraper parameterization
+
+- Shipped v0.4 #6 Chunk 2 for scraper/odds/refresh wiring. Ascot Racing Post course id confirmed/configured as `1` with path `ascot`.
+- Added dry-run `scripts/scrape_racingpost.py` and `scripts/scrape_sportinglife.py` entrypoints that default to Epsom, consume course/meeting config, and emit course-prefixed non-Epsom enrichment paths.
+- `morning_odds.py` now keeps legacy Epsom market filenames but writes non-Epsom snapshots as `market-{baseline|latest}-{course}.json`; RP runner confirmation already consumes config ids/paths.
+- `refresh_friday.py` preserves the old no-flag Epsom two-day wrapper, while `--course=ascot --meeting=royal-ascot-2026` resolves all configured meeting days when `--date` is omitted.
+- Parameterized archived equipment RP URLs from course config without moving historical artifacts. Verification: `python -m pytest -x --ignore=tests/test_racecard_wave33.py` => 478 passed.

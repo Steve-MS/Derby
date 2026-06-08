@@ -101,3 +101,11 @@ Wave-1 publish-readiness sprint shipped GREEN. Saul-3 gate review verdict 🟢 G
 **Legacy path strategy:** `path_for(course, date, kind)` keeps Epsom on historical artifact names (`outputs/racecard-{date}.html`, `outputs/bets-{date}.json`, etc.) while non-Epsom courses get course-prefixed names (`outputs/racecard-ascot-{date}.html`). Raw racecards stay flat for all courses: `data/raw/{course}-{date}-racecards.json`. This lets Ascot dry runs avoid Epsom output collisions without churning Derby artifacts.
 
 **CLI defaulting sharp edge:** `--course` and `--meeting` default to `epsom` / `derby-2026`; `src.cli` and `t60_watchdog.py` default `--date` to today. `refresh_friday.py` remains the Epsom wrapper for one release, so no-date operation still uses the Derby meeting day list unless a non-default course/meeting is passed. Do not call `resolve_day()` in watchdog/default smoke paths because today can be outside the configured Derby days after the meeting.
+
+### Chunk 3 presentation decoupling — config-backed report/racecard titles (2026-06-08)
+
+**Pattern:** Keep renderer context backward-compatible (`venue`/`day_name`) but drive templates from `meeting.title` + `day.label` resolved via `src.render_helpers.presentation_context()`. For Epsom, the helper preserves legacy headings from config default display name; for non-default meetings it derives meeting brand from the configured meeting slug (e.g. `royal-ascot-2026` -> `Royal Ascot 2026`) without editing course JSON.
+
+**Path rule:** Report/racecard renderers now expose `report_output_path()` / `racecard_output_path()` wrappers over `course_config.path_for()`. Epsom remains legacy (`outputs/report-YYYY-MM-DD.html`, `outputs/racecard-YYYY-MM-DD.html`); Ascot renders to course-prefixed outputs.
+
+**Gotcha:** Current committed/untracked historical Epsom HTML artifacts are hand-edited race-day files, not clean renderer output; byte-diffing fresh CLI output against them is not meaningful for full-file equality. Header/title presentation stayed legacy-identical in fresh render smoke; document any historical diff as artifact drift rather than a presentation regression.

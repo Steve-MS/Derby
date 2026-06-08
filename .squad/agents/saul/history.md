@@ -91,3 +91,14 @@ Wave-1 publish-readiness sprint shipped GREEN. All four work items GREEN GO. Ful
 - **Livingston-5**: RUNBOOK.md (565 lines) — two-source scrape pattern + manual fallback codified.
 - **Saul-2** crashed mid-run 2026-06-07 ~19:11 BST (CAPI error after 1h41m, no output written). **Saul-3** re-attempt succeeded 2026-06-08 08:40 with crash-resilience protocol (incremental note-writing).
 - Next-sprint open items: fix test_racecard_wave33 fixture (Saul); update morning_odds.py RACECARD_FILES for Royal Ascot 2026-06-16 (Danny); sanitise market_drift.py docstring of Derby Day examples (low-priority backlog); pre-sprint Derby Day orphan files need separate close-out commit (Coordinator).
+
+### 2026-06-08 — Chunk 2 scraper gate
+- Scraper dry-run safety must be checked by code order, not just CLI output: RP/SL entrypoints correctly return before urlopen, but a broader odds dry-run can still be blocked by an earlier credential gate.
+- In dirty multi-agent trees, use exact scoped diff checks plus the producer's file list; concurrent presentation files can coexist with a valid scraper gate.
+- Future racecard URL web checks may 404 for unpublished dates, so verify the stable Racing Post course-id convention separately from the future dated page.
+
+### 2026-06-08 — Chunk 3 presentation decoupling gate
+- Course-aware render review should validate both template tokens and real rendered strings: tokenization can pass while legacy Epsom wording still needs explicit smoke checks.
+- In stacked dirty trees, separate verdict from staging hygiene: Chunk 3 was green, but Scribe must keep Chunk 1/2 files out of the Chunk 3 commit.
+- Historical race-day HTML may be hand-edited; prefer restore-safe synthetic byte-equivalence evidence for regression gating, and cite git log when archive diffs are expected.
+- Trifecta rendering is currently conditional on `bets_json_path`; gate checks should distinguish preserved conditional support from the manually injected historical block.

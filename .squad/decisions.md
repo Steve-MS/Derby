@@ -719,3 +719,27 @@ python scripts/check_env.py   # should exit 0
 ### 2026-06-08: Danny-4 remains canonical v0.4 #6 6-chunk plan
 **Decision:** Keep `.squad/decisions/inbox/danny-4-decouple-scoping.md` in inbox as the canonical 1.3MB scoping inventory.
 **Reason:** decisions.md carries only the summary; the full plan remains referenced for future chunks and must not be deleted in this cleanup.
+
+### 2026-06-08: v0.4 #6 Chunk 2 scraper/odds/refresh delivery (Livingston-6)
+**Verdict:** COMPLETE - ready for gate; source summary at `.squad/decisions/inbox/livingston-6-chunk2-scraper.md`.
+**Summary:** Livingston-6 set Ascot RP course_id 1 and added config-driven Racing Post + Sporting Life dry-run scrapers.
+**Compatibility:** Epsom legacy paths/defaults preserved while non-Epsom enrichment and market snapshots become course-prefixed.
+**Validation:** Targeted Chunk 2/course-config tests passed; Saul-7 later verified 480/480 full-suite pass with wave33 ignored.
+
+### 2026-06-08: v0.4 #6 Chunk 2 gate AMBER + FU-1 (Saul-7)
+**Verdict:** 🟡 AMBER ship-with-followup; source review at `.squad/decisions/inbox/saul-7-chunk2-gate.md`.
+**Evidence:** Saul-7 verified scraper dry-runs, Ascot RP course id, refresh-date behavior, Epsom legacy filenames, and 480/480 tests.
+**Concern:** `scripts/morning_odds.py --dry-run` exits 1 without `SPORTINGLIFE_USER/PASS` because `_gate_env()` runs before dry-run handling.
+**Disposition:** Accepted as pre-existing fail-loud live-scrape protection, not a Chunk 2 regression. FU-1 tracked, see followups.md.
+
+### 2026-06-08: v0.4 #6 Chunk 3 course-aware presentation delivery (Linus-17)
+**Verdict:** COMPLETE - ready for gate; source summary at `.squad/decisions/inbox/linus-17-chunk3-presentation.md`.
+**Summary:** Linus-17 added `src/render_helpers.py` and made report/racecard titles, headings, and output paths flow from course_config.
+**Compatibility:** Epsom report/racecard wording and legacy paths preserved; Ascot synthetic renders use Royal Ascot titles and course-prefixed paths.
+**Validation:** 76 targeted presentation/config tests and 480/480 full-suite pass with wave33 ignored.
+
+### 2026-06-08: v0.4 #6 Chunk 3 gate GO (Saul-8)
+**Verdict:** 🟢 GO; source review at `.squad/decisions/inbox/saul-8-chunk3-gate.md`.
+**Evidence:** Saul-8 verified templates have no hardcoded Epsom/Derby tokens, renderers delegate paths through config, and CLI changes are pass-through only.
+**Compatibility:** HEAD-baseline synthetic Epsom render was byte-equivalent; historical output diffs were explained as race-day hand-edits, not regressions.
+**Scope:** CSS, trifecta box, portfolio rendering, and Chunk 4 scoring code remained untouched.

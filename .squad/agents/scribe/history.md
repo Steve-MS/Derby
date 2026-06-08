@@ -116,3 +116,10 @@
 - For code/state split commits, verify staged names with `git diff --cached --name-only` against an explicit allow-list before every commit; this kept `tests/test_regression_wave3.py`, outputs, and Danny-4's retained scoping doc out of the code commit.
 - SUMMARY-ONLY merge remains the right pattern for inbox reports: append 4-6 line summaries to `decisions.md`, delete only merged stubs, and keep large canonical docs referenced in place.
 - PowerShell commit messages should be piped from single-quoted here-strings with UTF-8 output configured; avoid special currency/comparison symbols in messages and prefer ASCII `>=` / `GBP` when needed.
+
+### 2026-06-08 — Scribe-24 three-commit batch + AMBER follow-up pattern
+
+- For concurrent reviewed chunks, commit code in strict allow-list batches first, then commit squad state separately; assert cached paths before each commit.
+- AMBER ship-with-followup is acceptable when the reviewer identifies a pre-existing non-blocking operator concern and the state commit creates an explicit FU entry.
+- `followups.md` is the durable tracker for deferred work; decisions.md should mention the FU id and stay summary-only with source inbox paths.
+- Inbox merge cleanup can delete only the merged stubs while preserving large referenced planning docs such as Danny-4's canonical scoping inventory.
