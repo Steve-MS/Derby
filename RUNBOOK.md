@@ -1,621 +1,479 @@
-# RUNBOOK: From Install to Race Card
+# RUNBOOK: Operator Workflow for Any Course, Meeting, and Date
 
-**For:** Developers unfamiliar with horse racing or this codebase who need a printable race card by race day.
+For: operators and developers who need to fetch race data, score a card, generate bets, produce printable artifacts, and handle race-day failures.
 
-**Scope:** Epsom Group racing (specifically Ladies Day Fri & Derby Day Sat). Covers the common case, with fallbacks for observed failure modes.
+Scope: Windows-first workflow for any configured course/meeting/date. Epsom Derby 2026 is preserved as the historical example. Royal Ascot Day 1 is the current non-Epsom example.
 
-**Last Updated:** 2026-06-08 | **Model Version:** v0.4 | **Venue:** Epsom
+Last updated: 2026-06-08
 
----
+## 0. Quick Reference: Generic Meeting-Day Checklist
+
+Set these three values first in PowerShell:
+
+```powershell
+$course = "{course}"
+$meeting = "{meeting}"
+$date = "{date}"
+```
+
+1. Confirm credentials are present for live odds work.
+
+```powershell
+python scripts\check_env.py
+```
+
+2. Dry-run the morning odds command before any write.
+
+```powershell
+python scripts\morning_odds.py --course=$course --meeting=$meeting --date=$date --dry-run
+```
+
+3. Capture or verify source racecards and enrichment.
+
+```powershell
+python scripts\scrape_racingpost.py --course=$course --meeting=$meeting --date=$date --dry-run
+python scripts\scrape_sportinglife.py --course=$course --meeting=$meeting --date=$date --dry-run
+python -m src.cli fetch --course=$course --meeting=$meeting --date=$date
+```
+
+4. Score, predict, report, and card.
+
+```powershell
+python -m src.cli score --course=$course --meeting=$meeting --date=$date
+python -m src.cli predict --course=$course --meeting=$meeting --date=$date --bankroll 100
+python -m src.cli report --course=$course --meeting=$meeting --date=$date
+python -m src.cli card --course=$course --meeting=$meeting --date=$date
+```
+
+5. Run the T-60 watchdog. Stop on exit code 2. Review stale artifacts on exit code 1.
+
+```powershell
+python scripts\t60_watchdog.py --course=$course --meeting=$meeting --date=$date
+$LASTEXITCODE
+```
+
+6. Open the outputs listed by the commands. Expected core artifacts are scores JSON, bets JSON, report HTML, racecard HTML, plain-text slip, and T-60 status JSON.
 
 ## 1. Prerequisites
 
-### Required Credentials & Environment Variables
+### 1.1 Environment
 
-Refer to `.env` in the repository root. Your system must have these variables set:
-
-| Variable | Purpose | Missing = ? |
-|----------|---------|-------------|
-| `RACING_API_USERNAME` | Public Racing API auth (live runner verification) | Script fails with 401; cannot fetch live declared fields |
-| `RACING_API_PASSWORD` | Public Racing API auth (live runner verification) | Script fails with 401; cannot verify horses are actually in the race |
-
-**File Location:** `.env` (git-ignored; you must create or populate this before running scripts)
-
-**Minimum viable setup:**
-```bash
-# Check environment at session start
-python -c "import os; print(f'API user: {os.getenv(\"RACING_API_USERNAME\", \"MISSING\")}'); print(f'API pass: {bool(os.getenv(\"RACING_API_PASSWORD\", \"\"))}')"
-```
-
-**Implicit Dependencies:**
 - Python 3.12+
-- `jinja2` (template rendering; see `requirements.txt`)
-- Internet access (HTTP fetches from Racing Post, Sporting Life, BBC Sport)
-- File write access to `data/enrichment/` and `outputs/`
+- Dependencies from `requirements.txt`
+- Internet access for Racing Post and Sporting Life checks
+- Write access to `data\raw`, `data\enrichment`, `data\results`, and `outputs`
+- PowerShell as the primary shell
 
----
+### 1.2 Credentials
 
-## 2. The Two-Source Scrape Pattern
+The current credential gate checks Sporting Life credentials, not retired API variable names.
 
-Yesterday's audit identified a critical finding: **Racing Post racecard pages return 404/406 intra-day, BUT results pages work post-race**. This runbook documents the pattern and fallbacks discovered.
+| Variable | Purpose | Missing result |
+|---|---|---|
+| `SPORTINGLIFE_USER` | Sporting Life authenticated fallback and live-runner hygiene | Live odds mode fails before write |
+| `SPORTINGLIFE_PASS` | Sporting Life authenticated fallback and live-runner hygiene | Live odds mode fails before write |
 
-### 2.1 Live Racecard Sources (T-2h to T+30min per race)
+Check them without printing secrets:
 
-#### Source 1: Racing Post Live Racecard (Preferred)
-- **URL pattern:** `https://www.racingpost.com/racecards/17/epsom/{YYYY-MM-DD}`
-- **Auth required:** No (public)
-- **Content:** SSR HTML with `__NEXT_DATA__` JSON blob; runner names + equipment + form snippets embedded
-- **Typical success:** AM (07:00–12:00), may fail mid-day
-- **Failure modes:**
-  - HTTP 406 on repeated scrapes from same session within 60s
-  - HTTP 404 if racecard is withdrawn/cancelled
-  - Returns 200 but with 373-byte response (malformed; treat as failed)
-- **How to detect silent failure:** Response < 1KB, no `horseName` keys in SSR blob, or parser throws on malformed JSON
-- **Mitigation:** Add 60s sleep between baseline→latest calls; use `--no-rp-scrape` flag to skip on subsequent runs
-
-#### Source 2: Sporting Life Racecard (Fallback)
-- **URL pattern:** `https://www.sportinglife.com/racing/racecards/{YYYY-MM-DD}/epsom-downs/racecard/{race_id}/{slug}`
-- **Auth required:** Yes (SPA shell; public URLs but may require session cookie)
-- **Content:** Individual race racecard; runner list, weights, odds, form
-- **Typical success:** Morning through race-time
-- **Failure modes:**
-  - Returns 200 but 373-byte HTML (empty skeleton; race not published yet)
-  - Returns 403 (region/IP-based block)
-  - JavaScript component errors (race details not populated)
-- **How to detect silent failure:** Response < 1KB, no `<tr>` runner rows, no horse names in plain text
-- **Mitigation:** Retry with user-agent string; check `data/enrichment/live-runners-YYYY-MM-DD.json` (pre-populated by manual web-search gate)
-
-#### Source 3: Betdata.io (Historical; Often 404)
-- **URL pattern:** `https://www.betdata.io/epsom/{YYYY-MM-DD}/{race_name}`
-- **Auth required:** No
-- **Content:** Odds + form data
-- **Typical success:** Low (historically 404 for this venue)
-- **Fallback:** Do not rely; skip if Racing Post + Sporting Life both succeed
-
-#### Source 4: BBC Sport Racing (Fallback for verification)
-- **URL pattern:** `https://www.bbc.co.uk/sport/horse-racing/epsom/{YYYY-MM-DD}`
-- **Auth required:** No
-- **Content:** Summary racecard; runner names only (no odds/equipment)
-- **Use case:** Verify horse names exist in the race (sanity check)
-
-#### Source 5: At The Races / Sky Sports (Low priority)
-- **Auth required:** Yes (paywall/subscription)
-- **Recommendation:** Skip for v0.4; documented for completeness
-
-### 2.2 Post-Race Results Sources (T+5min onward)
-
-**Critical Finding:** Results pages work even when racecard pages are blocked intra-day.
-
-#### Source 1: Racing Post Results (Preferred)
-- **URL pattern:** `https://www.racingpost.com/results/17/epsom/{YYYY-MM-DD}/{race_id}/`
-- **Race ID lookup:** Use race ID from racecard URL (e.g., `920050` for 14:05 Woodcote)
-- **Auth required:** No (public)
-- **Content:** Finishing order, margins, SP odds, jockey/trainer confirmation
-- **Typical success:** Immediate (within 1–2min post-race)
-- **Failure modes:** HTTP 404 if race ID mismatch; very rare
-- **How to detect silent failure:** Response contains no finish positions or horse names
-
-#### Source 2: Sporting Life Results (Fallback)
-- **URL pattern:** Individual race result pages (varies by race_id)
-- **Auth required:** Yes
-- **Content:** Finishing order, form updates
-- **Typical success:** 5–10min post-race
-- **Failure modes:** JavaScript component errors (results not parsed); treats 200 as success even if data is missing
-- **Mitigation:** Cross-check against Racing Post results before publishing
-
-### 2.3 Decision Tree: Which Source to Use?
-
-```
-[Fetch live racecard]
-  ├─ Try Racing Post first (fastest)
-  │  └─ If 406 or >60s elapsed since last RP call
-  │     └─ Wait 60s, retry OR use --no-rp-scrape flag
-  │
-  ├─ If RP returns < 1KB or no horse names
-  │  └─ Try Sporting Life (fallback)
-  │     └─ If both fail
-  │        └─ Stop; request manual intervention (see §4)
-  │
-  ├─ Cross-check against live-runners-YYYY-MM-DD.json
-  │  └─ If live-runners file does not exist
-  │     └─ Use web-search to build it (contact Steve for web access)
-  │
-  [After race runs]
-  └─ Fetch post-race results from Racing Post (works reliably)
+```powershell
+python -c "import os; print('SPORTINGLIFE_USER set:', bool(os.getenv('SPORTINGLIFE_USER'))); print('SPORTINGLIFE_PASS set:', bool(os.getenv('SPORTINGLIFE_PASS')))"
 ```
 
----
+Do not paste credentials into logs, commits, runbook notes, or `.squad` files.
 
-## 3. Race-Day Timeline
+## 2. Worked Examples
 
-For exact copy-paste commands, keep the [Quick Reference Card](#8-quick-reference-card) open during the operator window.
+### 2.1 Epsom Derby, Saturday 2026-06-06, historical replay
 
-### T-24h (Evening before race day)
+Use this to reproduce the historical Derby Day from archived raw data and legacy Epsom paths.
 
-- **Full overnight refresh**
-  - Run `scripts/refresh_friday.py` (Ladies Day only) or equivalent for Saturday
-  - Captures: declarations, runner list, trainer/jockey assignments, equipment flags
-  - Output: `data/raw/epsom-YYYY-MM-DD-racecards.json` + enrichment files
-  - If RP is blocked: use manual declarations list (contact Steve or Sporting Life)
+```powershell
+$course = "epsom"
+$meeting = "derby-2026"
+$date = "2026-06-06"
 
-### T-12h (Overnight / Early morning)
-
-- **NR (non-runner) sweep**
-  - Cross-check `live-runners-YYYY-MM-DD.json` against racecard to identify withdrawals
-  - Flag any horse in racecard but NOT in live declared list as **probable NR**
-  - Consequence: NR horses kill multi-race bets involving them (doubles, trebles)
-  - Record: `.squad/decisions/inbox/livingston-*-baseline-NRs.md`
-
-### T-2h (Morning: typically 07:00–09:00 BST)
-
-- **Full odds refresh; baseline lock**
-  - Run `scripts/morning_odds.py --mode baseline --date YYYY-MM-DD`
-  - Captures all runner prices at this snapshot time
-  - Output: `data/enrichment/market-baseline.json`
-  - Use this as your reference for "yesterday's price" when comparing pre-race moves
-  - **Critical:** If RP scrape fails (406), add 60s delay and retry, OR use `--no-rp-scrape` on next latest call
-
-### T-60min before first race
-
-- **T-60 watchdog gate**
-  - Run `python scripts/t60_watchdog.py --date YYYY-MM-DD`
-  - Confirms required racecards, live runners, Sporting Life/Racing Post/going enrichment, scores, bets, report, racecard, and slip are present and fresh
-  - Cross-checks that bets/card horses are live, bets total matches the rendered header/slip, and `scripts/check_env.py` passes
-  - **Exit handling:** `0` = clear; `1` = review stale artifacts before proceeding; `2` = **DO NOT RUN PIPELINE** until missing/inconsistent artifacts are fixed
-  - `scripts/refresh_friday.py` invokes this as its first T-60 step and aborts on any non-zero result
-
-### T-1h per Group 1 race (1h before race off)
-
-- **Drift gate**
-  - Run `scripts/morning_odds.py --mode latest --date YYYY-MM-DD`
-  - Captures current prices; market_move signal compares to baseline
-  - Look for **steam** (backed heavily → price shortens) or **drift** (uncertain → price lengthens)
-  - **Note:** Yesterday's prices may be SYNTHETIC (v0.4 uses pre-race 2026-06-02 estimates if live odds unavailable)
-  - **Consequence of skipping:** You miss live market signals; bets go to post on yesterday's price estimates
-
-### T-30min per Group 1 race
-
-- **NR final check**
-  - Verify any horses marked NR earlier are still unavailable
-  - Update `live-runners-YYYY-MM-DD.json` if new NRs declared post-baseline
-
-### Post-race (+5min onward)
-
-- **Results capture**
-  - Fetch finishing order from Racing Post results page
-  - Cross-check against Sporting Life if discrepancies
-  - Record outcomes to settlement log (used for P&L audit)
-  - Typical accuracy: 99.5% from RP; rare discrepancies on margins/weights
-
-### Evening (~21:00 BST)
-
-- **Archive snapshot**
-  - Run `scripts/morning_odds.py --mode archive --date YYYY-MM-DD`
-  - Snapshots `market-baseline.json` + `market-latest.json` to `data/enrichment/archive/`
-  - Preserves day's data before next day overwrites files
-
----
-
-## 4. Manual Live-Odds Fallback
-
-When every automated source fails (Example: yesterday 15:39, RP blocked + Sporting Life returned 373-byte response), use this procedure.
-
-If the scheduled `scripts/refresh_friday.py` did not run, invoke the T-60 gate directly before editing manual prices:
-
-```bash
-python scripts/t60_watchdog.py --date $(date +%F)
+python -m src.cli fetch --course=$course --meeting=$meeting --date=$date
+python -m src.cli score --course=$course --meeting=$meeting --date=$date
+python -m src.cli predict --course=$course --meeting=$meeting --date=$date --bankroll 100
+python -m src.cli report --course=$course --meeting=$meeting --date=$date
+python -m src.cli card --course=$course --meeting=$meeting --date=$date
+python scripts\t60_watchdog.py --course=$course --meeting=$meeting --date=$date
 ```
 
-This writes `outputs/t60-status-YYYY-MM-DD.json` and fails loud on missing/stale artifacts before manual fallback work begins.
+Expected legacy output names include:
 
-### Step 1: Capture Prices Manually
+- `data\raw\epsom-2026-06-06-racecards.json`
+- `outputs\scores-2026-06-06.json`
+- `outputs\bets-2026-06-06.json`
+- `outputs\report-2026-06-06.html`
+- `outputs\racecard-2026-06-06.html`
+- `outputs\slip-2026-06-06.txt`
+- `outputs\t60-status-2026-06-06.json`
 
-Open your bookmaker terminal or visit Sky Bet / Betfair / BetVictor web page. Write down the current decimal odds for each horse you are tracking. Example:
+Historical artifacts remain archives. Do not move them into new paths.
 
-```
-Item (Derby)          3.25
-Kinswoman (Coronation) 24.0
-Allegresse (Coronation) 9.0
-```
+### 2.2 Royal Ascot Day 1, Tuesday 2026-06-16
 
-### Step 2: Format as JSON
+Use this for the current Ascot smoke and operator rehearsal.
 
-Create or edit `data/enrichment/market-latest.json` manually. It must match this schema:
+```powershell
+$course = "ascot"
+$meeting = "royal-ascot-2026"
+$date = "2026-06-16"
 
-```json
-{
-  "fetched_at": "2026-06-06T14:30:00+01:00",
-  "source": "manual",
-  "venue": "Epsom",
-  "date": "2026-06-06",
-  "races": [
-    {
-      "race_id": "16:00",
-      "race_name": "Derby",
-      "runners": [
-        {
-          "horse_name": "Item",
-          "decimal_price": 3.25
-        },
-        {
-          "horse_name": "Kinswoman",
-          "decimal_price": 24.0
-        }
-      ]
-    }
-  ]
-}
+python scripts\scrape_racingpost.py --course=$course --meeting=$meeting --date=$date --dry-run
+python scripts\scrape_sportinglife.py --course=$course --meeting=$meeting --date=$date --dry-run
+python scripts\morning_odds.py --course=$course --meeting=$meeting --date=$date --dry-run
+
+python -m src.cli fetch --course=$course --meeting=$meeting --date=$date
+python -m src.cli score --course=$course --meeting=$meeting --date=$date
+python -m src.cli predict --course=$course --meeting=$meeting --date=$date --bankroll 100
+python -m src.cli report --course=$course --meeting=$meeting --date=$date
+python -m src.cli card --course=$course --meeting=$meeting --date=$date
+python scripts\t60_watchdog.py --course=$course --meeting=$meeting --date=$date
 ```
 
-**Key fields:**
-- `fetched_at`: ISO 8601 timestamp (your current time, with +01:00 for BST)
-- `source`: Always "manual" for this workflow
-- `horse_name`: Must exactly match the name in `market-baseline.json` (case-insensitive, but keep spelling consistent)
-- `decimal_price`: Float (e.g., 3.25 for 13/5, not fractional odds)
+Expected course-prefixed output names include:
 
-### Step 3: Trigger Rescore (Market Move Only)
+- `data\raw\ascot-2026-06-16-racecards.json`
+- `data\enrichment\live-runners-ascot-2026-06-16.json`
+- `data\enrichment\racingpost-ascot-2026-06-16.json`
+- `data\enrichment\sportinglife-ascot-2026-06-16.json`
+- `data\enrichment\going-ascot-2026-06-16.json`
+- `outputs\scores-ascot-2026-06-16.json`
+- `outputs\bets-ascot-2026-06-16.json`
+- `outputs\report-ascot-2026-06-16.html`
+- `outputs\racecard-ascot-2026-06-16.html`
+- `outputs\slip-ascot-2026-06-16.txt`
+- `outputs\t60-status-2026-06-16.json`
 
-Don't re-run the full pipeline. Instead, re-run the market_move scoring step:
+### 2.3 Generic template
 
-```bash
-python -m src.scoring --mode latest --date 2026-06-06
+Replace the three placeholders and keep them on every command.
+
+```powershell
+$course = "{course}"
+$meeting = "{meeting}"
+$date = "{date}"
+
+python scripts\morning_odds.py --course=$course --meeting=$meeting --date=$date --dry-run
+python -m src.cli fetch --course=$course --meeting=$meeting --date=$date
+python -m src.cli score --course=$course --meeting=$meeting --date=$date
+python -m src.cli predict --course=$course --meeting=$meeting --date=$date --bankroll 100
+python -m src.cli report --course=$course --meeting=$meeting --date=$date
+python -m src.cli card --course=$course --meeting=$meeting --date=$date
+python scripts\t60_watchdog.py --course=$course --meeting=$meeting --date=$date
 ```
 
-This compares your manual prices in `market-latest.json` against the baseline from this morning, computing drift signals without fetching new data.
+## 3. Source Pattern and URLs
 
-### Step 4: Verify Output
+The code resolves course IDs, course paths, aliases, and meeting days from `config\courses\*.json`. Prefer config-driven commands over hardcoded URLs.
 
-Check `outputs/race-card-YYYY-MM-DD.html` for the latest scores and drift indicators. The report should show:
-- Horses with **steam** (price shorter than baseline) in green
-- Horses with **drift** (price longer than baseline) in red
-- Horses with no move (within ±1.5%) in neutral
+### 3.1 Racing Post racecards
 
-**Do NOT publish if:**
-- Any horse name failed to match (check the error log)
-- More than 3 horses have missing prices (indicates incomplete manual capture)
-- Any price seems far outside normal market range (e.g., 100.0 for a favorite)
+Template:
 
----
-
-## 5. Sanity Checks Before Betting
-
-Run these checks on the race card before publishing it to Steve.
-
-### Check 1: Drift vs Baseline
-
-```bash
-# Inspect market move signals
-python -c "
-import json
-with open('data/enrichment/market-baseline.json') as f:
-    baseline = json.load(f)
-with open('data/enrichment/market-latest.json') as f:
-    latest = json.load(f)
-print(f'Baseline runners: {sum(len(r[\"runners\"]) for r in baseline[\"races\"])}')
-print(f'Latest runners: {sum(len(r[\"runners\"]) for r in latest[\"races\"])}')
-"
+```text
+https://www.racingpost.com/racecards/{course_id}/{course_path}/{date}
 ```
 
-**Expected:** Same runner count (±10%). If latest is much smaller, RP may have blocked; revert to manual entry.
+Examples:
 
-### Check 2: NR List Cross-Ref
+- Epsom: `https://www.racingpost.com/racecards/17/epsom/2026-06-06`
+- Ascot: `https://www.racingpost.com/racecards/1/ascot/2026-06-16`
 
-```bash
-# Verify all NRs from this morning are still accurate
-python -c "
-import json
-with open('data/enrichment/live-runners-2026-06-06.json') as f:
-    live = json.load(f)
-print('Probable NRs:', [h for h in live.get('non_runners', [])])
-"
+Operator command:
+
+```powershell
+python scripts\scrape_racingpost.py --course=$course --meeting=$meeting --date=$date --dry-run
 ```
 
-**Expected:** NRs list should match what you saw at 07:00 baseline. If a new NR appears mid-day, update `live-runners-YYYY-MM-DD.json` and re-run scoring.
+Failure modes: HTTP 406 on repeated scrapes, HTTP 404 on wrong date or race ID, or small malformed HTML. Wait 60 seconds before retrying a Racing Post scrape.
 
-### Check 3: Header Total vs JSON Total
+### 3.2 Sporting Life racecards
 
-```bash
-# Verify the HTML header shows the same number of runners as JSON
-grep -o "Epsom .* [0-9]* runners" outputs/race-card-2026-06-06.html
-python -c "
-import json
-with open('data/enrichment/market-latest.json') as f:
-    races = json.load(f)['races']
-total = sum(len(r['runners']) for r in races)
-print(f'JSON total: {total} runners')
-"
+Template:
+
+```text
+https://www.sportinglife.com/racing/racecards/{date}/{sportinglife_path}
 ```
 
-**Expected:** Header and JSON match within ±1. If mismatch >5, re-run rendering step.
+Examples:
 
-### Check 4: Trifecta Box Leg Validation
+- Epsom uses the `epsom-downs` path.
+- Ascot uses the `ascot` path.
 
-If you're betting exotic multiples (trebles, trifecta boxes):
+Operator command:
 
-```bash
-# Verify each leg is a valid runner in its race
-for horse in "Item" "Kinswoman" "Allegresse"; do
-  python -c "
-import json
-with open('data/enrichment/market-latest.json') as f:
-    data = json.load(f)
-for race in data['races']:
-  if any(r['horse_name'] == '$horse' for r in race['runners']):
-    print(f'✓ $horse in race {race[\"race_id\"]}')
-  "
-done
+```powershell
+python scripts\scrape_sportinglife.py --course=$course --meeting=$meeting --date=$date --dry-run
 ```
 
-**Expected:** All horses in your multi-race bet appear in their respective races. If any is missing, the bet is invalid.
+Failure modes: 373-byte SPA shell, 403, or JavaScript component errors. Treat a small response as a failed data fetch even if HTTP status is 200.
 
----
+### 3.3 Post-race results
 
-## 6. Common Failure Modes — Field Guide
+Racing Post result pages are the preferred post-race check when racecard pages are blocked intra-day.
 
-### Symptom: "HTTP 406 from Racing Post"
+Template:
 
-**Diagnosis:**
-```bash
-# Check the error message
-tail -20 /var/log/morning_odds.log  # or check script output directly
+```text
+https://www.racingpost.com/results/{course_id}/{course_path}/{date}/{race_id}/
 ```
 
-**Root Cause:** Consecutive calls to Racing Post within 60s trigger rate-limiting.
+Use results only after the race is complete. Cross-check against Sporting Life if settlement details disagree.
 
-**Fix:**
-1. Wait 60 seconds
-2. Re-run with `--no-rp-scrape` flag: `python scripts/morning_odds.py --mode latest --date 2026-06-06 --no-rp-scrape`
-3. If that fails, fall back to manual entry (see §4)
+## 4. Artifact Layout and Archive Rules
 
----
+The current decision is flat with course-prefixed filenames for non-Epsom. `path_for()` is the source of truth.
 
-### Symptom: "373-byte response from Sporting Life"
+- Epsom keeps legacy archive names for generated outputs, for example `outputs\report-2026-06-06.html`.
+- Non-Epsom uses course-prefixed names, for example `outputs\report-ascot-2026-06-16.html`.
+- Raw racecards are flat and course-prefixed, for example `data\raw\epsom-2026-06-06-racecards.json` and `data\raw\ascot-2026-06-16-racecards.json`.
+- Historical Epsom artifacts are archives. Never re-emit them under nested or newly prefixed paths.
 
-**Diagnosis:**
-```bash
-# Check actual response size
-curl -I https://www.sportinglife.com/racing/racecards/2026-06-06/epsom-downs/racecard/920050/woodcote
+See `docs\data-layout.md` for the full decision table.
+
+## 5. Race-Day Timeline
+
+### T-24h: declarations and raw racecards
+
+Goal: make sure the racecard exists and can be loaded.
+
+```powershell
+python -m src.cli fetch --course=$course --meeting=$meeting --date=$date
 ```
 
-**Root Cause:** Race racecard not yet published or returning skeleton HTML only.
+If the raw file is missing, restore the expected raw artifact or run the scraper workflow for that configured course.
 
-**Fix:**
-1. Verify the date and race_id are correct
-2. Wait 30min (race declaration may not yet be live)
-3. Use manual web-search or BBC Sport (see §2.1, Source 4)
-4. Fall back to manual entry if all else fails
+### T-12h: non-runner and declaration sweep
 
----
+Goal: identify horses present in stale raw data but absent from current declarations.
 
-### Symptom: "Environment variable not set; API auth fails"
-
-**Diagnosis:**
-```bash
-echo "Username: $RACING_API_USERNAME"
-echo "Password: $RACING_API_PASSWORD"
+```powershell
+python scripts\t60_watchdog.py --course=$course --meeting=$meeting --date=$date
 ```
 
-**Root Cause:** `.env` not loaded, or variables not exported.
+If live-runner data is missing, create or refresh `data\enrichment\live-runners-{course}-{date}.json` for non-Epsom or `data\enrichment\live-runners-{date}.json` for Epsom.
 
-**Fix:**
-1. Verify `.env` exists in repo root with `RACING_API_USERNAME` and `RACING_API_PASSWORD` set
-2. Source it: `source .env` (or set in your shell session)
-3. Re-run the script
-4. On Windows: use `.env` file in PowerShell; environment variables must be set in system or session scope
+### T-2h: baseline price snapshot
 
----
+Goal: lock the reference market.
 
-### Symptom: "Stale market-latest.json (>4 hrs old)"
-
-**Diagnosis:**
-```bash
-ls -l data/enrichment/market-latest.json
+```powershell
+python scripts\morning_odds.py --mode baseline --course=$course --meeting=$meeting --date=$date
 ```
 
-**Root Cause:** Latest mode hasn't been run for >4 hours; prices are from yesterday.
+If Racing Post rate-limits you, wait 60 seconds. If you already have enough verified runner data, retry with `--no-rp-scrape`.
 
-**Fix:**
-1. Immediately run `python scripts/morning_odds.py --mode latest --date YYYY-MM-DD`
-2. Check the file timestamp and ensure `fetched_at` in JSON is recent (within last 60min)
-3. If RP is blocked, use manual entry
+### T-60min: watchdog gate
 
----
+Goal: do not proceed with missing or inconsistent artifacts.
 
-### Symptom: "HTML header shows stale total"
-
-**Diagnosis:**
-```bash
-grep "runners" outputs/race-card-2026-06-06.html | head -5
+```powershell
+python scripts\t60_watchdog.py --course=$course --meeting=$meeting --date=$date
+$LASTEXITCODE
 ```
 
-**Root Cause:** Header was computed before latest odds refresh. Template caches the value.
+Exit handling:
 
-**Fix:**
-1. Delete the HTML: `rm outputs/race-card-*.html`
-2. Re-run rendering: `python src/racecard.py --date 2026-06-06`
-3. This forces a fresh read of `market-latest.json`
+- `0`: proceed.
+- `1`: stale artifact; review and refresh before betting.
+- `2`: stop. Missing or inconsistent artifacts must be fixed first.
 
----
+### T-1h before target races: latest prices
 
-### Symptom: "Horses appear in racecard but not in live-runners file"
+Goal: capture live moves from baseline to latest.
 
-**Diagnosis:**
-```bash
-python -c "
-import json
-with open('data/raw/epsom-2026-06-06-racecards.json') as f:
-    racecard = json.load(f)
-with open('data/enrichment/live-runners-2026-06-06.json') as f:
-    live = json.load(f)
-racecard_horses = set(h for r in racecard['races'] for h in [x['horse_name'] for x in r.get('runners', [])])
-live_horses = set(live.get('runners', []))
-print('In racecard but not live:', racecard_horses - live_horses)
-"
+```powershell
+python scripts\morning_odds.py --mode latest --course=$course --meeting=$meeting --date=$date
 ```
 
-**Root Cause:** Probable NR not yet confirmed; racecard may predate final declarations.
+### T-30min: final NR check
 
-**Fix:**
-1. Update `live-runners-YYYY-MM-DD.json` with current declarations (via RP or manual web-search)
-2. Re-run scoring to apply NR filters
-3. Confirm with Steve that these horses are indeed withdrawn
+Run the watchdog again and inspect live-runner consistency. If a selected horse is now NR or VOID, treat affected singles and multiples as void or invalid according to bookmaker rules.
 
----
+### Post-race: results capture and settlement
 
-## 7. Glossary
+Use Racing Post results first, then cross-check with Sporting Life if needed. Record settlement and P&L separately from model artifacts.
 
-**Betting Terms (for racing unfamiliar devs):**
+### End of day: archive market files
 
-- **WIN** — Bet that the horse finishes 1st. Fixed odds (e.g., 3.0 decimal = £3.00 payout per £1 staked if it wins).
-- **EW** — "Each Way." Two separate bets: (1) WIN (horse finishes 1st), (2) PLACE (horse finishes 1st, 2nd, or 3rd). Typical place odds = 1/5 of win odds.
-- **Place** — Horse finishes in the top 3 (varies by race type; Group 1 = top 3, handicaps = top 4–5).
-- **Decimal odds** — 3.0 = £3.00 return per £1 staked (includes stake). Fractional equivalent: 2/1 (two-to-one).
-- **SP** (Starting Price) — Official odds at race-start time. Used for settlement.
-- **NR** (Non-runner) — Horse withdrawn from race before start. Bets on that horse lose; multi-race bets involving the NR are void.
-- **VOID** — Bet cancelled (no payout, stake returned). Example: horse is NR or race is abandoned.
-
-**Signal Terms:**
-
-- **Drift** — Price lengthens (horse becomes less favored). Example: 5.0 → 8.0 = drift. Often indicates market uncertainty or late withdrawal.
-- **Steam** — Price shortens (horse backed heavily). Example: 5.0 → 3.0 = steam. Often indicates informed backing or system success.
-- **Baseline** — Reference price at 07:00 AM (locked in before most market movement).
-- **Latest** — Current price snapshot (compared to baseline to detect drift/steam).
-- **Market move** — Change from baseline to latest. Positive = price shortened (steam); negative = price lengthened (drift).
-
-**Data Terms:**
-
-- **Enrichment file** — JSON file in `data/enrichment/` containing horses, prices, form data, equipment changes, trainer stats. These augment the raw racecard.
-- **Model score** — 0–100 confidence rating for each horse (0 = certain loser, 100 = certain winner). Combines 15+ signals (trial form, going fit, recent form, etc.).
-- **Rank gap** — Difference between consecutive horse scores. Large gaps = model has high conviction; small gaps = model uncertain.
-- **Confidence tier** — Grouping of horses by score range. High tier = model strong opinion; low tier = model uncertain.
-- **Trifecta box** — Multi-race bet on 3 runners across 3 different races (all legs must be correct to win). Stake multiplied by number of possible combinations.
-- **Exacta** — UK term sometimes used for 2-race double; other contexts (US) = 2-horse finish order bet.
-
----
-
-## 8. Quick Reference Card
-
-**Keep this on screen during race day:**
-
-```
-═══════════════════════════════════════════════════════════════
-RACE-DAY QUICK START (Saturday Derby Day 2026-06-06)
-═══════════════════════════════════════════════════════════════
-
-PRE-RACE CHECKLIST (Start T-2h, ~07:00 BST)
-───────────────────────────────────────────
-☐ Check .env has RACING_API_USERNAME + RACING_API_PASSWORD set
-☐ Run: python scripts/morning_odds.py --mode baseline --date 2026-06-06
-☐ Inspect: data/enrichment/market-baseline.json (39KB ≈ right size)
-☐ Check: data/enrichment/live-runners-2026-06-06.json for NRs
-☐ T-60 manifest check: python scripts/t60_watchdog.py --date $(date +%F) — fail-loud on any missing/stale artifact
-
-T-1H BEFORE EACH GROUP 1 RACE
-─────────────────────────────
-☐ Run: python scripts/morning_odds.py --mode latest --date 2026-06-06
-☐ Check output for HTTP errors (406 → wait 60s, retry with --no-rp-scrape)
-☐ Inspect: outputs/race-card-2026-06-06.html for drift signals (red = drift, green = steam)
-☐ Verify NR status hasn't changed since 07:00
-
-FAILURE: RP BLOCKED (HTTP 406)
-──────────────────────────────
-1. Wait 60 seconds
-2. Retry: python scripts/morning_odds.py --mode latest --date 2026-06-06 --no-rp-scrape
-3. Still failing? → Fall back to manual entry (see RUNBOOK §4)
-
-FAILURE: ALL SOURCES DOWN
-─────────────────────────
-1. Open bookmaker app / Sky Bet / Betfair
-2. Write down decimal odds for your horses
-3. Edit data/enrichment/market-latest.json manually (see RUNBOOK §4, Step 2)
-4. Re-run: python -m src.scoring --mode latest --date 2026-06-06
-
-SANITY CHECKS BEFORE PUBLISHING
-────────────────────────────────
-✓ Baseline runner count ≈ Latest count (±10%)
-✓ All NRs from 07:00 baseline still in live-runners file
-✓ HTML header total matches JSON total (within ±1)
-✓ All horses in multi-race bets appear in their respective races
-
-AFTER EACH RACE FINISHES
-────────────────────────
-1. Results auto-fetch from Racing Post (happens in background)
-2. Manual check: Verify finishing order matches settlement sheet
-3. Update P&L log (for Steve's audit)
-
-END OF RACE DAY (~21:00 BST)
-───────────────────────────
-Archive: python scripts/morning_odds.py --mode archive --date 2026-06-06
-
-═══════════════════════════════════════════════════════════════
-COMMON COMMANDS (Copypaste-ready)
-═════════════════════════════════
-
-# Check environment is loaded
-python -c "import os; print('API ready:', bool(os.getenv('RACING_API_USERNAME')))"
-
-# Baseline capture
-python scripts/morning_odds.py --mode baseline --date 2026-06-06
-
-# T-60 manifest check; fail-loud on any missing/stale artifact
-python scripts/t60_watchdog.py --date $(date +%F)
-
-# Latest prices (with auto-60s-retry for RP 406)
-python scripts/morning_odds.py --mode latest --date 2026-06-06 --no-rp-scrape
-
-# Manual CSV override (if using pre-filled prices)
-python scripts/morning_odds.py --mode baseline --date 2026-06-06 --prices overrides.csv
-
-# Render HTML race card
-python src/racecard.py --date 2026-06-06
-
-# Archive snapshot
-python scripts/morning_odds.py --mode archive --date 2026-06-06
-
-═══════════════════════════════════════════════════════════════
-SUPPORT
-═══════════════════════════════════════════════════════════════
-Check full RUNBOOK.md for detailed troubleshooting.
-Questions? See .squad/agents/livingston/charter.md (Livingston's role).
-Historical context? See .squad/agents/livingston/history.md (Derby failures logged).
+```powershell
+python scripts\morning_odds.py --mode archive --course=$course --meeting=$meeting --date=$date
 ```
 
----
+## 6. Manual Live-Odds Fallback
 
-## Appendix: Troubleshooting Decision Tree
+Use this only when automated sources fail or the operator has a verified bookmaker terminal.
 
-```
-Does your race card look right?
-├─ YES
-│  └─ ✅ Proceed to betting
-│
-└─ NO (missing horses, wrong prices, or stale data)
-   ├─ Are all horses from your portfolio present?
-   │  ├─ NO (horse is missing)
-   │  │  └─ Is it marked as NR in live-runners file?
-   │  │     ├─ YES → Bet is void on that horse
-   │  │     └─ NO → Probable data gap; manually verify on RP
-   │  │
-   │  └─ YES (all present)
-   │     └─ Proceed to next check
-   │
-   ├─ Are the prices recent (<60min old)?
-   │  ├─ NO (>60min old)
-   │  │  └─ Run latest mode immediately
-   │  │
-   │  └─ YES (recent)
-   │     └─ Proceed to next check
-   │
-   ├─ Does the header total match JSON total?
-   │  ├─ NO (mismatch)
-   │  │  └─ Delete outputs/race-card-*.html, re-render
-   │  │
-   │  └─ YES (match)
-   │     └─ ✅ Proceed to betting
-   │
-   └─ Still broken? Check §6 Common Failure Modes for your specific error
+### Step 1: create a CSV override
+
+Example `overrides.csv`:
+
+```csv
+date,horse,decimal_price,source
+2026-06-16,Northbank Verse,4.5,manual-bookmaker
+2026-06-16,Mersey Plan,6.0,manual-bookmaker
 ```
 
----
+### Step 2: run latest mode with the CSV
 
-**Version:** v0.4 | **Last audit:** 2026-06-07 | **Contact:** Steve (project lead)
+```powershell
+python scripts\morning_odds.py --mode latest --course=$course --meeting=$meeting --date=$date --prices overrides.csv --no-rp-scrape
+```
+
+### Step 3: regenerate model artifacts
+
+```powershell
+python -m src.cli score --course=$course --meeting=$meeting --date=$date
+python -m src.cli predict --course=$course --meeting=$meeting --date=$date --bankroll 100
+python -m src.cli report --course=$course --meeting=$meeting --date=$date
+python -m src.cli card --course=$course --meeting=$meeting --date=$date
+python scripts\t60_watchdog.py --course=$course --meeting=$meeting --date=$date
+```
+
+Do not publish if horse names failed to match, prices are incomplete, or a selected horse is not live.
+
+## 7. T-60 Watchdog Requirements
+
+The watchdog validates presence, freshness, and consistency. It writes `outputs\t60-status-{date}.json`.
+
+Required artifact families:
+
+- Raw racecard
+- Live-runners enrichment
+- Sporting Life enrichment
+- Racing Post enrichment
+- Going enrichment
+- Scores JSON
+- Bets JSON
+- Report HTML
+- Racecard HTML
+- Plain-text slip
+- Environment check
+
+Bets schema requirements:
+
+- Top-level `meta` object is required for current render-header consistency.
+- `meta` should include `schema_version`, `course`, `course_slug`, `meeting`, `meeting_slug`, `date`, `card_date`, `generated_at`, `bankroll`, `total_stake`, and `total_stake_gbp`.
+- Top-level `entries` should include one row per rendered recommendation or pass, with `race_id`, `race_time`, `race_name`, `course`, `pick`, `status`, `bet_type`, `stake_guidance`, `odds_decimal`, and `rationale_short` where available.
+- `portfolio_summary.total_stake_gbp` and `meta.total_stake_gbp` must match the computed active stake.
+- `outputs\slip-{course}-{date}.txt` for non-Epsom, or `outputs\slip-{date}.txt` for Epsom, must exist and include active bet horses and stakes.
+- The racecard header must show the same GBP total as the computed bets total.
+
+If the watchdog says `missing meta block`, regenerate bets with current `python -m src.cli predict ...`. If it says `missing slip`, regenerate with the same predict command. If it says header total mismatch, regenerate the card after regenerating bets.
+
+## 8. Sanity Checks Before Publishing
+
+### 8.1 Runner counts
+
+```powershell
+$raw = "data\raw\ascot-2026-06-16-racecards.json"
+python -c "import json, sys; data=json.load(open(sys.argv[1], encoding='utf-8')); print(sum(len(r.get('runners', [])) for r in data.get('races', [])))" $raw
+```
+
+For reusable checks, prefer a short script over shell pipes. Do not use POSIX-only shell snippets on Windows; use PowerShell commands or Python snippets like the examples above.
+
+### 8.2 Raw runner names support both keys
+
+Raw fixtures may use either `horse` or `horse_name`. Use this PowerShell-safe Python snippet:
+
+```powershell
+python -c "import json; from pathlib import Path; p=Path('data/raw') / 'ascot-2026-06-16-racecards.json'; card=json.loads(p.read_text()); names=[runner.get('horse') or runner.get('horse_name') for race in card.get('races', []) for runner in race.get('runners', [])]; print([n for n in names if n][:10])"
+```
+
+### 8.3 Bets total
+
+```powershell
+python -c "import json; from pathlib import Path; p=Path('outputs') / 'bets-ascot-2026-06-16.json'; bets=json.loads(p.read_text()); print('meta GBP', bets.get('meta', {}).get('total_stake_gbp')); print('summary GBP', bets.get('portfolio_summary', {}).get('total_stake_gbp'))"
+```
+
+### 8.4 Open generated HTML
+
+```powershell
+Start-Process .\outputs\report-ascot-2026-06-16.html
+Start-Process .\outputs\racecard-ascot-2026-06-16.html
+```
+
+## 9. Troubleshooting
+
+### HTTP 406 from Racing Post
+
+Cause: repeated Racing Post calls too close together.
+
+Fix:
+
+```powershell
+Start-Sleep -Seconds 60
+python scripts\morning_odds.py --mode latest --course=$course --meeting=$meeting --date=$date --no-rp-scrape
+```
+
+### Sporting Life response is around 373 bytes
+
+Cause: SPA shell or blocked content, not usable runner data.
+
+Fix: verify course/date, retry later, use Racing Post if available, or use the manual CSV fallback.
+
+### Credential gate fails
+
+Diagnosis:
+
+```powershell
+python scripts\check_env.py
+```
+
+Fix: set `SPORTINGLIFE_USER` and `SPORTINGLIFE_PASS` in the operator environment, then rerun live mode. `--dry-run` is allowed to run without those credentials.
+
+### Stale market file
+
+Diagnosis:
+
+```powershell
+Get-Item .\data\enrichment\market-latest.json | Select-Object FullName, LastWriteTime, Length
+```
+
+Fix:
+
+```powershell
+python scripts\morning_odds.py --mode latest --course=$course --meeting=$meeting --date=$date
+```
+
+For non-Epsom, the files are course-prefixed, for example `market-latest-ascot.json`.
+
+### Racecard shows wrong total or stale header
+
+Fix:
+
+```powershell
+python -m src.cli predict --course=$course --meeting=$meeting --date=$date --bankroll 100
+python -m src.cli card --course=$course --meeting=$meeting --date=$date
+python scripts\t60_watchdog.py --course=$course --meeting=$meeting --date=$date
+```
+
+### Horse appears in raw racecard but not live-runners
+
+Use a snippet that supports both raw keys:
+
+```powershell
+python -c "import json; raw=json.load(open('data/raw/ascot-2026-06-16-racecards.json', encoding='utf-8')); live=json.load(open('data/enrichment/live-runners-ascot-2026-06-16.json', encoding='utf-8')); raw_names={x.get('horse') or x.get('horse_name') for r in raw.get('races', []) for x in r.get('runners', [])}; live_names=set(live.get('runners', [])); print(sorted(n for n in raw_names - live_names if n))"
+```
+
+If a bet horse is missing from live-runners, verify manually before placing any related bet.
+
+## 10. Glossary
+
+- WIN: bet that the horse finishes first.
+- EW: each-way bet; separate win and place legs.
+- Place: horse finishes in the paid places for that race.
+- Decimal odds: 3.0 means GBP 3.00 return per GBP 1.00 staked, including stake.
+- SP: official starting price.
+- NR: non-runner.
+- VOID: bet cancelled; stake returned under bookmaker rules.
+- Baseline: reference price snapshot, usually morning.
+- Latest: current price snapshot.
+- Drift: price lengthens.
+- Steam: price shortens.
+- Enrichment file: JSON data that augments the raw racecard.
+- Model score: 0 to 100 confidence rating.
+- Slip: plain-text bookmaker-ready bet list emitted by `predict`.

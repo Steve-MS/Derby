@@ -524,7 +524,6 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> int:
     args = parse_args()
-    _gate_env()
 
     if args.mode == "archive":
         if not args.date:
@@ -556,6 +555,8 @@ def main() -> int:
     if args.dry_run:
         print("\n[dry-run] Output NOT written.")
         return 0
+
+    _gate_env()
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     with out_path.open("w", encoding="utf-8") as fh:
