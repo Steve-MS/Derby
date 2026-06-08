@@ -686,3 +686,18 @@ python scripts/check_env.py   # should exit 0
 4. Pre-sprint Derby Day orphan files (4 deleted inbox entries + `outputs/racecard-2026-06-06.html` hand-edit + race-day data drift) remain unstaged — separate "Derby Day close-out" commit review needed
 
 **Report path:** archived from inbox to `.squad/decisions/inbox/` (merged into this entry; raw report deleted with other inbox files per normal flow).
+
+### 2026-06-08: v0.4 wave-2 T-60 watchdog shipped (River-1 / Linus-15 / Saul-5)
+**Verdict:** SHIPPED in commit f684ed9 after Saul-5 re-gated GO.
+**Summary:** River-1 built the pre-pipeline `scripts/t60_watchdog.py`, tests, `refresh_friday.py` wiring, RUNBOOK coverage, and reusable artifact-watchdog skill. Saul-4 gave a CONDITIONAL gate on four material issues: watchdog ordering, independent bets-total reconciliation, race-scoped NR/VOID handling, and Quick Reference docs. Linus-15 applied the non-River fix pass: watchdog now runs first, bets total is independently computed, render-header consistency is separate, NR/VOID checks are race-scoped, and RUNBOOK fallback docs include the direct T-60 command. Saul-5 verified 11/11 targeted tests and 459/459 full-suite pass with `tests/test_racecard_wave33.py` ignored, plus idempotency and bad-env/missing-artifact behavior. The bundle writes `outputs/t60-status-{date}.json` and exits 0 OK / 1 STALE / 2 MISSING or INCONSISTENT.
+
+### 2026-06-08: Orphan cleanup close-out recorded (Scribe-21 / Danny-3)
+**Verdict:** COMPLETE - Scribe-21 pushed four atomic cleanup commits to `origin/main` after Danny-3 classified the orphan set.
+**Commits:** `7c1c7a0` race-day artifacts; `83092f4` report/market compatibility code and tests; `2a33a54` process assets and inbox cleanup; `2845e84` local-only gitignore plus one-shot script archive.
+**Notes:** Scribe-21 left River T-60 work, Danny-4 scoping, Saul notes, and `tests/test_regression_wave3.py` untouched for the next owners. `decisions.md` was 45,744 bytes after that pass, below the 51KB archive gate.
+
+### 2026-06-08: v0.4 wave-2 #6 Epsom/2026 decouple scoping (Danny-4)
+**Verdict:** JSON config approach, 14-26h MVP, Ascot fit YES with neutral priors.
+**6 chunks:** 1+3 Linus, 2+5 Livingston, 4 Rusty/Danny/Saul, 6 Saul/Linus/Danny.
+**Full scoping at:** `.squad/decisions/inbox/danny-4-decouple-scoping.md` (1.3MB inventory - leave in inbox, do not archive yet).
+**Steve approved defaults:** JSON, neutral Ascot priors, flat data layout, --course/--meeting/--date CLI, refresh_friday.py stays as Epsom wrapper one release, don't churn historical outputs.

@@ -91,3 +91,21 @@
 - Approved by Saul on review (None guards present, design locked by Danny)
 
 **Status:** v0.6 shipped to main, 16-signal model live for race prediction.
+
+## Learnings
+### 2026-06-08 — Orphan cleanup atomic-commit pattern
+
+- Danny-3's classification table mapped cleanly to atomic commit boundaries: race-day artifacts first, code/tests second, process assets third, gitignore plus one-shot script archive fourth.
+- Pre-flight status can legitimately exceed Danny's orphan count when parallel River/Saul work lands; record the delta in the Scribe inbox stub and stage only the approved paths.
+- For untracked one-shot scripts, explicitly stage the source paths before `git mv` so the archive commit records only `scripts/archive/` additions without broad-staging unrelated work.
+
+
+### 2026-06-08 — Large-artifact summary pattern
+
+- When a decision artifact is too large to merge into `decisions.md`, record a short summary entry in the ledger and keep the full source document in inbox with an explicit path reference.
+- The Danny-4 decouple scoping inventory used this pattern: decisions.md records verdict, chunking, defaults, and the retained inbox path; the 1.3MB source remains out of the ledger and unarchived because it is still referenced.
+
+### 2026-06-08 — T-60 watchdog commit trail
+
+- Commit 1: `f684ed9` shipped the T-60 watchdog code/tests/docs/skill bundle after 11 targeted and 459 full-suite tests passed.
+- Commit 2: squad state recorded the T-60 ship, Scribe-21 orphan cleanup SHAs, and Danny-4 decouple scoping summary; inbox stubs were removed locally after merge.

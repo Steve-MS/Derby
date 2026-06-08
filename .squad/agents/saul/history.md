@@ -10,7 +10,11 @@
 - Boundary cases to always test: missing data → neutral 50, scratched horses, single-runner edge case.
 
 ## Learnings
-
+### 2026-06-08 — T-60 watchdog re-gate after Linus-15
+- Re-gate pattern: verify the exact rejected seams first, then run targeted tests, full suite, and idempotency; this caught both source correctness and operator behavior without re-litigating the whole artifact.
+- Linus-15 did well by adding tests for every previous blind spot: pre-env ordering, independent stake arithmetic, render-header mismatch as a separate row, missing meta fallback, and race-scoped NR cases.
+- Manual bad-env plus missing-artifact verification is valuable even when unit-covered: it proves the operator sees both failure classes in a single T-60 run.
+- Lint/type-check evidence must distinguish "failed" from "not configured"; this repo currently exposes pytest only in pyproject, so record that explicitly instead of implying a skipped pass.
 ### 2026-06-05 — Ladies Day P/L Scoring (Stage 2a retro)
 
 - **EW stake convention:** `bets-2026-06-05.json` records Wild Terrain as `stake_gbp: 2.44` (= TOTAL EW, £1.22 per side). Outsiders use `stake_gbp: 0.25` per side (£0.50 total). Inconsistent naming but confirmed by HTML total £11.61 arithmetic.
@@ -22,6 +26,12 @@
 - **Mister Winston PASS:** Won at ~7/1 on 13% edge (below 15% gate). Gate question flagged for Danny — was 15% correct cutoff for 7/1 band?
 - **Near-miss definition applied:** "4th or better at SP ≥ 10.0 decimal." ZERO picks qualify from confirmed results. Arctic Thunder (6th, SP 12.0) and Assaranca (5th, SP 34.0) fail on finish position only.
 
+### 2026-06-08 — T-60 watchdog gate patterns
+
+- **First-step means first executable side effect:** if a wrapper has module-level gates before `main()`, a later watchdog call is not truly first and may fail to write the manifest evidence coordinators need.
+- **Watchdogs must be independent of renderers:** stake-total reconciliation should compute from betting JSON directly, then compare rendered header separately; importing the renderer as source of truth can inherit the bug being guarded against.
+- **Live-runner checks need race scope:** global active/inactive horse-name sets can hide cross-entered runner problems. Future NR/VOID tests should include same-name or cross-entry fixtures.
+- **Test-count drift is review evidence:** targeted watchdog tests passed 5/5, but full-suite count after ignoring the known failure was 453, not the requested 454; always record collected/pass counts exactly.
 
 ## Review Log
 

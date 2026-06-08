@@ -74,7 +74,7 @@
 
 ## Learnings
 
-(none yet — River joined 2026-06-03)
+- **2026-06-08 — T-60 artifact dependency graph:** Race-day readiness is a chain, not a file list: course-specific raw racecards are discovered from `data/raw/*-{date}-racecards.json`; live-runner, Sporting Life, Racing Post, and going enrichment must be fresh before `outputs/scores-{date}.json`; reports depend on scores; racecards depend on bets and Linus's JSON-driven header total; slips must mirror active WIN/EW/trifecta entries. `data/enrichment/live-runners-{date}.json` is the runner-identity authority, and `data/enrichment/sportinglife-{date}.json` below 1KB is treated as a loud SPA-shell failure.
 
 ## Refresh #1 — Going Forecast (2026-06-03)
 

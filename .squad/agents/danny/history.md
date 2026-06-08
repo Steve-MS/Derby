@@ -14,6 +14,10 @@
 
 ## Learnings
 
+- 2026-06-08 (Danny-4 decouple scoping): Inventory found 5,236 target-venue/date/day-label hits. Most are historical DATA/OUTPUT/DOC, but the real coupling debt is concentrated in runtime path construction, report labels, scraper venue IDs, and scoring defaults. Ascot-safe reuse requires neutral unknown-track defaults plus config-driven venue/meeting/date identity before any new venue calibration.
+
+- 2026-06-08 (Danny-3 orphan classification): Race-day drift is accumulating in three buckets: canonical data/output that deserves a close-out commit, local operational artifacts that need gitignore coverage, and hardcoded one-shot scripts/tests that need owner review before becoming product. Systemic fix: add a post-race close-out checklist that separates data commits, process-skill commits, gitignore candidates, and one-shot-script triage.
+
 - 2026-06-03 (session 1): Designed trial_form signal (weight 0.08, gated 10f+, Tier 1/2/3 taxonomy, best-of-multiple-runs, neutral 50 on missing data); proposed v0.4 weights scaling all v0.3 by 0.92; spec written to `.squad/decisions/inbox/danny-trial-form-design.md` for Rusty to implement.
 - 2026-06-03 (session 2): Designed 3 new signals for v0.5 (Derby Saturday T−2 days). Spec at `.squad/decisions/inbox/danny-3-signals-design.md`.
   - `market_move` (0.0700): implied-probability-shift scoring (Δip = ip_latest − ip_baseline); piecewise linear 10–90; Saturday 09:00 baseline vs T−30 min latest; both prices required else neutral 50; Livingston to extend Friday scraper. 8 open questions for Steve (timing, source, small-field treatment).

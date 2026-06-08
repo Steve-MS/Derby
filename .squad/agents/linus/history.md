@@ -87,3 +87,9 @@ Wave-1 publish-readiness sprint shipped GREEN. Saul-3 gate review verdict 🟢 G
 ```
 
 **`render_replacement_row()` is a HARD RULE now — next race day starts with this work.** Four manual NR swap edits across two files in one afternoon (Cameo, Asmen Warrior, Arctic Thunder in racecard; Asmen Warrior + Arctic Thunder in report) is the definitive threshold. The helper ships before Royal Ascot (16–20 Jun 2026). It must cover: outsider-row swap, main-pick swap, separate stale-price vs runner-validity amber divs, always-emit rationale row, HTML entity escaping. No more hand-edits after this.
+
+### T-60 watchdog independence and race-scoped NR checks (2026-06-08)
+
+**Independence pattern:** A watchdog must not reuse the renderer as the authoritative calculation for the value it is meant to audit. For bets totals, the watchdog now computes active WIN/EW/trifecta stakes locally, compares declarations against that independent sum, and treats `render_header()` as a separate header-consistency row.
+
+**Race-scoping bug pattern:** Horse names are not globally unique enough for NR/VOID checks. The same horse name can be inactive in one race and active in another, so live-runner status must be keyed by race scope (time/course/name) and compared only against the bet's own race.
