@@ -37,7 +37,7 @@ def test_load_ascot_config_successfully() -> None:
 
     assert cfg["course_slug"] == "ascot"
     assert cfg["display_name"] == "Ascot"
-    assert cfg["racingpost"]["course_id"] is None
+    assert cfg["racingpost"]["course_id"] == 1
     assert list(cfg["meetings"]["royal-ascot-2026"]["days"]) == [
         "2026-06-16",
         "2026-06-17",

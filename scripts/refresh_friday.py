@@ -72,6 +72,15 @@ def _meeting_dates(course_slug: str, meeting_slug: str) -> list[str]:
     return sorted(days)
 
 
+def resolve_refresh_dates(course_slug: str, meeting_slug: str, date_arg: str | None) -> list[str]:
+    """Resolve dates for refresh, keeping the old no-flag Epsom two-day wrapper."""
+    if date_arg:
+        return [date_arg]
+    if course_slug == default_course() and meeting_slug == default_meeting():
+        return DATES
+    return _meeting_dates(course_slug, meeting_slug)
+
+
 def run(cmd: list[str]) -> None:
     """Run a subprocess, streaming output, abort on non-zero exit."""
     print(f"\n$ {' '.join(cmd)}")
@@ -164,7 +173,7 @@ def main() -> None:
     except CourseConfigError as exc:
         sys.exit(f"Course config error: {exc}")
 
-    dates = [args.date] if args.date else DATES if args.course == default_course() and args.meeting == default_meeting() else _meeting_dates(args.course, args.meeting)
+    dates = resolve_refresh_dates(args.course, args.meeting, args.date)
 
     print(f"=== refresh_friday.py @ {datetime.now().isoformat(timespec='seconds')} ===")
     print(f"Course={args.course} meeting={args.meeting} dates={', '.join(dates)}")
@@ -172,9 +181,11 @@ def main() -> None:
     print("\n[T-60] Running artifact watchdog")
     run([PY, str(PROJECT_ROOT / "scripts" / "t60_watchdog.py"), "--course", args.course, "--meeting", args.meeting, "--date", dates[0]])
 
-    if not args.skip_enrich:
-        print("\n[1/4] Running enrich_odds.py (hardcoded ante-post + synthetic fallback)")
+    if not args.skip_enrich and args.course == default_course() and args.meeting == default_meeting():
+        print("\n[1/4] Running enrich_odds.py (Epsom compatibility ante-post + synthetic fallback)")
         run([PY, str(PROJECT_ROOT / "enrich_odds.py")])
+    elif not args.skip_enrich:
+        print("\n[1/4] Skipping enrich_odds.py for non-Epsom config-driven refresh")
     else:
         print("\n[1/4] Skipping enrich_odds.py (--skip-enrich)")
 
@@ -188,11 +199,11 @@ def main() -> None:
     else:
         print("\n[2/4] No --prices CSV supplied; skipping manual overrides")
 
-    print("\n[3/4] Re-scoring both meetings")
+    print("\n[3/4] Re-scoring configured meeting dates")
     for date in dates:
         run([PY, "-m", "src.cli", "score", "--course", args.course, "--meeting", args.meeting, "--date", date])
 
-    print("\n[4/4] Re-predicting + reporting both meetings")
+    print("\n[4/4] Re-predicting + reporting configured meeting dates")
     for date in dates:
         run([PY, "-m", "src.cli", "predict", "--course", args.course, "--meeting", args.meeting, "--date", date, "--bankroll", str(BANKROLL)])
         run([PY, "-m", "src.cli", "report", "--course", args.course, "--meeting", args.meeting, "--date", date])

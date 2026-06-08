@@ -130,6 +130,14 @@ OUTPUT_PATHS = {
     "latest":   ENRICHMENT_DIR / "market-latest.json",
 }
 
+
+def market_output_path(snapshot_type: str, course_slug: str) -> Path:
+    """Return market snapshot path, preserving legacy Epsom filenames."""
+    if course_slug == default_course():
+        return OUTPUT_PATHS[snapshot_type]
+    return ENRICHMENT_DIR / f"market-{snapshot_type}-{course_slug}.json"
+
+
 RP_RACECARD_URL = "https://www.racingpost.com/racecards/{course_id}/{course_path}/{date}"
 
 # ---------------------------------------------------------------------------
@@ -400,7 +408,7 @@ def build_snapshot(
     return {
         "_meta": {
             "doc": (
-                "Market snapshot for Epsom Derby Day 2026-06-05/06. "
+                f"Market snapshot for {course_slug} {meeting_slug}. "
                 "Used by market_move signal: compare baseline vs latest to "
                 "detect price moves indicating shrewd-money confidence."
             ),
@@ -431,8 +439,8 @@ def archive_market_files(date: str, course_slug: str = default_course(), dry_run
     
     Returns 0 on success, 1 on failure.
     """
-    baseline_src = OUTPUT_PATHS["baseline"]
-    latest_src = OUTPUT_PATHS["latest"]
+    baseline_src = market_output_path("baseline", course_slug)
+    latest_src = market_output_path("latest", course_slug)
     
     if not baseline_src.exists():
         print(f"  [error] baseline file not found: {baseline_src}", file=sys.stderr)
@@ -526,7 +534,7 @@ def main() -> int:
         return archive_market_files(args.date, course_slug=args.course, dry_run=args.dry_run)
 
     dates = [args.date]
-    out_path = OUTPUT_PATHS[args.mode]
+    out_path = market_output_path(args.mode, args.course)
 
     print(f"\n=== morning_odds  mode={args.mode}  course={args.course}  meeting={args.meeting}  dates={dates} ===")
 
