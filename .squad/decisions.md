@@ -743,3 +743,22 @@ python scripts/check_env.py   # should exit 0
 **Evidence:** Saul-8 verified templates have no hardcoded Epsom/Derby tokens, renderers delegate paths through config, and CLI changes are pass-through only.
 **Compatibility:** HEAD-baseline synthetic Epsom render was byte-equivalent; historical output diffs were explained as race-day hand-edits, not regressions.
 **Scope:** CSS, trifecta box, portfolio rendering, and Chunk 4 scoring code remained untouched.
+### 2026-06-08: v0.4 #6 Chunk 4 course-aware scoring priors delivered (Rusty)
+**Verdict:** COMPLETE - ready for state merge; source summary at `.squad/decisions/inbox/rusty-chunk4-priors.md`.
+**Summary:** Rusty extracted 9 hardcoded Epsom scoring priors from pace, C/D form, trial form, and scoring into course config.
+**Compatibility:** Epsom 2026-06-06 regression stayed byte-equivalent across 8 races / 149 runners; Derby top 3 unchanged.
+**Ascot:** Ascot scoring priors are deliberately neutral for MVP: no draw table, no pace fit table, neutral CD badges, disabled trial form, and empty equipment defaults.
+**Validation claimed:** targeted Chunk 4 tests passed and full suite was 484/484 with wave33 ignored.
+
+### 2026-06-08: v0.4 #6 Chunk 4 calibration audit GREEN (Danny-5)
+**Verdict:** GREEN with non-blocking follow-ups; source audit at `.squad/decisions/inbox/danny-5-chunk4-audit.md`.
+**Evidence:** Danny-5 spot-checked extracted draw, pace, CD, and trial-form values against git history and confirmed Epsom regression faithfulness.
+**Ascot:** Audit confirmed Ascot has neutral priors and no Epsom scoring leakage through score-runner integration.
+**Follow-ups:** FU-2 edge-case tests, FU-3 `trial_form.load_trial_form()` default-course coupling, and FU-4 unused `equipment_defaults` were created in followups.md.
+**Disposition:** All three follow-ups are non-blocking for v0.4 MVP and should be handled before non-neutral non-Epsom calibration.
+
+### 2026-06-08: v0.4 #6 Chunk 4 final gate GO (Saul-9)
+**Verdict:** 🟢 GO; source gate at `.squad/decisions/inbox/saul-9-chunk4-gate.md`.
+**Evidence:** Saul-9 independently verified `tests/test_chunk4_priors.py` 4/4 and full suite 484/484 with wave33 ignored.
+**Regression:** Independent canonical recompute confirmed Epsom byte-equivalence: 8 races, 149 runners, 149 score fields, Derby top 3 unchanged.
+**Scope:** Gate confirmed allowed Chunk 4 files only, Ascot neutrality, centralized `scoring_priors_for()`, and no forbidden output/template/report churn.

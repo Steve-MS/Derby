@@ -123,3 +123,9 @@
 - AMBER ship-with-followup is acceptable when the reviewer identifies a pre-existing non-blocking operator concern and the state commit creates an explicit FU entry.
 - `followups.md` is the durable tracker for deferred work; decisions.md should mention the FU id and stay summary-only with source inbox paths.
 - Inbox merge cleanup can delete only the merged stubs while preserving large referenced planning docs such as Danny-4's canonical scoping inventory.
+### 2026-06-08 — Scribe-25 Chunk 4 + v0.4 MVP completion
+
+- Code/state split stayed clean: Chunk 4 source/config/tests were committed first from Rusty's explicit file list, with squad histories and decision summaries isolated to the second commit.
+- Inbox stubs for Rusty, Danny-5, and Saul-9 were summary-merged and removed from the working tree; Danny-4's canonical scoping inbox remains as the retained reference.
+- v0.4 #6 MVP is complete: chunks 1+2+3+4 landed, Epsom remains byte-equivalent, and Ascot can run with neutral course priors.
+- Follow-up tracker now carries FU-2/FU-3/FU-4 so non-blocking Chunk 4 caveats are durable before any non-neutral non-Epsom calibration.

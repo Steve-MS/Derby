@@ -158,3 +158,15 @@ See .squad/orchestration-log/2026-06-07T00-36-45Z-rusty.md for full signal frame
 **Rule for all future market-parsing modules:** Prefer fractional string parsing when available. Fall back to decimal_odds. Do not assume decimal_odds is authoritative when fractional string is present.
 
 **Why this matters operationally:** The whole point of the drift gate is to penalise significant market-against moves. Lord Melbourne drifting to 19/1 from a 12/1 baseline is a 53.8% move — exactly the profile the gate was designed to flag. An off-by-half-point baseline from a synthetic price should not silently drop the signal below the DRIFT_CRITICAL threshold.
+
+## 2026-06-08 — Chunk 4 Course Priors Extraction
+
+**Deliverables:** extracted scoring priors into `config/courses/epsom.json`, added neutral Ascot priors, and refactored pace/draw, C/D form, trial form, and scoring integration to read course config.
+
+**Regression:** pre-edit Epsom 2026-06-06 baseline saved at `tests/fixtures/regression/chunk4-epsom-2026-06-06-baseline.json`; post-edit byte compare returned `REGRESSION_DIFF=EMPTY` across 8 races / 149 runners.
+
+**Tests:** `python -m pytest -x --ignore=tests/test_racecard_wave33.py` -> 484 passed.
+
+**Learning:** keep old two-arg signal monkeypatch compatibility when adding course/prior keyword parameters; `score_runner` now uses a small compatibility shim for C/D and trial signals.
+
+**Learning:** known-course missing `scoring_priors` should be neutral, not Epsom fallback. Unknown course remains loud via `CourseConfigError`.

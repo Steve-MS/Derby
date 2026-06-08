@@ -102,3 +102,9 @@ Wave-1 publish-readiness sprint shipped GREEN. All four work items GREEN GO. Ful
 - In stacked dirty trees, separate verdict from staging hygiene: Chunk 3 was green, but Scribe must keep Chunk 1/2 files out of the Chunk 3 commit.
 - Historical race-day HTML may be hand-edited; prefer restore-safe synthetic byte-equivalence evidence for regression gating, and cite git log when archive diffs are expected.
 - Trifecta rendering is currently conditional on `bets_json_path`; gate checks should distinguish preserved conditional support from the manually injected historical block.
+
+### 2026-06-08 — Chunk 4 scoring-priors final gate
+- For scoring-engine gates, an in-memory canonical JSON recompute is safer than trusting CLI artifacts because CLI score outputs include volatile fields; include every stable baseline meta key before calling byte-equivalence.
+- Config extraction reviews need two distinct checks: value faithfulness against `HEAD` for legacy priors, and neutrality smoke for new courses so old Epsom edge cannot leak by default.
+- If compatibility commands write outputs during review, preserve and restore bytes in-memory, then check `git status --short outputs` to keep reviewer evidence from polluting the worktree.
+- Non-blocking caveats should be tied to production-path reachability: direct-helper empty-object semantics can wait when the production `score_runner()` path supplies merged priors.

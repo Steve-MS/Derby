@@ -117,3 +117,5 @@ Wave-1 publish-readiness sprint shipped GREEN. All four work items GREEN GO. Ful
 - **Livingston-5**: RUNBOOK.md (565 lines) — two-source scrape pattern + manual fallback codified.
 - **Saul-2** crashed mid-run 2026-06-07 ~19:11 BST (CAPI error after 1h41m, no output written). **Saul-3** re-attempt succeeded 2026-06-08 08:40 with crash-resilience protocol (incremental note-writing).
 - Next-sprint open items: fix test_racecard_wave33 fixture (Saul); update morning_odds.py RACECARD_FILES for Royal Ascot 2026-06-16 (Danny); sanitise market_drift.py docstring of Derby Day examples (low-priority backlog); pre-sprint Derby Day orphan files need separate close-out commit (Coordinator).
+
+- 2026-06-08 (Danny-5 Chunk 4 audit): Rusty's course-prior extraction is GREEN. Epsom draw/pace/CD/trial values match git-history hardcoded priors and the Epsom 2026-06-06 regression payload is exact (8 races, 149 runners). Ascot is correctly neutral by config and score-runner integration. Follow-up before any non-neutral non-Epsom calibration: add edge-case tests for partial/invalid `scoring_priors` and revisit `trial_form.load_trial_form()` default-course normalization.
