@@ -701,3 +701,21 @@ python scripts/check_env.py   # should exit 0
 **6 chunks:** 1+3 Linus, 2+5 Livingston, 4 Rusty/Danny/Saul, 6 Saul/Linus/Danny.
 **Full scoping at:** `.squad/decisions/inbox/danny-4-decouple-scoping.md` (1.3MB inventory - leave in inbox, do not archive yet).
 **Steve approved defaults:** JSON, neutral Ascot priors, flat data layout, --course/--meeting/--date CLI, refresh_friday.py stays as Epsom wrapper one release, don't churn historical outputs.
+
+### 2026-06-08: v0.4 #6 Chunk 1 config loader delivered (Linus-16)
+**Verdict:** COMPLETE - ready for gate; source summary at `.squad/decisions/inbox/linus-16-chunk1-config.md`.
+**Summary:** Linus-16 added JSON course configs for Epsom and Ascot, `src/course_config.py`, and 11 config-loader tests.
+**CLI impact:** `refresh_friday.py`, `t60_watchdog.py`, `src/cli.py`, and `morning_odds.py` now accept `--course`, `--meeting`, and `--date` while preserving Epsom defaults.
+**Compatibility:** Epsom keeps legacy output paths; non-Epsom courses use course-prefixed paths to avoid collisions.
+**Validation claimed:** targeted config/watchdog tests 22/22 and full suite 470/470 with wave33 ignored.
+
+### 2026-06-08: v0.4 #6 Chunk 1 gate GO (Saul-6)
+**Verdict:** 🟢 GO - standalone config/path/CLI-default slice approved; source summary at `.squad/decisions/inbox/saul-6-chunk1-gate.md`.
+**Evidence:** Saul-6 verified `tests/test_course_config.py` 11/11 and full suite 470/470 with `tests/test_racecard_wave33.py` ignored.
+**Scope:** Gate confirmed required config shape, Ascot five-day calendar with neutral priors, fail-loud resolver behavior, and CLI help/default wiring.
+**Discipline:** No Chunk 3/4 scoring or presentation files changed; Scribe must stage only the reviewed eight code files.
+**Compatibility:** T-60 missing-artifact behavior and old-style `src.cli fetch --date 2026-06-06` remained intact.
+
+### 2026-06-08: Danny-4 remains canonical v0.4 #6 6-chunk plan
+**Decision:** Keep `.squad/decisions/inbox/danny-4-decouple-scoping.md` in inbox as the canonical 1.3MB scoping inventory.
+**Reason:** decisions.md carries only the summary; the full plan remains referenced for future chunks and must not be deleted in this cleanup.

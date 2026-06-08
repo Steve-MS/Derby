@@ -93,3 +93,11 @@ Wave-1 publish-readiness sprint shipped GREEN. Saul-3 gate review verdict 🟢 G
 **Independence pattern:** A watchdog must not reuse the renderer as the authoritative calculation for the value it is meant to audit. For bets totals, the watchdog now computes active WIN/EW/trifecta stakes locally, compares declarations against that independent sum, and treats `render_header()` as a separate header-consistency row.
 
 **Race-scoping bug pattern:** Horse names are not globally unique enough for NR/VOID checks. The same horse name can be inactive in one race and active in another, so live-runner status must be keyed by race scope (time/course/name) and compared only against the bet's own race.
+
+### Config-loader and Epsom compatibility strategy (2026-06-08)
+
+**Config-loader pattern:** `src/course_config.py` is the Chunk 1 source for course identity. It fail-loud validates required JSON fields, meeting presence, and day metadata; unknown meeting/date raises `CourseConfigError` rather than returning a fallback. Tests monkeypatch `CONFIG_DIR` for bad-config cases instead of writing throwaway files into the real config tree.
+
+**Legacy path strategy:** `path_for(course, date, kind)` keeps Epsom on historical artifact names (`outputs/racecard-{date}.html`, `outputs/bets-{date}.json`, etc.) while non-Epsom courses get course-prefixed names (`outputs/racecard-ascot-{date}.html`). Raw racecards stay flat for all courses: `data/raw/{course}-{date}-racecards.json`. This lets Ascot dry runs avoid Epsom output collisions without churning Derby artifacts.
+
+**CLI defaulting sharp edge:** `--course` and `--meeting` default to `epsom` / `derby-2026`; `src.cli` and `t60_watchdog.py` default `--date` to today. `refresh_friday.py` remains the Epsom wrapper for one release, so no-date operation still uses the Derby meeting day list unless a non-default course/meeting is passed. Do not call `resolve_day()` in watchdog/default smoke paths because today can be outside the configured Derby days after the meeting.

@@ -10,6 +10,11 @@
 - Boundary cases to always test: missing data → neutral 50, scratched horses, single-runner edge case.
 
 ## Learnings
+### 2026-06-08 — Chunk 1 config gate
+- Course/date decoupling gate should separately validate the pure resolver and the operator entry points: here `resolve_day()` fails loud on unknown configured dates, while legacy wrappers may intentionally keep older date defaults for backward compatibility.
+- For shared dirty trees, record both `git diff --name-only` and untracked files; a GO can still require Scribe to stage only the reviewed chunk and leave unrelated inbox/test artifacts out.
+- When a watchdog command writes a manifest during review, clean the generated output afterward so scope discipline evidence is not polluted by reviewer-created files.
+
 ### 2026-06-08 — T-60 watchdog re-gate after Linus-15
 - Re-gate pattern: verify the exact rejected seams first, then run targeted tests, full suite, and idempotency; this caught both source correctness and operator behavior without re-litigating the whole artifact.
 - Linus-15 did well by adding tests for every previous blind spot: pre-env ordering, independent stake arithmetic, render-header mismatch as a separate row, missing meta fallback, and race-scoped NR cases.

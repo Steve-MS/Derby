@@ -109,3 +109,10 @@
 
 - Commit 1: `f684ed9` shipped the T-60 watchdog code/tests/docs/skill bundle after 11 targeted and 459 full-suite tests passed.
 - Commit 2: squad state recorded the T-60 ship, Scribe-21 orphan cleanup SHAs, and Danny-4 decouple scoping summary; inbox stubs were removed locally after merge.
+
+### 2026-06-08 — Scribe-23 Chunk 1 two-commit pattern
+
+- Stub-first still works best as an uncommitted coordination artifact: create `.squad/decisions/inbox/scribe-23-chunk1-commit.md` before staging, then overwrite it at the end with final SHAs for the next coordinator pass.
+- For code/state split commits, verify staged names with `git diff --cached --name-only` against an explicit allow-list before every commit; this kept `tests/test_regression_wave3.py`, outputs, and Danny-4's retained scoping doc out of the code commit.
+- SUMMARY-ONLY merge remains the right pattern for inbox reports: append 4-6 line summaries to `decisions.md`, delete only merged stubs, and keep large canonical docs referenced in place.
+- PowerShell commit messages should be piped from single-quoted here-strings with UTF-8 output configured; avoid special currency/comparison symbols in messages and prefer ASCII `>=` / `GBP` when needed.
