@@ -144,3 +144,10 @@
 - Summary-only merges scale: decisions.md records verdicts, tests, lessons, and retained inbox references without pasting full gate reports.
 - Closed follow-ups should be marked in `followups.md` with status lines, not deleted, so later agents can audit why work disappeared from the open queue.
 - Secret scan remained mandatory before each commit, including state-only commits, because `.squad/` files are durable audit artifacts.
+
+### 2026-06-08 - Scribe-28 v0.4.0 release ceremony
+
+- Release batches can still need a fourth process commit when the crash-resilience stub and Scribe learnings must be persistent but should stay separate from producer/reviewer state.
+- Canonical large inbox references should be kept as files, not pasted into decisions.md; if they appear untracked during ship, add them unchanged rather than deleting them with merged stubs.
+- Before staging docs or state, assert the cached path list against generated-output deny patterns; this kept Ascot data/output artifacts, the Ascot fixture scratch dir, and the held wave3 regression test out of v0.4.0.
+- The single-Saul final gate worked well for publish ceremony: producer docs plus Coordinator metadata were validated together against a known-good baseline before Scribe cut commits, tag, and release.
