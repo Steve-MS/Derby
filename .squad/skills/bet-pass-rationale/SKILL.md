@@ -113,3 +113,28 @@ Use surgical dit replacements; do not regenerate the full report.
 src/report.py already has the et["rationale"] string from uild_bets().
 When the jinja template is updated to expose it, these <p> blocks can be
 generated automatically and this surgical injection step disappears.
+
+
+---
+
+## 1-pager variant (table-based layout)
+
+The 1-pager (`outputs/racecard-YYYY-MM-DD.html`) is a `<table class="slip">` layout,
+not the card-div layout of the long report. Pass rationale goes in a `row-rationale` row:
+
+```html
+<tr class="row-rationale row-rationale-pass">
+  <td colspan="8"><div class="bet-rationale">⛔ [rationale text]</div></td>
+</tr>
+```
+
+**Where to inject:** Immediately after the closing `</tr>` of the PASS row for that race.
+
+**CSS:** Already covered by `.row-rationale td` in the 1-pager stylesheet. No new classes needed.
+
+**Content:** Same rationale text as the long report — stripped to a single compact sentence.
+Keep ⛔ prefix. Max ~120 characters to stay on one line at 8pt print.
+
+**Dual-artifact rule:** Whenever pass-rationale (or footnotes) are applied to the long report,
+apply the same content to the 1-pager immediately after. Both are independent HTML files —
+they do not share a template at race-day injection time.
