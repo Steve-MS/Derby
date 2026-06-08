@@ -62,6 +62,7 @@ Impact: low-medium presentation provenance issue; not in Linus-18 blocker scope.
 Priority: defer to Chunk 5/6.
 
 ## FU-7 - R-6 Derby Weekend CSS comment
+Status: OPEN (ship-with-note in v0.4.0 CHANGELOG).
 Created: 2026-06-08 by Scribe-26 (from Livingston-7/8)
 Owner: TBD
 Concern: generated report HTML still contains a Derby Weekend CSS comment.
@@ -69,6 +70,7 @@ Impact: cosmetic only; non-user-facing.
 Priority: low, defer.
 
 ## FU-8 - R-11 PowerShell line-wrap on T-60 GBP total
+Status: OPEN (ship-with-note in v0.4.0 CHANGELOG).
 Created: 2026-06-08 by Scribe-26 (from Livingston-8)
 Owner: TBD
 Concern: T-60 operator table can wrap/split the GBP 11.70 header consistency detail in PowerShell transcripts.
@@ -76,6 +78,7 @@ Impact: cosmetic terminal rendering only; status remains correct.
 Priority: low, defer.
 
 ## FU-9 - Audit stale committed outputs baselines
+Status: OPEN (ship-with-note in v0.4.0 CHANGELOG).
 Created: 2026-06-08 by Scribe-26 (Saul-10 stale-baseline lesson)
 Owner: TBD
 Concern: committed outputs/ files can be mistaken for current regression contracts after schema migrations.
@@ -84,6 +87,7 @@ Fix: audit other stale committed outputs/ files; consider moving canonical basel
 Priority: process improvement, defer.
 
 ## FU-10 — data-layout path_for ownership for T-60 status
+Status: OPEN (ship-with-note in v0.4.0 CHANGELOG).
 Created: 2026-06-08 by Saul-11 (Chunk 6 combined gate)
 Owner: TBD
 Concern: docs/data-layout.md says path_for() is the canonical resolver for course/date artifacts and says non-Epsom artifacts use course-prefixed filenames, but the T-60 status row is outputs\t60-status-2026-06-16.json and scripts/t60_watchdog.py writes that path directly rather than via path_for().

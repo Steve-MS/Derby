@@ -778,3 +778,11 @@ LESSON: gate prompts that say "compare against HEAD" need to verify HEAD is the 
 **Test count:** Saul-11 verified 500/500 with `python -m pytest --ignore=tests/test_racecard_wave33.py`; Scribe final rerun used `python -m pytest -x --ignore=tests/test_racecard_wave33.py`.
 **Lessons:** Stale-baseline trap confirmed by Saul-10 and Saul-11: verify the baseline is the current contract before regression-comparing. Parallel-agent file boundaries worked: Livingston owned docs/scripts while Linus owned source/tests, with only compatible `src/course_config.py` overlap.
 **Followups:** CLOSED in this batch: FU-1, FU-2, FU-3, FU-4, FU-5, FU-6. OPEN after ship: FU-7, FU-8, FU-9, FU-10.
+
+### 2026-06-08: v0.4.0 SHIPPED - publish-readiness wave
+**Verdict:** SHIPPED. Danny-6's publish-readiness audit moved from ALMOST to all blockers closed for an internal GitHub release.
+**Docs:** Livingston-10 delivered 8/8 publish-facing docs: README plus seven course-agnostic `.squad\skills\*\SKILL.md` updates. Epsom, Ladies Day, and Derby wording is now historical/example-only where it remains.
+**Gate:** Saul-12 returned 10/10 GREEN SHIP across the eight Livingston docs plus Coordinator metadata (`pyproject.toml` and `CHANGELOG.md`). Validation used baseline `6ee87d2` correctly, reran 500/500 tests with `tests/test_racecard_wave33.py` ignored, and confirmed no tracked output drift.
+**Metadata:** `pyproject.toml` is stamped `0.4.0` with course-agnostic description; `CHANGELOG.md` carries v0.4.0 release notes and FU-7..FU-10 ship-with-note known issues.
+**Process lesson:** Single-Saul-gate pattern worked again: one focused final reviewer gate after producer docs/metadata avoided split-brain signoff while preserving speed.
+**Stale-baseline lesson:** Saul-12 explicitly anchored review to `6ee87d2`, continuing the Saul-10/Saul-11 lesson that a committed output must be proven current before it is treated as a regression baseline.

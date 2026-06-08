@@ -120,3 +120,8 @@ Wave-1 publish-readiness sprint shipped GREEN. All four work items GREEN GO. Ful
 - A broad whole-report brand grep can trip over intentionally deferred CSS comments (FU-7) even when the footer/data leak is fixed; record footer-scoped and whole-document evidence separately.
 - Data-layout docs need explicit ownership boundaries for artifacts not handled by path_for(), especially watchdog manifests.
 - PowerShell wildcard arguments are not expanded for pytest file paths passed through python; rerun explicit filenames before treating a targeted suite as failed.
+
+### 2026-06-08 - publish docs final gate (Saul-12)
+- A publish-docs gate should cite changed-document lines and live code path helpers separately; market baseline/archive files are governed by morning_odds.py, while generated outputs remain governed by path_for() and docs/data-layout.md.
+- Before treating an encoding finding as a blocker, compare changed lines against the baseline; pre-existing comments outside the deliverable criteria should not derail a quality-first but shipping-biased gate.
+- For docs-only waves, pair full pytest with a no-output git diff on tracked baseline outputs to prove the docs did not perturb regression artifacts.
