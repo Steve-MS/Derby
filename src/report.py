@@ -29,6 +29,11 @@ from pathlib import Path
 from typing import Any
 
 try:
+    from .render_helpers import default_course_display, output_path_for, presentation_context
+except ImportError:  # direct import via src/ on sys.path in cli.py
+    from render_helpers import default_course_display, output_path_for, presentation_context
+
+try:
     from jinja2 import Environment, FileSystemLoader, pass_eval_context
     from markupsafe import Markup
     _JINJA2_AVAILABLE = True
@@ -58,19 +63,7 @@ SIGNAL_LABELS: dict[str, str] = {
     "sire_stamina":    "Sire Stamina",
 }
 
-# Race-day names keyed by ISO weekday (Monday=0)
-_DAY_NAMES: dict[int, str] = {
-    3: "Derby Day",    # Saturday Derby Day is Sat 6 June 2026
-    4: "Oaks Day",     # Friday Oaks Day is Fri 5 June 2026
-}
-
-# Explicit overrides by date string (takes precedence over weekday)
-_DATE_DAY_NAMES: dict[str, str] = {
-    "2026-06-05": "Oaks Day",
-    "2026-06-06": "Derby Day",
-}
-
-VENUE = "Epsom"
+VENUE = default_course_display()
 
 MODEL_VERSION = "v0.1"
 
@@ -85,10 +78,12 @@ def render(
     scores: list[dict],
     bets: dict | None,
     race_context: dict | None,
-    output_path: str,
+    output_path: str | None = None,
     soft_contingency_bets: dict | None = None,
     market_latest_path: str | None = None,
-) -> None:
+    course: str | None = None,
+    meeting: str | None = None,
+) -> Path:
     """Render a single race-day HTML report and write it to *output_path*.
 
     Parameters
@@ -116,8 +111,8 @@ def render(
 
     Returns
     -------
-    None
-        Writes the HTML file as a side effect.
+    Path
+        The output file path written.
 
     Raises
     ------
@@ -145,16 +140,22 @@ def render(
     race_context = race_context or {}
 
     # Ensure output directory exists.
-    out_path = Path(output_path)
+    out_path = Path(output_path) if output_path else report_output_path(course=course, date=date)
     out_path.parent.mkdir(parents=True, exist_ok=True)
 
     # Build template context.
-    ctx = _build_context(date, scores, bets, race_context, soft_contingency_bets, market_latest_path)
+    ctx = _build_context(date, scores, bets, race_context, soft_contingency_bets, market_latest_path, course, meeting)
 
     # Render via Jinja2.
     html = _render_template(ctx)
 
     out_path.write_text(html, encoding="utf-8")
+    return out_path
+
+
+def report_output_path(course: str | None, date: str) -> Path:
+    """Return the configured report output path for *course* and *date*."""
+    return output_path_for("report", course_slug=course, date=date)
 
 
 # ---------------------------------------------------------------------------
@@ -169,6 +170,8 @@ def _build_context(
     race_context: dict,
     soft_contingency_bets: dict | None = None,
     market_latest_path: str | None = None,
+    course: str | None = None,
+    meeting: str | None = None,
 ) -> dict:
     """Assemble the Jinja2 template context dict."""
 
@@ -179,18 +182,25 @@ def _build_context(
     except ValueError:
         date_display = date
 
-    # Day name
-    day_name = _DATE_DAY_NAMES.get(date, "")
-    if not day_name:
-        try:
-            day_name = _DAY_NAMES.get(dt.weekday(), "")  # type: ignore[possibly-undefined]
-        except Exception:
-            day_name = ""
+    bets_meta = bets.get("meta") if isinstance(bets.get("meta"), dict) else {}
+    presentation = presentation_context(
+        date=date,
+        course_slug=course or race_context.get("course") or bets_meta.get("course_slug"),
+        meeting_slug=meeting or race_context.get("meeting") or bets_meta.get("meeting_slug"),
+        venue_override=race_context.get("venue") or bets_meta.get("course"),
+        day_label_override=race_context.get("day_label") or bets_meta.get("day_label"),
+    )
+    day_name = presentation["day"].get("label", "")
 
-    # Going / narrative from race_context (try both Friday and Saturday keys)
-    is_friday = date.endswith("-05") or "friday" in date.lower()
-    going_key   = "going_friday"   if is_friday else "going_saturday"
-    narr_key    = "narrative_friday" if is_friday else "narrative_saturday"
+    # Going / narrative from race_context using meeting-day metadata when present.
+    config_going_key = presentation["day"].get("going_key")
+    if config_going_key:
+        going_key = f"going_{config_going_key}"
+        narr_key = f"narrative_{config_going_key}"
+    else:
+        is_friday = date.endswith("-05") or "friday" in date.lower()
+        going_key = "going_friday" if is_friday else "going_saturday"
+        narr_key = "narrative_friday" if is_friday else "narrative_saturday"
 
     going_label  = race_context.get(going_key) or race_context.get("going", "")
     going_detail = going_label
@@ -207,7 +217,7 @@ def _build_context(
 
     market_snapshot = _load_market_latest(market_latest_path)
     market_index = _build_market_index(date, market_snapshot)
-    scores_with_prices = _attach_market_prices(date, scores, market_index)
+    scores_with_prices = _attach_market_prices(date, scores, market_index, presentation["course"]["display_name"])
     market_summary = _market_summary(date, market_snapshot, market_index)
 
     # Non-runners: horses listed as WITHDRAWN in live price overrides.
@@ -231,7 +241,10 @@ def _build_context(
         "date":             date,
         "date_display":     date_display,
         "day_name":         day_name,
-        "venue":            VENUE,
+        "venue":            presentation["title"],
+        "course":           presentation["course"],
+        "meeting":          presentation["meeting"],
+        "day":              presentation["day"],
         "race_count":       len(scores),
         "going_label":      going_label,
         "going_detail":     going_detail,
@@ -368,10 +381,10 @@ def _market_price_for(index: dict, race: dict, horse: str | None) -> dict | None
     )
 
 
-def _attach_market_prices(date: str, scores: list[dict], market_index: dict) -> list[dict]:
+def _attach_market_prices(date: str, scores: list[dict], market_index: dict, course_display: str = VENUE) -> list[dict]:
     priced_scores = []
     for race in scores:
-        normalized = _normalize_race_meta(race)
+        normalized = _normalize_race_meta(race, course_display)
         runners = []
         for runner in normalized.get("ranked_runners", []) or []:
             runner_copy = dict(runner)
@@ -444,7 +457,7 @@ def _source_mix_label(prices: list[dict]) -> str:
 # ---------------------------------------------------------------------------
 
 
-def _normalize_race_meta(race: dict) -> dict:
+def _normalize_race_meta(race: dict, course_display: str = VENUE) -> dict:
     """Ensure every race dict has a populated ``race_meta`` sub-dict.
 
     Kaylee's scoring module writes display fields (``race_name``,
@@ -458,7 +471,7 @@ def _normalize_race_meta(race: dict) -> dict:
     meta = {
         "name":     race.get("race_name", "Unknown Race"),
         "time":     race.get("race_time", "?"),
-        "course":   race.get("course", "Epsom"),
+        "course":   race.get("course", course_display),
         "distance": race.get("distance", ""),
         "going":    race.get("going", ""),
     }
@@ -656,7 +669,7 @@ def render_header(bets_data: dict) -> dict:
 
     Handles both old schema (flat ``"bets": [...]``) and new schema
     (``"meta": {...}, "entries": [...]``).  If ``meta`` is absent the renderer
-    falls back gracefully: course defaults to "Epsom", validation to ``None``.
+    falls back gracefully: course defaults to the configured default course, validation to ``None``.
 
     Parameters
     ----------
@@ -673,7 +686,7 @@ def render_header(bets_data: dict) -> dict:
         ``nr_horses``         – list[dict]: entries with status NR or VOID.
         ``validation_tag``    – str | None: from meta.validation or root field.
         ``trifecta_horses``   – list[str]: horse names in the trifecta box.
-        ``course``            – str: from meta.course, default "Epsom".
+        ``course``            – str: from meta.course, default course display name.
 
     Notes
     -----
@@ -687,7 +700,7 @@ def render_header(bets_data: dict) -> dict:
     entries = bets_data.get("bets") or bets_data.get("entries") or []
     meta = bets_data.get("meta") or {}
 
-    course = meta.get("course") or "Epsom"
+    course = meta.get("course") or VENUE
 
     # Validation tag: prefer meta.validation, then saul_validation_status if
     # it looks like an approval (contains "GO" or "PASS").

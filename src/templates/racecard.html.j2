@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>{{ venue }} {{ day_name }} — Betting Slip — {{ date_display }}</title>
+<title>{{ meeting.title }} {{ day.label }} — Betting Slip — {{ date_display }}</title>
 <style>{{ css|safe }}</style>
 </head>
 <body>
@@ -13,7 +13,7 @@
 
 <header class="slip-header">
   <div class="header-left">
-    <h1>{{ venue }} — {{ day_name }}</h1>
+    <h1>{{ meeting.title }} — {{ day.label }}</h1>
     <p class="subtitle">{{ date_display }} · {{ race_count }} races · Going: {{ going_label or "TBC" }}</p>
     {% if header_nr_horses %}
     <p class="withdrawn-line">NR:

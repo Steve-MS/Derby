@@ -16,16 +16,16 @@ from typing import Any
 
 from jinja2 import Environment, FileSystemLoader
 
+try:
+    from .render_helpers import default_course_display, output_path_for, presentation_context
+except ImportError:  # direct import via src/ on sys.path in cli.py
+    from render_helpers import default_course_display, output_path_for, presentation_context
+
 
 TEMPLATE_DIR = Path(__file__).parent / "templates"
 BASE_DIR = Path(__file__).parent.parent
-VENUE = "Epsom"
+VENUE = default_course_display()
 MODEL_VERSION = "v0.1"
-
-_DATE_DAY_NAMES = {
-    "2026-06-05": "Ladies / Oaks Day",
-    "2026-06-06": "Derby Day",
-}
 
 
 # ---------------------------------------------------------------------------
@@ -231,8 +231,8 @@ def _soft_probability(saturday_forecast: dict) -> str:
     return match.group(1).replace(" ", "").replace("–", "-") + "%"
 
 
-def _withdrawn_horses_from_raw(date: str, raw_racecard_path: str | None = None) -> list[str]:
-    path = Path(raw_racecard_path) if raw_racecard_path else BASE_DIR / "data" / "raw" / f"epsom-{date}-racecards.json"
+def _withdrawn_horses_from_raw(date: str, raw_racecard_path: str | None = None, course: str | None = None) -> list[str]:
+    path = Path(raw_racecard_path) if raw_racecard_path else output_path_for("raw-racecards", course_slug=course, date=date)
     data = _load_json(path)
     names: set[str] = set()
     for race in data.get("races", []) or []:
@@ -252,8 +252,10 @@ def _non_runners_from_bets(bets: dict) -> list[str]:
     )
 
 
-def _scenario_banner_for(date: str, bets: dict) -> dict[str, str] | None:
+def _scenario_banner_for(date: str, bets: dict, course: str | None = None) -> dict[str, str] | None:
     scenario = str(bets.get("scenario", ""))
+    if course not in (None, "epsom") and not scenario:
+        return None
     if date != "2026-06-06" and not scenario:
         return None
     if "HOLD" in scenario.upper():
@@ -262,9 +264,11 @@ def _scenario_banner_for(date: str, bets: dict) -> dict[str, str] | None:
             "text": "🟡 HOLD SLIP — assumes Going downgraded to Soft. Item bet CANCELLED.",
         }
     if "GREEN" in scenario.upper() or date == "2026-06-06":
+        base = output_path_for("racecard", course_slug=course, date=date)
+        hold_file = f"{base.stem}-hold{base.suffix}"
         return {
             "class": "scenario-green",
-            "text": "🟢 GREEN SLIP — assumes Going holds at Good-to-Soft or better. HOLD slip file: racecard-2026-06-06-hold.html",
+            "text": f"🟢 GREEN SLIP — assumes Going holds at Good-to-Soft or better. HOLD slip file: {hold_file}",
         }
     return None
 
@@ -547,7 +551,7 @@ def render_card(
     date: str,
     scores_path: str,
     bets_path: str | None,
-    output_path: str,
+    output_path: str | None = None,
     race_context: dict | None = None,
     daily_outlay_gbp: float | None = 100.0,
     going_forecast_path: str | None = None,
@@ -555,7 +559,9 @@ def render_card(
     scenario_banner: dict[str, str] | None = None,
     market_latest_path: str | None = None,
     bets_json_path: str | None = None,
-) -> None:
+    course: str | None = None,
+    meeting: str | None = None,
+) -> Path:
     """Render the printable one-page betting slip.
 
     ``daily_outlay_gbp=None`` preserves the exact stakes from Badger's portfolio.
@@ -575,6 +581,13 @@ def render_card(
     """
     scores_data = json.loads(Path(scores_path).read_text(encoding="utf-8"))
 
+    presentation = presentation_context(
+        date=date,
+        course_slug=course or scores_data.get("course_slug"),
+        meeting_slug=meeting or scores_data.get("meeting_slug"),
+        venue_override=scores_data.get("venue"),
+    )
+
     bets = {}
     if bets_path and Path(bets_path).exists():
         bets = json.loads(Path(bets_path).read_text(encoding="utf-8"))
@@ -582,7 +595,7 @@ def render_card(
     races = scores_data.get("races", [])
     market_snapshot = _load_market_latest(market_latest_path)
     market_index = _build_market_index(date, market_snapshot)
-    non_runners = sorted(set(_withdrawn_horses_from_raw(date, raw_racecard_path)) | set(_non_runners_from_bets(bets)))
+    non_runners = sorted(set(_withdrawn_horses_from_raw(date, raw_racecard_path, presentation["course"]["slug"])) | set(_non_runners_from_bets(bets)))
     slip_rows, pass_rows, multi_rows = _build_rows(races, bets, non_runners, market_index)
     active_rows = slip_rows + multi_rows
 
@@ -595,7 +608,7 @@ def render_card(
     except ValueError:
         date_display = date
 
-    day_name = _DATE_DAY_NAMES.get(date, "")
+    day_name = presentation["day"].get("label", "")
     going_label = (race_context or {}).get("going") or _going_label_from_forecast(date, going_forecast_path)
 
     total_stakes = round(sum(float(r.get("stake", 0) or 0) for r in active_rows), 2)
@@ -624,7 +637,10 @@ def render_card(
         trifecta_horses = hdr["trifecta_horses"]
 
     ctx = {
-        "venue": scores_data.get("venue", VENUE),
+        "venue": presentation["title"],
+        "course": presentation["course"],
+        "meeting": presentation["meeting"],
+        "day": presentation["day"],
         "day_name": day_name,
         "date": date,
         "date_display": date_display,
@@ -635,7 +651,7 @@ def render_card(
         "slip_rows": slip_rows,
         "pass_rows": pass_rows,
         "multi_rows": multi_rows,
-        "scenario_banner": scenario_banner or _scenario_banner_for(date, bets),
+        "scenario_banner": scenario_banner or _scenario_banner_for(date, bets, presentation["course"]["slug"]),
         "non_runners": non_runners,
         "active_bet_count": active_bet_count,
         "total_stakes_gbp": total_stakes,
@@ -660,6 +676,12 @@ def render_card(
     css = (TEMPLATE_DIR / "racecard.css").read_text(encoding="utf-8")
     html = tpl.render(**ctx, css=css)
 
-    out = Path(output_path)
+    out = Path(output_path) if output_path else racecard_output_path(course=presentation["course"]["slug"], date=date)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(html, encoding="utf-8")
+    return out
+
+
+def racecard_output_path(course: str | None, date: str) -> Path:
+    """Return the configured racecard output path for *course* and *date*."""
+    return output_path_for("racecard", course_slug=course, date=date)

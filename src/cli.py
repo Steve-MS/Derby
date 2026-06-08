@@ -382,6 +382,8 @@ def cmd_report(args: argparse.Namespace) -> int:
     race_context: dict = {
         "venue":     scores_data.get("venue", ""),
         "card_date": date,
+        "course":    args.course,
+        "meeting":   args.meeting,
     }
 
     render(
@@ -390,6 +392,8 @@ def cmd_report(args: argparse.Namespace) -> int:
         bets=bets,
         race_context=race_context,
         output_path=output_path,
+        course=args.course,
+        meeting=args.meeting,
     )
 
     print(f"✓  Report written → {output_path}")
@@ -431,6 +435,9 @@ def cmd_card(args: argparse.Namespace) -> int:
         bets_path=str(bets_path) if bets_path.exists() else None,
         output_path=str(output_path),
         daily_outlay_gbp=args.outlay,
+        raw_racecard_path=str(_artifact_path(args, "raw-racecards")),
+        course=args.course,
+        meeting=args.meeting,
     )
 
     print(f"✓  Race card written → {output_path}")

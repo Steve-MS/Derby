@@ -8,7 +8,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Race Analysis — {{ venue }} {{ date_display }}</title>
+  <title>Race Analysis — {{ meeting.title }} {{ date_display }}</title>
   <style>
 {{ css }}
   </style>
@@ -17,8 +17,8 @@
 
 {# ── HERO ─────────────────────────────────────────────────── #}
 <header class="hero">
-  <h1>🏇 {{ venue }} — {{ date_display }}</h1>
-  <p class="subtitle">{{ day_name }}</p>
+  <h1>🏇 {{ meeting.title }} — {{ date_display }}</h1>
+  <p class="subtitle">{{ day.label }}</p>
 
   <div class="hero-meta">
     {% if going_label %}

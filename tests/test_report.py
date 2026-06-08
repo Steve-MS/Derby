@@ -23,7 +23,7 @@ jinja2 = pytest.importorskip("jinja2", reason="jinja2 not installed")
 import sys
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from src.report import render  # noqa: E402
+from src.report import render, report_output_path  # noqa: E402
 
 
 # ---------------------------------------------------------------------------
@@ -152,6 +152,8 @@ def _render_to_tmp(
     scores: list | None = _UNSET,
     bets: dict | None = _UNSET,
     context: dict | None = _UNSET,
+    course: str | None = None,
+    meeting: str | None = None,
 ) -> str:
     """Render into a temp file and return the HTML content."""
     with tempfile.TemporaryDirectory() as tmpdir:
@@ -162,6 +164,8 @@ def _render_to_tmp(
             bets=bets if bets is not _UNSET else SAMPLE_BETS,
             race_context=context if context is not _UNSET else SAMPLE_CONTEXT,
             output_path=out,
+            course=course,
+            meeting=meeting,
         )
         return Path(out).read_text(encoding="utf-8")
 
@@ -207,6 +211,23 @@ class TestRenderEmptyInputs:
 
 class TestRenderDateDisplay:
     """Date and day-name rendering."""
+
+    def test_ascot_meeting_title_and_day_from_config(self):
+        html = _render_to_tmp(
+            date="2026-06-16",
+            scores=[],
+            bets={},
+            context={},
+            course="ascot",
+            meeting="royal-ascot-2026",
+        )
+        assert "Royal Ascot 2026" in html
+        assert "Day 1" in html
+        assert "<title>Race Analysis — Royal Ascot 2026 16 June 2026</title>" in html
+
+    def test_ascot_report_output_path_uses_course_prefix(self):
+        root = Path(__file__).parent.parent
+        assert report_output_path("ascot", "2026-06-16") == root / "outputs" / "report-ascot-2026-06-16.html"
 
     def test_oaks_day_name(self):
         html = _render_to_tmp(date="2026-06-05", scores=[], bets={}, context={})
