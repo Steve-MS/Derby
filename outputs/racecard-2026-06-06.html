@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Epsom Derby Day — Betting Slip — 6 June 2026 (v3 HOLD)</title>
+<title>Epsom Derby Day — Betting Slip — 6 June 2026</title>
 <style>/* race-analysis printable betting slip — one A4 per race day. */
 
 @page { size: A4 portrait; margin: 9mm 10mm; }
@@ -29,6 +29,7 @@ p  { margin: 0; }
   font-size: 9.2pt;
   font-weight: 700;
 }
+.scenario-green { background: #edf8ed; border-color: #2a7a2a; color: #174d17; }
 .scenario-hold  { background: #fff6d8; border-color: #c28a00; color: #604200; }
 
 .slip-header {
@@ -41,6 +42,7 @@ p  { margin: 0; }
 }
 .subtitle { font-size: 9.4pt; color: #555; margin-top: 0.8mm; }
 .withdrawn-line { margin-top: 1mm; font-size: 8.8pt; color: #8b1a1a; font-weight: 700; }
+.withdrawn-horse { margin-left: 1mm; }
 .nr-label { color: #9f1d1d; font-size: 8pt; font-weight: 800; }
 
 .totals { text-align: right; font-size: 9pt; }
@@ -48,8 +50,12 @@ p  { margin: 0; }
 .totals .total-line span { color: #555; }
 .totals .total-line strong { font-size: 10.4pt; }
 .totals .total-line.potential strong { color: #2a7a2a; }
-.totals .validation-tag { font-size: 7.8pt; color: #b07000; font-weight: 700; margin-top: 1mm; }
+.subtotal-note { font-size: 7.8pt; color: #555; }
+.trifecta-box { margin-top: 1mm; font-size: 8pt; color: #3b2b76; font-weight: 700; }
+.validation-tag { margin-top: 1.4mm; font-size: 8pt; color: #1a7a1a; font-weight: 700; }
+.nr-reason { font-size: 7.6pt; color: #666; font-weight: 400; }
 
+/* ---------- Bet slip table ---------- */
 table.slip {
   width: 100%;
   border-collapse: collapse;
@@ -74,15 +80,19 @@ table.slip .col-bet    { width: 12mm; text-align: center; }
 table.slip .col-horse  { width: 42mm; }
 table.slip .col-horse .trainer { font-size: 7.8pt; color: #666; }
 .inline-price { font-size: 7.7pt; color: #244c24; font-weight: 700; white-space: nowrap; }
+.price-stale { color: #777; font-weight: 600; }
+.price-source { color: #666; font-size: 7.4pt; }
 table.slip .col-num    { width: 15mm; text-align: right; font-variant-numeric: tabular-nums; }
 table.slip .col-note   { font-size: 7.8pt; color: #555; }
 
 table.slip tr.row-win       { background: #e8f5e8; }
 table.slip tr.row-ew        { background: #fff5e0; }
+table.slip tr.row-outsider  { background: #fff5e0; }
 table.slip tr.row-speculative { background: #fff8df; border-left: 4pt solid #d99400; }
-table.slip tr.row-void      { background: #f0eaea; color: #7a1e1e; }
-table.slip tr.row-win td, table.slip tr.row-ew td,
-table.slip tr.row-speculative td { font-weight: 500; }
+table.slip tr.row-cancelled { background: #f5eeee; color: #7a1e1e; }
+table.slip tr.row-multi     { background: #f1eefb; }
+table.slip tr.row-win td, table.slip tr.row-ew td, table.slip tr.row-outsider td,
+table.slip tr.row-speculative td, table.slip tr.row-multi td { font-weight: 500; }
 table.slip tr.row-pass      { color: #888; }
 table.slip tr.row-divider td {
   text-align: center;
@@ -107,6 +117,7 @@ table.slip tr.row-divider td {
   line-height: 1.08;
 }
 
+/* ---------- Bet tags ---------- */
 .bet-tag {
   display: inline-block;
   padding: 0.35mm 1.5mm;
@@ -118,7 +129,8 @@ table.slip tr.row-divider td {
 .bet-win  { background: #2a7a2a; color: #fff; }
 .bet-ew   { background: #b88200; color: #fff; }
 .bet-pass { background: #ccc;    color: #555; }
-.bet-void { background: #9f1d1d; color: #fff; }
+.bet-dbl, .bet-tbl, .bet-acca { background: #4b3a99; color: #fff; }
+.bet-cxl  { background: #9f1d1d; color: #fff; }
 .spec-tag {
   display: inline-block;
   margin-top: 0.5mm;
@@ -129,20 +141,13 @@ table.slip tr.row-divider td {
   font-size: 7.2pt;
   font-weight: 800;
 }
-.upgrade-tag {
-  display: inline-block;
-  margin-top: 0.5mm;
-  padding: 0.3mm 1.2mm;
-  border-radius: 1mm;
-  background: #2a5a8a;
-  color: #fff;
-  font-size: 7.2pt;
-  font-weight: 800;
-}
-.void-tag { color: #9f1d1d; font-size: 7.4pt; font-weight: 800; }
+.cancel-tag { color: #9f1d1d; font-size: 7.4pt; font-weight: 800; }
 .spec-note { color: #8a5a00; font-weight: 800; }
-.steam-note { color: #8a3000; font-weight: 700; font-size: 7.4pt; }
+.edge-negative { color: #b00020; font-weight: 800; }
+.cancel-note { color: #8a5a00; font-style: italic; }
+.acca-leg { line-height: 1.18; margin: 0.5px 0; }
 
+/* ---------- Footer ---------- */
 .slip-footer {
   margin-top: 4mm;
   padding-top: 2mm;
@@ -155,30 +160,38 @@ table.slip tr.row-divider td {
 @media print {
   body { font-size: 8.5pt; line-height: 1.12; }
   h1 { font-size: 15.5pt; }
+  .scenario-banner { padding: 1mm 1.8mm; margin-bottom: 2mm; font-size: 8.4pt; }
+  .slip-header { padding-bottom: 1.6mm; margin-bottom: 2mm; }
+  .subtitle { font-size: 8.5pt; }
+  .withdrawn-line { font-size: 8pt; }
   table.slip { font-size: 8.1pt; }
   table.slip th, table.slip td { padding: 0.75mm 1.1mm; }
+  table.slip thead th { font-size: 7pt; }
+  table.slip .col-race { font-size: 7.6pt; }
+  table.slip .col-horse .trainer { font-size: 7pt; }
+  table.slip .col-note { font-size: 7.1pt; }
+  table.slip tr.row-divider td { padding: 1.25mm 0 0.45mm 0; font-size: 7.1pt; }
   .row-rationale td { padding: 0 1.1mm 0.45mm 1.1mm; }
   .bet-rationale { font-size: 6.7pt; line-height: 0.98; }
   .slip-footer { margin-top: 2mm; padding-top: 1.2mm; font-size: 7pt; }
+  .slip-footer .disclaimer { margin-top: 0.5mm; }
 }
 </style>
 </head>
 <body>
 
-<div class="scenario-banner scenario-hold">🟡 GOING: Good to Soft, rain declared — HOLD card active · v3 Rusty rescore 11:30 BST · Saul validation pending</div>
+<div class="scenario-banner scenario-green">🟢 GREEN SLIP — assumes Going holds at Good-to-Soft or better. HOLD slip file: racecard-2026-06-06-hold.html</div>
 
 <header class="slip-header">
   <div class="header-left">
     <h1>Epsom — Derby Day</h1>
-    <p class="subtitle">6 June 2026 · 8 races · Going: Good to Soft, rain ongoing — HOLD card is live target</p>
-    <p class="withdrawn-line">NR: Dance In The Storm (17:55) <span class="nr-label">CONFIRMED NR — 16 runners · Apollo One re-pick @ Steve's request (override)</span></p>
+    <p class="subtitle">6 June 2026 · 8 races · Going: Soft (5.2mm rain forecast, 60-80% prob)</p>
   </div>
   <div class="header-right">
     <div class="totals">
-      <div class="total-line"><span>WIN/EW outlay:</span> <strong>£6.50</strong> <span style="font-size:7.8pt;color:#555;">(+ £6.00 Derby trifecta = £12.50)</span></div>
-      <div class="total-line"><span>Active bets:</span> <strong>8</strong> <span style="font-size:7.8pt;color:#555;">+ trifecta</span></div>
-      <div class="total-line potential"><span>Max potential:</span> <strong>~£82.25</strong> <span style="font-size:7.8pt;color:#555;">(WIN/EW only)</span></div>
-      <div class="validation-tag" style="color:#1a7a1a;">✅ Saul AMBER GO · Danny ✅ GO 12:13 BST · 17:55 override post-validation</div>
+      <div class="total-line"><span>Total outlay:</span> <strong>£6.40</strong></div>
+      <div class="total-line"><span>Active bets:</span> <strong>7</strong></div>
+      <div class="total-line potential"><span>Max potential:</span> <strong>£3741.56</strong></div>
     </div>
   </div>
 </header>
@@ -193,302 +206,185 @@ table.slip tr.row-divider td {
       <th class="col-num">Odds</th>
       <th class="col-num">Stake</th>
       <th class="col-num">Potential</th>
-      <th class="col-note">Signal</th>
+      <th class="col-note">Note</th>
     </tr>
   </thead>
   <tbody>
-
-    <!-- 14:05 Princess Child WIN -->
-    <tr class="row-win">
-      <td class="col-time">14:05</td>
-      <td class="col-race">Princess Elizabeth G3</td>
-      <td class="col-bet"><span class="bet-tag bet-win">WIN</span></td>
-      <td class="col-horse">
-        <strong>Princess Child</strong> <span class="inline-price">11/1</span><br>
-        <span class="trainer">rank 3/9 · gap +3.5 · score 77.5</span>
-      </td>
-      <td class="col-num">12.0</td>
-      <td class="col-num">£1.00</td>
-      <td class="col-num">£12.00</td>
-      <td class="col-note">rank_gap +3.5 · GTS-elevated · no flags</td>
-    </tr>
-    <tr class="row-rationale">
-      <td colspan="8"><div class="bet-rationale">&#9658; Model rank 3/9, market rank 6.5, rank_gap +3.5, score 77.5. GTS going preference confirmed — HOLD card soft-weighting elevates this pick vs standard card. Clean signal, no flags.</div></td>
-    </tr>
-
-    <!-- 15:15 Another Baar WIN (speculative) -->
-    <tr class="row-speculative">
-      <td class="col-time">15:15</td>
-      <td class="col-race">Betfred Dash Heritage Hcp</td>
-      <td class="col-bet"><span class="bet-tag bet-win">WIN</span></td>
-      <td class="col-horse">
-        <strong>Another Baar</strong> <span class="inline-price">39/1</span><br>
-        <span class="trainer">rank 3/20 · gap +15 · score 86.2</span><br>
-        <span class="spec-tag">SPEC</span>
-      </td>
-      <td class="col-num">40.0</td>
-      <td class="col-num">£0.25</td>
-      <td class="col-num">£10.00</td>
-      <td class="col-note"><span class="spec-note">COMPRESSED_RANGE_CAUTION + SYNTHETIC_BASE_CAVEAT</span></td>
-    </tr>
-    <tr class="row-rationale">
-      <td colspan="8"><div class="bet-rationale">&#9658; Rank 3/20, rank_gap +15, score 86.2. SYNTHETIC_BASE_CAVEAT: large rank-gap is partly a synthetic-to-real price revelation artefact (synthetic baseline was not a traded price), not pure market mispricing. COMPRESSED_RANGE_CAUTION: RPM field range only 5 points (102-107) — model rank differences analytically tiny. Treat as speculative outsider only. Min stake.</div></td>
-    </tr>
-
-    <!-- 15:15 Ziggy's Triton EW (speculative) -->
-    <tr class="row-speculative">
-      <td class="col-time">15:15</td>
-      <td class="col-race">Betfred Dash Heritage Hcp &#9889;</td>
+    <tr class="row-outsider">
+      <td class="col-time">14:40</td>
+      <td class="col-race">Coolmore Coronation Cup ⚡</td>
       <td class="col-bet"><span class="bet-tag bet-ew">EW</span></td>
       <td class="col-horse">
-        <strong>Ziggy's Triton</strong> <span class="inline-price">32/1</span><br>
-        <span class="trainer">EW outsider — same-race companion</span><br>
-        <span class="spec-tag">SPEC</span>
+          <strong>See The Fire</strong><br><span class="trainer">Andrew Balding</span>      </td>
+      <td class="col-num">13.0</td>
+      <td class="col-num">£3.90 EW</td>
+      <td class="col-num">£50.78</td>
+      <td class="col-note">
+          value: model rank 1 vs market 6
       </td>
-      <td class="col-num">33.0</td>
-      <td class="col-num">£0.25 EW</td>
-      <td class="col-num">£8.25</td>
-      <td class="col-note"><span class="spec-note">COMPRESSED_RANGE_CAUTION</span></td>
     </tr>
-    <tr class="row-rationale">
-      <td colspan="8"><div class="bet-rationale">&#9658; EW outsider at 32/1 alongside Another Baar WIN. Same COMPRESSED_RANGE_CAUTION applies (102-107 RPM range). Speculative place cover only. Both 15:15 picks Rusty-sourced; treat as minimum-stake punts.</div></td>
+    <tr class="row-rationale row-rationale-outsider">
+      <td colspan="8"><div class="bet-rationale">▸ Model rates 1; market rates 6. Disagreement of 5 ranks — value play.</div></td>
     </tr>
-
-    <!-- 16:00 Action WIN (Derby) -->
     <tr class="row-win">
+      <td class="col-time">15:15</td>
+      <td class="col-race">Betfred Dash Handicap</td>
+      <td class="col-bet"><span class="bet-tag bet-win">WIN</span></td>
+      <td class="col-horse">
+          <strong>Kinswoman</strong><br><span class="trainer">William Haggas</span>      </td>
+      <td class="col-num">24.0</td>
+      <td class="col-num">£7.97</td>
+      <td class="col-num">£11.72</td>
+      <td class="col-note">
+          edge +46.9%
+      </td>
+    </tr>
+    <tr class="row-rationale row-rationale-win">
+      <td colspan="8"><div class="bet-rationale">▸ Rank #1 (score 95.0), confidence HIGH, model_prob 0.0612 vs implied 0.0417 → edge 46.9% ≥ 15% threshold. Quarter-Kelly stake: 0.51pts (£0.51) @ 24.0.</div></td>
+    </tr>
+    <tr class="row-outsider">
       <td class="col-time">16:00</td>
-      <td class="col-race">Betfred Derby G1</td>
-      <td class="col-bet"><span class="bet-tag bet-win">WIN</span></td>
+      <td class="col-race">Betfred Derby ⚡</td>
+      <td class="col-bet"><span class="bet-tag bet-ew">EW</span></td>
       <td class="col-horse">
-        <strong>Action</strong> <span class="inline-price">13/1</span><br>
-        <span class="trainer">rank 3/14 · gap +3.5 · score 69.4 · going_fit 68</span>
-      </td>
-      <td class="col-num">14.0</td>
-      <td class="col-num">£1.00</td>
-      <td class="col-num">£14.00</td>
-      <td class="col-note">rank_gap +3.5 · going_fit 68 · cheekpieces 1st time</td>
-    </tr>
-    <tr class="row-rationale">
-      <td colspan="8"><div class="bet-rationale">&#9658; Model rank 3/14, market rank 6.5, rank_gap +3.5, model_score 69.4, going_fit 68. Cheekpieces first-time. Related to 2025 Derby winner Lambourn. Replaces Christmas Day (rank_gap +0.5, below the 2-point WIN threshold). <span class="steam-note">Note: Benvenuto Cellini (field rival) shows 9/4-to-Evs ante-post movement — only genuine steam on the card (MARKET_STEAM_MAJOR + EDGE_ERODED). Ground risk at Evs if going deteriorates. Action remains overlay at 13/1.</span></div></td>
-    </tr>
-
-    <!-- 🏆 DERBY TRIFECTA BOX — injected 2026-06-06 by Linus (additive only; WIN row NOT modified) -->
-    <tr style="background:#f0eaf8; border-left:4pt solid #7b3fa0;">
-      <td class="col-time" style="color:#5a1a8a; font-weight:700;">16:00</td>
-      <td class="col-race" style="font-weight:700; color:#5a1a8a;">Betfred Derby G1</td>
-      <td class="col-bet" style="text-align:center;">
-        <span style="display:inline-block;padding:0.35mm 1.5mm;font-size:7.6pt;font-weight:700;border-radius:1mm;background:#7b3fa0;color:#fff;letter-spacing:0.35pt;">TRIFECTA</span>
-      </td>
-      <td class="col-horse" colspan="2" style="font-size:8.4pt;">
-        <strong style="color:#5a1a8a;">🏆 DERBY TRIFECTA BOX</strong>&nbsp;<em style="font-size:7.6pt;color:#777;">(any order top 3 — 6 combos)</em><br>
-        <table style="margin-top:1.5mm; font-size:7.8pt; border-collapse:collapse;">
-          <tr>
-            <td style="padding:0.4mm 2mm 0.4mm 0; font-weight:700; color:#2a7a2a; white-space:nowrap;">★ BANKER</td>
-            <td style="padding:0.4mm 2mm; white-space:nowrap;"><strong>Action</strong> <span class="inline-price">13/1</span></td>
-            <td style="padding:0.4mm 2mm; color:#555; white-space:nowrap;">score 77.1 · fit 68</td>
-          </tr>
-          <tr>
-            <td style="padding:0.4mm 2mm 0.4mm 0; color:#555; white-space:nowrap;">Leg 2</td>
-            <td style="padding:0.4mm 2mm; white-space:nowrap;"><strong>Benvenuto Cellini</strong> <span class="inline-price">Evs</span></td>
-            <td style="padding:0.4mm 2mm; color:#555; white-space:nowrap;">score 88.0 · fit 50</td>
-          </tr>
-          <tr>
-            <td style="padding:0.4mm 2mm 0.4mm 0; color:#555; white-space:nowrap;">Leg 3</td>
-            <td style="padding:0.4mm 2mm; white-space:nowrap;"><strong>Item</strong> <span class="inline-price">7/2</span></td>
-            <td style="padding:0.4mm 2mm; color:#555; white-space:nowrap;">score 85.8 · fit 48</td>
-          </tr>
-        </table>
-      </td>
-      <td class="col-num" style="font-weight:700; color:#5a1a8a; white-space:nowrap;">6 combos</td>
-      <td class="col-num" style="color:#5a1a8a;">£1.00</td>
-      <td class="col-num" style="font-weight:700; color:#5a1a8a;">£6.00</td>
-      <td class="col-note" style="font-size:7.6pt; color:#7b3fa0;">box top-3 by Rusty score · Action banker</td>
-    </tr>
-    <tr style="background:#f7f0fc;">
-      <td colspan="8">
-        <div class="bet-rationale" style="color:#5a1a8a; font-style:italic;">
-          &#9658; Rusty model ranks Action (77.1), Benvenuto Cellini (88.0) and Item (85.8) as the top 3 in the 14-runner field; the score gap to rank 4 Maltese Cross (70.9) is 7.0 pts, warranting a tight 3-horse box. Action is the WIN banker already on card at 13/1. Causeway confirmed NR — box unaffected.
-          <span style="display:block; margin-top:0.8mm; color:#8a5a00; font-weight:700; font-style:normal;">
-            ⚠️ Speculative — Friday P&amp;L -£10.07, sizing conservative. Skip if cashflow tight.
-          </span>
-        </div>
+          <strong>Causeway</strong><br><span class="trainer">Aidan O&#39;Brien</span>      </td>
+      <td class="col-num">29.0</td>
+      <td class="col-num">£3.90 EW</td>
+      <td class="col-num">£113.28</td>
+      <td class="col-note">
+          value: model rank 4 vs market 11
       </td>
     </tr>
-
-    <!-- 16:40 Folk Pageant WIN -->
-    <tr class="row-win">
+    <tr class="row-rationale row-rationale-outsider">
+      <td colspan="8"><div class="bet-rationale">▸ Model rates 4; market rates 11. Disagreement of 7 ranks — value play.</div></td>
+    </tr>
+    <tr class="row-ew">
       <td class="col-time">16:40</td>
-      <td class="col-race">Cherryfield Lester Piggott Hcp</td>
-      <td class="col-bet"><span class="bet-tag bet-win">WIN</span></td>
+      <td class="col-race">Cherryfield (Croydon) Lester Piggott Handicap</td>
+      <td class="col-bet"><span class="bet-tag bet-ew">EW</span></td>
       <td class="col-horse">
-        <strong>Folk Pageant</strong> <span class="inline-price">6/1</span><br>
-        <span class="trainer">rank 2/10 · gap +2 · score 64.1</span>
+          <strong>Allegresse</strong><br><span class="trainer">Andrew Balding</span>      </td>
+      <td class="col-num">9.0</td>
+      <td class="col-num">£29.38 EW</td>
+      <td class="col-num">£35.62</td>
+      <td class="col-note">
+          edge +30.0%
       </td>
-      <td class="col-num">7.0</td>
-      <td class="col-num">£1.50</td>
-      <td class="col-num">£10.50</td>
-      <td class="col-note">rank_gap +2 · soft form confirmed · no flags</td>
     </tr>
-    <tr class="row-rationale">
-      <td colspan="8"><div class="bet-rationale">&#9658; Model rank 2/10, rank_gap +2, score 64.1. Soft-preference confirmed under HOLD card weighting. Clean signal, no flags. Note: v1 pick Allegresse flagged EDGE_ERODED (8/1 synthetic to 4/1 real) — no longer overlaid. Folk Pageant is the selection per Rusty rescore.</div></td>
+    <tr class="row-rationale row-rationale-ew">
+      <td colspan="8"><div class="bet-rationale">▸ Rank #1 (score 95.0), confidence MED. Win edge 30.0% + place edge 12.7% = 42.7% combined ≥ 20% EW threshold. EW: 0.94pts WIN + 0.94pts PLACE = 1.88pts total (£1.88) @ 9.0 (3 places, 1/5 odds).</div></td>
     </tr>
-
-    <!-- 17:20 Lord Melbourne WIN (upgraded) -->
-    <tr class="row-win">
-      <td class="col-time">17:20</td>
-      <td class="col-race">HKJC Northern Dancer Hcp</td>
-      <td class="col-bet"><span class="bet-tag bet-win">WIN</span></td>
-      <td class="col-horse">
-        <strong>Lord Melbourne</strong> <span class="inline-price">19/1</span><br>
-        <span class="trainer">rank 1/17 · gap +13 · score 78.8 · going_fit 78</span><br>
-        <span class="upgrade-tag">UPGRADED EW to WIN</span>
-      </td>
-      <td class="col-num">20.0</td>
-      <td class="col-num">£0.75</td>
-      <td class="col-num">£15.00</td>
-      <td class="col-note">rank_gap +13 · going_fit 78 · strongest signal on card</td>
-    </tr>
-    <tr class="row-rationale">
-      <td colspan="8"><div class="bet-rationale">&#9658; Model rank 1/17, rank_gap +13, score 78.8, going_fit 78. November Handicap soft winner 2024; GTS win at Epsom September 2025 — strongest GTS credentials on the card. Upgraded from EW outsider (v2 bets file) to WIN candidate on Rusty rescore. No flags, no headgear. Strongest signal on the full card.</div></td>
-    </tr>
-
-    <!-- 17:20 Prydwen EW -->
     <tr class="row-ew">
       <td class="col-time">17:20</td>
-      <td class="col-race">HKJC Northern Dancer Hcp &#9889;</td>
+      <td class="col-race">HKJC World Pool Northern Dancer Handicap</td>
       <td class="col-bet"><span class="bet-tag bet-ew">EW</span></td>
       <td class="col-horse">
-        <strong>Prydwen</strong> <span class="inline-price">17/1</span><br>
-        <span class="trainer">EW outsider — same-race companion</span>
+          <strong>Lord Melbourne</strong><br><span class="trainer">Ralph Beckett</span>      </td>
+      <td class="col-num">13.5</td>
+      <td class="col-num">£18.44 EW</td>
+      <td class="col-num">£21.25</td>
+      <td class="col-note">
+          edge +29.7%
       </td>
-      <td class="col-num">18.0</td>
-      <td class="col-num">£0.25 EW</td>
-      <td class="col-num">£4.50</td>
-      <td class="col-note">EW place cover at 17/1</td>
     </tr>
-    <tr class="row-rationale">
-      <td colspan="8"><div class="bet-rationale">&#9658; EW outsider at 17/1 alongside Lord Melbourne WIN. Place cover on a race where Lord Melbourne is the dominant model signal. Min £0.25 EW stake per convention.</div></td>
+    <tr class="row-rationale row-rationale-ew">
+      <td colspan="8"><div class="bet-rationale">▸ Rank #1 (score 95.0), confidence MED. Win edge 29.7% + place edge 0.9% = 30.6% combined ≥ 20% EW threshold. EW: 0.59pts WIN + 0.59pts PLACE = 1.18pts total (£1.18) @ 13.5 (3 places, 1/5 odds).</div></td>
     </tr>
-
-    <!-- 17:55 Apollo One WIN — OVERRIDE of VOID (Dance In The Storm NR) — Rusty re-pick 2026-06-06T12:12:00+01:00 at Steve's request -->
     <tr class="row-win">
       <td class="col-time">17:55</td>
-      <td class="col-race">JRA Tokyo Trophy Hcp</td>
+      <td class="col-race">JRA Tokyo Trophy Handicap</td>
       <td class="col-bet"><span class="bet-tag bet-win">WIN</span></td>
       <td class="col-horse">
-        <strong>Apollo One</strong> <span class="inline-price">7/1</span><br>
-        <span class="trainer">rank 1/16 · gap +3 · score 95.0</span><br>
-        <span class="upgrade-tag">OVERRIDE — Rusty re-pick</span>
+          <strong>Dance In The Storm</strong><br><span class="trainer">Andrew Balding</span>      </td>
+      <td class="col-num">18.5</td>
+      <td class="col-num">£20.78</td>
+      <td class="col-num">£40.16</td>
+      <td class="col-note">
+          edge +93.3%
       </td>
-      <td class="col-num">8.0</td>
-      <td class="col-num">£1.00</td>
-      <td class="col-num">£8.00</td>
-      <td class="col-note"><span class="spec-note">SYNTHETIC_BASE_CAVEAT · GOING_FIT_CAUTION</span></td>
     </tr>
-    <tr class="row-rationale">
-      <td colspan="8"><div class="bet-rationale">&#9658; Model rank 1/16, score 95.0, rank_gap +3. "Acts on any ground" — placed 2nd (2023) and 3rd (2024) in this race under typical June GTS conditions at Epsom. ⚠️ <strong>Amber 1 — SYNTHETIC_BASE_CAVEAT:</strong> price moved from synthetic 17/1 baseline to 7/1 via OR-model repricing, not confirmed market steam — overlay is real at 7/1. ⚠️ <strong>Amber 2 — GOING_FIT_CAUTION (precautionary):</strong> going_fit not persisted in truncated VOID data; "acts on any ground" + two course placings in June GTS strongly imply going_fit ≥50. <em style="color:#8a3000; font-weight:700;">⚠️ Override of earlier VOID — Rusty re-pick at Steve's request; two amber flags (see Rusty 17:55 alt note). Optional: skip if cash-flow tight.</em></div></td>
+    <tr class="row-rationale row-rationale-win">
+      <td colspan="8"><div class="bet-rationale">▸ Rank #1 (score 95.0), confidence HIGH, model_prob 0.1045 vs implied 0.0541 → edge 93.3% ≥ 15% threshold. Quarter-Kelly stake: 1.33pts (£1.33) @ 18.5.</div></td>
     </tr>
 
-    <tr class="row-divider"><td colspan="8">— No-bet races (no qualifier clears threshold at current prices) —</td></tr>
+    <tr class="row-divider"><td colspan="8">— Multiples from portfolio source —</td></tr>
+    <tr class="row-multi">
+      <td class="col-time">Multi</td>
+      <td class="col-race">Double</td>
+      <td class="col-bet"><span class="bet-tag bet-dbl">DBL</span></td>
+      <td class="col-horse">
+        <div class="acca-leg"><strong>Kinswoman</strong> <span class="trainer">15:15 @ 24.0</span></div>
+        <div class="acca-leg"><strong>Dance In The Storm</strong> <span class="trainer">17:55 @ 18.5</span></div>
+      </td>
+      <td class="col-num">444.0</td>
+      <td class="col-num">£7.81</td>
+      <td class="col-num">£3468.75</td>
+      <td class="col-note">EV £0.92</td>
+    </tr>
+    <tr class="row-rationale row-rationale-multi">
+      <td colspan="8"><div class="bet-rationale">▸ Double: Kinswoman × Dance In The Storm. Model probs: 0.0612 × 0.1045 = 0.00639. Dec odds product: 444.00. EV: £0.92.</div></td>
+    </tr>
 
-    <!-- 13:30 NO_BET -->
+    <tr class="row-divider"><td colspan="8">— No-bet races (model passes at current prices) —</td></tr>
     <tr class="row-pass">
       <td class="col-time">13:30</td>
-      <td class="col-race">Betfred Tattenham Corner G3</td>
+      <td class="col-race">Betfred Tattenham Corner Stakes</td>
       <td class="col-bet"><span class="bet-tag bet-pass">PASS</span></td>
-      <td class="col-horse">— <span class="trainer">(no qualifier)</span></td>
+      <td class="col-horse">
+Lake Forest <span class="trainer">(model fancied, no value)</span>      </td>
+      <td class="col-num">7.0</td>
       <td class="col-num">—</td>
       <td class="col-num">—</td>
-      <td class="col-num">—</td>
-      <td class="col-note">No runner clears rank_gap threshold</td>
+      <td class="col-note">edge +4.1% — below threshold</td>
     </tr>
-
-    <!-- 14:40 NO_BET -->
+    <tr class="row-pass">
+      <td class="col-time">14:05</td>
+      <td class="col-race">Princess Elizabeth Stakes</td>
+      <td class="col-bet"><span class="bet-tag bet-pass">PASS</span></td>
+      <td class="col-horse">
+Pacific Mission <span class="trainer">(model fancied, no value)</span>      </td>
+      <td class="col-num">7.5</td>
+      <td class="col-num">—</td>
+      <td class="col-num">—</td>
+      <td class="col-note">edge -9.4% — below threshold</td>
+    </tr>
     <tr class="row-pass">
       <td class="col-time">14:40</td>
-      <td class="col-race">Coolmore Coronation Cup G1</td>
+      <td class="col-race">Coolmore Coronation Cup</td>
       <td class="col-bet"><span class="bet-tag bet-pass">PASS</span></td>
-      <td class="col-horse">— <span class="trainer">(Illinois rank_gap 0 — invalidated)</span></td>
+      <td class="col-horse">
+See The Fire <span class="trainer">(model fancied, no value)</span>      </td>
+      <td class="col-num">13.0</td>
       <td class="col-num">—</td>
       <td class="col-num">—</td>
-      <td class="col-num">—</td>
-      <td class="col-note">Illinois score 12.1, rank 6/6, rank_gap 0. No qualifier.</td>
+      <td class="col-note">edge +148.4% — below threshold</td>
     </tr>
-    <tr class="row-rationale">
-      <td colspan="8"><div class="bet-rationale">&#9658; v1 pick Illinois invalidated: model_score 12.1 (last in 6-runner field), rank_gap 0, market drifted to 39/1 (+90.5%). No Coronation Cup runner clears rank_gap +2 with score 50+ and no flags. NO_BET race.</div></td>
+    <tr class="row-pass">
+      <td class="col-time">16:00</td>
+      <td class="col-race">Betfred Derby</td>
+      <td class="col-bet"><span class="bet-tag bet-pass">PASS</span></td>
+      <td class="col-horse">
+Item <span class="trainer">(model fancied, no value)</span>      </td>
+      <td class="col-num">5.0</td>
+      <td class="col-num">—</td>
+      <td class="col-num">—</td>
+      <td class="col-note">edge -52.9% — below threshold</td>
     </tr>
-
   </tbody>
 </table>
 
 <footer class="slip-footer">
-  <div>
+  <div class="footer-left">
     <p><strong>Legend:</strong>
        <span class="bet-tag bet-win">WIN</span> back to win &nbsp;·&nbsp;
        <span class="bet-tag bet-ew">EW</span> each-way &nbsp;·&nbsp;
-       &#9889; outsider value play &nbsp;·&nbsp;
-       <span class="spec-tag">SPEC</span> speculative / compressed-range &nbsp;·&nbsp;
-       <span class="upgrade-tag">UPGRADED EW to WIN</span> rescore upgrade &nbsp;·&nbsp;
-       <span class="bet-tag bet-void">VOID</span> NR confirmed &nbsp;·&nbsp;
+       ⚡ outsider value play &nbsp;·&nbsp;
+       <span class="bet-tag bet-dbl">DBL</span>/<span class="bet-tag bet-tbl">TBL</span> multiples &nbsp;·&nbsp;
        <span class="bet-tag bet-pass">PASS</span> no edge
     </p>
-    <p class="disclaimer">Generated 2026-06-06 11:52 BST · Linus v3 · Rusty rescore 11:30 BST · Saul validation PENDING — do not place until Section D PASS confirmed · All data from rusty-rescored-2026-06-06.json + market-latest.json (11:26 BST) · For personal use. Please gamble responsibly.</p>
+    <p class="disclaimer">Generated 2026-06-08 16:44 · Model v0.1 · Odds snapshot: 2026-06-06T11:26 BST · For personal use. Please gamble responsibly.</p>
   </div>
 </footer>
-
-<!--
-====================================================================
-SAUL HANDOFF — Section D validation required before 13:30 BST
-Generated: 2026-06-06T11:52:00+01:00 | By: Linus (Reports Engineer) v3
-====================================================================
-
-LIVE-RUNNER STATUS — Saul to verify each pick is declared in final field:
-  1. 14:05  Princess Child (11/1) WIN       — Princess Elizabeth G3
-  2. 15:15  Another Baar (39/1) WIN         — Betfred Dash Heritage Hcp
-  3. 15:15  Ziggy's Triton (32/1) EW        — Betfred Dash Heritage Hcp
-  4. 16:00  Action (13/1) WIN               — Betfred Derby G1
-  5. 16:40  Folk Pageant (6/1) WIN          — Cherryfield Lester Piggott Hcp
-  6. 17:20  Lord Melbourne (19/1) WIN       — HKJC Northern Dancer Hcp
-  7. 17:20  Prydwen (17/1) EW              — HKJC Northern Dancer Hcp
-
-NR-SWAP CHECK:
-  - 17:55 Dance In The Storm: CONFIRMED NR (16 runners only). VOID applied. No replacement.
-  - All other picks sourced against market-latest.json (Rusty gate 11:26 BST).
-  - Saul: re-verify each against live RP racecard before 13:30 BST first race.
-
-SUB-50 SCORE CHECK (Rule — Saul to confirm):
-  Princess Child:   77.5  CHECK
-  Another Baar:     86.2  CHECK
-  Ziggy's Triton:   — verify in rusty-rescored-2026-06-06.json
-  Action:           69.4  CHECK
-  Folk Pageant:     64.1  CHECK
-  Lord Melbourne:   78.8  CHECK
-  Prydwen:          — verify in rusty-rescored-2026-06-06.json
-  Danny confirmed: ZERO sub-50 scores on Saturday card. No override needed.
-
-GOING_FIT >= 40 CHECK (reject outsider candidate if going_fit < 40):
-  Action:           going_fit 68  CHECK
-  Lord Melbourne:   going_fit 78  CHECK
-  Princess Child:   going_fit elevated on HOLD — verify >= 40 in Rusty JSON
-  Folk Pageant:     verify going_fit >= 40 in rusty-rescored-2026-06-06.json
-  Another Baar:     verify going_fit >= 40 (COMPRESSED_RANGE_CAUTION already flagged)
-  Ziggy's Triton:   verify going_fit >= 40
-  Prydwen:          verify going_fit >= 40
-
-BENVENUTO CELLINI STEAM (context — not a pick):
-  9/4 ante-post to Evs = MARKET_STEAM_MAJOR + EDGE_ERODED. Edge eliminated at Evs.
-  Ground concern if going deteriorates further. Noted in Action (16:00) rationale.
-  No Saul action required beyond awareness.
-
-RULE COMPLIANCE (Linus assertion — Saul to validate):
-  Rule 1 (live-runner gate):  All picks from market-latest.json 11:26 BST. Dance NR -> VOID.
-  Rule 2 (NR-swap pre-check): No NR replacements introduced. NO_BET where no qualifier.
-  Rule 3 (runner-validity):   Separate VOID/SPEC/CAVEAT indicators rendered distinctly.
-  Rule 4 (anti-fabrication):  All prices/scores/gaps verbatim from Rusty rescore output.
-
-Saul: run Section D (Rules 1-4 live verification) and confirm PASS/FAIL before 13:00 BST.
-====================================================================
--->
 
 </body>
 </html>

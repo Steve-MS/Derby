@@ -1,236 +1,398 @@
 {
-  "meta": {
-    "card_date": "2026-06-06",
-    "course": "Epsom",
-    "validation": "✅ Saul AMBER GO · Danny GO 12:13 BST · 17:55 override post-validation",
-    "generated_at": "2026-06-06T11:52:00+01:00"
-  },
-  "generated": "2026-06-06T11:52:00+01:00",
-  "generated_by": "Linus (Reports Engineer) v3",
-  "scenario": "HOLD — Good to Soft, rain declared",
-  "saul_validation_status": "PENDING — do not place until Section D PASS confirmed",
   "bankroll": 100.0,
-  "total_outlay_gbp": 6.5,
-  "notes": [
-    "v1 picks Illinois (14:40) and Christmas Day (16:00) invalidated by Rusty rescore — replaced per instructions",
-    "Lord Melbourne upgraded from EW to WIN on Rusty rescore",
-    "17:55 VOID overridden — Apollo One WIN £1.00 @ 7/1 injected by Linus at Steve's request (Rusty re-pick 2026-06-06T12:12:00+01:00). Two amber flags: SYNTHETIC_BASE_CAVEAT + GOING_FIT_CAUTION_PRECAUTIONARY.",
-    "All prices and signals sourced from rusty-rescored-2026-06-06.json + market-latest.json (11:26 BST)"
+  "singles": [
+    {
+      "race_id": "epsom-2026-06-06-1330",
+      "horse": "Lake Forest",
+      "bet_type": "PASS",
+      "stake_pts": 0.0,
+      "stake_gbp": 0.0,
+      "model_prob": 0.1487,
+      "implied_prob": 0.1429,
+      "edge_pct": 4.1,
+      "expected_return_gbp": 0.0,
+      "rationale": "Confidence LOW, win edge 4.1%, combined EW edge 2.2% \u2014 below thresholds (15% WIN / 20% EW combined)."
+    },
+    {
+      "race_id": "epsom-2026-06-06-1405",
+      "horse": "Pacific Mission",
+      "bet_type": "PASS",
+      "stake_pts": 0.0,
+      "stake_gbp": 0.0,
+      "model_prob": 0.1208,
+      "implied_prob": 0.1333,
+      "edge_pct": -9.4,
+      "expected_return_gbp": 0.0,
+      "rationale": "Confidence LOW, win edge -9.4%, combined EW edge -26.0% \u2014 below thresholds (15% WIN / 20% EW combined)."
+    },
+    {
+      "race_id": "epsom-2026-06-06-1440",
+      "horse": "See The Fire",
+      "bet_type": "PASS",
+      "stake_pts": 0.0,
+      "stake_gbp": 0.0,
+      "model_prob": 0.1911,
+      "implied_prob": 0.0769,
+      "edge_pct": 148.45,
+      "expected_return_gbp": 0.0,
+      "rationale": "Confidence LOW, win edge 148.4%, combined EW edge 243.4% \u2014 below thresholds (15% WIN / 20% EW combined)."
+    },
+    {
+      "race_id": "epsom-2026-06-06-1515",
+      "horse": "Kinswoman",
+      "bet_type": "WIN",
+      "stake_pts": 0.51,
+      "stake_gbp": 0.51,
+      "model_prob": 0.0612,
+      "implied_prob": 0.0417,
+      "edge_pct": 46.88,
+      "odds_decimal": 24.0,
+      "odds_raw": "24.0",
+      "expected_return_gbp": 0.75,
+      "rationale": "Rank #1 (score 95.0), confidence HIGH, model_prob 0.0612 vs implied 0.0417 \u2192 edge 46.9% \u2265 15% threshold. Quarter-Kelly stake: 0.51pts (\u00a30.51) @ 24.0."
+    },
+    {
+      "race_id": "epsom-2026-06-06-1600",
+      "horse": "Item",
+      "bet_type": "PASS",
+      "stake_pts": 0.0,
+      "stake_gbp": 0.0,
+      "model_prob": 0.0943,
+      "implied_prob": 0.2,
+      "edge_pct": -52.86,
+      "expected_return_gbp": 0.0,
+      "rationale": "Confidence LOW, win edge -52.9%, combined EW edge -102.0% \u2014 below thresholds (15% WIN / 20% EW combined)."
+    },
+    {
+      "race_id": "epsom-2026-06-06-1640",
+      "horse": "Allegresse",
+      "bet_type": "EW",
+      "stake_pts": 1.88,
+      "stake_gbp": 1.88,
+      "model_prob": 0.1445,
+      "implied_prob": 0.1111,
+      "edge_pct": 30.03,
+      "place_edge_pct": 12.69,
+      "combined_edge_pct": 42.72,
+      "odds_decimal": 9.0,
+      "odds_raw": "9.0",
+      "places_paid": 3,
+      "model_place_prob": 0.4334,
+      "place_odds_decimal": 2.6,
+      "expected_return_gbp": 2.28,
+      "rationale": "Rank #1 (score 95.0), confidence MED. Win edge 30.0% + place edge 12.7% = 42.7% combined \u2265 20% EW threshold. EW: 0.94pts WIN + 0.94pts PLACE = 1.88pts total (\u00a31.88) @ 9.0 (3 places, 1/5 odds)."
+    },
+    {
+      "race_id": "epsom-2026-06-06-1720",
+      "horse": "Lord Melbourne",
+      "bet_type": "EW",
+      "stake_pts": 1.18,
+      "stake_gbp": 1.18,
+      "model_prob": 0.0961,
+      "implied_prob": 0.0741,
+      "edge_pct": 29.74,
+      "place_edge_pct": 0.91,
+      "combined_edge_pct": 30.65,
+      "odds_decimal": 13.5,
+      "odds_raw": "13.5",
+      "places_paid": 3,
+      "model_place_prob": 0.2883,
+      "place_odds_decimal": 3.5,
+      "expected_return_gbp": 1.36,
+      "rationale": "Rank #1 (score 95.0), confidence MED. Win edge 29.7% + place edge 0.9% = 30.6% combined \u2265 20% EW threshold. EW: 0.59pts WIN + 0.59pts PLACE = 1.18pts total (\u00a31.18) @ 13.5 (3 places, 1/5 odds)."
+    },
+    {
+      "race_id": "epsom-2026-06-06-1755",
+      "horse": "Dance In The Storm",
+      "bet_type": "WIN",
+      "stake_pts": 1.33,
+      "stake_gbp": 1.33,
+      "model_prob": 0.1045,
+      "implied_prob": 0.0541,
+      "edge_pct": 93.27,
+      "odds_decimal": 18.5,
+      "odds_raw": "18.5",
+      "expected_return_gbp": 2.57,
+      "rationale": "Rank #1 (score 95.0), confidence HIGH, model_prob 0.1045 vs implied 0.0541 \u2192 edge 93.3% \u2265 15% threshold. Quarter-Kelly stake: 1.33pts (\u00a31.33) @ 18.5."
+    }
   ],
-  "bets": [
+  "doubles": [
     {
-      "race_time": "13:30",
-      "race_name": "Betfred Tattenham Corner Stakes G3",
-      "pick": null,
-      "status": "NO_BET",
-      "price": null,
-      "stake_guidance": null,
-      "flags": [],
-      "rationale_short": "No qualifier — no runner clears rank_gap threshold in this race."
-    },
-    {
-      "race_time": "14:05",
-      "race_name": "Princess Elizabeth Stakes G3",
-      "pick": "Princess Child",
-      "status": "WIN",
-      "price": "11/1",
-      "price_decimal": 12.0,
-      "stake_guidance": "£1.00 WIN",
-      "potential_gbp": 12.0,
-      "flags": [],
-      "model_rank": "3/9",
-      "rank_gap": 3.5,
-      "model_score": 77.5,
-      "rationale_short": "Model rank 3/9, rank_gap +3.5, score 77.5. GTS-elevated going preference. Clean signal, no flags."
-    },
-    {
-      "race_time": "14:40",
-      "race_name": "Coolmore Coronation Cup G1",
-      "pick": null,
-      "status": "NO_BET",
-      "price": null,
-      "stake_guidance": null,
-      "flags": [
-        "V1_INVALIDATED_ILLINOIS"
-      ],
-      "rationale_short": "Illinois invalidated: model_score 12.1, rank 6/6 (last), rank_gap 0. Market drifted to 39/1 (+90.5%). No qualifier in field. v1 pick removed."
-    },
-    {
-      "race_time": "15:15",
-      "race_name": "Betfred Dash Heritage Handicap",
-      "pick": "Another Baar",
-      "status": "WIN",
-      "price": "39/1",
-      "price_decimal": 40.0,
-      "stake_guidance": "£0.25 WIN (minimum stake — speculative)",
-      "potential_gbp": 10.0,
-      "flags": [
-        "COMPRESSED_RANGE_CAUTION",
-        "SYNTHETIC_BASE_CAVEAT"
-      ],
-      "model_rank": "3/20",
-      "rank_gap": 15,
-      "model_score": 86.2,
-      "rationale_short": "Rank 3/20, rank_gap +15, score 86.2. SYNTHETIC_BASE_CAVEAT: large rank-gap partly a synthetic-to-real price revelation artefact, not pure market mispricing. COMPRESSED_RANGE_CAUTION: RPM field range 5 points (102-107). Treat as speculative outsider only."
-    },
-    {
-      "race_time": "15:15",
-      "race_name": "Betfred Dash Heritage Handicap",
-      "pick": "Ziggy's Triton",
-      "status": "EW",
-      "price": "32/1",
-      "price_decimal": 33.0,
-      "stake_guidance": "£0.25 EW (min stake)",
-      "potential_gbp_win": 8.25,
-      "flags": [
-        "COMPRESSED_RANGE_CAUTION"
-      ],
-      "rationale_short": "EW outsider companion to Another Baar WIN. Same COMPRESSED_RANGE_CAUTION (102-107 RPM range). Speculative place cover only."
-    },
-    {
-      "race_time": "16:00",
-      "race_name": "Betfred Derby G1",
-      "pick": "Action",
-      "status": "WIN",
-      "price": "13/1",
-      "price_decimal": 14.0,
-      "stake_guidance": "£1.00 WIN",
-      "potential_gbp": 14.0,
-      "flags": [],
-      "model_rank": "3/14",
-      "rank_gap": 3.5,
-      "model_score": 69.4,
-      "going_fit": 68,
-      "notes": [
-        "Replaces Christmas Day (rank_gap +0.5, below WIN threshold of +2). V1_INVALIDATED_CHRISTMAS_DAY.",
-        "Cheekpieces first-time. Related to 2025 Derby winner Lambourn.",
-        "Benvenuto Cellini field rival: 9/4 ante-post to Evs — MARKET_STEAM_MAJOR + EDGE_ERODED. Only genuine steam on card. Ground concern if going deteriorates. Action remains overlay at 13/1."
-      ],
-      "rationale_short": "Model rank 3/14, rank_gap +3.5, model_score 69.4, going_fit 68. Cheekpieces first-time. Replaces Christmas Day (rank_gap insufficient). Benvenuto Cellini steamed Evs (9/4 ante-post) — edge eroded on that rival; Action is the overlay."
-    },
-    {
-      "race_time": "16:40",
-      "race_name": "Cherryfield (Croydon) Lester Piggott Handicap",
-      "pick": "Folk Pageant",
-      "status": "WIN",
-      "price": "6/1",
-      "price_decimal": 7.0,
-      "stake_guidance": "£1.50 WIN",
-      "potential_gbp": 10.5,
-      "flags": [],
-      "model_rank": "2/10",
-      "rank_gap": 2,
-      "model_score": 64.1,
-      "rationale_short": "Model rank 2/10, rank_gap +2, score 64.1. Soft preference confirmed on HOLD card. v1 pick Allegresse carries EDGE_ERODED flag (8/1 synthetic to 4/1 real) — no longer overlaid. Folk Pageant is the selection."
-    },
-    {
-      "race_time": "17:20",
-      "race_name": "HKJC World Pool Northern Dancer Handicap",
-      "pick": "Lord Melbourne",
-      "status": "WIN",
-      "price": "19/1",
-      "price_decimal": 20.0,
-      "stake_guidance": "£0.75 WIN",
-      "potential_gbp": 15.0,
-      "flags": [
-        "UPGRADED_EW_TO_WIN"
-      ],
-      "model_rank": "1/17",
-      "rank_gap": 13,
-      "model_score": 78.8,
-      "going_fit": 78,
-      "rationale_short": "Model rank 1/17, rank_gap +13, score 78.8, going_fit 78. November Handicap soft winner 2024; GTS win Epsom Sept 2025. Upgraded from EW to WIN on Rusty rescore. Strongest signal on full card. No flags."
-    },
-    {
-      "race_time": "17:20",
-      "race_name": "HKJC World Pool Northern Dancer Handicap",
-      "pick": "Prydwen",
-      "status": "EW",
-      "price": "17/1",
-      "price_decimal": 18.0,
-      "stake_guidance": "£0.25 EW (min stake)",
-      "potential_gbp_win": 4.5,
-      "flags": [],
-      "rationale_short": "EW outsider at 17/1 alongside Lord Melbourne WIN. Place cover on a race with dominant Lord Melbourne model signal. Min stake per convention."
-    },
-    {
-      "race_time": "17:55",
-      "race_name": "JRA Tokyo Trophy Handicap",
-      "pick": "Apollo One",
-      "status": "WIN",
-      "price": "7/1",
-      "price_decimal": 8.0,
-      "stake_guidance": "£1.00 WIN",
-      "potential_gbp": 8.0,
-      "flags": [
-        "SYNTHETIC_BASE_CAVEAT",
-        "GOING_FIT_CAUTION_PRECAUTIONARY",
-        "OVERRIDE_OF_VOID",
-        "RUSTY_REPICK_2026-06-06"
-      ],
-      "model_rank": "1/16",
-      "rank_gap": 3,
-      "model_score": 95.0,
-      "notes": [
-        "Override of earlier VOID (Dance In The Storm confirmed NR).",
-        "Re-pick at Steve's request — Rusty confirmed 2026-06-06T12:12:00+01:00.",
-        "SYNTHETIC_BASE_CAVEAT: price moved from synthetic 17/1 baseline to 7/1 via OR-model repricing — not confirmed market steam; overlay is genuine at 7/1.",
-        "GOING_FIT_CAUTION (precautionary): going_fit not persisted in truncated VOID data; 'acts on any ground' + placed 2nd (2023) and 3rd (2024) here under typical June GTS conditions — going_fit ≥50 strongly implied.",
-        "Optional: skip if cash-flow tight."
-      ],
-      "rationale_short": "Override of VOID. Apollo One model rank 1/16, score 95.0, rank_gap +3. Acts on any ground — 2nd (2023), 3rd (2024) in this race. Two amber flags: SYNTHETIC_BASE_CAVEAT + GOING_FIT_CAUTION (precautionary). Rusty re-pick at Steve's request."
-    },
-    {
-      "race_time": "16:00",
-      "race_name": "Epsom Derby",
-      "pick": "TRIFECTA BOX: [Action, Benvenuto Cellini, Item]",
-      "status": "TRIFECTA",
-      "price": "see horse list",
-      "stake_guidance": "$6.00 total ($1.00 x 6 combos)",
-      "flags": [
-        "SPECULATIVE",
-        "DERBY_SIDE_BET"
-      ],
-      "rationale_short": "Box top 3 by Rusty model_score (Action 77.1, Benvenuto Cellini 88.0, Item 85.8); score gap to rank-4 Maltese Cross is 7.0 pts. Action as banker (existing WIN pick at 13/1). Causeway confirmed NR — box unaffected. Friday P&L -£10.07, conservative sizing.",
-      "horses": [
+      "legs": [
         {
-          "horse": "Action",
-          "role": "BANKER",
-          "model_score": 77.1,
-          "going_fit": 68,
-          "rp_price": "13/1"
+          "race_id": "epsom-2026-06-06-1515",
+          "horse": "Kinswoman",
+          "odds_decimal": 24.0,
+          "model_prob": 0.0612
         },
         {
-          "horse": "Benvenuto Cellini",
-          "role": "Leg 2",
-          "model_score": 88.0,
-          "going_fit": 50,
-          "rp_price": "Evs"
-        },
-        {
-          "horse": "Item",
-          "role": "Leg 3",
-          "model_score": 85.8,
-          "going_fit": 48,
-          "rp_price": "7/2"
+          "race_id": "epsom-2026-06-06-1755",
+          "horse": "Dance In The Storm",
+          "odds_decimal": 18.5,
+          "model_prob": 0.1045
         }
       ],
-      "combos": 6,
-      "stake_per_combo": "£1.00",
-      "total_stake": "£6.00",
-      "injected_by": "Linus (Reports Engineer)",
-      "injected_at": "2026-06-06T12:07:00+01:00"
+      "combined_stake_gbp": 0.5,
+      "potential_return_gbp": 222.0,
+      "combined_prob": 0.006395,
+      "expected_value_gbp": 0.92,
+      "rationale": "Double: Kinswoman \u00d7 Dance In The Storm. Model probs: 0.0612 \u00d7 0.1045 = 0.00639. Dec odds product: 444.00. EV: \u00a30.92."
+    }
+  ],
+  "trebles": [],
+  "accumulators": [],
+  "lucky_15": null,
+  "outsiders": [
+    {
+      "race_id": "epsom-2026-06-06-1330",
+      "outsider_pick": null,
+      "outsider_rationale": "Insufficient market signal"
+    },
+    {
+      "race_id": "epsom-2026-06-06-1405",
+      "outsider_pick": null,
+      "outsider_rationale": "Insufficient market signal"
+    },
+    {
+      "race_id": "epsom-2026-06-06-1440",
+      "race_name": "Coolmore Coronation Cup (Group 1)",
+      "race_time": "14:40",
+      "horse": "See The Fire",
+      "trainer": "Andrew Balding",
+      "jockey": "TBC",
+      "morning_price": 13.0,
+      "odds_source": "estimated",
+      "model_rank": 1,
+      "market_rank": 6,
+      "rank_delta": 5,
+      "bet_type": "EW",
+      "stake_pts": 0.25,
+      "stake_gbp": 0.25,
+      "ew_terms": "1/4 odds, 1-1-2-3",
+      "potential_return_gbp_win": 3.25,
+      "potential_return_gbp_place": 1.0,
+      "rationale": "Model rates 1; market rates 6. Disagreement of 5 ranks \u2014 value play.",
+      "outsider_pick": "See The Fire"
+    },
+    {
+      "race_id": "epsom-2026-06-06-1515",
+      "outsider_pick": null,
+      "outsider_rationale": "Insufficient market signal"
+    },
+    {
+      "race_id": "epsom-2026-06-06-1600",
+      "race_name": "Betfred Derby (Group 1, Colts & Fillies Classic)",
+      "race_time": "16:00",
+      "horse": "Causeway",
+      "trainer": "Aidan O'Brien",
+      "jockey": "TBC",
+      "morning_price": 29.0,
+      "odds_source": "estimated",
+      "model_rank": 4,
+      "market_rank": 11,
+      "rank_delta": 7,
+      "bet_type": "EW",
+      "stake_pts": 0.25,
+      "stake_gbp": 0.25,
+      "ew_terms": "1/4 odds, 1-1-2-3",
+      "potential_return_gbp_win": 7.25,
+      "potential_return_gbp_place": 2.0,
+      "rationale": "Model rates 4; market rates 11. Disagreement of 7 ranks \u2014 value play.",
+      "outsider_pick": "Causeway"
+    },
+    {
+      "race_id": "epsom-2026-06-06-1640",
+      "outsider_pick": null,
+      "outsider_rationale": "Insufficient market signal"
+    },
+    {
+      "race_id": "epsom-2026-06-06-1720",
+      "outsider_pick": null,
+      "outsider_rationale": "Insufficient market signal"
+    },
+    {
+      "race_id": "epsom-2026-06-06-1755",
+      "outsider_pick": null,
+      "outsider_rationale": "Insufficient market signal"
     }
   ],
   "portfolio_summary": {
-    "total_stake_gbp": 6.5,
-    "win_bets_count": 6,
-    "ew_bets_count": 2,
-    "no_bet_races": 2,
-    "void_races": 0,
-    "max_potential_gbp": 82.25,
-    "hold_card_active": true,
-    "going": "Good to Soft — rain declared"
+    "total_stake_gbp": 6.4,
+    "max_potential_return_gbp": 228.96,
+    "expected_value_gbp": 2.98,
+    "rec_count": 7,
+    "active_singles": 4,
+    "passed_singles": 4,
+    "doubles_count": 1,
+    "trebles_count": 0,
+    "accumulators_count": 0,
+    "outsider_summary": {
+      "count": 2,
+      "total_stake_gbp": 1.0,
+      "total_potential_return_gbp_win": 10.5,
+      "total_potential_return_gbp_place": 3.0
+    }
   },
-  "disclaimer": "For entertainment only. 18+. Gamble responsibly. BeGambleAware.org."
+  "disclaimer": "For entertainment only. 18+. Gamble responsibly. BeGambleAware.org.",
+  "meta": {
+    "schema_version": "linus-cli-bets-v1",
+    "course": "Epsom",
+    "course_slug": "epsom",
+    "meeting": "derby-2026",
+    "meeting_slug": "derby-2026",
+    "date": "2026-06-06",
+    "card_date": "2026-06-06",
+    "generated_at": "2026-06-08T15:44:01.260553+00:00",
+    "bankroll": 100.0,
+    "total_stake": 6.4,
+    "total_stake_gbp": 6.4
+  },
+  "entries": [
+    {
+      "race_id": "epsom-2026-06-06-1330",
+      "race_time": "13:30",
+      "race_name": "Betfred Tattenham Corner Stakes (Group 3)",
+      "course": "Epsom",
+      "pick": "Lake Forest",
+      "status": "NO_BET",
+      "bet_type": "pass",
+      "stake_guidance": null,
+      "odds_decimal": null,
+      "rationale_short": "Confidence LOW, win edge 4.1%, combined EW edge 2.2% \u2014 below thresholds (15% WIN / 20% EW combined)."
+    },
+    {
+      "race_id": "epsom-2026-06-06-1405",
+      "race_time": "14:05",
+      "race_name": "Princess Elizabeth Stakes (Group 3)",
+      "course": "Epsom",
+      "pick": "Pacific Mission",
+      "status": "NO_BET",
+      "bet_type": "pass",
+      "stake_guidance": null,
+      "odds_decimal": null,
+      "rationale_short": "Confidence LOW, win edge -9.4%, combined EW edge -26.0% \u2014 below thresholds (15% WIN / 20% EW combined)."
+    },
+    {
+      "race_id": "epsom-2026-06-06-1440",
+      "race_time": "14:40",
+      "race_name": "Coolmore Coronation Cup (Group 1)",
+      "course": "Epsom",
+      "pick": "See The Fire",
+      "status": "NO_BET",
+      "bet_type": "pass",
+      "stake_guidance": null,
+      "odds_decimal": null,
+      "rationale_short": "Confidence LOW, win edge 148.4%, combined EW edge 243.4% \u2014 below thresholds (15% WIN / 20% EW combined)."
+    },
+    {
+      "race_id": "epsom-2026-06-06-1515",
+      "race_time": "15:15",
+      "race_name": "Betfred Dash Handicap (Heritage Handicap)",
+      "course": "Epsom",
+      "pick": "Kinswoman",
+      "status": "WIN",
+      "bet_type": "win",
+      "stake_guidance": "\u00a30.51 WIN",
+      "odds_decimal": 24.0,
+      "rationale_short": "Rank #1 (score 95.0), confidence HIGH, model_prob 0.0612 vs implied 0.0417 \u2192 edge 46.9% \u2265 15% threshold. Quarter-Kelly stake: 0.51pts (\u00a30.51) @ 24.0."
+    },
+    {
+      "race_id": "epsom-2026-06-06-1600",
+      "race_time": "16:00",
+      "race_name": "Betfred Derby (Group 1, Colts & Fillies Classic)",
+      "course": "Epsom",
+      "pick": "Item",
+      "status": "NO_BET",
+      "bet_type": "pass",
+      "stake_guidance": null,
+      "odds_decimal": null,
+      "rationale_short": "Confidence LOW, win edge -52.9%, combined EW edge -102.0% \u2014 below thresholds (15% WIN / 20% EW combined)."
+    },
+    {
+      "race_id": "epsom-2026-06-06-1640",
+      "race_time": "16:40",
+      "race_name": "Cherryfield (Croydon) Lester Piggott Handicap",
+      "course": "Epsom",
+      "pick": "Allegresse",
+      "status": "EW",
+      "bet_type": "ew",
+      "stake_guidance": "\u00a30.94 EW",
+      "odds_decimal": 9.0,
+      "rationale_short": "Rank #1 (score 95.0), confidence MED. Win edge 30.0% + place edge 12.7% = 42.7% combined \u2265 20% EW threshold. EW: 0.94pts WIN + 0.94pts PLACE = 1.88pts total (\u00a31.88) @ 9.0 (3 places, 1/5 odds)."
+    },
+    {
+      "race_id": "epsom-2026-06-06-1720",
+      "race_time": "17:20",
+      "race_name": "HKJC World Pool Northern Dancer Handicap",
+      "course": "Epsom",
+      "pick": "Lord Melbourne",
+      "status": "EW",
+      "bet_type": "ew",
+      "stake_guidance": "\u00a30.59 EW",
+      "odds_decimal": 13.5,
+      "rationale_short": "Rank #1 (score 95.0), confidence MED. Win edge 29.7% + place edge 0.9% = 30.6% combined \u2265 20% EW threshold. EW: 0.59pts WIN + 0.59pts PLACE = 1.18pts total (\u00a31.18) @ 13.5 (3 places, 1/5 odds)."
+    },
+    {
+      "race_id": "epsom-2026-06-06-1755",
+      "race_time": "17:55",
+      "race_name": "JRA Tokyo Trophy Handicap",
+      "course": "Epsom",
+      "pick": "Dance In The Storm",
+      "status": "WIN",
+      "bet_type": "win",
+      "stake_guidance": "\u00a31.33 WIN",
+      "odds_decimal": 18.5,
+      "rationale_short": "Rank #1 (score 95.0), confidence HIGH, model_prob 0.1045 vs implied 0.0541 \u2192 edge 93.3% \u2265 15% threshold. Quarter-Kelly stake: 1.33pts (\u00a31.33) @ 18.5."
+    },
+    {
+      "race_id": "epsom-2026-06-06-1440",
+      "race_time": "14:40",
+      "race_name": "Coolmore Coronation Cup (Group 1)",
+      "course": "Epsom",
+      "pick": "See The Fire",
+      "status": "EW",
+      "bet_type": "outsider_ew",
+      "stake_guidance": "\u00a30.25 EW",
+      "odds_decimal": 13.0,
+      "rationale_short": "Model rates 1; market rates 6. Disagreement of 5 ranks \u2014 value play."
+    },
+    {
+      "race_id": "epsom-2026-06-06-1600",
+      "race_time": "16:00",
+      "race_name": "Betfred Derby (Group 1, Colts & Fillies Classic)",
+      "course": "Epsom",
+      "pick": "Causeway",
+      "status": "EW",
+      "bet_type": "outsider_ew",
+      "stake_guidance": "\u00a30.25 EW",
+      "odds_decimal": 29.0,
+      "rationale_short": "Model rates 4; market rates 11. Disagreement of 7 ranks \u2014 value play."
+    },
+    {
+      "race_id": "multi",
+      "race_time": "Multi",
+      "race_name": "Double",
+      "course": "Epsom",
+      "pick": "Kinswoman \u00d7 Dance In The Storm",
+      "status": "DOUBLE",
+      "bet_type": "double",
+      "stake_guidance": "\u00a30.50 DOUBLE",
+      "total_stake": "\u00a30.50",
+      "legs": [
+        {
+          "race_id": "epsom-2026-06-06-1515",
+          "horse": "Kinswoman",
+          "odds_decimal": 24.0,
+          "model_prob": 0.0612
+        },
+        {
+          "race_id": "epsom-2026-06-06-1755",
+          "horse": "Dance In The Storm",
+          "odds_decimal": 18.5,
+          "model_prob": 0.1045
+        }
+      ],
+      "rationale_short": "Double: Kinswoman \u00d7 Dance In The Storm. Model probs: 0.0612 \u00d7 0.1045 = 0.00639. Dec odds product: 444.00. EV: \u00a30.92."
+    }
+  ]
 }
