@@ -630,6 +630,129 @@ def render_trifecta_box(trifecta: dict) -> str:
     )
 
 
+def _parse_stake_amount(s: str | None) -> float:
+    """Extract the leading £/$/€ amount from a stake_guidance or total_stake string.
+
+    Examples::
+
+        "£1.00 WIN"                        → 1.0
+        "£0.25 EW (min stake)"             → 0.25
+        "$6.00 total ($1.00 x 6 combos)"  → 6.0
+        "£6.00"                            → 6.0
+        None / ""                          → 0.0
+    """
+    if not s:
+        return 0.0
+    m = re.search(r"[£$€](\d+(?:\.\d+)?)", str(s))
+    return float(m.group(1)) if m else 0.0
+
+
+def render_header(bets_data: dict) -> dict:
+    """Compute all header display values from a ``bets-{date}.json`` dict.
+
+    AUTHORIZED: any change to header fields — totals, NR line, validation tag,
+    bet count — is in scope for Linus whenever bets JSON changes.
+    No coordinator escalation required.
+
+    Handles both old schema (flat ``"bets": [...]``) and new schema
+    (``"meta": {...}, "entries": [...]``).  If ``meta`` is absent the renderer
+    falls back gracefully: course defaults to "Epsom", validation to ``None``.
+
+    Parameters
+    ----------
+    bets_data:
+        Parsed contents of ``outputs/bets-{date}.json``.
+
+    Returns
+    -------
+    dict with keys:
+        ``winew_outlay``      – float: SUM of WIN/EW stakes (EW doubled).
+        ``trifecta_outlay``   – float | None: trifecta total stake, or None.
+        ``total_outlay``      – float: winew_outlay + (trifecta_outlay or 0).
+        ``active_bet_count``  – int: count of WIN + EW entries.
+        ``nr_horses``         – list[dict]: entries with status NR or VOID.
+        ``validation_tag``    – str | None: from meta.validation or root field.
+        ``trifecta_horses``   – list[str]: horse names in the trifecta box.
+        ``course``            – str: from meta.course, default "Epsom".
+
+    Notes
+    -----
+    - Entries with status ``NO_BET`` or ``REFUNDED`` are silently ignored.
+    - Entries with status ``NR`` or ``VOID`` appear in ``nr_horses`` and are
+      excluded from stake totals.
+    - EW unit stake is doubled (win side + place side = 2× the quoted amount).
+    - Trifecta stake is read from ``entry["total_stake"]``; falls back to
+      ``entry["stake_guidance"]``.
+    """
+    entries = bets_data.get("bets") or bets_data.get("entries") or []
+    meta = bets_data.get("meta") or {}
+
+    course = meta.get("course") or "Epsom"
+
+    # Validation tag: prefer meta.validation, then saul_validation_status if
+    # it looks like an approval (contains "GO" or "PASS").
+    validation_tag: str | None = meta.get("validation")
+    if not validation_tag:
+        svs = str(bets_data.get("saul_validation_status") or "")
+        if "GO" in svs.upper() or "PASS" in svs.upper():
+            validation_tag = svs
+
+    winew_total = 0.0
+    trifecta_total = 0.0
+    active_bets = 0
+    nr_horses: list[dict] = []
+    trifecta_horses: list[str] = []
+
+    for entry in entries:
+        status = str(entry.get("status") or "").upper()
+        pick = entry.get("pick")
+        bet_type = str(entry.get("bet_type") or "").lower()
+
+        # NR / VOID entries → list them, exclude from totals.
+        if status in ("NR", "VOID") and pick:
+            nr_horses.append({
+                "horse": pick,
+                "status": status,
+                "race_time": entry.get("race_time") or "",
+                "rationale": entry.get("rationale_short") or "",
+            })
+            continue
+
+        # Skip no-bet / refunded / un-picked entries.
+        if status in ("VOID", "REFUNDED", "NO_BET") or not pick:
+            continue
+
+        # Trifecta box entries.
+        if status == "TRIFECTA" or bet_type == "trifecta_box":
+            stake_str = entry.get("total_stake") or entry.get("stake_guidance") or ""
+            trifecta_total += _parse_stake_amount(stake_str)
+            trifecta_horses = [
+                h.get("horse", "") for h in (entry.get("horses") or [])
+            ]
+            continue
+
+        # Regular WIN / EW bets.
+        if status in ("WIN", "EW"):
+            unit = _parse_stake_amount(entry.get("stake_guidance") or "")
+            # EW = two sides (win + place) at the quoted unit stake each.
+            winew_total += unit * 2 if status == "EW" else unit
+            active_bets += 1
+
+    trifecta_outlay: float | None = round(trifecta_total, 2) if trifecta_total else None
+    total_outlay = round(winew_total + trifecta_total, 2)
+
+    return {
+        "winew_outlay": round(winew_total, 2),
+        "trifecta_outlay": trifecta_outlay,
+        "total_outlay": total_outlay,
+        "active_bet_count": active_bets,
+        "nr_horses": nr_horses,
+        "validation_tag": validation_tag,
+        "trifecta_horses": trifecta_horses,
+        "course": course,
+    }
+
+
 def _race_outsider_for(race_id: str, bets: dict) -> dict | None:
     """Return the qualifying outsider entry for the given race_id.
 

@@ -52,3 +52,64 @@
   - **Decision tree consequence:** 4-horse box chosen (gap < 1σ, per established convention). This is correct, but **future weight tuning should consider whether a `race_confidence` signal belongs in the model** — stdev-based confidence flags could inform bet-sizing or box-width selection algorithmically rather than manually. Consider adding to v0.7+ backlog as an optional output dimension alongside score vectors (e.g., `score_and_confidence()` returning both score and race_confidence enum).
 
 - **Decision:** `.squad/decisions.md` 2026-06-05 entry "Derby trifecta box + stake convention established"; `.squad/orchestration-log/2026-06-05T11-59-04-linus.md`.
+
+
+## 2026-06-06T23:02:55+01:00 — Team Update (Cross-Agent Findings)
+
+**From Saul's Derby Day Process Audit:**
+
+3 hard publish blockers identified:
+1. **T-1hr gate timing** — Derby check fired 39 minutes late (hourly watchdog ticks insufficient)
+2. **Silent completion defence** — Livingston-3 output sat unread 7+ hours (platform silent success bug mitigation needed)
+3. **HTML header staleness** — Manual patch class recurring (must compute header from JSON at render-time)
+
+See .squad/orchestration-log/2026-06-07T00-36-45Z-saul.md for full audit details.
+
+**From Rusty's Derby Day Signal Frame:**
+
+v0.4 market_drift module proposed with 0 HIGH / 1 MEDIUM / 8 SPECULATIVE confidence signals. Benvenuto Cellini steam (9/4 → Evs) and Lord Melbourne drift (+53.8%) both correctly identified.
+
+See .squad/orchestration-log/2026-06-07T00-36-45Z-rusty.md for full signal frame.
+
+---
+
+## 2026-06-07T17:08:33+01:00 — v0.4 Env Validator (Danny, session 7)
+
+**Blocker #2 resolved:** Undocumented credentials + .env exposure risk.
+
+**Audit findings:** Zero `os.environ`/`os.getenv` calls existed anywhere in the codebase.
+Sporting Life auth was entirely absent (hence the 373-byte SPA shell on Derby Day).
+ATR cookie path was hardcoded in every probe script.
+
+**Learnings:**
+- When a scraper fails silently with a tiny response body, the first suspect is missing auth — not code logic.
+- Required env vars must be validated at process start, not discovered mid-scrape.
+- An `.env.example` with placeholder format `<…>` is the minimum viable credential contract for a shared toolkit.
+- `check_env.py` as single source of truth means README, entry points, and tests all derive from the same dict — no drift.
+- `_is_placeholder()` must check both exact match AND `<…>` pattern, because a stranger might copy the example and type their own token in `<>` style.
+
+**Deliverables shipped:**
+- `.env.example` — 4 vars, 3 credential families, placeholder-only
+- `scripts/check_env.py` — startup validator (exit 0/1)
+- `scripts/refresh_friday.py` — `_gate_env()` wired at top
+- `scripts/morning_odds.py` — `_gate_env()` wired at top
+- `scripts/playwright_atr_scraper.py` — loud-fail if cookie file missing
+- `README.md` — created (first time), includes Credentials section
+- `tests/test_check_env.py` — 14 tests, all passing
+- `.squad/decisions/inbox/danny-v04-env-example-and-validator.md`
+
+**Test run:** 14/14 passed. `check_env.py` correctly exits 1 naming both missing SPORTINGLIFE vars against Steve's current env.
+
+---
+
+
+## 2026-06-08 — Cross-Agent Update (v0.4 wave-1 GREEN)
+
+Wave-1 publish-readiness sprint shipped GREEN. All four work items GREEN GO. Full suite 448/448 PASS (minus pre-existing wave33 — confirmed pre-existing, not a wave-1 regression).
+
+- **Rusty-7**: src/market_drift.py shipped (46/46) — gate-only modifier, weight 0.0, Lord Melbourne +53.8 percent earning event.
+- **Linus-14**: render_header() JSON-driven refactor (22/22) — eliminates recurring pound-total mismatch publish blocker (Saul's Derby Day audit #3).
+- **Danny-2**: .env.example + scripts/check_env.py validator (14/14) — Sporting Life creds fail-loud at startup, wired into refresh_friday.py + morning_odds.py.
+- **Livingston-5**: RUNBOOK.md (565 lines) — two-source scrape pattern + manual fallback codified.
+- **Saul-2** crashed mid-run 2026-06-07 ~19:11 BST (CAPI error after 1h41m, no output written). **Saul-3** re-attempt succeeded 2026-06-08 08:40 with crash-resilience protocol (incremental note-writing).
+- Next-sprint open items: fix test_racecard_wave33 fixture (Saul); update morning_odds.py RACECARD_FILES for Royal Ascot 2026-06-16 (Danny); sanitise market_drift.py docstring of Derby Day examples (low-priority backlog); pre-sprint Derby Day orphan files need separate close-out commit (Coordinator).

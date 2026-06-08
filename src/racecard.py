@@ -554,6 +554,7 @@ def render_card(
     raw_racecard_path: str | None = None,
     scenario_banner: dict[str, str] | None = None,
     market_latest_path: str | None = None,
+    bets_json_path: str | None = None,
 ) -> None:
     """Render the printable one-page betting slip.
 
@@ -561,6 +562,16 @@ def render_card(
     Passing a number keeps the older CLI behaviour of scaling all active rows to
     that total. Wave 3.3 callers may also pass/derive going, non-runner, and
     scenario context; all parameters are backward-compatible.
+
+    Parameters
+    ----------
+    bets_json_path:
+        Optional path to ``outputs/bets-{date}.json`` (Linus format).  When
+        supplied, ``render_header()`` computes the WIN/EW outlay, trifecta
+        outlay, active bet count, NR line and validation tag directly from the
+        JSON source — eliminating header staleness when the JSON changes after
+        a scoring injection.  This is the v0.4 fix for the recurring
+        "header left at £5.50 per guardrails" pattern (Saul audit 2026-06-06).
     """
     scores_data = json.loads(Path(scores_path).read_text(encoding="utf-8"))
 
@@ -591,6 +602,27 @@ def render_card(
     total_potential = round(sum(float(r.get("potential", 0) or 0) for r in active_rows), 2)
     active_bet_count = sum(1 for r in active_rows if float(r.get("stake", 0) or 0) > 0)
 
+    # JSON-driven header: when bets_json_path is provided, override header
+    # values with those computed by render_header() from the source JSON.
+    # This is the fix for the recurring header-staleness publish blocker.
+    trifecta_outlay: float | None = None
+    total_outlay_gbp: float = total_stakes
+    validation_tag: str | None = None
+    header_nr_horses: list[dict] = []
+    trifecta_horses: list[str] = []
+
+    if bets_json_path and Path(bets_json_path).exists():
+        from src.report import render_header  # lazy import — avoids circular at module load
+        bets_json = _load_json(bets_json_path)
+        hdr = render_header(bets_json)
+        total_stakes = hdr["winew_outlay"]
+        trifecta_outlay = hdr["trifecta_outlay"]
+        total_outlay_gbp = hdr["total_outlay"]
+        active_bet_count = hdr["active_bet_count"]
+        validation_tag = hdr["validation_tag"]
+        header_nr_horses = hdr["nr_horses"]
+        trifecta_horses = hdr["trifecta_horses"]
+
     ctx = {
         "venue": scores_data.get("venue", VENUE),
         "day_name": day_name,
@@ -608,6 +640,11 @@ def render_card(
         "active_bet_count": active_bet_count,
         "total_stakes_gbp": total_stakes,
         "total_potential_gbp": total_potential,
+        "total_outlay_gbp": total_outlay_gbp,
+        "trifecta_outlay": trifecta_outlay,
+        "validation_tag": validation_tag,
+        "header_nr_horses": header_nr_horses,
+        "trifecta_horses": trifecta_horses,
         "daily_outlay_target_gbp": daily_outlay_gbp,
         "market_snapshot_iso": _market_snapshot_iso(market_snapshot),
     }

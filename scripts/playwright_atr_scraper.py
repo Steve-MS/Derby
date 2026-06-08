@@ -10,6 +10,7 @@ Horse IDs confirmed via ATR:
 """
 
 import json
+import os
 import re
 import sys
 import time
@@ -21,7 +22,16 @@ from playwright_stealth import Stealth
 
 # ── Paths ──────────────────────────────────────────────────────────────────
 PROJECT_ROOT = Path(r"C:\Users\stevenn\race-analysis")
-COOKIE_FILE  = PROJECT_ROOT / ".cookies" / "attheraces.txt"
+# ATR_COOKIE_FILE env var overrides the default path; fail loud if file missing.
+_cookie_path_str = os.environ.get("ATR_COOKIE_FILE", "")
+COOKIE_FILE = Path(_cookie_path_str) if _cookie_path_str else PROJECT_ROOT / ".cookies" / "attheraces.txt"
+if not COOKIE_FILE.exists():
+    sys.exit(
+        f"\n❌  playwright_atr_scraper.py: ATR cookie file not found at {COOKIE_FILE}\n"
+        "    Export your attheraces.com session cookies via Cookie-Editor and save to that path,\n"
+        "    or set ATR_COOKIE_FILE=<path> in your .env file.\n"
+        "    See .env.example for instructions.\n"
+    )
 OUTPUT_FILE  = PROJECT_ROOT / "data" / "enrichment" / "atr-going-playwright.json"
 
 # ── Target horses (ATR IDs confirmed via profile search) ──────────────────

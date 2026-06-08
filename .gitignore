@@ -11,6 +11,7 @@ env/
 Thumbs.db
 .env
 .env.*
+!.env.example
 .vscode/
 .idea/
 .cookies/

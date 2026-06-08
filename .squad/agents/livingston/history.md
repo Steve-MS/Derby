@@ -1,33 +1,38 @@
+## SUMMARY (2026-06-06 Post-Derby)
+
+**Key deliverables:**
+- Live-runner verification gate shipped (mandatory for all race days)
+- Ladies Day results captured: 27,850 bytes, 8 races complete
+- Saturday baseline gate executed: 101 confirmed runners (41 NRs filtered)
+- Identified 2 Saturday NRs (Dance In The Storm, See The Fire); Causeway confirmed
+- Equipment/market-move data infrastructure built; prices remain SYNTHETIC (2026-06-02 source)
+
+**Critical findings (Derby Saturday):**
+- All core picks confirmed: Item (5.0), Kinswoman (24.0), Allegresse (9.0), Lord Melbourne (13.5)
+- Going: "Good to Soft, good in places"; rain forecast possible (Soft by post)
+- NRs impact: Dance In The Storm kills Kinswoman+DitS double (£0.50 at risk)
+
+**Publish blockers:**
+- Live price ingestion not implemented (RP 406 quirk on consecutive scrapes; Betfair API not enabled)
+- Stale-data NR failures resolved by live-runner gate (prevents re-occurrence of Triple Double A pattern)
+- RP scrape rate-limiting: 60s delay required between baseline→latest calls
+
+**Operational data:**
+- data/enrichment/archive/2026-06-05/: Friday archive complete (39981b baseline, 54055b latest)
+- data/enrichment/live-runners-2026-06-06.json: pre-populated with Sporting Life + corroboration
+- data/enrichment/equipment.json: 272 runners, 30 headgear codes, 31 no-equipment, 9 first-time flags
+
+**Current state:**
+- Live-runner gate operational and preventing stale-runner failures
+- Equipment data available; wind ops paywalled (skipped for v0.6)
+- Market data static (synthetic prices); market_move returns neutral
+- Derby Saturday baseline captured at 07:00 BST; latest mode ready for pre-race gate
+
+---
+
+---
+
 # Livingston — History
-
-## Learnings
-
-- 2026-06-05 16:50: **HARD-RULE RATIFIED: LIVINGSTON LIVE-RUNNER GATE.** Mandatory pre-render verification for ALL race days going forward, not just on NR failures. Protocol: (1) Fetch live racecard from Sporting Life (public, confirmed working) + Sky Sports + Racing Post (corroboration); (2) Build `data/enrichment/live-runners-YYYY-MM-DD.json` as canonical ground truth within 4h of race-time; (3) Trigger Rusty to source ALL NR replacements from this file; (4) Trigger Linus to verify all rendered horses before publishing. If live source is blocked: return `status: blocked` and request Steve to paste declared list manually. Do NOT fall back to stale data silently. Documented in `.squad/skills/live-runner-verification/SKILL.md`. Integration into Saturday Derby Day pipeline begins next session.
-
-- 2026-06-05 16:25: **Stale-data NR failure pattern — live-runner verification gate shipped.** Two non-runner failures on Ladies Day (Port Road, then Triple Double A as its own replacement) exposed that `market-latest.json` (2026-06-02 vintage) was being used as runner-identity source-of-truth. A third stale horse (Blue Brother, 17:50 Debenhams) was also not in live declarations. Root cause: no pre-render live verification step existed. Fix: built `data/enrichment/live-runners-2026-06-05.json` as canonical ground truth; wrote `.squad/decisions/inbox/livingston-card-vs-live-2026-06-05.md` with mismatch report and hard-rule proposal; built `.squad/skills/live-runner-verification/SKILL.md` as reusable pre-race gate. **Most reliable source: Sporting Life individual race URLs (confirmed working) + web_search for horse names/jockeys/trainers (Sky Sports / Timeform / RP via Bing all return full runner lists).** Working URL pattern: `https://www.sportinglife.com/racing/racecards/YYYY-MM-DD/epsom-downs/racecard/{race_id}/{slug}`. Race IDs for Epsom 2026-06-05: 920732 (13:30) through 920738 (17:50). Key mismatches found: Triple Double A (16:40, must remove), Blue Brother (17:50, must remove). Stellar Sunrise (17:15 WIN), Assaranca (17:15 EW), Dance In The Storm (17:50 WIN), Mister Winston (16:40 PASS) all confirmed runners. All three doubles and the treble involving Stellar Sunrise + Dance In The Storm remain live.
-
-- 2026-06-05 12:59: **Odds provenance correction (metadata audit).** Historical label for 2026-06-02 Derby price snapshots marked "(source: manually transcribed)" has been updated to reflect **actual data pipeline:** prices are web-scraped output from `enrich_odds.py` pulling horseracing.guide + epsomderby.com, NOT manually entered by a human. This affects data provenance audit trail and Steve's decision log documentation. Correction: deterministic scrape outputs, no transcription-error variance. Key implication: future price audits can trust the snapshot timestamps as data integrity markers.
-
-- 2026-06-05 12:44: **Price source survey completed (Oaks day).** CSV override is the only fully-feasible path today: `--prices overrides.csv` injects manual prices at highest priority, ~5 min effort. RP scrape re-enable feasible but gives names-only (no live odds). Oddschecker has Cloudflare/bot mitigation making reliable scraping high-risk in 3hr window. Sporting Life public HTML worth a quick test (~1hr) — no confirmed anti-bot but unverified. Racing API free tier exists but sign-up + token + wire-up is 1-2hr unknown risk. Betfair web page and ATR/Sky Sports all require JS rendering — not feasible with stdlib urllib. Recommendation: Steve copies Oaks prices from any public source into `overrides.csv`, runs `--prices overrides.csv`. See decisions inbox `livingston-price-source-survey.md`.
-
-- 2026-06-05 12:40: **Betfair delayed-key activation check complete — NOT FEASIBLE TODAY.** Root `.env` exists but has no Betfair-related variable names (`BETFAIR_*`, `BFLW*`, `BF_*`, `EXCHANGE*`, `ODDS*`) exposed; process env likewise has no Betfair key/session variable. `.gitignore` excludes `.env`, `.env.*`, `.cookies/`, and `cookies.txt`; no `config/` or `secrets/` folders found; no README.md or AGENTS.md present. `scripts/morning_odds.py` has no Betfair code path or activation flag: sources are manual CSV, RP runner-list HTML names only, then racecard stale 2026-06-02 prices. It uses stdlib `urllib`, not `requests` or `betfairlightweight`; `requirements.txt` only has `jinja2`. No Betfair login/session helper exists. Smallest future wire-up: add a narrow Exchange client using delayed app key + SSO session token to call `listMarketCatalogue`/`listMarketBook`, map Epsom WIN markets to racecard runners, and feed prices as source priority above RP/racecard; blocker is obtaining app key plus valid Betfair SSO session/cert or interactive login.
-
-- 2026-06-05 11:59: **Midday market refresh completed.** Ran `morning_odds.py --mode latest --date 2026-06-05 --no-rp-scrape` successfully. **Key finding:** Prices captured at 11:59 BST are NOT live — they are stale synthetic/estimated prices from 2026-06-02 enrichment database. Script cannot fetch live Betfair/bookmaker prices automatically; RP scrape provides runner-list confirmation only (odds loaded dynamically by JS, not in SSR HTML). Baseline (106 runners, 09:52 gate, filtered) vs Latest (144 runners, 11:59 gate, unfiltered due to RP 406 earlier). Horses absent from baseline but present in latest (Prizeland, Linwood, Port Road, Blue Brother) are non-runners already known from 09:52 gate. **Price moves >20%:** NONE detected. All 11 horses present in both files showed 0% movement (Wild Terrain, Respond, Stellar Sunrise, Dance In The Storm, Naana's Shadow, Amelia Earhart, Mister Winston, Rosie Frith, Hickory Lad, Liberty Lane, Assaranca all flat). **Headline:** Prices remain SYNTHETIC and STALE — not live. Market_move signal will return neutral (no price signal) until live price ingestion is implemented. File sizes verified: baseline 39KB, latest 52.8KB. All 8 Ladies Day races confirmed present (13:30, 14:05, 14:40, 15:15, 16:00, 16:40, 17:15, 17:50).
-
-- 2026-06-03 14:50: Equipment/wind discovery probe complete. **Finding:** Equipment data is sourceable (Open Horse Racing Data, free, public CSV). Wind ops (WS1/WS2/historical) NOT sourceable from free public sources (paywalled on Racing Post / Timeform). **Recommendation:** Ship signal #4 as **PARTIAL** (equipment only), drop wind ops for now. See `.squad/decisions/inbox/livingston-equipment-wind-discovery.md`.
-- 2026-06-03: Built `data/enrichment/trial-form.json` — 276 horses across both days; 25 with verified trial data (Derby + Oaks circuits); 1 flag (Causeway withdrawal status unconfirmed); scores file may predate final declarations so Causeway entry needs pre-race sanity check against BHA/Epsom official declarations.
-
-- 2026-06-03: Built `data/enrichment/trainer-14d.json` and `data/enrichment/jt-combo.json`. Trainer 14d: **28 / 93** racecard trainers covered (65 omitted — not in public form tables or obscure/international yards). JT combo: **5 combos** with verified 365-day stats covering **22 horses**; remaining 153 horses with confirmed bookings have `combo_runners=0` (sample guard returns 50). Key finding: Racing Post profile pages require JS; britishracecourses.org returns 403 on direct fetch — data sourced via web-search AI aggregation citing these URLs. William Haggas 14d stats conflicted (7/16 vs 8/38); used 8/38 from ai-raceday.co.uk as more plausible. See `.squad/decisions/inbox/livingston-trainer-jt-data.md`.
-
-- 2026-06-05: Built Saturday morning odds refresh infrastructure for `market_move` signal. **Key findings:** Racing Post `__NEXT_DATA__` SSR HTML contains runner names but NOT live odds (prices loaded via SockJS WebSocket - not scrapable). BetVictor/Oddschecker/RP odds endpoint all blocked. Verified price source is `enrich_odds.py` ante_post table (2026-06-02). **Causeway confirmed non-runner** - absent from RP racecard for 2026-06-06 (14 starters confirmed, not 18; also gone: Constitution River, Endorsement, Proposition). Delivered: `scripts/saturday_morning_odds.py`, `data/enrichment/market-baseline.json` (272 runners pre-populated), `data/enrichment/market-latest.json` (empty stub), `.squad/decisions/inbox/livingston-market-move-data.md` (schema + runbook for Danny + Rusty).
-
-- 2026-06-05: **Equipment signal (Signal #4) shipped.** Built `data/enrichment/equipment.json` — 272 runners, 30 with confirmed headgear codes (11%), 31 not matched on RP (equipment=[]), 9 first-time-use flags. Source: Racing Post `__NEXT_DATA__` SSR (`horseHeadGear` + `horseHeadGearFirstTime` fields). openhorsedata.com DNS-unreachable (fallback not triggered). Wind surgery confirmed null on free RP racecard (paywalled). `changed_vs_last_run` always [] (no prior-run data). Key RP schema insight: racecard runners identified by co-presence of `horseHeadGear` + `horseName`; NOT by `trainerName`/`jockeyName` (those are results objects). RP char decode: t→tt, p→cp, others 1:1. See `.squad/decisions/inbox/livingston-equipment-data.md`.
-
-- 2026-06-03 14:55: **Morning Odds Ergonomic Patch.** Renamed `scripts/saturday_morning_odds.py` -> `scripts/morning_odds.py` (misnamed - covers both Ladies Day Fri 2026-06-05 AND Derby Day Sat 2026-06-06). Updated docstring with full operator runbook for both days + clarified archival step between races. Added `--mode archive` to snapshot `market-baseline.json` + `market-latest.json` into `data/enrichment/archive/` with date suffix (idempotent, date-required, handles missing source files with clear error). Archive snapshots are NOT read by market_move.py; `market_move.py` continues reading current baseline + latest files only (schema preserved, no per-day files). Validated: dry-run works, archive mode tested, all modes functional. See `.squad/decisions/inbox/livingston-morning-odds-patch.md`.
-
-- 2026-06-03 15:45: **Friday Oaks 48hr Drift Check (Scheduled).** Confirmed declarations LIVE as of Wed 14:00 BST. Refreshed Friday racecard prices via `enrich_odds.py` (151 runners enriched: 5 ante_post, 6 estimated, 140 synthetic). Drift analysis: **Sugar Island (EW £0.25 @ 34.0) = 0% drift** — price stable. **Belinus (WIN £5 @ 3.5) = WITHDRAWN** — not in racecard, confirmation needed with bookmaker. No drift > 20% flagged. v0.5 scoring/re-rank deferred per Rusty mid-implementation. See `.squad/decisions/inbox/livingston-friday-drift.md`.
-
-- 2026-06-05 09:50: **Friday AM Gate executed (09:52 BST).** Baseline refreshed successfully (106 runners, RP scrape OK — 38 probable non-runners filtered). Latest mode hit RP HTTP 406 — wrote 144 runners UNFILTERED; confirmed non-runners Precise/Prizeland/Beautify are present in latest but NOT in baseline. Market_move signal will return 50 for those 38 (they're in latest but baseline won't have them). **Belinus: CONFIRMED WITHDRAWN** — not in the 9-runner Oaks field per web declaration check; Steve's WIN £5 @ 3.5 stake needs bookmaker refund (flagged since Wed, now conclusive). **On Message** (Ralph Beckett / Hector Crouch / ~25/1) is in the declared Oaks field but MISSING from our racecard entirely — late declaration or data gap; score will not include her. **Sugar Island DRIFTED IN**: stake at 33/1 (34.0 decimal); current market 16/1–22/1 (decimal 17–23) — moved well inside the >20 stable threshold, indicating live market interest. **Going: Good to Soft** — racecard assumed G/S, current official G/S, no material change, no going-based stake review triggered. **RP scrape quirk**: the `/racecards/17/epsom/{date}` URL returns 406 if called twice in quick succession (same session/IP); baseline (first call) succeeded, latest (second call, ~20s later) got 406. Mitigation: add `--no-rp-scrape` on latest mode OR add a 60s sleep between baseline and latest runs. Oaks off 16:00 BST → next gate 15:00 BST.
 
 ## Project context (seeded 2026-06-03)
 
@@ -39,3 +44,54 @@
 - Target races: Ladies Day Fri 5 Jun + Derby Day Sat 6 Jun 2026 at Epsom.
 
 - 2026-06-05 09:52: **Friday AM Gate completed (2h52m late vs 07:00 target).** Baseline refresh successful (106 runners, RP scrape OK, 38 non-runners filtered). Latest mode returned HTTP 406; wrote unfiltered 144 runners (Precise, Prizeland, Beautify confirmed non-runners now in latest but not baseline). **Belinus: definitively WITHDRAWN** — absent from final 9-runner Oaks field per web declaration check; Steve's WIN £5 @ 3.5 needs bookmaker refund. **On Message: DATA GAP** — Ralph Beckett trainer, Hector Crouch jockey, ~25/1 odds, declared in field but MISSING from racecard JSON (late entry or fetcher miss); will score nowhere. **Sugar Island: DRIFTED INWARD** — stake at 33/1 (34.0 dec), market now 16-22/1 (17-23 dec); moved well inside >20 threshold; EW locked at better price. **Going:** G/S stable, no going-based stake review. **RP 406 mitigation:** Next gate 15:00 BST will use --no-rp-scrape flag to avoid double-scrape 406 error. Oaks off 16:00 BST.
+
+
+
+## Learnings (recent — Derby Day + wave-1)
+
+- 2026-06-07 17:08: **v0.4 RUNBOOK.md SHIPPED.** Delivered comprehensive operator guide (`RUNBOOK.md` at repo root) taking strangers from install to printable race card. Encodes the **two-source scrape pattern** discovered yesterday (RP 406 quirks, Sporting Life 373-byte failures, post-race results as reliable fallback). Includes 8 required sections: prerequisites, scrape pattern with 5 sources + URL patterns + auth + failure modes, race-day timeline (T-24h to T+1d), manual live-odds entry procedure with exact JSON schema, sanity checks with command snippets, 6 failure-mode field guides, glossary (racing + signal terms for devs), and one-screen quick reference card. Audience: Python/CLI dev with zero horse racing knowledge. 565 lines, ~23KB. Tone: factual, self-sufficient, copypaste-ready. No .py/.json changes, no credentials leaked, dates use CURRENT_DATETIME. Decision note filed to `.squad/decisions/inbox/livingston-v04-runbook-shipped.md`. Ready for merge.
+
+- 2026-06-06T07:08 BST: **SATURDAY 07:00 BASELINE GATE complete.** Ran `morning_odds.py --mode baseline --date 2026-06-06`. RP scrape returned 101 confirmed runners from 142 racecard entries (41 filtered as probable NRs). **CRITICAL FINDINGS:** (1) **Dance In The Storm PROBABLE NR** — absent from RP live racecard; WIN bet £1.33 @ 18.5 at risk; also kills Kinswoman+DitS double leg (£0.50 at risk). (2) **See The Fire PROBABLE NR** — absent from RP live racecard; Coronation Cup EW outsider £0.25 at risk; Coronation Cup now 6 runners. (3) **Causeway NR confirmed** — Derby still 14 runners (Constitution River, Endorsement, Proposition also absent — consistent with Friday check). (4) All remaining core picks confirmed: Item 16:00 at 5.0 synthetic (live was 3.25 in bets file — expected gap), Kinswoman 15:15 @ 24.0, Allegresse 16:40 @ 9.0, Lord Melbourne 17:20 @ 13.5. (5) Going: no update from RP at 07:08 — still "GTS, Good in places" from 2026-06-03. River forecast: Soft possible by Derby post-time. (6) market-baseline.json: 39,019 bytes; market-latest.json: 39,140 bytes (BASELINE_CAPTURE status). Filed decisions: `livingston-sat-baseline-NRs.md` + `livingston-sat-baseline-2026-06-06.md`. Race counts post-NR-filter: 13:30=8, 14:05=9, 14:40=6, 15:15=18, 16:00=14, 16:40=11, 17:20=17, 17:55=18. All prices remain SYNTHETIC (2026-06-02 source) — market_move delta will be flat; NR flags are the only actionable data.
+
+## Archive — pre-Derby learnings (2026-06-03 → 2026-06-05)
+
+Detailed entries compressed by Scribe-19 on 2026-06-08 (file exceeded 15KB). Full history in git pre-2026-06-08.
+
+- **2026-06-03**: Built `data/enrichment/trial-form.json` (276 horses, 25 with verified trials). Built `trainer-14d.json` (28/93 trainers covered) and `jt-combo.json` (5 combos, 22 horses). Equipment discovery probe: equipment data sourceable from RP `__NEXT_DATA__`; wind ops paywalled. Built `equipment.json` (272 runners, 30 headgear codes, 11% coverage).
+- **2026-06-03 morning_odds rename**: `saturday_morning_odds.py` → `morning_odds.py` (covers Ladies + Derby Day). Added `--mode archive` for snapshotting baseline/latest with date suffix.
+- **2026-06-05 Friday gates**: 09:52 Friday AM gate (Belinus confirmed WITHDRAWN; Sugar Island drifted 33/1 → 16-22/1; RP 60s rate-limit identified). 11:59 midday refresh (prices stale synthetic 2026-06-02). 12:40 Betfair-key activation check (NOT FEASIBLE — no app key, no SSO session). 12:44 price-source survey (CSV override only feasible path). 12:59 odds-provenance correction (scraped, not transcribed).
+- **2026-06-05 16:25 stale-data NR failure pattern**: Port Road then Triple Double A both not in live declared fields. Built `live-runners-2026-06-05.json`. Working URL pattern: `sportinglife.com/racing/racecards/{date}/epsom-downs/racecard/{race_id}/{slug}`. Race IDs 920732-920738.
+- **2026-06-05 16:50 HARD-RULE ratified**: Livingston live-runner gate. Mandatory for all race days. Skill: `.squad/skills/live-runner-verification/SKILL.md`.
+- **2026-06-05 19:10 post-race results capture**: Ladies Day results 27,850 bytes, 8 races. **Key finding: RP results pages work post-race even when racecard pages are blocked mid-day.** RP URL pattern: `/results/17/epsom/{date}/{race_id}/`. Sporting Life individual race result pages return JS component errors. ATR blocks results.
+- **2026-06-05 21:00 Friday archive gate**: Archived baseline (39KB) + latest (54KB) to `data/enrichment/archive/2026-06-05/`. Saturday placeholders created. **Hickory Lad SP 100/30 WIN re-confirmed (Saul Stage 2a block reversed)** — Friday P&L revised −£11.61 → −£10.07. RP HTML confirmed: result pages list horses in finishing order, cloth numbers inline but NOT sort key. New RP IDs: 920049 (13:30 Dash), 920050 (14:05 Woodcote).
+
+## 2026-06-08 — Cross-Agent Update (v0.4 wave-1 GREEN)
+
+Wave-1 publish-readiness sprint shipped GREEN. Saul-3 gate review verdict 🟢 GO for all four items:
+- **Livingston-5** (you): RUNBOOK.md shipped (this entry above) — 565 lines, 8 sections, two-source scrape pattern + manual fallback codified.
+- **Rusty-7**: `src/market_drift.py` shipped. Lord Melbourne +53.8% drift (your Derby Day finding) was the earning event. Module prefers fractional string over decimal_odds — discovered synthetic-price artefact where `decimal_odds: 13.5` vs `fractional_odds: "12/1"` (=13.0) silently dropped the drift signal below the 50% threshold. **Action for you:** future `market-baseline.json` writes should add `baseline_price_type: "synthetic" | "ante_post" | "traded"` per Rusty's request — would let downstream signals distinguish price-discovery from genuine confidence moves automatically.
+- **Linus-14**: render_header() refactor — when you ship `bets-{date}.json`, the new top-level `meta` block ({card_date, course, validation, generated_at}) drives header rendering. Backward compat preserved (missing meta defaults to Epsom).
+- **Danny-2**: `.env.example` + `check_env.py` validator. Sporting Life creds (`SPORTINGLIFE_USER`, `SPORTINGLIFE_PASS`) now REQUIRED; fail-loud on missing.
+- Royal Ascot 2026-06-16 live-test: `morning_odds.py` `RACECARD_FILES` hardcoded for Epsom dates — Danny owns the update. Your live-runner gate procedures will apply at Ascot unchanged.
+- Pre-existing `test_racecard_wave33` failure: confirmed NOT a wave-1 regression. Saul will own the next-sprint fix.
+
+---
+
+## 2026-06-06T23:02:55+01:00 — Team Update (Cross-Agent Findings)
+
+**From Saul's Derby Day Process Audit:**
+
+3 hard publish blockers identified:
+1. **T-1hr gate timing** — Derby check fired 39 minutes late (hourly watchdog ticks insufficient)
+2. **Silent completion defence** — Livingston-3 output sat unread 7+ hours (platform silent success bug mitigation needed)
+3. **HTML header staleness** — Manual patch class recurring (must compute header from JSON at render-time)
+
+See .squad/orchestration-log/2026-06-07T00-36-45Z-saul.md for full audit details.
+
+**From Rusty's Derby Day Signal Frame:**
+
+v0.4 market_drift module proposed with 0 HIGH / 1 MEDIUM / 8 SPECULATIVE confidence signals. Benvenuto Cellini steam (9/4 → Evs) and Lord Melbourne drift (+53.8%) both correctly identified.
+
+See .squad/orchestration-log/2026-06-07T00-36-45Z-rusty.md for full signal frame.
+
+---

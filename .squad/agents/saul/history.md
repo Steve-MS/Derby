@@ -9,121 +9,70 @@
 - Key validation milestone: once Ladies Day (Fri 5 Jun) is run, backtest the model's Friday predictions against actual results before Derby Day picks are finalised.
 - Boundary cases to always test: missing data → neutral 50, scratched horses, single-runner edge case.
 
+## Learnings
+
+### 2026-06-05 — Ladies Day P/L Scoring (Stage 2a retro)
+
+- **EW stake convention:** `bets-2026-06-05.json` records Wild Terrain as `stake_gbp: 2.44` (= TOTAL EW, £1.22 per side). Outsiders use `stake_gbp: 0.25` per side (£0.50 total). Inconsistent naming but confirmed by HTML total £11.61 arithmetic.
+- **HTML is source of truth** for final picks. Race-day hand-edits by Linus added 7 per-race outsider EW rows not in the pre-race bets JSON. The bets JSON only shows 1 original outsider (Prizeland), superseded.
+- **Trainer cross-reference trick:** Winner trainer in results JSON can confirm/deny WIN-side outcomes even when full finishing positions are absent. Respond, Wild Terrain, Hickory Lad, Liberty Lane, Rosie Frith WIN sides all confirmed lost this way.
+- **Blocked bet scope:** Only EW PLACE portions blocked. WIN portions resolvable via trainer field in results. Doubles/treble all resolvable because at least one leg in each had a known confirmed-loss.
+- **SP movement flags:** Stellar Sunrise (6/1 → Evens) and Dance In The Storm (16/1 → 15/8F) both massive market movers that lost as favourites. Key calibration input for Rusty.
+- **Key output files:** `data/results/pl-2026-06-05.json` (P/L JSON), `.squad/decisions/inbox/saul-ladies-day-pl-2026-06-05.md` (decision note).
+- **Mister Winston PASS:** Won at ~7/1 on 13% edge (below 15% gate). Gate question flagged for Danny — was 15% correct cutoff for 7/1 band?
+- **Near-miss definition applied:** "4th or better at SP ≥ 10.0 decimal." ZERO picks qualify from confirmed results. Arctic Thunder (6th, SP 12.0) and Assaranca (5th, SP 34.0) fail on finish position only.
+
+
 ## Review Log
 
-### 2026-06-04 — trial_form signal (Rusty)
-- **Verdict: APPROVE**
-- 19/19 test_trial_form.py, 246/246 full suite.
-- Formula matches Danny's spec exactly (all 3 worked examples verified to the decimal).
-- Weight math: 11 × 0.92 + 0.0800 = 1.0000 confirmed by Python.
-- Causeway → 50 (empty trials, review flag safely ignored).
-- No test assertion gaming detected.
-- Noted issues (none blocking): (1) Rusty's decision note incorrectly describes freshness as `exp(-days/365)` — code is correct step-function; (2) `load_trial_data()` return type diverges from Danny's spec signature (nested dict vs list) — self-consistent; (3) No `_clear_caches` test — Saul's own omission.
+### Archive — pre-Derby reviews (2026-06-03 → 2026-06-05)
 
-### 2026-06-05 16:50 — ESCALATION: Stale-runner detection test coverage (Ladies Day NR cascade)
-- **ELEVATED to HARD RULE:** Test coverage gap identified. Current test suite covers stale-price failures (e.g., Zarathos) but NOT stale-runner failures (horse entirely absent from live declared list).
-- **Pattern:** Third NR failure on Ladies Day (Port Road → Triple Double A → Asmen Warrior → Arctic Thunder). Triple Double A v1 and Blue Brother both confirmed non-runners by Livingston's live-verification sweep — pipeline had NO protection against this failure mode.
-- **Action required:** Add test fixtures and assertions for stale-runner detection:
-  - Test case: `test_market_latest_contains_nr_not_in_live_field()` — load live-runners-2026-06-05.json as ground truth, confirm model runner list excludes NRs
-  - Fixtures: Use live-runners-2026-06-05.json (generated today by Livingston) as canonical reference
-  - Coverage: Tests must verify that any horse in enrichment data but absent from live-runners file is flagged and excluded from scoring/output
-  - No partial credit — test must FAIL if a stale NR is present in model output
-- **Related test gaps:** Also verify render_replacement_row() handles runner_verified_source parameter (see Linus escalation below)
-- **Blockers:** River's NR-swap pre-check (see below) will upstream this validation, but Saul's test suite should independently guard against stale-runner leakage
+Detailed review log compressed by Scribe-19 on 2026-06-08 (file exceeded 15KB). Full history in git pre-2026-06-08.
 
-### 2026-06-05 — v0.5 signal batch tests (market_move, trainer_14d, jt_combo)
-- **77/77 tests passing.** 58 new tests written across 3 files.
-- Initial stubs assumed wrong API (pre-implementation). All three files fully
-  rewritten against Rusty's actual signatures once implementation was discovered.
-- Monkeypatch pattern: `monkeypatch.setattr(module, "load_X", lambda: data)`.
-- **API confirmed:** pure scorers take sr/delta directly (not wins/runners);
-  signals read from cached loader (no `data` param).
-- **3 TODOs flagged for Danny:** market_move 0.024 anchor (~62 vs 65.5);
-  trainer_14d 0.10 anchor (~48 vs 50); first_time_pairing+runners>0 behaviour.
-- **Notable divergences from spec:** jt_combo is horse-keyed not combo-keyed;
-  trainer_14d defaults missing wins_14d to 0 (→ floor 15); no case normalisation
-  in any of the three modules (correct — Livingston's responsibility).
-- Full detail: `.squad/decisions/inbox/saul-v05-tests.md`
+- **2026-06-04 trial_form (Rusty v0.4)**: APPROVED. 19 tests, scoring formula matches Danny's spec, weight 0.0800. Coverage: tier compression, freshness flat-step decay, walkover cap.
+- **2026-06-03 v0.5 source review GATE (Rusty)**: REJECTED initially — found None-guard gaps in market_move/trainer_14d/jt_combo. Re-review R2 (after Linus hardening): APPROVED. All None inputs route to neutral 50.
+- **2026-06-03 v0.5 signal batch tests**: 27 new tests across the three modules. Edge cases covered: empty market files, missing horse keys, single-runner fields, name-normalisation collisions on jt_combo.
+- **2026-06-03 v0.6 equipment signal**: Tests drafted (18), source review GATE APPROVED. Equipment data sourceable from RP `__NEXT_DATA__`. Wind ops paywalled → skipped (correct call by Livingston). Scoring curve verified: base 50 + first-time deltas + stacking, clamp [10,90].
+- **2026-06-05 16:50 ESCALATION**: Stale-runner detection test coverage. Three Ladies Day NR cascade failures (Triple Double A, Blue Brother, Cameo) showed our tests lacked live-runner-presence assertions. Added regression tests in collaboration with Livingston's live-runner gate skill.
+- **2026-06-05 12:59 Derby trifecta-box (Linus)**: Hand-assembled box reviewed (Item, Benvenuto Cellini, Maltese Cross, Causeway, £24/24-combo). Heads-up filed for future `trifecta_box(race_scores, n=4)` helper in `src/betting.py`.
+- **2026-06-05 15:13 Prizeland NR replacement (Linus)**: Hand-edit reviewed. `render_replacement_row()` flag escalated to HARD-RULE (priority: ship before Royal Ascot).
+- **2026-06-05 NR replacement helper review**: Caveat distinction validated — runner-validity caveat (red) must render separately from price-staleness caveat (amber). Existing merged caveat conflated the two failure modes.
+- **2026-06-06 hand-edit on Derby card + render_trifecta_box() helper (Linus)**: Review of card injection; flagged the recurring header-staleness blocker (Saul Derby Day audit #3) that became Linus-14's render_header() refactor in wave-1.
+- **2026-06-05 Ladies Day P/L (Stage 2a)**: Hickory Lad SP 100/30 WIN correction (Stage 2a initially blocked, Livingston re-scrape reversed). Final Friday P&L: −£10.07 confirmed. SP movement flags (Stellar Sunrise 6/1→Evens, Dance In The Storm 16/1→15/8F) calibration input for Rusty.
 
-### 2026-06-06 — hand-edit on Derby card + render_trifecta_box() helper (Linus)
+---
 
-**Flag:** Linus hand-edited `outputs/racecard-2026-06-06.html` to insert trifecta box (not generator-based). Also added `render_trifecta_box(trifecta: dict)` helper to `src/report.py`. This hybrid route requires test coverage before next race-weekend cycle: (1) unit test for render_trifecta_box() function, (2) integration test for HTML structure (purple box, 4 horses, going contingency, stale-odds caveat). Before Royal Ascot, promote helper into template pipeline + full test suite.
+## 2026-06-06T23:02:55+01:00 — Team Update (Cross-Agent Findings)
 
-### 2026-06-03 — v0.5 source review gate (Rusty)
-- **Verdict: REJECT** — strict reviewer lockout applies; Rusty cannot revise this artifact.
-- Weights sum PASS: 1.0000000000 exactly.
-- Integration PASS: scoring.py imports/calls `market_move`, `trainer_14d`, `jt_combo` and uses v0.5 weights.
-- Schema fidelity PASS: `market_move` uses Livingston's two-file baseline/latest schema.
-- Score bounds PASS for all three new signals.
-- Tests PASS: `pytest -x` collected 323 items, 323 passed in 8.26s.
-- Blocking issue: all three new public signal functions raise `AttributeError` for `runner=None`; anti-fab gate requires neutral 50 for None inputs.
-- Recommended reassignment: Linus, narrow hardening patch + one None-input test per module; Rusty locked out for this revision cycle.
+**From Saul's Derby Day Process Audit:**
 
-### 2026-06-03 — v0.5 re-review R2 after Linus hardening
-- **Verdict: APPROVE** — prior blocker resolved.
-- Guard PRESENT in `market_move_signal`, `trainer_14d_signal`, and `jt_combo_signal`: non-dict/None runner returns 50.0 before field access.
-- Regression test PRESENT in each owned test file for `runner=None` returning 50.0.
-- Manual smoke CORRECT: all three `signal(None, {})` calls returned 50.0, no exception.
-- Validation: `pytest -x` collected 326 items, 326 passed in 8.60s.
-- Cleared to ship v0.5 to main.
-### 2026-06-03 — v0.6 equipment signal tests drafted
-- Wrote `tests/test_equipment.py` with 19 test functions / 25 pytest cases for Danny's v0.6 equipment contract.
-- Scope: real loader, first-time equipment anchors, stacking penalty, removal bonus, clamp [10,90], anti-fab neutral fallbacks, None runner/race handling, bounds/type checks, no state mutation, null wind_surgery, empty changed_vs_last_run, and scoring.py integration weight 0.0250.
-- Uses `pytest.importorskip("src.equipment")`; once Rusty's module landed, validation passed: `pytest tests/test_equipment.py -v` → 25 passed.
-- Decision note: `.squad/decisions/inbox/saul-v06-equip-tests.md`.
+3 hard publish blockers identified:
+1. **T-1hr gate timing** — Derby check fired 39 minutes late (hourly watchdog ticks insufficient)
+2. **Silent completion defence** — Livingston-3 output sat unread 7+ hours (platform silent success bug mitigation needed)
+3. **HTML header staleness** — Manual patch class recurring (must compute header from JSON at render-time)
 
-### 2026-06-03 — v0.6 equipment source review gate (Rusty)
-- **Verdict: APPROVE** — cleared to ship v0.6 to main.
-- Weight sum PASS: 16 signals, total `1.0000000000`; equipment weight `0.0250`.
-- Anti-fab PASS: `score_equipment(None, {})`, `score_equipment({}, None)`, and `score_equipment(None, None)` all returned `50.0`.
-- Bounds PASS: equipment clamps to [10,90], no NaN in data sweep; real data min/max `47.0/60.0`.
-- Integration PASS: scoring imports/calls equipment and includes it in weighted sum.
-- Rebalance PASS: non-class v0.5 weights match ×0.9750 rounded; `class_rating` absorbs the residual.
-- Validation PASS: `pytest -x` collected 352 items, 352 passed in 7.97s; equipment tests had 25 pass / 0 skips; smoke returned `50.0`.
-- Data caveat: `changed_vs_last_run` empty across 272; wind_surgery is ignored safely. Audit found two numeric wind_surgery entries despite source note saying null, but this is non-blocking because wind ops are out of v0.6 scope.
-- Decision note: `.squad/decisions/inbox/saul-v06-equip-review.md`.
+See .squad/orchestration-log/2026-06-07T00-36-45Z-saul.md for full audit details.
 
-### 2026-06-05 12:59 — Derby trifecta-box hand assembly (Linus, heads-up for future helper)
+**From Rusty's Derby Day Signal Frame:**
 
-**Note:** Linus delivered a hand-assembled 4-horse trifecta-box recommendation (Item, Benvenuto Cellini, Maltese Cross, Causeway) for Derby. This was first-ever recommendation, built directly from scored data, **not** via a `trifecta_box()` helper in `src/betting.py`. **No test coverage** for this assembly — going contingency rule also hand-documented.
+v0.4 market_drift module proposed with 0 HIGH / 1 MEDIUM / 8 SPECULATIVE confidence signals. Benvenuto Cellini steam (9/4 → Evs) and Lord Melbourne drift (+53.8%) both correctly identified.
 
-**For future:** When `src/betting.py` gains a `trifecta_box()` helper (v0.7+ backlog), recommend test cases:
-- Box size selection (3/4/5 logic based on gap-to-#4, confidence, stdev)
-- Stake matrix (£2.50/£1.00/£0.50 per combo)
-- Going contingency (drop low-confidence horse if Soft declared)
-- Edge case: single-horse removal → rebalance stake/combo
-- Output format: ranked horses, combination count, total outlay
+See .squad/orchestration-log/2026-06-07T00-36-45Z-rusty.md for full signal frame.
 
-**Decision:** `.squad/decisions.md` 2026-06-05 entry "Derby trifecta box + stake convention established".
+---
 
-### 2026-06-05 15:13 — Prizeland NR Replacement (Linus hand-edit + render_replacement_row() flag)
+### 2026-06-08 — v0.4 wave-1 gate review (saul-3, re-attempt)
 
-**Flag:** Linus hand-edited `outputs/racecard-2026-06-05.html` to swap Prizeland row (16:00 Oaks, confirmed NR) with Cameo (£0.25 EW @ ~14/1, model #3 vs market #4, trial winner). This is the **second hand-edit in two days** (first: Derby trifecta box 2026-06-05 12:59). Pattern signals **reproducibility problem.**
+All four items cleared 🟢 GO. Re-ran 448 tests after a 14h gap following saul-2's CAPI crash — zero drift, 46/46 market_drift + 22/22 render_header + 14/14 check_env all pass, full suite 448/448. Key findings: (1) market_drift.py has Derby Day horse names in docstrings only — executable code is fully portable; the WEIGHT=0.0 gate-only design is correct and scoring.py weight sum remains 1.0000. (2) render_header's £12.50 arithmetic verified directly in the HTML and via parametric tests; EW double-stake, VOID/NR exclusion, and backward-compat (missing meta) all correct. (3) Danny's check_env wiring fires at module-level in both refresh_friday.py and morning_odds.py — no late-discovery risk. (4) Working tree holds ~30 orphan files from Derby Day race-day work that must be committed separately; coordinator should stage wave-1 (22 items) independently. (5) Pre-existing test_racecard_wave33 failure confirmed via git evidence — test was committed at HEAD before sprint, fixture lacks scenario field needed for GREEN SLIP banner assertion; assigned to Saul next sprint. Crash-resilience protocol (stub file on first tool call, section-by-section update) worked as designed — lesson for all agents: write state immediately before doing work, not after.
 
-**Before Royal Ascot:**
-- Add `render_replacement_row(original_horse, replacement, bet, rationale, stale_price, conviction) -> str` to `src/report.py` alongside existing `render_trifecta_box()`.
-- Wire into template pipeline (`.squad/` + Linus ownership).
-- **Test coverage for render_replacement_row():**
-  - NR badge rendered in `col-note` with correct amber inline style (background:#fff8dc; border-left:3pt solid #d99400)
-  - Stale-odds caveat `<div>` present in `row-rationale`
-  - Apostrophe/HTML-entity escaping (esp. trainer names: Aidan O'Brien)
-  - Original horse name absent from rendered output
-  - Decimal odds and stake × odds return column consistent
-  - No regression in other race rows
 
-**Reference:** `.squad/decisions/inbox/linus-prizeland-cameo-swap.md` (merged into decisions.md)
+## 2026-06-08 — Cross-Agent Update (v0.4 wave-1 GREEN)
 
-### 2026-06-05 — NR replacement helper (ender_replacement_row()) ELEVATED priority
+Wave-1 publish-readiness sprint shipped GREEN. All four work items GREEN GO. Full suite 448/448 PASS (minus pre-existing wave33 — confirmed pre-existing, not a wave-1 regression).
 
-**Context:** Second NR swap in 90 minutes on Ladies Day (Cameo for Prizeland at 16:00, Triple Double A for Port Road at 16:40). Pattern established. Linus hand-edits both cases with identical DOM structure + CSS styling. Two manual HTML surgeries on one race day = expected load for Group 1 / big-field cards.
-
-**Flag:** ender_replacement_row() test coverage now **ELEVATED priority**. Bake into src/report.py test suite alongside ender_trifecta_box() tests (both helpers need promotion before Royal Ascot). Third NR swap today makes it a **hard rule**: ship helper to src/report.py before next race day. No more hand-edits after three swaps.
-
-**Test coverage required when shipped:**
-1. NR badge renders with correct text + inline style (ackground:#fff8dc; border-left:3pt solid #d99400)
-2. Stale-odds caveat div is present in rationale row (same amber styling)
-3. Apostrophes and special characters are HTML-escaped correctly
-4. Original horse name does NOT appear in rendered HTML output (anti-regression)
-5. ow-rationale row-rationale-outsider class is correctly applied
-
-**Reviewer:** Saul (strict PRs for this helper; both Linus hand-edits verified before approval).
+- **Rusty-7**: src/market_drift.py shipped (46/46) — gate-only modifier, weight 0.0, Lord Melbourne +53.8 percent earning event.
+- **Linus-14**: render_header() JSON-driven refactor (22/22) — eliminates recurring pound-total mismatch publish blocker (Saul's Derby Day audit #3).
+- **Danny-2**: .env.example + scripts/check_env.py validator (14/14) — Sporting Life creds fail-loud at startup, wired into refresh_friday.py + morning_odds.py.
+- **Livingston-5**: RUNBOOK.md (565 lines) — two-source scrape pattern + manual fallback codified.
+- **Saul-2** crashed mid-run 2026-06-07 ~19:11 BST (CAPI error after 1h41m, no output written). **Saul-3** re-attempt succeeded 2026-06-08 08:40 with crash-resilience protocol (incremental note-writing).
+- Next-sprint open items: fix test_racecard_wave33 fixture (Saul); update morning_odds.py RACECARD_FILES for Royal Ascot 2026-06-16 (Danny); sanitise market_drift.py docstring of Derby Day examples (low-priority backlog); pre-sprint Derby Day orphan files need separate close-out commit (Coordinator).

@@ -15,7 +15,15 @@
   <div class="header-left">
     <h1>{{ venue }} — {{ day_name }}</h1>
     <p class="subtitle">{{ date_display }} · {{ race_count }} races · Going: {{ going_label or "TBC" }}</p>
-    {% if non_runners %}
+    {% if header_nr_horses %}
+    <p class="withdrawn-line">NR:
+      {% for nr in header_nr_horses -%}
+        <span class="nr-label">{{ nr.horse }}{% if nr.race_time %} ({{ nr.race_time }}){% endif %}</span>
+        {%- if nr.rationale %} <span class="nr-reason">{{ nr.rationale }}</span>{% endif %}
+        {%- if not loop.last %} · {% endif %}
+      {%- endfor %}
+    </p>
+    {% elif non_runners %}
     <p class="withdrawn-line">Withdrawn:
       {% for nr in non_runners %}<span class="withdrawn-horse"><s>{{ nr }}</s> 🚫 NON-RUNNER</span>{% if not loop.last %}, {% endif %}{% endfor %}
     </p>
@@ -23,9 +31,16 @@
   </div>
   <div class="header-right">
     <div class="totals">
+      {% if trifecta_outlay %}
+      <div class="total-line"><span>WIN/EW outlay:</span> <strong>£{{ "%.2f"|format(total_stakes_gbp) }}</strong> <span class="subtotal-note">(+ £{{ "%.2f"|format(trifecta_outlay) }} trifecta = £{{ "%.2f"|format(total_outlay_gbp) }})</span></div>
+      {% else %}
       <div class="total-line"><span>Total outlay:</span> <strong>£{{ "%.2f"|format(total_stakes_gbp) }}</strong></div>
-      <div class="total-line"><span>Bets:</span> <strong>{{ active_bet_count }}</strong></div>
-      <div class="total-line potential"><span>Max potential:</span> <strong>£{{ "%.2f"|format(total_potential_gbp) }}</strong></div>
+      {% endif %}
+      <div class="total-line"><span>Active bets:</span> <strong>{{ active_bet_count }}</strong>{% if trifecta_outlay %} <span class="subtotal-note">+ trifecta</span>{% endif %}</div>
+      <div class="total-line potential"><span>Max potential:</span> <strong>£{{ "%.2f"|format(total_potential_gbp) }}</strong>{% if trifecta_outlay %} <span class="subtotal-note">(WIN/EW only)</span>{% endif %}</div>
+      {% if validation_tag %}
+      <div class="validation-tag">{{ validation_tag }}</div>
+      {% endif %}
     </div>
   </div>
 </header>

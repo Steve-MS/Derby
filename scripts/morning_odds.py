@@ -66,12 +66,33 @@ Anti-fabrication
 import argparse
 import csv
 import json
+import os
 import re
+import subprocess
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.error import URLError
 from urllib.request import Request, urlopen
+
+# ── Credential gate ───────────────────────────────────────────────────────────
+# Fail loud before any scrape attempt if Sporting Life credentials are absent.
+# This replaces the silent 373-byte SPA-shell return that lost us live odds
+# on Derby Day 2026-06-06.
+def _gate_env() -> None:
+    _here = Path(__file__).resolve().parent
+    result = subprocess.run(
+        [sys.executable, str(_here / "check_env.py")],
+        cwd=_here.parent,
+    )
+    if result.returncode != 0:
+        sys.exit(
+            "\n❌  morning_odds.py aborted: environment check failed.\n"
+            "    Fix the issues reported above, then re-run.\n"
+        )
+
+_gate_env()
+# ─────────────────────────────────────────────────────────────────────────────
 
 # ---------------------------------------------------------------------------
 # Paths

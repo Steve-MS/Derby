@@ -1,4 +1,34 @@
+## SUMMARY (2026-06-06 Post-Derby)
+
+**Key deliverables:**
+- Implemented 4 signal modules: trial_form (v0.4), market_move/trainer_14d/jt_combo (v0.5), equipment (v0.6)
+- All test suites passing (352/352 for v0.6)
+- market_drift module proposed for v0.4 (0 HIGH, 1 MEDIUM, 8 SPECULATIVE)
+- Live-verify-first protocol established for NR replacements (via Livingston's live-runners-YYYY-MM-DD.json)
+
+**Signal deliverables:**
+- trial_form (0.0800 weight): Handles beaten_lengths normalization, walkover cap, Tier 3 taxonomy
+- market_move (0.0700): Δip scoring; signal inert (0%) due to synthetic prices until live feed
+- trainer_14d (0.0400): 28/93 trainers covered; sample guard <5 runners → 50
+- jt_combo (0.0300): 5 verified combos; first-time pairings score 60
+- equipment (0.0250): 30/272 runners with headgear (11%); stacking penalty applied
+
+**Publish blockers:**
+- market_move signal returns neutral (50) for all runners — live price ingestion blocked (RP 406 quirk, Betfair API not implemented)
+- Synthetic price tag retained in outputs until live feed available
+
+**Current state:**
+- v0.6 weights: all 15 signals scale to exactly 1.0000
+- Signal implementation stable and tested
+- Live-verify protocol active and preventing stale-runner failures
+
+---
+
+
+---
+
 # Rusty — History
+
 
 ## Project context (seeded 2026-06-03)
 
@@ -9,245 +39,122 @@
 - 227 tests passing — each new signal expected to add ~18-22 tests.
 - Backlog: trial-form (first), market-move, trainer-strike, jt-combo, equipment.
 
-## 2026-06-04 — trial_form signal
 
-Implemented `src/trial_form.py` and updated `src/scoring.py` to v0.4.
+## Archive — pre-Derby learnings (2026-06-03 → 2026-06-05)
 
-**Outcome:** 246/246 tests passing (19 new from Saul's suite).
+Detailed entries compressed by Scribe-19 on 2026-06-08 (file exceeded 15KB). Full history in git pre-2026-06-08.
 
-**Key calls made:**
-- Normalised Livingston's signed `beaten_lengths` convention on JSON load (negative winner margin → 0.0 for pos=1, abs() for pos>1).
-- Added walkover cap (field_size==1 → max 70.0) to pass `test_single_runner_field_no_overcredit`.
-- Reconciled Danny's spec API with Saul's test API — both sets of function names implemented.
-- `race_date` defaults to `"2026-06-06"` (Derby day) so Saul's 3-arg `score_trial_form` calls work.
-- Tier 3 default for unlisted trial names; Leopardstown Derby Trial → Tier 2 per Steve Q3.
-- All v0.3 weights × 0.92; trial_form = 0.0800; sum = 1.0000.
+- **2026-06-04**: Implemented `src/trial_form.py` + scoring.py v0.4 (weight 0.0800, 19 tests, 246/246 suite green)
+- **2026-06-03 v0.5**: Shipped market_move, trainer_14d, jt_combo signals (combined weight 0.1400). Used Danny's Δip formula, horse-keyed jt_combo lookup. 246/246 tests.
+- **2026-06-03 v0.6**: Shipped equipment signal (weight 0.0250). Score curve: base 50 + first-time deltas + stacking penalties, clamp [10,90]. 352/352 tests.
+- **2026-06-05 Ladies Day NR cascade**: TWO replacement failures using stale data — Triple Double A (16:40 HKJC), Blue Brother (17:50 Debenhams) both not in live declared fields. v2 picks (Asmen Warrior, Arctic Thunder) sourced via Sporting Life live racecard. Hard rule: live-verify-first for ALL NR replacements.
+- **2026-06-05 midday**: Synthetic-price tag retained — RP scrape bypasses JS-rendered odds; market_move returns neutral 50 until live ingestion. Sugar Island drift detected manually (33/1 → 16-22/1) but signal cannot see it.
 
-**Decision note:** `.squad/decisions/inbox/rusty-trial-form-implementation.md`
+## 2026-06-08 — Cross-Agent Update (v0.4 wave-1 GREEN)
 
-## 2026-06-05 16:50 — HARD RULE: Live-verify-first protocol (Ladies Day NR cascade)
+Wave-1 publish-readiness sprint shipped GREEN. Saul-3 gate review verdict 🟢 GO for all four items:
+- **Rusty-7** (you): market_drift.py shipped (this entry below)
+- **Linus-14**: render_header() JSON-driven refactor — header staleness eliminated. `render_card(bets_json_path=…)` now triggers automatic header recomputation. Your future signal-injection work no longer needs to coordinate manual header patches with Linus.
+- **Danny-2**: `.env.example` + `scripts/check_env.py` validator wired into `refresh_friday.py` + `morning_odds.py`. Sporting Life credentials now fail-loud at startup.
+- **Livingston-5**: `RUNBOOK.md` (565 lines) — encodes two-source scrape pattern + manual live-odds fallback. Reference for race-day operator procedures.
+- Pre-existing `test_racecard_wave33` failure confirmed NOT a wave-1 regression (Saul provided git evidence). Next-sprint fix: update test fixture to pass bets_json_path with scenario field.
 
-**Effective immediately:** All NR-replacement picks sourced from live-runners-YYYY-MM-DD.json ONLY. `market-latest.json` is NEVER trusted for runner identity — only for stale price orientation on runners already confirmed by live source.
-
-**Failure today:**
-- v1 pick (Triple Double A): sourced from stale enrichment data → also declared NR by race-time → caught 28min before race by Livingston's live check
-- v2 pick (Asmen Warrior): sourced from live-runners-2026-06-05.json → confirmed runner #15 in Sporting Life live racecard → live-verified ✅
-
-**Why this matters:** The stale-odds caveat ("verify at rail") protected against price uncertainty. It did NOT protect against the horse itself being invalid. Triple Double A was a non-runner — not a price problem, a runner problem. Livingston's live-verification pass caught this; the pipeline's stale-data default did not.
-
-**New SOP (Standard Operating Procedure):**
-1. Livingston builds live-runners-YYYY-MM-DD.json (Sporting Life + corroboration) within 4h of race-time
-2. When NR declared: Rusty sources replacement from live-runners file ONLY
-3. Confirmation step: Rusty double-checks horse is present in source file (race #, runner #, live URL, timestamp)
-4. Handoff to Linus: Decision note includes `live_verified: true` + source URL + fetch timestamp
-5. If Livingston's source is blocked: return `status: blocked` to Steve (don't guess from stale data)
-
-**Practice example (today's picks):**
-- **16:40 Asmen Warrior:** Sporting Life cloth #15, draw 5, form 262-232 → confirmed vs live 2026-06-05T16:13 BST ✅
-- **17:50 Arctic Thunder:** live-runners file runner #11, draw 1 → confirmed vs Sporting Life 16-runner declaration 2026-06-05T16:25 BST ✅
-
-**Impact on scoring:** market-latest.json (2026-06-02 vintage) will continue to be used for:
-- Stale price orientation (for stale-odds caveats)
-- Historical baseline (for market_move signal)
-- **NEVER** for runner identity or presence/absence checks
+Royal Ascot 2026-06-16 live-test approaching. `morning_odds.py` `RACECARD_FILES` still hardcoded for Epsom dates — Danny owns the update.
 
 ---
 
-## 2026-06-03 — v0.5: market_move, trainer_14d, jt_combo signals
+## 2026-06-06 — Derby Day HOLD Card Rescore (rusty-rescored-2026-06-06.json)
 
-Implemented three new signal modules and updated `src/scoring.py` to v0.5.
+**Trigger:** Steve requested full Saturday rescore from Livingston's 11:26 BST refresh (100 active runners, RP forecast odds, GTS confirmed going).
 
-**Outcome:** 246/246 tests passing. Saul's new test suites not yet present (in parallel).
+**Key outputs:**
+- **7 WIN candidates across 8 races** (13:30 and 14:40 NO_BET; 17:55 VOID)
+- **2 EW outsider candidates:** Prydwen 17/1 (17:20), Ziggy's Triton 32/1 (15:15 — COMPRESSED_RANGE_CAUTION)
+- **2 Linus-v1 picks invalidated:** Illinois (14:40, model rank 6/6, NO_OVERRIDE) and Christmas Day (16:00, rank_gap +0.5 < +2)
+
+**Critical findings:**
+1. Benvenuto Cellini (Derby): 9/4 → Evs = only genuine steam signal (38.5% from real ante-post baseline). MARKET_STEAM_MAJOR + EDGE_ERODED.
+2. Lord Melbourne (17:20): model rank 1/17, rank_gap +13, going_fit 78. Strongest overlay signal on card. Upgraded from bets-file EW outsider to WIN candidate.
+3. GTS going REJECT flags: Ancient Egypt, Balzac, A Taste Of Glory, Poker (all good-to-firm specialists in 16:00 Derby). HOLD card confirmed correct.
+4. 15:15 Dash scoring caveat: RPM field range = only 5 points (102–107). Compressed range amplifies tiny differences into large rank gaps. Both 15:15 picks (Another Baar 39/1, Ziggy's Triton 32/1) flagged COMPRESSED_RANGE_CAUTION.
+5. Synthetic baseline caveat: For 6/8 races, baseline prices were synthetic (not real). EDGE_ERODED flags in those races reflect price revelation, not genuine steam. Only Benvenuto Cellini and Coronation Cup runners had real ante-post baselines.
+
+**Scoring methodology established for future reference:**
+- composite = RPM×0.45 + OR×0.30 + TS×0.25, normalised 5-95 within active field
+- final_signal adjustments: headgear×0.90 (fields ≥14), EDGE_ERODED×0.85 (steam≥30% + market_rank≤3)
+- going_fit <40 → REJECT; model_score <50 → NO_OVERRIDE flag
+- LATE_ENTRY_NEUTRAL = 50 for runners not in score DB (Star Chorus, Stormy Impact in 15:15)
+
+**Files written:**
+- `data/enrichment/rusty-rescored-2026-06-06.json` (full ranked tables + per-race recommendations)
+- `.squad/decisions/inbox/rusty-sat-rescore-2026-06-06.md` (decision summary)
+
+## Learnings
+
+### 2026-06-06 — Synthetic Baseline Steam Problem
+
+**Pattern observed:** When the market-baseline.json contains synthetic prices (OR/field-size estimates) and market-latest.json contains real traded/forecast prices, ALL horses in synthetic-base races will show high steam_drift_pct values — even horses that have actually DRIFTED vs real traded prices. This renders the EDGE_ERODED steam filter largely useless for synthetic-base races. 
+
+**Key finding:** In a 20-runner handicap with synthetic baseline ~25/1 across the board, the top-3 market prices (real 5/1, 6/1, 7/1) will all show 60-80% "steam" and all get EDGE_ERODED flagged — eliminating the three most likely winners from the WIN candidates list.
+
+**Mitigation applied:** Added SYNTHETIC_BASE_CAVEAT flag to differentiate synthetic→real transitions from genuine steam. Only Benvenuto Cellini (real 9/4 baseline → real Evs) and Calandagan (real 6/4 baseline → real -1/11) carry genuine steam signals.
+
+**Recommendation for next race day:** Livingston should flag `baseline_price_type: "synthetic" | "ante_post" | "traded"` in market-baseline.json for each horse. This would allow the market_move signal and EDGE_ERODED rule to distinguish price discovery from genuine confidence moves automatically, without manual caveats.
+
+### 2026-06-06 — Compressed-Range Handicap Scoring Anomaly
+
+**Pattern:** In big handicap fields with very narrow RPM ranges (e.g., 15:15 Dash: 102–107, range = 5), the 5-95 normalisation amplifies small absolute differences into large perceived gaps. A horse with RPM 107 scores 95.0 while one with RPM 106 scores 77.0 — only 1 point of actual difference.
+
+**Effect:** In the 15:15 Dash, the model top-picks (Ziggy's Triton 95.0, King Of Light 88.6) had OR and TS ratings that also happened to be high, compounding the effect. The market (which uses many more signals) priced them at 33/1 and 13/1 respectively. The 33/1 vs model rank 1 gap looks like a massive overlay but is mostly a normalisation artefact.
+
+**Lesson:** For handicaps with field RPM range ≤8 points, add a COMPRESSED_RANGE_CAUTION flag and reduce confidence in WIN candidate designation. Rank gaps >10 in these races should be treated as speculative outsider signals only, not model-grade WIN picks.
+
+**Future signal improvement:** Consider using raw RPM percentile rank within a broader population (e.g., all handicappers rated 83-99 in the current season) rather than within-field normalisation for compressed-range handicaps.
+
+
+## 2026-06-06T23:02:55+01:00 — Team Update (Cross-Agent Findings)
+
+**From Saul's Derby Day Process Audit:**
+
+3 hard publish blockers identified:
+1. **T-1hr gate timing** — Derby check fired 39 minutes late (hourly watchdog ticks insufficient)
+2. **Silent completion defence** — Livingston-3 output sat unread 7+ hours (platform silent success bug mitigation needed)
+3. **HTML header staleness** — Manual patch class recurring (must compute header from JSON at render-time)
+
+See .squad/orchestration-log/2026-06-07T00-36-45Z-saul.md for full audit details.
+
+**From Rusty's Derby Day Signal Frame:**
+
+v0.4 market_drift module proposed with 0 HIGH / 1 MEDIUM / 8 SPECULATIVE confidence signals. Benvenuto Cellini steam (9/4 → Evs) and Lord Melbourne drift (+53.8%) both correctly identified.
+
+See .squad/orchestration-log/2026-06-07T00-36-45Z-rusty.md for full signal frame.
+
+---
+
+## 2026-06-07T17:08:33+01:00 — v0.4 market_drift module shipped
+
+**Deliverables:** `src/market_drift.py` + `tests/test_market_drift.py`
+
+**Outcome:** 46/46 tests passing. scoring.py weights untouched (sum remains 1.0000).
 
 **Key calls made:**
-- `market_move`: read Livingston's 2-file schema (`market-baseline.json` + `market-latest.json`, each with `decimal_odds`) and combined in-memory — Danny's single-file spec was aspirational. Used Danny's Δip formula (not Livingston's `(b-l)/b` strawman). Empty latest stub → neutral 50 for all runners.
-- `trainer_14d`: always recompute `wins_14d/runners_14d` — stored `strike_rate` is display-only.
-- `jt_combo`: horse-keyed lookup avoids trainer/jockey name normalisation mismatches.
-- All 15 v0.5 weights verified to sum to exactly 1.0000.
-- Danny's score-curve anchors verified for all three pure scoring functions.
 
-**Decision note:** `.squad/decisions/inbox/rusty-v05-implementation.md`
+- Gate-only design (weight = 0.0): multiplies `final_signal` and emits flags; does not add to model_score. Preserves Danny's gate-beats-averaging principle.
+- Pure public API: `parse_fractional_odds`, `assess_market_drift`, `load_market_drift_data`, `market_drift_signal` — all independently testable.
+- Preferred fractional string parsing over stored decimal_odds. Reason: Derby Day data artefact — Lord Melbourne `decimal_odds: 13.5` vs `fractional_odds: "12/1"` (= 13.0). Using decimal would give 48.1% drift (misses ≥50 gate); fractional gives 53.8% (correct DRIFT_CRITICAL). Fractional preferred, decimal as fallback.
+- Threshold semantics confirmed: ≥ 30 fires (not >30); ≥ 50 fires DRIFT_CRITICAL and takes precedence over DRIFT_WARN. All four boundaries covered in tests.
+- Portability maintained: zero hardcoded horse names, course names, dates.
 
-## 2026-06-03 — v0.6: equipment signal
-
-Implemented `src/equipment.py` and updated `src/scoring.py` to v0.6.
-
-**Outcome:** 352/352 tests passing.
-
-**Key calls made:**
-- Added mandatory top-level non-dict runner guard: `score_equipment(None, {}) -> 50.0` confirmed.
-- Loader returns equipment enrichment keyed by lower-cased horse name for safer lookup.
-- Equipment scoring follows Danny's locked spec: base 50, first-time item deltas, -3 stacking penalty per extra current item, +3 per removed item, clamp [10, 90].
-- All 15 v0.5 weights scaled ×0.9750; `class_rating` absorbed rounding residual; equipment = 0.0250; sum = 1.0000.
-- Added/updated tests for equipment scoring, None guard, loader shape, scoring integration, and weight sanity.
-
-**Decision note:** `.squad/decisions/inbox/rusty-v06-equip.md`
-
-## 2026-06-05 — Friday AM Gate: Sugar Island market_move signal limitation
-
-- **Finding:** Sugar Island (EW £0.25 @ 34.0) drifted inward from 33/1 → 16-22/1 today (decimal 17-23).
-- **Signal impact:** market_move returns neutral 50 (both baseline and latest have price 34.0 from racecard — no live odds feed).
-- **Real move:** Market shows genuine confidence (50–100% inward move), but market_move signal cannot detect it without live mid-race odds.
-- **Note:** This is a data-feed limitation, not a signal bug. Recommend manual note in report: "Sugar Island has moved in overnight market but signal shows no change due to no live odds feed."
-- **Mitigation for future:** Racing Post WebSocket odds would be needed for real-time market_move signal updates (currently blocked).
-
-## 2026-06-05 — Midday Refresh Round: Synthetic-price tag retained
-
-Livingston (11:59 BST): midday market refresh executed. No material price moves (<20% threshold), no new non-runners. **Critical finding:** prices still synthetic, dated 2026-06-02 (no live Betfair API implemented). RP scrape bypasses JS-rendered odds, falls back to enrichment DB.
-
-**Impact on v0.5 signals:** market_move signal returns neutral 50 for all runners (0% Δip detected). This is expected behavior given synthetic prices. Signal will remain inert until live-price ingestion is implemented.
-
-**Synthetic-price tag:** Retained in both racecard and report footers for Ladies Day + Derby Saturday.
-
-## 2026-06-05 PM — Port Road NR replacement v2 (16:40 HKJC — second attempt)
-
-**Trigger:** v1 pick Triple Double A confirmed NR by Steve at ~16:00 BST — it was not in today's declared 18-runner field. v2 requested at 16:13 BST, race 16:40 BST.
-
-**Live source fetch:** Sporting Life live racecard (https://www.sportinglife.com/racing/racecards/2026-06-05/epsom-downs/racecard/920736/hkjc-world-pool-handicap) — confirmed 18 declared runners (field reduced from 29 in stale data; 11 NRs since 02 Jun). Both Port Road AND Triple Double A absent from declared field, confirmed.
-
-**v2 pick: Asmen Warrior** (James Owen / Silvestre De Sousa, draw 5, OR 88 / RPR 112 / TS 98, stale ~20/1)
-- Confirmed declared in today's live 18-runner field ✓
-- 5-star Timeform (highest outsider-band rating), RPR-OR gap 24pts (widest outsider outlier), first-time blinkers (near-miss "narrowly denied Windsor 11d ago"), named jockey
-- Stake: £0.25 EW (standard outsider slot), confidence: LOW/SPECULATIVE
-- Price not in live data — stale 21.5 decimal (2026-06-02). Check at rail.
-
-**Decision note:** `.squad/decisions/inbox/rusty-port-road-replacement-v2.md`
-**Action owner:** Linus (update card: remove Triple Double A row, insert Asmen Warrior)
+**Decision note:** `.squad/decisions/inbox/rusty-v04-market-drift-shipped.md`
 
 ---
 
 ## Learnings
 
-### 2026-06-05 — THE STALE-DATA NR FAILURE: Triple Double A
+### 2026-06-07 — Synthetic-Price Decimal vs Fractional Artefact
 
-**What happened:** At 15:58 BST I picked Triple Double A as the v1 replacement for Port Road (16:40 HKJC NR). Steve confirmed at ~16:00 BST that Triple Double A was NOT in the live declared runners list. The pick was invalid. A second attempt was required under severe time pressure (16:13 BST, race 16:40 BST).
+**Pattern confirmed:** When Livingston builds market-baseline.json from synthetic OR/field-size estimates, the `decimal_odds` field may not match the `fractional_odds` string. Observed: Lord Melbourne `decimal_odds: 13.5`, `fractional_odds: "12/1"` (= 13.0). The 0.5-point discrepancy is enough to move the drift calculation from 48.1% (misses DRIFT_CRITICAL at ≥50) to 53.8% (correctly triggers DRIFT_CRITICAL).
 
-**Root cause:** I verified Triple Double A's presence using `data/raw/epsom-2026-06-05-racecards.json` and enrichment files — all dated 2026-06-02. The final declarations window had closed after those files were built. Triple Double A had been removed from the field, but our data did not reflect this. The 29-runner stale field vs the 18-runner live declared field shows 11 NRs occurred since 02 Jun that we had zero visibility on.
+**Rule for all future market-parsing modules:** Prefer fractional string parsing when available. Fall back to decimal_odds. Do not assume decimal_odds is authoritative when fractional string is present.
 
-**Why the amber stale-odds caveat was not enough:** The existing "stale odds" warning on the printed card flags price risk. It does NOT flag runner-validity risk. A horse can be entirely absent from the race while still appearing in our data files. The caveat solves the wrong problem for NR replacement purposes.
-
-**Hard rule established (effective 2026-06-05):**
-
-> Before any NR replacement pick is handed to Linus for a card edit, the replacement horse MUST be confirmed present in a **live declared-runners source** (Racing Post, Sporting Life, ATR, or similar) fetched **on race day**. Matching against any enrichment file dated earlier than race day is NOT sufficient for runner-list purposes. If no live source can be fetched, write `status: blocked` and ask Steve for the declared list. Do not guess. Do not trust stale files for runner-list purposes — ever.
-
-**v2 pick: Asmen Warrior** — confirmed in live 18-runner declared field via Sporting Life racecard retrieved 2026-06-05T16:13 BST.
-
-### 2026-06-05 — Two NRs in 90 Minutes: Batch-Check Pattern
-
-**Trigger:** Two non-runner swaps in the same afternoon session — Prizeland (16:00 Oaks) confirmed ~15:02 BST, Port Road (16:40 HKJC Handicap) confirmed ~15:46 BST. Both were outsider-slot horses in separate races. Handled as two sequential single-NR interruptions.
-
-**Observation:** A batch NR-check pass at ~14:30-15:00 BST (i.e., ~90 minutes before the first afternoon race) would have caught both simultaneously rather than processing them as separate context-switches. The check is trivially cheap: iterate `market-baseline.json` keys against racecard horses and flag absences in one pass.
-
-**Workflow improvement for future race days:**
-1. **Batch NR pass at T-90min** (e.g., 14:30 for a 16:00 first race): compare all remaining racecard horses against `market-baseline.json` in a single pass; produce a single "NR found" list rather than relying on Steve to catch each one separately.
-2. **Handle all NRs as a batch**: if multiple NRs are found in step 1, execute all replacements in one agent session rather than one at a time. Reduces Steve's interruptions from N to 1.
-3. **Ladies Day risk higher than Derby Day**: big-field handicaps (HKJC 29 runners, Nifty 50 25 runners) tend to have more late scratches than Group 1 Classics — operator runbook should note an elevated NR probability for the Friday card specifically.
-4. **Outsider-slot horses are highest-risk for late NRs**: Port Road (TBC jockey, Simon Dow smaller yard, OR 79) and Prizeland (34/1) are exactly the profile that gets scratched late. Prioritise checking low-profile outsider-slot horses in the batch scan.
-
-**Stale-price trap awareness in big-field handicaps:** This NR highlighted how many runners in a 29-runner field have "stale-price trap" profiles (Zarathos: two recent wins; Jimmy Speaking: two wins + 2nd). In future, a pre-race stale-price audit of outsider candidates (checking recent form for price-compressions) should be standard before nominating any outsider pick in a multi-runner handicap.
-
-**Port Road replacement decision note:** `.squad/decisions/inbox/rusty-port-road-replacement.md`  
-**Replacement pick: Triple Double A** (Hugo Palmer / Saffie Osborne, OR 80 / RPR 109, ~23/1 stale, £0.25 EW)  
-**Action owner:** Linus (racecard HTML update)
-
----
-
-### 2026-06-05 — Non-Runner Replacement Workflow (Race-Day-Eve Hot-Swap)
-
-**Trigger:** Steve confirmed Prizeland (16:00 Oaks) is not running ~1 hour before the race. Data files (market-latest.json, market-baseline.json) already reflected the NR via absence from baseline — verbal confirmation was authoritative but the data corroborated it independently.
-
-**Workflow pattern established:**
-
-1. **Confirm NR source.** Check market-baseline.json absence first (fastest); treat Steve's verbal as authoritative if data lags. Do not regenerate the full pipeline — surgical pick only.
-2. **Re-run score_race on the adjusted field** (exclude all confirmed NRs). Field-size normalisation shifts rankings non-trivially — a horse that was model #4 in the full 11-runner field can become model #2 in the 8-runner adjusted field. Always re-score; never assume ranks carry over.
-3. **Market rank also shifts.** When NRs are removed, market ranks compress. Recalculate from the remaining horses' decimal_odds to get the true rank-price gap for the replacement pick.
-4. **Watch for stale-price traps.** If a horse's intra-day market move is already documented in decisions.md footnotes (e.g., Sugar Island 34.0 → 17–23), the stale odds are specifically unreliable for that horse. Prefer alternatives where stale price is likely still indicative.
-5. **Check for existing bets before doubling up.** If the highest-scored alternative already has a live stake from a footnote/pre-existing pick, flag this and consider the next-ranked scorer to avoid unintended position doubling.
-
-**Scoring shortcuts for race-day-eve hot-swaps:**
-- Score the adjusted field (NRs removed) against the full enrichment stack — no need to rebuild enrichment files.
-- Market rank recalculation: `sorted([(name, odds) for name in active_field], key=lambda x: x[1])` gives immediate market order.
-- The `score_race()` function handles field-size normalisation automatically — pass only the active runners.
-- Jockey TBC (= 0/100 in jockey signal) suppresses both candidates equally when comparing two TBC horses; don't use jockey signal as a tiebreaker under those conditions.
-
-**Prizeland scoring re-check:**
-- Prizeland's adjusted-field score was 78.6 (rank #3 in the 8-runner field).
-- Original racecard said "model rank #2 vs market #8" — this was computed on the card-generation field (Precise already a NR at that run), giving a slightly different normalisation. Both representations are consistent with a genuine rank-price gap pick.
-- The original selection logic holds up: Prizeland had strong rank-price gap value at 33/1 vs a model ranking well above its market position. The replacement (Cameo) scores 88.4 vs Prizeland's 78.6 — the replacement is a genuine improvement, not a like-for-like downgrade.
-
-**Replacement pick: Cameo (Aidan O'Brien, £0.25 EW ~14/1 stale)**
-- Decision note: `.squad/decisions/inbox/rusty-prizeland-replacement.md`
-- Action owner: Linus (racecard HTML update)
-
-## 2026-06-05 PM — Port Road NR replacement (16:40 HKJC, second swap)
-
-**What:** Picked Triple Double A as 16:40 outsider replacement for Port Road (confirmed NR).
-
-**Key inputs:**
-- Race: 16:40 HKJC World Pool Handicap, Epsom Ladies Day, 29 runners
-- NR signal: Steve verbal 15:46 BST + corroborated by Port Road absence in market-baseline.json
-- Constraint: Outsider tier (£0.25 EW, ~24/1 price band), stale-price avoidance
-
-**Analysis:**
-- Screened 29-runner field for outsiders with poor recent form (5+ days since last run)
-- Triple Double A emerges: OR 80 vs RPR 109 (29-pt gap — outlier width), distance winner (D badge), Hugo Palmer trainer, Saffie Osborne jockey
-- Scoring delta vs Port Road: TS +20, RPR +2, OR +1, jockey/trainer both upgraded
-- Runners discarded: Zarathos, Jimmy Speaking, Footwork (all recent-form stale-price traps — likely much shorter today)
-
-**Confidence:** LOW/SPECULATIVE (standard EW outsider)
-
-**Stale-price caveat:** ~23/1 (24.0 decimal) is 2026-06-02 synthetic; verify at rail before staking.
-
-**Handoff:** Decision passed to Linus for HTML edits (Port Road row removed, Triple Double A row inserted with rationale + amber NR badge + stale-odds caveat).
-
----
-
-## 2026-06-05 PM — Blue Brother NR replacement (17:50 Debenhams — third swap)
-
-**What:** Picked Arctic Thunder as 17:50 Debenhams outsider replacement for Blue Brother (confirmed NR by Livingston's live-verification pass at 16:25 BST — absent from all 16-runner declarations).
-
-**Live source:** `data/enrichment/live-runners-2026-06-05.json` (race 17:50, runner #11, draw 1) — Livingston's live-verified file, sourced from Sporting Life + corroboration (The Sun Racing / Betfair / Sky Sports). Used exclusively for runner-list authority.
-
-**Key inputs:**
-- Race: 17:50 Debenhams Handicap, 7f 3y Epsom, Class 2, Good to Soft, 16 confirmed runners
-- NR: Blue Brother (NOT in live 16-runner declarations)
-- WIN pick: Dance In The Storm (#1, Oisin Murphy / Andrew Balding) — confirmed running, excluded from outsider consideration
-- Constraint: Outsider tier (£0.25 EW, ~20/1 band), no stale-price traps
-
-**Analysis:**
-- Screened all 16 live-confirmed runners; excluded recent-win stale-price traps (Zarathos: 2 wins; Veblen Good: 1 win; Crimson Spirit: 1 win; Pietro: 1 win)
-- Shortlisted non-trap outsiders by RPR-OR gap: Son (27pt), Arctic Thunder (26pt), Musical Angel (23pt)
-- Arctic Thunder selected: RPR 110 vs OR 84 (26pt gap), D badge (Epsom course winner), TS 102, Ed Walker / Kieran Shoemark quality connections (stale 2026-06-02 — jockey not live-confirmed)
-
-**Confidence:** SPECULATIVE (standard EW outsider; last two runs were 7th and 0/unplaced — genuine long-shot)
-
-**Stale-price caveat:** ~20/1 (20.5 decimal) is 2026-06-02 synthetic from market-latest.json; verify at rail before staking.
-
-**Decision note:** `.squad/decisions/inbox/rusty-blue-brother-replacement.md`
-**Action owner:** Linus (racecard HTML update: remove Blue Brother row, insert Arctic Thunder)
-
----
-
-## Learnings
-
-### 2026-06-05 — Live-Verify-First Protocol Is Now Battle-Tested SOP
-
-**Status: CONFIRMED STANDARD OPERATING PROCEDURE** — effective from 2026-06-05, third consecutive application.
-
-The hard rule first written after the Triple Double A failure (pick from stale data → horse was NR) has now been applied to three consecutive NR replacements on the same race day:
-1. Port Road → Asmen Warrior (live-verified via Sporting Life, 16:13 BST)
-2. (16:40 outsider slot separate)
-3. Blue Brother → Arctic Thunder (live-verified via Livingston's `live-runners-2026-06-05.json`, 16:30 BST)
-
-**Protocol confirmed SOP:**
-> Before any NR replacement pick is nominated, the replacement horse MUST appear in Livingston's `live-runners-YYYY-MM-DD.json` (or an equivalent live declared-runners source fetched on race day). `market-latest.json` is explicitly not trusted for runner identity — it may only be used for price cross-reference on horses already confirmed running. If no live source is available, status = `blocked`.
-
-**No exceptions. No shortcuts. Three-for-three on race day with zero stale-data picks post-rule.**
-
-### 2026-06-05 — Arctic Thunder: Outsider Pick Angle Summary
-
-- **Horse:** Arctic Thunder (confirmed runner #11, 17:50 Debenhams Handicap)
-- **Headline angle:** RPR-OR gap 26pts (RPR 110 vs OR 84) + D badge (Epsom course winner) + Ed Walker / Kieran Shoemark quality
-- **Why not Son** (27pt gap but no course badge, lower TS, smaller trainer)
-- **Why not Musical Angel** (CD badge but 60d off, smaller trainer Simon Dow)
-- **Stale price trap avoidance:** Zarathos, Veblen Good, Crimson Spirit, Pietro all excluded for recent wins compressing price
+**Why this matters operationally:** The whole point of the drift gate is to penalise significant market-against moves. Lord Melbourne drifting to 19/1 from a 12/1 baseline is a 53.8% move — exactly the profile the gate was designed to flag. An off-by-half-point baseline from a synthetic price should not silently drop the signal below the DRIFT_CRITICAL threshold.
