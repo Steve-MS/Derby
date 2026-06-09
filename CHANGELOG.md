@@ -3,6 +3,37 @@
 All notable changes to race-analysis are documented here.
 Format inspired by Keep a Changelog. Version numbers follow semver.
 
+## [0.4.1] - 2026-06-08
+
+Patch release fixing publish blockers found in v0.4.0 consumer dress-rehearsal.
+
+### Fixed
+- **`pip install -e .` now works.** v0.4.0 shipped with an invalid
+  `build-backend = "setuptools.backends.legacy:build"` in `pyproject.toml`;
+  the `race-analysis` console script could not be installed. Fixed to use
+  the standard `setuptools.build_meta`. (R-1)
+- README Quickstart now uses the Epsom 2026-06-06 archive replay (works
+  offline against committed data) instead of the Royal Ascot example
+  (which required live fetch unavailable in v0.4.x). Royal Ascot moved
+  to a "Live race-day workflow" section pointing at RUNBOOK.md. (R-2/R-3)
+- README expected-artifacts list reconciled with what Quickstart actually
+  produces; T-60 watchdog output is now noted as a RUNBOOK-only artifact. (R-4)
+- README no longer points consumers at internal `.squad/` coordination
+  files; weight-history and project-layout sections updated. (R-6)
+- `python -m src.cli --help` description updated from
+  "Race prediction toolkit - Epsom Classics 2026" to course-agnostic
+  phrasing matching pyproject.toml. (R-7)
+- Fixed the pre-existing `tests/test_racecard_wave33.py` failure so consumers
+  can run `pytest -q` without surprises. (R-5)
+
+### Notes for consumers
+- Live data fetch from Sporting Life / Racing Post is NOT implemented in
+  v0.4.x. To run the pipeline on a new race day, you must manually source
+  racecards as JSON and place them at
+  `data/raw/{course}-{date}-racecards.json`. See RUNBOOK.md.
+
+[0.4.1]: https://github.com/Steve-MS/Derby/releases/tag/v0.4.1
+
 ## [0.4.0] - 2026-06-08
 
 First publish-ready release. The CLI is now course-agnostic and ships with
