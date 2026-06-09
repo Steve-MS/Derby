@@ -94,3 +94,7 @@ Concern: docs/data-layout.md says path_for() is the canonical resolver for cours
 Impact: low documentation/API ownership ambiguity. Not a runtime regression; watchdog tests still pass.
 Fix: Either add a path_for kind for t60-status and decide whether it becomes course-prefixed, or explicitly document T-60 status as watchdog-owned and intentionally not course-prefixed.
 Priority: low-medium before the next non-Epsom operator docs pass.
+
+## 2026-06-08 v0.4.1 follow-up check
+
+Status: VERIFIED by Scribe-29. FU-7, FU-8, FU-9, and FU-10 remain OPEN; v0.4.1 closed Livingston-11 R-1 through R-7 only and does not supersede these deferred items.

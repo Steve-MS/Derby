@@ -151,3 +151,10 @@
 - Canonical large inbox references should be kept as files, not pasted into decisions.md; if they appear untracked during ship, add them unchanged rather than deleting them with merged stubs.
 - Before staging docs or state, assert the cached path list against generated-output deny patterns; this kept Ascot data/output artifacts, the Ascot fixture scratch dir, and the held wave3 regression test out of v0.4.0.
 - The single-Saul final gate worked well for publish ceremony: producer docs plus Coordinator metadata were validated together against a known-good baseline before Scribe cut commits, tag, and release.
+
+### 2026-06-08 - Scribe-29 v0.4.1 release ceremony
+
+- Patch-release batches work best as three atomic commits: source/test blocker fixes, consumer docs/CHANGELOG, then Squad state and inbox cleanup.
+- Consumer dress-rehearsal evidence should be preserved in the ledger because it exposes install/doc/test blockers that are invisible to agents using repo context and existing environments.
+- For release-body generation, keep CHANGELOG as the source of truth and extract only the target version section into an uncommitted notes file.
+- Leave generated Ascot rehearsal outputs and scratch fixtures untracked unless explicitly promoted; final status should show only those intentional untracked artifacts.

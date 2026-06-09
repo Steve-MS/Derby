@@ -125,3 +125,9 @@ Wave-1 publish-readiness sprint shipped GREEN. All four work items GREEN GO. Ful
 - A publish-docs gate should cite changed-document lines and live code path helpers separately; market baseline/archive files are governed by morning_odds.py, while generated outputs remain governed by path_for() and docs/data-layout.md.
 - Before treating an encoding finding as a blocker, compare changed lines against the baseline; pre-existing comments outside the deliverable criteria should not derail a quality-first but shipping-biased gate.
 - For docs-only waves, pair full pytest with a no-output git diff on tracked baseline outputs to prove the docs did not perturb regression artifacts.
+
+### 2026-06-08 - v0.4.1 comprehensive gate (Saul-13)
+- Single-gate pattern held for a mixed source/docs patch: static contract checks first, then fresh editable install, README replay, full pytest, and tracked-output cleanup/diff.
+- Wave33 regression review must check the test still calls production render_card and asserts concrete HTML; here it did, so the 503/503 zero-ignore pass is meaningful rather than a neutered known-failure skip.
+- README replay commands can legitimately refresh generated artifacts during review; restore tracked outputs before the final scoring/bets diff so reviewer validation does not masquerade as product change.
+- For package gates, validate both build backend and discovery scope: `setuptools.build_meta` plus `packages = ["src"]` avoided including tests/outputs while making the console entry point importable from PATH.

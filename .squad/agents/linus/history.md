@@ -122,3 +122,10 @@ CLI and script paths had drifted: Badger's legacy `singles`/`portfolio_summary` 
 - Trial-form loader pattern: raw trial enrichment normalization now requires an explicit course. `trial_form_signal()` resolves the course once and the cache is keyed by course, preventing silent Epsom prior coupling when a second course later enables trial-form calibration.
 - Equipment defaults decision: removed empty unused `equipment_defaults` from course configs and neutral priors as YAGNI. Reintroduce only when `score_equipment()` has a real course-specific calibration contract and regression coverage.
 - Regression note: Epsom 2026-06-06 scores exact-match after changes; bets only changed in volatile `generated_at` during the smoke run. Full suite excluding `test_racecard_wave33.py` passed 500/500.
+
+### Linus-20 v0.4.1 src patches (2026-06-08)
+
+- R-1 packaging lesson: `setuptools.build_meta` fixes the import error, but this repo's package is literally named `src`; editable install also needs explicit setuptools package discovery (`packages = ["src"]`) or the console script cannot import `src.cli` outside the checkout CWD.
+- R-5 wave33 disposition: Option A. The test was stale, not prod: committed `outputs/bets-2026-06-06.json` no longer has `item_special_bet`/`scenario`, so Item is correctly rendered as PASS with `edge -52.9%` and total outlay `GBP 6.40`; stale speculative assertions were removed.
+- R-7 help guard: CLI help now uses course-agnostic copy and Ascot examples with `--course ascot --meeting royal-ascot-2026 --date 2026-06-16`; regression test asserts the old `Epsom Classics 2026` string stays gone.
+- Validation: clean throwaway venv `pip install -e .` succeeded, `race-analysis` resolved on venv PATH and printed help, and full `python -m pytest -q` passed 503/503 with no ignores.

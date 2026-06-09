@@ -786,3 +786,36 @@ LESSON: gate prompts that say "compare against HEAD" need to verify HEAD is the 
 **Metadata:** `pyproject.toml` is stamped `0.4.0` with course-agnostic description; `CHANGELOG.md` carries v0.4.0 release notes and FU-7..FU-10 ship-with-note known issues.
 **Process lesson:** Single-Saul-gate pattern worked again: one focused final reviewer gate after producer docs/metadata avoided split-brain signoff while preserving speed.
 **Stale-baseline lesson:** Saul-12 explicitly anchored review to `6ee87d2`, continuing the Saul-10/Saul-11 lesson that a committed output must be proven current before it is treated as a regression baseline.
+
+---
+
+## 2026-06-08 - v0.4.1 publish patch shipped
+
+**By:** Scribe-29 (Historian/Shipper)
+**Requested by:** Steve via Coordinator
+**Status:** READY-FOR-TAG (local ship commits cut; remote ceremony follows)
+
+### Summary
+
+v0.4.1 closes Livingston-11's v0.4.0 consumer dress-rehearsal ledger R-1 through R-7. The rehearsal earned its keep: a clean-clone, first-time-consumer pass caught three blocker-class issues that internal context had masked (broken editable install, unrunnable Ascot Quickstart, and a pre-existing wave33 pytest failure). The patch split was kept atomic:
+
+1. Source/test fixes: c13dea7 - R-1 install backend/package discovery/version bump, R-7 course-agnostic CLI help, and R-5 wave33 fix.
+2. Docs fixes: d3e25d0 - R-2/R-3 Epsom offline Quickstart, R-4 T-60 reconciliation, R-6 removal of consumer-facing .squad pointers, and CHANGELOG v0.4.1.
+3. Squad state: this entry plus agent-history merge and inbox cleanup.
+
+### Gate evidence
+
+- Linus-20 source/test patch: 4/4 SHIP.
+- Livingston-12 docs patch: 5/5 SHIP.
+- Saul-13 final gate: 9/9 SHIP, READY-FOR-SCRIBE.
+- Full regression evidence from Saul-13: python -m pytest -q => 503 passed, zero ignores/skips/failures.
+
+### Lessons
+
+- Consumer dress-rehearsal from a clean clone catches blocker-class doc and install bugs that internal project context hides.
+- README Quickstart must use committed, reproducible artifacts when live ingest is not implemented; live race-day workflows belong in RUNBOOK with explicit caveats.
+- wave33 is finally fixed rather than ignored; stale tests should be repaired when they become consumer-visible release blockers.
+
+### Follow-up disposition
+
+FU-7, FU-8, FU-9, and FU-10 remain OPEN. v0.4.1 was scoped to Livingston-11 R-1 through R-7 and does not supersede those deferred v0.4.0 ship-with-note items.
