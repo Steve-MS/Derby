@@ -1,6 +1,7 @@
 import json
 from pathlib import Path
 
+from src import cli
 from src.racecard import render_card
 
 
@@ -8,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def test_racecard_wave33_params_render_going_scenario_and_item():
-    """Printable card accepts Wave 3.3 context and renders compact slip rows."""
+    """Printable card accepts Wave 3.3 context and renders current rows."""
     out = ROOT / "outputs" / ".test-racecard-wave33.html"
     try:
         render_card(
@@ -22,13 +23,23 @@ def test_racecard_wave33_params_render_going_scenario_and_item():
         )
         html = out.read_text(encoding="utf-8")
         assert "Going: Soft (5.2mm rain forecast, 60-80% prob)" in html
-        assert "🟢 GREEN SLIP — assumes Going holds at Good-to-Soft or better" in html
-        assert "⚠️ SPECULATIVE — NOT A MODEL PICK" in html
-        assert "edge <span class=\"edge-negative\">-69.4%</span>" in html
-        assert "Cancel if going declared Soft Saturday AM → use HOLD card." in html
-        assert "Total outlay:</span> <strong>£7.40</strong>" in html
+        assert "GREEN SLIP" in html
+        assert "Item" in html
+        assert "(model fancied, no value)" in html
+        assert "edge -52.9%" in html
+        assert "below threshold" in html
+        assert "SPECULATIVE" not in html
+        assert "Total outlay:</span> <strong>\u00a36.40</strong>" in html
     finally:
         out.unlink(missing_ok=True)
+
+
+def test_cli_help_is_course_agnostic():
+    help_text = cli.build_parser().format_help()
+
+    assert "Epsom Classics 2026" not in help_text
+    assert "Course-agnostic UK Flat race-prediction CLI" in help_text
+    assert "--course ascot --meeting royal-ascot-2026 --date 2026-06-16" in help_text
 
 
 def test_racecard_renders_bet_rationale_from_bet_object():

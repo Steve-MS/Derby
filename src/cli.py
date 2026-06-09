@@ -534,16 +534,19 @@ def _add_course_args(parser: argparse.ArgumentParser) -> None:
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="race-analysis",
-        description="Race prediction toolkit — Epsom Classics 2026.",
+        description=(
+            "Course-agnostic UK Flat race-prediction CLI. Ships with Epsom 2026 "
+            "and Royal Ascot 2026 worked examples."
+        ),
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog=(
             "Examples:\n"
-            "  python -m src.cli fetch    --date 2026-06-05\n"
-            "  python -m src.cli score    --date 2026-06-05\n"
-            "  python -m src.cli predict  --date 2026-06-05 --bankroll 200\n"
-            "  python -m src.cli backtest --date 2026-06-05 --results data/results/results-2026-06-05.json\n"
-            "  python -m src.cli report   --date 2026-06-05 --format html\n"
-            "  python -m src.cli card     --date 2026-06-06\n"
+            "  python -m src.cli fetch   --course ascot --meeting royal-ascot-2026 --date 2026-06-16\n"
+            "  python -m src.cli score   --course ascot --meeting royal-ascot-2026 --date 2026-06-16\n"
+            "  python -m src.cli predict --course ascot --meeting royal-ascot-2026 --date 2026-06-16 --bankroll 200\n"
+            "  python -m src.cli report  --course ascot --meeting royal-ascot-2026 --date 2026-06-16 --format html\n"
+            "  python -m src.cli card    --course ascot --meeting royal-ascot-2026 --date 2026-06-16\n"
+            "  python -m src.cli backtest --course epsom --meeting derby-2026 --date 2026-06-06 --results data/results/results-2026-06-06.json\n"
         ),
     )
     sub = parser.add_subparsers(dest="command", metavar="COMMAND")
@@ -553,13 +556,13 @@ def build_parser() -> argparse.ArgumentParser:
     _add_course_args(p)
     p.set_defaults(func=cmd_fetch)
 
-    p = sub.add_parser("score", help="Score all runners for a date → outputs/scores-{date}.json")
+    p = sub.add_parser("score", help="Score all runners for a date -> outputs/scores-{date}.json")
     _add_course_args(p)
     p.set_defaults(func=cmd_score)
 
     p = sub.add_parser(
         "predict",
-        help="Generate betting predictions via Badger's betting.py → outputs/bets-{date}.json",
+        help="Generate betting predictions via Badger's betting.py -> outputs/bets-{date}.json",
     )
     _add_course_args(p)
     p.add_argument(
@@ -579,7 +582,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     p = sub.add_parser(
         "report",
-        help="Generate HTML report via Mr. Universe's report.py → outputs/report-{date}.html",
+        help="Generate HTML report via Mr. Universe's report.py -> outputs/report-{date}.html",
     )
     _add_course_args(p)
     p.add_argument("--format", default="html", choices=["html"],
@@ -588,7 +591,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     p = sub.add_parser(
         "card",
-        help="Generate printable race card → outputs/racecard-{date}.html (A4, one race per page)",
+        help="Generate printable race card -> outputs/racecard-{date}.html (A4, one race per page)",
     )
     _add_course_args(p)
     p.add_argument(
