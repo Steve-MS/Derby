@@ -25,7 +25,7 @@ Status: KEEP flat-with-course-prefix
 
 ## Decision
 
-Keep the flat layout with course-prefixed filenames for non-Epsom artifacts. Do not move to `data\raw\{course}\{date}\racecards.json` in v0.4.
+Keep the flat layout with course-prefixed filenames for non-Epsom artifacts. Do not move to `data\raw\{course}\{date}\racecards.json` in v0.5.
 
 ## Rationale
 
@@ -42,3 +42,7 @@ No migration is planned. If a future release needs meeting-level archive bundles
 ## Archive policy
 
 Historical Epsom artifacts are archives. Leave them at legacy paths and never re-emit them under new prefixed or nested paths. New non-Epsom outputs should use `path_for()` and the course-prefixed flat filenames above.
+
+## Source provenance note
+
+In v0.5.0, new raw racecards normally come from `race-analysis fetch --from-file` against a browser-saved Sporting Life page. Manual JSON drops remain at the same `data\raw\{course}-{date}-racecards.json` path as a fallback when the parser cannot be used before a deadline.

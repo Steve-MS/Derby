@@ -35,13 +35,15 @@ $date = "{date}"
 
 Read `.squad\agents\livingston\history.md`, `.squad\decisions.md`, `RUNBOOK.md`, and `docs\data-layout.md`.
 
-### 2. Verify environment
+### 2. Verify raw racecard import
+
+For live race days, the raw card should come from `race-analysis fetch --from-file` against a browser-saved page, or from the documented manual JSON fallback.
 
 ```powershell
-python scripts\check_env.py
+race-analysis fetch --course $course --meeting $meeting --date $date
 ```
 
-`SPORTINGLIFE_USER` and `SPORTINGLIFE_PASS` are required for live mode. Dry-run commands may be used before credentials are set.
+This validation step should pass before market work starts.
 
 ### 3. Dry-run first
 
@@ -61,7 +63,7 @@ Expected checks: exit code 0, plausible runner count, no surprising non-runner e
 
 ### 5. Capture latest
 
-If Racing Post was just scraped, either wait 60 seconds or avoid a second RP scrape.
+If an internal Racing Post market check was just attempted, either wait 60 seconds or avoid a second RP call.
 
 ```powershell
 Start-Sleep -Seconds 60
@@ -74,68 +76,20 @@ or:
 python scripts\morning_odds.py --mode latest --course=$course --meeting=$meeting --date=$date --no-rp-scrape
 ```
 
-### 6. Verify files
+### 6. Declaration and going checks
 
-For Epsom:
+Compare raw racecard runners, baseline runners, latest runners, live declaration source, and current going. If going is explicitly unavailable from the imported page, ensure the source flag is `not_available` so scoring remains neutral rather than treating it as insufficient history.
 
-```powershell
-(Get-Content data\enrichment\market-baseline.json | ConvertFrom-Json).generated
-(Get-Content data\enrichment\market-latest.json | ConvertFrom-Json).generated
-```
-
-For non-Epsom:
-
-```powershell
-(Get-Content data\enrichment\market-baseline-$course.json | ConvertFrom-Json).generated
-(Get-Content data\enrichment\market-latest-$course.json | ConvertFrom-Json).generated
-```
-
-### 7. Declaration and going checks
-
-Use course-specific search terms and configured course metadata. Do not hardcode Epsom, Oaks, or Derby.
-
-```text
-"{course_display}" "{date}" runners declarations
-"{course_display}" "{date}" going ground
-"{race_name}" "{date}" confirmed runners
-```
-
-Compare raw racecard runners, baseline runners, latest runners, live declaration source, and current going.
-
-### 8. Stake position checks
+### 7. Stake position checks
 
 For each active stake in the bets file, verify the horse is live, compare baseline/latest price when available, flag material moves, flag stale source dates, and flag any probable non-runner.
-
-### 9. Report format
-
-```text
-Morning odds gate completed at HH:MM local
-Scope: {course} / {meeting} / {date}
-Snapshots: baseline=[path], latest=[path]
-Runner freshness: [N verified, M possible non-runners, K data gaps]
-Going: [current source] vs [raw/card value]
-Stake checks: [stable / needs action]
-Next gate: [time and command]
-```
-
-Write the decision note to:
-
-```text
-.squad\decisions\inbox\livingston-morning-odds-{course}-{date}.md
-```
-
-Append the learning to `.squad\agents\livingston\history.md` when new source behavior or market risk is discovered.
-
-## Worked historical example: Epsom Derby weekend
-
-The original 2026-06-05 and 2026-06-06 gates used Epsom legacy files: `market-baseline.json`, `market-latest.json`, and `data\raw\epsom-{date}-racecards.json`. The reusable lesson is not the venue; it is the sequence: dry-run, baseline, latest, declaration check, going check, stake check, then history/decision write.
 
 ## Known quirks
 
 | Issue | Mitigation |
 |---|---|
-| Racing Post HTTP 406 on repeated fetch | Wait 60 seconds or use `--no-rp-scrape` for latest |
+| Racing Post HTTP 406 on repeated market check | Wait 60 seconds or use `--no-rp-scrape` for latest |
 | Live odds absent from RP static HTML | Treat RP as runner confirmation unless prices are explicitly present |
 | Synthetic prices unchanged between baseline and latest | Record market_move as neutral and label prices stale |
-| Missing credentials | Run `python scripts\check_env.py`; set `SPORTINGLIFE_USER` and `SPORTINGLIFE_PASS` |
-| Late entries missing from raw card | Escalate as data gap; do not score from guessed data |
+| Missing credentials | Run `python scripts\check_env.py`; use browser login for the saved-page workflow |
+| Late entries missing from raw card | Re-import a fresh browser save or escalate as data gap; do not score from guessed data |

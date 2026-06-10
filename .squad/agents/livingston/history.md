@@ -123,3 +123,10 @@ See .squad/orchestration-log/2026-06-07T00-36-45Z-rusty.md for full signal frame
 - Removed consumer-facing README dependency on internal `.squad` files and kept `.squad/skills` unchanged after grep found only course-example tables, not an Ascot Quickstart contradiction.
 - Added CHANGELOG v0.4.1 entry for R-1 through R-7 publish-blocker fixes.
 - Verification: Epsom replay fetch, score, predict, report, and card all exited 0; restored regenerated Epsom archive outputs afterward to avoid unrelated artifact churn. Test sanity recovered from missing `src` import by setting PYTHONPATH to repo root; `pytest -q --ignore=tests/test_racecard_wave33.py` passed 500/500.
+
+## 2026-06-10 - Livingston-13 v0.5.0 import-only docs
+- Rewrote README around the v0.5.0 browser save plus `race-analysis fetch --from-file` workflow and kept the Epsom 2026-06-06 offline replay for demo/regression use.
+- Prepended CHANGELOG v0.5.0 with import parser, not_available going-fit source flag, nullable price/RPR/TS tolerance, deprecated scrape scripts, and consumer ToS notes.
+- Updated RUNBOOK, docs data-layout provenance, .env.example, and race-day skills for the save-and-parse workflow with manual JSON as fallback.
+- Renamed Sporting Life and Racing Post scrape scripts to `.deprecated.py`, added exit banners, and retained original code as unreachable historical reference.
+- Verification: installed editable package, then ran `race-analysis fetch --from-file tests\fixtures\Sportinglife\sample-meeting.html --course ascot --meeting royal-ascot-2026 --date 2026-06-16`, followed by score, predict, report, and card. All exited 0. Handoff: `.squad\decisions\inbox\livingston-13-v0-5-0-docs.md`. Verdict: READY-FOR-GATE.

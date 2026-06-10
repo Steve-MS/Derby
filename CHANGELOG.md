@@ -3,6 +3,31 @@
 All notable changes to race-analysis are documented here.
 Format inspired by Keep a Changelog. Version numbers follow semver.
 
+## [0.5.0] - 2026-06-10
+
+Import-only racecard release. v0.5.0 replaces the v0.4.x manual JSON drop as the primary race-day path: operators save a Sporting Life racecard page from their browser, then parse that local HTML into the canonical raw-card JSON.
+
+### Added
+- `race-analysis fetch --from-file <saved.html>` imports browser-saved Sporting Life HTML and writes the canonical raw racecard file for the selected `--course`, `--meeting`, and `--date`.
+- Going-fit `not_available` source flag. Explicitly missing going evidence now scores neutral at 0.5, while true insufficient-history cases keep the lower 0.35 prior.
+
+### Changed
+- `morning_price`, RPR, and TS can be null in raw/imported data. Scoring and market fallback paths tolerate those gaps instead of failing or fabricating values.
+- Consumer docs now lead with the save-and-parse workflow and keep the manual JSON drop only as a fallback.
+
+### Deprecated
+- `scripts/scrape_sportinglife.py` and `scripts/scrape_racingpost.py` are renamed to `.deprecated.py` and exit immediately. They are retained only for historical reference and will be removed in v0.6.0.
+
+### Fixed
+- No additional consumer-facing side-fixes were flagged in the docs handoff.
+
+### Notes for consumers
+- Sporting Life's Terms of Service prohibit automated data capture including screen scraping. v0.5.0 therefore avoids live HTTP scraping and uses a browser save of the operator's legitimate personal-use view.
+- Race-day command shape: save the page, run `race-analysis fetch --from-file <saved.html> --course <slug> --meeting <slug> --date YYYY-MM-DD`, then run `score`, `predict`, `report`, and `card`.
+- Manual JSON drop fallback is unchanged: place the canonical raw card at `data\raw\{course}-{date}-racecards.json`, then run `race-analysis fetch` without `--from-file` to validate it before the rest of the pipeline.
+
+[0.5.0]: https://github.com/Steve-MS/Derby/releases/tag/v0.5.0
+
 ## [0.4.1] - 2026-06-08
 
 Patch release fixing publish blockers found in v0.4.0 consumer dress-rehearsal.

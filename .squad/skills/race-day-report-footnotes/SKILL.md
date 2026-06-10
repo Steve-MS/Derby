@@ -48,6 +48,8 @@ Confirm you have the intended course and date before editing.
 
 Use generic anchors: time, exact race name, horse name, or runner name. Do not rely on course-specific race names.
 
+Source note: if the warning traces to `fetch --from-file`, cite the browser-saved page or import timestamp. Do not cite deprecated scrape scripts as evidence.
+
 ```powershell
 Select-String -Path outputs\report-{course}-{date}.html -Pattern "HH:MM|Race Name|Horse Name" | Select-Object LineNumber, Line
 ```
