@@ -29,6 +29,10 @@ class SLValidationError(ValueError):
     """Raised when parsed raw JSON is unsafe to write."""
 
 
+class SLPartialImportError(SLValidationError):
+    """Raised when a saved meeting page was not fully expanded before save."""
+
+
 def extract_next_data(html_text: str) -> dict[str, Any]:
     """Return decoded ``__NEXT_DATA__`` from a saved Sporting Life page."""
     match = NEXT_DATA_RE.search(html_text or "")
@@ -48,8 +52,8 @@ def parse_sl_html_to_raw(html_text: str, course: str, meeting: str, date: str) -
     """Parse saved Sporting Life HTML into the canonical raw racecard schema.
 
     Missing optional fields are represented as ``None`` or empty lists and noted
-    in ``_parse_warnings``. Only detailed racecard entries with runner arrays are
-    emitted; summary-only meeting races are ignored to avoid writing empty races.
+    in ``_parse_warnings``. Saved meeting pages must include detailed runner
+    arrays for every advertised race; summary-only partial imports are refused.
     """
     warnings: list[str] = []
     retrieved_at = datetime.now(timezone.utc).isoformat()
@@ -66,6 +70,9 @@ def parse_sl_html_to_raw(html_text: str, course: str, meeting: str, date: str) -
         _map_race(race_payload, idx + 1, page_props, source_url, going, retrieved_at, warnings)
         for idx, race_payload in enumerate(detailed_races)
     ]
+    advertised_count = _advertised_race_count(page_props, detailed_races)
+    if advertised_count > len(races):
+        raise SLPartialImportError(_partial_import_message(advertised_count, len(races)))
 
     raw = {
         "meeting": meeting_display,
@@ -130,6 +137,70 @@ def _detailed_races(page_props: dict[str, Any]) -> list[dict[str, Any]]:
         if isinstance(payload, dict) and isinstance(payload.get("rides"), list):
             races.append(payload)
     return races
+
+
+def _advertised_race_count(page_props: dict[str, Any], detailed_races: list[dict[str, Any]]) -> int:
+    return len(_advertised_race_summaries(page_props, detailed_races))
+
+
+def _advertised_race_summaries(page_props: dict[str, Any], detailed_races: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    meeting = page_props.get("meeting")
+    if isinstance(meeting, dict):
+        meetings = [meeting]
+    elif isinstance(meeting, list):
+        meetings = meeting
+    else:
+        return []
+
+    detailed_ids = {
+        str(_dig(race, "race_summary", "race_summary_reference", "id") or "")
+        for race in detailed_races
+    }
+    detailed_ids.discard("")
+
+    all_races: list[dict[str, Any]] = []
+    matched_races: list[dict[str, Any]] = []
+    for meeting_payload in meetings:
+        races = [race for race in (_as_dict(meeting_payload).get("races") or []) if isinstance(race, dict)]
+        if not races:
+            continue
+        all_races.extend(races)
+        if detailed_ids:
+            advertised_ids = {str(_dig(race, "race_summary_reference", "id") or "") for race in races}
+            if advertised_ids & detailed_ids:
+                matched_races.extend(races)
+
+    return _dedupe_race_summaries(matched_races or all_races)
+
+
+def _dedupe_race_summaries(races: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    seen: set[tuple[str, str, str]] = set()
+    unique: list[dict[str, Any]] = []
+    for race in races:
+        key = (
+            str(_dig(race, "race_summary_reference", "id") or ""),
+            str(race.get("time") or ""),
+            str(race.get("name") or ""),
+        )
+        if key in seen:
+            continue
+        seen.add(key)
+        unique.append(race)
+    return unique
+
+
+def _partial_import_message(advertised_count: int, detailed_count: int) -> str:
+    missing_count = advertised_count - detailed_count
+    race_word = "race" if advertised_count == 1 else "races"
+    detail_word = "was" if detailed_count == 1 else "were"
+    other_word = "race is" if missing_count == 1 else "races are"
+    return (
+        "ERROR: Partial import detected -- saved meeting page contains "
+        f"{advertised_count} {race_word} but only {detailed_count} {detail_word} parsed in detail.\n"
+        f"The other {missing_count} {other_word} summary-only (race links were not expanded before save).\n"
+        "Action: Open the meeting page in your browser, click each race to expand its full "
+        "racecard, then re-save the page and retry."
+    )
 
 
 def _map_race(

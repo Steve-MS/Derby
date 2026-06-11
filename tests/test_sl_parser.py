@@ -6,6 +6,7 @@ import pytest
 
 from src.sl_parser import (
     SLParseError,
+    SLPartialImportError,
     SLValidationError,
     extract_next_data,
     parse_sl_html_to_raw,
@@ -19,8 +20,32 @@ def _fixture_html() -> str:
     return FIXTURE.read_text(encoding="utf-8")
 
 
+def _replace_next_data(html: str, data: dict) -> str:
+    mutated_json = json.dumps(data, separators=(",", ":"))
+    return re.sub(
+        r'(<script[^>]*\bid=["\']__NEXT_DATA__["\'][^>]*>)(.*?)(</script>)',
+        lambda match: match.group(1) + mutated_json + match.group(3),
+        html,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+
+
+def _single_complete_race_html() -> str:
+    html = _fixture_html()
+    data = extract_next_data(html)
+    page_props = data["props"]["pageProps"]
+    page_props["meeting"][0]["races"] = [page_props["race"]["race_summary"]]
+    return _replace_next_data(html, data)
+
+
+def test_parse_rejects_partial_fixture():
+    with pytest.raises(SLPartialImportError, match="Partial import detected"):
+        parse_sl_html_to_raw(_fixture_html(), "ascot", "royal-ascot-2026", "2026-06-16")
+
+
 def test_parse_fixture_to_canonical_raw_shape():
-    raw = parse_sl_html_to_raw(_fixture_html(), "ascot", "royal-ascot-2026", "2026-06-16")
+    html = _single_complete_race_html()
+    raw = parse_sl_html_to_raw(html, "ascot", "royal-ascot-2026", "2026-06-16")
 
     assert len(raw["races"]) > 0
     runner_count = sum(len(race["runners"]) for race in raw["races"])
@@ -40,7 +65,7 @@ def test_parse_fixture_to_canonical_raw_shape():
             assert runner["going_history"] == []
             assert runner["going_history_source"] == "not_available"
 
-    validate_html_import(_fixture_html(), raw)
+    validate_html_import(html, raw)
 
 
 def test_validation_rejects_empty_html():
@@ -59,13 +84,7 @@ def test_validation_rejects_empty_races_from_mutated_fixture():
     data = extract_next_data(html)
     data["props"]["pageProps"]["race"] = {}
     data["props"]["pageProps"]["meeting"][0]["races"] = []
-    mutated_json = json.dumps(data, separators=(",", ":"))
-    mutated = re.sub(
-        r'(<script[^>]*\bid=["\']__NEXT_DATA__["\'][^>]*>)(.*?)(</script>)',
-        lambda match: match.group(1) + mutated_json + match.group(3),
-        html,
-        flags=re.IGNORECASE | re.DOTALL,
-    )
+    mutated = _replace_next_data(html, data)
     raw = parse_sl_html_to_raw(mutated, "ascot", "royal-ascot-2026", "2026-06-16")
 
     with pytest.raises(SLValidationError, match="parsed races are empty"):

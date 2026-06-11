@@ -116,6 +116,7 @@ def _import_saved_sl_html(args: argparse.Namespace, source_path: Path, racecard_
     try:
         from sl_parser import (  # noqa: PLC0415
             SLParseError,
+            SLPartialImportError,
             SLValidationError,
             missing_field_summary,
             parse_sl_html_to_raw,
@@ -136,12 +137,13 @@ def _import_saved_sl_html(args: argparse.Namespace, source_path: Path, racecard_
             json.dump(raw, fh, indent=2)
             fh.write("\n")
         os.replace(temp_path, racecard_path)
+    except SLPartialImportError as exc:
+        _remove_import_temp(temp_path)
+        print(str(exc), file=sys.stderr)
+        _print_raw_untouched(racecard_path)
+        return 1
     except (OSError, SLParseError, SLValidationError, ValueError) as exc:
-        if temp_path.exists():
-            try:
-                temp_path.unlink()
-            except OSError:
-                pass
+        _remove_import_temp(temp_path)
         print(f"Error: Sporting Life HTML import failed: {exc}", file=sys.stderr)
         _print_manual_fetch_fallback(args, racecard_path)
         return 1
@@ -192,9 +194,21 @@ def _format_missing_summary(summary: dict[str, int]) -> str:
     return ", ".join(f"{key}={value}" for key, value in sorted(summary.items()))
 
 
-def _print_manual_fetch_fallback(args: argparse.Namespace, racecard_path: Path) -> None:
+def _remove_import_temp(temp_path: Path) -> None:
+    if temp_path.exists():
+        try:
+            temp_path.unlink()
+        except OSError:
+            pass
+
+
+def _print_raw_untouched(racecard_path: Path) -> None:
     untouched = "left untouched" if racecard_path.exists() else "not written"
     print(f"Raw racecard was {untouched}: {racecard_path}", file=sys.stderr)
+
+
+def _print_manual_fetch_fallback(args: argparse.Namespace, racecard_path: Path) -> None:
+    _print_raw_untouched(racecard_path)
     print("Manual fallback:", file=sys.stderr)
     print("  1. Manually create JSON in the documented raw racecard schema.", file=sys.stderr)
     print(f"  2. Save it to {racecard_path}.", file=sys.stderr)

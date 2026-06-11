@@ -9,9 +9,10 @@ Scoring model v0.5. 16 signals. Weights sum to 1.0.
 Use this for a new race-day card in v0.5.0.
 
 1. Open the Sporting Life racecard in your browser using your normal subscription view: `https://www.sportinglife.com/racing/racecards/{date}/{course}`
-2. File, Save Page As, Webpage, complete. Save the page to your machine.
-3. Run: `race-analysis fetch --from-file <saved.html> --course <slug> --meeting <slug> --date YYYY-MM-DD`
-4. Run the rest of the pipeline: `score`, `predict`, `report`, and `card`.
+2. Click every race link on the meeting page so each full racecard is expanded before saving.
+3. File, Save Page As, Webpage, complete. Save the page to your machine.
+4. Run: `race-analysis fetch --from-file <saved.html> --course <slug> --meeting <slug> --date YYYY-MM-DD`
+5. Run the rest of the pipeline: `score`, `predict`, `report`, and `card`.
 
 ```powershell
 $course = "{course}"
@@ -75,7 +76,7 @@ The replay writes or refreshes the committed Epsom archive artifacts below. Open
 
 ### Next live meeting: Royal Ascot 2026-06-16
 
-Royal Ascot Day 1 remains the current non-Epsom rehearsal. In v0.5.0, save the Sporting Life page from your browser and import it with `fetch --from-file` instead of dropping hand-built JSON first. If the parser fails, the manual JSON fallback is unchanged: place the canonical raw file at `data\raw\ascot-2026-06-16-racecards.json`, then run `fetch`, `score`, `predict`, `report`, and `card`.
+Royal Ascot Day 1 remains the current non-Epsom rehearsal. In v0.5.0, expand every race in the browser, save the Sporting Life page, and import it with `fetch --from-file` instead of dropping hand-built JSON first. If the parser fails, the manual JSON fallback is unchanged: place the canonical raw file at `data\raw\ascot-2026-06-16-racecards.json`, then run `fetch`, `score`, `predict`, `report`, and `card`.
 
 See `RUNBOOK.md` section 2.2 for the Ascot command sequence and section 5 for race-day operator gates.
 

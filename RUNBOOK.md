@@ -17,7 +17,7 @@ $date = "{date}"
 $saved = "C:\path\to\saved-racecard.html"
 ```
 
-1. Open the Sporting Life racecard in your browser, using your normal account view if needed, and save it with File, Save Page As, Webpage, complete.
+1. Open the Sporting Life racecard in your browser, using your normal account view if needed. Click every race link on the meeting page so each full racecard is expanded, then save it with File, Save Page As, Webpage, complete.
 
 ```text
 https://www.sportinglife.com/racing/racecards/{date}/{course}
@@ -146,6 +146,8 @@ Open manually in the browser:
 https://www.sportinglife.com/racing/racecards/{date}/{course}
 ```
 
+Before saving, click every race link on the meeting page so all full racecards are expanded in the saved HTML.
+
 Import command:
 
 ```powershell
@@ -154,7 +156,19 @@ race-analysis fetch --from-file $saved --course $course --meeting $meeting --dat
 
 Why: Sporting Life's Terms of Service prohibit automated data capture including screen scraping. The v0.5.0 workflow parses a local browser save that the operator created from their legitimate personal-use view.
 
-Failure modes: saved file is the wrong page, page is an error shell, racecard app state is absent, or the parser reports missing mandatory fields. Do not publish partial imports.
+Failure modes: saved file is the wrong page, page is an error shell, racecard app state is absent, the parser reports missing mandatory fields, or the parser reports a partial import. Do not publish partial imports.
+
+#### If fetch reports partial import
+
+A partial import means the saved meeting page advertised more races than the parser found in full detail. The raw JSON is not written.
+
+Recovery:
+
+1. Reopen the meeting page in your browser.
+2. Click every race link so each full racecard expands.
+3. Save the page again with File, Save Page As, Webpage, complete.
+4. Retry `race-analysis fetch --from-file $saved --course $course --meeting $meeting --date $date`.
+5. Continue only after fetch exits 0 and reports the expected race count.
 
 ### 3.2 Manual JSON fallback
 
@@ -309,7 +323,7 @@ Start-Process .\outputs\racecard-ascot-2026-06-16.html
 
 ### `fetch --from-file` rejects the saved page
 
-Cause: wrong file, browser saved an error shell, parser schema drift, or missing mandatory race/runner fields.
+Cause: wrong file, browser saved an error shell, parser schema drift, missing mandatory race/runner fields, or partial import because not every race was expanded before save.
 
 Fix:
 
@@ -317,7 +331,7 @@ Fix:
 race-analysis fetch --from-file $saved --course $course --meeting $meeting --date $date
 ```
 
-If it still fails near deadline, use the manual JSON fallback in section 3.2. The fetch command must not delete an existing raw file on failure.
+If stderr says `Partial import detected`, reopen the meeting page, click every race link to expand every full racecard, re-save the page, and retry fetch. If it still fails near deadline, use the manual JSON fallback in section 3.2. The fetch command must not delete an existing raw file on failure.
 
 ### Raw card exists but fetch still fails
 
