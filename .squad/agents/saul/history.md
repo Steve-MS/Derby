@@ -131,3 +131,7 @@ Wave-1 publish-readiness sprint shipped GREEN. All four work items GREEN GO. Ful
 - Wave33 regression review must check the test still calls production render_card and asserts concrete HTML; here it did, so the 503/503 zero-ignore pass is meaningful rather than a neutered known-failure skip.
 - README replay commands can legitimately refresh generated artifacts during review; restore tracked outputs before the final scoring/bets diff so reviewer validation does not masquerade as product change.
 - For package gates, validate both build backend and discovery scope: `setuptools.build_meta` plus `packages = ["src"]` avoided including tests/outputs while making the console entry point importable from PATH.
+
+### 2026-06-11 - v0.5.0 import-only release gate (Saul-14)
+- NO-SHIP after full gate: 510/510 pytest passed and README E2E produced report/card artifacts, but summary-only Sporting Life races are silently dropped with no parse warning and no explicit operator instruction to expand/open all races before saving. Atomic no-clobber, ToS hygiene, going-fit neutral, null tolerance, pyproject 0.5.0, and added-line ASCII checks passed. Status NEEDS-REWORK; coordinator should assign a non-Linus/non-Livingston revision agent per reviewer lockout.
+
