@@ -819,3 +819,17 @@ v0.4.1 closes Livingston-11's v0.4.0 consumer dress-rehearsal ledger R-1 through
 ### Follow-up disposition
 
 FU-7, FU-8, FU-9, and FU-10 remain OPEN. v0.4.1 was scoped to Livingston-11 R-1 through R-7 and does not supersede those deferred v0.4.0 ship-with-note items.
+
+## v0.5.0 - HTML import-only racecard workflow - 2026-06-11
+
+**Shape:** `race-analysis fetch --from-file <saved.html>` parses browser-saved Sporting Life racecards into canonical raw JSON. No HTTP racecard scraping (ToS-safe).
+
+**Authors:** Linus (parser + CLI + tests), Livingston (docs + scraper deprecation), Marty (hard-fail revision).
+
+**Gates:** Chunk-0 ToS (GO-IMPORT-ONLY), Danny-7 scope, Saul-14 NO-SHIP (summary-only blocker), Saul-15 SHIP after Marty hard-fail.
+
+**Tests:** 512 passing, zero ignores, zero skips.
+
+**Tag:** v0.5.0  |  **Commit:** 98c4f6e  |  **Release:** https://github.com/Steve-MS/Derby/releases/tag/v0.5.0
+
+**Notable:** Recovered from a Linus rebase incident that wiped Livingston's docs commit; cherry-pick chain restored ordering and Linus's deprecation-asserting smoke tests were preserved (not the wrong-direction scraper-restore version).
