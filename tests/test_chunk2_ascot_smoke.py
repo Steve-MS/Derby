@@ -23,48 +23,35 @@ def _run_script(script_name: str, *args: str) -> dict:
     return json.loads(result.stdout)
 
 
-def test_racingpost_ascot_dry_run_uses_configured_course_id_and_path() -> None:
-    plan = _run_script(
-        "scrape_racingpost.py",
-        "--course=ascot",
-        "--meeting=royal-ascot-2026",
-        "--date=2026-06-16",
-        "--dry-run",
+def _run_deprecated_script(script_name: str) -> subprocess.CompletedProcess[str]:
+    env = os.environ.copy()
+    env["PYTHONIOENCODING"] = "utf-8"
+    return subprocess.run(
+        [sys.executable, str(REPO_ROOT / "scripts" / script_name)],
+        cwd=REPO_ROOT,
+        text=True,
+        capture_output=True,
+        env=env,
     )
 
-    assert plan["url"] == "https://www.racingpost.com/racecards/1/ascot/2026-06-16"
-    assert plan["output_path"] == str(Path("data") / "enrichment" / "racingpost-ascot-2026-06-16.json")
-    assert plan["dry_run"] is True
+
+def test_racingpost_scraper_is_deprecated_for_import_only_release() -> None:
+    result = _run_deprecated_script("scrape_racingpost.deprecated.py")
+
+    assert result.returncode != 0
+    assert "deprecated" in result.stderr.lower()
 
 
-def test_sportinglife_ascot_dry_run_uses_configured_aliases_and_path() -> None:
-    plan = _run_script(
-        "scrape_sportinglife.py",
-        "--course=ascot",
-        "--meeting=royal-ascot-2026",
-        "--date=2026-06-16",
-        "--dry-run",
-    )
+def test_sportinglife_scraper_is_deprecated_for_import_only_release() -> None:
+    result = _run_deprecated_script("scrape_sportinglife.deprecated.py")
 
-    assert plan["url"] == "https://www.sportinglife.com/racing/racecards/2026-06-16/ascot"
-    assert "ascot" in plan["course_aliases"]
-    assert plan["output_path"] == str(Path("data") / "enrichment" / "sportinglife-ascot-2026-06-16.json")
-    assert plan["dry_run"] is True
+    assert result.returncode != 0
+    assert "deprecated" in result.stderr.lower()
 
 
-def test_racingpost_no_course_flag_defaults_to_epsom_legacy_path() -> None:
-    plan = _run_script("scrape_racingpost.py", "--date=2026-06-08", "--dry-run")
-
-    assert plan["url"] == "https://www.racingpost.com/racecards/17/epsom/2026-06-08"
-    assert plan["output_path"] == str(Path("data") / "enrichment" / "racingpost-2026-06-08.json")
-
-
-def test_sportinglife_no_course_flag_defaults_to_epsom_alias_path() -> None:
-    plan = _run_script("scrape_sportinglife.py", "--date=2026-06-08", "--dry-run")
-
-    assert plan["url"] == "https://www.sportinglife.com/racing/racecards/2026-06-08/epsom-downs"
-    assert "epsom downs" in plan["course_aliases"]
-    assert plan["output_path"] == str(Path("data") / "enrichment" / "sportinglife-2026-06-08.json")
+def test_live_scraper_entrypoints_are_not_present() -> None:
+    assert not (REPO_ROOT / "scripts" / "scrape_racingpost.py").exists()
+    assert not (REPO_ROOT / "scripts" / "scrape_sportinglife.py").exists()
 
 
 def test_morning_odds_non_epsom_market_path_is_course_prefixed() -> None:

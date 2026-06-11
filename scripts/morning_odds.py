@@ -205,7 +205,10 @@ def load_racecard_prices(dates: list[str], course_slug: str) -> dict[str, dict]:
                 src = runner.get("odds_source", "synthetic")
                 if not horse or mp is None:
                     continue
-                dec = float(mp)
+                try:
+                    dec = float(mp)
+                except (TypeError, ValueError):
+                    continue
                 prices[horse] = {
                     "race_date": date,
                     "race_name": rname,

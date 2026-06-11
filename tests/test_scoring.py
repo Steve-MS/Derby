@@ -371,6 +371,56 @@ class TestGoingFit:
         assert result["raw_signals"]["going_fit"] == 50.0
         assert "going_data_insufficient" not in result["missing_data_flags"]
 
+    def test_unavailable_going_history_is_true_neutral(self, config):
+        result = score_runner(
+            {
+                "horse": "SL Import",
+                "or_rating": 80,
+                "going_history": [],
+                "going_history_source": "not_available",
+            },
+            {"race_id": "r1", "course": "Epsom", "distance_furlongs": 8, "going": "Good"},
+            config,
+        )
+        assert result["going_data"] == "source_unavailable"
+        assert result["raw_signals"]["going_fit"] == 50.0
+        assert "going_data_source_unavailable" in result["missing_data_flags"]
+        assert "going_data_insufficient" not in result["missing_data_flags"]
+
+    def test_null_import_ratings_and_prices_score_without_exception(self, config):
+        race = {
+            "race_id": "null-import",
+            "course": "Ascot",
+            "course_slug": "ascot",
+            "distance_furlongs": 6,
+            "going": "Good",
+            "runners": [
+                {
+                    "horse": "Null One",
+                    "rpr": None,
+                    "ts": None,
+                    "or": 85,
+                    "morning_price": None,
+                    "form_string": "1",
+                    "going_history": [],
+                    "going_history_source": "not_available",
+                },
+                {
+                    "horse": "Null Two",
+                    "rpr": None,
+                    "ts": None,
+                    "or": 80,
+                    "morning_price": None,
+                    "form_string": "2",
+                    "going_history": [],
+                    "going_history_source": "not_available",
+                },
+            ],
+        }
+        result = score_race(race, config, course="ascot")
+        assert len(result["ranked_runners"]) == 2
+        assert all(runner["morning_price"] is None for runner in result["ranked_runners"])
+
 
 # ---------------------------------------------------------------------------
 # Config sanity tests

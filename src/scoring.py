@@ -233,10 +233,14 @@ def score_runner(runner: dict, race: dict, config: dict, course: str | None = No
 
     # 7. Going-fit from historical runs. Explicit None means no race-day going
     # context yet, so the helper returns a neutral non-ranking signal.
-    going_fit = score_going_fit(runner.get("going_history") or runner.get("runs") or [], _race_target_going(race))
+    going_history = runner.get("going_history")
+    going_runs = going_history if going_history is not None else runner.get("runs") or []
+    going_fit = score_going_fit(going_runs, _race_target_going(race), runner.get("going_history_source"))
     raw_signals["going_fit"] = float(going_fit["score"]) * 100.0
     if going_fit.get("going_data") == "insufficient":
         flags.append("going_data_insufficient")
+    elif going_fit.get("going_data") == "source_unavailable":
+        flags.append("going_data_source_unavailable")
 
     # 8. Draw bias (course-configured extended table, then legacy fallback)
     ext_draw = extended_draw_signal(runner, race, course=course_slug, priors=priors.get("draw_bias"))

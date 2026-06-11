@@ -65,20 +65,24 @@ def going_similarity(target: Any, observed: Any) -> float:
     return 0.0
 
 
-def score_going_fit(runs: list[dict] | None, target_going: Any) -> dict[str, Any]:
+def score_going_fit(runs: list[dict] | None, target_going: Any, source: Any = None) -> dict[str, Any]:
     """Score historical fit to target going on a 0.0-1.0 scale.
 
     Uses going-family similarity, weighted win rate, effective sample size,
-    and recency. Returns ``going_data='insufficient'`` when no historical run
-    contains usable adjacent/matching going evidence.
+    and recency. Returns true neutral when a source explicitly says history is
+    unavailable; otherwise no usable history remains an insufficiency signal.
     """
     target_norm = normalise_going(target_going)
     if target_norm is None:
         return {"score": 0.5, "going_data": "not_applicable", "target_going": None}
 
+    runs = runs or []
+    if not runs and str(source or "").strip().lower() == "not_available":
+        return {"score": 0.5, "going_data": "source_unavailable", "target_going": target_norm}
+
     weighted_runs = 0.0
     weighted_wins = 0.0
-    for index, run in enumerate((runs or [])[:10]):
+    for index, run in enumerate(runs[:10]):
         similarity = going_similarity(target_norm, run.get("going"))
         if similarity <= 0:
             continue

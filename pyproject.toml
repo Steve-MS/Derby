@@ -4,11 +4,11 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "race-analysis"
-version = "0.4.1"
+version = "0.5.0"
 description = "Course-agnostic UK Flat race-prediction CLI. Ships with Epsom 2026 and Royal Ascot 2026 worked examples."
 requires-python = ">=3.10"
 dependencies = [
-    # CLI uses stdlib only (argparse, json, subprocess, pathlib) — no extra runtime deps.
+    # CLI uses stdlib only (argparse, json, subprocess, pathlib) - no extra runtime deps.
     # report.py (Mr. Universe) will add jinja2 when it ships.
     # betting.py (Badger) will add any staking deps when it ships.
 ]

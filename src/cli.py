@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import subprocess
 import sys
 from datetime import date as date_cls
@@ -85,11 +86,7 @@ def _going_label_from_artifact(path: Path) -> str:
 # ---------------------------------------------------------------------------
 
 def cmd_fetch(args: argparse.Namespace) -> int:
-    """Validate that a racecard JSON exists for the given date.
-
-    Live HTTP fetching is River's domain.  This subcommand lets Steve confirm
-    data is present before running score.
-    """
+    """Validate an existing raw card, or import one from saved Sporting Life HTML."""
     date: str = args.date
     try:
         _course_context(args)
@@ -97,17 +94,115 @@ def cmd_fetch(args: argparse.Namespace) -> int:
     except CourseConfigError as exc:
         print(f"Error: {exc}", file=sys.stderr)
         return 2
+
+    from_file = getattr(args, "from_file", None)
+    if from_file:
+        return _import_saved_sl_html(args, Path(from_file), racecard_path)
+
     if racecard_path.exists():
-        print(f"✓  Racecard found: {racecard_path}")
+        print(f"Racecard found: {racecard_path}")
         return 0
 
-    print(f"✗  Racecard not found: {racecard_path}", file=sys.stderr)
+    print(f"Racecard not found: {racecard_path}", file=sys.stderr)
     print(
-        "   Live fetch is River's domain — drop JSON into data/raw/ manually "
-        "or wait for River's ingest module.",
+        "Save or source racecard JSON manually and place it at the path above, "
+        f"then rerun: race-analysis fetch --course {args.course} --meeting {args.meeting} --date {date}",
         file=sys.stderr,
     )
     return 1
+
+
+def _import_saved_sl_html(args: argparse.Namespace, source_path: Path, racecard_path: Path) -> int:
+    try:
+        from sl_parser import (  # noqa: PLC0415
+            SLParseError,
+            SLValidationError,
+            missing_field_summary,
+            parse_sl_html_to_raw,
+            validate_html_import,
+        )
+    except ImportError as exc:
+        print(f"Error: cannot import Sporting Life parser: {exc}", file=sys.stderr)
+        return 1
+
+    temp_path = Path(f"{racecard_path}.tmp")
+    try:
+        html_text = source_path.read_text(encoding="utf-8", errors="replace")
+        raw = parse_sl_html_to_raw(html_text, args.course, args.meeting, args.date)
+        validate_html_import(html_text, raw)
+        _score_smoke_import(raw, args)
+        racecard_path.parent.mkdir(parents=True, exist_ok=True)
+        with temp_path.open("w", encoding="utf-8") as fh:
+            json.dump(raw, fh, indent=2)
+            fh.write("\n")
+        os.replace(temp_path, racecard_path)
+    except (OSError, SLParseError, SLValidationError, ValueError) as exc:
+        if temp_path.exists():
+            try:
+                temp_path.unlink()
+            except OSError:
+                pass
+        print(f"Error: Sporting Life HTML import failed: {exc}", file=sys.stderr)
+        _print_manual_fetch_fallback(args, racecard_path)
+        return 1
+
+    races = raw.get("races") or []
+    runner_count = sum(len(r.get("runners") or []) for r in races)
+    active_count = sum(1 for r in races for runner in (r.get("runners") or []) if not runner.get("withdrawn", False))
+    summary = missing_field_summary(raw)
+    print(f"Source file: {source_path}")
+    print(f"Race count: {len(races)}")
+    print(f"Runner count: {runner_count} ({active_count} active)")
+    print(f"Fields missing: {_format_missing_summary(summary)}")
+    print(f"Output path: {racecard_path}")
+    warnings = raw.get("_parse_warnings") or []
+    if warnings:
+        print("Parse warnings:")
+        for warning in warnings[:25]:
+            print(f"  - {warning}")
+        if len(warnings) > 25:
+            print(f"  - ... {len(warnings) - 25} more")
+    else:
+        print("Parse warnings: none")
+    return 0
+
+
+def _score_smoke_import(raw: dict[str, Any], args: argparse.Namespace) -> None:
+    try:
+        from scoring import load_default_config, score_race  # noqa: PLC0415
+    except ImportError as exc:
+        raise ValueError(f"score smoke could not import scoring module: {exc}") from exc
+    venue = raw.get("meeting") or args.course
+    card_going = raw.get("going") or "Good"
+    config = load_default_config()
+    for raw_race in raw.get("races") or []:
+        race_dict = _normalize_race(raw_race, args.course, venue, args.date, card_going)
+        if race_dict.get("runners"):
+            try:
+                score_race(race_dict, config, course=args.course)
+            except Exception as exc:  # noqa: BLE001 - convert smoke failure to import refusal
+                raise ValueError(f"score smoke failed: {exc}") from exc
+            return
+    raise ValueError("score smoke found no race with active runners")
+
+
+def _format_missing_summary(summary: dict[str, int]) -> str:
+    if not summary:
+        return "none"
+    return ", ".join(f"{key}={value}" for key, value in sorted(summary.items()))
+
+
+def _print_manual_fetch_fallback(args: argparse.Namespace, racecard_path: Path) -> None:
+    untouched = "left untouched" if racecard_path.exists() else "not written"
+    print(f"Raw racecard was {untouched}: {racecard_path}", file=sys.stderr)
+    print("Manual fallback:", file=sys.stderr)
+    print("  1. Manually create JSON in the documented raw racecard schema.", file=sys.stderr)
+    print(f"  2. Save it to {racecard_path}.", file=sys.stderr)
+    print(
+        f"  3. Rerun: race-analysis fetch --course {args.course} --meeting {args.meeting} --date {args.date}",
+        file=sys.stderr,
+    )
+    print("  4. Then run score, predict, report, card, and the T-60 watchdog.", file=sys.stderr)
 
 
 # ---------------------------------------------------------------------------
@@ -552,8 +647,13 @@ def build_parser() -> argparse.ArgumentParser:
     sub = parser.add_subparsers(dest="command", metavar="COMMAND")
     sub.required = True
 
-    p = sub.add_parser("fetch", help="Validate that a racecard JSON exists for a date")
+    p = sub.add_parser("fetch", help="Validate raw JSON or import saved Sporting Life HTML")
     _add_course_args(p)
+    p.add_argument(
+        "--from-file",
+        metavar="PATH",
+        help="Parse a locally saved Sporting Life HTML racecard and atomically write canonical raw JSON",
+    )
     p.set_defaults(func=cmd_fetch)
 
     p = sub.add_parser("score", help="Score all runners for a date -> outputs/scores-{date}.json")
