@@ -129,3 +129,14 @@ CLI and script paths had drifted: Badger's legacy `singles`/`portfolio_summary` 
 - R-5 wave33 disposition: Option A. The test was stale, not prod: committed `outputs/bets-2026-06-06.json` no longer has `item_special_bet`/`scenario`, so Item is correctly rendered as PASS with `edge -52.9%` and total outlay `GBP 6.40`; stale speculative assertions were removed.
 - R-7 help guard: CLI help now uses course-agnostic copy and Ascot examples with `--course ascot --meeting royal-ascot-2026 --date 2026-06-16`; regression test asserts the old `Epsom Classics 2026` string stays gone.
 - Validation: clean throwaway venv `pip install -e .` succeeded, `race-analysis` resolved on venv PATH and printed help, and full `python -m pytest -q` passed 503/503 with no ignores.
+
+## 2026-06-11 - v0.5.0 import-only source build
+
+- Built stdlib Sporting Life saved-HTML parser and `fetch --from-file` atomic raw writer.
+- Added import validation, score-smoke, parser/CLI tests, and null-tolerance scoring coverage.
+- Fixed going-history source unavailable to score true neutral instead of insufficient.
+- Sanitized and moved the Sporting Life fixture to `tests\fixtures\sportinglife\sample-meeting.html`.
+- Updated stale scraper smoke tests for import-only deprecation state.
+- Verification: `python -m pytest -q` -> 510 passed in 16.37s.
+- Handoff: `.squad\decisions\inbox\linus-21-v0-5-0-src.md`.
+- Status: READY-FOR-GATE

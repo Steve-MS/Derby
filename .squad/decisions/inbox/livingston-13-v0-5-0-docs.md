@@ -28,7 +28,7 @@ Verified end-to-end against the shipped fixture with the actual v0.5.0 CLI surfa
 ```powershell
 python -m pip install -e . --quiet
 $course='ascot'; $meeting='royal-ascot-2026'; $date='2026-06-16'
-$saved='tests\fixtures\Sportinglife\sample-meeting.html'
+$saved='tests\fixtures\sportinglife\sample-meeting.html'
 race-analysis fetch --from-file $saved --course $course --meeting $meeting --date $date
 race-analysis score --course $course --meeting $meeting --date $date
 race-analysis predict --course $course --meeting $meeting --date $date --bankroll 100
